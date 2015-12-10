@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>대체 링크 페이지</title>
+		
+		<style type="text/css">
+			p {
+				line-height:100%;
+			}
+			
+			.bold {
+				font-weight:bold;
+			}
+			
+			.large {
+				font-size:25px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>현재 링크는 2016년 8월까지만 이용하실 수 있습니다. (사유 : Google Drive의 호스팅 서비스 중단 선언)</p>
+		<p>앞으로는 하단의 대체 링크를 통해 사이트를 이용해주시기 바랍니다.</p>
+		<p class="bold">(혹시 즐겨찾기나 링크를 하신 분이 있다면, 하단 링크로 주소를 바꿔주세요.)</p>
+		<br/>
+		<br/>
+		<h1 id="name"></h1>
+		<p class="large">주소 : <a id="link" class="large" href=""></a></p>
+		
+	
+		<script type="text/javascript">
+			function getURLParameter(name) {
+				return decodeURIComponent((new RegExp('[#|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.hash)||[,""])[1].replace(/\+/g, '%20'))||null
+			}
+			
+			var p_name = getURLParameter("name");
+			var p_link = getURLParameter("link");
+			document.getElementById("name").innerHTML = "\"" + p_name + "\"";
+			document.getElementById("link").innerHTML = p_link;
+			document.getElementById("link").href = p_link;
+			
+		</script>
+	
+	
+	</body>
+</html>
