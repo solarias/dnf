@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>루리웹 모바일 이름 검색</title>
+		
+		<style type="text/css">
+			
+			body {
+				background-color:#FFFFCC;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<form id="form" action="http://m.bbs2.ruliweb.daum.net/gaia/do/mobile/ruliweb/family/636/list" method="get" target="_blank">
+			<input name="bbsId" type="hidden" value="G006" />
+			<input name="itemId" type="hidden" value="295" />
+			<input name="searchKey" type="hidden" value="daumname" />
+			
+			<input id="text" name="searchValue" type="text" />
+			<input type="submit" value="검색" />
+		</form>
+		
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("form").onsubmit = function() {
+					if (document.getElementById("text").value == "") {
+						alert("검색어를 입력해주세요");
+						return false;
+					}
+				}
+			}
+		</script>
+	
+	
+	</body>
+</body>

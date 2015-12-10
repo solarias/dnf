@@ -1,0 +1,35 @@
+﻿<html>
+	<head>
+	</head>
+	<body>
+		<img id="image" src="" />
+		<canvas id="canvas"></canvas>
+		
+		<script type="text/javascript" src="./js/html2canvas.js"></script>
+		<script type="text/javascript">
+			var img = document.getElementById("image");
+			img.onload = function() {
+				//이미지 처리
+				var can = document.getElementById("canvas");
+				ctx = can.getContext('2d');
+				can.width = img.width;
+				can.height = img.height;
+				ctx.drawImage(img, 0, 0);
+				
+				var data = ctx.getImageData(0, 0, img.width, img.height).data;
+				alert(data);
+				
+				
+				//base64 구하기
+				dataURL = canvas.toDataURL();
+				//base64 저장
+				localStorage["power_base64"] = dataURL;
+				//이미지가 저장되었음을 알림
+				localStorage["power_on"] = "on";
+				//다시 넘겨주기
+				window.top.location.href  = "./power_level.html";
+			}
+			img.src = localStorage["power_image"];
+		</script>
+	</body>
+</html>

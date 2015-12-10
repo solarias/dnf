@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<link rel="stylesheet" type="text/css" href="./css/selfish.css" />
+		
+		<title>안톤 에픽 장비 항아리 시뮬레이터</title>
+	</head>
+	<body>
+
+		<div id="press">
+			<div style="float:left;padding-top:10px;">
+				<img src='./images/selfish/hang0.png' />
+			</div>
+			<div style="float:right;">
+				<strong>안톤 에픽 장비 항아리</strong>를 개봉합니다.
+			</div>
+			<div style="clear:right;float:right;">
+				<input id="open1" class="off" type="button" value="1회 개봉" />
+				<input id="open2" class="off" type="button" value="연속 개봉" />
+				<input id="clear" class="off" type="button" value="초기화" />
+			</div>
+		</div>
+		
+		
+		<div id="show" style="clear:both;">
+			<img id="show_img" src='./images/selfish/hang0.png' />
+			<div id="show_right">
+				<div id="show_bar">
+				</div>
+			</div>
+			<div id="show_text">
+			</div>
+		</div>
+		
+		<div id="record">
+		</div>
+		
+		
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<div id="imagePreloader">
+		</div>
+
+		<script type="text/javascript" src="./js/selfish.js"></script>
+		
+	</body>
+</html>

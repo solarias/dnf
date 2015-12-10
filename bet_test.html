@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+		
+		<title>항아리 베팅 - 테스트</title>
+		
+		<style type="text/css">
+			* {
+				margin:0px;
+			}
+			#wrapper {
+				padding:5px;
+				width:300px;
+				height:320px;
+				
+				border:1px black solid;
+			}
+			
+			h1 {
+				margin:0px 0px 20px 0px;
+				
+				font-size:30px;
+				text-align:center;
+			}
+			
+			p {
+				margin-bottom:10px;
+			}
+			
+			input {
+				padding:2px;
+				width:200px;
+				
+				font-size:16px;
+			}
+			
+			#show_gold, #show_betting {
+				text-align:right;
+			}
+			#show_result {
+				text-align:left;
+			}
+			
+			#show_result.x {
+				color:red;
+				font-weight:bold;
+			}
+			#show_result.o {
+				color:green;
+				font-weight:bold;
+			}
+			
+			button {
+				margin-bottom:5px;
+				width:100%;
+				
+				font-size:16px;
+				
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>항아리 배팅 (3배)</h1>
+			<p>보유 금액 : <input id="show_gold" type="text" disabled />
+				<br/>
+			베팅 금액 : <input id="show_betting" type="text" /></p>
+			<p>결과물 : <input id="show_result" type="text" value="없음" disabled /></p>
+			<button id="bet_1">"광검"에 걸기</button>
+			<button id="bet_2">"도"에 걸기</button>
+			<button id="bet_3">"소검"에 걸기</button>
+			<button id="bet_4">"둔기"에 걸기</button>
+			<button id="bet_5">"대검"에 걸기</button>
+		</div>
+		
+		<script type="text/javascript">
+			var gold = 100000;
+			var count = 0;
+			
+			var list = [
+				"광검",
+				"도",
+				"소검",
+				"둔기",
+				"대검"
+			];
+			
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			};
+
+			//숫자 여부 판단 (출처 : http://mwultong.blogspot.com/2007/01/isnum-isnumeric-isnumber-javascript.html)
+			function isNumber(s) {
+			  s += ''; // 문자열로 변환
+			  s = s.replace(/^\s*|\s*$/g, ''); // 좌우 공백 제거
+			  if (s == '' || isNaN(s)) return false;
+			  return true;
+			};
+			
+			function game(bet) {
+				if (isNumber($("#show_betting").value) && (gold - parseInt($("#show_betting").value) >= 0)) {
+					count += 1;
+					
+					var result = list[Math.floor(Math.random() * list.length)];
+					
+					$("#show_result").value = count.toString() + "회차 : " + result;
+					
+					if (result == bet) {
+						$("#show_result").className = "o";
+						gold += parseInt($("#show_betting").value) * 3;
+						
+						$("#show_gold").value = thousand(gold);
+					} else {
+						$("#show_result").className = "x";
+						gold -= parseInt($("#show_betting").value);
+						
+						$("#show_gold").value = thousand(gold);
+					}
+				}
+			}
+			
+			window.onload = function() {
+				$("#show_gold").value = thousand(gold);
+				$("#show_betting").value = "0";
+			}
+			
+			$("#bet_1").onclick = function() {
+				game("광검");
+			}
+			$("#bet_2").onclick = function() {
+				game("도");
+			}
+			$("#bet_3").onclick = function() {
+				game("소검");
+			}
+			$("#bet_4").onclick = function() {
+				game("둔기");
+			}
+			$("#bet_5").onclick = function() {
+				game("대검");
+			}
+		</script>
+	
+	
+	</body>
+</html>

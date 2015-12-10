@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>일러스트 그거 측정기</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.yellow {
+				color:yellow;
+			}
+			
+			body {
+				background-color:#808080;
+			}
+				p, span {
+					font-size:inherit;
+				}
+			
+			#wrapper {
+				position:absolute;
+				left:0px;
+				right:0px;
+				overflow:hidden;
+				
+				margin-left:auto;
+				margin-right:auto;
+				padding:1px;
+				width:600px;
+				height:450px;
+				
+				background:#303030;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+				
+				display:block;
+			}
+			
+			#title {
+				font-size:40px;
+				text-align:center;
+			}
+			
+			#image_cover {
+				overflow:hidden;
+				position:relative;
+				clear:both;
+				float:left;
+				
+				margin:20px 10px;
+				width:250px;
+				height:300px;
+				
+				background:black;
+				border:1px white solid;
+				
+				text-align:center;
+			}
+				#image {
+					position:relative;
+					
+					width:250px;
+					height:300px;
+					
+					display:none;
+				}
+				#image_text {
+					position:relative;
+					
+					width:100%;
+					height:100%;
+					
+					font-size:20px;
+					line-height:300px;
+					
+					display:none;
+				}
+			
+			#insert {
+				float:right;
+				
+				margin:20px 10px 20px 0px;
+				padding:10px;
+				width:300px;
+				height:75px;
+				
+				background:#505050;
+				border:1px white solid;
+				
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				font-size:20px;
+			}
+				#insert_slot {
+					width:100%;
+				}
+			
+			
+			#bottom {
+				position:absolute;
+				left:10px;
+				bottom:10px;
+				
+				width:100%;
+				
+				font-size:35px;
+				text-align:left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<p id="title">일러스트 가슴사이즈 측정기<p>
+			
+			<div id="image_cover">
+				<img id="image" />
+				<p id="image_text">
+					이미지 불러오는 중...
+				</p>
+			</div>
+			
+			<div id="insert">
+				<p>
+					로컬에서 이미지 불러오기
+				</p>
+				<p>
+					<input id="insert_slot" type="file" />
+				</p>
+			</div>
+			
+			<iframe id="url64">
+			</iframe>
+			
+			<p id="bottom">측정 그거 크기 : <span id="power" class="yellow">? cm</span></p>
+		</div>
+	
+	
+		<script type="text/javascript" src="./js/md5.js"></script>
+		<script type="text/javascript">
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+			//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			};
+			
+			//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
+			function setWon(pWon) {
+				var won  = pWon.toString();
+				var arrWon  = ["", "만 ", "억 ", "조 ", "경 ", "해 ", "자 ", "양 ", "구 ", "간 ", "정 "];
+				var changeWon = "";
+				var pattern = /(-?[0-9]+)([0-9]{4})/;
+				while(pattern.test(won)) {
+					won = won.replace(pattern,"$1,$2");
+				}
+				won = won + "";
+				var arrCnt = won.split(",").length-1;
+				for(var ii=0; ii<won.split(",").length; ii++) {
+					changeWon += won.split(",")[ii]+arrWon[arrCnt];
+					arrCnt--;
+				}
+				return changeWon;
+			}
+			
+
+			$("#insert_slot").onchange = function() {
+				//대기 메세지
+				$("#image").style.display = "none";
+				$("#image_text").style.display = "block";
+				$("#power").innerHTML = "계산 중...";
+				
+				//이미지 불러오기
+				var file = $("#insert_slot").files[0];
+				var imageType = /image.*/;
+				
+				if (file.type.match(imageType)) {
+					var reader = new FileReader();
+					
+					reader.onload = function() {
+						//이미지 교체
+						$("#image").src = reader.result;
+						
+						//이미지 출력
+						$("#image").style.display = "block";
+						$("#image_text").style.display = "none";
+						
+						//이미지 전투력 계산
+						var code = md5(reader.result.split(",")[1]);
+						
+						var temp = 1
+						for (var i=0;i<code.length;i++) {
+							if (i % 4 == 0) {
+								temp *= parseInt(code[i],16);
+							} else {
+								temp += parseInt(code[i],16);
+							}
+						}
+						$("#power").innerHTML = setWon(temp);
+					}
+					
+					reader.readAsDataURL(file); 
+				} else {
+					alert("※ 경고 : 지원되지 않는 파일입니다.");
+				}
+				
+			}
+			
+			$("#insert_input").onclick = function() {
+				//올바른 이미지인지 확인
+				var img = new Image();
+				img.onload = function() {
+					//대기 메세지
+					$("#image").style.display = "none";
+					$("#image_text").style.display = "block";
+					$("#power").innerHTML = "계산 중...";
+					//데이터 저장
+					localStorage["power_image"] = $("#insert_slot2").value;
+					//데이터 넘김
+					
+					/*window.location.href  = "./power_local.html";*/
+					$("#url64").src  = "./power_local.html";
+				}
+				img.onerror = function() {
+					alert("※ 경고 : 올바르지 않은 URL입니다.");
+				}
+				img.src = $("#insert_slot2").value;
+			}
+			
+			//이미지 로드됨 확인
+			if (localStorage["power_on"] == "on") {
+				//이미지 로드 신호 끄기
+				localStorage["power_on"] = "off";
+				
+				//이미지 교체 & 출력
+				alert(localStorage["power_base64"]);
+				$("#image").src = localStorage["power_base64"];
+				$("#image").style.display = "block";
+				
+				//이미지 전투력 계산
+				var code = md5(localStorage["power_base64"].split(",")[1]);
+				
+				var temp = 1
+				for (var i=0;i<code.length;i++) {
+					temp += parseInt(code[i],16);
+				}
+				$("#power").innerHTML = temp * (300/480);
+			}
+				
+		</script>
+		
+	</body>
+</html>

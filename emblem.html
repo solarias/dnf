@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>아바타 해체 시뮬레이터</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+						
+			.rare {
+				color:#B36BFF;
+				font-size:inherit;
+			}
+			.unique {
+				color:#FF00FF;
+				font-size:inherit;
+			}
+			.skyblue {
+				color:skyblue;
+				font-size:inherit;
+			}
+
+			body {
+				background-color:#FFFFCC;
+			}
+			
+			#wrapper {
+				position:relative;
+				
+				padding:10px;
+				width:435px;
+				height:647px;
+				
+				background:brown;
+				border:1px black solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#head {
+				width:100%;
+				height:42px;
+			}
+			
+			input[type="button"] {
+				float:left;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				
+				width:140px;
+				height:40px;
+				
+				font-size:20px;
+				font-weight:bold;
+				
+				display:block
+			}
+					input[type="button"]#start2 {
+						margin-left:5px;
+					}
+				input[type="button"]:active {
+					background: #DEDEDE;
+				}
+			input[type="button"]#clear {
+				float:left;
+				
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				
+				margin-left:25px;
+				width:103px;
+				height:40px;
+				
+				font-size:20px;
+				font-weight:bold;
+				
+				display:block
+			}
+				input[type="button"]#clear:active {
+					background: #FFAA00;
+				}
+			
+			#loading {
+				clear:both;
+				
+				margin-top:20px;
+				width:415px;
+				height:10px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#loading_bar {
+					position:relative;
+							
+					width:0px;
+					height:8px;
+					
+					background:yellow;
+				}
+			
+			#result {
+				margin-top:2px;
+				padding:5px;
+				width:415px;
+				height:120px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-size:20px;
+				font-weight:bold;
+			}
+				#result hr {
+					margin:2px 0px;
+				}
+				#result p {
+					margin:0px;
+					font-size:inherit;
+					line-height:100%;
+				}
+				#result p img {
+					width:28px;
+					height:28px;
+					vertical-align:middle;
+					
+					display:inline-block;
+				}
+				#result p span {
+					font-size:14px;
+				}
+			
+			#inven {
+				margin-top:5px;
+				margin-bottom:5px;
+				width:415px;
+				
+				font-weight:bold;
+				font-size:20px;
+				line-height:100%;
+				text-align:center;
+			}
+				#inven img {
+					height:20px;
+					
+					vertical-align:middle;
+				}
+			
+			#record {
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				padding:5px;
+				width:415px;
+				height:400px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-size:20px;
+				font-weight:bold;
+			}
+				#record p {
+					margin:0px 0px 2px 0px;
+					
+					border-bottom:1px gray solid;
+					
+					font-size:inherit;
+					line-height:100%;
+					
+					display:none;
+				}
+				#record p.visible {
+					display:block;
+				}
+				#record p img {
+					width:28px;
+					height:28px;
+					vertical-align:middle;
+					
+					display:inline-block;
+				}
+				#record p span {
+					font-size:14px;
+				}
+				
+				
+				#cover {
+					position:absolute;
+					top:0px;
+					left:0px;
+					z-index:1;
+					
+					padding:20px;
+					width:100%;
+					height:100%;
+					
+					background-color:#FFFFCC;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					color:black;
+					font-size:40px;
+					font-weight:bold;
+				}
+				
+				
+				/*모바일 스크롤바 가시화*/
+				::-webkit-scrollbar {
+					-webkit-appearance: none;
+				}
+
+				::-webkit-scrollbar:vertical {
+					width: 12px;
+				}
+
+				::-webkit-scrollbar:horizontal {
+					height: 12px;
+				}
+
+				::-webkit-scrollbar-thumb {
+					background-color: rgba(0, 0, 0, .5);
+					border-radius: 10px;
+					border: 2px solid #ffffff;
+				}
+
+				::-webkit-scrollbar-track {
+					background-color: #ffffff; 
+				}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="head">
+				아바타를 해체하여 엠블렘을 얻습니다.
+				<br/>
+				<input id="start1" type="button" value="1회 해체" />
+				<input id="start2" type="button" value="연속 해체" />
+				<input id="clear" type="button" value="초기화" />
+			</div>
+			<div id="loading">
+				<div id="loading_bar">
+				</div>
+			</div>
+			<div id="result">
+				<p>제 0회차</p>
+				<hr/>
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<p id='inven'><img src='./images/emblem/inventory.png'> 인벤토리</span>
+			<div id="record">
+			</div>
+			
+			<div id="cover">
+				로딩 대기중...
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript" src="./js/emblemList.js"></script>
+		
+		<script type="text/javascript">
+	//=================================================================================================================
+	//※ 변수 지정
+	//=================================================================================================================			
+			var auto;
+			var running = 0;
+			var count = 1;
+			
+			var images = "./images/emblem/";
+			var imageList = []; //이미지 선로딩용 임시저장소
+			
+			
+			//=================================================================================================================
+			//※ DOM 관련 변수 지정
+			//=================================================================================================================	
+			
+			var $start1 = document.getElementById("start1");
+			var $start2 = document.getElementById("start2");
+			var $clear = document.getElementById("clear");
+			
+			var $loading = document.getElementById("loading");
+			var $loading_bar = document.getElementById("loading_bar");
+			
+			var $result = document.getElementById("result");
+			var $record = document.getElementById("record");
+
+	//=================================================================================================================
+	//※ 함수
+	//=================================================================================================================		
+					function loadImages(arr,callBack){ // 이미지 불러오기
+
+						//출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310
+						var imagesArray = [];
+						var img;
+						var remaining = arr.length;
+						for (var i = 0; i < arr.length; i++) {
+							img = new Image();
+							img.onload = function() {
+								//외부 처리 
+								document.getElementById("cover").innerHTML = "\
+								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								//내부 처리
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.onerror = function() {
+								//외부 처리 
+								document.getElementById("cover").innerHTML = "\
+								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.src = arr[i];
+							imagesArray.push(img);
+						};
+						
+					};
+					
+					//IE8에 indexOf 적용
+					if (!Array.prototype.indexOf)
+					{
+					  Array.prototype.indexOf = function(elt /*, from*/)
+					  {
+						var len = this.length >>> 0;
+
+						var from = Number(arguments[1]) || 0;
+						from = (from < 0)
+							 ? Math.ceil(from)
+							 : Math.floor(from);
+						if (from < 0)
+						  from += len;
+
+						for (; from < len; from++)
+						{
+						  if (from in this &&
+							  this[from] === elt)
+							return from;
+						}
+						return -1;
+					  };
+					}			
+					
+					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+					function thousand(num) {
+						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+					
+					//가중치 적용 랜덤
+					function rand(target) {//target : 숫자가 들어있는 배열
+						var number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+						}
+						var tmp = Math.random() * number;
+						
+						number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+							if (tmp < number) {
+								return i;
+							}
+						}
+					}
+			
+			//엠블렘 보유리스트 작성
+			function generateRecord() {
+				for (var i=0;i<emblemList.length;i++) {
+					$record.innerHTML += "<p id='line" + i.toString() + "'><img src='" + images + emblemList[i][0] + ".png'> <span class='" + emblemList[i][1] + "'>" + emblemList[i][0] + "</span><span class='skyblue'>x <span id='quantity" + i.toString() + "'>" + thousand(emblemList[i][4]) + "</span></span></p>"
+				}
+			}
+			
+			//실행
+			function loading(num) {
+				//게이지 증가
+				if (Math.round(($loading_bar.offsetWidth/$loading.offsetWidth)*100) + 2 < 100) {
+					$loading_bar.style.width = (Math.round(($loading_bar.offsetWidth/$loading.offsetWidth)*100) + 2).toString() + "%";
+					auto = setTimeout(function() {
+							loading(num);
+						},20);
+				} else {
+					//게이지 초기화
+					$loading_bar.style.width = "0px";
+					
+					//엠블렘 3개 랜덤 결정
+					var emblem_name = [];//엠블렘 명칭
+					var emblem_rarity = [];//엠블렘 희귀도
+					var emblem_quantity = [];//엠블렘 보유량
+						//확률 뽑아놓기
+						var tempArr = [];
+						for (var i=0;i<emblemList.length;i++) {
+							tempArr.push(emblemList[i][3]);
+						}
+					for (var i=0;i<3;i++) {
+						//랜덤한 엠블렘 서정
+						var temp = rand(tempArr);
+						//이름, 희귀도 저장
+						emblem_name.push(emblemList[temp][0]);
+						emblem_rarity.push(emblemList[temp][1]);
+						//보유량 증가
+						emblemList[temp][4] += 1;
+						emblem_quantity.push(emblemList[temp][4]);
+						//보유량 업데이트
+						if (emblemList[temp][4] == 1) {
+							document.getElementById("line" + temp.toString()).className = "visible";
+						}
+						document.getElementById("quantity" + temp.toString()).innerHTML = thousand(emblemList[temp][4]);
+					}
+					
+					//출력
+					$result.innerHTML = "<p>제 " + thousand(count) + "회차</p><hr/><p><img src='" + images + emblem_name[0] + ".png'> <span class='" + emblem_rarity[0] + "'>" + emblem_name[0] + "</span></p><p><img src='" + images + emblem_name[1] + ".png'> <span class='" + emblem_rarity[1] + "'>" + emblem_name[1] + "</span></p><p><img src='" + images + emblem_name[2] + ".png'> <span class='" + emblem_rarity[2] + "'>" + emblem_name[2] + "</span></p>";
+					
+					//회차 증가
+					count += 1;
+					
+					//이후 행보
+					if (num==1) {
+					//버튼 정상화
+						running = 0;
+						
+						$start1.disabled = "";
+						$start2.disabled = "";
+						$clear.disabled = "";
+						
+						$start1.value = "1회 해체";
+					} else {
+						loading(2);
+					}
+				}
+				
+			}
+			
+			//초기화
+			function reset() {
+				if (confirm("초기화하시겠습니까?")) {
+					count = 1;
+					
+					$result.innerHTML = "<p>제 0회차</p><hr/><p></p><p></p><p></p>";
+					
+					for (var i=0;i<emblemList.length;i++) {
+							emblemList[i][4] = 0;
+					}
+					
+					$record.innerHTML = "";
+					generateRecord();
+				}
+			}
+	//=================================================================================================================
+	//※ 실행
+	//=================================================================================================================			
+			window.onload = function() {
+				//엠블렘 이미지 선로딩
+				for (var i=0;i<emblemList.length;i++) {
+					imageList.push(images + emblemList[i][0] + ".png");
+				}
+				
+				//기타 이미지 선로딩
+				imageList.push(images + "inventory.png");
+				
+				//이미지 선로딩 실시
+				loadImages(imageList,function(){
+					//커버 제거
+					document.getElementById("cover").style.display = "none";
+					
+					//엠블렘 보유 리스트 작성
+					generateRecord();
+					
+					$start1.onclick = function() {
+						if (running == 0) {
+							running = 1;
+							
+							$start2.disabled = "disabled";
+							$clear.disabled = "disabled";
+							
+							$start1.value = "해체 중지";
+							
+							loading(1);
+						} else {
+							clearTimeout(auto);
+							running = 0;
+							
+							//게이지 초기화
+							$loading_bar.style.width = "0px";
+							
+							$start2.disabled = "";
+							$clear.disabled = "";
+							
+							$start1.value = "1회 해체";
+						}
+					}
+					
+					$start2.onclick = function() {
+						if (running == 0) {
+							running = 1;
+							
+							$start1.disabled = "disabled";
+							$clear.disabled = "disabled";
+							
+							$start2.value = "해체 중지";
+							
+							loading(2);
+						} else {
+							clearTimeout(auto);
+							running = 0;
+							
+							//게이지 초기화
+							$loading_bar.style.width = "0px";
+							
+							$start1.disabled = "";
+							$clear.disabled = "";
+							
+							$start2.value = "연속 해체";
+						}
+					}
+					
+					$clear.onclick = function() {
+						reset();
+					}
+				});
+			};
+			
+		</script>
+	
+	</body>
+</html>

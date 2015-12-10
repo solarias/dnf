@@ -1,0 +1,595 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+/*컬러링*/
+.epic {
+	color:#E5B64A;
+	font-size:inherit;
+}
+.red {
+	color:orange;
+	font-size:inherit;
+}
+.orange {
+	color:orange;
+	font-size:inherit;
+}
+.yellow {
+	color:yellow;
+	font-size:inherit;
+}
+.skyblue {
+	color:skyblue;
+	font-size:inherit;
+}
+.white {
+	color:white;
+	font-size:inherit;
+}
+/*컬러링*/
+
+body {
+	overflow:hidden;
+	
+	background-color:#FFFFCC;
+}
+#wrapper {
+	width:500px;
+}
+	input[type="button"] {
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		
+		width:100%;
+		height:40px;
+		
+		font-size:25px;
+		font-weight:bold;
+	}
+			input[type="button"]:active {
+				background: #DEDEDE;
+			}
+		input#clear {
+			float:right;
+			
+			width:80px;
+			height:20px;
+			
+			background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			
+			font-size:16px;
+			
+			display:block;
+		}
+			input#clear:active {
+				background: #FFAA00;
+			}
+	#frame_right input {
+		width:165px;
+		
+		font-size:20px;
+	}
+		#frame_right input.selected {
+			background: #516BFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+			background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: linear-gradient(to bottom, #ffffff, #516BFF);
+		}
+		#frame_right input.selected:active {
+			background: #3855FF;
+		}
+			
+/*======================================================================================================*/
+/* ※ 1. 상단 */
+/*======================================================================================================*/
+#frame_head {
+	float:left;
+	
+	padding:5px;
+	width:470px;
+	height:32px;
+	
+	background:brown;
+	border:1px black solid;
+	border-bottom:0px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+	line-height:100%;
+}
+	#frame_head img {
+		width:20px;
+		vertical-align:top;
+	}
+/*======================================================================================================*/
+/* ※ 2. 메뉴 */
+/*======================================================================================================*/
+#frame_menu {
+	clear:both;
+	float:left;
+	
+	padding:0px 5px;
+	width:185px;
+	height:220px;
+	
+	background:brown;
+	border:1px black solid;
+	border-top:1px brown solid;
+	border-right:0px;
+	border-bottom:1px brown solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	#frame_menu span {
+		font-size:inherit;
+	}
+	#frame_menu select{
+		width:100%;
+		border:1px gray solid;
+	}
+	#frame_menu p {
+		line-height:150%;
+	}
+	#frame_menu p.center {
+		font-weight:bold;
+		text-align:center;
+	}
+	#frame_menu p.small {
+		font-size:12px;
+	}
+	#frame_menu .bold {
+		font-weight:bold;
+	
+	}
+	#frame_menu .gap {
+		margin-top:20px;
+	}
+	#frame_menu .short_gap {
+		margin-top:10px;
+	}
+	#frame_menu .min_gap {
+		margin-top:5px;
+	}
+	#frame_menu .wrap{
+		padding:5px;
+		width:100%;
+		height:auto;
+		
+		background:#EFEFEF;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#frame_menu .wrap select{
+			width:160px;
+		}
+		#frame_menu .wrap .white_back {
+			background-color:white;
+		}
+	#select_pot {
+		background:#F4FA58;
+	}
+	#show_cost {
+		margin-top:8px;
+	}
+		#show_cost p {
+			font-size:14px;
+		}
+	
+	#filter_effect {
+		margin-top:9px;
+		
+		font-weight:bold;
+		line-height:100%;
+	}
+		#select_effect {
+			width:16px;
+			height:16px;
+			
+			vertical-align:bottom;
+		}
+/*======================================================================================================*/
+/* ※ 3. 메인 */
+/*======================================================================================================*/
+#frame_main {
+	overflow-x:hidden;
+	overflow-y:hidden;
+	position:relative;
+	float:left;
+	
+	padding:10px 5px;
+	width:285px;
+	height:220px;
+	
+	background:url(../images/hell/main_background.png);
+	border:1px black solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	#main_count_cover {
+		position:absolute;
+		top:2px;
+		left:151px;
+		
+		padding:2px 5px;
+		
+		background:blue;
+		border:1px black solid;
+		
+		color:white;
+		font-size:14px;
+		font-weight:bold;
+		
+		display:none;
+	}
+	.flipcard {
+		float:left;
+		
+		position: absolute;
+		
+		width: 120px;
+		height: 180px;
+		perspective: 500px;
+		transform-style: preserve-3d;
+		
+		border:1px transparent solid;
+		
+		display:block;
+	}
+			.flipcard:not(.flipped):hover {
+				border:1px white solid;
+				cursor:pointer;
+				cursor:hand;
+			}
+	
+		.flipcard p.title {
+			padding:4px 0px;
+			width:100%;
+			
+			background-color:rgba(0,0,0,0.5);
+			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			
+			color:white;
+			font-size:12px;
+			text-align:center;
+		}
+		.flipcard p.click {
+			position:absolute;
+			bottom:10px;
+			left:20px;
+			
+			background-color:rgba(0,0,0,0.8);
+			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			
+			font-size:13px;
+		}
+		.flipcard p.text {
+			font-size:12px;
+		}
+		.flipcard p.detail {
+			position:absolute;
+			bottom:10px;
+			
+			color:white;
+			font-size:12px;
+		}
+		.flipcard img {
+			position:absolute;
+			
+			bottom:37px;
+			left:30px;
+			
+			width:60px;
+			
+			display:block;
+		}
+	
+	/*세로로 뒤집기*/
+	.flipcard.v.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.v.flipped .front{
+		-ms-transform:rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
+		-moz-transform:rotateX(180deg);
+		-o-transform:rotateX(180deg);
+		transform: rotateX(180deg);
+	}
+	
+	.flipcard.v.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.v.flipped .back{
+		-ms-transform:rotateX(0deg);
+		-webkit-transform: rotateX(0deg);
+		-moz-transform:rotateX(0deg);
+		-o-transform:rotateX(0deg);
+		transform: rotateX(0deg);
+	}
+	
+	.flipcard.v .back{
+		visibility:hidden;
+	}
+	.flipcard.v .back{
+		-ms-transform:rotateX(-180deg);
+		-webkit-transform: rotateX(-180deg);
+		-moz-transform:rotateX(-180deg);
+		-o-transform:rotateX(-180deg);
+		transform: rotateX(-180deg);
+	}
+	/*세로로 뒤집기*/
+	
+	/*가로로 뒤집기*/
+	.flipcard.h.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.h.flipped .front{
+		-ms-transform:rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-o-transform:rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.flipcard.h.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.h.flipped .back{
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+	
+	.flipcard.h .back{
+		visibility:hidden;
+	}
+	.flipcard.h .back{
+		-ms-transform:rotateY(-180deg);
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform:rotateY(-180deg);
+		-o-transform:rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+	/*가로로 뒤집기*/
+	
+	/*카드 앞뒷면*/
+	.flipcard .front
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		transform: rotateY(0deg);
+		transition: 0.3s;
+		
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+		
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		
+		color: yellow;
+		font-weight:bold;
+	}
+		.flipcard.No0 .front {
+			background-image:url(../images/hell/card_front_0.png);
+		}
+		.flipcard.No1 .front {
+			background-image:url(../images/hell/card_front_1.png);
+		}
+		.flipcard.No2 .front {
+			background-image:url(../images/hell/card_front_2.png);
+		}
+		.flipcard.No3 .front {
+			background-image:url(../images/hell/card_front_3.png);
+		}
+		.flipcard.No4 .front {
+			background-image:url(../images/hell/card_front_4.png);
+		}
+		.flipcard.No5 .front {
+			background-image:url(../images/hell/card_front_5.png);
+		}
+		.flipcard.No6 .front {
+			background-image:url(../images/hell/card_front_6.png);
+		}
+		.flipcard.No7 .front {
+			background-image:url(../images/hell/card_front_7.png);
+		}
+	
+	.flipcard .back
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		transform: rotateY(-180deg);
+		transition: 0.3s;
+		
+		padding: 16px 8px;
+		width: 100%;
+		height: 100%;
+		
+		background-image:url(../images/hell/card_back2.png);
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		
+		color: white;
+		font-size:12px;
+		font-weight:bold;
+	}
+	/*카드 앞뒷면*/
+				
+
+/*======================================================================================================*/
+/* ※ 4. 비용 & 기록 */
+/*======================================================================================================*/
+#frame_cost {
+	clear:both;
+	float:left;
+	
+	padding:5px;
+	width:470px;
+	height:40px;
+	
+	background:brown;
+	border:1px black solid;
+	border-top:0px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	#cost_text {
+		padding:5px;
+		width:100%;
+		height:100%;
+		
+		background:black;
+		border:1px gray solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		font-weight:bold;
+	}
+#frame_record {
+	overflow-y:scroll;
+	-webkit-overflow-scrolling: touch;
+	clear:both;
+	float:left;
+	
+	padding:5px;
+	width:470px;
+	height:300px;
+	
+	background-color:#303030;
+	background-image:url(../images/hell/record_background.png);
+	border:1px black solid;
+	border-top:0px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	color:white;
+	font-weight:bold;
+}
+	#frame_record p {
+		font-size:13px;
+		line-height:160%;
+	}
+#frame_filter {
+	clear:both;
+	float:left;
+	
+	padding:2px 5px;
+	width:470px;
+	height:25px;
+	
+	background:brown;
+	border:1px black solid;
+	border-top:0px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	color:white;
+	font-weight:bold;
+}
+	#frame_filter input {
+		float:right;
+		
+		width:140px;
+		height:20px;
+		
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		
+		font-size:14px;
+		vertical-align:bottom;
+		
+		display:block;
+	}
+		#frame_filter input:active {
+			background: #FFAA00;
+		}
+/*======================================================================================================*/
+/* ※ 3. 기타 */
+/*======================================================================================================*/
+#cover {
+    position:fixed;
+	
+    padding:50px;
+    margin:0;
+    width:100%;
+    height:100%;
+	
+	background-color:#FFFFCC;
+	
+	font-size:50px;
+	font-weight:bold;
+}
+
+#imagePreloader {
+	width:1px;
+	height:1px;
+	
+	display:none;
+}
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}

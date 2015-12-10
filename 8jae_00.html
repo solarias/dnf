@@ -1,0 +1,126 @@
+﻿<html>
+<head>
+
+<style type="text/css">
+	body {
+		background-color:#FFFFCC;
+	}
+	#show {
+		padding:4px;
+		margin-top:10px;
+	
+		width:400px;
+		height:25px;
+		
+		background-color:white;
+		border:1px black solid;
+	}
+	#record {
+		padding:4px;
+		overflow-y:scroll;
+		margin-top:10px;
+	
+		width:400px;
+		height:550px;
+		
+		background-color:white;
+		border:1px black solid;
+	}
+	#clear {
+		margin-left:40px;
+	}
+</style>
+</head>
+<body>
+
+<div id="press">
+	아래 버튼을 누르면 8재련을 성공할 때까지 계속 시도합니다. (확률 조절 : 
+	<input id="up" type="button" value="▲" />
+	<input id="down" type="button" value="▼" />
+	)
+	<br/>
+	<input id="click" type="button" value="준 과의 전쟁 개시!" />
+	<input id="stop" type="button" value="정지" />
+	<input id="clear" type="button" value="기록 초기화" />
+</div>
+<div id="show">
+</div>
+<div id="record">
+</div>
+
+<script type="text/javascript">
+	var temp;
+	var auto;
+	var count = 1;
+	var how = 1
+	var chance = 0.05;
+	
+	function generate() {
+		document.getElementById("click").disabled = "disabled";
+	
+		temp = Math.random();
+		if (temp > chance) {
+			document.getElementById("show").innerHTML = "" + count + "번째 시도 : 실패...<br/>";
+			count += 1;
+			auto = setTimeout(function() {
+				generate();
+			},30);
+		} else {
+			document.getElementById("show").innerHTML = "" + count + "번째 시도 : <strong>성공!</strong>";
+			document.getElementById("click").disabled = "";
+			document.getElementById("record").innerHTML += how + "차 시도 : <strong>" + count + "</strong>번째에 성공 (성공 확률 : " + (Math.round(chance * 100)).toString() + "%)</br>"
+			
+			clearTimeout(auto);
+			how += 1;
+			count = 1;
+			document.getElementById("click").disabled = "";
+		}
+		
+	}
+	
+	function reset() {
+		clearTimeout(auto);
+		count = 1;
+		document.getElementById("show").innerHTML = "";
+		document.getElementById("click").disabled = "";
+	}
+	
+	window.onload = function() {
+		document.getElementById("click").value = "준 과의 전쟁 개시! (성공 확률 : " + (Math.round(chance * 100)).toString() + "%)";
+		
+		
+		document.getElementById("up").onclick = function() {
+			if (chance < 1) {
+				chance += 0.01;
+				document.getElementById("click").value = "준 과의 전쟁 개시! (성공 확률 : " + (Math.round(chance * 100)).toString() + "%)";
+				
+				reset();
+			}
+		}
+		document.getElementById("down").onclick = function() {
+			if (chance > 0) {
+				chance -= 0.01;
+				document.getElementById("click").value = "준 과의 전쟁 개시! (성공 확률 : " + (Math.round(chance * 100)).toString() + "%)";
+				
+				reset();
+			}
+		}
+		
+		document.getElementById("click").onclick = function() {
+			document.getElementById("show").innerHTML = ""
+			generate();
+		}
+		
+		
+		document.getElementById("stop").onclick = function() {
+			reset();
+		}
+		document.getElementById("clear").onclick = function() {
+			how = 1;
+			document.getElementById("record").innerHTML = "";
+		}
+	}
+</script>
+
+</body>
+</html>

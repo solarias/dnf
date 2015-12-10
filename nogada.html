@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="./css/nogada.css" />
+		
+		<title>노가다 분석 계산기</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div id="card" class="flipcard h">
+				<div id="card_front" class="front">
+					<p class="title">던파 노가다 - 어디로 갈까?</p>
+					<hr/>
+					<p class="yellow">재료별 경매장가 입력</p>
+					<p>1. 빙벽조각 : <input id="input_1" type="text"/> 골드</p>
+					<p>2. 마그토늄 : <input id="input_2" type="text"/> 골드</p>
+					<p>3. 데이터칩 : <input id="input_3" type="text"/> 골드</p>
+					<hr/>
+					<p class="right">노가다 수익이 가장 좋은 던전을<br/>추천해드립니다.</p>
+					<img src="./images/etc/dwarf.gif">
+				</div>
+				<div id="card_back" class="back">
+					<p class="title">던파 노가다 - 어디로 갈까?</p>
+					<hr/>
+					<p class="yellow">노가다 던전 수익 순위</p>
+					<p>1. <span id="output_1"></span> (<span id="gold_1"></span> 골드)</p>
+					<p>2. <span id="output_2"></span> (<span id="gold_2"></span> 골드)</p>
+					<p>3. <span id="output_3"></span> (<span id="gold_3"></span> 골드)</p>
+					<hr/>
+					<p class="right">∴ 추천 던전 : <span id="recommend" class="yellow"></span></p>
+					<img src="./images/etc/dwarf.gif">
+				</div>
+			</div>
+			
+			<input id="to_input" type="button" value="가격 입력" />
+			<input id="to_output" type="button" value="결과 분석" />
+			
+		</div>
+
+		<script type="text/javascript" src="./js/nogada_data.js"></script>	
+	
+		<script type="text/javascript" src="./js/nogada_analyse.js"></script>
+	
+	
+	</body>
+</html>

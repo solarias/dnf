@@ -1,0 +1,42 @@
+﻿<html>
+<head></head>
+<body>
+
+<div id="press">
+	1/6의 확률로 교단의 신발이 나옵니다. 버튼을 눌려서 몇 번 만에 나오는지 확인해보세요.
+	<br/>
+	<input id="click" type="button" value="교단의 신발이여, 나와라!" />
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<input id="reset" type="button" value="리셋" />
+</div>
+<div id="show">
+</div>
+
+<script type="text/javascript">
+	var temp;
+	var count = 1;
+	var chance = 1/6;
+	
+	window.onload = function() {
+		document.getElementById("click").onclick = function() {
+			temp = Math.random();
+			if (temp > chance) {
+				document.getElementById("show").innerHTML += "" + count + "번째 시도 : 실패...<br/>";
+				count += 1;
+			} else {
+				document.getElementById("show").innerHTML += "" + count + "번째 시도 : <strong>성공!</strong>";
+				document.getElementById("click").disabled = "disabled";
+			}
+		}
+		
+		
+		document.getElementById("reset").onclick = function() {
+			count = 1;
+			document.getElementById("show").innerHTML = "";
+				document.getElementById("click").disabled = "";
+		}
+	}
+</script>
+
+</body>
+</html>

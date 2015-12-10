@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<link rel="stylesheet" type="text/css" href="./css/scroll.css" />
+		
+		<title>+12 강화권 시뮬레이터</title>
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="top">
+			<div style="float:left;margin-left:5px;">
+				<p>
+					<select id="weapon">
+						<option selected disabled>(무기를 선택하세요)</option>
+						<optgroup label="귀검사,다크나이트,나이트">
+							<option value="w0101">구원의 이기 - 소검</option>
+							<option value="w0102">구원의 이기 - 도</option>
+							<option value="w0103">구원의 이기 - 둔기</option>
+							<option value="w0104">구원의 이기 - 대검</option>
+							<option value="w0105">구원의 이기 - 광검</option>
+						</optgroup>
+						<optgroup label="격투가">
+							<option value="w0201">구원의 이기 - 너클</option>
+							<option value="w0202">구원의 이기 - 건틀렛</option>
+							<option value="w0203">구원의 이기 - 클로</option>
+							<option value="w0204">구원의 이기 - 권투글러브</option>
+							<option value="w0205">구원의 이기 - 통파</option>
+						</optgroup>
+						<optgroup label="거너">
+							<option value="w0301">구원의 이기 - 리볼버</option>
+							<option value="w0302">구원의 이기 - 자동권총</option>
+							<option value="w0303">구원의 이기 - 머스켓</option>
+							<option value="w0304">구원의 이기 - 핸드캐넌</option>
+							<option value="w0305">구원의 이기 - 보우건</option>
+						</optgroup>
+						<optgroup label="마법사,크리에이터">
+							<option value="w0401">구원의 이기 - 창</option>
+							<option value="w0402">구원의 이기 - 봉</option>
+							<option value="w0403">구원의 이기 - 로드</option>
+							<option value="w0404">구원의 이기 - 스태프</option>
+							<option value="w0405">구원의 이기 - 빗자루</option>
+						</optgroup>
+						<optgroup label="프리스트">
+							<option value="w0501">구원의 이기 - 십자가</option>
+							<option value="w0502">구원의 이기 - 염주</option>
+							<option value="w0503">구원의 이기 - 토템</option>
+							<option value="w0504">구원의 이기 - 낫</option>
+							<option value="w0505">구원의 이기 - 배틀액스</option>
+						</optgroup>
+						<optgroup label="도적">
+							<option value="w0601">구원의 이기 - 단검</option>
+							<option value="w0602">구원의 이기 - 쌍검</option>
+							<option value="w0603">구원의 이기 - 완드</option>
+							<option value="w0604">구원의 이기 - 차크라 웨펀</option>
+						</optgroup>
+					</select>
+					에 <strong>+12 장비 강화권</strong>을 사용합니다.
+				</p>
+			</div>
+			
+			<input id="clear" class="off" type="button" value="초기화" disabled />
+		</div>
+		
+		<div id="center_left">
+			<img id="center_left_back" class="back" src="./images/selfish/back0.png">
+			<img id="center_left_target" class="target" src="">
+		</div>
+		<div id="center_right">
+			<div id="now" style="clear:both;">
+				<img id="now_img" src='./images/selfish/yong0.png' />
+				<div id="now_text">
+					상단에서 무기를 선택해주세요.
+				</div>
+			</div>
+			
+			<div id="message" style="clear:both;">
+				<img id="message_img" src='' />
+				<div id="message_text">
+				</div>
+			</div>
+			
+			<div id="show" style="clear:both;">
+				<div id="show_right">
+					<div id="show_bar">
+					</div>
+				</div>
+				<div id="show_text">
+					강화 대기 중
+				</div>
+			</div>
+		</div>
+		
+		<div id="store">
+			<table id="store_table">
+				<tbody>
+					<tr class="head">
+						<td class="col_1">
+						</td>
+						<td class="col_2">
+							아이템 명칭
+						</td>
+						<td class="col_3">
+							사용
+						</td>
+						<td class="col_4">
+							횟수
+						</td>
+						<td class="col_5_head">
+							1회 사용 가격
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>1프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant1" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							300만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>5프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant2" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							1200만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>10프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant3" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							3200만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>30프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant4" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							9000만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>50프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant5" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							1억 4300만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>70프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant6" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							2억 0000만 0000 Gold
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<strong>90프로</strong> +12 장비 강화권
+						</td>
+						<td class="col_3">
+							<input id="enchant7" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td class="col_4">
+							0
+						</td>
+						<td class="col_5">
+							2억 6000만 0000 Gold
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="record">
+			<div id="record_head">
+				<table>
+					<tr>
+						<td class="col_1"><img src="" /></td>
+						<td class="col_2">회차</td>
+						<td class="col_3">확률</td>
+						<td class="col_4">결과</td>
+						<td class="col_5">등급 변화</td>
+						<td class="col_6">아이템</td>
+					</tr>
+				</table>
+			</div>
+			<div id="record_display">
+				<table id="record_table">
+				</table>
+			</div>
+		</div>
+		
+		<div id="result">
+			총 소모 
+				<img src='./images/selfish/gold.png' />
+			 : 
+			<span id="result_num">0</span>
+			Gold
+			
+			<input id="record_clear" class="off" type="button" value="기록만 초기화" />
+		</div>
+			
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<div id="imagePreloader">
+		</div>
+	
+	</div>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		
+	</body>
+</html>

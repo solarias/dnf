@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>저격 테스트</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+				p, span {
+					font-size:inherit;
+				}
+			
+			#wrapper {
+				position:relative;
+				overflow:hidden;
+				
+				margin:0px auto;
+				width:400px;
+				height:400px;
+				
+				background:white;
+			}
+			
+			.target {
+				position:absolute;
+				left:75px;
+				bottom:0px;
+				z-index:1;
+				
+				width:250px;
+				height:0px;/*원래 높이 : 320px*/
+				
+				outline:5px black solid;
+				
+				display:none;
+			}
+			
+			#sniper {
+				position:absolute;
+				z-index:2;
+				
+				width:400px;
+				height:400px;
+				
+				background:url(./images/etc/sniper.png);
+			}
+			
+			#cover {
+				position:absolute;
+				z-index:5;
+				
+				width:100%;
+				height:100%;
+				
+				background:white;
+				
+				font-size:50px;
+				font-weight:bold;
+				text-align:center;
+				line-height:400px;
+			}
+			#imagePreloader {
+				width:1px;
+				height:1px;
+				
+				display:none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<img id="target_1" class="target" src="./images/etc/kiri.png" />
+			<img id="target_2" class="target" src="./images/etc/clonter.png" />
+			<img id="target_3" class="target" src="./images/etc/jun.png" />
+			<img id="target_4" class="target" src="./images/etc/injil.png" />
+			
+			<div id="sniper">
+			</div>
+			
+			<div id="cover">
+				로딩 중...
+			</div>
+			
+			<div id="imagePreloader"></div>
+			
+		</div>
+	
+	
+		<script type="text/javascript">
+			var track = {
+				shot:new Audio('http://cfile204.uf.daum.net/attach/26526E43561122934AA2B6'),
+				hit:new Audio('http://cfile230.uf.daum.net/attach/2245BC3F561122811A8C06'),
+				
+				kiri:new Audio('http://cfile216.uf.daum.net/attach/2107764B56112F7F0DC05D'),
+				clonter:new Audio('http://cfile227.uf.daum.net/attach/2178184B56112F811EB690'),
+				jun:new Audio('http://cfile203.uf.daum.net/attach/210C3B4B56112F7E080C5F'),
+				helpme:new Audio('http://cfile230.uf.daum.net/attach/2558443F56112281045749'),
+				
+				no:new Audio('http://cfile226.uf.daum.net/attach/267B194356112539287D64')
+			}
+			var audio = new Audio;
+			
+			var auto;
+			var imageList = [];
+			
+			
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+			function decide() {
+				var arr = [1,2,3,4];
+				var rand = arr[Math.floor(Math.random() * arr.length)];
+				
+				$("#target_" + rand.toString()).style.display = "block";
+				
+				switch (rand) {
+					case 1:
+						audio.pause();
+						audio.currentTime = 0;
+						audio = track["kiri"];
+						audio.play();
+						
+						break;
+					case 2:
+						audio.pause();
+						audio.currentTime = 0;
+						audio = track["clonter"];
+						audio.play();
+						
+						break;
+					case 3:
+						audio.pause();
+						audio.currentTime = 0;
+						audio = track["jun"];
+						audio.play();
+						
+						break;
+					case 4:
+						audio.pause();
+						audio.currentTime = 0;
+						audio = track["helpme"];
+						audio.play();
+						
+						break;
+				}
+				
+				rise(rand);
+			}
+			
+			function rise(rand) {
+				var a = 320;
+				
+				clearTimeout(auto);
+				clearInterval(auto);
+				auto = setInterval(function() {
+					a -= 20;
+					var calc = Math.pow(Math.pow(320,2) - Math.pow(a,2),1/2);
+					
+					if (calc < Math.pow(Math.pow(320,2) - Math.pow(a - 20,2),1/2)) {
+						$("#target_" + rand.toString()).style.height = (calc).toString() + "px";
+					} else {
+						$("#target_" + rand.toString()).style.height = "320px";
+						clearInterval(auto);
+						
+						$("#sniper").onclick = function() {
+							$("#sniper").onclick = null;
+							
+							shot(rand);
+						}
+						
+						clearTimeout(auto);
+						clearInterval(auto);
+						auto = setTimeout(function() {
+							$("#sniper").onclick = null;
+							
+							drop(rand);
+						},3000);
+					}
+				},1000/60);
+			}
+			
+			function shot(rand) {
+				$("#sniper").style.background = "url(./images/etc/sniper2.png)";
+				setTimeout(function() {
+					$("#sniper").style.background = "url(./images/etc/sniper.png)";
+				},300);
+					
+				if (rand == 4) {
+					audio.pause();
+					audio.currentTime = 0;
+					audio = track["no"];
+					audio.play();
+				} else {
+					audio.pause();
+					audio.currentTime = 0;
+					audio = track["hit"];
+					audio.play();
+				}
+				
+				drop(rand);
+			}
+			
+			function drop(rand) {
+				$("#sniper").onclick = function() {
+					$("#sniper").style.background = "url(./images/etc/sniper2.png)";
+					setTimeout(function() {
+						$("#sniper").style.background = "url(./images/etc/sniper.png)";
+					},300);
+					
+					audio.pause();
+					audio.currentTime = 0;
+					audio = track["shot"];
+					audio.play();
+				}
+				
+				var a = 0;
+				
+				clearTimeout(auto);
+				clearInterval(auto);
+				auto = setInterval(function() {
+					a += 20;
+					var calc = Math.pow(Math.pow(320,2) - Math.pow(a,2),1/2);
+					
+					if (calc > 0) {
+						$("#target_" + rand.toString()).style.height = (calc).toString() + "px";
+					} else {
+						$("#target_" + rand.toString()).style.height = "0px";
+						
+						clearInterval(auto);
+						clearTimeout(auto);
+						auto = setTimeout(function() {
+							decide();
+						},3000);
+					}
+				},1000/60);
+			}
+			
+			// 이미지 선로딩 (원본 출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
+			function loadImages(arr,callBack){ 
+				var imagesArray = [];
+				var img;
+				var remaining = arr.length;
+				for (var i = 0; i < arr.length; i++) {
+					img = new Image();
+					img.onload = function() {
+						//내부 처리
+						--remaining;
+						if (remaining <= 0) {
+							callBack();
+						};
+					};
+					img.onerror = function() {
+						--remaining;
+						if (remaining <= 0) {
+							callBack();
+						};
+					};
+					img.src = arr[i];
+					document.getElementById("imagePreloader").innerHTML += "<img src='" + arr[i] + "' />";
+					imagesArray.push(img);
+				};
+			};
+			
+			window.onload = function() {
+				imageList.push('./images/etc/kiri.png');
+				imageList.push('./images/etc/clonter.png');
+				imageList.push('./images/etc/jun.png');
+				imageList.push('./images/etc/injil.png');
+				imageList.push('./images/etc/sniper.png');
+				imageList.push('./images/etc/sniper2.png');
+				
+				
+				loadImages(imageList,function() {
+					$("#cover").style.display = "none"
+					
+					$("#sniper").onclick = function() {
+						$("#sniper").style.background = "url(./images/etc/sniper2.png)";
+						setTimeout(function() {
+							$("#sniper").style.background = "url(./images/etc/sniper.png)";
+						},300);
+						
+						audio.pause();
+						audio.currentTime = 0;
+						audio = track["shot"];
+						audio.play();
+					}
+					
+					auto = setTimeout(function() {
+						decide()
+					},2000);
+					
+				})
+			}
+		</script>
+	
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="counter hit make" ><script  type="text/javascript" >
+try {Histats.start(1,3194585,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3194585&101" alt="counter hit make" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+	
+	</body>
+</html>

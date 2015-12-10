@@ -1,0 +1,1832 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+/*컬러링(등급)*/
+.uncommon {
+	color:skyblue;
+	font-size:inherit;
+}
+.rare {
+	color:#B36BFF;
+	font-size:inherit;
+}
+.unique {
+	color:#FF00FF;
+	font-size:inherit;
+}
+.epic {
+	color:#E5B64A;
+	font-size:inherit;
+}
+.set {
+	color:#59FF00;
+}
+.jogak {
+	color:#7F6A00;
+	font-size:inherit;
+}
+/*컬러링(일반)*/
+.red {
+	color:orange;
+	font-size:inherit;
+}
+.orange {
+	color:orange;
+	font-size:inherit;
+}
+.yellow{
+	color:yellow;
+	font-size:inherit;
+}
+.white {
+	color:white;
+	font-size:inherit;
+}
+/*텍스트 양식*/
+.bold {
+	font-weight:bold;
+}
+.u {
+	text-decoration:underline;
+}
+.center {
+	text-align:center;
+}
+
+
+/*======================================================================================================*/
+/* ※ A. 전체 */
+/*======================================================================================================*/
+body {
+	background-color:#FFFFCC;
+}
+	p, span {
+		font-size:inherit;
+	}
+
+#wrapper {
+	position:relative;
+	
+	width:925px;
+	height:600px;
+}
+/*======================================================================================================*/
+/* ※ 1. 좌단 */
+/*======================================================================================================*/
+#frame_left {
+	clear:both;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	
+	padding:0px 5px;
+	width:185px;
+	height:600px;
+	
+	background-image:url('../images/epic/menu_background.png');
+	border-right:1px gray solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	font-size:14px;
+}
+		#frame_left select{
+			width:100%;
+			border:1px gray solid;
+		}
+		#frame_left p {
+			margin-bottom:1px;
+		}
+		#frame_left p.title {
+			position:absolute;
+			top:-25px;
+			
+			width:162px;
+			height:25px;
+			
+			background:url('../images/epic/wrap_title.png');
+			border:1px white solid;
+			border-bottom:1px gray solid;
+			border-top-left-radius:5px;
+			border-top-right-radius:5px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:18px;
+			font-weight:bold;
+			text-align:center;
+		}
+		#frame_left p.center {
+			font-weight:bold;
+			text-align:center;
+		}
+		#frame_left p.large {
+			font-size:23px;
+			font-weight:bold;
+		}
+		#frame_left p.small {
+			font-size:12px;
+		}
+		#frame_left hr {
+			margin:8px 0px;
+			border:1px black dashed;
+		}
+		#frame_left .bold {
+			font-weight:bold;
+		}
+		#frame_left .gap {
+			margin-top:20px;
+		}
+		#frame_left .long_gap {
+			margin-top:30px;
+		}
+		#frame_left .short_gap {
+			margin-top:10px;
+		}
+		#frame_left .min_gap {
+			margin-top:5px;
+		}
+	#frame_left .wrap{
+		position:relative;
+		
+		padding:5px;
+		width:100%;
+		height:auto;
+		
+		background-color:rgba(220,220,220,0.7);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3DCDCDC,endColorstr=#B3DCDCDC); 
+		border:1px white solid;
+		border-radius:2px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#frame_left .wrap select{
+			width:160px;
+		}
+		#frame_left .wrap .white_back {
+			background-color:white;
+		}
+	
+	#frame_left select#dungeon {
+		height:30px;
+		
+		background:#F4FA58;
+		border:1px gray outset;
+		
+		font-size:20px;
+		font-weight:bold;
+	}
+	#difficulty {
+		background:#F4FA58;
+	}
+
+	#start1, #start2 {
+		width:100%;
+		height:40px;
+		
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+		
+		border:1px gray outset;
+		border-radius:3px;
+		
+		font-size:25px;
+		font-weight:bold;
+	}
+			#start1 {
+				height:25px;
+				
+				border-radius:5px;
+				
+				font-size:16px;
+			}
+			#start2 {
+				position:absolute;
+				bottom:4px;
+				
+				width:162px;
+			}
+		#start1:hover, #start2:hover {
+			border:1px white solid;
+		}
+		#start1:active, #start2:active {
+			background: #DEDEDE;
+		}
+
+	#objective.wrap{
+		height:335px;
+	}
+		#objective input[type="text"] {
+			padding-left:5px;
+			width:100%;
+			height:20px;
+			
+			background:white;
+			border:1px black solid;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:16px;
+		}
+			
+		
+		#objective_none {
+			width:auto;
+			height:auto;
+			display:block;
+		}
+			#objective_none p {
+				margin-bottom:10px;
+				
+				font-size:12px;
+			}
+		#objective_item {
+			display:none;
+		}
+			#objective_item_first {
+				background:#F4FA58;
+			}
+		#objective_set {
+			display:none;
+		}
+			#objective_set_first {
+				background:#F4FA58;
+			}
+		#objective_count {
+			display:none;
+		}
+		#objective_cost {
+			display:none;
+		}
+		#objective_fatigue {
+			display:none;
+		}
+
+	p.notice {
+		margin:7px 0px 15px 0px;
+		
+		font-size:14px;
+		
+		display:inline-block;
+	}
+		p.notice a {
+			color:blue;
+			font-weight:bold;
+			text-decoration:underline;
+		}
+			p.notice a:hover {
+				color:red;
+			}
+
+/*======================================================================================================*/
+/* ※ 2. 상단 */
+/*======================================================================================================*/
+#frame_top {
+	float:right;
+	overflow:hidden;
+	position:relative;
+	
+	width:740px;
+	height:500px;
+	
+	background-image:url('../images/epic/background_0.jpg');
+	
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+	/*======================================================================================================*/
+	/* ※ 2.1 안내문구 - 시작 */
+	/*======================================================================================================*/
+	#frame_top .notice {
+		position:absolute;
+		z-index:101;
+		
+		padding:3px;
+		width:205px;
+		
+		background:black;
+		background:rgba(0,0,0,0.8);
+		border:1px white solid;
+		border-radius:5px;
+		
+		color:white;
+		font-size:12px;
+			
+		display:none;
+	}
+		#frame_top .notice#notice_dungeon {
+			top:65px;
+			left:3px;
+		}
+		#frame_top .notice#notice_difficulty {
+			top:135px;
+			left:3px;
+		}
+		#frame_top .notice#notice_channel {
+			top:170px;
+			left:3px;
+		}
+	/*======================================================================================================*/
+	/* ※ 2.1 안내문구 - 끝 */
+	/*======================================================================================================*/
+	#round {
+		position:absolute;
+		top:5px;
+		left:5px;
+		z-index:10;
+		
+		padding:5px 7px;
+		width:320px;
+		height:35px;
+		
+		background-color:black;
+		border:1px gray solid;
+		border-radius:10px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		font-size:21px;
+		font-weight:bold;
+	}
+		#date {
+			position:absolute;
+			top:40px;
+			left:15px;
+			z-index:10;
+			
+			padding:5px 3px 5px 7px;
+			width:300px;
+			height:28px;
+			
+			background-color:rgba(10,10,10,0.7);
+			border:1px gray solid;
+				border-top:0px;
+				border-bottom-left-radius:5px;
+				border-bottom-right-radius:5px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:16px;
+			font-weight:bold;
+		}
+			#date_summary {
+				display:none;
+			}
+		#date_config {
+			float:right;
+			margin-top:-2px;
+			
+			width:65px;
+			height:22px;
+		
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+			
+			border:1px gray outset;
+			border-radius:3px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:12px;
+			font-weight:bold;
+			
+			display:block;
+		}
+				#date_config:hover {
+					border:1px white solid;
+				}
+				#date_config:active {
+					background: #DEDEDE;
+				}
+			#date_config.cancel {
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+			}
+					#date_config.cancel:hover {
+						
+					}
+					#date_config.cancel:active {
+						background: #FFAA00;
+					}
+		
+		
+		#date_setting {
+			position:absolute;
+			top:68px;
+			left:135px;
+			z-index:10;
+			
+			padding:5px;
+			width:163px;
+			height:257px;
+			
+			background:rgba(220,220,220,0.8);
+			border:1px gray solid;
+			border-top:0px;
+				border-bottom-left-radius:5px;
+				border-bottom-right-radius:5px;
+			
+			font-size:13px;
+			
+			display:none;
+		}
+			#date_setting p {
+				margin-bottom:2px;
+				padding:2px;
+				height:17px;
+				
+				font-weight:bold;
+			}
+				#date_setting p.date_description {
+					height:17px;
+					
+					font-size:12px;
+					font-weight:normal;
+				}
+			#date_setting hr {
+				margin-top:2px;
+				margin-bottom:4px;
+				
+				border-top:1px black solid;
+			}
+			#date_setting input[type="text"] {
+				float:right;
+				
+				margin:-2px -2px 0px 0px;
+				padding:2px;
+				width:40px;
+				height:21px;
+				
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				font-size:15px;
+				text-align:right;
+				
+				display:block;
+			}
+			#date_setting select, #date_setting option {
+				float:right;
+				
+				margin:-2px -2px 0px 0px;
+				width:80px;
+				height:21px;
+				
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				font-size:12px;
+				
+				display:block;
+			}
+			
+			#date_cancel {
+				float:left;
+				
+				margin:5px 0px 0px -5px;
+				width:50px;
+				height:30px;
+				
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+				
+				border:1px gray outset;
+				border-radius:3px;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				font-size:14px;
+				font-weight:bold;
+				
+				display:block;
+			}
+				#date_cancel:hover {
+					border:1px white solid;
+				}
+				#date_cancel:active {
+					background: #FFAA00;
+				}
+			#date_apply {
+				float:right;
+				
+				margin:5px -5px 0px 0px;
+				width:110px;
+				height:30px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:3px;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				font-size:20px;
+				font-weight:bold;
+				
+				display:block;
+			}
+				#date_apply:hover {
+					border:1px white solid;
+				}
+				#date_apply:active {
+					background: #DEDEDE;
+				}
+		
+	
+	#reset {
+		position:absolute;
+		top:5px;
+		right:5px;
+		z-index:10;
+		
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+		
+		border:1px gray outset;
+		border-radius:3px;
+		
+		width:177px;
+		height:30px;
+		
+		font-size:20px;
+		font-weight:bold;
+	}
+		#reset:hover {
+			border:1px white solid;
+		}
+		#reset:active {
+			background: #FFAA00;
+		}
+		
+	#person {
+		position:absolute;
+		top:40px;
+		right:10px;
+		
+		color:white;
+		color:rgba(255,255,255,0.8);
+		font-size:15px;
+		font-weight:bold;
+		font-style:italic;
+		text-align:right;
+	}
+		
+	#filter {
+		position:absolute;
+		bottom:5px;
+		left:5px;
+		z-index:10;
+		
+		padding:3px;
+		padding-left:6px;
+		width:205px;
+		height:70px;
+		
+		background-color:rgba(192,192,192,0.7);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3C0C0C0,endColorstr=#B3C0C0C0);
+		border-radius:8px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		font-size:14px;
+		font-weight:bold;
+		line-height:140%;
+	}
+		#filter input[type="checkbox"] {
+			width:17px;
+			height:17px;
+			
+			vertical-align:top;
+		}
+		#filter input[type="checkbox"]:hover {
+			cursor:pointer;
+			cursor:hand;
+		}
+		#filter label:hover {
+			cursor:pointer;
+			cursor:hand;
+			
+			text-decoration:underline;
+		}
+		#filter hr {
+			margin:2px 0px;
+			
+			border:1px black dashed;
+		}
+	
+	/*======================================================================================================*/
+	/* ※ 2.5 팝업창 - 시작 */
+	/*======================================================================================================*/
+	#popup {
+		position:absolute;
+		top:5px;
+		right:5px;
+		z-index:20;
+		
+		padding:0px 5px;
+		width:520px;
+		height:490px;
+		
+		background:rgba(60,80,120,0.7);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B33C5078,endColorstr=#B33C5078);
+		border:1px white solid;
+		border-radius:5px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		display:none;
+	}
+		#popup_title {
+			margin:0px auto;
+			padding:5px;
+			width:100%;
+			
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:yellow;
+			font-size:25px;
+			font-weight:bold;
+			text-align:center;
+		}
+		#popup_title.title_record {
+			margin-left:190px;
+			width:170px;
+			
+			background:url('../images/epic/popup_record.png') no-repeat left center;
+		}
+		#popup_title.title_inventory {
+			margin-left:194px;
+			width:165px;
+			
+			background:url('../images/epic/popup_inventory.png') no-repeat left center;
+		}
+		#popup_title.title_set {
+			margin-left:178px;
+			width:195px;
+			
+			background:url('../images/epic/popup_set.png') no-repeat left center;
+		}
+		#popup_title.title_craft {
+			margin-left:190px;
+			width:170px;
+			
+			background:url('../images/epic/popup_craft.png') no-repeat left center;
+		}
+	
+	/*======================================================================================================*/
+	
+	#popup .filter  {
+		padding:3px;
+		padding-left:7px;
+		width:100%;
+		height:30px;
+		
+		background-color:#DCDCDC;
+		background-color:rgba(220,220,220,0.7);
+		border:1px gray solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:black;
+		font-size:16px;
+	}	
+		#popup .filter .first {
+			width:90px;	
+		}
+		#popup .filter .second {
+			width:90px;	
+		}
+		#popup .filter .third {
+			width:90px;	
+		}
+		#popup .filter .level {
+			width:61px;	
+		}
+		#popup .filter input[type="button"] {
+			width:80px;
+			height:24px;
+			
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+			
+			border:1px gray outset;
+			border-radius:2px;
+			
+			font-size:16px;
+			font-weight:bold;
+		}
+			#popup .filter input[type="button"]:hover {
+				border:1px white solid;
+			}
+			#popup .filter input[type="button"]:active {
+				background: #DEDEDE;
+			}
+	
+	/*======================================================================================================*/
+	
+	#record {
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+		
+		margin-bottom:0px;
+		padding:4px;
+		width:100%;
+		height:368px;
+		
+		background-color:#404040;
+		background-color:rgba(64,64,64,0.8);
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#record span{
+			font-size:12px;
+			font-weight:bold;
+			line-height:120%;
+			
+			display:inline-block;
+		}
+		#record span.equip {
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+		}
+			#record span.run, #record span.get {
+				color:white;
+			}
+		#record span.etc{
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+			
+			color:white;
+			
+			display:none;
+		}
+		#record span.system{
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+			
+			color:white;
+		}
+			#record span.unique{
+				color:#FF00FF;
+			}
+			#record span.epic{
+				color:#E5B64A;
+			}
+			#record span.system{
+				color:#C1C1C1;
+			}
+			#record span.cost{
+				display:none;
+			}
+			#record span.difficulty_0{
+				color:yellow;
+				
+				display:none;
+			}
+			#record span.difficulty_1{
+				color:orange;
+				
+				display:none;
+			}
+			#record span.quantity{
+				color:skyblue;
+				
+				display:none;
+			}
+		
+		#inventory {
+			margin-bottom:0px;
+			width:100%;
+			height:368px;
+			
+			background-color:#404040;
+			background-color:rgba(64,64,64,0.8);
+			border:1px black solid;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+		}
+				#inventory_display {
+					overflow-x:hidden;
+					overflow-y:scroll;
+					-webkit-overflow-scrolling: touch;
+					clear:both;
+					
+					width:100%;
+					height:346px;
+				}
+			#inventory table {
+				width:495px;
+				
+				border:0px;
+				
+				font-size:12px;
+				text-align:center;
+				
+				display: table;
+			}
+			#inventory table tr {
+				display: table;
+			}
+				#inventory_head table tr {
+					background-color:#E5B64A;
+					
+					color:black;
+					font-weight:bold;
+				}
+				/*tr : 기본적으론 보이지 않음*/
+				#inventory_display table tr.not_show {
+					display:none;
+				}
+					/*보유 수량 증가 → 가시화된 tr*/
+					#inventory_display table tr.show {
+						display:block;
+					}
+					#inventory_display table tr.show:hover {
+						background-color:#686868;
+					}
+			#inventory table td {
+				padding:2px;
+				
+				border-right:1px white solid;
+				border-bottom:1px white solid;
+				
+				font-size:12px;
+			}
+				#inventory table .col_1 {/*아이템 명칭*/
+					width:188px;
+				}
+					#inventory_display table .col_1 {/*(하단) 아이템 명칭*/
+						padding-left:10px;
+						width:180px;
+						
+						color:darkgray;
+						text-align:left;
+					}
+						#inventory_display table .col_1 .epic {/*에픽 장비 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#inventory_display table .col_1 .set {/*세트 파츠 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#inventory_display table .col_1 .hap {/*'세트' 굵기*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+				#inventory table .col_2 {/*종류*/
+					width:67px;
+				}
+				#inventory table .col_3 {/*레벨*/
+					width:30px;
+				}
+				#inventory table .col_4 {/*해체*/
+					width:35px;
+				}
+					#inventory table .col_4 a {/*해체 버튼*/
+						color:orange;
+						font-size:12px;
+						font-weight:bold;
+						text-decoration:underline;
+					}
+						#inventory table .col_4 a:hover {/*해체 버튼*/
+							color:red;
+						}
+				#inventory table .col_5 {/*수량*/
+					width:30px;
+				}
+				#inventory table .col_6 {/*수량*/
+					width:114px;
+				}
+					#inventory_display table .col_6 {/*수량*/
+						padding-left:5px;
+						width:112px;
+						
+						text-align:left;
+					}
+					#inventory_display table .col_6 span.cost {/*수량*/
+						display:none;
+					}
+
+		#set {
+			margin-bottom:0px;
+			width:100%;
+			height:368px;
+			
+			background-color:#404040;
+			background-color:rgba(64,64,64,0.8);
+			border:1px black solid;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+		}
+				#set_display {
+					overflow-x:hidden;
+					overflow-y:scroll;
+					-webkit-overflow-scrolling: touch;
+					clear:both;
+					
+					width:100%;
+					height:346px;
+				}
+			#set table {
+				width:495px;
+				
+				border:0px;
+				
+				font-size:12px;
+				text-align:center;
+				
+				display: table;
+			}
+			#set table tr {
+				display: table;
+			}
+				#set_head table tr {
+					background-color:#59FF00;
+					
+					color:black;
+					font-weight:bold;
+				}
+				/*tr : 기본적으론 보이지 않음*/
+				#set_display table tr.not_show {
+					display:none;
+				}
+					/*보유 수량 증가 → 가시화된 tr*/
+					#set_display table tr.show {
+						display:block;
+					}
+					#set_display table tr.show:hover {
+						background-color:#686868;
+					}
+			#set table td {
+				padding:2px;
+				
+				border-right:1px white solid;
+				border-bottom:1px white solid;
+				
+				font-size:12px;
+			}
+				#set table .col_1 {/*아이템 명칭*/
+					width:205px;
+				}
+					#set_display table .col_1 {/*(하단) 아이템 명칭*/
+						padding-left:10px;
+						width:197px;
+						
+						color:darkgray;
+						text-align:left;
+					}
+						#set_display table .col_1 .epic {/*에픽 장비 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#set_display table .col_1 .set {/*세트 파츠, 완성된 '세트' 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#set_display table .col_1 .white {/*진행중 '세트' 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#set_display table .show .col_1 {/*보이는 거*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#set_display table .hap .col_1 {/*진행중 '세트' 이름*/
+							font-size:16px;
+						}
+						#set_display table .hap.show .col_1 {/*진행중 '세트' 이름*/
+							color:#C1C1C1;
+							text-decoration:underline;
+						}
+				#set table .col_2 {/*종류*/
+					width:50px;
+				}
+				#set table .col_3 {/*레벨*/
+					width:30px;
+				}
+				#set table .col_4 {/*해체*/
+					width:35px;
+				}
+					#set table .col_4 a {/*해체 버튼*/
+						color:orange;
+						font-size:12px;
+						font-weight:bold;
+						text-decoration:underline;
+					}
+						#set table .col_4 a:hover {/*해체 버튼*/
+							color:red;
+						}
+				#set table .col_5 {/*수량*/
+					width:30px;
+				}
+				#set table .col_6 {/*수량*/
+					width:115px;
+				}
+					#set_display table .col_6 {/*수량*/
+						padding-left:5px;
+						width:112px;
+						
+						text-align:left;
+					}
+					#set_display table .col_6 span.cost {/*수량*/
+						display:none;
+					}
+	
+		#craft {
+			margin-bottom:0px;
+			width:100%;
+			height:368px;
+			
+			background-color:#404040;
+			background-color:rgba(64,64,64,0.8);
+			border:1px black solid;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+		}
+				#craft_display {
+					overflow-x:hidden;
+					overflow-y:scroll;
+					-webkit-overflow-scrolling: touch;
+					clear:both;
+					
+					width:100%;
+					height:346px;
+				}
+			#craft table {
+				width:495px;
+				
+				border:0px;
+				
+				font-size:12px;
+				text-align:center;
+				
+				display: table;
+			}
+			#craft table tr {
+				display: table;
+			}
+				#craft_head table tr {
+					background-color:#00A7FF;
+					
+					color:black;
+					font-weight:bold;
+				}
+				/*tr : 기본적으론 보이지 않음*/
+				#craft_display table tr.not_show {
+					display:none;
+				}
+					/*보유 수량 증가 → 가시화된 tr*/
+					#craft_display table tr.show {
+						display:block;
+					}
+					#craft_display table tr.show:hover {
+						background-color:#686868;
+					}
+			#craft table td {
+				padding:2px;
+				
+				border-right:1px white solid;
+				border-bottom:1px white solid;
+				
+				font-size:12px;
+			}
+				#craft table .col_1 {/*아이템 명칭*/
+					width:177px;
+				}
+					#craft_display table .col_1 {/*(하단) 아이템 명칭*/
+						padding-left:10px;
+						width:168px;
+						
+						color:darkgray;
+						text-align:left;
+					}
+						#craft_display table .col_1 .epic {/*에픽 장비 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#craft_display table .col_1 .set {/*세트 파츠 이름*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+						#craft_display table .col_1 .hap {/*'세트' 굵기*/
+							font-weight:bold;
+							text-decoration:none;
+						}
+				#craft table .col_2 {/*종류*/
+					width:67px;
+				}
+				#craft table .col_3 {/*레벨*/
+					width:30px;
+				}
+				#craft table .col_4 {/*조각 수*/
+					width:30px;
+				}
+				#craft table .col_5 {/*조각 수*/
+					width:50px;
+				}
+				#craft table .col_6 {/*제작*/
+					width:50px;
+				}
+					#craft table .col_6.button {/*제작 버튼*/
+						background: #FFFFFF; /* default */
+						background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+						background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+						background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+						-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+						
+						color:black;
+						font-size:12px;
+						font-weight:bold;
+						
+						cursor:pointer;
+						cursor:hand;
+					}
+					#craft table .col_6.button:hover {/*제작 버튼*/
+						background: #516BFF; /* default */
+						background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+						background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+						background: linear-gradient(to bottom, #ffffff, #516BFF);
+					}
+					#craft table .col_6.button:active {/*제작 버튼*/
+						background: #3855FF;
+					}
+				#craft table .col_7 {/*가격*/
+					width:60px;
+				}
+	
+	/*======================================================================================================*/
+	
+	#checkbox {
+		position:absolute;
+		top:100px;
+		right:524px;
+		z-index:21;
+		
+		padding:5px;
+		width:200px;
+		height:220px;
+		
+		background:#3C5078;
+		background:rgba(60,80,120,0.8);
+		border:1px white solid;
+		border-right:0px;
+		border-top-left-radius:5px;
+		border-bottom-left-radius:5px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		font-size:12px;
+		font-weight:bold;
+		line-height:200%;
+		
+		display:none;
+	}
+			#checkbox p {
+				font-size:12px;
+			}
+			#checkbox p.title {
+				color:yellow;
+				font-size:25px;
+				text-align:center;
+			}
+			#checkbox p.center {
+				font-size:15px;
+				text-align:center;
+			}
+			#checkbox hr {
+				margin:5px 0px;
+				border-top:1px white solid;
+			}
+			#checkbox input[type="checkbox"] {
+				width:18px;
+				height:18px;
+				
+				vertical-align:middle;
+			}
+				#checkbox input[type="checkbox"]:hover {
+					cursor:pointer;
+					cursor:hand;
+				}
+				#checkbox label {
+					font-size:inherit;
+				}
+				#checkbox label:hover {
+					cursor:pointer;
+					cursor:hand;
+					
+					text-decoration:underline;
+				}
+			#checkbox input[type="button"] {
+				position:absolute;
+				bottom:5px;
+				
+				width:189px;
+				height:30px;
+				
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+				
+				border:1px gray outset;
+				border-radius:2px;
+				
+				font-size:16px;
+				font-weight:bold;
+				
+				display:block;
+			}
+				#checkbox input[type="button"]:hover {
+					border:1px white solid;
+				}
+				#checkbox input[type="button"]:active {
+					background: #FFAA00;
+				}
+		#inventory_check, #set_check, #craft_check {
+			display:none;
+		}
+	
+	/*======================================================================================================*/
+	
+	#shift1, #shift2, #shift3, #shift4 {
+		position:absolute;
+		z-index:100;
+		
+		height:40px;
+		
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+		
+		border:1px gray outset;
+		border-radius:3px;
+		
+		font-size:22px;
+		font-weight:bold;
+	}
+		#shift1 {
+			right:375px;
+			bottom:10px;
+			
+			width:143px;
+		}
+		#shift2 {
+			right:228px;
+			bottom:10px;
+			
+			width:143px;
+		}
+		#shift3 {
+			right:81px;
+			bottom:10px;
+			
+			width:143px;
+		}
+		#shift4 {
+			right:10px;
+			bottom:10px;
+			
+			width:67px;
+		}
+			#shift1:hover, #shift2:hover, #shift3:hover, #shift4:hover {
+				border:1px white solid;
+			}
+			#shift1:active, #shift2:active, #shift3:active, #shift4:active {
+				background: #DEDEDE;
+			}
+	#shift1.selected, #shift2.selected, #shift3.selected, #shift4.selected {
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+	}
+			#shift1.selected:active, #shift2.selected:active, #shift3.selected:active, #shift4.selected:active {
+				background: #FFAA00;
+			}
+	/*======================================================================================================*/
+	/* ※ 2.5 팝업창 - 끝 */
+	/*======================================================================================================*/
+	
+	.item {
+		position:absolute;
+		top:180px;
+		left:462px;
+	}
+		.description {
+			position:absolute;
+			top:0px;
+			left:0px;
+			z-index:4;
+		}
+			.description.normal {
+				display:none;
+			}
+			.description.jogak {
+				display:none;
+			}
+		.item_name {
+			padding:3px 5px;
+			width:auto;
+			
+			background:rgba(0,0,0,0.6);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000); 
+			border:1px #B89F7C solid;
+			border-radius:5px;
+			
+			font-size:12px;
+			font-weight:bold;
+			white-space:nowrap;
+			
+			display:inline-block;
+			visibility:hidden;
+		}
+		.item_img {
+			position:absolute;
+			top:25px;
+			z-index:2;
+			
+			width:1px;
+			height:1px;
+			
+			background-image:url('../sprite/images/sprite_item.png');
+			background-position:0px 0px;
+			
+			visibility:hidden;
+		}
+			.item_img.rotate {
+				transform:rotate(360deg);
+				
+				-webkit-transition: all 0.72s ease-in-out;
+				-moz-transition: all 0.72s ease-in-out;
+				-o-transition: all 0.72s ease-in-out;
+				transition: all 0.72s ease-in-out;
+			}
+			.item_img.shadow {
+				/*성능 문제로 사용하지 않음
+				filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
+				filter: url(#drop-shadow);
+				-webkit-filter: drop-shadow(2px 2px 7px rgba(0,0,0,0.8));
+				filter: drop-shadow(2px 2px 7px rgba(0,0,0,0.8));
+				*/
+			}
+		
+		.effect_appear {
+			position:absolute;
+			top:0px;
+			height:0px;
+			z-index:3;
+			
+			width:340px;
+			height:396px;
+			
+			background-image:url(../images/epic/epic_appear.png);
+			
+			visibility:hidden;
+		}
+		.effect_land {
+			position:absolute;
+			top:0px;
+			height:0px;
+			z-index:1;
+			
+			width:603px;
+			height:316px;
+			
+			background-image:url(../images/epic/epic_land.png);
+			
+			visibility:hidden;
+		}
+		.effect_wait {
+			position:absolute;
+			top:0px;
+			height:0px;
+			
+			width:187px;
+			height:186px;
+			
+			background-image:url(../images/epic/epic_wait.png);
+			
+			visibility:hidden;
+		}
+
+/*======================================================================================================*/
+/* ※ 3. 하단 */
+/*======================================================================================================*/
+#frame_bottom {
+	clear:right;
+	float:right;
+	overflow:hidden;
+	
+	width:740px;
+	height:100px;
+}
+	#result {
+		float:left;
+		padding:4px;
+		padding-right:2px;
+
+		width:370px;
+		height:100px;
+		
+		background-color:orange;
+		border:1px black solid;
+		border-right:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		font-size:35px;
+	}
+		#result_text {
+			position:relative;
+			
+			padding:4px;
+			width:100%;
+			height:90px;
+			
+			background:#191718;
+			border:1px gray solid;
+			border-radius:5px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:16px;
+			font-weight:bold;
+		}
+			#result_text table tr {
+				height:16px;
+			}
+			#result_text table td {
+				position:relative;
+				
+				height:20px;
+				
+				border-right:1px gray solid;
+				border-bottom:1px gray solid;
+				
+				line-height:100%;
+				text-align:center;
+				vertical-align:center;
+			}
+				#result_text table td.col_1 {
+					width:40px;
+				}
+				#result_text table td.col_2 {
+					padding:0px 5px;
+					width:60px;
+					
+					text-align:right;
+				}
+					#result_text table td.col_2.head {
+						text-align:center;
+					}
+				#result_text table td.col_3 {
+					padding:0px 5px;
+					width:60px;
+					
+					text-align:right;
+				}
+					#result_text table td.col_3.head {
+						text-align:center;
+					}
+				#result_text table td.col_4 {
+					width:50px;
+				}
+						#result_text table td.col_4 div {
+							position:relative;
+							
+							width:50px;
+							height:21px;
+						}
+				#result_text table td.col_5 {
+					width:10px;
+					
+					border-right:0px;
+					border-bottom:0px;
+				}
+				#result_text table td.col_6 {
+					width:25px;
+				}
+				#result_text table td.col_7 {
+					padding:0px 5px;
+					width:75px;
+					
+					text-align:right;
+				}
+					#result_text table td.col_7.head {
+						text-align:center;
+					}
+				#result_text table td.bottom {
+					padding-left:5px;
+					
+					border-right:0px;
+					border-bottom:0px;
+					
+					text-align:left;
+				}
+			#result_text img {
+				width:20px;
+				height:20px;
+				
+				display:block;
+			}
+				#result_text img.left {
+					margin-left:10px;
+				}
+				#result_text img.right {
+					margin-left:3px;
+				}
+				
+			#result_text input[type="button"] {
+				position:absolute;
+				top:0px;
+				left:0px;
+				
+				width:100%;
+				height:100%;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				
+				font-size:14px;
+				font-weight:bold;
+				white-space:pre-line;
+				
+				display:block;
+			}
+				#result_text input[type="button"]:hover {
+					border:1px white solid;
+				}
+				#result_text input[type="button"]:active {
+					background:#DEDEDE;
+				}
+			#result_text input[type="checkbox"] {
+				cursor:pointer;
+				cursor:hand;
+				
+				width:14px;
+				height:14px;
+				
+				vertical-align:bottom;
+			}
+			#result_text label {
+				font-size:14px;
+			}
+				#result_text label:hover {
+					cursor:pointer;
+					cursor:hand;
+					
+					text-decoration:underline;
+				}
+	
+	#cost {
+		float:right;
+		padding:4px;
+		padding-left:2px;
+
+		width:370px;
+		height:100px;
+		
+		background-color:orange;
+		border:1px black solid;
+		border-left:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#cost_text {
+			padding:3px 0px;
+			width:100%;
+			height:90px;
+			
+			background:#191718;
+			border:1px gray solid;
+			border-radius:5px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:16px;
+			font-weight:bold;
+		}
+			#cost_text .line {
+				margin:3px 0px 3px 3px;
+				width:100%;
+				
+				display:inline-block;
+			}
+				#cost_notice {
+					font-size:12px;
+					
+					display:inline;
+				}
+			#line_cover {
+				float:left;
+				
+				width:305px;
+			}
+			#cost_text input {
+				float:right;
+				width:48px;
+				height:58px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				
+				font-size:12px;
+				font-weight:bold;
+				white-space:pre-line;
+				
+				display:inline-block;
+			}
+				#cost_text input:hover {
+					border:1px white solid;
+				}
+				#cost_text input:active {
+					background:#DEDEDE;
+				}
+			#cost_text hr {
+				border-top:1px gray solid;
+			}
+		#cost img {
+			height:16px;
+			vertical-align:top;
+		}
+			
+/*======================================================================================================*/
+/* ※ 4. 기타 */
+/*======================================================================================================*/
+
+#cover {
+    position:absolute;
+	top:0px;
+	left:0px;
+	z-index:100;
+	
+    margin:0;
+    padding:30px;
+	width:925px;
+	height:600px;
+	
+	background-color:#FFFFCC;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	font-weight:bold;
+}
+	#cover p {
+		font-size:20px;
+	}
+	#cover p#cover_notice {
+		font-size:50px;
+	}
+	#cover p a {
+		color:blue;
+		font-size:20px;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+		#cover p a:hover {
+			color:red;
+		}
+	#cover hr {
+		margin-left:0px;
+		margin-bottom:20px;
+		width:620px;
+		
+		border:1px black solid;
+		
+		text-align:left;
+	}
+
+#imagePreloader {
+	width:1px;
+	height:1px;
+	
+	display:none;
+}
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}

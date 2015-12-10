@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title></title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.orange {
+				color:orange;
+			}
+			.yellow {
+				color:yellow;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+				span {
+					font-size:inherit;
+					font-weight:inherit;
+				}
+
+			#wrapper {
+				padding:5px 5px 0px 5px;
+				width:410px;
+				height:143px;
+				
+				background:brown;
+				border:1px black outset;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#image {
+				float:left;
+				width:100px;
+				
+				display:block;
+			}
+			
+			#text {
+				float:right;
+				
+				padding:5px;
+				width:280px;
+				height:95px;
+				
+				background:black;
+				background:rgba(0,0,0,0.7);
+				border-radius:10px;
+			}
+			
+			#today {
+				clear:right;
+				float:right;
+				
+				margin-top:5px;
+				
+				font-size:18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<img id="image" src="./images/m_fortune/normal_cha.png" />
+			<div id="text">
+				오늘은 <span id="channel" class="orange"></span>번 채널이 좋아보이는구나.
+				<br/>
+				과인을 믿고 가보지 않겠는가?
+			</div>
+			<div id="today">
+				오늘의 채널 추천 : <span class="yellow">황녀 에르제</span>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		<script type="text/javascript" src="./js/hell_data.js"></script>
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<script type="text/javascript">
+			//=================================================================================================================
+			//※ 변수
+			//=================================================================================================================
+			var channelList= [//공용 채널 리스트
+				1,6,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,56//
+			];
+			
+					//=================================================================================================================
+					//※ 함수 - 내부 작업용
+					//=================================================================================================================
+					
+					
+			//=================================================================================================================
+			//※ 함수
+			//=================================================================================================================			
+			
+			
+			//=================================================================================================================
+			//※ 실행
+			//=================================================================================================================			
+			window.onload = function() {
+				var temp = channelList[Math.floor(Math.random() * channelList.length)]
+				document.getElementById("channel").innerHTML = temp.toString();
+			}
+		</script>
+	
+	
+	</body>
+</body>

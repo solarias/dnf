@@ -1,0 +1,276 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+.yellow {
+	color:yellow;
+}
+
+p, span {
+	font-size:inherit;
+}
+
+
+#wrapper {
+	margin:0px auto;
+	width:400px;
+	height:300px;
+	
+	background:white;
+	border:1px black solid;
+}
+
+	#card {
+		float:left;
+		
+		position:relative;
+		
+		margin:-1px;
+		width:400px;
+		height:250px;
+		perspective: 500px;
+		transform-style: preserve-3d;
+		
+		border:1px transparent solid;
+		
+		display:block;
+	}
+		#card p {
+			margin:0px 0px 5px 0px;
+			
+			font-size:20px;
+		}
+		#card p.title {
+			font-size:30px;
+			text-align:center;
+		}
+		#card p.right {
+			text-align:right;
+		}
+		
+		#card hr {
+			margin:5px 0px;
+			border-top:1px white solid;
+		}
+		#card input[type="text"] {
+			padding-right:5px;
+			width:105px;
+			
+			border:1px gray outset;
+			
+			text-align:right;
+		}
+		#card img {
+			position:absolute;
+			bottom:5px;
+			left:5px;
+			
+			height:65px;
+		}
+	/*=================================================================================================*/
+	/*※ 카드 뒤집기 - 시작*/
+	/*=================================================================================================*/
+	/*세로로 뒤집기*/
+	.flipcard.v.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.v.flipped .front{
+		-ms-transform:rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
+		-moz-transform:rotateX(180deg);
+		-o-transform:rotateX(180deg);
+		transform: rotateX(180deg);
+	}
+	
+	.flipcard.v.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.v.flipped .back{
+		-ms-transform:rotateX(0deg);
+		-webkit-transform: rotateX(0deg);
+		-moz-transform:rotateX(0deg);
+		-o-transform:rotateX(0deg);
+		transform: rotateX(0deg);
+	}
+	
+	.flipcard.v .back{
+		visibility:hidden;
+	}
+	.flipcard.v .back{
+		-ms-transform:rotateX(-180deg);
+		-webkit-transform: rotateX(-180deg);
+		-moz-transform:rotateX(-180deg);
+		-o-transform:rotateX(-180deg);
+		transform: rotateX(-180deg);
+	}
+	/*세로로 뒤집기*/
+	
+	/*가로로 뒤집기*/
+	.flipcard.h.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.h.flipped .front{
+		-ms-transform:rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-o-transform:rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.flipcard.h.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.h.flipped .back{
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+	
+	.flipcard.h .back{
+		visibility:hidden;
+	}
+	.flipcard.h .back{
+		-ms-transform:rotateY(-180deg);
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform:rotateY(-180deg);
+		-o-transform:rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+	/*가로로 뒤집기*/
+	
+	/*카드 앞뒷면*/
+	.flipcard .front
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(0deg);
+		
+		-ms-transition: 0.6s;
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
+		
+		
+		padding: 5px;
+		width: 100%;
+		height: 100%;
+		
+		background:black;
+		border-radius:10px;
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		
+		color: white;
+		font-weight:bold;
+	}
+
+	.flipcard .back
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(-180deg);
+		
+		-ms-transition: 0.6s;
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
+		
+		padding: 9px 6px;
+		width: 100%;
+		height: 100%;
+		
+		background:brown;
+		border-radius:10px;
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		
+		color: white;
+		font-weight:bold;
+	}
+		.flipcard .back p {
+			font-size:12px;
+		}
+	/*=================================================================================================*/
+	/*※ 카드 뒤집기 - 끝*/
+	/*=================================================================================================*/
+	
+	#to_input {
+		float:left;
+		
+		margin:5px;
+		width:150px;
+		height:40px;
+		
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+		
+		border:1px gray outset;
+		border-radius:4px;
+		
+		font-size:30px;
+		
+		display:none;
+	}
+		#to_input:hover {
+			border:1px skyblue solid;
+		}
+		#to_input:active {
+			background: #DEDEDE;
+		}
+	#to_output {
+		float:right;
+		
+		margin:5px;
+		width:150px;
+		height:40px;
+		
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+		
+		border:1px gray outset;
+		border-radius:4px;
+		
+		font-size:30px;
+		
+		display:block;
+	}
+		#to_output:hover {
+			border:1px skyblue solid;
+		}
+		#to_output:active {
+			background: #DEDEDE;
+		}

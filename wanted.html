@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" />
+		
+		<title>일러스트 현상금 측정기</title>
+		
+		<style type="text/css">
+			
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:"Nanum Gothic", sans-serif;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.yellow {
+				color:yellow;
+			}
+			
+			body {
+				background-color:#808080;
+			}
+				p, span {
+					font-size:inherit;
+				}
+			
+			#wrapper {
+				position:relative;
+				overflow:hidden;
+				
+				margin:0px auto;
+				width:610px;
+				height:800px;
+				
+				background-image:url(./images/etc/wanted.png);
+				background-size:100%;
+				background-repeat:no-repeat;
+				
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+				
+				display:block;
+			}
+			
+			#image_cover {
+				position:absolute;
+				top:144px;
+				left:73px;
+				overflow:hidden;
+				
+				margin:20px 10px;
+				width:426px;
+				height:295px;
+				
+				background:black;
+				
+				text-align:center;
+				vertical-align:middle;
+			}
+				#image {
+					position:absolute;
+					top:0px;
+					height:0px;
+					
+					width:auto;
+					height:295px;
+					
+					filter: gray;
+					-webkit-filter: grayscale(100%);
+					
+					visibility:hidden;
+				}
+				#image_text {
+					position:absolute;
+					top:0px;
+					left:0px;
+					
+					width:100%;
+					height:100%;
+					
+					font-size:30px;
+					font-weight:bold;
+					line-height:295px;
+					
+					visibility:hidden;
+				}
+			
+			#insert {
+				position:absolute;
+				top:490px;
+				left:154px;
+				
+				padding:10px;
+				width:300px;
+				height:75px;
+				
+				background:#D2B07A;
+				border:2px gray outset;
+				
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:black;
+				font-size:20px;
+			}
+				#insert_slot {
+					width:100%;
+				}
+			
+			#doa {
+				position:absolute;
+				left:20px;
+				bottom:155px;
+				
+				padding:5px 20px;
+				width:520px;
+				
+				color:#D89A5F;
+				font-size:60px;
+				text-align:center;
+				text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+			}
+			
+			#bottom {
+				position:absolute;
+				left:20px;
+				bottom:90px;
+				
+				padding:5px 20px;
+				width:520px;
+				height:50px;
+				
+				background:#57240E;
+				border-radius:20px;
+				
+				color:#D89A5F;
+				font-size:40px;
+				text-align:right;
+				text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div id="image_cover">
+				<img id="image" />
+				<p id="image_text">
+					일러스트 불러오는 중...
+				</p>
+			</div>
+			
+			<div id="insert">
+				<p>
+					로컬에서 일러스트 불러오기
+				</p>
+				<p>
+					<input id="insert_slot" type="file" />
+				</p>
+			</div>
+			<!--<input id="insert_reset" type="button" value="초기화" />-->
+			
+			<p id="doa">DEAD OR ALIVE</p>
+			
+			<p id="bottom"><span id="power" class="yellow">0</span> Gold</p>
+		</div>
+	
+	
+		<script type="text/javascript" src="./js/md5.js"></script>
+		<script type="text/javascript">
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+			//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			};
+			
+			//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
+			function setWon(pWon) {
+				var won  = pWon.toString();
+				var arrWon  = ["", "만 ", "억 ", "조 ", "경 ", "해 ", "자 ", "양 ", "구 ", "간 ", "정 "];
+				var changeWon = "";
+				var pattern = /(-?[0-9]+)([0-9]{4})/;
+				while(pattern.test(won)) {
+					won = won.replace(pattern,"$1,$2");
+				}
+				won = won + "";
+				var arrCnt = won.split(",").length-1;
+				for(var ii=0; ii<won.split(",").length; ii++) {
+					changeWon += won.split(",")[ii]+arrWon[arrCnt];
+					arrCnt--;
+				}
+				return changeWon;
+			}
+			
+
+			$("#insert_slot").onchange = function() {
+				//대기 메세지
+				$("#image").style.visibility = "hidden";
+				$("#image_text").style.visibility = "visible";
+				$("#power").innerHTML = "???";
+				
+				//로드 버튼 비활성화
+				$("#insert_slot").disabled = "disabled";
+				
+				//이미지 호출
+				setTimeout(function() {
+					//이미지 불러오기
+					var file = $("#insert_slot").files[0];
+					var imageType = /image.*/;
+					
+					if (file.type.match(imageType)) {
+						var reader = new FileReader();
+						
+						reader.onload = function() {
+							//이미지 교체
+							var img = new Image;
+							img.src = reader.result
+							$("#image").src = reader.result;
+							
+							//이미지 크기 조절
+							if (img.naturalWidth/img.naturalHeight * 295 <= 426) {
+								$("#image").style.width = "auto";
+								$("#image").style.height = "295px";
+								$("#image").style.top = "0px";
+								$("#image").style.left = ((426 - $("#image").offsetWidth)/2).toString() + "px";;
+							} else {
+								$("#image").style.width = "426px";
+								$("#image").style.height = ((img.naturalHeight/img.naturalWidth) * 426).toString() + "px";
+								$("#image").style.top = ((295 - $("#image").offsetHeight)/2).toString() + "px";
+								$("#image").style.left = "0px";
+							}
+							
+							//이미지 출력
+							$("#image").style.visibility = "visible";
+							$("#image_text").style.visibility = "hidden";
+							
+							//로드 버튼 활성화
+							$("#insert_slot").disabled = "";
+							
+							//이미지 전투력 계산
+							var code = md5(reader.result.split(",")[1]);
+							
+							var temp = 1;
+							for (var i=code.length - 1;i>=0;i--) {
+								if ((i+1) % 4 == 0) {
+									temp *= parseInt(code[i],16);
+								} else {
+									temp += parseInt(code[i],16);
+								}
+							}
+							$("#power").innerHTML = setWon(temp);
+						}
+						
+						reader.readAsDataURL(file); 
+					} else {
+						//경고 메세지
+						alert("※ 경고 : 지원되지 않는 파일입니다.");
+						
+						//이미지 공백 처리
+						$("#image").style.visibility = "hidden";
+						$("#image_text").style.visibility = "hidden";
+						
+						//로드 버튼 활성화
+						$("#insert_slot").disabled = "";
+					}
+				},500);
+				
+			}
+			/*
+			$("#insert_reset").onclick = function() {
+				$("#insert_slot").files = null;
+				$("#image").src = "";
+			}
+			*/
+		</script>
+
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="invisible hit counter" ><script  type="text/javascript" >
+try {Histats.start(1,3200182,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3200182&101" alt="invisible hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+		
+	</body>
+</html>

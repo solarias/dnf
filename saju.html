@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>던파 캐릭터 사주</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.red {
+				color:red;
+			}
+			.orange {
+				color:orange;
+			}
+			.blue {
+				color:skyblue;
+			}
+			.yellow {
+				color:yellow;
+			}
+			.purple {
+				color:#B200FF;
+			}
+			.black_back {
+				background:black;
+			}
+			.gray_back {
+				background:#505050;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+			
+			#wrapper {
+				padding:5px;
+				width:400px;
+				height:523px;
+				
+				background:brown;
+				
+				color:white;
+				font-weight:bold;
+			}
+				p {
+					margin-bottom:3px;
+				}
+					p.top {
+						margin-top:3px;
+					}
+					p.bottom {
+						margin-bottom:0px;
+					}
+				hr {
+					border-top:1px white solid;
+				}
+			
+			#frame_left {
+				float:left;
+			}
+			#frame_right {
+				float:right;
+			}
+			#frame_botton {
+				clear:both;
+			}
+				select, input {
+					width:190px;
+					height:21px;
+				}
+				input[type="button"] {
+					margin-top:2px;
+					width:135px;
+					height:71px;
+					
+					background: #FFFFFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+					
+					border:1px gray outset;
+					border-radius:3px;
+					
+					font-size:26px;
+					font-weight:bold;
+				}
+					input[type="button"]:hover {
+						border:1px white solid;
+					}
+					input[type="button"]:active {
+						background: #DEDEDE;
+					}
+			
+			table {
+				margin-top:5px;
+				width:100%;
+			}
+				table tr td {
+					height:22px;
+					
+					border:1px gray outset;
+					
+					text-align:center;
+				}
+					table tr td.long {
+						width:400px;
+					}
+					table tr td.medium {
+						width:400px;
+					}
+					table tr td.short {
+						width:100px;
+					}
+					table tr td.empty {
+						height:10px;
+						
+						border:0px;
+					}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<p class="top">
+				던파 캐릭터 사주 Ver. 1.01
+			</p>
+			<hr />
+			<div id="frame_left">
+				<p class="top">
+					서　버 : 
+					<select id='input_server'>
+						<option value='' selected disabled>선택하세요</option>
+						<option value='' disabled>------------------------</option>
+						<option value='0'>카인</option>
+						<option value='1'>디레지에</option>
+						<option value='2'>시로코</option>
+						<option value='3'>프레이</option>
+						<option value='4'>카시야스</option>
+						<option value='5'>힐더</option>
+						<option value='6'>안톤</option>
+						<option value='7'>바칼</option>
+					</select>
+				</p>
+				<p>
+					닉네임 : 
+					<input id="input_nickname" type="text" value="" />
+				</p>
+				<p>
+					직　업 : 
+					<select id='input_job'>
+						<option value='' selected disabled>선택하세요</option>
+						<option value='' disabled>------------------------</option>
+						<optgroup label="귀검사(남)">
+							<option value='weaponmaster'>웨펀마스터</option>
+							<option value='berserker'>버서커</option>
+							<option value='soulbringer'>소울브링어</option>
+							<option value='asura'>아수라</option>
+						</optgroup>
+						<optgroup label="귀검사(여)">
+							<option value='swordmaster'>소드마스터</option>
+							<option value='demonslayer'>데몬슬레이어</option>
+							<option value='darktemplar'>다크템플러</option>
+							<option value='vegabond'>베가본드</option>
+						</optgroup>
+						<optgroup label="격투가(남)">
+							<option value='nenmasternam'>넨마스터(남)</option>
+							<option value='strikernam'>스트라이커(남)</option>
+							<option value='streetfighternam'>스트리트파이터(남)</option>
+							<option value='grapplernam'>그래플러(남)</option>
+						</optgroup>
+						<optgroup label="격투가(여)">
+							<option value='nenmasteryeo'>넨마스터(여)</option>
+							<option value='strikeryeo'>스트라이커(어)</option>
+							<option value='streetfighteryeo'>스트리트파이터(여)</option>
+							<option value='grappleryeo'>그래플러(여)</option>
+						</optgroup>
+						<optgroup label="거너(남)">
+							<option value='rangernam'>레인저(남)</option>
+							<option value='launcherrnam'>런처(남)</option>
+							<option value='mechanicnam'>메카닉(남)</option>
+							<option value='spitfirenam'>스핏파이어(남)</option>
+						</optgroup>
+						<optgroup label="거너(여)">
+							<option value='rangeryeo'>레인저(여)</option>
+							<option value='launcherryeo'>런처(여)</option>
+							<option value='mechanicyeo'>메카닉(여)</option>
+							<option value='spitfireyeo'>스핏파이어(여)</option>
+						</optgroup>
+						<optgroup label="마법사(남)">
+							<option value='elementalbomber'>엘레멘탈바머</option>
+							<option value='glacialmaster'>빙결사</option>
+						</optgroup>
+						<optgroup label="마법사(여)">
+							<option value='elementalmaster'>엘레멘탈마스터</option>
+							<option value='battlemage'>배틀메이지</option>
+							<option value='summoner'>소환사</option>
+							<option value='witch'>마도학자</option>
+						</optgroup>
+						<optgroup label="프리스트">
+							<option value='crusader'>크루세이더</option>
+							<option value='infighter'>인파이터</option>
+							<option value='exorcist'>퇴마사</option>
+							<option value='avenger'>어벤저</option>
+						</optgroup>
+						<optgroup label="도적">
+							<option value='rogue'>로그</option>
+							<option value='necromancer'>사령술사</option>
+							<option value='kunoichi'>쿠노이치</option>
+							<option value='shadowdancer'>섀도우댄서</option>
+						</optgroup>
+						<optgroup label="나이트">
+							<option value='elvenknight'>엘븐나이트</option>
+							<option value='chaos'>카오스</option>
+						</optgroup>
+						<optgroup label="외전 캐릭터">
+							<option value='darkknight'>다트나이트</option>
+							<option value='creator'>크리에이터</option>
+						</optgroup>
+					</select>
+				</p>
+			</div>
+			<div id="frame_right">
+				<input id="start" type="button" value="사주 보기" />
+			</div>
+			<div id="frame_botton">
+				<hr />
+				<table cellspacing="0">
+					<tr class="black_back">
+						<td class="long" colspan="4">속성 적합성</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short red">火</td>
+						<td class="short blue">水</td>
+						<td class="short yellow">明</td>
+						<td class="short purple">暗</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_00" class="short">0%</td>
+						<td id="result_01" class="short">0%</td>
+						<td id="result_02" class="short">0%</td>
+						<td id="result_03" class="short">0%</td>
+					</tr>
+					<tr>
+						<td class="empty" colspan="4"></td>
+					</tr>
+					<tr class="black_back">
+						<td colspan="4">컨텐츠 확률 적합성</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short">강화</td>
+						<td class="short">증폭</td>
+						<td class="short">재련</td>
+						<td class="short">아이템 합성</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_10" class="short">0%</td>
+						<td id="result_11" class="short">0%</td>
+						<td id="result_12" class="short">0%</td>
+						<td id="result_13" class="short">0%</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short">지옥파티</td>
+						<td class="short">레이드</td>
+						<td class="short">항아리</td>
+						<td class="short">봉자</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_20" class="short">0%</td>
+						<td id="result_21" class="short">0%</td>
+						<td id="result_22" class="short">0%</td>
+						<td id="result_23" class="short">0%</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short">리버 합성</td>
+						<td class="short">가브리엘</td>
+						<td class="short"></td>
+						<td class="short"></td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_30" class="short">0%</td>
+						<td id="result_31" class="short">0%</td>
+						<td class="short"></td>
+						<td class="short"></td>
+					</tr>
+					<tr>
+						<td class="empty" colspan="4"></td>
+					</tr>
+					<tr class="black_back">
+						<td colspan="4">자템 적합성</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short">유니크 이하</td>
+						<td class="short">크로니클</td>
+						<td class="short">레전더리</td>
+						<td class="short">에픽</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_40" class="short">0%</td>
+						<td id="result_41" class="short">0%</td>
+						<td id="result_42" class="short">0%</td>
+						<td id="result_43" class="short">0%</td>
+					</tr>
+					<tr>
+						<td class="empty" colspan="4"></td>
+					</tr>
+					<tr class="black_back">
+						<td colspan="4">밸런싱 적합성</td>
+					</tr>
+					<tr class="black_back">
+						<td class="medium" colspan="2">캐릭터 상향</td>
+						<td class="medium" colspan="2">캐릭터 하향</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_50" class="medium" colspan="2">0%</td>
+						<td id="result_51" class="medium" colspan="2">0%</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="./js/seedrandom.js"></script>
+	
+		<script type="text/javascript">
+			var $server = document.getElementById("input_server");
+			var $nickname = document.getElementById("input_nickname");
+			var $job = document.getElementById("input_job");
+			var $start = document.getElementById("start");
+			
+			var list = [
+				"result_00",
+				"result_01",
+				"result_02",
+				"result_03",
+				"result_10",
+				"result_11",
+				"result_12",
+				"result_13",
+				"result_20",
+				"result_21",
+				"result_22",
+				"result_23",
+				"result_30",
+				"result_31",
+				"result_40",
+				"result_41",
+				"result_42",
+				"result_43",
+				"result_50",
+				"result_51"
+			]
+			window.onload = function() {
+				$server.onchange = function() {
+					$server.style.backgroundColor = "#F4FA58";
+				}
+				
+				$job.onchange = function() {
+					$job.style.backgroundColor = "#F4FA58";
+				}
+				
+				$start.onclick = function() {
+					if ($server.value == "") {
+						alert($server.value);
+						alert("※ 경고 : 서버를 선택하지 않았습니다.");
+						return;
+					} else if ($nickname.value == "") {
+						alert("※ 경고 : 닉네임을 입력하지 않았습니다.");
+						return;
+					} else if ($job.value == "") {
+						alert("※ 경고 : 직업을 선택하지 않았습니다.");
+						return;
+					} else {
+						//시드 입력
+						var input = $server.value + $nickname.value + $job.value;
+						Math.seedrandom(input);
+						
+						//결과값 산출
+						for (var i=0;i<list.length;i++) {
+							var output = Math.floor(Math.random() * 1001)/10;
+							if (output > 80) {
+								document.getElementById(list[i]).innerHTML = "<span class='yellow'>" + output.toString() + "%</span>";
+							} else if (output >= 20) {
+								document.getElementById(list[i]).innerHTML = "<span class=''>" + output.toString() + "%</span>";
+							} else {
+								document.getElementById(list[i]).innerHTML = "<span class='orange'>" + output.toString() + "%</span>";
+							}
+						}
+					}
+				}
+			}
+		</script>
+	
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="site hit counter" ><script  type="text/javascript" >
+try {Histats.start(1,3138274,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3138274&101" alt="site hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+	</body>
+</body>

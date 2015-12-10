@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title></title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.orange {
+				color:orange;
+			}
+			.yellow {
+				color:yellow;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+				span {
+					font-size:inherit;
+					font-weight:inherit;
+				}
+
+			#wrapper {
+				position:relative;
+				
+				padding:5px 5px 0px 5px;
+				width:410px;
+				height:140px;
+				
+				background:brown;
+				border:1px black outset;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#image {
+				position:absolute;
+				bottom:0px;
+				left:5px;
+				
+				visibility:hidden;
+				display:block;
+			}
+			
+			#text {
+				float:right;
+				
+				padding:5px;
+				width:280px;
+				height:95px;
+				
+				background:black;
+				background:rgba(0,0,0,0.7);
+				border-radius:10px;
+			}
+			
+			#today {
+				clear:right;
+				float:right;
+				
+				margin-top:5px;
+				
+				font-size:18px;
+			}
+				#reload {
+					width:20px;
+					height:25px;
+					
+					background: #FFFFFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+					
+					border:1px gray outset;
+					border-radius:3px;
+					
+					font-size:16px;
+					font-weight:bold;
+				}
+					#reload:hover {
+						border:1px white solid;
+					}
+					#reload:active {
+						background: #DEDEDE;
+					}
+			
+			#loading {
+				position:absolute;
+				left:110px;
+				top:55px;
+				z-index:10;
+				
+				padding:5px;
+				width:200px;
+				height:30px;
+				
+				background:rgba(0,255,255,0.8);
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC00FFFF,endColorstr=#CC00FFFF); 
+				border-radius:10px;
+				
+				color:black;
+				font-size:25px;
+				text-align:center;
+				
+				visibility:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<img id="image" src="" />
+			<div id="text">
+				<span id="channel" class="orange"></span>
+			</div>
+			<div id="today">
+				오늘의 채널 추천 : <span id="name" class="yellow"></span>
+				<input id="reload" type="button" value="&#8634;" />
+			</div>
+			
+			<div id="loading">Now loading...</div>
+		</div>
+		
+		<script type="text/javascript" src="./js/chaList.js"></script>
+		
+		<script type="text/javascript">
+			//=================================================================================================================
+			//※ 변수
+			//=================================================================================================================
+			var channelList = [//공용 채널 리스트
+				1,6,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,56//
+			];
+			var possibleList = [];
+			
+			var imageList = [];
+			//=================================================================================================================
+			//※ DOM 관리
+			//=================================================================================================================
+			var $image = document.getElementById("image");
+			var $text = document.getElementById("text");
+			var $name = document.getElementById("name");
+				var $reload = document.getElementById("reload");
+			
+			var $loading = document.getElementById("loading");
+					//=================================================================================================================
+					//※ 함수 - 내부 작업용
+					//=================================================================================================================
+					// 이미지 불러오기 (원본 //출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
+					function loadImages(arr,callBack){
+
+						var imagesArray = [];
+						var img;
+						var remaining = arr.length;
+						for (var i = 0; i < arr.length; i++) {
+							img = new Image();
+							img.onload = function() {
+								//외부 처리 
+								//내부 처리
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.onerror = function() {
+								//외부 처리 
+								//내부 처리
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.src = arr[i];
+							imagesArray.push(img);
+						};
+					}
+					
+					//딥 카피(출처 : http://www.overset.com/2007/07/11/javascript-recursive-object-copy-deep-object-copy-pass-by-value/)
+					function deepCopy (dupeObj) {
+						var retObj = new Object();
+						if (typeof(dupeObj) == 'object') {
+							if (typeof(dupeObj.length) != 'undefined')
+								var retObj = new Array();
+							for (var objInd in dupeObj) {	
+								if (typeof(dupeObj[objInd]) == 'object') {
+									retObj[objInd] = deepObjCopy(dupeObj[objInd]);
+								} else if (typeof(dupeObj[objInd]) == 'string') {
+									retObj[objInd] = dupeObj[objInd];
+								} else if (typeof(dupeObj[objInd]) == 'number') {
+									retObj[objInd] = dupeObj[objInd];
+								} else if (typeof(dupeObj[objInd]) == 'boolean') {
+									((dupeObj[objInd] == true) ? retObj[objInd] = true : retObj[objInd] = false);
+								}
+							}
+						}
+						return retObj;
+					}
+					
+			//=================================================================================================================
+			//※ 함수
+			//=================================================================================================================	
+			function show() {
+				$loading.style.visibility = "visible";
+				
+				var channel = "<span class='orange'>" + channelList[Math.floor(Math.random() * channelList.length)].toString() + "</span>";
+				possibleList = [];
+				for (var i=0;i<chaList.length;i++) {
+					if (chaList[i][4] != "" && chaList[i][1] != $name.innerHTML) {
+						var temp = deepCopy(chaList[i])
+						possibleList[possibleList.length] = temp;
+					}
+				}
+				var target = possibleList[Math.floor(Math.random() * possibleList.length)];
+				target[4] = target[4].replace("%s",channel);
+				
+				$image.src = "./images/portrait/" +  target[2] + ".gif";
+				imageList.push($image.src);
+				loadImages(imageList,function() {
+					$image.style.height = "auto";
+					$image.style.width = "115px";
+					if ($image.offsetHeight > 140) {
+						var percent = (140 / $image.offsetHeight);
+						$image.style.height = ($image.offsetHeight * percent).toString() + "px";
+						$image.style.width = ($image.offsetWidth * percent).toString() + "px";
+					}
+					
+					$text.innerHTML = target[4];
+					$name.innerHTML = target[1];
+					
+					$image.style.visibility = "visible";
+					$loading.style.visibility = "hidden";
+					});
+			}
+			
+			//=================================================================================================================
+			//※ 실행
+			//=================================================================================================================			
+			window.onload = function() {
+				show();
+				
+				$reload.onclick = function() {
+					show();
+				}
+			}
+		</script>
+	
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="histats" ><script  type="text/javascript" >
+try {Histats.start(1,3112855,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3112855&101" alt="histats" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+	
+	</body>
+</body>

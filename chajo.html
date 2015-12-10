@@ -1,0 +1,597 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>차조뻥 시뮬레이터 (초단순)</title>
+	<style type="text/css">
+		* {
+			margin:0px;
+			padding:0px;
+			
+			font-family:Arial;
+			font-size:16px;
+			font-weight:bold;
+			text-decoration:none;
+			line-height:100%;
+		}
+		
+		.red {
+			color:red;
+		}
+		.orange {
+			color:orange;
+		}
+		.yellow {
+			color:yellow;
+		}
+		.green {
+			color:lightgreen;
+		}
+		.skyblue {
+			color:skyblue;
+		}
+		.purple {
+			color:#D37CFF;
+		}
+		
+		body {
+			background-color:#FFFFCC;
+		}
+		p {
+			margin-bottom:5px;
+		}
+		hr {
+			margin:5px 0px;
+			border:1px gray solid;
+		}
+		span {
+			color:inherit:
+			font-size:inherit;
+		}
+
+		#wrapper {
+			padding:5px;
+			width:765px;
+			height:575px;
+			
+			background:brown;
+			border:1px black solid;
+			
+			color:white;
+		}
+		
+		.title {
+			font-weight:bold;
+		}
+		
+		#enchant, #second {
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			
+			margin-right:10px;
+			width:130px;
+			height:30px;
+			
+			font-size:20px;
+			font-weight:bold;
+		}
+			#enchant:active, #second:active {
+				background: #DEDEDE;
+			}
+		#reset {
+			background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			
+			width:200px;
+			height:30px;
+			
+			font-size:20px;
+			font-weight:bold;
+		}
+			#reset:active {
+				background: #FFAA00;
+			}
+		
+		#state {
+			float:left;
+			
+			margin-top:5px;
+			padding:5px;
+			width:340px;
+			height:16px;
+			
+			background-color:Gainsboro;
+			border:1px black solid;
+			
+			color:black;
+		}
+		
+		#loading {
+			clear:left;
+			float:left;
+			
+			margin-top:3px;
+			width:350px;
+			height:6px;
+			
+			background-color:black;
+			border:1px black solid;
+		}
+			#loading_bar {
+				position:relative;
+						
+				width:0px;
+				height:6px;
+				
+				background:yellow;
+			}
+		
+		#notice {
+			clear:left;
+			float:left;
+			
+			margin-top:3px;
+			padding:5px;
+			width:340px;
+			height:57px;
+			
+			background-color:Gainsboro;
+			border:1px black solid;
+			
+			color:black;
+		}
+		#cost {
+			clear:left;
+			float:left;
+			
+			margin-top:5px;
+			padding:5px;
+			width:340px;
+			height:16px;
+			
+			background-color:black;
+			border:1px gray solid;
+		}
+		#show {
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			clear:left;
+			float:left;
+			
+			margin-top:5px;
+			padding:5px;
+			width:340px;
+			height:351px;
+			
+			background-color:black;
+			border:1px gray solid;
+		}
+		#record {
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			float:right;
+	
+			margin-top:5px;
+			padding:5px;
+			width:390px;
+			height:423px;
+			
+			background-color:black;
+			border:1px gray solid;
+		}
+		#summary {
+			clear:right;
+			float:right;
+	
+			margin-top:5px;
+			padding:5px;
+			width:390px;
+			height:61px;
+			
+			background-color:Gainsboro;
+			border:1px black solid;
+			
+			color:black;
+		}
+		
+		
+		
+		/*모바일 스크롤바 가시화*/
+		::-webkit-scrollbar {
+			-webkit-appearance: none;
+		}
+
+		::-webkit-scrollbar:vertical {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar:horizontal {
+			height: 12px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: rgba(0, 0, 0, .5);
+			border-radius: 10px;
+			border: 2px solid #ffffff;
+		}
+
+		::-webkit-scrollbar-track {
+			background-color: #ffffff; 
+		}
+	</style>
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="press">
+				<p class="title">
+					<span id="equip_count">1</span>번째 균차 크로니클 장비를 강화한 후 차조뻥을 시도합니다.
+				</p> <p>
+					<input id="enchant" type="button" value="장비 강화" />
+					<input id="second" type="button" value="2부여 시도" />
+					<input id="reset" type="button" value="다음 차조뻥 준비" disabled/>
+				</p>
+			</div>
+			<div id="state">
+				현재 강화 단계 : <span id="state_enchant">0 강</span> <span id="state_maximum"></span>
+			</div>
+			<div id="record">
+			</div>
+			<div id="loading">
+				<div id="loading_bar">
+				</div>
+			</div>
+			<div id="notice">
+				<p>
+					＊다음 강화 비용 : <span id="notice_cost">7만 2170 Gold</span>
+				</p><p>
+					＊다음 강화 성공 확률 : <span id="notice_chance">100%</span>
+				</p><p>
+					＊현재 장비 차조 추출량 : <span id="notice_chajo">1개</span>
+				</p>
+			</div>
+			<div id="cost">
+				투자 비용 : <span id="cost_num" class="yellow">0</span> Gold
+			</div>
+			<div id="show">
+			</div>
+			<div id="summary">
+				<p>
+					＊총 비용 : <span id="summary_cost">0</span> Gold
+				</p><p>
+					＊총 획득 차조 : <span id="summary_chajo">0</span>개
+				</p><p>
+					＊차조 1개당 비용 : <span id="summary_average">0</span> Gold
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var auto;
+			
+			var count = 1;
+			var count_all = 1;
+			var enchant = 0;
+			var cost = 0;
+			var chance = 0.85;//2부여 성공 확률
+			var max = 11;//강화 상한선
+			
+			var summary_cost = 0;
+			var summary_chajo = 0;
+			
+			var chanceList = [//강화 성공 확률
+				1,//1강 시도
+				1,//2강 시도
+				1,//3강 시도
+				1,//4강 시도
+				0.9,//5강 시도
+				0.8,//6강 시도
+				0.75,//7강 시도
+				0.7,//8강 시도
+				0.6,//9강 시도
+				0.5,//10강 시도
+				0.4//11강 시도
+			];
+			var costList = [//해당 단계 강화 비용
+				72170,//1강 시도
+				72170,//2강 시도
+				72170,//3강 시도
+				72170,//4강 시도
+				86604,//5강 시도
+				101038,//6강 시도
+				115472,//7강 시도
+				129906,//8강 시도
+				144340,//9강 시도
+				144340,//10강 시도
+				216510 //11강 시도
+			];
+			var chajoList = [//해당 단계 차조 추출량
+				1,//0강 - 현재
+				1,//1강 - 현재
+				2,//2강 - 현재
+				3,//3강 - 현재
+				4,//4강 - 현재
+				6,//5강 - 현재
+				8,//6강 - 현재
+				10,//7강 - 현재
+				12,//8강 - 현재
+				13,//9강 - 현재
+				17,//10강 - 현재
+				33//11강 - 현재
+			];
+			
+
+			//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+
+			//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
+			function setWon(pWon) {
+				var won  = pWon.toString();
+				var arrWon  = ["", "만 ", "억 ", "조 ", "경 ", "해 ", "자 ", "양 ", "구 ", "간 ", "정 "];
+				var changeWon = "";
+				var pattern = /(-?[0-9]+)([0-9]{4})/;
+				while(pattern.test(won)) {
+					won = won.replace(pattern,"$1,$2");
+				}
+				won = won + "";
+				var arrCnt = won.split(",").length-1;
+				for(var ii=0; ii<won.split(",").length; ii++) {
+					changeWon += won.split(",")[ii]+arrWon[arrCnt];
+					arrCnt--;
+				}
+				return changeWon;
+			}
+			
+			function run(num) {
+				//게이지 증가
+				if (Math.round((document.getElementById("loading_bar").offsetWidth/document.getElementById("loading").offsetWidth)*100) + 5 < 100) {
+					document.getElementById("loading_bar").style.width = (Math.round((document.getElementById("loading_bar").offsetWidth/document.getElementById("loading").offsetWidth)*100) + 5).toString() + "%";
+					auto = setTimeout(function() {
+							run(num);
+						},20);
+				} else {
+					document.getElementById("loading_bar").style.width = "0px";
+					
+					switch (num) {
+						case 1:
+							var temp = Math.random();
+							
+							//비용 선지불
+							cost += costList[enchant];
+							document.getElementById("cost_num").innerHTML = setWon(cost);
+							
+							//성공 관련
+							if (temp < chanceList[enchant]) {
+								document.getElementById("show").innerHTML += "\
+									<p><span class='green'>" + (enchant+1).toString() + "강 성공!</span>\
+									 (" + count.toString() + "회차 : " + enchant.toString() + "강 &#8658; <span class='purple'>" + (enchant+1).toString() + "강</span>)</p>";
+								
+								//변수 조절
+								enchant += 1;
+								
+								//뒷정리
+								if (enchant >= max) {
+									//강화 최대치 도달
+									document.getElementById("state_enchant").innerHTML = enchant.toString() + " 강";
+									document.getElementById("state_maximum").innerHTML = "(강화 최대치 도달)";
+									
+									document.getElementById("notice_cost").innerHTML = "<span class='red'>강화 불가</span>";
+									document.getElementById("notice_chance").innerHTML = "<span class='red'>강화 불가</span>";
+									document.getElementById("notice_chajo").innerHTML = chajoList[enchant] + "개";
+									
+									onoff(1);
+								} else {
+									//일반
+									document.getElementById("state_enchant").innerHTML = enchant.toString() + " 강";
+									document.getElementById("notice_cost").innerHTML = setWon(costList[enchant]) + " Gold";
+									document.getElementById("notice_chance").innerHTML = (chanceList[enchant] * 100).toString() + "%";
+									document.getElementById("notice_chajo").innerHTML = chajoList[enchant] + "개";
+									onoff(0);
+								}
+								
+							} else {
+								if (enchant >= 10) {
+									document.getElementById("show").innerHTML += "\
+										<p><span class='orange'>" + (enchant+1).toString() + "강 실패!</span>\
+										 (" + count.toString() + "회차 : <span class='purple'>장비 파괴</span>)</p>";
+									
+									document.getElementById("state_enchant").innerHTML = "<span class='red'>파괴됨</span>";
+									document.getElementById("notice_cost").innerHTML = "<span class='red'>강화 불가</span>";
+									document.getElementById("notice_chance").innerHTML = "<span class='red'>강화 불가</span>";
+									document.getElementById("notice_chajo").innerHTML = "<span class='red'>추출 불가</span>";
+									
+									//뒷정리
+									onoff(2);
+									
+								} else if (enchant >= 7) {
+									document.getElementById("show").innerHTML += "\
+										<p><span class='orange'>" + (enchant+1).toString() + "강 실패!</span>\
+										 (" + count.toString() + "회차 : " + enchant.toString() + "강 &#8658; <span class='purple'>" + (enchant-3).toString() + "강</span>)</p>";
+									
+									//변수 조절
+									enchant -= 3;
+									document.getElementById("state_enchant").innerHTML = enchant.toString() + " 강";
+									document.getElementById("notice_cost").innerHTML = setWon(costList[enchant]) + " Gold";
+									document.getElementById("notice_chance").innerHTML = (chanceList[enchant] * 100).toString() + "%";
+									document.getElementById("notice_chajo").innerHTML = chajoList[enchant] + "개";
+									
+									
+									//뒷정리
+									onoff(0);
+								} else {
+									document.getElementById("show").innerHTML += "\
+										<p><span class='orange'>" + (enchant+1).toString() + "강 실패!</span>\
+										 (" + count.toString() + "회차 : " + enchant.toString() + "강 &#8658; <span class='purple'>" + (enchant-1).toString() + "강</span>)</p>";
+									
+									//변수 조절
+									enchant -= 1;
+									document.getElementById("state_enchant").innerHTML = enchant.toString() + " 강";
+									document.getElementById("notice_cost").innerHTML = setWon(costList[enchant]) + " Gold";
+									document.getElementById("notice_chance").innerHTML = (chanceList[enchant] * 100).toString() + "%";
+									document.getElementById("notice_chajo").innerHTML = chajoList[enchant] + "개";
+									
+									
+									//뒷정리
+									onoff(0);
+								}
+							}
+							
+							//회차 증가
+							count += 1;
+							
+							//스크롤
+							document.getElementById("show").scrollTop = document.getElementById("show").scrollHeight;
+							
+							break;
+						case 2:
+							var temp = Math.random();
+							
+							
+							document.getElementById("show").innerHTML += "\
+								<hr />";
+								 
+							//성공 관련
+							if (temp < chance) {
+								document.getElementById("show").innerHTML += "\
+									<p><span class='green'>2부여 실패!</span>\
+									 (<span class='yellow'>" + enchant.toString() + "강</span> : <span class='purple'>차조 " + chajoList[enchant] + "개 추출</span>)</p>";
+							
+								//뒷정리
+								onoff(3);
+							} else {
+								document.getElementById("show").innerHTML += "\
+									<p><span class='orange'>2부여 성공!</span>\
+									 (<span class='purple'>차조 추출 불가</span>)</p>";
+							
+								//뒷정리
+								onoff(2);
+							}
+							
+							//스크롤
+							document.getElementById("show").scrollTop = document.getElementById("show").scrollHeight;
+							
+							break;
+					}
+				}
+			}
+			
+			function onoff(num) {
+				switch (num) {
+					case -1://로딩 중
+						document.getElementById("enchant").disabled = "disabled";
+						document.getElementById("second").disabled = "disabled";
+						document.getElementById("reset").disabled = "disabled";
+						
+						break;
+					case 0://강화 가능
+						document.getElementById("enchant").disabled = "";
+						document.getElementById("second").disabled = "";
+						document.getElementById("reset").disabled = "disabled";
+						
+						break;
+					case 1://2부여만 가능
+						document.getElementById("enchant").disabled = "disabled";
+						document.getElementById("second").disabled = "";
+						document.getElementById("reset").disabled = "disabled";
+						
+						break;
+					case 2://다음 장비로 이동 "직전" - 실패
+						document.getElementById("enchant").disabled = "disabled";
+						document.getElementById("second").disabled = "disabled";
+						document.getElementById("reset").disabled = "";
+						
+						document.getElementById("record").innerHTML += "\
+						<p>" + count_all.toString() + "번째 장비 : <span class='purple'>차조 0개 추출</span>\
+						<br/>　┗ 총 강화 시도 횟수 : <span class='skyblue'>" + (count-1).toString() + "회</span>\
+						<br/>　┗ 총 투자 비용 : <span class='yellow'>" + setWon(cost) + "</span> Gold</p>\</p>\
+						<hr/>";
+						
+						summary_cost += cost;
+						summary_chajo += chajoList[enchant];
+						
+						document.getElementById("summary_cost").innerHTML = setWon(summary_cost);
+						document.getElementById("summary_chajo").innerHTML = thousand(summary_chajo);
+						document.getElementById("summary_average").innerHTML = setWon(Math.floor(summary_cost/summary_chajo));
+						
+						//스크롤
+						document.getElementById("record").scrollTop = document.getElementById("record").scrollHeight;
+						
+						break;
+					case 3://다음 장비로 이동 "직전" - 성공
+						document.getElementById("enchant").disabled = "disabled";
+						document.getElementById("second").disabled = "disabled";
+						document.getElementById("reset").disabled = "";
+						
+						document.getElementById("record").innerHTML += "\
+						<p>" + count_all.toString() + "번째 장비 : <span class='purple'>차조 " + chajoList[enchant] + "개 추출</span> <span class='yellow'>(" + enchant.toString() + "강)</span>\
+						<br/>　┗ 총 강화 시도 횟수 : <span class='skyblue'>" + (count-1).toString() + "회</span>\
+						<br/>　┗ 총 투자 비용 : <span class='yellow'>" + setWon(cost) + "</span> Gold</p>\
+						<hr/>";
+						
+						summary_cost += cost;
+						summary_chajo += chajoList[enchant];
+						
+						document.getElementById("summary_cost").innerHTML = setWon(summary_cost);
+						document.getElementById("summary_chajo").innerHTML = thousand(summary_chajo);
+						document.getElementById("summary_average").innerHTML = setWon(Math.floor(summary_cost/summary_chajo));
+						
+						//스크롤
+						document.getElementById("record").scrollTop = document.getElementById("record").scrollHeight;
+						
+						break;
+				}
+			}
+			
+			window.onload = function() {
+				
+				
+				
+				document.getElementById("enchant").onclick = function() {
+					onoff(-1);
+					run(1);
+				}
+				
+				document.getElementById("second").onclick = function() {
+					onoff(-1);
+					run(2);
+				}
+				
+				
+				document.getElementById("reset").onclick = function() {
+					//변수 조절
+					count = 1;
+					count_all += 1;
+					enchant = 0;
+					cost = 0;
+					
+					//변수 출력
+					document.getElementById("equip_count").innerHTML = thousand(count_all);
+					
+					document.getElementById("state_enchant").innerHTML = enchant.toString() + " 강";
+					document.getElementById("state_maximum").innerHTML = "";
+					
+					document.getElementById("notice_cost").innerHTML = setWon(costList[enchant]) + " Gold";
+					document.getElementById("notice_chance").innerHTML = (chanceList[enchant] * 100).toString() + "%";
+					document.getElementById("notice_chajo").innerHTML = chajoList[enchant] + "개";
+					
+					document.getElementById("cost_num").innerHTML = setWon(cost);
+					document.getElementById("show").innerHTML = "";
+					
+					//뒷정리
+					onoff(0);
+				}
+				
+			}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>일러스트 건전성 측정기</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.orange {
+				color:orange;
+			}
+			.yellow {
+				color:yellow;
+			}
+			.green {
+				color:#59FF00;
+			}
+			
+			body {
+				background-color:#808080;
+			}
+				p, span {
+					font-size:inherit;
+				}
+			
+			#wrapper {
+				position:absolute;
+				left:0px;
+				right:0px;
+				overflow:hidden;
+				
+				margin-left:auto;
+				margin-right:auto;
+				padding:1px;
+				width:600px;
+				height:380px;
+				
+				background:#303030;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+				
+				display:block;
+			}
+			
+			#title {
+				font-size:40px;
+				text-align:center;
+			}
+			
+			#image_cover {
+				overflow:hidden;
+				position:relative;
+				clear:both;
+				float:left;
+				
+				margin:20px 10px;
+				width:250px;
+				height:300px;
+				
+				background:black;
+				border:1px white solid;
+				
+				text-align:center;
+			}
+				#image {
+					position:relative;
+					
+					width:250px;
+					height:300px;
+					
+					display:none;
+				}
+				#image_text {
+					position:relative;
+					
+					width:100%;
+					height:100%;
+					
+					font-size:20px;
+					line-height:300px;
+					
+					display:none;
+				}
+			
+			#insert {
+				float:right;
+				
+				margin:20px 10px 20px 0px;
+				padding:10px;
+				width:300px;
+				height:75px;
+				
+				background:#505050;
+				border:1px white solid;
+				
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				font-size:20px;
+			}
+				#insert_slot {
+					width:100%;
+				}
+			
+			#bottom {
+				position:absolute;
+				right:10px;
+				bottom:10px;
+				
+				width:300px;
+				
+				background:#404040;
+				border:1px white solid;
+				
+				font-size:35px;
+				text-align:left;
+			}
+				#bottom span {
+					width:100%;
+					
+					text-align:center;
+					
+					display:inline-block;
+				}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<p id="title">일러스트 건전성 측정기<p>
+			
+			<div id="image_cover">
+				<img id="image" />
+				<p id="image_text">
+					이미지 불러오는 중...
+				</p>
+			</div>
+			
+			<div id="insert">
+				<p>
+					로컬에서 이미지 불러오기
+				</p>
+				<p>
+					<input id="insert_slot" type="file" />
+				</p>
+			</div>
+			<!--<input id="insert_reset" type="button" value="초기화" />-->
+			
+			<div id="bottom">
+				<p>
+					측정 결과 : 
+				</p>
+				<p>
+					<span id="result" class="yellow">일러스트 없음</span>
+				</p>
+			</div>
+		</div>
+	
+		<!-- No canvas for IE, so download it and include it for IE -->
+		<!--[if IE]>
+		<script type="text/javascript" src="./js/excanvas.compiled.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="./js/nude.js"></script>
+		
+		<script type="text/javascript">
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+				
+			
+
+			$("#insert_slot").onchange = function() {
+				//대기 메세지
+				$("#image").style.display = "none";
+				$("#image_text").style.display = "block";
+				$("#result").innerHTML = "측정 중...";
+				
+				//0.5초 이후 측정 시작
+				setTimeout(function() {
+					//이미지 불러오기
+					var file = $("#insert_slot").files[0];
+					var imageType = /image.*/;
+					
+					if (file.type.match(imageType)) {
+						var reader = new FileReader();
+						
+						reader.onload = function() {
+							//이미지 교체
+							$("#image").src = reader.result;
+							
+							//이미지 출력
+							$("#image").style.display = "block";
+							$("#image_text").style.display = "none";
+							
+							//이미지 건전성 계산
+							nude.load("image");
+							
+							nude.scan(function(result) {
+								if (result) {
+									$("#result").innerHTML = "<span class='orange'>불건전함!</span>";
+								} else {
+									$("#result").innerHTML = "<span class='green'>건전합니다</span>";
+								}
+							});
+							
+							
+						}
+						
+						reader.readAsDataURL(file); 
+					} else {
+						alert("※ 경고 : 지원되지 않는 파일입니다.");
+					}
+				}, 500);
+				
+			}
+			
+		</script>
+
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="free web tracker" ><script  type="text/javascript" >
+try {Histats.start(1,3206618,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3206618&101" alt="free web tracker" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+		
+	</body>
+</html>

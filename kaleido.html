@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>칼레이도 박스 시뮬레이터</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.grade1 {
+				color:#DDC8A9;
+				font-size:inherit;
+			}
+			.grade2 {
+				color:#D4C8AE;
+				font-size:inherit;
+			}
+			.grade3 {
+				color:#68D5ED;
+				font-size:inherit;
+			}
+			.grade4 {
+				color:#F0E650;
+				font-size:inherit;
+			}
+			.grade5 {
+				color:yellow;
+				font-size:inherit;
+			}
+			.grade6 {
+				color:yellow;
+				font-size:inherit;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+			
+			#wrapper {
+				padding:3px;
+				width:312px;
+				height:475px;
+				
+				background:brown;
+				border:1px black solid;
+			}
+			
+			#frame_header {
+				padding:5px;
+				width:300px;
+				
+				background:brown;
+				
+				color:white;
+				font-weight:bold;
+			}
+				input#clear {
+					float:right;
+					
+					width:80px;
+					height:20px;
+					
+					background: #FF6A00; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+					background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: linear-gradient(to bottom, #ffffff, #FF6A00);
+					
+					font-size:16px;
+					font-weight:bold;
+					
+					display:block;
+				}
+					input#clear:active {
+						background: #FFAA00;
+					}
+			
+			#frame_box {
+				position:relative;
+				
+				padding:5px;
+				width:300px;
+				height:28px;
+				
+				background:gray;
+				border:1px black solid;
+				
+				font-weight:bold;
+			}
+				#box_img {
+					float:left;
+					
+					width:28px;
+					height:28px;
+					
+					display:block;
+				}
+				#box_progress {
+					position:relative;
+					float:left;
+					margin-left:5px;
+					
+					width:260px;
+					height:28px;
+					
+					background-color:black;
+				}
+					#box_bar {
+						position:absolute;
+						top:0px;
+						left:0px;
+						z-index:1;
+						
+						width:0px;
+						height:28px;
+						
+						background-color:yellow;
+					}
+					#box_text {
+						position:absolute;
+						top:0px;
+						left:0px;
+						z-index:2;
+						
+						float:left;
+						padding:5px;
+						
+						color:#D37CFF;
+						font-weight:bold;
+					}
+						#box_text img {
+							width:20px;
+							vertical-align:top;
+						}
+			
+			#frame_result {
+				margin:0px auto 5px auto;
+				padding:5px;
+				width:298px;
+				
+				background:black;
+				border:1px gray solid;
+				outline:1px black solid;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#open1, #open2 {
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				
+				width:152px;
+				height:30px;
+				
+				border:1px #A4A4A4 solid;
+				
+				font-size:20px;
+				font-weight:bold;
+				
+				display:block;
+			}
+				#open1 {
+					float:left;
+				}
+				#open2 {
+					float:right;
+				}
+					#open1:active, #open2:active {
+						background: #DEDEDE;
+					}
+			
+			#frame_record {
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				clear:both;
+				float:left;
+				
+				margin-top:5px;
+				padding:5px;
+				width:300px;
+				height:300px;
+				
+				background-color:#303030;
+				background-image:url('./images/etc/seria.png');
+				border:1px black solid;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#frame_max {
+				clear:both;
+				
+				padding:2px;
+				height:14px;
+				
+				color:white;
+				font-size:14px;
+				font-weight:bold;
+			}
+			
+			
+			/*모바일 스크롤바 가시화*/
+			::-webkit-scrollbar {
+				-webkit-appearance: none;
+			}
+
+			::-webkit-scrollbar:vertical {
+				width: 12px;
+			}
+
+			::-webkit-scrollbar:horizontal {
+				height: 12px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 0, 0, .5);
+				border-radius: 10px;
+				border: 2px solid #ffffff;
+			}
+
+			::-webkit-scrollbar-track {
+				background-color: #ffffff; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+		
+			<div id="frame_header">
+				칼레이도 박스를 돌립니다
+				<input id="clear" type="button" value="초기화" />
+			</div>
+			<div id="frame_box">
+				<img id="box_img" src="./images/etc/kaleido0.png" />
+				<div id="box_progress">
+					<div id="box_bar">
+					</div>
+					<div id="box_text">
+						칼레이도 박스 대기 중
+					</div>
+				</div>
+			</div>
+			<div id="frame_result">
+				<span id="result_count">0</span> 회차 결과값 : <span id="result_grade_name"><span class="grade1">최하급</span></span> (<span id="result_grade_num">1</span>%)
+			</div>
+			
+			<input id="open1" type="button" value="1회 사용" />
+			<input id="open2" type="button" value="연속 사용" />
+			
+			<div id="frame_record">
+			</div>
+			
+			<div id="frame_max">
+				※ 최대 등급 : <span id="max_name"><span class="grade1">최하급</span></span> (<span id="max_num">1</span>%) － <span id="max_count">0</span>회차
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var auto;
+			var running = 0;
+			
+			var count = 0;//현재 회차
+			var grade_num = 1;//현재 퍼센트
+			var grade_name = "";//현재 등급
+			var max_num = 1;//최대 퍼센트
+			var max_name = "";//최대 등급
+			
+			var images = "./images/etc/";
+			
+			//DOM 객체
+			var $clear = document.getElementById("clear");
+			
+			var $box_img = document.getElementById("box_img");
+			var $box_progress = document.getElementById("box_progress");
+			var $box_bar = document.getElementById("box_bar");
+			var $box_text = document.getElementById("box_text");
+			
+			var $result_count = document.getElementById("result_count");
+			var $result_grade_name = document.getElementById("result_grade_name");
+			var $result_grade_num = document.getElementById("result_grade_num");
+			
+			var $open1 = document.getElementById("open1");
+			var $open2 = document.getElementById("open2");
+			
+			var $frame_record = document.getElementById("frame_record");
+			
+			var $max_name = document.getElementById("max_name");
+			var $max_num = document.getElementById("max_num");
+			var $max_count = document.getElementById("max_count");
+			
+			//데이터
+			var gradeList = [
+				"최하급","하급","중급","상급","최상급","최상급"
+			];
+			
+			//함수
+				//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+				function thousand(num) {
+					if (isNaN(num)) {
+						return "";
+					} else {
+						var temp = parseInt(num.toString().replace(/,/g,''));
+						return temp.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+				}
+				
+				//칼박 실행
+				function simulate(num) {
+					//게이지 증가
+					if (($box_bar.offsetWidth/$box_progress.offsetWidth)*100 < 100) {
+						$box_bar.style.width = (($box_bar.offsetWidth/$box_progress.offsetWidth)*100 + 5).toString() + "%";
+						auto = setTimeout(function() {
+								simulate(num);
+							},50);
+					} else {
+						//회차 증가
+						count += 1;
+						$result_count.innerHTML = thousand(count);
+						
+						//칼박 수치/등급 결정
+						grade_num = Math.floor(Math.random() * 99) + 1;
+						grade_name = "<span class='grade" + (Math.floor(grade_num / 20)+1).toString() + "'>" + gradeList[Math.floor(grade_num / 20)] + "</span>";
+						$result_grade_name.innerHTML = grade_name;
+						$result_grade_num.innerHTML = grade_num;
+						
+						//최대치와 비교
+						if (max_num < grade_num) {
+							max_num = grade_num;
+							max_name = grade_name;
+							$max_name.innerHTML = max_name;
+							$max_num.innerHTML = max_num;
+							$max_count.innerHTML = thousand(count);
+						}
+						
+						//업데이트
+						$frame_record.innerHTML += "<p>" + thousand(count) + "회차 : " + grade_name + "( " + grade_num.toString() + "%)</p>"
+						$frame_record.scrollTop = $frame_record.scrollHeight;
+						
+						//후속 조치
+						switch (num) {
+							case 1:
+								running = 0;
+								onoff(0);
+								break;
+							case 2:
+								onoff(2);
+								simulate(2);
+								break;
+						}
+					}
+				}
+				//버튼 설정
+				function onoff(num) {
+					switch(num) {
+						case 0:
+							$open1.disabled = "";
+							$open2.disabled = "";
+							$clear.disabled = "";
+							
+							$open1.value = "1회 사용";
+							$open2.value = "연속 사용";
+							
+							//게이지 준비
+								//아이콘 변경
+								$box_img.src = images + "kaleido0.png";
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "#D37CFF";
+								$box_text.innerHTML = "칼레이도 박스 대기 중";
+								
+							break;
+						case 1:
+							$open1.disabled = "";
+							$open2.disabled = "disabled";
+							$clear.disabled = "disabled";
+							
+							$open1.value = "사용 중지";
+							//게이지 준비
+								//아이콘 변경
+								$box_img.src = images + "kaleido1.gif";
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "black";
+								$box_text.innerHTML = thousand(count+1) + "번째 시도 중...";
+							break;
+						case 2:
+							$open1.disabled = "disabled";
+							$open2.disabled = "";
+							$clear.disabled = "disabled";
+							
+							$open2.value = "사용 중지";
+							//게이지 준비
+								//아이콘 변경
+								$box_img.src = images + "kaleido1.gif";
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "black";
+								$box_text.innerHTML = thousand(count+1) + "회차 실행 중...";
+							break;
+					}
+				}
+				//리셋
+				function reset() {
+					if (confirm("초기화 하시겠습니까?")) {
+						count = 0;//현재 회차
+						grade_num = 1;//현재 퍼센트
+						grade_name = "";//현재 등급
+						max_num = 1;//최대 퍼센트
+						max_name = "";//최대 등급
+						
+						$result_count.innerHTML = "0";
+						$result_grade_name.innerHTML = "<span class='grade1'>최하급</span>";
+						$result_grade_num.innerHTML = "1";
+						
+						$max_name.innerHTML = "<span class='grade1'>최하급</span>";
+						$max_num.innerHTML = "1";
+						$max_count.innerHTML = "0";
+						
+						$frame_record.innerHTML = "";
+					}
+				}
+			
+			//실행
+			window.onload = function() {
+				var img1 = new Image();
+				img1.src = images + "kaleido0.png";
+				var img2 = new Image();
+				img2.src = images + "akleido1.gif";
+				
+				
+				$open1.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						onoff(1);
+						simulate(1);
+					} else {
+						clearTimeout(auto);
+						running = 0;
+						onoff(0);
+					}
+				}
+				$open2.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						onoff(2);
+						simulate(2);
+					} else {
+						clearTimeout(auto);
+						running = 0;
+						onoff(0);
+					}
+				}
+				$clear.onclick = function() {
+					reset();
+				}
+			}
+		</script>
+	
+	
+	</body>
+</body>

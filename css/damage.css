@@ -1,0 +1,216 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+/*======================================================================================================*/
+/* ※ A. 컬러링 */
+/*======================================================================================================*/
+.blue {
+	color:blue;
+	font-weight:bold;
+}
+
+/*======================================================================================================*/
+/* ※ B. 태그 */
+/*======================================================================================================*/
+body {
+	padding:5px;
+	
+	background-color:#FFFFCC;
+}
+	p.title {
+		font-weight:bold;
+		font-size:25px;
+		text-align:center;
+	}
+	
+	span {
+		font-size:inherit;
+	}
+	
+	input[type="text"] {
+		padding-right:5px;
+		width:115px;
+		
+		border:1px gray solid;
+		
+		text-align:right;
+	}
+		input[type="text"].short {
+			width:50px;
+		}
+
+	hr {
+		border:1px black solid;
+	}
+
+/*======================================================================================================*/
+/* ※ 1. 제목, 틀 */
+/*======================================================================================================*/
+#wrapper {
+	float:left;
+	width:890px;
+	height:637px;
+	
+	border:1px black solid;
+}
+
+#frame_head {
+	float:left;
+	
+	width:890px;
+}
+	p.head {
+		float:left;
+		
+		margin:2px;
+		margin-left:10px;
+		width:449px;
+		
+		font-weight:bold;
+		font-size:50px;
+	}
+	input[type="button"]#clear {
+		float:right;
+		
+		margin:10px;
+		width:200px;
+		height:40px;
+		
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		
+		font-size:25px;
+	
+		display:block;
+	}
+			input[type="button"]#clear:active {
+				background: #FFAA00;
+			}
+/*======================================================================================================*/
+/* ※ 2. 데이터 입력 */
+/*======================================================================================================*/
+#frame_input {
+	clear:both;
+	float:left;
+	
+	width:470px;
+	height:572px;
+}
+		#frame_input p {
+			margin-bottom:5px;
+		}
+		#frame_input .half {
+			float:right;
+			
+			width:235px;
+			
+			display:block;
+		}
+		
+	/*======================================================================================================*/
+	/* ※ 2-1. 데이터 입력 - 각종 창 */
+	/*======================================================================================================*/
+	#frame_input_tabs {
+		float:left;
+		
+		width:471px;
+		height:42px;
+	}
+		#frame_input_tabs div {
+			float:left;
+			
+			width:93px;
+			height:40px;
+			
+			background:#C6C6C6;
+			border:1px black solid;
+			border-left:0px;
+			
+			text-align:center;
+			
+			cursor:pointer;
+			cursor:hand;
+			
+			display:table;
+		}
+				#frame_input_tabs div:hover {
+					background:#EFEFEF;
+				}
+			#frame_input_tabs div.selected {
+				background:Gainsboro;
+				border-bottom:1px Gainsboro solid;
+			}
+		#frame_input_tabs p {
+			margin:0px;
+			
+			vertical-align:middle;
+			
+			display:table-cell;
+		}
+
+
+	#frame_input_1, #frame_input_2, #frame_input_3, #frame_input_4, #frame_input_5 {
+		float:left;
+		
+		padding:10px;
+		width:449px;
+		height:510px;
+		
+		background:Gainsboro;
+		border-right:1px black solid;
+	}
+
+	#frame_input_2, #frame_input_3, #frame_input_4, #frame_input_5 {
+		display:none;
+	}
+		select {
+			/*background:#F4FA58;*/
+			border:1px gray solid;
+		}
+
+
+
+/*======================================================================================================*/
+/* ※ 3. 데이터 출력 */
+/*======================================================================================================*/
+#frame_output {
+	float:left;
+	
+	padding:10px;
+	width:400px;
+	height:492px;
+	
+	background:brown;
+	
+	color:white;
+}
+		#frame_output p {
+			margin-bottom:5px;
+		}
+
+input[type="button"] {
+	background: #516BFF; /* default */
+	background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+	background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+	background: linear-gradient(to bottom, #ffffff, #516BFF);
+	
+	width:420px;
+	height:60px;
+	
+	font-size:40px;
+	font-weight:bold;
+}
+		input[type="button"]:active {
+			background: #3855FF;
+		}

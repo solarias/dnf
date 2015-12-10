@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<link rel="stylesheet" type="text/css" href="./css/jaeryeon.css" />
+		
+		<title>재련 시뮬레이터</title>
+	</head>
+	<body>
+
+		<div id="press">
+			<img src='./images/selfish/yong0.png' />
+			<div style="float:left;margin-left:5px;">
+				<p>
+					<select id="weapon">
+						<option selected disabled>(무기를 선택하세요)</option>
+						<optgroup label="귀검사,다크나이트,나이트">
+							<option value="w0101">구원의 이기 - 소검</option>
+							<option value="w0102">구원의 이기 - 도</option>
+							<option value="w0103">구원의 이기 - 둔기</option>
+							<option value="w0104">구원의 이기 - 대검</option>
+							<option value="w0105">구원의 이기 - 광검</option>
+						</optgroup>
+						<optgroup label="격투가">
+							<option value="w0201">구원의 이기 - 너클</option>
+							<option value="w0202">구원의 이기 - 건틀렛</option>
+							<option value="w0203">구원의 이기 - 클로</option>
+							<option value="w0204">구원의 이기 - 권투글러브</option>
+							<option value="w0205">구원의 이기 - 통파</option>
+						</optgroup>
+						<optgroup label="거너">
+							<option value="w0301">구원의 이기 - 리볼버</option>
+							<option value="w0302">구원의 이기 - 자동권총</option>
+							<option value="w0303">구원의 이기 - 머스켓</option>
+							<option value="w0304">구원의 이기 - 핸드캐넌</option>
+							<option value="w0305">구원의 이기 - 보우건</option>
+						</optgroup>
+						<optgroup label="마법사,크리에이터">
+							<option value="w0401">구원의 이기 - 창</option>
+							<option value="w0402">구원의 이기 - 봉</option>
+							<option value="w0403">구원의 이기 - 로드</option>
+							<option value="w0404">구원의 이기 - 스태프</option>
+							<option value="w0405">구원의 이기 - 빗자루</option>
+						</optgroup>
+						<optgroup label="프리스트">
+							<option value="w0501">구원의 이기 - 십자가</option>
+							<option value="w0502">구원의 이기 - 염주</option>
+							<option value="w0503">구원의 이기 - 토템</option>
+							<option value="w0504">구원의 이기 - 낫</option>
+							<option value="w0505">구원의 이기 - 배틀액스</option>
+						</optgroup>
+						<optgroup label="도적">
+							<option value="w0601">구원의 이기 - 단검</option>
+							<option value="w0602">구원의 이기 - 쌍검</option>
+							<option value="w0603">구원의 이기 - 완드</option>
+							<option value="w0604">구원의 이기 - 차크라 웨펀</option>
+						</optgroup>
+					</select>
+					을(를) 재련합니다.
+				</p><p>
+					<input id="open1" class="off" type="button" value="1회 재련" disabled />
+					<input id="open2" class="off" type="button" value="연속 재련" disabled />
+					<input id="open3" class="off" type="button" value="고속 재련" disabled />
+					<input id="clear" class="off" type="button" value="초기화" disabled />
+				</p>
+			</div>
+		</div>
+		
+		<div id="now" style="clear:both;">
+			<img id="now_img" src='./images/selfish/yong0.png' />
+			<div id="now_text">
+				상단에서 무기를 선택해주세요.
+			</div>
+		</div>
+		
+		<div id="message" style="clear:both;">
+			<img id="message_img" src='' />
+			<div id="message_text">
+			</div>
+		</div>
+		
+		<div id="show" style="clear:both;">
+			<img id="show_img" src='./images/selfish/yong0.png' />
+			<div id="show_right">
+				<div id="show_bar">
+				</div>
+			</div>
+			<div id="show_text">
+				용화덕 대기 중
+			</div>
+		</div>
+		
+		<div id="record">
+			<div id="record_top">
+				<img id="record_img" src="" style="visibility:hidden;" />
+				<div id="record_target" style="color:white">목표</div>
+				<div id="record_result">결과</div>
+				<div id="record_now">시도</div>
+				<div id="record_all">전체</div>
+				<div id="record_item" style="text-align:center;">아이템</div>
+			</div>
+			<div id="record_bottom">
+			</div>
+		</div>
+		
+		<div id="result">
+			총 소모 
+				<img src='./images/selfish/ganggi.png' />
+			 : 
+			 <span id="result_num">
+			 </span>
+		</div>
+		
+		
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<div id="imagePreloader">
+		</div>
+
+		<script type="text/javascript" src="./js/jaeryeon.js"></script>
+		
+	</body>
+</html>

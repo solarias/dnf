@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/hell.css" />
+		
+		<title>지옥파티 시뮬레이터</title>
+	</head>
+	<body>
+	<div id="wrapper">
+		<!--좌측 : 컨트롤 패널-->
+		<div id="frame_left">
+			<div class="wrap">
+				<p class='center'>
+				&lt;던전 선택&gt;
+				</p><p>
+				<select id="dungeon">
+					<optgroup label="시간의 문">
+						<option value = "0" selected>대화재</option><!--0-->
+						<option value = "1">전염병</option><!--0-->
+						<option value = "2">결성! 카르텔</option><!--0-->
+						<option value = "3">검은 성전</option><!--1-->
+						<option value = "4">극비구역</option><!--1-->
+						<option value = "5">옛비명굴</option><!--2-->
+						<option value = "6">태동</option><!--2-->
+						<option value = "7">자각</option><!--2-->
+					</optgroup>
+					<optgroup label="파워스테이션">
+						<option value = "8">코레 발전소</option><!--3-->
+						<option value = "9">푸르츠 발전소</option><!--4-->
+						<option value = "10">트롬베 발전소</option><!--4-->
+						<option value = "11">그란디네 발전소</option><!--4-->
+					</optgroup>
+					<optgroup label="죽은 자의 성">
+						<option value = "12">매달린 망루</option><!--5-->
+						<option value = "13">루크린제</option><!--5-->
+						<option value = "14">강철의 브라키움</option><!--5-->
+						<option value = "15">샐러맨더의 화로</option><!--5-->
+						<option value = "16">빛의 연회장</option><!--5-->
+					</optgroup>
+				</select>
+				</p>
+			</div>
+			<div class="wrap min_gap">
+				<p class='center'>
+				&lt;지옥파티 정보&gt;
+				</p><p>
+					＊레벨 : <span id='dungeon_level'></span>
+					<br/>
+					＊소모 초대장 : <span id='dungeon_cost'></span>
+				</p>
+			</div>
+
+			<div class="wrap min_gap">
+				<p class='center'>
+				&lt;던전 난이도 선택&gt;
+				</p><p>
+					<select id="difficulty">
+							<option value="0">노멀</option>
+							<option value="1">익스퍼트</option>
+							<option value="2">마스터</option>
+							<option value="3">킹</option>
+							<option value="4">슬레이어</option>
+					</select>
+				</p>
+				<p class='center'>
+				&lt;채널 선택&gt;
+				</p><p>
+					<select id="channel">
+						<optgroup label="통합 채널">
+							<option>실버크라운 CH 1</option><option>실버크라운 CH 2</option><option>실버크라운 CH 3</option><option>실버크라운 CH 4</option><option>실버크라운 CH 5</option><option>실버크라운 CH 6</option><option>실버크라운 CH 7</option><option>실버크라운 CH 8</option><option>실버크라운 CH 9</option><option>실버크라운 CH 10</option><option>실버크라운 CH 11</option><option>실버크라운 CH 12</option><option>실버크라운 CH 13</option><option>실버크라운 CH 14</option><option>실버크라운 CH 15</option><option>실버크라운 CH 16</option><option>실버크라운 CH 17</option><option>실버크라운 CH 18</option><option>실버크라운 CH 19</option><option>실버크라운 CH 20</option>
+							<option>멜트다운 CH 1</option><option>멜트다운 CH 2</option><option>멜트다운 CH 3</option><option>멜트다운 CH 4</option><option>멜트다운 CH 5</option><option>멜트다운 CH 6</option><option>멜트다운 CH 7</option><option>멜트다운 CH 8</option><option>멜트다운 CH 9</option><option>멜트다운 CH 10</option><option>멜트다운 CH 11</option><option>멜트다운 CH 12</option><option>멜트다운 CH 13</option><option>멜트다운 CH 14</option><option>멜트다운 CH 15</option><option>멜트다운 CH 16</option><option>멜트다운 CH 17</option><option>멜트다운 CH 18</option><option>멜트다운 CH 19</option><option>멜트다운 CH 20</option>
+							<option>표류동굴 CH 1</option><option>표류동굴 CH 2</option><option>표류동굴 CH 3</option><option>표류동굴 CH 4</option><option>표류동굴 CH 5</option><option>표류동굴 CH 6</option><option>표류동굴 CH 7</option><option>표류동굴 CH 8</option><option>표류동굴 CH 9</option><option>표류동굴 CH 10</option><option>표류동굴 CH 11</option><option>표류동굴 CH 12</option><option>표류동굴 CH 13</option><option>표류동굴 CH 14</option><option>표류동굴 CH 15</option><option>표류동굴 CH 16</option><option>표류동굴 CH 17</option><option>표류동굴 CH 18</option><option>표류동굴 CH 19</option><option>표류동굴 CH 20</option>
+							<option>역천의 폭포 CH 1</option><option>역천의 폭포 CH 2</option><option>역천의 폭포 CH 3</option><option>역천의 폭포 CH 4</option><option>역천의 폭포 CH 5</option><option>역천의 폭포 CH 6</option><option>역천의 폭포 CH 7</option><option>역천의 폭포 CH 8</option><option>역천의 폭포 CH 9</option><option>역천의 폭포 CH 10</option><option>역천의 폭포 CH 11</option><option>역천의 폭포 CH 12</option><option>역천의 폭포 CH 13</option>
+							<option>체념의 빙벽 CH 14</option><option>체념의 빙벽 CH 15</option><option>체념의 빙벽 CH 16</option><option>체념의 빙벽 CH 17</option><option>체념의 빙벽 CH 18</option><option>체념의 빙벽 CH 19</option><option>체념의 빙벽 CH 20</option><option>체념의 빙벽 CH 21</option><option>체념의 빙벽 CH 22</option><option>체념의 빙벽 CH 23</option><option>체념의 빙벽 CH 24</option><option>체념의 빙벽 CH 25</option><option>체념의 빙벽 CH 26</option>
+							<option>안트베르 협곡 CH 1</option><option>안트베르 협곡 CH 2</option><option>안트베르 협곡 CH 3</option><option>안트베르 협곡 CH 4</option><option>안트베르 협곡 CH 5</option><option>안트베르 협곡 CH 6</option><option>안트베르 협곡 CH 7</option><option>안트베르 협곡 CH 8</option><option>안트베르 협곡 CH 9</option><option>안트베르 협곡 CH 10</option>
+							<option>해상열차 CH 1</option><option>해상열차 CH 2</option><option>해상열차 CH 3</option><option>해상열차 CH 4</option><option>해상열차 CH 5</option>
+							<option>시간의 문 CH 11</option><option>시간의 문 CH 12</option><option>시간의 문 CH 13</option><option>시간의 문 CH 14</option><option>시간의 문 CH 15</option><option>시간의 문 CH 16</option><option>시간의 문 CH 17</option><option>시간의 문 CH 18</option><option>시간의 문 CH 19</option><option>시간의 문 CH 20</option><option>시간의 문 CH 21</option><option>시간의 문 CH 22</option><option>시간의 문 CH 23</option>
+							<option>파워 스테이션 CH 1</option><option>파워 스테이션 CH 2</option><option>파워 스테이션 CH 3</option><option>파워 스테이션 CH 4</option><option>파워 스테이션 CH 5</option><option>파워 스테이션 CH 6</option><option>파워 스테이션 CH 7</option><option>파워 스테이션 CH 8</option><option>파워 스테이션 CH 9</option><option>파워 스테이션 CH 10</option>
+							<option>노블 스카이 CH 21</option><option>노블 스카이 CH 22</option><option>노블 스카이 CH 23</option><option>노블 스카이 CH 24</option><option>노블 스카이 CH 25</option>
+							<option>죽은자의 성 CH 21</option><option>죽은자의 성 CH 22</option><option>죽은자의 성 CH 23</option><option>죽은자의 성 CH 24</option><option>죽은자의 성 CH 25</option>
+							<option>(구)이계 던전 CH 1</option><option>(구)이계 던전 CH 2</option><option>(구)이계 던전 CH 3</option><option>(구)이계 던전 CH 4</option><option>(구)이계 던전 CH 5</option><option>(구)이계 던전 CH 6</option><option>(구)이계 던전 CH 7</option>
+							<option>(신)이계 던전 CH 8</option><option>(신)이계 던전 CH 9</option><option>(신)이계 던전 CH 10</option><option>(신)이계 던전 CH 11</option><option>(신)이계 던전 CH 12</option><option>(신)이계 던전 CH 13</option><option>(신)이계 던전 CH 14</option><option>(신)이계 던전 CH 15</option>
+							<option>거래 - 경매장 CH 16</option><option>거래 - 경매장 CH 17</option>
+							<option>고대 던전 CH 16</option>
+							<option>망자의 협곡 CH 21</option><option>망자의 협곡 CH 22</option><option>망자의 협곡 CH 23</option><option>망자의 협곡 CH 24</option><option>망자의 협곡 CH 25</option>
+						</optgroup>
+						<optgroup label="일반 채널">
+							<option>거래 - 경매장 CH 28</option>
+							<option>일반채널 CH 26</option><option>일반채널 CH 27</option>
+						</optgroup>
+					</select>
+				</p>
+			</div>
+						
+			<input id="run1" class="short_gap" type="button" value="1회 실행" />
+			
+			<div id="objective" class="wrap gap">
+			
+				<input id="run2" class="" type="button" value="연속 실행" />
+				
+				<p class='center short_gap'>
+					&lt;연속 실행 목표&gt;
+				</p>
+				<select id="objective_list">
+					<option value="none">목표를 선택하세요 (목표 없음)</option>
+					<option value="" disabled>=======================</option>
+					<option value="item">에픽 아이템 탐색</option>
+					<option value="set">세트 완성</option>
+					<option value="count">실행 횟수</option>
+					<option value="cost">초대장 제한</option>
+					<option value="fatigue">피로도 제한</option>
+				</select>
+				<hr style="margin:10px 0px;border:1px gray dashed;"/>
+				<!--조건 1 : 없음-->
+				<div id="objective_none">
+					<p>
+						설정된 목표 없음
+						<br/>
+						(수동으로 정지시킬 때까지 무한히 반복됩니다.)
+					</p><p>
+						(<span class="bold">※</span> <span class="bold">에픽 아이템 검색</span> : 
+						<br />
+						"연속 실행 목표" 리스트에서 해당 항목을 선택하세요)
+					</p>
+				</div>
+				<!--조건 2 : 아이템 검색-->
+				<div id="objective_item">
+					<p>
+						<span class="bold">＊1차 분류 : </span>
+						<select id="objective_item_first">
+							<option value="">모든 에픽 아이템</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p><p>
+						<span class="bold">＊2차 분류 : </span>
+						<select id="objective_item_second" disabled>
+							<option value="">모든 에픽 아이템</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p><p>
+						<span class="bold">＊3차 분류 : </span>
+						<select id="objective_item_third" disabled>
+							<option value="">모든 에픽 아이템</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p><p>
+						<span class="bold">＊아이템 명칭 : </span>
+						<select id="objective_item_name" disabled>
+							<option value="">모든 에픽 아이템</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p>
+				</div>
+				<div id="objective_set">
+					<p>
+						<span class="bold">＊분류 : </span>
+						<select id="objective_set_first">
+							<option value="">모든 세트</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p>
+					<br/>
+					<p>
+						<span class="bold">＊세트 명칭 : </span>
+						<select id="objective_set_name" disabled>
+							<option value="">모든 세트</option>
+							<option value="" disabled>=====================</option>
+						</select>
+					</p>
+					<br/>
+					<p class="small">
+						(선택한 세트가 완성되면 실행이 중단됩니다.)
+					</p>
+				</div>
+				<div id="objective_count">
+					<p>
+						<span class="bold">＊실행 횟수  : </span>
+						<input id="objective_count_text" type="text" placeholder='실행 횟수 입력' >
+					</p>
+					<br/>
+					<p class="small">
+						(입력된 횟수만큼 실행이 이루어집니다.)
+					</p>
+				</div>
+				<div id="objective_cost">
+					<p>
+						<span class="bold">＊초대장 개수 : </span>
+						<input id="objective_cost_text" type="text" placeholder='초대장 개수 입력' >
+					</p>
+					<br/>
+					<p class="small">
+						(입력한 초대장을 모두 소모하면 실행이 중지됩니다.)
+					</p>
+				</div>
+				<div id="objective_fatigue">
+					<p>
+						<span class="bold">＊전체 피로도 : </span>
+						<input id="objective_fatigue_max" type="text" placeholder='전체 피로도 입력' >
+					</p>
+					<p>
+						<span class="bold">＊1회당 소모 피로도</span>
+						<input id="objective_fatigue_per" type="text" placeholder='1회당 소모 피로도' >
+					</p>
+					<br/>
+					<p class="small">
+						(피로도를 모두 소모하면 실행이 중지됩니다.)
+						<br/>
+						(영약 피로도는 전체 피로도를 1번 소모 후, 별도로 설정하여 실행하세요.)
+					</p>
+				</div>
+			</div>
+			<p class='notice'>
+				<span class="bold">문의사항</span> : <a href="http://bbs1.ruliweb.daum.net/gaia/do/ruliweb/family/636/read?articleId=8033955&bbsId=G001&searchKey=subjectNcontent&itemId=2230&sortKey=depth&searchValue=%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0&pageIndex=1" target="_black" >여기</a>에 댓글을 남겨주세요.
+			</p>
+			
+			<input id="clear" class="gap" type="button" value="모두 초기화"/>
+			
+		</div>
+		<!--좌측 : 컨트롤 패널-->
+		
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		
+		<!--중앙 : 지옥파티 결과물-->
+		<div id="frame_center">
+			<div id="frame_center_title">
+				지옥파티 결과
+			</div>
+			<div id="message">
+				<div id="message_text">
+					<span id="message_count">0</span>
+					회차 : 
+					<span id="message_difficulty" class="orange"></span>
+				</div>
+			</div>
+			<div id="show">
+				<div id="show_head">
+					<div class='show_img'>
+						<img src="" />
+					</div>
+					<div class="show_name">
+						아이템 이름
+					</div>
+					<div class="show_level">
+						레벨
+					</div>
+				</div>
+				<div id="show_display">
+				</div>
+			</div>
+			<div id="result">
+				<div id="result_text">
+					<div class="left">
+						<span class="epic">획득 에픽</span> x <span id="result_epic">0</span>
+					</div><div class="right">
+						<span class="epic">보유 에픽</span> x <span id="result_epic_real">0</span>
+					</div>
+					<div class="left">
+						<img src="./images/hell/soul.png" alt='소울' > x <span id="result_soul">0</span>
+					</div><div class="right">
+						<img src="./images/hell/beed.png" alt='구슬' > x <span id="result_beed">0</span>
+					</div>
+					<div class="bottom">
+						(※ <span class='unique'>코스모 소울</span>, <span class='unique'>지옥 구슬</span> 획득 시
+						또는 <span class='epic'>에픽 아이템</span> 해체 시
+						<br/>
+						실질 소모 초대장 개수, 실질 골드 환산 수치가 감소합니다.)
+					</div>
+				</div>
+			</div>
+			<div id="cost">
+				<div id="cost_text">
+						<span class="line">
+						총 소모 
+						<img src="./images/hell/cost.png">
+						 : 
+						<span id="cost_invitation">0</span>
+						 (실질 : 
+						<span id="cost_real">0</span>
+						)
+						</span>
+						<hr />
+					<div id="line_cover">
+						<span class="line">
+						골드 환산 : 
+						<span id="cost_gold">0</span>
+						 Gold
+						</span>
+						<span class="line">
+						(실질 :
+						<span id="cost_gold_real">0</span>
+						 Gold)
+						</span>
+					</div>
+					<input id="cost_set_gold"type="button" value="도전장
+						가격
+						설정">
+				</div>
+			</div>
+		</div>
+		<!--중앙 : 지옥파티 결과물-->
+		
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		
+		<!--우측 : 기록-->
+		<div id="frame_right">
+			<div id="frame_right_title" class="title_record">
+				획득 기록
+			</div>
+			
+			<div id="record_filter" class="filter">
+				<strong>필터링 : </strong>
+				<select id="record_filter_first" class="first">
+					<option value="">1차 분류 (전체 보기)</option>
+					<option value="" disabled>=============================</option>
+				</select>
+				<select id="record_filter_second" class="second" disabled >
+					<option value="">2차 분류 (전체 보기)</option>
+				</select>
+				<select id="record_filter_third" class="third" disabled >
+					<option value="">3차 분류 (전체 보기)</option>
+				</select>
+				<select id="record_filter_level" class="level" >
+					<option value="">레벨 (전체 보기)</option>
+					<option value="" disabled>=============</option>
+				</select>
+				<input id="record_filter_clear" class="clear" type="button" value="필터 해제" />
+			</div>
+			<div id="record">
+			</div>
+			<div id="record_check" class="check" >
+				<p>
+					<input id="record_check_cost" type="checkbox" /><label for="record_check_cost"></label>
+					<strong>소모 초대장</strong>　<input id="record_check_difficulty" type="checkbox" /><label for="record_check_difficulty"></label>
+					<strong>획득 난이도</strong>　<input id="record_check_quantity" type="checkbox" /><label for="record_check_quantity"></label>
+					<strong>중복 획득 횟수</strong>
+				</p><p>
+					시뮬레이터가 느려지면 기록초기화를 해보세요 ▶▶
+				</p>
+				<input id="record_check_reset" type="button" value="획득 기록 초기화">
+			</div>
+			
+			<div id="inventory_filter" class="filter">
+				<strong>필터링 : </strong>
+				<select id="inventory_filter_first" class="first">
+					<option value="">1차 분류 (전체 보기)</option>
+					<option value="" disabled>=============================</option>
+				</select>
+				<select id="inventory_filter_second" class="second" disabled >
+					<option value="">2차 분류 (전체 보기)</option>
+				</select>
+				<select id="inventory_filter_third" class="third" disabled >
+					<option value="">3차 분류 (전체 보기)</option>
+				</select>
+				<select id="inventory_filter_level" class="level" >
+					<option value="">레벨 (전체 보기)</option>
+					<option value="" disabled>=============</option>
+				</select>
+				<input id="inventory_filter_clear" class="clear" type="button" value="필터 해제" />
+			</div>
+			<div id="inventory">
+				<div id="inventory_head">
+					<table cellspacing="0" >
+						<tr>
+							<td class="col_1">아이템 이름</td>
+							<td class="col_2">종류</td>
+							<td class="col_3">레벨</td>
+							<td class="col_4">해체</td>
+							<td class="col_5">보유</td>
+							<td class="col_6">첫 획득 시점</td>
+						</tr>
+					</table>
+				</div>
+				<div id="inventory_display">
+					<table id="inventory_table" cellspacing="0" >
+					</table>
+				</div>
+			</div>
+			<div id="inventory_check" class="check" >
+				<p>
+					<input id="inventory_check_cost" type="checkbox"><label for="inventory_check_cost"></label>
+					<strong>첫 획득 시 소모 초대장</strong>　<input id="inventory_check_all" type="checkbox"><label for="inventory_check_all"></label>
+					<strong>모든 아이템 보기 (수집률 : <span id="inventory_check_collect">0</span>%)</strong>
+				</p><p>
+					<input id="inventory_check_confirm" type="checkbox"><label for="inventory_check_confirm"></label>
+					<strong>수동 해체 시 경고창 출력 X</strong>
+				</p>
+				<input id="disassemble_1" type="button" value="중복 에픽 아이템 일괄 해체">
+			</div>
+			
+			<div id="set_filter" class="filter">
+				<strong>필터링 : </strong>
+				<select id="set_filter_first" class="first">
+					<option value="">1차 분류 (전체 보기)</option>
+					<option value="" disabled>=============================</option>
+				</select>
+				<select id="set_filter_second" class="second" disabled >
+					<option value="">2차 분류 (전체 보기)</option>
+				</select>
+				<select id="set_filter_third" class="third" disabled >
+					<option value="">3차 분류 (전체 보기)</option>
+				</select>
+				<select id="set_filter_level" class="level" >
+					<option value="">레벨 (전체 보기)</option>
+					<option value="" disabled>=============</option>
+				</select>
+				<input id="set_filter_clear" class="clear" type="button" value="필터 해제" />
+			</div>
+			<div id="set">
+				<div id="set_head">
+					<table cellspacing="0" >
+						<tr>
+							<td class="col_1">아이템 이름</td>
+							<td class="col_2">종류</td>
+							<td class="col_3">레벨</td>
+							<td class="col_4">해체</td>
+							<td class="col_5">보유</td>
+							<td class="col_6">첫 획득 시점</td>
+						</tr>
+					</table>
+				</div>
+				<div id="set_display">
+					<table id="set_table" cellspacing="0" >
+					</table>
+				</div>
+			</div>
+			<div id="set_check" class="check" >
+				<p>
+					<input id="set_check_cost" type="checkbox"><label for="set_check_cost"></label>
+					<strong>첫 획득 시 소모 초대장</strong>　<input id="set_check_all" type="checkbox"><label for="set_check_all"></label>
+					<strong>모든 아이템&세트</strong>　<input id="set_check_only" type="checkbox"><label for="set_check_only"></label>
+					<strong>세트만 보기</strong>
+				</p><p>
+					<input id="set_check_confirm" type="checkbox"><label for="set_check_confirm"></label>
+					<strong>수동 해체 시 경고창 출력 X</strong>
+				</p>
+				<input id="disassemble_2" type="button" value="중복 세트 아이템 일괄 해체">
+			</div>
+			
+			<input id="shift1" class="selected" type="button" value="획득 기록" />
+			<input id="shift2" class="" type="button" value="인벤토리" />
+			<input id="shift3" class="" type="button" value="세트 아이템" />
+			
+		</div>
+		<!--우측 : 기록-->
+		
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<!--다이나믹 스타일-->
+		<style id="style_inventory_check_cost" type="text/css">
+		</style>
+		<style id="style_inventory_check_all" type="text/css">
+		</style>
+		
+		<style id="style_set_check_cost" type="text/css">
+		</style>
+		<style id="style_set_check_all" type="text/css">
+		</style>
+		<style id="style_set_check_only" type="text/css">
+		</style>
+		
+		<style id="style_record_filter_first" type="text/css">"
+		</style>
+		<style id="style_record_filter_second" type="text/css">
+		</style>
+		<style id="style_record_filter_third" type="text/css">
+		</style>
+		<style id="style_record_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_inventory_filter_first" type="text/css">
+		</style>
+		<style id="style_inventory_filter_second" type="text/css">
+		</style>
+		<style id="style_inventory_filter_third" type="text/css">
+		</style>
+		<style id="style_inventory_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_set_filter_first" type="text/css">
+		</style>
+		<style id="style_set_filter_second" type="text/css">
+		</style>
+		<style id="style_set_filter_third" type="text/css">
+		</style>
+		<style id="style_set_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_record_check_cost" type="text/css">
+			#record span.cost {
+				display:inline;
+			}
+		</style>
+		<style id="style_record_check_difficulty" type="text/css">
+			#record span.difficulty_0, #record span.difficulty_1 {
+				display:inline;
+			}
+		</style>
+		<style id="style_record_check_quantity" type="text/css">
+			#record span.quantity {
+				display:inline;
+			}
+		</style>
+		
+		<!--다이나믹 스타일-->
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			<p>지옥파티 시뮬레이터 2 출시! 하단 링크로 들어가면 2편 링크가 있습니다.</p>
+			<hr/>
+			<p>※ 2편 관련 링크 :  <a href="http://bbs1.ruliweb.daum.net/gaia/do/ruliweb/family/636/read?articleId=8223226&bbsId=G001" target="_black" >여기 클릭</a></p>
+		</div>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<!--로딩 뒤에 뜨는 공지사항-->
+		<div id="notice">
+			
+		</div>
+		<!--로딩 뒤에 뜨는 공지사항-->
+		
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		
+		<div id="imagePreloader">
+		</div>
+	
+	</div>
+	
+	
+		<script type="text/javascript" src="./js/placeholders.min.js"></script>
+		
+		<script type="text/javascript" src="./js/hell_data.js"></script>
+		<script type="text/javascript" src="./js/hell_function.js"></script>
+		<script type="text/javascript" src="./js/hell_onload.js"></script>
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<!-- Histats.com  START (hidden counter)-->
+		<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+		<a href="http://www.histats.com" target="_blank" title="free statistics" ><script  type="text/javascript" >
+		try {Histats.start(1,3075668,4,0,0,0,"");
+		Histats.track_hits();} catch(err){};
+		</script></a>
+		<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3075668&101" alt="free statistics" border="0"></a></noscript>
+		<!-- Histats.com  END  -->
+		
+	</body>
+</html>

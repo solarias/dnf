@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/damage.css" />
+		
+		<title>던파 대미지 계산기</title>
+	</head>
+	<body>				
+		<div id="wrapper">
+			<div id="frame_head">
+				<p class="head">던파 대미지 계산기</p>
+				
+				<input id="clear" type="button" value="초기화" />
+			</div>
+			
+			<div id="frame_input">
+			
+				<div id="frame_input_tabs">
+					<div id="tab1" class="tab_button selected">
+						<p>캐릭터<br/>& 장비</p>
+					</div>
+					<div id="tab2" class="tab_button">
+						<p>스킬<br/>대미지</p>
+					</div>
+					<div id="tab3" class="tab_button">
+						<p>증가&추가<br/>대미지</p>
+					</div>
+					<div id="tab4" class="tab_button">
+						<p>몬스터<br/>능력치</p>
+					</div>
+					<div id="tab5" class="tab_button side">
+						<p>기타 변수</p>
+					</div>
+				</div>
+				
+				<div id="frame_input_1">
+					<p class="title">
+						&lt;캐릭터 & 장비 능력치&gt;
+					</p><p>
+						<hr/>
+					</p><p>
+						＊캐릭터 레벨 : <input id="" class="short" type="text"> (몬스터 방어력에 영향을 줌)
+					</p><p>
+						＊힘 : <input id="" type="text">
+						<span class="half">
+							＊지능 : <input id="" type="text">
+						</span>
+					</p><p>
+						<hr/>
+					</p><p>
+						＊물리 공격력 : <input id="" type="text">
+					</p><p>
+						＊물리 공격력 증가 (고정수치) : <input id="" type="text">
+					</p><p>
+						＊물리 공격력 증가 (퍼센트) : <input id="" type="text"> %
+					</p><p>
+						＊물리 방어 무시 대미지 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊마법 공격력 : <input id="" type="text">
+					</p><p>
+						＊마법 공격력 증가 (고정수치) : <input id="" type="text">
+					</p><p>
+						＊마법 공격력 증가 (퍼센트) : <input id="" type="text"> %
+					</p><p>
+						＊마법 방어 무시 대미지 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊독립 공격력 : <input id="" type="text">
+					</p><p>
+						＊독립 공격력 증가 (고정수치) : <input id="" type="text">
+					</p><p>
+						＊독립 공격력 증가 (퍼센트) : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p><p>
+						＊속성 강화 : <input id="" type="text">
+					</p><p>
+						＊속성 강화 증가 (고정수치) : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊상태이상 대미지 － 재련 증가 : <input id="" type="text"> %
+					</p><p>
+						＊상태이상 대미지 － 아이템 증가 (총합) : <input id="" type="text"> %
+					</p>
+				</div>
+				
+				<div id="frame_input_2">
+					<p class="title">
+						&lt;스킬 대미지&gt;
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 레벨 : <input id="" class="short" type="text"> (독립 오브젝트 전용)
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 물리 퍼센트 대미지 : <input id="" type="text"> %
+					</p><p>
+						＊스킬 물리 고정 대미지 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 마법 퍼센트 대미지 : <input id="" type="text"> %
+					</p><p>
+						＊스킬 마법 고정 대미지 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 공격 횟수 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 대미지 변화 1 : <input id="" type="text"> % (감소 : 음수값 입력)
+					</p><p>
+						＊스킬 대미지 변화 2 : <input id="" type="text"> % (감소 : 음수값 입력)
+					</p><p>
+						＊스킬 대미지 변화 3 : <input id="" type="text"> % (감소 : 음수값 입력)
+					</p><p>
+						＊스킬 대미지 변화 4 : <input id="" type="text"> % (감소 : 음수값 입력)
+					</p><p>
+						＊스킬 대미지 변화 5 : <input id="" type="text"> % (감소 : 음수값 입력)
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 공격 횟수 변화 : <input id="" type="text"> (감소 : 음수값 입력)
+					</p><p>
+						<hr/>
+					</p><p>
+						＊스킬 상태이상 공격력 : <input id="" type="text">
+					</p><p>
+						<hr/>
+					</p>
+				</div>
+				
+				<div id="frame_input_3">
+					<p class="title">
+						&lt;증가 & 추가 대미지&gt;
+					</p><p>
+						<hr/>
+					</p><p>
+						＊증가 대미지 : <input id="" type="text"> % (최대값만 입력)
+					</p><p>
+						<hr/>
+					</p><p>
+						＊추가 대미지 1 : <input id="" type="text"> %
+					</p><p>
+						＊추가 대미지 2 : <input id="" type="text"> %
+					</p><p>
+						＊추가 대미지 3 : <input id="" type="text"> %
+					</p><p>
+						＊추가 대미지 4 : <input id="" type="text"> %
+					</p><p>
+						＊추가 대미지 5 : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p><p>
+						＊크리티컬 증가 대미지 (아이템) : <input id="" type="text"> % 
+					</p><p>
+						＊크리티컬 증가 대미지 (스킬 1) : <input id="" type="text"> %
+					</p><p>
+						＊크리티컬 증가 대미지 (스킬 2) : <input id="" type="text"> %
+					</p><p>
+						＊크리티컬 증가 대미지 (스킬 3) : <input id="" type="text"> %
+					</p><p>
+						＊크리티컬 증가 대미지 (스킬 4) : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p><p>
+						＊카운터 증가 대미지 : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p><p>
+						＊속성 추가 대미지 : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p>
+				</div>
+				
+				<div id="frame_input_4">
+					<p class="title">
+						&lt;몬스터 능력치&gt;
+					</p><p>
+						<hr/>
+					</p><p>
+						＊몬스터 레벨 : <input id="" class="short" type="text"> (독립 오브젝트 전용)
+					</p><p>
+						<hr/>
+					</p><p>
+						＊방어력 (퍼센트) : <input id="" type="text" value="89.9" /> %
+					</p><p>
+						＊속성 저항 : <input id="" type="text" value="-10" />
+					</p><p>
+						<hr/>
+					</p><p>
+						＊방어력 디버프 (고정 수치) : <input id="" type="text">
+					</p><p>
+						＊방어력 디버프 (퍼센트) : <input id="" type="text"> %
+					</p><p>
+						＊속성 저항 디버프 (고정 수치) : <input id="" type="text">
+					</p><p>
+						＊속성 저항 디버프 (퍼센트) : <input id="" type="text"> %
+					</p><p>
+						<hr/>
+					</p>
+				</div>
+				
+				<div id="frame_input_5">
+					<p class="title">
+						&lt;기타 변수&gt;
+					</p><p>
+						<hr/>
+					</p><p>
+						＊던전 난이도 : 
+						<select id="" >
+							<option value="10">노멀</option>
+							<option value="20">익스퍼트</option>
+							<option value="20">마스터</option>
+							<option value="40">킹</option>
+							<option value="60">슬레이어</option>
+							<option value="20">안톤 - 일반</option>
+							<option value="33">안톤 - 레이드</option>
+						</select>
+					</p><p>
+						　 (방어 무시 대미지 <span id="">10</span>% 감소)
+					</p><p>
+						<hr/>
+					</p>
+				</div>
+			
+			</div>
+			
+			<div id="frame_output">
+				<p class="title">
+					&lt;계산 결과&gt;
+				</p><p>
+					<hr/>
+				</p><p>
+					＊일반 대미지 (단독) : 
+				</p><p>
+					＊일반 대미지 (+상태이상) : 
+				</p><p>
+					<hr/>
+				</p><p>
+					＊크리티컬 대미지 (단독) : 
+				</p><p>
+					＊크리티컬 대미지 (+상태이상) : 
+				</p><p>
+					<hr/>
+				</p><p>
+					＊카운터 대미지 (단독) : 
+				</p><p>
+					＊카운터 대미지 (+상태이상) : 
+					<hr/>
+				</p><p>
+					＊카운터 크리티컬 (단독) : 
+				</p><p>
+					＊카운터 크리티컬 (+상태이상) : 
+				</p><p>
+					<hr/>
+				</p><p>
+					＊상태이상 대미지 (단독) : 
+				</p><p>
+					<hr/>
+				</p>
+			</div>
+			
+			<input id="calculate" type="button" value="대미지 계산하기" />
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="./js/damage.js"></script>
+	
+	
+	</body>
+</body>

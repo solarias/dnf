@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>안톤 레이드 공팟 구성</title>
+		
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+				
+				font-size:13px;
+				font-family:Arial;
+			}
+			
+			body {
+				padding:10px;
+				
+				background-color:#FFFFCC;
+			}
+			
+			#wrapper {
+				position:relative;
+				
+				width:356px;
+				height:550px;
+				
+				background-image:url(./images/anton/party.png);
+			}
+				#wrapper div {
+					position:absolute;
+					
+					padding:5px 1px 4px 1px;
+					height:13px;
+					
+					color:white;
+					font-size:12px;
+					line-height:100%;
+				}
+				
+				#wrapper #button {
+					-webkit-touch-callout: none;
+					-webkit-user-select: none;
+					-khtml-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+					
+					position:absolute;
+					top:516px;
+					left:16px;
+					
+					width:173px;
+					height:12px;
+					
+					cursor:pointer;
+					cursor:hand;
+				}
+				
+				#wrapper div#saint {
+					position:absolute;
+					top:521px;
+					left:200px;
+					
+					padding:0px;
+					height:15px;
+					
+					font-size:12px;
+					line-height:100%;
+				}
+				#saint_check {
+					vertical-align:top;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div id="member_1_level"></div>
+			<div id="member_1_name"></div>
+			<div id="member_1_job"></div>
+			
+			<div id="member_2_level"></div>
+			<div id="member_2_name"></div>
+			<div id="member_2_job"></div>
+			
+			<div id="member_3_level"></div>
+			<div id="member_3_name"></div>
+			<div id="member_3_job"></div>
+			
+			<div id="member_4_level"></div>
+			<div id="member_4_name"></div>
+			<div id="member_4_job"></div>
+			
+			<div id="member_5_level"></div>
+			<div id="member_5_name"></div>
+			<div id="member_5_job"></div>
+			
+			<div id="member_6_level"></div>
+			<div id="member_6_name"></div>
+			<div id="member_6_job"></div>
+			
+			<div id="member_7_level"></div>
+			<div id="member_7_name"></div>
+			<div id="member_7_job"></div>
+			
+			<div id="member_8_level"></div>
+			<div id="member_8_name"></div>
+			<div id="member_8_job"></div>
+			
+			<div id="member_9_level"></div>
+			<div id="member_9_name"></div>
+			<div id="member_9_job"></div>
+			
+			<div id="member_10_level"></div>
+			<div id="member_10_name"></div>
+			<div id="member_10_job"></div>
+			
+			<div id="member_11_level"></div>
+			<div id="member_11_name"></div>
+			<div id="member_11_job"></div>
+			
+			<div id="member_12_level"></div>
+			<div id="member_12_name"></div>
+			<div id="member_12_job"></div>
+			
+			<div id="member_13_level"></div>
+			<div id="member_13_name"></div>
+			<div id="member_13_job"></div>
+			
+			<div id="member_14_level"></div>
+			<div id="member_14_name"></div>
+			<div id="member_14_job"></div>
+			
+			<div id="member_15_level"></div>
+			<div id="member_15_name"></div>
+			<div id="member_15_job"></div>
+			
+			<div id="member_16_level"></div>
+			<div id="member_16_name"></div>
+			<div id="member_16_job"></div>
+			
+			<div id="member_17_level"></div>
+			<div id="member_17_name"></div>
+			<div id="member_17_job"></div>
+			
+			<div id="member_18_level"></div>
+			<div id="member_18_name"></div>
+			<div id="member_18_job"></div>
+			
+			<div id="member_19_level"></div>
+			<div id="member_19_name"></div>
+			<div id="member_19_job"></div>
+			
+			<div id="member_20_level"></div>
+			<div id="member_20_name"></div>
+			<div id="member_20_job"></div>
+			
+			<div id="button"></div>
+			
+			<div id="saint">
+				<input id="saint_check" type="checkbox" checked />
+				파티당 세인트 1명 이상
+			</div>
+			
+		</div>
+	
+	
+		<script type="text/javascript">
+			var i;
+			var jobList = [
+					"검신","다크로드","블러디 이블","인다라천","노블레스","검마","검호","암제",
+					"염제 폐월수화","카이저","용독문주","얼티밋 디바","광호제","무극","천수나한","자이언트",
+					"레이븐","디스트로이어","프라임","커맨더","크림슨 로제","스톰트루퍼","옵티머스","프레이야",
+					"오버마인드","이클립스","지니위즈","아슈타르테","워록","프로즌하트",
+					"세인트","저스티스","태을선인","이모탈","알키오네","타나토스","시라누이","그림리퍼",
+					"피스메이커","마왕","다크나이트","크리에이터"
+				];
+			
+			//내용 입력
+			function generate() {
+				for (i=1;i<=20;i++) {
+					//레벨 입력
+					document.getElementById("member_" + i.toString() + "_level").innerHTML = "Lv.86";
+					
+					//닉네임 입력
+					document.getElementById("member_" + i.toString() + "_name").innerHTML = "닉네임은6자";
+					
+					//직업 입력
+					var temp = Math.floor(Math.random() * jobList.length);
+					if (saint_check.checked) {
+						if ((i-1)%4 == 0) {
+							document.getElementById("member_" + i.toString() + "_job").innerHTML = "세인트";
+							continue;
+						}
+						document.getElementById("member_" + i.toString() + "_job").innerHTML = jobList[temp];
+					} else {
+						document.getElementById("member_" + i.toString() + "_job").innerHTML = jobList[temp];
+					}
+				}
+			}
+			
+			window.onload = function() {
+				//크기 설정
+				for (i=1;i<=20;i++) {
+					document.getElementById("member_" + i.toString() + "_level").style.width = "55px";
+					document.getElementById("member_" + i.toString() + "_name").style.width = "68px";
+					document.getElementById("member_" + i.toString() + "_job").style.width = "80px";
+					
+					document.getElementById("member_" + i.toString() + "_level").style.left = "60px";
+					document.getElementById("member_" + i.toString() + "_name").style.left = "116px";
+					document.getElementById("member_" + i.toString() + "_job").style.left = "190px";
+					
+					document.getElementById("member_" + i.toString() + "_level").style.top = (90 + (i-1)*21).toString() + "px";
+					document.getElementById("member_" + i.toString() + "_name").style.top = (90 + (i-1)*21).toString() + "px";
+					document.getElementById("member_" + i.toString() + "_job").style.top = (90 + (i-1)*21).toString() + "px";
+				}
+				
+				//내용 입력
+				
+				//버튼 입력 설정
+				document.getElementById("button").onclick = function() {
+					generate();
+				}
+			}
+			
+		</script>
+	
+	
+	</body>
+</body>

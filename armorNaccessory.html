@@ -1,0 +1,1285 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>영웅의 방어구 & 악세서리 항아리 시뮬레이터</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.epic {
+				color:#E5B64A;
+			}
+			.set {
+				color:#59FF00;
+			}
+			.white {
+				color:white;
+			}
+			.yellow {
+				color:yellow;
+			}
+			.skyblue {
+				color:skyblue;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+				p, span {
+					font-size:inherit;
+					font-weight:inherit;
+				}
+			
+			#wrapper {
+				padding:5px;
+				width:1065px;
+				height:503px;
+				
+				background:brown;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			#frame_left {
+				float:left;
+				
+				margin-right:2px;
+				padding-right:2px;
+				
+				width:550px;
+				
+				border-right:1px white solid;
+			}
+				#frame_left .title {
+					height:25px;
+				}
+				
+				#frame_left input[type="button"] {
+					background: #FFFFFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+					
+					border:1px gray outset;
+					border-radius:3px;
+					
+					float:left;
+					
+					margin-top:2px;
+					margin-bottom:3px;
+					width:273px;
+					
+					font-size:25px;
+					font-weight:bold;
+					
+					display:block;
+				}
+						#frame_left input[type="button"]#open1 {
+							margin-right:4px;
+						}
+					#frame_left input[type="button"]:hover {
+						border:1px white solid;
+					}
+					#frame_left input[type="button"]:active {
+						background: #DEDEDE;
+					}
+				
+				
+				#frame_left input[type="button"]#reset {
+					background: #FF6A00; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+					background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: linear-gradient(to bottom, #ffffff, #FF6A00);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+					
+					border:1px gray outset;
+					border-radius:3px;
+					
+					float:right;
+					
+					margin-top:2px;
+					margin-bottom:3px;
+					width:70px;
+					
+					font-size:15px;
+					font-weight:bold;
+					
+					display:block;
+				}
+					#frame_left input[type="button"]#reset:hover {
+						border:1px white solid;
+					}
+					#frame_left input[type="button"]#reset:active {
+						background: #FFAA00;
+					}
+				
+				#result {
+					padding:2px;
+					width:100%;
+					height:34px;
+					
+					background:black;
+					border:1px gray solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#result_img {
+						float:left;
+						
+						width:28px;
+						height:28px;
+						
+						background-image:url('./sprite/images/sprite_hell.png');
+						background-position:0px 0px;
+					}
+						#result_name {
+							float:left;
+							
+							padding:7px;
+							
+							text-align:left;
+							vertical-align:middle;
+							
+							font-size:14px;
+						}
+				
+				#progress {
+					position:relative;
+					clear:both;
+					
+					margin-bottom:2px;
+					width:100%;
+					height:8px;
+					
+					background:black;
+					border:1px gray solid;
+					border-top:0px;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#bar {
+						position:absolute;
+						
+						width:0%;
+						height:100%;
+						
+						background:yellow;
+					}
+				
+				#cost {
+					clear:both;
+					
+					margin-bottom:5px;
+					padding:3px;
+					width:100%;
+					height:25px;
+					
+					background:black;
+					border:1px gray solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+				
+				#show {
+					overflow-y:scroll;
+					-webkit-overflow-scrolling: touch;
+					
+					padding:5px;
+					width:100%;
+					height:366px;
+					
+					background:#303030;
+					border:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					font-size:14px;
+				}
+					#show p {
+						margin-bottom:3px;
+					}
+			
+			#frame_right {
+				float:left;
+				
+				width:510px;
+			}					
+				#frame_right .title {
+					margin:0px auto;
+					padding:5px;
+					
+					margin-left:150px;
+					width:260px;
+					
+					background:url('./images/epic/popup_set.png') no-repeat left center;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					color:white;
+					font-size:25px;
+					font-weight:bold;
+					text-align:center;
+				}
+			
+				#frame_right .filter  {
+					padding:3px;
+					padding-left:8px;
+					width:100%;
+					height:30px;
+					
+					background-color:#DCDCDC;
+					border:1px gray solid;
+					border-bottom:0px;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					color:black;
+					font-size:16px;
+				}	
+					#frame_right .filter .first {
+						width:90px;
+						border:1px gray solid;
+					}
+					#frame_right .filter .second {
+						width:90px;	
+						border:1px gray solid;
+					}
+					#frame_right .filter .third {
+						width:90px;	
+						border:1px gray solid;
+					}
+					#frame_right .filter .level {
+						width:60px;	
+						border:1px gray solid;
+					}
+					#frame_right .filter input[type="button"] {
+						width:80px;
+						height:24px;
+						
+						background: #FFFFFF; /* default */
+						background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+						background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+						background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+						-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+						
+						border:1px gray outset;
+						border-radius:2px;
+						
+						font-size:16px;
+						font-weight:bold;
+					}
+						#frame_right .filter input[type="button"]:hover {
+							border:1px white solid;
+						}
+						#frame_right .filter input[type="button"]:active {
+							background: #DEDEDE;
+						}
+
+				#set {
+					margin-bottom:0px;
+					width:100%;
+					height:432px;
+					
+					background-color:#404040;
+					border:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					color:white;
+				}
+						#set_display {
+							overflow-x:hidden;
+							overflow-y:scroll;
+							-webkit-overflow-scrolling: touch;
+							clear:both;
+							
+							width:100%;
+							height:410px;
+						}
+					#set table {
+						width:496px;
+						
+						border:0px;
+						
+						font-size:12px;
+						text-align:center;
+						
+						display: table;
+					}
+					#set table tr {
+						display: table;
+					}
+						#set_head table tr {
+							background-color:#59FF00;
+							
+							color:black;
+							font-weight:bold;
+							
+							display:block;
+						}
+							#set_display table tr:hover {
+								background-color:#686868;
+							}
+						/*tr : 기본적으론 보이지 않음*/
+						#set_display table tr.not_show {
+							display:none;
+						}
+					#set table td {
+						padding:2px;
+						
+						border-right:1px white solid;
+						border-bottom:1px white solid;
+						
+						font-size:12px;
+					}
+						#set table .col_1 {/*아이템 명칭*/
+							width:246px;
+						}
+							#set_display table .col_1 {/*(하단) 아이템 명칭*/
+								padding-left:10px;
+								width:238px;
+								
+								color:darkgray;
+								text-align:left;
+							}
+								#set_display table .col_1 .epic {/*에픽 장비 이름*/
+									font-weight:bold;
+									text-decoration:none;
+								}
+								#set_display table .col_1 .set {/*세트 파츠, 완성된 '세트' 이름*/
+									font-weight:bold;
+									text-decoration:none;
+								}
+								#set_display table .col_1 .white {/*진행중 '세트' 이름*/
+									font-weight:bold;
+									text-decoration:none;
+								}
+								#set_display table .show .col_1 {/*보이는 거*/
+									font-weight:bold;
+									text-decoration:none;
+								}
+								#set_display table .hap .col_1 {/*진행중 '세트' 이름*/
+									font-size:16px;
+								}
+								#set_display table .hap.show .col_1 {/*진행중 '세트' 이름*/
+									color:#C1C1C1;
+									text-decoration:underline;
+								}
+						#set table .col_2 {/*종류*/
+							width:55px;
+						}
+						#set table .col_3 {/*레벨*/
+							width:30px;
+						}
+						#set table .col_4 {/*수량*/
+							width:30px;
+						}
+						#set table .col_5 {/*수량*/
+							padding-left:5px;
+							
+							width:110px;
+							
+							text-align:left;
+						}
+								#set_table .hap .col_5 {/* 세트 이름 한정 회차 */
+									text-align:center;
+								}
+							#set_display table .col_6 {/*수량*/
+								padding-left:5px;
+								width:112px;
+								
+								text-align:left;
+							}
+							#set_display table .col_6 span.cost {/*수량*/
+								display:none;
+							}
+						
+			/*모바일 스크롤바 가시화*/
+			::-webkit-scrollbar {
+				-webkit-appearance: none;
+			}
+
+			::-webkit-scrollbar:vertical {
+				width: 12px;
+			}
+
+			::-webkit-scrollbar:horizontal {
+				height: 12px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 0, 0, .5);
+				border-radius: 10px;
+				border: 2px solid #ffffff;
+			}
+
+			::-webkit-scrollbar-track {
+				background-color: #ffffff; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="frame_left">
+				<p class="title">
+					[교환가능]
+					<select id="potList">
+						<option disabled selected>(항아리를 선택하세요.)</option>
+						<option disabled>========================</option>
+						<option value="천">영웅의 천 방어구 항아리</option>
+						<option value="가죽">영웅의 가죽 방어구 항아리</option>
+						<option value="경갑">영웅의 경갑 방어구 항아리</option>
+						<option value="중갑">영웅의 중갑 방어구 항아리</option>
+						<option value="판금">영웅의 판금 방어구 항아리</option>
+						<option disabled>========================</option>
+						<option value="상의">영웅의 상의 방어구 항아리</option>
+						<option value="하의">영웅의 하의 방어구 항아리</option>
+						<option value="머리어깨">영웅의 머리어깨 방어구 항아리</option>
+						<option value="벨트">영웅의 벨트 방어구 항아리</option>
+						<option value="신발">영웅의 신발 방어구 항아리</option>
+						<option disabled>========================</option>
+						<option value="악세서리">영웅의 악세서리 방어구 항아리</option>
+					</select>
+					를 개봉합니다.
+					<input id="reset" type="button" value="초기화" disabled />
+				</p>
+				
+				<div id="result">
+					<div id="result_img"></div>
+					<div id="result_name" class="epic">영웅의 항아리 개봉 대기중</div>
+				</div>
+				
+				<div id="progress">
+					<div id="bar"></div>
+				</div>
+				
+				<input id="open1" type="button" value="1회 개봉" disabled />
+				<input id="open2" type="button" value="연속 개봉" disabled />
+				
+				<div id="cost">
+					소모 골드 : <span class="yellow"><span id="cost_num">0</span> Gold</span>
+				</div>
+				
+				<div id="show">
+				</div>
+			</div>
+			<div id="frame_right">
+				<div class="title">
+					세트 아이템 기록
+				</div>
+				<div id="set_filter" class="filter">
+					<strong>필터링 : </strong>
+					<select id="set_filter_first" class="first" autocomplete="off" >
+						<option value="">1차 분류 (전체 보기)</option>
+						<option value="" disabled>=============================</option>
+					</select>
+					<select id="set_filter_second" class="second" disabled autocomplete="off" >
+						<option value="">2차 분류 (전체 보기)</option>
+					</select>
+					<select id="set_filter_third" class="third" disabled autocomplete="off" >
+						<option value="">3차 분류 (전체 보기)</option>
+					</select>
+					<select id="set_filter_level" class="level" autocomplete="off" >
+						<option value="">레벨 (전체 보기)</option>
+						<option value="" disabled>=============</option>
+					</select>
+					<input id="set_filter_clear" class="clear" type="button" value="필터 해제" />
+				</div>
+				
+				<div id="set">
+					<div id="set_head">
+						<table cellspacing="0" >
+							<tr>
+								<td class="col_1">아이템 이름</td>
+								<td class="col_2">종류</td>
+								<td class="col_3">레벨</td>
+								<td class="col_4">보유</td>
+								<td class="col_5">첫 획득 시점</td>
+							</tr>
+						</table>
+					</div>
+					<div id="set_display">
+						<table id="set_table" cellspacing="0" >
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<style id="style_set_filter_first" type="text/css">
+		</style>
+		<style id="style_set_filter_second" type="text/css">
+		</style>
+		<style id="style_set_filter_third" type="text/css">
+		</style>
+		<style id="style_set_filter_level" type="text/css">
+		</style>
+		
+		
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<script type="text/javascript">
+	//=================================================================================================================
+	//※ 변수 지정
+	//=================================================================================================================			
+			var auto;
+			var running = 0;
+			var count = 1;
+			var gold = 0;
+			var first = 1;
+			
+			var chanceList_num = [
+				33, 33, 12, 15, 7//어깨 방어구
+			];
+			//레벨 가중치 - 해당 레벨
+			var chanceList_name = [
+				[60], [70], [75], [80], [85]//어깨 방어구
+			];
+			
+			//=================================================================================================================
+			//※ DOM 관련 변수 지정
+			//=================================================================================================================	
+			var $potList = document.getElementById("potList");
+			
+			var $open1 = document.getElementById("open1");
+			var $open2 = document.getElementById("open2");
+			var $reset = document.getElementById("reset");
+			
+			var $progress = document.getElementById("progress");
+			var $bar = document.getElementById("bar");
+			
+			var $result_img = document.getElementById("result_img");
+			var $result_name = document.getElementById("result_name");
+			
+			var $show = document.getElementById("show");
+			
+			var $cost_num = document.getElementById("cost_num");
+			//=================================================================================================================	
+			var $set_filter = document.getElementById('set_filter');
+				var $set_filter_first = document.getElementById('set_filter_first');
+				var $set_filter_second = document.getElementById('set_filter_second');
+				var $set_filter_third = document.getElementById('set_filter_third');
+				var $set_filter_level = document.getElementById('set_filter_level');
+				var $set_filter_clear = document.getElementById('set_filter_clear');
+			
+			var $set = document.getElementById('set');
+				var $set_display = document.getElementById('set_display');
+				var $set_table = document.getElementById('set_table');
+	//=================================================================================================================
+	//※ 함수 (밑바탕)
+	//=================================================================================================================		
+					//IE8에 indexOf 적용
+					if (!Array.prototype.indexOf)
+					{
+					  Array.prototype.indexOf = function(elt /*, from*/)
+					  {
+						var len = this.length >>> 0;
+
+						var from = Number(arguments[1]) || 0;
+						from = (from < 0)
+							 ? Math.ceil(from)
+							 : Math.floor(from);
+						if (from < 0)
+						  from += len;
+
+						for (; from < len; from++)
+						{
+						  if (from in this &&
+							  this[from] === elt)
+							return from;
+						}
+						return -1;
+					  };
+					}			
+					
+					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+					function thousand(num) {
+						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+					
+					//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
+					function setWon(pWon) {
+						var won  = pWon.toString();
+						var arrWon  = ["", "만 ", "억 ", "조 ", "경 ", "해 ", "자 ", "양 ", "구 ", "간 ", "정 "];
+						var changeWon = "";
+						var pattern = /(-?[0-9]+)([0-9]{4})/;
+						while(pattern.test(won)) {
+							won = won.replace(pattern,"$1,$2");
+						}
+						won = won + "";
+						var arrCnt = won.split(",").length-1;
+						for(var ii=0; ii<won.split(",").length; ii++) {
+							changeWon += won.split(",")[ii]+arrWon[arrCnt];
+							arrCnt--;
+						}
+						return changeWon;
+					}
+					
+					//가중치 적용 랜덤
+					function rand(target) {//target : 숫자가 들어있는 배열
+						var number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+						}
+						var tmp = Math.random() * number;
+						
+						number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+							if (tmp < number) {
+								return i;
+							}
+						}
+					}
+					
+					//특정 클래스 지우기
+					function removeClass(target,toErase) {
+						target.className = target.className.replace( new RegExp('(?:^|\\s)'+toErase+'(?!\\S)') ,'');
+					}
+					
+					//특정 select 비우기
+					function clearSelect(selectbox)	{
+						for (var i = selectbox.options.length-1;i>=0;i--) {
+							selectbox.remove(i);
+						}
+					}
+					
+					//세트 창 생성
+					function generateSet() {
+						tempArr = [];
+						num = 0;//세트 아이템 테이블 순번 (td의 아이디에 붙여넣음, 하나 작성할 때마다 1씩 증가)
+						for (i=0;i<itemList.length;i++) {
+							if (itemList[i][4] != "") {
+								//3-2-1. 세트 아이템일 경우
+								if (itemList[i][5] != "") {
+									//3-2-2. '세트'가 등록되지 않았을 경우
+									if (tempArr.indexOf(itemList[i][5]) == -1) {//IF : "세트"가 등록되어있지 않다면
+										tempArr.push(itemList[i][5]);
+										//3-2-3. '세트' 등록
+										var row = $set_table.insertRow(-1);
+											row.id = "set_row_" + num.toString();
+											row.className = "equip";//'에픽 장비'
+											row.className += " " + "hap";//장비 '세트'
+											row.className += " " + "not_show";//출력하지 않음
+											//3-2-3-1. 해당 세트를 구성하는 '모든 파츠'를 클래스로 등록
+											temp = 0;//현 파츠 전체 개수
+											for (j=0;j<itemList.length;j++) {
+												if (itemList[j][5] == itemList[i][5]) {
+													if (row.className != itemList[j][0]) {//2차 분류
+														row.className += " " + itemList[j][0];
+													}
+													if (row.className != itemList[j][1]) {//2차 분류
+														row.className += " " + itemList[j][1];
+													}
+													if (row.className != itemList[j][2]) {//3차 분류
+														row.className += " " + itemList[j][2];
+													}
+													temp += 1;
+												}
+											}
+											row.className += " " + "lv" + itemList[i][3].toString();//레벨
+										var cell_1 = row.insertCell(0);
+											cell_1.innerHTML = itemList[i][5];//세트 명칭
+											cell_1.className = "col_1";
+										var cell_2 = row.insertCell(1);
+											cell_2.innerHTML = itemList[i][1];//분류 : 해당 파츠들의 2차 분류를 따름
+											cell_2.className = "col_2";
+										var cell_3 = row.insertCell(2);
+											cell_3.innerHTML = itemList[i][3].toString();//레벨
+											cell_3.className = "col_3";
+										var cell_4 = row.insertCell(3);
+											//앞에서 계산한 temp를 "세트 전체 개수"로 적용
+											cell_4.innerHTML = "0/" + temp.toString();//보유 수량
+											cell_4.className = "col_4";
+										var cell_5 = row.insertCell(4);
+											cell_5.innerHTML = "";//획득 시기 : 차후에 정보를 받음
+											cell_5.className = "col_5";
+									
+										num += 1;
+									}
+									//3-3. 세트 파츠 아이템 등록
+									var row = $set_table.insertRow(-1);
+										row.id = "set_row_" + num.toString();
+										row.className = "equip";//'에픽 장비'
+										row.className += " " + "not_show";//출력하지 않음
+										row.className += " " + itemList[i][0];//1차 분류
+										row.className += " " + itemList[i][1];//2차 분류
+										row.className += " " + itemList[i][2];//3차 분류
+										row.className += " " + "lv" + itemList[i][3].toString();//레벨
+									var cell_1 = row.insertCell(0);
+										cell_1.innerHTML = "┗ " + itemList[i][4];//아이템 명칭
+										cell_1.className = "col_1";
+									var cell_2 = row.insertCell(1);
+										if (itemList[i][0] == "방어구") {
+											cell_2.innerHTML = itemList[i][1];//분류(무기 : 3차 분류)
+										} else {
+											cell_2.innerHTML = itemList[i][2];//분류(나머지 : 2차 분류)
+										}
+										cell_2.className = "col_2";
+									var cell_3 = row.insertCell(2);
+										cell_3.innerHTML = itemList[i][3].toString();//레벨
+										cell_3.className = "col_3";
+									var cell_4 = row.insertCell(3);
+										cell_4.innerHTML = itemList[i][9].toString();//보유 수량
+										cell_4.className = "col_4";
+									var cell_5 = row.insertCell(4);
+										cell_5.innerHTML = "";//획득 시기 : 차후에 정보를 받음
+										cell_5.className = "col_5";
+										
+									num += 1;
+								}
+							}
+						}
+					}
+
+
+	//=================================================================================================================
+	//※ 함수 (본격)
+	//=================================================================================================================					
+			//실행
+			function loading(num) {
+				//게이지 증가
+				if (Math.round(($bar.offsetWidth/$progress.offsetWidth)*100) + 2 < 100) {
+					$bar.style.width = (Math.round(($bar.offsetWidth/$progress.offsetWidth)*100) + 4).toString() + "%";
+					auto = setTimeout(function() {
+							loading(num);
+						},20);
+				} else {
+					//게이지 초기화
+					$bar.style.width = "0px";
+
+					//비용 증가 & 반영
+					gold += 50000000;
+					$cost_num.innerHTML = setWon(gold);
+					
+					
+					//1. 레벨 가중치 적용 후 레벨 선정
+					level = chanceList_name[rand(chanceList_num)];
+					//2. 레벨에 따른 아이템 드랍
+					//2-1. 특정 종류&레벨의 아이템 리스트 구축
+					var tempArr = [];
+					for (i=0;i<itemList.length;i++) {
+						if ((itemList[i][1] == $potList.value/*분류 2*/
+						||itemList[i][2] == $potList.value)/*분류 2*/
+						&& itemList[i][3] == level)/*레벨*/ {
+							tempArr.push(itemList[i]);
+						}
+					}
+					//2-2. 미리 리스트에서 랜덤으로 선정
+					var temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+					//보유 수량 증가
+					for (var i=0;i<itemList.length;i++) {
+						if (itemList[i] == temp) {
+							itemList[i][9] += 1;
+						}
+					}
+					
+					//아이템 출력(상단)
+					$result_img.style.backgroundPosition = spritePosition(temp[4],1);
+					$result_name.innerHTML = "<span class='white'>" + thousand(count) + "회차 : </span><span class='epic'>" + temp[4] + "</span> <span class='white'>[" + temp[1] + " / " + temp[2] + " / " + temp[3] + "제]</span> <span class='skyblue'>(x" + thousand(temp[9]) + ")</span>";
+					
+					//아이템 출력(하단)
+					$show.innerHTML += "<p>" + thousand(count) + "회차 : <span class='epic'>" + temp[4] + "</span> [" + temp[1] + " / " + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + thousand(temp[9]) + ")</span> </p>";
+					
+					//화면 스크롤
+					$show.scrollTop = $show.scrollHeight;
+					
+					//업데이트
+					update(temp);
+					
+					//회차 증가
+					count += 1;
+					
+					//차후 정리
+					if (num == 1) {
+						//버튼&리스트
+						$potList.disabled = ""
+						
+						$open1.disabled = "";
+						$open2.disabled = "";
+						$reset.disabled = "";
+						
+						$open1.value = "1회 개봉";
+						$open2.value = "연속 개봉";
+					} else {
+						loading(2);
+					}
+				}
+				
+			}
+			
+			function update(name) {
+				if (name[5] != "") {
+					//아이템 순번 찾기
+					num = 0;
+					for (i=0;i<itemList.length;i++) {
+						if (itemList[i][4] == name[4]) {
+							num = i;
+							break;
+						}
+					};
+					
+					//5-0. set에서 해당하는 행 찾기
+					temp2 = $set_table.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+					for (var i=0;i<temp2;i++) {
+						if (document.getElementById("set_row_" + i.toString()).getElementsByTagName("td")[0].innerHTML.indexOf(itemList[num][4]) != -1) {
+							tr = document.getElementById("set_row_" + i.toString());
+							break;
+						}
+					}
+					//5-1. 보유량 업데이트
+					tr.getElementsByTagName("td")[3].innerHTML = itemList[num][9].toString();
+					//5-3. 첫 획득 (없으면) 업데이트
+					if (tr.getElementsByTagName("td")[3].innerHTML == "1") {
+						tr.getElementsByTagName("td")[4].innerHTML = thousand(count) + "회차";
+					}
+					//5-4. 해당 아이템 (색깔 입혀서) 가시화
+					tr.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr.getElementsByTagName("td")[0].innerHTML + "</span>";
+					removeClass(tr,"not_show");
+					
+					//5-5. '세트' 업데이트
+					//5-5-1. 세트 지정
+					temp2 = $set_table.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+					for (var i=0;i<temp2;i++) {
+						if (document.getElementById("set_row_" + i.toString()).getElementsByTagName("td")[0].innerHTML.indexOf(itemList[num][5]) != -1) {
+							tr_set = document.getElementById("set_row_" + i.toString());
+							break;
+						}
+					}
+					//5-5-2. 세트 완성 현황 파악 및 반영
+					var a = 0;//해당 세트 보유 파츠 수
+					var b = 0;//해당 세트 총 파츠 수
+					for (i=0;i<itemList.length;i++) {
+						if (itemList[i][5] == (tr_set.getElementsByTagName("td")[0].innerText || tr_set.getElementsByTagName("td")[0].textContent)) {
+							if (itemList[i][9] > 0) {
+								a += 1; //보유한 것만 증가
+							};
+							b += 1;//세트 이름이 일치하면 증가
+						};
+					};
+					//5-5-3. 세트 보유 현황 변경
+					tr_set.getElementsByTagName("td")[3].innerHTML = a.toString() + "/" + b.toString();
+					//5-5-4. 세트 이름 스타일 변경
+						//5-5-4-1. 진행중
+						var tr_name = (tr_set.getElementsByTagName("td")[0].innerText || tr_set.getElementsByTagName("td")[0].textContent);
+						if (a < b) {
+							tr_set.getElementsByTagName("td")[0].innerHTML = tr_name;
+							tr_set.getElementsByTagName("td")[4].innerHTML = "";
+						//5-5-4-2. 완성
+						} else {
+							tr_set.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr_name + "</span>"
+						//5-5-4-2-1. (완성 '시' 한정) 세트 첫 획득 지정
+							if (tr_set.getElementsByTagName("td")[4].innerHTML == "") {
+								tr_set.getElementsByTagName("td")[4].innerHTML = thousand(count) + "회차";
+							}
+						}
+					//5-5-5. (a가 0보다 크면) 세트 가시화
+					if (a > 0) {
+						removeClass(tr_set,"not_show");
+					} else {
+						tr_set.className += " not_show";
+					}
+				}
+			}
+			
+			window.onload = function() {
+				//세트 리스트 생성
+				generateSet()
+				
+				//선작업 : 일부 아이템리스트 제거
+				var tempList = [];
+				for (i=0;i<itemList.length;i++) {
+					//고유 에픽 제거
+					if (itemList[i][6] != "") {
+						tempList.push(i);
+					}
+				};
+				for (i=tempList.length-1;i>=0;i--) {
+					itemList.splice(tempList[i],1);
+				};
+				
+				$potList.onchange = function() {
+					//색상
+					$potList.style.backgroundColor = "#F4FA58";
+					//버튼
+					$open1.disabled = "";
+					$open2.disabled = "";
+					$reset.disabled = "";
+					
+					//교체 문구 (first가 0일 때만 실시)
+					if (first == 0) {
+						$show.innerHTML += "<p class='system'>==========================<항아리 교체>==========================</p>";
+						$show.scrollTop = $show.scrollHeight;
+						first = 1;
+					}
+				}
+				
+				
+				$open1.onclick = function() {
+					//버튼&리스트
+					$potList.disabled = "disabled"
+					
+					$open1.disabled = "disabled";
+					$open2.disabled = "disabled";
+					$reset.disabled = "disabled";
+					
+					$open1.value = "개봉 중";
+					
+					//교체 문구 활성화
+					first = 0;
+					
+					//실행
+					loading(1);
+				}
+				
+				$open2.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						
+						//버튼&리스트
+						$potList.disabled = "disabled"
+						
+						$open1.disabled = "disabled";
+						$open2.disabled = "";
+						$reset.disabled = "disabled";
+						
+						$open2.value = "개봉 중지";
+						
+						//교체 문구 활성화
+						first = 0;
+						
+						//실행
+						loading(2);
+					} else {
+						//게이지 초기화
+						$bar.style.width = "0px";
+						
+						running = 0;
+						clearTimeout(auto);
+						
+						//버튼&리스트
+						$potList.disabled = ""
+						
+						$open1.disabled = "";
+						$open2.disabled = "";
+						$reset.disabled = "";
+						
+						$open2.value = "연속 개봉";
+					}
+				}
+				
+				//set 필터링 - 준비
+				//필터 구성
+				var tempArr = [[],[],[],[]];//[0] : 일반 1차 분류, [1] : 일반 레벨, [2] : 세트 1차 분류, [3] : 세트 레벨
+				for (i=0;i<itemList.length;i++) {
+					//세트 아이템
+					if (itemList[i][5] != "") {
+						if (tempArr[2].indexOf(itemList[i][0]) == -1 && itemList[i][0] != "") {
+							//세트 1차 분류
+							tempArr[2].push(itemList[i][0]);
+						}
+						if (tempArr[3].indexOf(itemList[i][3]) == -1 && typeof itemList[i][3] != "undefined") {
+							//세트 레벨
+							tempArr[3].push(itemList[i][3]);
+						}
+					}
+					//(세트 아이템을 포함한) 일반 아이템
+					if (tempArr[0].indexOf(itemList[i][0]) == -1 && itemList[i][0] != "") {
+						//일반 1차 분류
+						tempArr[0].push(itemList[i][0]);
+					}
+					if (tempArr[1].indexOf(itemList[i][3]) == -1 && typeof itemList[i][3] != "undefined") {
+						//일반 레벨
+						tempArr[1].push(itemList[i][3]);
+					}
+				}
+					//세트 1차 분류 추가
+					for (i=0;i<tempArr[2].length;i++) {
+						var option = document.createElement("option");
+						option.value = tempArr[2][i];
+						option.text = tempArr[2][i];
+						$set_filter_first.add(option);
+					}
+					//세트 레벨 추가
+					for (i=0;i<tempArr[3].length;i++) {
+						var option = document.createElement("option");
+						option.value = tempArr[3][i].toString();
+						option.text = tempArr[3][i].toString();
+						$set_filter_level.add(option);
+					}
+				
+				//set 필터링 - 실행
+				$set_filter_first.onchange = function() {
+					var sheet = document.getElementById("style_set_filter_first");
+					var value = $set_filter_first.value;
+					try {
+						//1. 모든 필터링 해제 후 두번째, 세번째 '무조건' 초기화
+							//필터링 해체
+							document.getElementById("style_set_filter_first").innerHTML = "";
+							document.getElementById("style_set_filter_second").innerHTML = "";
+							document.getElementById("style_set_filter_third").innerHTML = "";
+							//나머지 필터링 선택지 초기화
+							$set_filter_second.selectedIndex = 0;
+							$set_filter_third.selectedIndex = 0;
+							//나머지 필더링 비활성화
+							$set_filter_second.disabled = "disabled";
+							$set_filter_third.disabled = "disabled";
+							//select 배경색 변경
+							$set_filter_first.style.backgroundColor = "white";
+							$set_filter_second.style.backgroundColor = "white";
+							$set_filter_third.style.backgroundColor = "white";
+							
+							//두번째 필터링 비우고 새로 입력
+							var dropdown = $set_filter_second;
+							clearSelect(dropdown);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.text = "2차 분류 (전체 보기)";
+							dropdown.add(option);
+							//세번째 필터링 비우고 새로 입력
+							var dropdown = $set_filter_third;
+							clearSelect(dropdown);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.text = "3차 분류 (전체 보기)";
+							dropdown.add(option);
+						//2. 첫번째 값이 있으면 (필터링 후) 두번째 생성
+						
+						if ($set_filter_first.value != "") {
+							//필터링 적용
+							sheet.innerHTML = "\
+							#set_display table tr:not(." + value + ") {\
+								display:none;\
+							}";
+							//select 배경색 변경
+							$set_filter_first.style.backgroundColor = "#F4FA58";
+							//두번째 필터링 활성화
+							$set_filter_second.disabled = "";
+							//첫번째 필터를 기준으로 두번째 필터링 구성
+							var tempArr = [];
+							for (i=0;i<itemList.length;i++) {
+								//2차 기준 (1차 선택지가 있어야, 텅빈 건 제외)
+								if (tempArr.indexOf(itemList[i][1]) == -1 && itemList[i][0] == value && itemList[i][1] != "") {
+									tempArr.push(itemList[i][1]);
+								}
+							}
+							//두번째 필터링 비우고 새로 입력
+							var dropdown = $set_filter_second;
+							clearSelect(dropdown);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.text = "2차 분류 (전체 보기)";
+							dropdown.add(option);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.disabled = "disabled";
+							option.text = "===============";
+							dropdown.add(option);
+							
+							for (i=0;i<tempArr.length;i++) {
+								var option = document.createElement("option");
+								option.value = tempArr[i];
+								option.text = tempArr[i];
+								dropdown.add(option);
+							}
+						}
+						
+					} catch(e) {
+						alert("＊경고 : \"1차 분류\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
+						$set_filter_first.selectedIndex = 0;
+					}
+				}
+				
+				$set_filter_second.onchange = function() {
+					var sheet = document.getElementById("style_set_filter_second");
+					var value = $set_filter_second.value;
+					try {
+						//1. 모든 필터링 해제 후 세번째 '무조건' 초기화
+							//필터링 해체
+							document.getElementById("style_set_filter_second").innerHTML = "";
+							document.getElementById("style_set_filter_third").innerHTML = "";
+							//나머지 필터링 선택지 초기화
+							$set_filter_third.selectedIndex = 0;
+							//두번째 필더링 비활성화
+							$set_filter_third.disabled = "disabled";
+							//select 배경색 복구
+							$set_filter_second.style.backgroundColor = "white";
+							$set_filter_third.style.backgroundColor = "white";
+							//세번째 필터링 비우고 새로 입력
+							var dropdown = $set_filter_third;
+							clearSelect(dropdown);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.text = "3차 분류 (전체 보기)";
+							dropdown.add(option);
+						
+						
+						//2. 두번째 값이 있으면 (필터링 후) 세번째 생성
+						if ($set_filter_second.value != "") {
+							//필터링 적용
+							sheet.innerHTML = "\
+							#set_display table tr:not(." + value + ") {\
+								display:none;\
+							}";
+							//select 배경색 변경
+							$set_filter_second.style.backgroundColor = "#F4FA58";
+							//두번째 필터링 활성화
+							$set_filter_third.disabled = "";
+							//두번째 필터를 기준으로 세번째 필터링 구성
+							var tempArr = [];
+							for (i=0;i<itemList.length;i++) {
+								//3차 기준 (2차 선택지가 있어야, 텅빈 건 제외)
+								if (tempArr.indexOf(itemList[i][2]) == -1 && itemList[i][1] == value && itemList[i][2] != "") {
+									tempArr.push(itemList[i][2]);
+								}
+							}
+							//세번째 필터링 비우고 새로 입력
+							var dropdown = $set_filter_third;
+							clearSelect(dropdown);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.text = "3차 분류 (전체 보기)";
+							dropdown.add(option);
+							
+							var option = document.createElement("option");
+							option.value = "";
+							option.disabled = "disabled";
+							option.text = "===============";
+							dropdown.add(option);
+							
+							for (i=0;i<tempArr.length;i++) {
+								var option = document.createElement("option");
+								option.value = tempArr[i];
+								option.text = tempArr[i];
+								dropdown.add(option);
+							}
+						}
+						
+					} catch(e) {
+						alert("＊경고 : \"2차 분류\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
+						$set_filter_second.selectedIndex = 0;
+					}
+				}
+				
+				$set_filter_third.onchange = function() {
+					var sheet = document.getElementById("style_set_filter_second");
+					var value = $set_filter_third.value;
+					try {
+						//필터링 적용
+						if ($set_filter_third.value != "") {
+							sheet.innerHTML = "\
+							#set_display table tr:not(." + value + ")  {\
+								display:none;\
+							}\
+							#set_display table tr:not(." + $set_filter_second.value + ")  {\
+								display:none;\
+							}\
+							#set_display table tr.hap:not(." + $set_filter_second.value + ")  {\
+								display:none;\
+							}";
+							//select 배경색 변경
+							$set_filter_third.style.backgroundColor = "#F4FA58";
+						} else {
+							//필터링 해제
+							sheet.innerHTML = "";
+							//select 배경색 복구
+							$set_filter_third.style.backgroundColor = "white";
+						}
+						
+					} catch(e) {
+						alert("＊경고 : \"3차 분류\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
+						$set_filter_second.selectedIndex = 0;
+					}
+				}
+				
+				$set_filter_level.onchange = function() {
+					var sheet = document.getElementById("style_set_filter_level");
+					var value = "lv" + $set_filter_level.value;
+					try {
+						//필터링 적용
+						if ($set_filter_level.value != "") {
+							sheet.innerHTML = "\
+							#set_display table tr:not(." + value + ") {\
+								display:none;\
+							}";
+							//select 배경색 변경
+							$set_filter_level.style.backgroundColor = "#F4FA58";
+						} else {
+							//필터링 해제
+							document.getElementById("style_set_filter_level").innerHTML = "";
+							//select 배경색 복구
+							$set_filter_level.style.backgroundColor = "white";
+						}
+					} catch(e) {
+						alert("＊경고 : \"레벨 분류\"필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
+						$set_filter_level.selectedIndex = 0;
+					}
+				}
+				
+				$set_filter_clear.onclick = function() {
+					//필터링 해제
+					document.getElementById("style_set_filter_first").innerHTML = "";
+					document.getElementById("style_set_filter_second").innerHTML = "";
+					document.getElementById("style_set_filter_third").innerHTML = "";
+					document.getElementById("style_set_filter_level").innerHTML = "";
+					//필터링 선택지 복구
+					$set_filter_first.selectedIndex = 0;
+					$set_filter_second.selectedIndex = 0;
+					$set_filter_third.selectedIndex = 0;
+					$set_filter_level.selectedIndex = 0;
+					//select 배경색 복구
+					$set_filter_first.style.backgroundColor = "white";
+					$set_filter_second.style.backgroundColor = "white";
+					$set_filter_third.style.backgroundColor = "white";
+					$set_filter_level.style.backgroundColor = "white";
+					//첫번째, 레벨을 제외한 나머지 select 비활성화
+					$set_filter_second.disabled = "disabled";
+					$set_filter_third.disabled = "disabled";
+				}
+			}
+		</script>
+
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="free webpage hit counter" ><script  type="text/javascript" >
+try {Histats.start(1,3127408,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3127408&101" alt="free webpage hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+	</body>
+</body>

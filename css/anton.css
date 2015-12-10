@@ -1,0 +1,691 @@
+﻿* {
+	margin:0px;
+	padding:0px;
+	
+	font-size:13px;
+	font-family:Arial;
+}
+
+/*컬러링*/
+.uncommon {
+	color:skyblue;
+	font-size:inherit;
+}
+.rare {
+	color:#B36BFF;
+	font-size:inherit;
+}
+.unique {
+	color:#FF00FF;
+	font-size:inherit;
+}
+.epic {
+	color:#E5B64A;
+	font-size:inherit;
+}
+.set {
+	color:#59FF00;
+	font-size:inherit;
+}
+.yellow{
+	color:yellow;
+	font-size:inherit;
+}
+.skyblue {
+	color:skyblue;
+	font-size:inherit;
+}
+.white {
+	color:white;
+	font-size:inherit;
+}
+
+/*======================================================================================================*/
+/* ※ 0. 틀 */
+/*======================================================================================================*/
+
+body {
+	background-color:#FFFFCC;
+}
+
+span {
+	font-size:inherit;
+}
+
+#wrapper {
+	width:972px;
+	height:720px;
+}
+
+/*======================================================================================================*/
+/* ※ 1. 좌측 */
+/*======================================================================================================*/
+#frame_left {
+	float:left;
+	
+	position:relative;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	
+	width:569px;
+	height:720px;
+	
+	background:url('../images/anton/background.jpg');
+	border:1px black solid;
+	border-right:0px;
+}
+	#left_count {
+		float:left;
+		
+		margin:10px 0px 0px 10px;
+		padding:5px;
+		width:314px;
+		height:25px;
+		
+		background:black;
+		border:1px gray solid;
+		
+		color:white;
+		font-size:20px;
+		font-weight:bold;
+	}
+	#left_antonium {
+		float:right;
+		
+		margin:10px 10px 0px 10px;
+		padding:5px;
+		width:200px;
+		height:25px;
+		
+		background:white;
+		border:1px gray solid;
+		
+		font-size:20px;
+		font-weight:bold;
+		line-height:100%;	
+	}
+	#left_frame img {
+		position:absolute;
+		z-index:2;
+		top:43px;
+		left:1px;
+		
+		width:120px;
+		height:160px;
+		
+		pointer-events:none;
+	}
+		#left_antonium img {
+			width:22px;
+			vertical-align:bottom;
+		}
+	
+	#clear {
+		position:absolute;
+		top:671px;
+		left:10px;
+		z-index:5;
+		
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		
+		width:100px;
+		height:40px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-size:25px;
+		font-weight:bold;
+		white-space:pre-line;
+		
+		display:block;
+	}
+		#clear:active {
+			background: #FFAA00;
+		}
+	#open1, #open2 {
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		
+		width:150px;
+		height:40px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-size:25px;
+		font-weight:bold;
+		
+		display:inline-block;
+	}
+			#open1 {
+				position:absolute;
+				top:671px;
+				left:249px;
+				z-index:5;
+			}
+			#open2 {
+				position:absolute;
+				top:671px;
+				left:409px;
+				z-index:5;
+			}
+		#open1:active, #open2:active {
+			background:#DEDEDE;
+		}
+	
+	.blast {
+		pointer-events:none;
+	}
+	.flipcard {
+		float:left;
+		
+		position:relative;
+		
+		margin-top:5px;
+		margin-left:10px;
+		width: 100px;
+		height: 144px;
+		perspective: 500px;
+		transform-style: preserve-3d;
+		
+		border:1px transparent solid;
+		
+		display:block;
+	}
+			.flipcard:hover {
+				border:1px white solid;
+			}
+	
+		.flipcard p.title {
+			padding:4px 0px;
+			width:100%;
+			
+			background-color:rgba(0,0,0,0.5);
+			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+			
+			color:white;
+			font-size:12px;
+			text-align:center;
+		}
+		.flipcard .img {
+			position:absolute;
+			
+			bottom:22px;
+			left:22px;
+			
+			width:56px;
+			height:56px;
+			
+			background-image:url('../sprite/images/sprite_anton.png');
+			background-position:0px 0px;
+			
+			display:block;
+		}
+	
+	/*세로로 뒤집기*/
+	.flipcard.v.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.v.flipped .front{
+		-ms-transform:rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
+		-moz-transform:rotateX(180deg);
+		-o-transform:rotateX(180deg);
+		transform: rotateX(180deg);
+	}
+	
+	.flipcard.v.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.v.flipped .back{
+		-ms-transform:rotateX(0deg);
+		-webkit-transform: rotateX(0deg);
+		-moz-transform:rotateX(0deg);
+		-o-transform:rotateX(0deg);
+		transform: rotateX(0deg);
+	}
+	
+	.flipcard.v .back{
+		visibility:hidden;
+	}
+	.flipcard.v .back{
+		-ms-transform:rotateX(-180deg);
+		-webkit-transform: rotateX(-180deg);
+		-moz-transform:rotateX(-180deg);
+		-o-transform:rotateX(-180deg);
+		transform: rotateX(-180deg);
+	}
+	/*세로로 뒤집기*/
+	
+	/*가로로 뒤집기*/
+	.flipcard.h.flipped .front{
+		visibility:hidden;
+	}
+	.flipcard.h.flipped .front{
+		-ms-transform:rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-o-transform:rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.flipcard.h.flipped .back{
+		visibility:visible;
+	}
+	.flipcard.h.flipped .back{
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+	
+	.flipcard.h .back{
+		visibility:hidden;
+	}
+	.flipcard.h .back{
+		-ms-transform:rotateY(-180deg);
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform:rotateY(-180deg);
+		-o-transform:rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+	/*가로로 뒤집기*/
+	
+	/*카드 앞뒷면*/
+	.flipcard .front
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(0deg);
+		
+		-ms-transition: 0.6s;
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
+		
+		
+		padding: 5px;
+		width: 100%;
+		height: 100%;
+		
+		background-image:url(../images/anton/card_front.png);
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		
+		color: yellow;
+		font-weight:bold;
+	}
+
+	.flipcard .back
+	{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+		
+		-ms-transform:rotateY(0deg);
+		-webkit-transform: rotateY(0deg);
+		-moz-transform:rotateY(0deg);
+		-o-transform:rotateY(0deg);
+		transform: rotateY(-180deg);
+		
+		-ms-transition: 0.6s;
+		-webkit-transition: 0.6s;
+		-moz-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
+		
+		padding: 9px 6px;
+		width: 100%;
+		height: 100%;
+		
+		background-image:url(../images/anton/card_back.png);
+		background-position:0px 0px; /*(골드 : -100px 0px)*/
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		
+		color: white;
+		font-weight:bold;
+	}
+		.flipcard .back p {
+			font-size:12px;
+		}
+	/*카드 앞뒷면*/
+
+/*======================================================================================================*/
+/* ※ 2. 우측 */
+/*======================================================================================================*/
+#frame_right {
+	float:left;
+	
+	position:relative;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	
+	width:400px;
+	height:720px;
+	
+	background:brown;
+	border:1px black solid;
+	
+	text-align:center;
+}
+	#frame_right .title {
+		margin:0px auto;
+		padding:5px;
+		width:100%;
+		
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		font-size:40px;
+		font-weight:bold;
+		text-align:center;
+	}
+		#frame_right .title#title_1 {
+			margin-left:92px;
+			width:260px;
+			
+			background:url('../images/anton/record.png') no-repeat left center;
+			
+			display:block;
+		}
+		#frame_right .title#title_2 {
+			margin-left:0;
+			width:250px;
+			
+			background:url('../images/anton/inventory.png') no-repeat left center;
+			
+			display:none;
+		}
+		#frame_right .title#title_3 {
+			margin-left:0;
+			width:170px;
+			
+			background:url('../images/anton/inventory.png') no-repeat left center;
+			
+			display:none;
+		}
+	
+	#get {
+		margin:0px auto;
+		padding:5px;
+		width:370px;
+		height:20px;
+		
+		background-color:gray;
+		
+		color:white;
+		font-size:20px;
+		font-weight:bold;
+		line-height:100%;
+	}
+		#get .left {
+			float:left;
+			width:160px;
+			
+			text-align:left;
+			
+			display:block;
+		}
+		#get .right {
+			float:left;
+			width:210px;
+			
+			text-align:left;
+			
+			display:block;
+		}
+		#get img {
+			width:20px;
+			height:20px;
+			
+			vertical-align:top;
+		}
+	#record, #inventory, #shop {
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+		
+		padding:0px;
+		margin:0px auto;
+		width:380px;
+		height:507px;
+		
+		background:#303030;
+		border:1px gray solid;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}
+		#record {
+			padding:5px;
+		}
+			#record p {
+				margin-bottom:10px;
+				
+				color:white;
+				font-size:14px;
+				font-weight:bold;
+				text-align:left;
+			}
+		
+		
+		#inventory, #shop {
+			display:none;
+		}
+		
+	#right_buttons {
+		position:relative;
+		margin:5px auto;
+		width:382px;
+		height:35px;
+		
+		text-align:center;
+	}
+		#right_buttons input {
+			float:left;
+			
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			
+			margin-right:3px;
+			width:124px;
+			height:35px;
+			
+			border:1px #A4A4A4 solid;
+			
+			font-size:23px;
+			font-weight:bold;
+			white-space:pre-line;
+			
+			display:block;
+		}
+				#right_buttons input#shift2, #right_buttons input#shift3 {
+					font-size:14px;
+				}
+			#right_buttons input:active {
+				background:#DEDEDE;
+			}
+			#right_buttons input.selected {
+				background: #304FFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #304FFF);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #304FFF));
+				background: -ms-linear-gradient(top center, #FFFFFF, #304FFF);
+				background: linear-gradient(to bottom, #ffffff, #304FFF);
+			}
+			#right_buttons input.selected:active {
+				background: #3855FF;
+			}
+
+	#gamble {
+		position:relative;
+		
+		margin:10px auto 0px auto;
+		padding:4px;
+		width:380px;
+		height:37px;
+		
+		background-color:gray;
+		border:1px black solid;
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+		#gamble_img {
+			float:left;
+			display:block;
+		}
+		#gamble_right {
+			position:relative;
+			z-index:0;
+			float:right;
+			margin-left:4px;
+			
+			width:338px;
+			height:28px;
+			
+			background-color:black;
+			
+			text-align:left;
+		}
+			#gamble_bar {
+				position:absolute;
+				top:0px;
+				left:0px;
+				z-index:1;
+				
+				width:0px;
+				height:28px;
+				
+				background-color:yellow;
+			}
+			#gamble_text {
+				margin-top:2px;
+				padding:5px;
+						
+				box-sizing: border-box;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				
+				color:yellow;
+				font-size:16px;
+				font-weight:bold;
+				line-height:100%;
+			}
+				#gamble_text img {
+					height:16px;
+					
+					vertical-align:top;
+					
+					display:inline;
+				}
+
+	#gamble_count {
+		float:left;
+		positon:relative;
+		overflow-x:visible;
+		
+		margin:0px 0px 0px 10px;
+		padding:5px 6px 5px 0px;
+		width:120px;
+		height:30px;
+		
+		background-color:black;
+		border:1px gray solid;
+		box-sizing: border-box;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		
+		color:white;
+		font-size:16px;
+		font-weight:bold;
+		text-align:right;
+	}
+	#gamble_open {
+		float:left;
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		
+		width:259px;
+		height:30px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-size:16px;
+		font-weight:bold;
+		
+		display:inline-block;
+	}
+		#gamble_open:active {
+			background:#DEDEDE;
+		}
+/*======================================================================================================*/
+/* ※ 3. 기타 */
+/*======================================================================================================*/
+#cover {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:100;
+	
+    padding:50px;
+    margin:0;
+    width:100%;
+    height:100%;
+	
+	background-color:#FFFFCC;
+	
+	font-size:50px;
+	font-weight:bold;
+}
+
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}

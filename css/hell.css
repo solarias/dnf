@@ -1,0 +1,1115 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+/*컬러링*/
+.uncommon {
+	color:skyblue;
+	font-size:inherit;
+}
+.rare {
+	color:#B36BFF;
+	font-size:inherit;
+}
+.unique {
+	color:#FF00FF;
+	font-size:inherit;
+}
+.epic {
+	color:#E5B64A;
+	font-size:inherit;
+}
+.set {
+	color:#59FF00;
+	font-size:inherit;
+}
+.red {
+	color:orange;
+	font-size:inherit;
+}
+.orange {
+	color:orange;
+	font-size:inherit;
+}
+.yellow{
+	color:yellow;
+	font-size:inherit;
+}
+.white {
+	color:white;
+	font-size:inherit;
+}
+/*컬러링*/
+
+body {
+	background-color:#FFFFCC;
+}
+#wrapper {
+	width:1350px;
+}
+	input[type="button"] {
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		
+		width:100%;
+		height:40px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-size:25px;
+		font-weight:bold;
+	}
+			input[type="button"]:active {
+				background: #DEDEDE;
+			}
+		input#clear {
+			margin-top:0px;
+			
+			background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		}
+			input#clear:active {
+				background: #FFAA00;
+			}
+	#frame_right input {
+		width:165px;
+		
+		font-size:20px;
+	}
+		#frame_right input.selected {
+			background: #516BFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+			background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: linear-gradient(to bottom, #ffffff, #516BFF);
+		}
+		#frame_right input.selected:active {
+			background: #3855FF;
+		}
+		
+/*======================================================================================================*/
+/* ※ 1. 좌측 */
+/*======================================================================================================*/
+#frame_left {
+	float:left;
+	padding:10px 5px;
+	width:185px;
+	height:auto;
+	min-height:800px;
+	height:100vh;
+	
+	background:Gainsboro;
+	border-right:1px black solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+	span {
+		font-size:inherit;
+	}
+	select{
+		width:100%;
+		border:1px gray solid;
+	}
+	p {
+		line-height:150%;
+	}
+	p.center {
+		font-weight:bold;
+		text-align:center;
+	}
+	p.small {
+		font-size:12px;
+	}
+	.bold {
+		font-weight:bold;
+	
+	}
+	.gap {
+		margin-top:20px;
+	}
+	.short_gap {
+		margin-top:10px;
+	}
+	.min_gap {
+		margin-top:5px;
+	}
+	#frame_left .wrap{
+		padding:5px;
+		width:100%;
+		height:auto;
+		
+		background:#EFEFEF;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#frame_left .wrap select{
+			width:160px;
+		}
+		#frame_left .wrap .white_back {
+			background-color:white;
+		}
+	
+#dungeon {
+	background:#F4FA58;
+}
+	#dungeon_level, #dungeon_cost {
+		font-weight:bold;
+	}
+#difficulty {
+	background:#F4FA58;
+}
+	
+#objective.wrap{
+	height:341px;
+}
+#objective_list {
+	
+}
+	#frame_left #objective input[type="text"] {
+		padding-left:5px;
+		width:100%;
+		height:20px;
+		
+		background:white;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		font-size:16px;
+	}
+	#objective_none {
+		width:auto;
+		height:auto;
+		display:block;
+	}
+		#objective_none p {
+			margin-bottom:10px;
+			
+			font-size:12px;
+		}
+	#objective_item {
+		display:none;
+	}
+		#objective_item_first {
+			background:#F4FA58;
+		}
+	#objective_set {
+		display:none;
+	}
+		#objective_set_first {
+			background:#F4FA58;
+		}
+	#objective_count {
+		display:none;
+	}
+	#objective_cost {
+		display:none;
+	}
+	#objective_fatigue {
+		display:none;
+	}
+
+p.notice {
+	margin:7px 0px 15px 0px;
+	
+	font-size:14px;
+	
+	display:inline-block;
+}
+	p.notice a {
+		color:blue;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+		p.notice a:hover {
+			color:red;
+		}
+		
+
+/*======================================================================================================*/
+/* ※ 2. 중앙 */
+/*======================================================================================================*/
+#frame_center {
+	float:left;
+	
+	padding:10px 5px;
+	width:383px;
+	height:auto;
+	min-height:800px;
+	height:100vh;
+	
+	border-right:1px black solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+		#frame_center_title {
+			margin-left:40px;
+			padding:5px;
+			width:335px;
+			
+			background:url('../images/hell/4_center.png') no-repeat left center;
+			background-size:35px 35px;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:40px;
+			font-weight:bold;
+			text-align:center;
+		}
+	#message {
+		padding:4px;
+		margin-bottom:0px;
+
+		width:100%;
+		height:40px;
+		
+		background-color:darkgray;
+		border:1px black solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		font-size:35px;
+	}
+		#message_text {
+			padding:3px;
+			padding-left:6px;
+			width:100%;
+			height:30px;
+			
+			background-color:black;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:21px;
+			font-weight:bold;
+		}
+		
+	#show {
+		padding:4px;
+		width:100%;
+		height:auto;
+		min-height:476px;
+		height:calc(100vh - 325px);
+		max-height:876px;
+		
+		background-color:gray;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+			#show_display {
+				clear:both;
+				
+				width:100%;
+				height:374px;
+				min-height:374px;
+				height:calc(100vh - 311px);
+				max-height:774px;
+				
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+		.show_img {
+			clear:both;
+			float:left;
+			
+			margin-bottom:4px;
+			width:28px;
+			height:28px;
+			
+			background-image:url('../sprite/images/sprite_hell.png');
+			background-position:0px 0px;
+			
+			display:block;
+		}
+			#show_head .show_img {
+				visibility:hidden;
+			}
+			#show_display .show_img {
+				visibility:hidden;
+			}
+			#show_display .show_img.show {
+				visibility:visible;
+			}
+		.show_name {
+			margin-bottom:4px;
+			margin-left:4px;
+			padding:4px;
+			float:left;
+			width:270px;
+			height:auto;
+			min-height:20px;
+			
+			background-color:black;
+			
+			font-weight:bold;
+		}
+			#show_head .show_name {
+				color:white;
+				text-align:center;
+			}
+			#show_display .show_name {
+				visibility:hidden;
+			}
+			#show_display .show_name.show {
+				visibility:visible;
+			}
+		.show_level {
+			margin-bottom:4px;
+			margin-left:4px;
+			padding:4px;
+			float:left;
+			width:40px;
+			height:auto;
+			min-height:20px;
+			
+			background-color:black;
+			
+			color:white;
+			font-weight:bold;
+			text-align:center;
+		}
+			#show_display .show_level {
+				visibility:hidden;
+			}
+			#show_display .show_level.show {
+				visibility:visible;
+			}
+		
+	#result {
+		margin-top:10px;
+		padding:4px;
+
+		width:100%;
+		height:102px;
+		
+		background-color:gray;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		font-size:35px;
+	}
+		#result_text {
+			position:relative;
+			
+			padding:6px;
+			width:100%;
+			height:92px;
+			
+			background-color:black;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:16px;
+			font-weight:bold;
+		}
+			#result_text img {
+				height:21px;
+				vertical-align:top;
+			}
+			#result .left {
+				clear:both;
+				float:left;
+				
+				width:174px;
+				height:23px;
+			}
+			#result .right {
+				float:left;
+				
+				height:23px;
+			}
+			#result .bottom {
+				position:absolute;
+				bottom:5px;
+				
+				width:348px;
+				
+				border-top:1px gray solid;
+				
+				font-size:12px;
+			}
+				#result .bottom .unique {
+					font-size:12px;
+				}
+				#result .bottom .epic {
+					font-size:12px;
+				}
+			
+	#cost {
+		margin-top:5px;
+		padding:4px;
+
+		width:100%;
+		height:90px;
+		
+		background-color:gray;
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#cost_text {
+			padding:3px 0px;
+			width:100%;
+			height:80px;
+			
+			background-color:black;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-size:16px;
+			font-weight:bold;
+		}
+			#cost_text .line {
+				margin:3px 0px 3px 3px;
+				width:100%;
+				
+				display:inline-block;
+			}
+				#cost_notice {
+					font-size:12px;
+					
+					display:inline;
+				}
+			#line_cover {
+				float:left;
+				
+				width:305px;
+			}
+			#cost_text input {
+				float:right;
+				width:50px;
+				height:50px;
+				
+				font-size:12px;
+				white-space:pre-line;
+				
+				display:inline-block;
+			}
+			#cost_text hr {
+				border-top:1px gray solid;
+			}
+		#cost img {
+			height:16px;
+			vertical-align:top;
+		}
+
+
+			
+/*======================================================================================================*/
+/* ※ 3. 우측 */
+/*======================================================================================================*/
+#frame_right {
+	float:left;
+	padding:10px 5px;
+	width:520px;
+	height:auto;
+	min-height:800px;
+	height:100vh;
+	
+	border-right:1px black solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+		#frame_right_title {
+			margin:0px auto;
+			padding:5px;
+			width:100%;
+			
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:40px;
+			font-weight:bold;
+			text-align:center;
+		}
+		#frame_right_title.title_record {
+			margin-left:150px;
+			width:250px;
+			
+			background:url('../images/hell/4_record.png') no-repeat left center;
+		}
+		#frame_right_title.title_inventory {
+			margin-left:155px;
+			width:250px;
+			
+			background:url('../images/hell/4_inventory.png') no-repeat left center;
+		}
+		#frame_right_title.title_set {
+			margin-left:130px;
+			width:300px;
+			
+			background:url('../images/hell/4_set.png') no-repeat left center;
+		}
+	#record {
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+		
+		margin-bottom:0px;
+		padding:4px;
+		width:100%;
+		height:auto;
+		min-height:591px;
+		height:calc(100vh - 210px);
+		max-height:991px;
+		
+		background-color:#404040;
+		border:1px black solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		display:block;
+	}
+		#record span{
+			font-size:12px;
+			font-weight:bold;
+			line-height:120%;
+			
+			display:inline-block;
+		}
+		#record span.etc{
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+			
+			color:white;
+			
+			display:none;
+		}
+		#record span.equip{
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+			
+			color:white;
+		}
+		#record span.system{
+			clear:both;
+			float:left;
+			margin-bottom:7px;
+			
+			color:white;
+		}
+			#record span.unique{
+				color:#FF00FF;
+			}
+			#record span.epic{
+				color:#E5B64A;
+			}
+			#record span.system{
+				color:#C1C1C1;
+			}
+			#record span.cost{
+				display:none;
+			}
+			#record span.difficulty_0{
+				color:yellow;
+				
+				display:none;
+			}
+			#record span.difficulty_1{
+				color:orange;
+				
+				display:none;
+			}
+			#record span.quantity{
+				color:skyblue;
+				
+				display:none;
+			}
+
+	#inventory {
+		margin-bottom:0px;
+		width:100%;
+		height:auto;
+		min-height:591px;
+		height:calc(100vh - 210px);
+		max-height:991px;
+		
+		background-color:#404040;
+		border:1px black solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		
+		display:none;
+	}
+			#inventory_display {
+				overflow-x:hidden;
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				clear:both;
+				
+				width:100%;
+				height:auto;
+				min-height:570px;
+				height:calc(100vh - 231px);
+				max-height:970px;
+			}
+		#inventory table {
+			width:495px;
+			
+			border:0px;
+			
+			font-size:12px;
+			text-align:center;
+			
+			display: table;
+		}
+		#inventory table tr {
+			display: table;
+		}
+			#inventory_head table tr {
+				background-color:#E5B64A;
+				
+				color:black;
+				font-weight:bold;
+			}
+			/*tr : 기본적으론 보이지 않음*/
+			#inventory_display table tr.not_show {
+				display:none;
+			}
+				/*보유 수량 증가 → 가시화된 tr*/
+				#inventory_display table tr.show {
+					display:block;
+				}
+				#inventory_display table tr.show:hover {
+					background-color:#686868;
+				}
+		#inventory table td {
+			padding:2px;
+			
+			border-right:1px white solid;
+			border-bottom:1px white solid;
+			
+			font-size:12px;
+		}
+			#inventory table .col_1 {/*아이템 명칭*/
+				width:188px;
+			}
+				#inventory_display table .col_1 {/*(하단) 아이템 명칭*/
+					padding-left:10px;
+					width:180px;
+					
+					color:darkgray;
+					text-align:left;
+				}
+					#inventory_display table .col_1 .epic {/*에픽 장비 이름*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#inventory_display table .col_1 .set {/*세트 파츠 이름*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#inventory_display table .col_1 .hap {/*'세트' 굵기*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+			#inventory table .col_2 {/*종류*/
+				width:67px;
+			}
+			#inventory table .col_3 {/*레벨*/
+				width:30px;
+			}
+			#inventory table .col_4 {/*해체*/
+				width:35px;
+			}
+				#inventory table .col_4 a {/*해체 버튼*/
+					color:orange;
+					font-size:12px;
+					font-weight:bold;
+					text-decoration:underline;
+				}
+					#inventory table .col_4 a:hover {/*해체 버튼*/
+						color:red;
+					}
+			#inventory table .col_5 {/*수량*/
+				width:30px;
+			}
+			#inventory table .col_6 {/*수량*/
+				width:114px;
+			}
+				#inventory_display table .col_6 {/*수량*/
+					padding-left:5px;
+					width:112px;
+					
+					text-align:left;
+				}
+				#inventory_display table .col_6 span.cost {/*수량*/
+					display:none;
+				}
+
+	#set {
+		margin-bottom:0px;
+		width:100%;
+		height:auto;
+		min-height:591px;
+		height:calc(100vh - 210px);
+		max-height:991px;
+		
+		background-color:#404040;
+		border:1px black solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:white;
+		
+		display:none;
+	}
+			#set_display {
+				overflow-x:hidden;
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				clear:both;
+				
+				width:100%;
+				height:auto;
+				min-height:570px;
+				height:calc(100vh - 231px);
+				max-height:970px;
+			}
+		#set table {
+			width:495px;
+			
+			border:0px;
+			
+			font-size:12px;
+			text-align:center;
+			
+			display: table;
+		}
+		#set table tr {
+			display: table;
+		}
+			#set_head table tr {
+				background-color:#59FF00;
+				
+				color:black;
+				font-weight:bold;
+			}
+			/*tr : 기본적으론 보이지 않음*/
+			#set_display table tr.not_show {
+				display:none;
+			}
+				/*보유 수량 증가 → 가시화된 tr*/
+				#set_display table tr.show {
+					display:block;
+				}
+				#set_display table tr.show:hover {
+					background-color:#686868;
+				}
+		#set table td {
+			padding:2px;
+			
+			border-right:1px white solid;
+			border-bottom:1px white solid;
+			
+			font-size:12px;
+		}
+			#set table .col_1 {/*아이템 명칭*/
+				width:205px;
+			}
+				#set_display table .col_1 {/*(하단) 아이템 명칭*/
+					padding-left:10px;
+					width:197px;
+					
+					color:darkgray;
+					text-align:left;
+				}
+					#set_display table .col_1 .epic {/*에픽 장비 이름*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#set_display table .col_1 .set {/*세트 파츠, 완성된 '세트' 이름*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#set_display table .col_1 .white {/*진행중 '세트' 이름*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#set_display table .show .col_1 {/*보이는 거*/
+						font-weight:bold;
+						text-decoration:none;
+					}
+					#set_display table .hap .col_1 {/*진행중 '세트' 이름*/
+						font-size:16px;
+					}
+					#set_display table .hap.show .col_1 {/*진행중 '세트' 이름*/
+						color:#C1C1C1;
+						text-decoration:underline;
+					}
+			#set table .col_2 {/*종류*/
+				width:50px;
+			}
+			#set table .col_3 {/*레벨*/
+				width:30px;
+			}
+			#set table .col_4 {/*해체*/
+				width:35px;
+			}
+				#set table .col_4 a {/*해체 버튼*/
+					color:orange;
+					font-size:12px;
+					font-weight:bold;
+					text-decoration:underline;
+				}
+					#set table .col_4 a:hover {/*해체 버튼*/
+						color:red;
+					}
+			#set table .col_5 {/*수량*/
+				width:30px;
+			}
+			#set table .col_6 {/*수량*/
+				width:115px;
+			}
+				#set_display table .col_6 {/*수량*/
+					padding-left:5px;
+					width:112px;
+					
+					text-align:left;
+				}
+				#set_display table .col_6 span.cost {/*수량*/
+					display:none;
+				}
+
+			
+	#frame_right .filter  {
+		padding:3px;
+		padding-left:8px;
+		width:100%;
+		height:30px;
+		
+		background-color:Gainsboro;
+		border:1px black solid;
+		border-bottom:0px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:black;
+		font-size:16px;
+	}	
+		#frame_right .filter .first {
+			width:90px;	
+		}
+		#frame_right .filter .second {
+			width:90px;	
+		}
+		#frame_right .filter .third {
+			width:90px;	
+		}
+		#frame_right .filter .level {
+			width:60px;	
+		}
+		#frame_right .filter input {
+			width:80px;
+			height:24px;
+			
+			font-size:16px;
+		}
+			#inventory_filter, #set_filter {
+				display:none;
+			}
+	
+	#record_check, #inventory_check, #set_check {
+		margin-bottom:5px;
+		padding:4px;
+		width:100%;
+		height:56px;
+		
+		background-image:url('../images/hell/check_back.png');
+		border:1px black solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:black;
+		font-size:12px;
+	}
+	#record_check p, #inventory_check p, #set_check p {
+		margin-bottom:10px;
+		
+		line-height:100%;
+		
+		display:inline-block;
+	}
+			#inventory_check, #set_check {
+				display:none;
+			}
+		#record_check span, #inventory_check span, #set_check span{
+			font-weight:bold;
+		}
+		#frame_right .check input + label {
+			padding-bottom:4px;
+			width:14px;
+			height:10px;
+
+			background-color:white;
+			border:2px black solid;
+			
+			vertical-align:top;
+			
+			cursor:pointer;
+			display:inline-block;
+		}
+		#frame_right .check input:checked + label:after {
+			content:'\2714';
+			font-size:17px;
+		}
+		#frame_right .check input {
+			display:none;
+		}
+			#frame_right .check input#record_check_reset {
+				float:right;
+				
+				margin-top:-1px;
+				width:123px;
+				height:20px;
+				
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				
+				font-size:14px;
+				vertical-align:bottom;
+				
+				display:block;
+			}
+				#frame_right .check input#record_check_reset:active, {
+					background: #FFAA00;
+				}
+			#frame_right .check input#disassemble_1, #frame_right .check input#disassemble_2 {
+				float:right;
+				
+				margin-top:-1px;
+				width:200px;
+				height:20px;
+				
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			
+				font-size:14px;
+				vertical-align:bottom;
+				
+				display:block;
+			}
+				#frame_right .check input#disassemble_1:active, #frame_right .check input#disassemble_2:active {
+					background: #FFAA00;
+				}
+			
+/*======================================================================================================*/
+/* ※ 4. 기타 */
+/*======================================================================================================*/
+
+#cover {
+    position:fixed;
+	
+    padding:20px;
+    margin:0;
+    width:100%;
+    height:100%;
+	
+	background-color:#FFFFCC;
+	
+	font-weight:bold;
+}
+	#cover p {
+		font-size:30px;
+	}
+	#cover p#cover_notice {
+		font-size:50px;
+	}
+	#cover p a {
+		color:blue;
+		font-size:30px;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+		#cover p a:hover {
+			color:red;
+		}
+	#cover hr {
+		margin:5px;
+		width:750px;
+		
+		border:1px black solid;
+	}
+		
+
+#imagePreloader {
+	width:1px;
+	height:1px;
+	
+	display:none;
+}
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}

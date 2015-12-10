@@ -1,0 +1,1066 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>가위바위보</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.red {
+				color:red;
+			}
+			.green {
+				color:#59FF0;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+				p, span {
+					font-size:inherit;
+				}
+			
+			
+			#wrapper {
+				position:relative;
+				
+				margin:0px auto;
+				width:700px;
+				height:350px;
+				
+				background:white;
+				border:1px black solid;
+			}
+			
+			
+			#frame_head {
+				padding:5px;
+				width:100%;
+				height:47px;
+				
+				border-bottom:1px black solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#p1_health {
+					overflow:hidden;
+					position:relative;
+					float:left;
+					
+					width:300px;
+					height:35px;
+					
+					background:black;
+					border:1px white solid;
+					border-radius:6px;
+				}
+					#p1_health_name {
+						position:absolute;
+						top:9px;
+						left:5px;
+						
+						color:white;
+						font-size:16px;
+						font-weight:bold;
+					}
+					#p1_health_num {
+						position:absolute;
+						top:9px;
+						right:10px;
+						
+						color:white;
+						font-size:16px;
+						font-weight:bold;
+					}
+					#p1_health_bar {
+						position:absolute;
+						left:0px;
+						
+						width:100%;
+						height:100%;
+						
+						background:red;
+					}
+				
+				#mark_vs {
+					float:left;
+					
+					width:86px;
+					height:35px;
+					
+					background-image:url(./images/rps/mark_vs.png);
+					background-repeat:no-repeat;
+				}
+				
+				#p2_health {
+					overflow:hidden;
+					position:relative;
+					float:left;
+					
+					width:300px;
+					height:35px;
+					
+					background:black;
+					border:1px white solid;
+					border-radius:6px;
+				}
+					#p2_health_name {
+						position:absolute;
+						top:9px;
+						right:5px;
+						
+						color:white;
+						font-size:16px;
+						font-weight:bold;
+					}
+					#p2_health_num {
+						position:absolute;
+						top:9px;
+						left:10px;
+						
+						color:white;
+						font-size:16px;
+						font-weight:bold;
+					}
+					#p2_health_bar {
+						position:absolute;
+						right:0px;
+						
+						width:100%;
+						height:100%;
+						
+						background:red;
+					}
+			
+			#frame_notice {
+				padding:5px;
+				width:100%;
+				height:30px;
+				
+				background:brown;
+				border-bottom:1px black solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-size:16px;
+				font-weight:bold;
+			}
+			
+			#frame_body {
+				position:relative;
+				
+				width:100%;
+				height:201px;
+				
+				border-bottom:1px black solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#p1_character {
+					position:relative;
+					float:left;
+					
+					width:170px;
+					height:200px;
+					
+					background:url('./images/rps/back1.jpg');
+					border-right:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#p1_img {
+						position:absolute;
+						top:0px;
+						left:0px;
+						
+						width:170px;
+						height:200px;
+					}
+					#p1_message {
+						position:absolute;
+						bottom:5px;
+						left:4px;
+						
+						padding-top:5px;
+						width:160px;
+						height:22px;
+						
+						background:white;
+						background:rgba(255,255,255,0.8);
+						border:1px black solid;
+						border-radius:3px;
+						
+						font-size:12px;
+						font-weight:bold;
+						text-align:center;
+					}
+				#p1_play {
+					overflow:hidden;
+					position:relative;
+					float:left;
+					
+					width:140px;
+					height:200px;
+					
+					background-color:white;
+					border-right:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#p1_hand {
+						position:absolute;
+						top:0px;
+						left:0px;
+						
+						width:140px;
+						height:200px;
+						
+						display:none;
+					}
+					#p1_result {
+						position:absolute;
+						bottom:5px;
+						left:5px;
+						
+						padding-top:5px;
+						width:125px;
+						height:22px;
+						
+						background:white;
+						background:rgba(255,255,255,0,6);
+						border:1px black solid;
+						border-radius:3px;
+						
+						font-size:15px;
+						font-weight:bold;
+						text-align:center;
+					}
+				
+				
+				#p2_character {
+					position:relative;
+					float:right;
+					
+					width:170px;
+					height:200px;
+					
+					background:url('./images/rps/back2.jpg');
+					border-left:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#p2_img {
+						position:absolute;
+						top:0px;
+						left:0px;
+						
+						width:170px;
+						height:200px;
+					}
+					#p2_message {
+						position:absolute;
+						bottom:5px;
+						left:4px;
+						
+						padding-top:5px;
+						width:160px;
+						height:22px;
+						
+						background:white;
+						background:rgba(255,255,255,0.8);
+						border:1px black solid;
+						border-radius:3px;
+						
+						font-size:12px;
+						font-weight:bold;
+						text-align:center;
+					}
+				#p2_play {
+					overflow:hidden;
+					position:relative;
+					float:right;
+					
+					width:140px;
+					height:200px;
+					
+					background-color:white;
+					border-left:1px black solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#p2_hand {
+						position:absolute;
+						top:1px;
+						left:1px;
+						
+						width:140px;
+						height:200px;
+	
+						/*이미지 뒤집기*/
+						-moz-transform: scaleX(-1);
+						-o-transform: scaleX(-1);
+						-webkit-transform: scaleX(-1);
+						transform: scaleX(-1);
+						filter: FlipH;
+						-ms-filter: "FlipH";
+						
+						display:none;
+					}
+					#p2_result {
+						position:absolute;
+						bottom:5px;
+						left:5px;
+						
+						padding-top:5px;
+						width:125px;
+						height:22px;
+						
+						background:white;
+						background:rgba(255,255,255,0,6);
+						border:1px black solid;
+						border-radius:3px;
+						
+						font-size:15px;
+						font-weight:bold;
+						text-align:center;
+					}
+				
+				#round {
+					position:absolute;
+					top:2px;
+					left:275px;
+					
+					width:150px;
+					height:40px;
+					
+					background:black;
+					border-radius:5px;
+					
+					color:white;
+					font-size:30px;
+					text-align:center;
+					line-height:130%;
+				}
+				#result {
+					position:absolute;
+					top:44px;
+					left:329px;
+					
+					width:40px;
+					height:40px;
+					
+					background:white;
+					border:1px black solid;
+					border-radius:5px;
+					
+					font-size:30px;
+					text-align:center;
+					line-height:130%;
+					
+					display:none;
+				}
+				
+			#frame_foot {
+			
+			}
+				#frame_foot .rps {
+					float:left;
+					
+					margin:5px 0px 0px 5px;
+					width:227px;
+					height:60px;
+			
+					background: #FFFFFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+					
+					border:2px gray outset;
+					border-radius:10px;
+					
+					font-size:40px;
+					font-weight:bold;
+					
+					display:block;
+				}
+					#frame_foot .rps.active:hover {
+						background: #516BFF; /* default */
+						background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+						background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+						background: linear-gradient(to bottom, #ffffff, #516BFF);
+					}
+					#frame_foot .rps.active:active {
+						background: #3855FF;
+					}
+					
+			#frame_foot .reset {
+				float:left;
+				
+				margin:5px 0px 0px 5px;
+				width:690px;
+				height:60px;
+		
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:2px gray outset;
+				border-radius:10px;
+				
+				font-size:30px;
+				font-weight:bold;
+				
+				display:none;
+			}
+				#frame_foot .reset:hover {
+					background: #516BFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+					background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+					background: linear-gradient(to bottom, #ffffff, #516BFF);
+				}
+				#frame_foot .reset:active {
+					background: #3855FF;
+				}
+			
+			#cover {
+				position:absolute;
+				top:0px;
+				left:0px;
+				z-index:100;
+				
+				padding:30px;
+				width:700px;
+				height:350px;
+				
+				background:#303030;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-weight:bold;
+			}
+				#cover p {
+					font-size:20px;
+				}
+				#cover p#cover_notice {
+					font-size:50px;
+				}
+				#cover hr {
+					margin-left:0px;
+					margin-bottom:20px;
+					width:620px;
+					
+					border:1px white solid;
+					
+					text-align:left;
+				}
+			
+			#imagePreloader {
+				width:1px;
+				height:1px;
+				
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="frame_head">
+				<div id="p1_health">
+					<div id="p1_health_bar">
+					</div>
+					<div id="p1_health_num">
+						500
+					</div>
+					<div id="p1_health_name">
+						모험가
+					</div>
+				</div>
+				
+				<div id="mark_vs">
+				</div>
+				
+				<div id="p2_health">
+					<div id="p2_health_bar">
+					</div>
+					<div id="p2_health_num">
+						500
+					</div>
+					<div id="p2_health_name">
+						전능의 마테카
+					</div>
+				</div>
+			</div>
+			
+			<div id="frame_notice">
+				전능의 마테카를 쓰러뜨리고 천계를 구하십시오.
+			</div>
+			
+			<div id="frame_body">
+				<div id="p1_character">
+					<img id="p1_img" src="./images/rps/p1_0.png" />
+					<div id="p1_message">
+						이긴다!
+					</div>
+				</div>
+				<div id="p1_play">
+					<img id="p1_hand" src="" />
+					<div id="p1_result">
+						???
+					</div>
+				</div>
+				
+				<div id="p2_character">
+					<img id="p2_img" src="./images/rps/p2_0.png" />
+					<div id="p2_message">
+						너의 고통을 감상해주지!
+					</div>
+				</div>
+				<div id="p2_play">
+					<img id="p2_hand" src="" />
+					<div id="p2_result">
+						???
+					</div>
+				</div>
+				
+				<div id="round">
+					Round 1
+				</div>
+				<div id="result">
+					승
+				</div>
+			</div>
+			
+			<div id="frame_foot">
+				<input id="rps_s" class="rps active" type="button" value="가위" />
+				<input id="rps_r" class="rps active" type="button" value="바위" />
+				<input id="rps_p" class="rps active" type="button" value="보" />
+				
+				<input id="reset" class="reset" type="button" value="" />
+			</div>
+			
+			<div id="cover">
+				<p id="cover_notice">로딩 대기중...</p>
+				<hr/>
+				<p>※ 이 상태가 오래 지속되면 페이지 새로고침(F5)를 시도해보세요.</p>
+			</div>
+		</div>
+		
+		<div id="imagePreloader"></div>
+		
+		
+		<script type="text/javascript">
+			var round = 1;
+			var HP = [500,500];
+			var last_output = [,];//과거 승패 - [모험가, 마테카]
+			var last_result = '';//모험가 과거 승패
+			
+			var outputList_num = [1,1,1];
+			var outputList_name = ['r','p','s'];
+			
+			var images = './images/rps/';
+			var imageList = []; //이미지 선로딩용 임시저장소
+			
+			//==================================================
+			// 이미지 선로딩 (출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
+			function loadImages(arr,callBack){ 
+				var imagesArray = [];
+				var img;
+				var remaining = arr.length;
+				for (var i = 0; i < arr.length; i++) {
+					img = new Image();
+					img.onload = function() {
+						//외부 처리 
+						document.getElementById("cover_notice").innerHTML = "\
+						이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+						//내부 처리
+						--remaining;
+						if (remaining <= 0) {
+							callBack();
+						};
+					};
+					img.onerror = function() {
+						//외부 처리 
+						document.getElementById("cover_notice").innerHTML = "\
+						이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+						--remaining;
+						if (remaining <= 0) {
+							callBack();
+						};
+					};
+					img.src = arr[i];
+					document.getElementById("imagePreloader").innerHTML += "<img src='" + arr[i] + "' />";
+					imagesArray.push(img);
+				};
+			};
+			
+			//DOM 선택자
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			
+			//IE8에 indexOf 적용
+			if (!Array.prototype.indexOf)
+			{
+			  Array.prototype.indexOf = function(elt /*, from*/)
+			  {
+				var len = this.length >>> 0;
+
+				var from = Number(arguments[1]) || 0;
+				from = (from < 0)
+					 ? Math.ceil(from)
+					 : Math.floor(from);
+				if (from < 0)
+				  from += len;
+
+				for (; from < len; from++)
+				{
+				  if (from in this &&
+					  this[from] === elt)
+					return from;
+				}
+				return -1;
+			  };
+			};
+			
+			//가중치 적용 랜덤
+			function rand(target) {//target : 숫자가 들어있는 배열
+				var number = 0;
+				for (i=0;i<target.length;i++) {
+					number += target[i];
+				}
+				var tmp = Math.random() * number;
+				
+				number = 0;
+				for (i=0;i<target.length;i++) {
+					number += target[i];
+					if (tmp < number) {
+						return i;
+					}
+				}
+			}
+			//==================================================
+			function rps(input) {
+				//버튼 비활성화
+				$('#rps_r').className = "rps";
+				$('#rps_p').className = "rps";
+				$('#rps_s').className = "rps";
+				
+				$('#rps_r').disabled = "disabled";
+				$('#rps_p').disabled = "disabled";
+				$('#rps_s').disabled = "disabled";
+				
+				//이미지 교체
+				$('#p1_img').src = images + "p1_11.png";
+				$('#p2_img').src = images + "p2_11.png";
+				
+				//메세지 교체
+				$('#p1_message').innerHTML = "가위 바위 ...";
+				$('#p2_message').innerHTML = "가위 바위 ...";
+				
+				//마테카 핸드 결정
+				if (round == 1) {
+					//1라운드 : 랜덤
+					var input2 = outputList_name[rand(outputList_num)];
+				} else {
+					if (last_result == "w") {
+						//이전 라운드 - 플레이어 승 : 아무도 내지 않은 것
+						var tempList = ['r','p','s'];
+						tempList.splice(tempList.indexOf(last_output[0]), 1);
+						tempList.splice(tempList.indexOf(last_output[1]), 1);
+						
+						var input2 = tempList[0];
+					} else if (last_result == "l") {
+						//이전 라운드 - 플레이어 패 : 플레이어가 냈던 거
+						var input2 = last_output[0];
+					} else {
+						//이전 라운드 - 무승부 : 랜덤
+						var input2 = outputList_name[rand(outputList_num)];
+					}
+				}
+				
+				//서로 비교
+				setTimeout(function() {
+					compare(input, input2);
+				}, 700);
+			}
+			
+			function compare(input1, input2) {
+				//이미지 교체
+				$('#p1_img').src = images + "p1_12.png";
+				$('#p2_img').src = images + "p2_12.png";
+				
+				//메세지 교체
+				$('#p1_message').innerHTML = "보!";
+				$('#p2_message').innerHTML = "보!";
+				
+				//핸드 공개
+				$('#p1_hand').src = images + input1 + ".png";
+				$('#p2_hand').src = images + input2 + ".png";
+				$('#p1_hand').style.display = "block";
+				$('#p2_hand').style.display = "block";
+				
+				//핸드 명칭 출력
+				switch (input1) {
+					case "r":
+						$('#p1_result').innerHTML = "바위";
+						
+						break;
+					case "s":
+						$('#p1_result').innerHTML = "가위";
+						
+						break;
+					case "p":
+						$('#p1_result').innerHTML = "보";
+						
+						break;
+				}
+				switch (input2) {
+					case "r":
+						$('#p2_result').innerHTML = "바위";
+						
+						break;
+					case "s":
+						$('#p2_result').innerHTML = "가위";
+						
+						break;
+					case "p":
+						$('#p2_result').innerHTML = "보";
+						
+						break;
+				}
+				
+				//승패 결정
+				switch (input1) {
+					case "r":
+						if (input2 == 'r') {
+							var result = 'd';
+						} else if (input2 == 's') {
+							var result = 'w';
+						} else if (input2 == 'p') {
+							var result = 'l';
+						}
+						
+						break;
+					case "s":
+						if (input2 == 'r') {
+							var result = 'l';
+						} else if (input2 == 's') {
+							var result = 'd';
+						} else if (input2 == 'p') {
+							var result = 'w';
+						}
+						
+						break;
+					case "p":
+						if (input2 == 'r') {
+							var result = 'w';
+						} else if (input2 == 's') {
+							var result = 'l';
+						} else if (input2 == 'p') {
+							var result = 'd';
+						}
+						
+						break;
+				}
+				
+				//결과 기억 후 다음으로
+				last_output = [input1,input2];
+				last_result = result;
+				setTimeout(function() {
+					action(result);
+				}, 500)
+			}
+			
+			function action(result) {
+				switch (result) {
+					case 'w':
+						//이미지 교체
+						$('#p1_img').src = images + "p1_12.png";
+						$('#p2_img').src = images + "p2_2.png";
+						
+						//메세지 교체
+						$('#p1_message').innerHTML = "이얍!";
+						$('#p2_message').innerHTML = "크헉!";
+						
+						//결과 메세지 출력
+						$('#result').innerHTML = "<span class='green'>승</span>";
+						$('#result').style.display = "block";
+						
+						//라이프 차감
+						HP[1] -= 100;
+						$('#p2_health_num').innerHTML = HP[1].toString();
+						$('#p2_health_bar').style.width = ((HP[1]/500) * 100).toString() + "%";
+						
+						//종료 여부 결정
+						if (HP[1] == 0) {
+							var final_result = "w";
+						} else {
+							var final_result = "";
+						}
+						break;
+					case 'l':
+						//이미지 교체
+						$('#p1_img').src = images + "p1_2.png";
+						$('#p2_img').src = images + "p2_12.png";
+						
+						//메세지 교체
+						$('#p1_message').innerHTML = "크헉!";
+						$('#p2_message').innerHTML = "하! 하! 하!";
+						
+						//결과 메세지 출력
+						$('#result').innerHTML = "<span class='orange'>패</span>";
+						$('#result').style.display = "block";
+						
+						//라이프 차감
+						HP[0] -= 100;
+						$('#p1_health_num').innerHTML = HP[0].toString();
+						$('#p1_health_bar').style.width = ((HP[0]/500) * 100).toString() + "%";
+						
+						//종료 여부 결정
+						if (HP[0] == 0) {
+							var final_result = "l";
+						} else {
+							var final_result = "";
+						}
+						
+						break;
+					case 'd':
+						//이미지 교체
+						$('#p1_img').src = images + "p1_12.png";
+						$('#p2_img').src = images + "p2_12.png";
+						
+						//메세지 교체
+						$('#p1_message').innerHTML = "이런...";
+						$('#p2_message').innerHTML = "제법이군.";
+						
+						//결과 메세지 출력
+						$('#result').innerHTML = "무";
+						$('#result').style.display = "block";
+						
+						//종료 여부 결정
+						var final_result = "";
+						
+						break;
+				}
+				
+				//종료 여부 출력
+				switch (final_result) {
+					case 'w':
+						setTimeout(function() {
+							//라운드 창 전환 & 결과 창 제거
+							$("#round").innerHTML = "Result";
+							
+							//버튼 교체
+							$('#rps_r').className = "rps active";
+							$('#rps_p').className = "rps active";
+							$('#rps_s').className = "rps active";
+							
+							$('#rps_r').disabled = "";
+							$('#rps_p').disabled = "";
+							$('#rps_s').disabled = "";
+							
+							$('#rps_r').style.display = "none";
+							$('#rps_p').style.display = "none";
+							$('#rps_s').style.display = "none";
+								//리셋 버튼
+								$('#reset').value = "승리하셨습니다. (클릭 시 다시 플레이)"
+								$('#reset').style.display = "block";
+							
+							//이미지 교체
+							$('#p1_img').src = images + "p1_win.png";
+							$('#p2_img').src = images + "p2_lose.png";
+							
+							//메세지 교체
+							$('#p1_message').innerHTML = "이겼다!";
+							$('#p2_message').innerHTML = "이럴수가...";
+						}, 1000);
+						
+						break;
+					case 'l':
+						setTimeout(function() {
+							//라운드 창 전환 & 결과 창 제거
+							$("#round").innerHTML = "Result";
+							
+							//버튼 교체
+							$('#rps_r').className = "rps active";
+							$('#rps_p').className = "rps active";
+							$('#rps_s').className = "rps active";
+							
+							$('#rps_r').disabled = "";
+							$('#rps_p').disabled = "";
+							$('#rps_s').disabled = "";
+							
+							$('#rps_r').style.display = "none";
+							$('#rps_p').style.display = "none";
+							$('#rps_s').style.display = "none";
+								//리셋 버튼
+								$('#reset').value = "패배하셨습니다. (클릭 시 다시 플레이)"
+								$('#reset').style.display = "block";
+							
+							//이미지 교체
+							$('#p1_img').src = images + "p1_lose.png";
+							$('#p2_img').src = images + "p2_win.png";
+							
+							//메세지 교체
+							$('#p1_message').innerHTML = "이럴수가...";
+							$('#p2_message').innerHTML = "하! 하! 하!";
+						}, 1000);
+						
+						break;
+					case '':
+						setTimeout(function() {
+							//라운드 증가, 교체 & 결과 창 제거
+							round += 1;
+							$("#round").innerHTML = "Round " + round.toString();
+							$("#result").style.display = "none";
+							
+							//버튼 활성화
+							$('#rps_r').className = "rps active";
+							$('#rps_p').className = "rps active";
+							$('#rps_s').className = "rps active";
+							
+							$('#rps_r').disabled = "";
+							$('#rps_p').disabled = "";
+							$('#rps_s').disabled = "";
+							
+							//이미지 교체
+							$('#p1_img').src = images + "p1_0.png";
+							$('#p2_img').src = images + "p2_0.png";
+						}, 1000)
+						
+						break;
+				}
+				
+			}
+			
+			
+			window.onload = function() {
+				//이미지 선로딩 준비
+				imageList.push("./images/rps/back1.png");
+				imageList.push("./images/rps/back2.png");
+				imageList.push("./images/rps/mark_vs.png");
+				imageList.push("./images/rps/r.png");
+				imageList.push("./images/rps/s.png");
+				imageList.push("./images/rps/p.png");
+				imageList.push("./images/rps/p1_0.png");
+				imageList.push("./images/rps/p1_11.png");
+				imageList.push("./images/rps/p1_12.png");
+				imageList.push("./images/rps/p1_2.png");
+				imageList.push("./images/rps/p1_lose.png");
+				imageList.push("./images/rps/p1_win.png");
+				imageList.push("./images/rps/p2_0.png");
+				imageList.push("./images/rps/p2_11.png");
+				imageList.push("./images/rps/p2_12.png");
+				imageList.push("./images/rps/p2_2.png");
+				imageList.push("./images/rps/p2_lose.png");
+				imageList.push("./images/rps/p2_win.png");
+				
+				//이미지 선로딩 실시
+				loadImages(imageList,function(){
+					//정면 창 닫기
+					$('#cover').style.display = "none";
+					
+					//버튼 설정
+					$('#rps_r').onclick = function() {
+						rps('r');
+					}
+					$('#rps_s').onclick = function() {
+						rps('s');
+					}
+					$('#rps_p').onclick = function() {
+						rps('p');
+					}
+					
+					$('#reset').onclick = function() {
+						//변수 복구 & 관련 창 복구
+						round = 1;
+							$('#round').style.display = "Round 1";
+						HP = [500,500];
+							$('#p1_health_num').innerHTML = HP[0].toString();
+							$('#p1_health_bar').style.width = ((HP[0]/500) * 100).toString() + "%";
+							
+							$('#p2_health_num').innerHTML = HP[1].toString();
+							$('#p2_health_bar').style.width = ((HP[1]/500) * 100).toString() + "%";
+						last_output = [,];//과거 승패 - [모험가, 마테카]
+						last_result = '';//모험가 과거 승패
+						
+						//결과 창 닫기
+						$('#result').style.display = "none";
+						
+						//이미지 교체
+						$('#p1_img').src = images + "p1_0.png";
+						$('#p2_img').src = images + "p2_0.png";
+						
+						//메세지 교체
+						$('#p1_message').innerHTML = "이긴다!";
+						$('#p2_message').innerHTML = "너의 고통을 감상해주지!";
+						
+						//핸드 감추기
+						$('#p1_hand').style.display = "none";
+						$('#p2_hand').style.display = "none";
+						
+						//핸드 결과 감추기
+						$('#p1_result').innerHTML = "???";
+						$('#p2_result').innerHTML = "???";
+						
+						//버튼 활성화
+						$('#rps_r').className = "rps active";
+						$('#rps_p').className = "rps active";
+						$('#rps_s').className = "rps active";
+						
+						$('#rps_r').disabled = "";
+						$('#rps_p').disabled = "";
+						$('#rps_s').disabled = "";
+						
+						$('#rps_r').style.display = "block";
+						$('#rps_p').style.display = "block";
+						$('#rps_s').style.display = "block";
+							//리셋 버튼 감추기
+							$('#reset').style.display = "none";
+					}
+					
+					
+				});
+			}
+			
+		</script>
+
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="counter" ><script  type="text/javascript" >
+try {Histats.start(1,3166424,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3166424&101" alt="counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+	</body>
+</html>

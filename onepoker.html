@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>원포커 프로토타입</title>
+		
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			.green {
+				color:green;
+				font-size:inherit;
+				font-weight:bold;
+			}
+			.red {
+				color:red;
+				font-size:inherit;
+				font-weight:bold;
+			}
+			.blue {
+				color:blue;
+				font-size:inherit;
+				font-weight:bold;
+			}
+
+			
+			body {
+				padding:10px;
+				
+				background:url(./images/anton/background.png);
+			}
+			
+			#wrapper {
+				width:406px;
+				height:255px;
+			}
+			#left {
+				float:left;
+				
+				height:253px;
+				
+				background:white;
+				border:1px black solid;
+				border-right:0px;
+			}
+				#enemy_img {
+					float:left;
+					
+					width:93px;
+					height:120px;
+					
+					border-bottom:1px black solid;
+				}
+				#my_img {
+					clear:both;
+					float:left;
+					
+					margin-top:11px;
+					width:93px;
+					height:120px;
+					
+					border-top:1px black solid;
+				}
+			#right {
+				float:left;
+			}
+			#cover {
+				position:absolute;
+				top:10px;
+				left:10px;
+				
+				width:406px;
+				height:255px;
+				
+				background:url(./images/anton/hatsBack.png);
+				border:1px black solid;
+			}
+				#cover input {
+					position:absolute;
+					bottom:10px;
+					right:10px;
+					
+					width:250px;
+					height:40px;
+					
+					font-size:25px;
+				}
+			
+			
+			#top1, #top2, #bottom1, #bottom2, #notice1, #notice2 {
+				padding:5px;
+				width:300px;
+				
+				background:Gainsboro;
+				border:1px black solid;
+			}
+				#top2, #bottom2 {
+					background:white;
+				}
+				#notice2 {
+					height:50px;
+				}
+			.card {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				
+				margin:3px;
+				padding:3px;
+				width:22px;
+				
+				border:1px black solid;
+				
+				text-align:center;
+				cursor:default;
+				
+				display:inline-block;
+			}
+				.card.me:hover {
+					background:yellow;
+					cursor:pointer;
+					cursor:hand;
+				}
+				.card.me:active {
+					background:orange;
+				}
+			#next {
+				width:150px;
+				height:25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="left">
+				<img id="enemy_img" src="./images/anton/hats.png">
+				<img id="my_img" src="./images/anton/mageF.png">
+			</div>
+			<div id="right">
+				<div id="top1">
+					하츠 <span class="red">♥</span> : <span id="enemy_life">0</span> / 업 : <span id="enemy_up">0</span>, 다운 : <span id="enemy_down">0</span>
+				</div>
+				<div id="top2">
+					
+				</div>
+				<div id="notice1">
+					제 <span id="notice_count"></span>라운드 / 남은 카드 수 : <span id="notice_remain"></span>
+				</div>
+				<div id="notice2">
+				</div>
+				<div id="bottom2">
+					
+				</div>
+				<div id="bottom1">
+					나의 <span class="red">♥</span> : <span id="my_life">0</span> / 업 : <span id="my_up">0</span>, 다운 : <span id="my_down">0</span>
+				</div>
+			</div>
+		</div>
+		<div id="cover">
+			<input type="button" onclick="document.getElementById('cover').style.display='none'" value="하츠 쓰러뜨리러 가기" />
+		</div>
+		
+		<script type="text/javascript">
+			var i;
+			
+			var enemy = [];//라이프, 업, 다운
+			var my = [];//라이프, 업, 다운
+			var enemyCard = [];
+			var myCard = [];
+			var pick = [];//내 제출, 상대 제출
+			
+			var count = 0;
+			
+			var cardList = [1,1,1,1,1,1,1,1,1,1,1,1,
+							2,2,2,2,2,2,2,2,2,2,2,2,
+							3,3,3,3,3,3,3,3,3,3,3,3,
+							4,4,4,4,4,4,4,4,4,4,4,4,
+							5,5,5,5,5,5,5,5,5,5,5,5,
+							6,6,6,6,6,6,6,6,6,6,6,6,
+							7,7,7,7,7,7,7,7,7,7,7,7,
+							8,8,8,8,8,8,8,8,8,8,8,8,
+							9,9,9,9,9,9,9,9,9,9,9,9,
+							10,10,10,10,10,10,10,10,10,10,10,10,
+							11,11,11,11,11,11,11,11,11,11,11,11,
+							12,12,12,12,12,12,12,12,12,12,12,12,
+							13,13,13,13,13,13,13,13,13,13,13,13];
+			var nameList = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+			
+			var upList = [8,9,10,11,12,13,1];
+			var downList = [2,3,4,5,6,7];
+			
+			var $top1 = document.getElementById("top1");
+				var $enemy_life = document.getElementById("enemy_life");
+				var $enemy_up = document.getElementById("enemy_up");
+				var $enemy_down = document.getElementById("enemy_down");
+			var $top2 = document.getElementById("top2");
+				var $my_life = document.getElementById("my_life");
+				var $my_up = document.getElementById("my_up");
+				var $my_down = document.getElementById("my_down");
+			var $bottom1 = document.getElementById("bottom1");
+			var $bottom2 = document.getElementById("bottom2");
+			var $notice1 = document.getElementById("notice1");
+				var $notice_count = document.getElementById("notice_count");
+				var $notice_remain = document.getElementById("notice_remain");
+			var $notice2 = document.getElementById("notice2");
+				var $next = document.getElementById("next");
+				
+			
+			//함수
+					function shuffle(arr){
+						for (var j, x, i = arr.length; i; j = Math.floor(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+						return arr;
+					}
+					
+					//IE8에 indexOf 적용
+					if (!Array.prototype.indexOf)
+					{
+					  Array.prototype.indexOf = function(elt /*, from*/)
+					  {
+						var len = this.length >>> 0;
+
+						var from = Number(arguments[1]) || 0;
+						from = (from < 0)
+							 ? Math.ceil(from)
+							 : Math.floor(from);
+						if (from < 0)
+						  from += len;
+
+						for (; from < len; from++)
+						{
+						  if (from in this &&
+							  this[from] === elt)
+							return from;
+						}
+						return -1;
+					  };
+					}
+					
+			function ready() {
+				//카드 분배
+				if (count == 0) {
+					enemyCard.push(cardList[cardList.length - 1]);
+					cardList.pop();
+					myCard.push(cardList[cardList.length - 1]);
+					cardList.pop();
+				}
+				enemyCard.push(cardList[cardList.length - 1]);
+				cardList.pop();
+				myCard.push(cardList[cardList.length - 1]);
+				cardList.pop();
+				
+				//라운드 증가
+				count += 1;
+				$notice_count.innerHTML = count.toString();
+				//덱 숫자 변경
+				$notice_remain.innerHTML = cardList.length.toString();
+				
+				//업다운 표시
+					//상대 업다운
+					var temp = 0
+					for (i=0;i<enemyCard.length;i++) {
+						if (upList.indexOf(enemyCard[i]) != -1) {
+							temp += 1;
+						}
+					}
+					$enemy_up.innerHTML = temp.toString();
+					$enemy_down.innerHTML = (2 - temp).toString();
+					//내 업다운
+					var temp = 0
+					for (i=0;i<myCard.length;i++) {
+						if (upList.indexOf(myCard[i]) != -1) {
+							temp += 1;
+						}
+					}
+					$my_up.innerHTML = temp.toString();
+					$my_down.innerHTML = (2 - temp).toString();
+				
+				//카드 표기
+				$top2.innerHTML = "하츠 패 : <span id='card_enemy_0' class='card'>" + "?" + "</span><span id='card_enemy_1' class='card'>" + "?" + "</span>";
+				$bottom2.innerHTML = "나의 패 : <span id='card_my_0' class='card me' onclick='show(0)'>" + nameList[myCard[0] - 1] + "</span><span id='card_my_1' class='card me' onclick='show(1)'>" + nameList[myCard[1] - 1] + "</span>";
+				
+				//공지 표시
+				$notice2.innerHTML = "하츠가 카드를 선택하였습니다.<br/>제시할 카드를 선택하세요.";
+			}
+			
+			function show(num) {
+				//카드 세팅
+				pick[0] = myCard[num];
+				pick[1] = enemyCard[Math.floor(Math.random() * enemyCard.length)];
+				
+				//비교 작업
+				var win;//0 : 패배, 1 : 승리, -1 : 무승부
+				if (pick[0] > pick[1]) {//내가 숫자가 큼
+					//예외 1 : 'A' & '2'
+					if (pick[0] == 2 && pick[1] == 1) {
+						win = 1;
+					//예외 2 : 'A'
+					} else if (pick[1] == 1) {
+						win = 0;
+					//나머지 경우
+					} else {
+						win = 1
+					}
+				} else if (pick[0] < pick[1]) {//상대가 숫자가 큼
+					//예외 1 : 'A' & '2'
+					if (pick[0] == 1 && pick[1] == 2) {
+						win = 0;
+					//예외 2 : 'A'
+					} else if (pick[0] == 1) {
+						win = 1;
+					//나머지 경우
+					} else {
+						win = 0
+					}
+				} else {//무승부
+					win = -1;
+				}
+				
+				//후처리
+				if (win == 1) {//승리
+					//멘트
+					$notice2.innerHTML = "하츠 : <strong>" + nameList[pick[1] - 1] + "</strong> / 나 : <strong>" + nameList[pick[0] - 1] + "</strong>, <span class='green'>승리!</span>"
+					
+					//라이프 변경
+					enemy[0] -= 1;
+						$enemy_life.innerHTML = enemy[0].toString();
+					my[0] += 1;
+						$my_life.innerHTML = my[0].toString();
+					
+				} else if (win == 0) {//패배
+					//멘트
+					$notice2.innerHTML = "하츠 : <strong>" + nameList[pick[1] - 1] + "</strong> / 나 : <strong>" + nameList[pick[0] - 1] + "</strong>, <span class='red'>패배!</span>"
+					
+					//라이프 변경
+					enemy[0] += 1;
+						$enemy_life.innerHTML = enemy[0].toString();
+					my[0] -= 1;
+						$my_life.innerHTML = my[0].toString();
+				} else {
+					//멘트
+					$notice2.innerHTML = "하츠 : <strong>" + nameList[pick[1] - 1] + "</strong> / 나 : <strong>" + nameList[pick[0] - 1] + "</strong>, <span class='blue'>무승부!</span>"
+					
+				}
+				
+				//사용한 카드 폐기
+				var trash1 = enemyCard.indexOf(pick[1]);
+				if (trash1 == 0) {
+					enemyCard.shift();
+				} else {
+					enemyCard.pop();
+				}
+				trashA = document.getElementById("card_enemy_" + trash1.toString());
+				trashA.parentNode.removeChild(trashA);
+				
+				var trash2 = myCard.indexOf(pick[0]);
+				if (trash2 == 0) {
+					myCard.shift();
+				} else {
+					myCard.pop();
+				}
+				trashB = document.getElementById("card_my_" + trash2.toString());
+				trashB.parentNode.removeChild(trashB);
+					//다른 카드 클릭 방지
+					document.getElementById("card_my_" + (1 - trash2).toString()).onclick = "";
+				
+				//종료 조건 확인
+				if (enemy[0] == 0) {//상대 라이프 0
+					$notice2.innerHTML += "<br/>하츠 라이프 모두 소진! <span class='green'>승리!</span>"
+				} else if (my[0] == 0) {//내 라이프 0
+					$notice2.innerHTML += "<br/>내 라이프 모두 소진! <span class='red'>패배!</span>"
+				} else if (cardList.length == 0) {//덱 0
+					if (enemy[0] < my[0]) {//상대 라이프 낮음
+						$notice2.innerHTML += "<br/>모든 카드 소모! 라이프 비교 &#8658; <span class='green'>승리!</span>"
+					} else if (my[0] < enemy[0]) {//내 라이프 낮음
+						$notice2.innerHTML += "<br/>모든 카드 소모! 라이프 비교 &#8658; <span class='red'>패배!</span>"
+					} else {//무승부
+						$notice2.innerHTML += "<br/>모든 카드 소모! 라이프 비교 &#8658; <span class='blue'>무승부!</span>"
+					}
+				} else {//종료 조건 미충족
+					$notice2.innerHTML += "<br/><input id='next' type='button' value='다음 라운드 진행하기' onclick='ready()'>"
+				}
+			}
+			
+			window.onload = function() {
+				
+				//카드 셔플
+				shuffle(cardList);
+				//카드 절반 버리기
+				var length = (cardList.length)/2;
+				for (i=0;i<length;i++) {
+					cardList.pop();
+				}
+				
+				//라이프 세팅
+				enemy[0] = 6;
+					$enemy_life.innerHTML = enemy[0].toString();
+				my[0] = 6;
+					$my_life.innerHTML = my[0].toString();
+					
+				//회차 세팅
+				$notice_count.innerHTML = count.toString();
+				
+				//실행
+				ready();
+			}
+			
+		</script>
+	
+	
+	</body>
+</body>

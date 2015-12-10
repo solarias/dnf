@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>플래티넘 엠블렘 함성 시뮬레이터</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.epic {
+				color:orange;
+			}
+			.skyblue {
+				color:skyblue;
+			}
+			
+			.platinum {
+				color:orange;
+				font-size:inherit;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+			
+			span {
+				font-size:inherit;
+			}
+			
+			#wrapper {
+				padding:3px;
+				width:312px;
+				height:479px;
+				
+				background:brown;
+				border:1px black solid;
+			}
+			
+			#frame_header {
+				padding:2px;
+				width:306px;
+				
+				background:brown;
+				
+				color:white;
+				font-weight:bold;
+			}
+				input#clear {
+					float:right;
+					
+					width:60px;
+					height:20px;
+					
+					background: #FF6A00; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+					background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: linear-gradient(to bottom, #ffffff, #FF6A00);
+					
+					font-size:16px;
+					font-weight:bold;
+					
+					display:block;
+				}
+					input#clear:active {
+						background: #FFAA00;
+					}
+			
+			#frame_box {
+				position:relative;
+				
+				padding:5px;
+				width:300px;
+				height:28px;
+				
+				background:gray;
+				border:1px black solid;
+				
+				font-weight:bold;
+			}
+				#box_progress {
+					position:relative;
+					float:left;
+					width:300px;
+					height:28px;
+					
+					background-color:black;
+				}
+					#box_bar {
+						position:absolute;
+						top:0px;
+						left:0px;
+						z-index:1;
+						
+						width:0px;
+						height:28px;
+						
+						background-color:yellow;
+					}
+					#box_text {
+						position:absolute;
+						top:0px;
+						left:0px;
+						z-index:2;
+						
+						float:left;
+						padding:5px;
+						
+						color:#D37CFF;
+						font-weight:bold;
+					}
+						#box_text img {
+							width:20px;
+							vertical-align:top;
+						}
+			#frame_result {
+				position:relative;
+				
+				margin-bottom:5px;
+				padding:5px;
+				width:300px;
+				height:28px;
+				
+				background:gray;
+				border:1px black solid;
+				border-top:0px;
+				
+				font-weight:bold;
+			}
+				#result_img {
+					float:left;
+					
+					width:28px;
+					height:28px;
+					
+					display:block;
+				}
+				#result_text {
+					position:relative;
+					float:left;
+					margin-left:5px;
+					
+					padding-left:4px;
+					width:263px;
+					height:28px;
+					
+					background-color:black;
+					
+					color:orange;
+					
+					display:table;
+				}
+					#result_text span {
+						font-size:12px;
+						vertical-align:middle;
+						
+						display:table-cell;
+					}
+			#open1, #open2 {
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				
+				width:152px;
+				height:30px;
+				
+				border:1px #A4A4A4 solid;
+				
+				font-size:20px;
+				font-weight:bold;
+				
+				display:block;
+			}
+				#open1 {
+					float:left;
+				}
+				#open2 {
+					float:right;
+				}
+					#open1:active, #open2:active {
+						background: #DEDEDE;
+					}
+			
+			#frame_record {
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				clear:both;
+				float:left;
+				
+				margin-top:5px;
+				padding:5px;
+				width:300px;
+				height:300px;
+				
+				background-color:#303030;
+				background-image:url('./images/etc/dafne.png');
+				border:1px black solid;
+				
+				color:white;
+				font-weight:bold;
+			}
+				#frame_record p {
+					margin-bottom:7px;
+					
+					font-size:16px;
+					line-height:100%;
+				}
+				#frame_record br {
+					margin:2px 0px;
+					
+					content: " ";
+					display:block;
+				}
+				#frame_record img {
+					width:16px;
+					
+					vertical-align:top;
+				}
+			
+			#frame_filter {
+				clear:both;
+				
+				padding:3px;
+				height:20px;
+				
+				color:white;
+				font-size:16px;
+				font-weight:bold;
+			}
+				#frame_filter select {
+					width:140px;
+					height:20px;
+					
+					border:1px gray solid;
+					
+					vertical-align:top;
+				}
+			
+			
+			/*모바일 스크롤바 가시화*/
+			::-webkit-scrollbar {
+				-webkit-appearance: none;
+			}
+
+			::-webkit-scrollbar:vertical {
+				width: 12px;
+			}
+
+			::-webkit-scrollbar:horizontal {
+				height: 12px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 0, 0, .5);
+				border-radius: 10px;
+				border: 2px solid #ffffff;
+			}
+
+			::-webkit-scrollbar-track {
+				background-color: #ffffff; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+		
+			<div id="frame_header">
+				플레티넘 엠블렘을 합성합니다.
+				<input id="clear" type="button" value="초기화" />
+			</div>
+			<div id="frame_box">
+				<div id="box_progress">
+					<div id="box_bar">
+					</div>
+					<div id="box_text">
+						<span id="box_count">1</span>회차 엠블렘 합성 대기 중
+					</div>
+				</div>
+			</div>
+			<div id="frame_result">
+				<img id="result_img" src="./images/etc/initial.png" />
+				<div id="result_text">
+				</div>
+			</div>
+			
+			<input id="open1" type="button" value="1회 합성" />
+			<input id="open2" type="button" value="연속 합성" />
+			
+			<div id="frame_record">
+			</div>
+			
+			<div id="frame_filter">
+				※ 직업별 필터링 : 
+				<select id="filter_select">
+				</select>
+			</div>
+			
+		</div>
+		
+		<style id="filter">
+		
+		</style>
+		
+		<script type="text/javascript" src="./js/emblem_skillList.js"></script>
+		<script type="text/javascript">
+			var auto;
+			var running = 0;
+			
+			var count = 0;//현재 회차
+			var job = "";//엠블렘 - 직업
+			var skill = "";//엠블렘 - 스킬
+			
+			var images = "./images/etc/";
+			var iconList = [];//엠블림 이미지 링크
+			
+			//DOM 객체
+			var $clear = document.getElementById("clear");
+			
+			var $box_img = document.getElementById("box_img");
+			var $box_progress = document.getElementById("box_progress");
+			var $box_bar = document.getElementById("box_bar");
+			var $box_text = document.getElementById("box_text");
+			var $box_count = document.getElementById("box_count");
+			
+			var $result_img = document.getElementById("result_img");
+			var $result_text = document.getElementById("result_text");
+			
+			var $open1 = document.getElementById("open1");
+			var $open2 = document.getElementById("open2");
+			
+			var $frame_record = document.getElementById("frame_record");
+			
+			var $frame_filter = document.getElementById("frame_filter");
+				var $filter_select = document.getElementById("filter_select");
+			
+			var $filter = document.getElementById("filter");
+			
+			
+			//데이터
+			var jobList = [
+				"귀검사(남)","귀검사(여)",
+				"격투가(여)","격투가(남)",
+				"거너(남)","거너(여)",
+				"마법사(여)","마법사(남)",
+				"프리스트(남)",
+				"도적(여)",
+				"나이트(여)",
+				"다크나이트(남)",
+				"크리에이터(여)"
+			];
+			
+			//함수
+				//IE8에 indexOf 적용
+				if (!Array.prototype.indexOf)
+				{
+				  Array.prototype.indexOf = function(elt /*, from*/)
+				  {
+					var len = this.length >>> 0;
+
+					var from = Number(arguments[1]) || 0;
+					from = (from < 0)
+						 ? Math.ceil(from)
+						 : Math.floor(from);
+					if (from < 0)
+					  from += len;
+
+					for (; from < len; from++)
+					{
+					  if (from in this &&
+						  this[from] === elt)
+						return from;
+					}
+					return -1;
+				  };
+				}
+				
+				//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+				function thousand(num) {
+					if (isNaN(num)) {
+						return "";
+					} else {
+						var temp = parseInt(num.toString().replace(/,/g,''));
+						return temp.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+				}
+				
+				//칼박 실행
+				function simulate(num) {
+					//게이지 증가
+					if (($box_bar.offsetWidth/$box_progress.offsetWidth)*100 < 100) {
+						$box_bar.style.width = (($box_bar.offsetWidth/$box_progress.offsetWidth)*100 + 5).toString() + "%";
+						auto = setTimeout(function() {
+								simulate(num);
+							},50);
+					} else {
+						//회차 증가
+						count += 1;
+						
+						//스킬 결정 및 직업 판별
+						var tempList = [[],[]];//[0] : 직업 [1] : 스킬
+						for (i=0;i<skillList.length;i++) {
+							for (j=0;j<skillList[i].length;j++) {
+								if (skillList[i][j] != "") {
+									tempList[0].push(jobList[j]);
+									tempList[1].push(skillList[i][j]);
+								}
+							}
+						}
+						skill = tempList[1][Math.floor(Math.random() * tempList[1].length)];
+						job = tempList[0][tempList[1].indexOf(skill)];
+						
+						//결과 출력
+						$result_img.src = iconList[jobList.indexOf(job)];
+						$result_text.innerHTML = "<span>플래티넘 엠블렘[" + skill + "]</span>"
+						
+						//업데이트
+						$frame_record.innerHTML += "\
+							<p class='record job" + (jobList.indexOf(job)).toString() + "'>" + thousand(count) + "회차 : \
+							<img src=" + iconList[jobList.indexOf(job)] + " /> <span class='skyblue'>[" + job + "]</span>\
+							<br/>　┗ <span class='epic'>" + skill + "</span>"
+						$frame_record.scrollTop = $frame_record.scrollHeight;
+						
+						//후속 조치
+						switch (num) {
+							case 1:
+								running = 0;
+								onoff(0);
+								break;
+							case 2:
+								onoff(2);
+								simulate(2);
+								break;
+						}
+					}
+				}
+				//버튼 설정
+				function onoff(num) {
+					switch(num) {
+						case 0:
+							$open1.disabled = "";
+							$open2.disabled = "";
+							$clear.disabled = "";
+							
+							$open1.value = "1회 합성";
+							$open2.value = "연속 합성";
+							
+							//게이지 준비
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "#D37CFF";
+								$box_text.innerHTML = thousand(count+1) + "번째 엠블렘 합성 대기 중";
+								
+							break;
+						case 1:
+							$open1.disabled = "";
+							$open2.disabled = "disabled";
+							$clear.disabled = "disabled";
+							
+							$open1.value = "합성 중지";
+							//게이지 준비
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "black";
+								$box_text.innerHTML = thousand(count+1) + "번째 합성 중...";
+							break;
+						case 2:
+							$open1.disabled = "disabled";
+							$open2.disabled = "";
+							$clear.disabled = "disabled";
+							
+							$open2.value = "합성 중지";
+							//게이지 준비
+								//게이지 초기화
+								$box_bar.style.width = "0px";
+								//게이지 문구 색상, 글씨 변경
+								$box_text.style.color = "black";
+								$box_text.innerHTML = thousand(count+1) + "번째 합성 중...";
+							break;
+					}
+				}
+				//리셋
+				function reset() {
+					if (confirm("초기화 하시겠습니까?")) {
+						count = 0;//현재 회차
+						job = "";//엠블렘 - 직업
+						skill = "";//엠블렘 - 스킬
+						
+						$box_count.innerHTML = "1";
+						
+						$result_img.src = images + "initial.png";
+						$result_text.innerHTML = "";
+						
+						$frame_record.innerHTML = "";
+					}
+				}
+			
+			//실행
+			window.onload = function() {
+				//이미지 선로딩
+				var img1 = new Image();
+					img1.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093444.jpg";
+					iconList.push(img1.src);
+				var img2 = new Image();
+					img2.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093445.jpg";
+					iconList.push(img2.src);
+				var img3 = new Image();
+					img3.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093443.jpg";
+					iconList.push(img3.src);
+				var img4 = new Image();
+					img4.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093432.jpg";
+					iconList.push(img4.src);
+				var img5 = new Image();
+					img5.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093430.jpg";
+					iconList.push(img5.src);
+				var img6 = new Image();
+					img6.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093431.jpg";
+					iconList.push(img6.src);
+				var img7 = new Image();
+					img7.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/44810934410.jpg";
+					iconList.push(img7.src);
+				var img8 = new Image();
+					img8.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093449.jpg";
+					iconList.push(img8.src);
+				var img9 = new Image();
+					img9.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/44810934412.jpg";
+					iconList.push(img9.src);
+				var img10 = new Image();
+					img10.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093448.jpg";
+					iconList.push(img10.src);
+				var img11 = new Image();
+					img11.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093446.jpg";
+					iconList.push(img11.src);
+				var img12 = new Image();
+					img12.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4481093447.jpg";
+					iconList.push(img12.src);
+				var img13 = new Image();
+					img13.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/44810934411.jpg";
+					iconList.push(img13.src);
+				var img14 = new Image();
+				img14.src = images + "initial.png";
+				var img15 = new Image();
+				img15.src = images + "dafne.png";
+				
+				//필터링 제작
+				var option = document.createElement("option");
+				option.value = "";
+				option.text = "필터링 없음";
+				$filter_select.add(option);
+				
+				var option = document.createElement("option");
+				option.value = "";
+				option.text = "==============";
+				option.disabled = "disabled";
+				$filter_select.add(option);
+				
+				for (var i=0;i<jobList.length;i++) {
+					var option = document.createElement("option");
+					option.value = i.toString();
+					option.text = jobList[i];
+					$filter_select.add(option);
+				}
+				
+				//실행
+				$open1.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						onoff(1);
+						simulate(1);
+					} else {
+						clearTimeout(auto);
+						running = 0;
+						onoff(0);
+					}
+				}
+				$open2.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						onoff(2);
+						simulate(2);
+					} else {
+						clearTimeout(auto);
+						running = 0;
+						onoff(0);
+					}
+				}
+				$clear.onclick = function() {
+					reset();
+				}
+				
+				$filter_select.onchange = function() {
+					if ($filter_select.value != "") {
+						$filter_select.style.backgroundColor = "#F4FA58";
+						$filter.innerHTML = "\
+							p.record {display:none;}\
+							p.record.job" + $filter_select.value + " {display:block;}";
+					} else {
+						$filter_select.style.backgroundColor = "white";
+						$filter.innerHTML = "";
+					}
+				}
+			}
+		</script>
+	
+	
+	</body>
+</body>

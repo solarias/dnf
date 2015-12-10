@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<link rel="stylesheet" type="text/css" href="./css/gangpock.css" />
+		
+		<title>강화+증폭 시뮬레이터</title>
+	</head>
+	<body>
+	<div id="wrapper">
+
+		<div id="top">
+			<div style="float:left;margin-left:5px;">
+				<p>
+					<select id="weapon">
+						<option selected disabled>(무기를 선택하세요)</option>
+						<optgroup label="귀검사,다크나이트,나이트">
+							<option value="w0101">구원의 이기 - 소검</option>
+							<option value="w0102">구원의 이기 - 도</option>
+							<option value="w0103">구원의 이기 - 둔기</option>
+							<option value="w0104">구원의 이기 - 대검</option>
+							<option value="w0105">구원의 이기 - 광검</option>
+						</optgroup>
+						<optgroup label="격투가">
+							<option value="w0201">구원의 이기 - 너클</option>
+							<option value="w0202">구원의 이기 - 건틀렛</option>
+							<option value="w0203">구원의 이기 - 클로</option>
+							<option value="w0204">구원의 이기 - 권투글러브</option>
+							<option value="w0205">구원의 이기 - 통파</option>
+						</optgroup>
+						<optgroup label="거너">
+							<option value="w0301">구원의 이기 - 리볼버</option>
+							<option value="w0302">구원의 이기 - 자동권총</option>
+							<option value="w0303">구원의 이기 - 머스켓</option>
+							<option value="w0304">구원의 이기 - 핸드캐넌</option>
+							<option value="w0305">구원의 이기 - 보우건</option>
+						</optgroup>
+						<optgroup label="마법사,크리에이터">
+							<option value="w0401">구원의 이기 - 창</option>
+							<option value="w0402">구원의 이기 - 봉</option>
+							<option value="w0403">구원의 이기 - 로드</option>
+							<option value="w0404">구원의 이기 - 스태프</option>
+							<option value="w0405">구원의 이기 - 빗자루</option>
+						</optgroup>
+						<optgroup label="프리스트">
+							<option value="w0501">구원의 이기 - 십자가</option>
+							<option value="w0502">구원의 이기 - 염주</option>
+							<option value="w0503">구원의 이기 - 토템</option>
+							<option value="w0504">구원의 이기 - 낫</option>
+							<option value="w0505">구원의 이기 - 배틀액스</option>
+						</optgroup>
+						<optgroup label="도적">
+							<option value="w0601">구원의 이기 - 단검</option>
+							<option value="w0602">구원의 이기 - 쌍검</option>
+							<option value="w0603">구원의 이기 - 완드</option>
+							<option value="w0604">구원의 이기 - 차크라 웨펀</option>
+						</optgroup>
+					</select>
+					을(를) 
+					<select id="method" disabled>
+						<option value="0">강화</option>
+						<option value="1">증폭</option>
+					</select>
+					합니다.
+				</p>
+			</div>
+			
+			<input id="clear" class="off" type="button" value="모두 초기화" disabled />
+		</div>
+		
+		<div id="center_left">
+			<img id="center_left_back" class="back" src="./images/selfish/back0.png">
+			<img id="center_left_target" class="target" src="./images/selfish/w0101.png">
+		</div>
+		<div id="center_right">
+			<div id="now" style="clear:both;">
+				<img id="now_img" src='./images/selfish/yong0.png' />
+				<div id="now_text">
+					상단에서 무기를 선택해주세요.
+				</div>
+			</div>
+			
+			<div id="message" style="clear:both;">
+				<img id="message_img" src='' />
+				<div id="message_text">
+				</div>
+			</div>
+			
+			<div id="show" style="clear:both;">
+				<div id="show_right">
+					<div id="show_bar">
+					</div>
+				</div>
+				<div id="show_text">
+					강화기 대기 중
+				</div>
+			</div>
+		</div>
+		
+		<div id="store">
+					<input id="open1" class="off" type="button" value="1회 강화" disabled />
+				<div id="wrap">
+					<input id="open2" class="off" type="button" value="연속 강화" disabled />
+					<input id="open3" class="off" type="button" value="고속 강화" disabled />
+					＊ <span id="object_method">강화</span> 목표 : 
+					<select id="objective" disabled />
+						<option value="20" selected disabled>선택하세요</option>
+						<option value="1">1강</option>
+						<option value="2">2강</option>
+						<option value="3">3강</option>
+						<option value="4">4강</option>
+						<option value="5">5강</option>
+						<option value="6">6강</option>
+						<option value="7">7강</option>
+						<option value="8">8강</option>
+						<option value="9">9강</option>
+						<option value="10">10강</option>
+						<option value="11">11강</option>
+						<option value="12">12강</option>
+						<option value="13">13강</option>
+						<option value="14">14강</option>
+						<option value="15">15강</option>
+						<option value="16">16강</option>
+						<option value="17">17강</option>
+						<option value="18">18강</option>
+						<option value="19">19강</option>
+						<option value="20">20강</option>
+					</select>
+				</div>
+			<table id="store_table">
+				<tbody>
+					<tr class="head">
+						<td class="col_1">
+						</td>
+						<td class="col_2">
+							아이템 명칭
+						</td>
+						<td class="col_3">
+							사용
+						</td>
+						<td class="col_4">
+							횟수
+						</td>
+						<td class="col_5_head">
+							1회 사용 가격
+						</td>
+					</tr>
+					<tr>
+						<td class="col_1">
+							<img id="enchant_img" src='./images/selfish/scroll0.png' />
+						</td>
+						<td class="col_2">
+							<select id="enchant_chance" disabled />
+								<option>1프로</option>
+								<option>5프로</option>
+								<option>10프로</option>
+								<option>30프로</option>
+								<option>50프로</option>
+								<option>70프로</option>
+								<option>90프로</option>
+							</select>
+							+12 장비 <span id="enchant_method">강화</span>권
+						</td>
+						<td class="col_3">
+							<input id="enchant" class="off" type="button" value="사용하기" disabled />
+						</td>
+						<td id="enchant_count" class="col_4">
+							0
+						</td>
+						<td id="enchant_price" class="col_5">
+							300만 0000 Gold
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>		
+		
+		<div id="record">
+			<div id="record_head">
+				<table>
+					<tr>
+						<td class="col_1"><img src="" /></td>
+						<td class="col_2">회차</td>
+						<td class="col_3">목표</td>
+						<td class="col_4">확률</td>
+						<td class="col_5">결과</td>
+						<td class="col_6">등급 변화</td>
+						<td class="col_7">아이템</td>
+					</tr>
+				</table>
+			</div>
+			<div id="record_display">
+				<table id="record_table">
+				</table>
+			</div>
+		</div>
+		<div id="record_filter">
+			<input id="record_high" type="checkbox" /><label for="record_high"></label>
+			<select id="record_high_select">
+				<option value="1">1강</option>
+				<option value="2">2강</option>
+				<option value="3">3강</option>
+				<option value="4">4강</option>
+				<option value="5">5강</option>
+				<option value="6">6강</option>
+				<option value="7">7강</option>
+				<option value="8">8강</option>
+				<option value="9">9강</option>
+				<option value="10">10강</option>
+				<option value="11" selected>11강</option>
+				<option value="12">12강</option>
+				<option value="13">13강</option>
+				<option value="14">14강</option>
+				<option value="15">15강</option>
+				<option value="16">16강</option>
+				<option value="17">17강</option>
+				<option value="18">18강</option>
+				<option value="19">19강</option>
+				<option value="20">20강</option>
+			</select> 이상 시도 기록만 보기　&nbsp;
+			<input id="record_result" type="checkbox" /><label for="record_result"></label>
+			<select id="record_result_select">
+				<option value="success">성공</option>
+				<option value="failed">실패</option>
+			</select> 기록만 보기　&nbsp;
+			<input id="record_scroll" type="checkbox" /><label for="record_scroll"></label>
+			<span id="record_scroll_method">강화</span>권 기록만 보기
+		</div>
+		
+		<div id="result">
+			＋ 소모 <img id="result_gold_img" src='./images/selfish/gold.png' /> : <span id="result_gold_num">0</span> Gold
+			<hr/>
+			<span id="result_sera">
+				＋ 소모 <img id="result_sera_img" src='./images/selfish/sera.png' /> : <span id="result_sera_num">0</span> 세라
+				(약 <span id="result_sera_gold">0</span> Gold)
+			</span>
+			<span id="result_mosun">
+				＋ 소모 <img id="result_mosun_img" src='./images/selfish/mosun.png' /> : <span id="result_mosun_num">0</span> 개
+				(= <span id="result_mosun_gold">0</span> Gold)
+				<input id="result_mosun_set" class="off" type="button" value="모순 가격 입력" />
+			</span>
+			<hr/>
+			＋ 소모 <img id="result_protect_img" src='./images/selfish/protect0.png' /> : <span id="result_protect_num">0</span> 장
+				(= <span id="result_protect_gold">0</span> Gold)
+				<input id="result_protect_set" class="off" type="button" value="보호권 가격 입력" />
+			<hr class='line_gray'/>
+			　&#8658; 최종 비용 : <span id="result_gross">0</span> Gold
+			<hr class='line_black'/>
+			최고 <span id="result_max_method">강화</span>수치 : <span id="result_max_num">0</span>
+			 등급 (달성 시기 : <span id="result_max_count">0</span>회차)
+			<input id="record_clear" class="off" type="button" value="기록만 초기화" />
+			
+			
+			
+			
+		</div>
+		
+		
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		
+		<style id="filter_high" type="text/css">
+		</style>
+		<style id="filter_result" type="text/css">
+		</style>
+		<style id="filter_scroll" type="text/css">
+		</style>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<div id="imagePreloader">
+		</div>
+	
+	</div>
+	
+		<script type="text/javascript" src="./js/gangpock.js"></script>
+		
+	</body>
+</html>

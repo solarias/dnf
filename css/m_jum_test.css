@@ -1,0 +1,195 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:100%;
+	text-decoration:none;
+}
+
+/*색상*/
+.orange {
+	color:orange;
+}
+.yellow {
+	color:yellow;
+}
+.green {
+	color:#00FF00;
+}
+
+html, body {
+	width:100%;
+	height:100%;
+	/*max-height:625px;*/
+}
+
+
+#wrapper {
+	overflow-x:hidden;
+	position:relative;
+	margin:0 auto;
+	
+	width:100%;
+	max-width:800px;
+	height:100%;
+	/*max-height:625px;*/
+	
+	
+	background:#FFFFCC;
+	background-repeat:no-repeat;
+	background-position:center top;
+	background-size:cover;
+	
+	border:1px black solid;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	
+	text-align:center;
+}
+#top {
+	position:absolute;
+	z-index:2;
+	left:50%;
+	
+	width:100%;
+	
+	font-size:0px;
+}
+#top_inner {
+	position:relative;
+	left:-50%;
+}
+	#result {
+		display:inline-block;
+		position:relative;
+		
+		width:0px;
+		height:120px;
+		
+		background-image:url('../images/m_fortune/result_back.png');
+		background-position:center top;
+		background-size:100% 100%;
+		
+		display:none;
+	}
+		#result_num1 {
+			position:relative;
+			
+			margin-top:12px;
+			margin-right:5px;
+			height:90px;
+			
+			display:none;
+		}
+		#result_num2 {
+			position:relative;
+			
+			margin-top:12px;
+			height:90px;
+			
+			display:none;
+		}
+		#result_flash {
+			position:absolute;
+			z-index:4;
+			top:0;
+			left:0;
+			right:0;
+			
+			margin-left:auto;
+			margin-right:auto;
+			width:100%;
+			height:120px;
+			
+			display:none;
+		}
+	
+	#character {
+		position:absolute;
+		z-index:1;
+		left:0;
+		right:0;
+		margin-left:auto;
+		margin-right:auto;
+		bottom:60px;
+		
+		width:260px;
+		
+		display:none;
+	}
+	
+	#text {
+		position:absolute;
+		z-index:2;
+		bottom:60px;
+		
+		padding:5px;
+		width:100%;
+		height:120px;
+		
+		background-color:rgba(0,0,0,0.8);
+		-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);
+		
+		border-radius:10px;
+		border:1px #806E57 solid;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		color:#E1C9A7;
+		font-size:22px;
+		font-weight:bold;
+		text-align:left;
+	}
+
+
+	#footer {
+		position:absolute;
+		bottom:0px;
+		
+		width:100%;
+		height:60px;
+		
+		background:#221F18;
+	}
+		#footer #click {
+			background: #F0F0F0; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #808080);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #808080));
+			background: -ms-linear-gradient(top center, #FFFFFF, #808080);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#808080')"; /* IE8 */
+			
+			position:relative;
+			width:100%;
+			height:100%;
+			
+			border:1px #A4A4A4 solid;
+			
+			font-size:40px;
+			font-weight:bold;
+			
+			display:none;
+		}
+				#footer #click:active {
+					background: #DEDEDE;
+				}
+		#footer #progress {
+			position:relative;
+			z-index:1;
+			
+			width:0px;
+			height:100%;
+			
+			background-color:yellow;
+		}
+
+#imagePreloader {
+	width:1px;
+	height:1px;
+	
+	display:none;
+}

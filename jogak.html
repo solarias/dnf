@@ -1,0 +1,1138 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>에픽 조각 체험 시뮬레이터</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:16px;
+				text-decoration:none;
+			}
+			
+			.epic {
+				color:#E5B64A;
+			}
+			.set {
+				color:#59FF00;
+			}
+			.yellow, .type_완성 {
+				color:yellow;
+			}
+			.skyblue {
+				color:skyblue;
+			}
+
+			body {
+				background-color:#FFFFCC;
+			}
+				p, span {
+					font-size:inherit;
+					font-weight:inherit;
+				}
+				.right {
+					float:right;
+					
+					display:block;
+				}
+			
+			#wrapper {
+				padding:5px;
+				width:973px;
+				height:587px;
+				
+				background:brown;
+				
+				color:white;
+				font-weight:bold;
+			}
+			
+			
+			input[type="button"] {
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:3px;
+				
+				font-size:25px;
+				font-weight:bold;
+			}
+				input[type="button"]:hover {
+					border:1px white solid;
+				}
+				input[type="button"]:active {
+					background: #DEDEDE;
+				}
+				#start1, #start2 {
+					width:195px;
+					height:35px;
+					
+					font-size:25px;
+				}
+					#start1 {
+						margin-right:5px;
+					}
+			
+			#frame_head {
+				float:left;
+				
+				width:400px;
+				height:60px;
+			}
+			
+			#frame_inventory {
+				float:right;
+				
+				margin-bottom:5px;
+				width:548px;
+				
+				font-size:30px;
+				text-align:center;
+			}
+					#frame_inventory p {
+						line-height:120%;
+					}
+					#frame_inventory p img {
+						height:32px;
+						
+						vertical-align:top;
+					}
+				#inventory {
+					width:100%;
+					height:485px;
+					
+					background:#404040;
+					border:1px white solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#inventory_display {
+						overflow-x:hidden;
+						overflow-y:scroll;
+						-webkit-overflow-scrolling: touch;
+						clear:both;
+						
+						width:100%;
+						height:463px;
+					}
+				#inventory table {
+					width:535px;
+					
+					border:0px;
+					
+					font-size:12px;
+					text-align:center;
+					
+					display: table;
+				}
+				#inventory table tr {
+					display: table;
+				}
+					#inventory_head table tr {
+						background-color:#E5B64A;
+						
+						color:black;
+						font-weight:bold;
+					}
+					#inventory_display table tr:hover {
+						background-color:#686868;
+					}
+						/*tr : 기본적으론 보이지 않음*/
+						#inventory_display table tr.not_show {
+							display:none;
+						}
+				#inventory table td {
+					padding:2px;
+					
+					border-right:1px white solid;
+					border-bottom:1px white solid;
+					
+					font-size:12px;
+				}
+					#inventory table .col_1 {/*아이템 명칭*/
+						width:188px;
+					}
+						#inventory_display table .col_1 {/*(하단) 아이템 명칭*/
+							padding-left:10px;
+							width:180px;
+							
+							color:darkgray;
+							text-align:left;
+						}
+							#inventory_display table .col_1 .epic {/*에픽 장비 이름*/
+								font-weight:bold;
+								text-decoration:none;
+							}
+							#inventory_display table .col_1 .set {/*세트 파츠 이름*/
+								font-weight:bold;
+								text-decoration:none;
+							}
+							#inventory_display table .col_1 .hap {/*'세트' 굵기*/
+								font-weight:bold;
+								text-decoration:none;
+							}
+					#inventory table .col_2 {/*종류*/
+						width:67px;
+					}
+					#inventory table .col_3 {/*레벨*/
+						width:30px;
+					}
+					#inventory table .col_4 {/*해체*/
+						width:35px;
+					}
+						#inventory table .col_4 a {/*해체 버튼*/
+							color:orange;
+							font-size:12px;
+							font-weight:bold;
+							text-decoration:underline;
+						}
+							#inventory table .col_4 a:hover {/*해체 버튼*/
+								color:red;
+							}
+					#inventory table .col_5 {/*수량*/
+						width:50px;
+					}
+					#inventory table .col_6 {/*완성 시점*/
+						width:134px;
+					}
+						#inventory_display table .col_6 {/*완성 시점*/
+							padding-left:5px;
+							width:132px;
+							
+							text-align:left;
+						}
+						#inventory_display table .col_6 span.cost {/*완성 시점*/
+							display:none;
+						}
+			
+			#frame_show {
+				overflow-y:scroll;
+				-webkit-overflow-scrolling: touch;
+				
+				clear:left;
+				float:left;
+				
+				margin-bottom:5px;
+				padding:5px;
+				width:420px;
+				height:461px;
+				
+				background:black;
+				border:1px white solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#show_round {
+					margin-bottom:5px;
+					padding:5px;
+					width:100%;
+					height:30px;
+					
+					background:#404040;
+					border:1px gray solid;
+					border-radius:5px;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+				}
+					#round_difficulty {
+						color:orange;
+					}
+				#frame_show .head {
+					padding:5px;
+					width:100%;
+					height:24px;
+					
+					background:#202020;
+					border:1px gray solid;
+					border-radius:5px;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					font-size:12px;
+				}
+				#frame_show .part {
+					margin-bottom:2px;
+					padding:5px;
+					padding-left:15px;
+					width:100%;
+					height:24px;
+					
+					border-bottom:1px gray solid;
+					-moz-box-sizing:border-box;
+					-webkit-box-sizing:border-box;
+					box-sizing:border-box;
+					
+					font-size:12px;
+				}
+					#frame_show .part.wan {
+						display:none;
+					}
+					#frame_show .last {
+						margin-bottom:0px;
+						
+						border-bottom:0px;
+					}
+			
+			#frame_cost {
+				clear:left;
+				float:left;
+				
+				padding:5px;
+				width:420px;
+				height:60px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#frame_cost hr {
+					margin:4px 0px;
+					
+					border-top:1px white solid;
+				}
+				#frame_cost #cost_input {
+					float:right;
+					
+					width:120px;
+					height:20px;
+					
+					font-size:13px;
+					
+					display:block;
+				}
+				
+			#frame_result {
+				float:right;
+				
+				padding:5px;
+				width:548px;
+				height:60px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+				#frame_result hr {
+					margin:4px 0px;
+					
+					border-top:1px white solid;
+				}
+			
+			
+			/*모바일 스크롤바 가시화*/
+			::-webkit-scrollbar {
+				-webkit-appearance: none;
+			}
+
+			::-webkit-scrollbar:vertical {
+				width: 12px;
+			}
+
+			::-webkit-scrollbar:horizontal {
+				height: 12px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 0, 0, .5);
+				border-radius: 10px;
+				border: 2px solid #ffffff;
+			}
+
+			::-webkit-scrollbar-track {
+				background-color: #ffffff; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="frame_head">
+				<p>8월 3일 퍼섭 기준 에픽조각 시뮬 (그란디네/슬레)</p>
+				<p>
+					<input id="start1" type="button" value="1회 실행" />
+					<input id="start2" type="button" value="연속 실행" />
+				</p>
+			</div>
+			<div id="frame_inventory">
+				<p><img src="./images/epic/popup_inventory.png" /> 인벤토리</p>
+				<div id="inventory">
+					<div id="inventory_head">
+						<table cellspacing="0" >
+							<tr>
+								<td class="col_1">아이템 이름</td>
+								<td class="col_2">종류</td>
+								<td class="col_3">레벨</td>
+								<td class="col_4">보유</td>
+								<td class="col_5">조각 수</td>
+								<td class="col_6">첫 완제 획득 회차</td>
+							</tr>
+						</table>
+					</div>
+					<div id="inventory_display">
+						<table id="inventory_table" cellspacing="0" >
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="frame_show">
+				<div id="show_round">
+					<span id="round_count">0</span> 회차 : <span id="round_difficulty"></span>
+					<span class="right">(드랍 초대장 : <span id="round_cost">0</span>장)</span>
+				</div>
+				<div id="jogak_head" class="head">
+					에픽 조각 드랍 : 10개
+				</div>
+					<div id="jogak_1" class="part"></div>
+					<div id="jogak_2" class="part"></div>
+					<div id="jogak_3" class="part"></div>
+					<div id="jogak_4" class="part"></div>
+					<div id="jogak_5" class="part"></div>
+					<div id="jogak_6" class="part"></div>
+					<div id="jogak_7" class="part"></div>
+					<div id="jogak_8" class="part"></div>
+					<div id="jogak_9" class="part"></div>
+					<div id="jogak_10" class="part last"></div>
+				<div id="wan_head" class="head">
+					완제품 (조각 완성, 드랍) : <span id="wan_count">0</span>개
+				</div>
+					<div id="wan_1" class="part wan"></div>
+					<div id="wan_2" class="part wan"></div>
+					<div id="wan_3" class="part wan"></div>
+					<div id="wan_4" class="part wan"></div>
+					<div id="wan_5" class="part wan"></div>
+					<div id="wan_6" class="part wan"></div>
+					<div id="wan_7" class="part wan"></div>
+					<div id="wan_8" class="part wan"></div>
+					<div id="wan_9" class="part wan"></div>
+					<div id="wan_10" class="part wan"></div>
+					<div id="wan_11" class="part wan"></div>
+					<div id="wan_12" class="part wan"></div>
+					<div id="wan_13" class="part wan"></div>
+					<div id="wan_14" class="part wan"></div>
+					<div id="wan_15" class="part wan"></div>
+					<div id="wan_16" class="part wan"></div>
+					<div id="wan_17" class="part wan"></div>
+					<div id="wan_18" class="part wan"></div>
+					<div id="wan_19" class="part wan"></div>
+					<div id="wan_20" class="part wan"></div>
+			</div>
+			<div id="frame_cost">
+				<p>소모 초대장 : <span id="cost_num">0</span> 장 <input id="cost_input" type="button" value="도전장 가격 입력" /></p>
+				<hr/>
+				<p>골드 환산 : <span id="cost_gold">0</span> Gold</p>
+			</div>
+			<div id="frame_result">
+				<p>보유 <span class="epic">에픽</span> : <span id="result_num">0</span> 개 <span class="right">(드랍 : <span id="result_drop">0</span> 개 / 조각 완성 : <span id="result_wan">0</span> 개)</span></p>
+				<hr/>
+				<p>보유 조각 : <span id="result_piece">0</span> 개</p>
+			</div>
+		</div>
+		<p>※ 해당 회차에 드랍된 초대장 수량만큼 입장료가 할인됩니다.</p>
+		<p>※ 코스모소울, 지옥구슬은 아직 적용하지 않았습니다.</p>
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		<script type="text/javascript" src="./js/hell_data.js"></script>
+		
+		<script type="text/javascript">
+			//=================================================================================================================
+			//※ 변수, 자료
+			//=================================================================================================================
+			var auto;
+			
+			var max_jogak = 1000;
+			
+			//에픽, 드랍, 완성, 조각 수량
+			var q_epic = 0;
+			var q_drop = 0;
+			var q_wan = 0;
+			var q_piece = 0;
+			
+			var drop_costList = [0,1,2,3,4,5];//랜덤 드랍 초대장
+			
+			//퍼섭 전용 확률
+			var chanceListFirst_num = [
+				//[0] : 던전 난이도 보정
+				[
+					[//[1][0] : 어려움 드랍률
+						0.967,//마봉
+						0.0075,//에픽
+						0.0248,//코스모소울
+						0.0007//지옥구슬
+					],
+					[//[1][1] : 매우어려움 드랍률
+						0.97545,//마봉
+						0.0075,//에픽
+						0.0166,//코스모소울
+						0.00045//지옥구슬
+					]
+				],
+				//[1] : 레벨 보정
+				[
+					[//레벨 보정
+						[11],[66,34]
+					]
+				]
+			]
+			var chanceListFirst_name = [
+				//[0] : 던전 난이도 보정
+				[
+					[//[1][0] : 어려움 드랍률
+						"마봉",
+						"에픽",
+						"코스모소울",
+						"지옥구슬"
+					],
+					[//[1][1] : 매우어려움 드랍률
+						"마봉",
+						"에픽",
+						"코스모소울",
+						"지옥구슬"
+					]
+				],
+				//[1] : 레벨 보정
+				[
+					[//레벨 보정
+						[11],[80,85]
+					]
+				]
+			]
+			
+			//=================================================================================================================
+			//※ DOM 관리
+			//=================================================================================================================
+			var $start1 = document.getElementById("start1");
+			var $start2 = document.getElementById("start2");
+			
+			var $round_count = document.getElementById("round_count");
+			var $round_difficulty = document.getElementById("round_difficulty");
+			var $round_cost = document.getElementById("round_cost");
+			var $wan_count = document.getElementById("wan_count");
+			
+			var $inventory = document.getElementById('inventory');
+				var $inventory_display = document.getElementById('inventory_display');
+				var $inventory_table = document.getElementById('inventory_table');
+			
+			var $cost_num = document.getElementById('cost_num');
+			var $cost_input = document.getElementById('cost_input');
+			var $cost_gold = document.getElementById('cost_gold');
+			
+			var $result_num = document.getElementById('result_num');
+			var $result_drop = document.getElementById('result_drop');
+			var $result_wan = document.getElementById('result_wan');
+			var $result_piece = document.getElementById('result_piece');
+					//=================================================================================================================
+					//※ 함수 - 내부 작업용
+					//=================================================================================================================
+					//innerHTML 대체 함수
+					function replaceHtml(el, html) {
+						var oldEl = (typeof el === "string" ? document.getElementById(el) : el);
+						/*@cc_on // Pure innerHTML is slightly faster in IE
+							oldEl.innerHTML = html;
+							return oldEl;
+						@*/
+						var newEl = oldEl.cloneNode(false);
+						newEl.innerHTML = html;
+						oldEl.parentNode.replaceChild(newEl, oldEl);
+						/* Since we just removed the old element from the DOM, return a reference
+						to the new element, which can be used to restore variable references. */
+						return newEl;
+					};
+
+					//IE8에 indexOf 적용
+					if (!Array.prototype.indexOf)
+					{
+					  Array.prototype.indexOf = function(elt /*, from*/)
+					  {
+						var len = this.length >>> 0;
+
+						var from = Number(arguments[1]) || 0;
+						from = (from < 0)
+							 ? Math.ceil(from)
+							 : Math.floor(from);
+						if (from < 0)
+						  from += len;
+
+						for (; from < len; from++)
+						{
+						  if (from in this &&
+							  this[from] === elt)
+							return from;
+						}
+						return -1;
+					  };
+					}
+					
+					//특정 클래스 삭제
+					function removeClass(target,toErase) {
+						target.className = target.className.replace( new RegExp('(?:^|\\s)'+toErase+'(?!\\S)') ,'');
+					}
+					
+					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+					function thousand(num) {
+						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+
+					//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
+					function setWon(pWon) {
+						var won  = pWon.toString();
+						var arrWon  = ["", "만 ", "억 ", "조 ", "경 ", "해 ", "자 ", "양 ", "구 ", "간 ", "정 "];
+						var changeWon = "";
+						var pattern = /(-?[0-9]+)([0-9]{4})/;
+						while(pattern.test(won)) {
+							won = won.replace(pattern,"$1,$2");
+						}
+						won = won + "";
+						var arrCnt = won.split(",").length-1;
+						for(var ii=0; ii<won.split(",").length; ii++) {
+							changeWon += won.split(",")[ii]+arrWon[arrCnt];
+							arrCnt--;
+						}
+						return changeWon;
+					}
+
+					//숫자인지 판단 (출처 : http://mwultong.blogspot.com/2007/01/isnum-isnumeric-isnumber-javascript.html)
+					function isNumber(s) {
+						s += ''; // 문자열로 변환
+						s = s.replace(/^\s*|\s*$/g, ''); // 좌우 공백 제거
+						if (s == '' || isNaN(s)) return false;
+						return true;
+					}
+					
+					//가중치 적용 랜덤
+					function rand(target) {//target : 숫자가 들어있는 배열
+						var number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+						}
+						var tmp = Math.random() * number;
+						
+						number = 0;
+						for (i=0;i<target.length;i++) {
+							number += target[i];
+							if (tmp < number) {
+								return i;
+							}
+						}
+					}
+					
+			//=================================================================================================================
+			//※ 함수
+			//=================================================================================================================	
+			//인벤토리 창 생성
+			function generateInventory() {
+				var tempArr = [];
+				for (var i=0;i<itemList.length;i++) {
+					if (itemList[i][4] != "") {
+						var row = $inventory_table.insertRow(-1);
+							row.id = "inventory_row_" + i.toString();
+							row.className = "equip";//'에픽 장비'
+							row.className += " " + "not_show";//출력하지 않음
+							row.className += " " + itemList[i][0];//1차 분류
+							row.className += " " + itemList[i][1];//2차 분류
+							row.className += " " + itemList[i][2];//3차 분류
+							row.className += " " + "lv" + itemList[i][3].toString();//레벨
+						var cell_1 = row.insertCell(0);
+							cell_1.innerHTML = itemList[i][4];//아이템 명칭
+							cell_1.className = "col_1";
+						var cell_2 = row.insertCell(1);
+							if (itemList[i][0] == "방어구") {
+								cell_2.innerHTML = itemList[i][1];//분류(무기 : 3차 분류)
+							} else {
+								cell_2.innerHTML = itemList[i][2];//분류(나머지 : 2차 분류)
+							}
+							cell_2.className = "col_2";
+						var cell_3 = row.insertCell(2);
+							cell_3.innerHTML = itemList[i][3].toString();//보유 수량
+							cell_3.className = "col_3";
+						var cell_4 = row.insertCell(3);
+							cell_4.innerHTML = itemList[i][9].toString();//보유 수량
+							cell_4.className = "col_4";
+						var cell_5 = row.insertCell(4);
+							cell_5.innerHTML = "0";//조각 수 : 차후에 정보를 받음
+							cell_5.className = "col_5";
+						var cell_6 = row.insertCell(5);
+							cell_6.innerHTML = "";//획득 시기 : 차후에 정보를 받음
+							cell_6.className = "col_6";
+					}
+				}
+			}
+
+			function simulate(num) {
+				//===================
+				//※ 초기화
+				//===================
+				//획득한 에픽 리스트 초기화
+				thisTime = [];
+				
+				//===================
+				//※ 입장비 소모
+				//===================
+				//랜덤 드랍 초대장 출력
+				var drop_cost = drop_costList[Math.floor(Math.random() * drop_costList.length)];
+				$round_cost.innerHTML = drop_cost.toString();
+				
+				//초대장 적용
+				cost[0] += costList[input[0]] - drop_cost;//총 소모
+				$cost_num.innerHTML = thousand(cost[0]);
+				$cost_gold.innerHTML = setWon(cost[0]*gold);
+				
+				//===================
+				//※ 실시
+				//===================
+				//완제 리스트 닫기
+				for (var i=1;i<=20;i++) {
+					document.getElementById("wan_" + i.toString()).style.display = "none";
+				}
+				
+				//난이도 결정
+				input[1] = rand(chanceList_num[0]);
+				
+				//회차, 난이도 표시
+				$round_count.innerHTML = thousand(count);
+				$round_difficulty.innerHTML = chanceList_name[0][input[1]];;
+				
+				//조각 드랍
+				for (var i=1;i<=10;i++) {
+					getItem("조각", i);
+				}
+				
+				//완제품 드랍 여부 결정
+				quantity = dropQuantityList[input[1]][Math.floor(Math.random() * dropQuantityList[input[1]].length)]
+				for (var i=1;i <= quantity;i++) {
+					getItem("드랍", i);
+				}
+					//완제품 수량 표시
+					$wan_count.innerHTML = thisTime.length.toString();
+				//회차 증가
+				count += 1;
+				
+				//차후 행위 (연속 실행 한정)
+				if (num == 2) {
+					auto = setTimeout(function() {
+						simulate(num);
+					}, 25);
+				}
+			}
+			
+			function getItem(type, num) {
+				//=================================
+				//* 본격 : 클리어 후 아이템 확인
+				//=================================
+					//1. 등급 결정
+					if (type == "조각") {
+						input[2] = "에픽";
+					} else if (type == "드랍") {
+						input[2] = chanceListFirst_name[0][input[1]][rand(chanceListFirst_num[0][input[1]])];
+							//IF : 에픽이 아니면 : 드롭
+							if (input[2] != "에픽") {
+								return;
+							};
+					}
+					//2. 고유에픽 결정
+					input[3] = chanceList_name[2][rand(chanceList_num[2])];
+						//IF : 고유 에픽이면 : 드롭
+						if (input[3] == "고유에픽") {
+							//고유 에픽은 조각에서 제외
+							if (currentList_goyu.length > 0 && type != "조각") {
+								dropItem(type, num, input[3]);
+								return;
+							}
+						};
+					//3. 종류 결정
+					input[4] = chanceList_name[3][rand(chanceList_num[3])];
+					//4. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수, '죽성'은 가중치를 더함)
+						//4-1. 레벨 종류만큼 칸 설정
+						currentList_level = [];
+						for (i=0;i<levelList[input[0]].length;i++) {
+							currentList_level.push(0);
+						}
+						//4-2. 해당 칸은 특정 레벨 & 특정 장비의 개수만큼 숫자가 증가
+						for (i=0;i<currentList.length;i++) {
+							for (j=0;j<levelList[input[0]].length;j++) {
+								//앞에서 선택된 장비이고 레벨이 맞을 경우, 해당 레벨 칸 +1
+								if ((currentList[i][0] == input[4] //무기, 방어구 전용 : 대분류
+								|| currentList[i][1] == input[4])//악세사리, 특수장비 : 1차 소분류
+								&& currentList[i][3] == levelList[input[0]][j]) {
+									currentList_level[j] += 1;
+								}
+							}
+						}
+						//4-3. 추가 가중치 계산
+						for (var i=0;i<chanceListFirst_num[1].length;i++) {
+							if (chanceListFirst_num[1][i][0].indexOf(input[0]) != -1) {
+								for (j=0;j<currentList_level.length;j++) {
+									currentList_level[j] = currentList_level[j] * chanceListFirst_num[1][i][1][j];
+								}
+								break;
+							}
+						}
+					input[5] = levelList[input[0]][rand(currentList_level)];
+					//5. 인풋을 바탕으로 드롭
+					dropItem(type, num, input[2]);//('에픽')을 전송, 나머진 dropItem()에서 해결
+					return;
+			}
+			
+			function dropItem(type, num, item) {
+				switch (type) {
+					case "조각" :
+						switch (item) {
+							case "고유에픽":
+								//미리 구축된 현재지역 고유에픽 리스트(currentList_goyu)에서 랜덤으로 선정
+								temp = currentList_goyu[Math.floor(Math.random() * currentList_goyu.length)];
+								
+								break;
+							case "에픽":
+								//1. 특정 종류&레벨의 아이템 리스트 구축
+								tempArr = [];
+								for (j=0;j<currentList.length;j++) {
+									if ((currentList[j][0] == input[4]/*종류-무기*/
+									|| currentList[j][1] == input[4]/*종류-방어구*/
+									|| currentList[j][2] == input[4])/*종류-악세서리&특수장비*/
+									&& currentList[j][3] == input[5])/*레벨*/ {
+										tempArr.push(currentList[j]);
+									}
+								}
+								//미리 리스트에서 랜덤으로 선정
+								temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+								
+								break;
+							default:
+								//지정된 아이템 선정
+								temp = item;
+								
+								break;
+						}
+						
+						//조각 수량 증가
+						for (var j=0;j<itemList.length;j++) {
+							if (itemList[j] == temp) {
+								//이번에 완성하였을 경우 - 완제 드랍
+								if (itemList[j][9] + 1 == max_jogak) {
+									dropItem("완성", num+10, temp);
+								}
+								itemList[j][9] += 1;//[9] : 조각, [10] : 완제
+								//조각 수량 증가 및 반영
+								q_piece += 1;
+								$result_piece.innerHTML = thousand(q_piece);
+							}
+						}
+						
+						//이름 출력
+						if (temp[0] == "방어구") {//방어구
+							if (temp[5] != "") {//세트 방어구
+								document.getElementById("jogak_" + num.toString()).innerHTML = "<span class='set'>" + temp[4] + " 조각</span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
+							} else {//'비'세트 방어구
+								document.getElementById("jogak_" + num.toString()).innerHTML = "<span class='epic'>" + temp[4] + " 조각</span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
+							}
+						} else {//그외
+							if (temp[5] != "") {//세트 그외
+								document.getElementById("jogak_" + num.toString()).innerHTML = "<span class='set'>" + temp[4] + " 조각</span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
+							} else {//'비'세트 그외
+								document.getElementById("jogak_" + num.toString()).innerHTML = "<span class='epic'>" + temp[4] + " 조각</span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
+							}
+						}
+						
+						//업데이트
+						update(type, temp);
+						
+						break;
+					case "드랍" :
+					
+						switch (item) {
+							case "고유에픽":
+								//미리 구축된 현재지역 고유에픽 리스트(currentList_goyu)에서 랜덤으로 선정
+								temp = currentList_goyu[Math.floor(Math.random() * currentList_goyu.length)];
+								break;
+							case "에픽":
+								//1. 특정 종류&레벨의 아이템 리스트 구축
+								tempArr = [];
+								for (j=0;j<currentList.length;j++) {
+									if ((currentList[j][0] == input[4]/*종류-무기*/
+									|| currentList[j][1] == input[4]/*종류-방어구*/
+									|| currentList[j][2] == input[4])/*종류-악세서리&특수장비*/
+									&& currentList[j][3] == input[5])/*레벨*/ {
+										tempArr.push(currentList[j]);
+									}
+								}
+								//미리 리스트에서 랜덤으로 선정
+								temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+						}
+						
+						//보유 수량 증가
+						for (j=0;j<itemList.length;j++) {
+							if (itemList[j] == temp) {
+								itemList[j][10] += 1;//[9] : 조각, [10] : 완제
+								//보유 수량 증가 및 반영
+								q_drop += 1;
+								q_epic += 1;
+								$result_num.innerHTML = thousand(q_epic);
+								$result_drop.innerHTML = thousand(q_drop);
+							}
+						}
+						
+						//이름 출력
+						if (temp[0] == "방어구") {//방어구
+							if (temp[5] != "") {//세트 방어구
+								document.getElementById("wan_" + num.toString()).innerHTML = "<span class='set'>(드랍) " + temp[4] + " </span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							} else {//'비'세트 방어구
+								document.getElementById("wan_" + num.toString()).innerHTML = "<span class='epic'>(드랍) " + temp[4] + " </span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							}
+						} else {//그외
+							if (temp[5] != "") {//세트 그외
+								document.getElementById("wan_" + num.toString()).innerHTML = "<span class='set'>(드랍) " + temp[4] + " </span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							} else {//'비'세트 그외
+								document.getElementById("wan_" + num.toString()).innerHTML = "<span class='epic'>(드랍) " + temp[4] + " </span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							}
+						}
+						
+						//'이번에 드랍한 아이템'에 이름 기록
+						thisTime.push(temp);
+						
+						//가시화
+						document.getElementById("wan_" + num.toString()).style.display = "block";
+						
+						//업데이트
+						update(type, temp);
+						
+						break;
+					case "완성" :
+					
+						switch (item) {
+							case "고유에픽":
+								//미리 구축된 현재지역 고유에픽 리스트(currentList_goyu)에서 랜덤으로 선정
+								temp = currentList_goyu[Math.floor(Math.random() * currentList_goyu.length)];
+								break;
+							case "에픽":
+								//1. 특정 종류&레벨의 아이템 리스트 구축
+								tempArr = [];
+								for (j=0;j<currentList.length;j++) {
+									if ((currentList[j][0] == input[4]/*종류-무기*/
+									|| currentList[j][1] == input[4]/*종류-방어구*/
+									|| currentList[j][2] == input[4])/*종류-악세서리&특수장비*/
+									&& currentList[j][3] == input[5])/*레벨*/ {
+										tempArr.push(currentList[j]);
+									}
+								}
+								//미리 리스트에서 랜덤으로 선정
+								temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+						}
+						
+						//보유 수량 증가
+						for (j=0;j<itemList.length;j++) {
+							if (itemList[j] == temp) {
+								itemList[j][10] += 1;//[9] : 조각, [10] : 완제
+								//보유 수량 증가 및 반영
+								q_wan += 1;
+								q_epic += 1;
+								$result_num.innerHTML = thousand(q_epic);
+								$result_wan.innerHTML = thousand(q_wan);
+							}
+						}
+						
+						//이름 출력
+						if (temp[0] == "방어구") {//방어구
+							if (temp[5] != "") {//세트 방어구
+								document.getElementById("wan_" + (num).toString()).innerHTML = "<span class='set'>(조각 완성) " + temp[4] + " </span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							} else {//'비'세트 방어구
+								document.getElementById("wan_" + (num).toString()).innerHTML = "<span class='epic'>(조각 완성) " + temp[4] + " </span> [" + temp[1] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							}
+						} else {//그외
+							if (temp[5] != "") {//세트 그외
+								document.getElementById("wan_" + (num).toString()).innerHTML = "<span class='set'>(조각 완성) " + temp[4] + " </span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							} else {//'비'세트 그외
+								document.getElementById("wan_" + (num).toString()).innerHTML = "<span class='epic'>(조각 완성) " + temp[4] + " </span> [" + temp[2] + " / " + temp[3] + "제] <span class='skyblue'>(x" + temp[10].toString() + ")</span>";
+							}
+						}
+						
+						//'이번에 드랍한 아이템'에 이름 기록
+						thisTime.push(temp);
+						
+						//가시화
+						document.getElementById("wan_" + num.toString()).style.display = "block";
+						
+						//업데이트
+						update(type, temp);
+						
+						break;
+				}
+			}
+			
+			function update(type, name) {
+				//순번 찾기
+				var num = 0;
+				for (var i=0;i<itemList.length;i++) {
+					if (itemList[i][4] == name[4]) {
+						num = i;
+						break;
+					}
+				};
+				
+				//찾은 순번에 따라 인벤토리 칸 지정
+				var tr = document.getElementById("inventory_row_" + num);
+				
+				switch(type) {
+					case "조각" :
+						//조각 수량 업데이트
+						tr.getElementsByTagName("td")[4].innerHTML = itemList[num][9].toString();
+						if (itemList[num][9] >= max_jogak) {
+							tr.getElementsByTagName("td")[4].className = "col_5 yellow";
+						}
+						
+						//(not_shown이 있을 때만) 해당 아이템 (색깔 입혀서) 가시화
+						if (tr.className.indexOf("not_show") != -1) {
+							if (name[5] != "") {//세트
+								tr.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr.getElementsByTagName("td")[0].innerHTML + "</span>";
+							} else {//그 외
+								tr.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr.getElementsByTagName("td")[0].innerHTML + "</span>";
+							}
+						}
+						
+						//가시화
+						removeClass(tr,"not_show");
+						
+						break;
+					case "드랍" :
+					case "완성" :
+						//보유 수량 업데이트
+						tr.getElementsByTagName("td")[3].innerHTML = itemList[num][10].toString();
+						
+						//완제 획득 시점 (없으면) 업데이트
+						if (tr.getElementsByTagName("td")[5].innerHTML == "") {
+								tr.getElementsByTagName("td")[5].innerHTML = thousand(count) + "회차 <span class='type_" + type + "'>(" + type + ")</span>";
+						}
+						//해당 아이템 (색깔 입혀서) 가시화
+						if (tr.className.indexOf("not_show") != -1) {
+							if (name[5] != "") {//세트
+								tr.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr.getElementsByTagName("td")[0].innerHTML + "</span>";
+							} else {//그 외
+								tr.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr.getElementsByTagName("td")[0].innerHTML + "</span>";
+							}
+						}
+						
+						//가시화
+						removeClass(tr,"not_show");
+						
+						break;
+				}
+			}
+			
+			function onoff(num) {
+				switch (num) {
+					case 0:
+						$start1.disabled = "";
+						$start2.disabled = "";
+						
+						$start1.value = "1회 실행";
+						$start2.value = "연속 실행";
+						
+						break;
+					case 2:
+						$start1.disabled = "disabled";
+						$start2.disabled = "";
+						
+						$start1.value = "1회 실행";
+						$start2.value = "실행 중지";
+						
+						break;
+				}
+			}
+			//=================================================================================================================
+			//※ 실행
+			//=================================================================================================================	
+			window.onload = function() {
+				//선작업 : 일부 아이템리스트 세팅
+				for (i=0;i<itemList.length;i++) {
+					//고유 에픽
+					if (itemList[i][6] != "") {
+						goyuList.push(itemList[i]);
+					}
+				}
+				
+				//던전 선택
+				input[0] = 11;//그란디네
+				
+				//(실행 전) 에픽 드랍 리스트 구축
+				//1. 현재 지역 고유 에픽 리스트
+				currentList_goyu = [];
+				for (i=0;i<goyuList.length;i++) {
+					if (goyuList[i][6] == areaList[input[0]]) {//지역명 일치 시
+						currentList_goyu.push(goyuList[i]);
+					}
+				}
+				//2. (고유 에픽을 제외한) '레벨대'별 에픽 리스트
+				currentList = [];
+				for (i=0;i<itemList.length;i++) {
+					if (levelList[input[0]].indexOf(itemList[i][3]) != -1
+					&& itemList[i][4] != ""
+					&& itemList[i][6] == "") {//드랍 레벨이 맞으면 & 명칭이 공백이 아니면 &고유 에픽이 아니면
+						currentList.push(itemList[i]);
+					}
+				}
+				
+				//인벤토리 생성
+				generateInventory();
+				
+				//실행
+				$start1.onclick = function() {
+					simulate(1);
+				}
+				
+				$start2.onclick = function() {
+					if (running == 0) {
+						running = 1;
+						
+						onoff(2);
+						simulate(2);
+					} else {
+						running = 0;
+						
+						onoff(0);
+						clearTimeout(auto);
+					}
+				}
+				
+				
+				$cost_input.onclick = function() {
+					var challenge = prompt("도전장 가격을 입력하세요.\n(현재 가격 : " + thousand(gold) + " Gold)");
+					if (! isNumber(challenge)) {
+						alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
+					} else {
+						gold = challenge;
+						$cost_gold.innerHTML = setWon(cost[0]*gold);
+					}
+				}
+				
+			}
+			
+		</script>
+
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="stats counter free" ><script  type="text/javascript" >
+try {Histats.start(1,3114705,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3114705&101" alt="stats counter free" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+	</body>
+</body>

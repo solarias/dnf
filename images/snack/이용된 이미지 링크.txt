@@ -1,0 +1,17 @@
+back00		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030230.jpg
+back01		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030231.jpg
+back10		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030242.jpg
+back11		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030243.jpg
+bar1		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030244.jpg
+bar2		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030245.jpg
+booster1		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030246.jpg
+booster2		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030247.jpg
+check_back	http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030248.jpg
+initial		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg
+inventory		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302510.jpg
+kanna		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302511.jpg
+key		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg
+lock1		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302513.jpg
+lock2		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302514.jpg
+pocket_back	http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302515.jpg
+top		http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302516.jpg

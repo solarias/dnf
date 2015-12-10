@@ -1,0 +1,521 @@
+﻿* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+	
+	font-family:Arial;
+	font-size:100%;
+	text-decoration:none;
+}
+
+/*컬러링*/
+.epic {
+	color:#E5B64A;
+	font-weight:bold;
+}
+.red {
+	color:orange;
+}
+.orange {
+	color:orange;
+}
+.yellow{
+	color:yellow;
+}
+.green {
+	color:lightgreen;
+}
+.purple {
+	color:#D37CFF;
+}
+.white {
+	color:white;
+}
+
+body {
+	padding:10px;
+	
+	background-color:#FFFFCC;
+}
+	select {
+		border:1px gray solid;
+	}
+
+/*======================================================================================================*/
+/* ※ 0. 프레임 */
+/*======================================================================================================*/
+#wrapper {
+	width:580px;
+}
+
+/*======================================================================================================*/
+/* ※ 1. 상단 */
+/*======================================================================================================*/
+#top {
+	padding:3px;
+	margin-bottom:5px;
+	width:572px;
+	height:25px;
+	
+	background-color:Gainsboro;
+	border:1px black solid;
+}
+	#top #weapon {
+		margin-bottom:5px;
+		width:200px;
+		
+		border:1px gray solid;
+	}
+
+	#clear {
+		float:right;
+		
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		
+		width:80px;
+		height:25px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-weight:bold;
+		white-space:pre-line;
+		
+		display:block;
+	}
+			#clear:active {
+				background: #FFAA00;
+			}
+
+
+/*======================================================================================================*/
+/* ※ 2. 중단 */
+/*======================================================================================================*/
+#center_left {
+	position:relative;
+	float:left;
+	
+	width:100px;
+	height:100px;
+	
+	background-color:black;
+	border:1px black solid;
+}
+	#center_left img.back {
+		width:100%;
+		height:100%;
+		
+		border:0px;
+	}
+	#center_left img.target {
+		position:absolute;
+		top:32px;
+		left:34px;
+		z-index:2;
+		
+		width:34px;
+		height:34px;
+		
+		visibility:hidden;
+	}
+
+#center_right {
+	float:left;
+
+}
+	#now {
+		padding:4px;
+
+		width:468px;
+		height:28px;
+		
+		background-color:gray;
+		border:1px black solid;
+		border-bottom:0px;
+	}
+		#now_img {
+			float:left;
+			
+			display:block;
+			visibility:hidden;
+		}
+		#now_text {
+			positon:relative;
+			z-index:0;
+			float:right;
+			
+			margin-left:4px;
+			padding:5px;
+			width:426px;
+			height:18px;
+			
+			background-color:black;
+			
+			color:#E5B64A;
+			font-weight:bold;
+		}
+
+	#message {
+		padding:0px 4px;
+
+		width:468px;
+		height:28px;
+		
+		background-color:gray;
+		border-left:1px black solid;
+		border-right:1px black solid;
+		border-bottom:0px;
+	}
+		#message_img {
+			float:left;
+			
+			display:block;
+			visibility:hidden;
+		}
+		#message_text {
+			positon:relative;
+			z-index:0;
+			float:right;
+			
+			margin-left:4px;
+			padding:5px;
+			width:426px;
+			height:18px;
+			
+			background-color:black;
+			
+			color:white;
+			font-weight:bold;
+		}
+		
+	#show {
+		padding:4px;
+
+		width:468px;
+		height:28px;
+		
+		background-color:gray;
+		border:1px black solid;
+		border-top:0px;
+	}
+		#show_right {
+			positon:relative;
+			z-index:0;
+			float:right;
+			margin-left:4px;
+			
+			width:468px;
+			height:28px;
+			
+			background-color:black;
+		}
+			#show_bar {
+				position:relative;
+				z-index:1;
+				
+				width:0px;
+				height:28px;
+				
+				background-color:yellow;
+			}
+		#show_text {
+			position:absolute;
+			left:115px;
+			z-index:2;
+			float:left;
+			padding:5px;
+			
+			color:#D37CFF;
+			font-weight:bold;
+		}
+
+
+/*======================================================================================================*/
+/* ※ 3. 상점 */
+/*======================================================================================================*/
+#store {
+	clear:both;
+	float:left;
+
+	padding:5px;
+	width:568px;
+	height:229px;
+	
+	background:Gainsboro;
+	border:1px black solid;
+}
+	#store table {
+		border:1px black solid;
+		border-collapse:collapse;
+		
+		text-align:center;
+		line-height:0px;
+	}
+	#store table tr {
+		border-bottom:1px black solid;
+	}
+			#store table tr.head {
+				border-bottom:1px black solid;
+				
+				font-weight:bold;
+				line-height:150%;
+			}
+		#store table tr td {
+			padding:0px;
+			border-right:1px black solid;
+		}
+			#store table tr td.col_1 {
+				padding:0px;
+				width:28px;
+			}
+			#store table tr td.col_2 {
+				width:200px;
+			}
+			#store table tr td.col_3 {
+				width:80px;
+			}
+			#store table tr td.col_4 {
+				width:60px;
+			}
+			#store table tr td.col_5 {
+				padding-right:5px;
+				width:190px;
+				
+				text-align:right;
+			}
+		#store input {
+			background: #FFFFFF;
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			
+			margin-right:3px;
+			width:75px;
+			height:25px;
+			
+			border:1px #A4A4A4 solid;
+			
+			font-weight:bold;
+		}
+			#store input:hover {
+				background: #516BFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+				background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+				background: linear-gradient(to bottom, #ffffff, #516BFF);
+			}
+			#store input:active {
+				background: #3855FF;
+			}
+			
+/*======================================================================================================*/
+/* ※ 4. 하단 */
+/*======================================================================================================*/
+#record {
+	clear:both;
+	float:left;
+
+	padding:4px;
+	width:570px;
+	height:auto;
+	min-height:237px;
+	height:calc(100vh - 449px);
+	max-height:596px;
+	
+	background-color:gray;
+	border:1px black solid;
+}
+		#record_head {
+			height:31px;
+		}
+		#record_display {
+			overflow-x:hidden;
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			
+			width:100%;
+			height:auto;
+			min-height:207px;
+			height:calc(100vh - 479px);
+			max-height:566px;
+		}
+	#record table {
+		width:560px;
+		
+		border:0px;
+		border-collapse:collapse;
+		
+		font-size:16px;
+		line-height:0px;
+	}
+	#record tr {
+		height:28px;
+		
+		background:black;
+		border-bottom:3px gray solid;
+		
+		color:white;
+		font-weight:bold;
+		display:table;
+		
+		text-align:center;
+	}
+		#record_head tr {
+			
+		}
+	#record td {
+		border-right:3px gray solid;
+	}
+		#record table tr .col_1 {
+			width:28px;
+		}
+			#record table tr .col_1 img{
+				width:28px;
+				height:28px;
+			}
+			#record_head table tr .col_1 img{
+				visibility:hidden;
+			}
+		#record table tr .col_2 {
+			width:80px;
+		}
+			#record_display table tr .col_2 {
+				padding-right:5px;
+				width:75px;
+				
+				text-align:right;
+			}
+		#record table .col_3 {
+			width:50px;
+		
+		}
+		#record table .col_4 {
+			width:50px;
+		
+		}
+		#record table .col_5 {
+			width:100px;
+		
+		}
+		#record table .col_6 {
+			width:232px;
+			
+			border-right:0px;
+		}
+			#record_display table .col_6 {
+				padding:5px;
+				width:222px;
+				
+				text-align:left;
+			}
+
+
+	
+	
+/*======================================================================================================*/
+/* ※ 5. 바닥 */
+/*======================================================================================================*/
+#result {
+	clear:both;
+	float:left;
+	
+	padding:5px;
+	width:568px;
+	height:22px;
+	
+	background-color:white;
+	border:1px black solid;
+	border-top:0px;
+	
+	font-size:20px;
+	line-height:20px;
+	font-weight:bold;
+}
+	#result img {
+		width:20px;
+		height:20px;
+		
+		vertical-align:top;
+	}
+	#result span {
+		font-size:inherit;
+		
+		display:inline-block;
+	}
+	#record_clear {
+		float:right;
+		
+		background: #FFFFFF;
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		
+		width:120px;
+		height:22px;
+		
+		border:1px #A4A4A4 solid;
+		
+		font-size:14px;
+		font-weight:bold;
+		
+		display:block;
+	}
+			#record_clear:active {
+				background:#DEDEDE;
+			}
+
+/*======================================================================================================*/
+/* ※ 6. 기타 */
+/*======================================================================================================*/
+#cover {
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:10;
+	padding:50px;
+	width:550px;
+	height:800px;
+	
+	background-color:#FFFFCC;
+	
+	font-size:50px;
+	font-weight:bold;
+}
+
+#imagePreloader {
+	width:1px;
+	height:1px;
+	
+	display:none;
+}
+
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+	border:1px black solid;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff; 
+}

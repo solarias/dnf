@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>리버 합성하기 (초단순)</title>
+	<style type="text/css">
+		body {
+			padding:10px;
+			
+			background-color:#FFFFCC;
+		}
+		p {
+			margin:0px;
+			margin-bottom:8px;
+			padding:0px;
+		}
+		.red {
+			color:red;
+			font-weight:bold;
+		}
+		.blue {
+			color:blue;
+			font-weight:bold;
+		}
+		#property {
+			font-weight:bold;
+		}
+		
+		#wrapper {
+			width:715px;
+		}
+		#show {
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			float:left;
+			
+			margin-top:5px;
+			width:350px;
+			height:507px;
+			
+			background-color:white;
+			border:1px black solid;
+		}
+		#record {
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			float:right;
+	
+			margin-top:5px;
+			width:350px;
+			height:433px;
+			
+			background-color:white;
+			border:1px black solid;
+		}
+		#summary {
+			overflow-y:scroll;
+			-webkit-overflow-scrolling: touch;
+			float:right;
+	
+			margin-top:5px;
+			width:350px;
+			height:67px;
+			
+			background-color:white;
+			border:1px black solid;
+		}
+		
+		
+		
+		/*모바일 스크롤바 가시화*/
+		::-webkit-scrollbar {
+			-webkit-appearance: none;
+		}
+
+		::-webkit-scrollbar:vertical {
+			width: 12px;
+		}
+
+		::-webkit-scrollbar:horizontal {
+			height: 12px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: rgba(0, 0, 0, .5);
+			border-radius: 10px;
+			border: 2px solid #ffffff;
+		}
+
+		::-webkit-scrollbar-track {
+			background-color: #ffffff; 
+		}
+	</style>
+	</head>
+<body>
+
+<div id="press">
+	<p>
+		<span id="property">8</span>%의 확률로 리버레이션 합성에 성공합니다. 버튼을 눌려서 몇 번 만에 성공하는지 확인해보세요.
+		<br/>
+		(성공한 기록을 오른쪽 버튼으로 별도로 저장할 수 있습니다.)
+	</p> <p>
+		<input id="click1" type="button" value="1회 합성" />
+		<input id="click2" type="button" value="연속 합성" />
+		&nbsp;▶&nbsp;
+		<input id="reset" type="button" value="기록 저장 후 리셋" disabled/>
+		&nbsp;&nbsp;(성공확률 조절 : 
+		<input id="up" type="button" value="▲" />
+		<input id="down" type="button" value="▼" />
+		)
+	</p>
+</div>
+<div id="wrapper">
+	<div id="show">
+	</div>
+	<div id="record">
+	</div>
+	<div id="summary">
+		＊최소 : <span id="summary_min_count">0</span>회 시도 (<span id="summary_min_date">0</span>일 소요)
+		<br/>
+		＊최대 : <span id="summary_max_count">0</span>회 시도 (<span id="summary_max_date">0</span>일 소요)
+		<br/>
+		＊평균 : <span id="summary_avg_count">0</span>회 시도 (<span id="summary_avg_date">0</span>일 소요)
+	</div>
+</div>
+<script type="text/javascript">
+	var temp, temp2;
+	var count = 1;
+	var count2 = 1;
+	var date = 1;
+	var chance = 0.08;
+	var summary_count = [];
+	var summary_date = [];
+	
+	window.onload = function() {
+		
+		function run(num) {
+			document.getElementById("click1").disabled = "disabled";
+			document.getElementById("click2").disabled = "disabled";
+			document.getElementById("reset").disabled = "disabled";
+			temp = Math.random();
+			if (temp > chance) {
+				document.getElementById("show").innerHTML += "" + count.toString() + "번째 시도 (" + date.toString() + "일차) : 돌아왔지논!<br/>";
+				document.getElementById("show").scrollTop = document.getElementById("show").scrollHeight;
+				count += 1;
+				date += 8;
+				if (num == 2) {
+					setTimeout(function() {
+						run(2);
+					},50);
+				} else {
+					document.getElementById("click1").disabled = "";
+					document.getElementById("click2").disabled = "";
+				}
+			} else {
+				document.getElementById("show").innerHTML += "" + count.toString() + "번째 시도 (" + date.toString() + "일차) : <span class='red'>성공!</span>";
+				document.getElementById("show").scrollTop = document.getElementById("show").scrollHeight;
+				document.getElementById("reset").disabled = "";
+			}
+		}
+		
+		
+		document.getElementById("click1").onclick = function() {
+			run(1);
+		}
+		
+		document.getElementById("click2").onclick = function() {
+			run(2);
+		}
+		
+		
+		document.getElementById("reset").onclick = function() {
+			document.getElementById("record").innerHTML += "" + count2 + "회차 : <span class='blue'>" + count.toString() + "</span>번만에 성공 (<span class='blue'>" + date.toString() + "</span>일 소요)<br/>";
+			document.getElementById("record").scrollTop = document.getElementById("record").scrollHeight;
+			count2 += 1;
+			
+			summary_count.push(count);
+			summary_date.push(date);
+			
+			temp = 0;
+			temp2 = 0;
+			
+			for (i=0;i<summary_count.length;i++) {
+				temp += summary_count[i];
+			}
+			for (i=0;i<summary_date.length;i++) {
+				temp2 += summary_date[i];
+			}
+			
+			
+			document.getElementById("summary_min_count").innerHTML = Math.min.apply(null,summary_count).toString();
+			document.getElementById("summary_min_date").innerHTML = Math.min.apply(null,summary_date).toString();
+			document.getElementById("summary_max_count").innerHTML = Math.max.apply(null,summary_count).toString();
+			document.getElementById("summary_max_date").innerHTML = Math.max.apply(null,summary_date).toString();
+			document.getElementById("summary_avg_count").innerHTML = (Math.round((temp/summary_count.length)*10)/10).toString();
+			document.getElementById("summary_avg_date").innerHTML = (Math.round((temp2/summary_date.length)*10)/10).toString();
+			
+			count = 1;
+			date = 1;
+			document.getElementById("show").innerHTML = "";
+			document.getElementById("click1").disabled = "";
+			document.getElementById("click2").disabled = "";
+			document.getElementById("reset").disabled = "disabled";
+		}
+		
+		
+		document.getElementById("up").onclick = function() {
+			if (chance < 1) {
+				chance += 0.01;
+				document.getElementById("property").innerHTML = (Math.round(chance * 100)).toString();
+				
+				reset();
+			}
+		}
+		document.getElementById("down").onclick = function() {
+			if (chance > 0) {
+				chance -= 0.01;
+				document.getElementById("property").innerHTML = (Math.round(chance * 100)).toString();
+				
+				reset();
+			}
+		}
+	}
+</script>
+
+</body>
+</html>

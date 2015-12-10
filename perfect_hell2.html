@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/hell2.css" />
+		
+		<title>지옥파티 시뮬레이터 2</title>
+	</head>
+	<body>
+		
+		<div id="wrapper">
+			
+			<div id="frame_left">
+				
+				<div class="wrap long_gap">
+					<p class='title'>
+						지옥파티 설정
+					</p>
+					<p class='center large'>
+						던전 선택
+					</p><p>
+					<select id="dungeon" autocomplete="off">
+						<optgroup label="시간의 문">
+							<option value = "0" selected>대화재</option><!--0-->
+							<option value = "1">전염병</option><!--0-->
+							<option value = "2">결성! 카르텔</option><!--0-->
+							<option value = "3">검은 성전</option><!--1-->
+							<option value = "4">극비구역</option><!--1-->
+							<option value = "5">옛비명굴</option><!--2-->
+							<option value = "6">태동</option><!--2-->
+							<option value = "7">자각</option><!--2-->
+						</optgroup>
+						<optgroup label="파워스테이션">
+							<option value = "8">코레 발전소</option><!--3-->
+							<option value = "9">푸르츠 발전소</option><!--4-->
+							<option value = "10">트롬베 발전소</option><!--4-->
+							<option value = "11">그란디네 발전소</option><!--4-->
+						</optgroup>
+						<optgroup label="죽은 자의 성">
+							<option value = "12">매달린 망루</option><!--5-->
+							<option value = "13">루크린제</option><!--5-->
+							<option value = "14">강철의 브라키움</option><!--5-->
+							<option value = "15">샐러맨더의 화로</option><!--5-->
+							<option value = "16">빛의 연회장</option><!--5-->
+						</optgroup>
+					</select>
+					</p>
+					<hr />
+					<p class='center'>
+					난이도 & 채널
+					</p><p>
+						<select id="difficulty" autocomplete="off">
+								<option value="0">노멀</option>
+								<option value="1">익스퍼트</option>
+								<option value="2">마스터</option>
+								<option value="3">킹</option>
+								<option value="4">슬레이어</option>
+						</select>
+					</p><p>
+						<select id="channel" class="short_gap" autocomplete="off">
+							<optgroup label="통합 채널">
+								<option>실버크라운 CH 1</option><option>실버크라운 CH 2</option><option>실버크라운 CH 3</option><option>실버크라운 CH 4</option><option>실버크라운 CH 5</option><option>실버크라운 CH 6</option><option>실버크라운 CH 7</option><option>실버크라운 CH 8</option><option>실버크라운 CH 9</option><option>실버크라운 CH 10</option><option>실버크라운 CH 11</option><option>실버크라운 CH 12</option><option>실버크라운 CH 13</option><option>실버크라운 CH 14</option><option>실버크라운 CH 15</option><option>실버크라운 CH 16</option><option>실버크라운 CH 17</option><option>실버크라운 CH 18</option><option>실버크라운 CH 19</option><option>실버크라운 CH 20</option>
+								<option>멜트다운 CH 1</option><option>멜트다운 CH 2</option><option>멜트다운 CH 3</option><option>멜트다운 CH 4</option><option>멜트다운 CH 5</option><option>멜트다운 CH 6</option><option>멜트다운 CH 7</option><option>멜트다운 CH 8</option><option>멜트다운 CH 9</option><option>멜트다운 CH 10</option><option>멜트다운 CH 11</option><option>멜트다운 CH 12</option><option>멜트다운 CH 13</option><option>멜트다운 CH 14</option><option>멜트다운 CH 15</option><option>멜트다운 CH 16</option><option>멜트다운 CH 17</option><option>멜트다운 CH 18</option><option>멜트다운 CH 19</option><option>멜트다운 CH 20</option>
+								<option>표류동굴 CH 1</option><option>표류동굴 CH 2</option><option>표류동굴 CH 3</option><option>표류동굴 CH 4</option><option>표류동굴 CH 5</option><option>표류동굴 CH 6</option><option>표류동굴 CH 7</option><option>표류동굴 CH 8</option><option>표류동굴 CH 9</option><option>표류동굴 CH 10</option><option>표류동굴 CH 11</option><option>표류동굴 CH 12</option><option>표류동굴 CH 13</option><option>표류동굴 CH 14</option><option>표류동굴 CH 15</option><option>표류동굴 CH 16</option><option>표류동굴 CH 17</option><option>표류동굴 CH 18</option><option>표류동굴 CH 19</option><option>표류동굴 CH 20</option>
+								<option>역천의 폭포 CH 1</option><option>역천의 폭포 CH 2</option><option>역천의 폭포 CH 3</option><option>역천의 폭포 CH 4</option><option>역천의 폭포 CH 5</option><option>역천의 폭포 CH 6</option><option>역천의 폭포 CH 7</option><option>역천의 폭포 CH 8</option><option>역천의 폭포 CH 9</option><option>역천의 폭포 CH 10</option><option>역천의 폭포 CH 11</option><option>역천의 폭포 CH 12</option><option>역천의 폭포 CH 13</option>
+								<option>체념의 빙벽 CH 14</option><option>체념의 빙벽 CH 15</option><option>체념의 빙벽 CH 16</option><option>체념의 빙벽 CH 17</option><option>체념의 빙벽 CH 18</option><option>체념의 빙벽 CH 19</option><option>체념의 빙벽 CH 20</option><option>체념의 빙벽 CH 21</option><option>체념의 빙벽 CH 22</option><option>체념의 빙벽 CH 23</option><option>체념의 빙벽 CH 24</option><option>체념의 빙벽 CH 25</option><option>체념의 빙벽 CH 26</option>
+								<option>안트베르 협곡 CH 1</option><option>안트베르 협곡 CH 2</option><option>안트베르 협곡 CH 3</option><option>안트베르 협곡 CH 4</option><option>안트베르 협곡 CH 5</option><option>안트베르 협곡 CH 6</option><option>안트베르 협곡 CH 7</option><option>안트베르 협곡 CH 8</option><option>안트베르 협곡 CH 9</option><option>안트베르 협곡 CH 10</option>
+								<option>해상열차 CH 1</option><option>해상열차 CH 2</option><option>해상열차 CH 3</option><option>해상열차 CH 4</option><option>해상열차 CH 5</option>
+								<option>시간의 문 CH 11</option><option>시간의 문 CH 12</option><option>시간의 문 CH 13</option><option>시간의 문 CH 14</option><option>시간의 문 CH 15</option><option>시간의 문 CH 16</option><option>시간의 문 CH 17</option><option>시간의 문 CH 18</option><option>시간의 문 CH 19</option><option>시간의 문 CH 20</option><option>시간의 문 CH 21</option><option>시간의 문 CH 22</option><option>시간의 문 CH 23</option>
+								<option>파워 스테이션 CH 1</option><option>파워 스테이션 CH 2</option><option>파워 스테이션 CH 3</option><option>파워 스테이션 CH 4</option><option>파워 스테이션 CH 5</option><option>파워 스테이션 CH 6</option><option>파워 스테이션 CH 7</option><option>파워 스테이션 CH 8</option><option>파워 스테이션 CH 9</option><option>파워 스테이션 CH 10</option>
+								<option>노블 스카이 CH 21</option><option>노블 스카이 CH 22</option><option>노블 스카이 CH 23</option><option>노블 스카이 CH 24</option><option>노블 스카이 CH 25</option>
+								<option>죽은자의 성 CH 21</option><option>죽은자의 성 CH 22</option><option>죽은자의 성 CH 23</option><option>죽은자의 성 CH 24</option><option>죽은자의 성 CH 25</option>
+								<option>(구)이계 던전 CH 1</option><option>(구)이계 던전 CH 2</option><option>(구)이계 던전 CH 3</option><option>(구)이계 던전 CH 4</option><option>(구)이계 던전 CH 5</option><option>(구)이계 던전 CH 6</option><option>(구)이계 던전 CH 7</option>
+								<option>(신)이계 던전 CH 8</option><option>(신)이계 던전 CH 9</option><option>(신)이계 던전 CH 10</option><option>(신)이계 던전 CH 11</option><option>(신)이계 던전 CH 12</option><option>(신)이계 던전 CH 13</option><option>(신)이계 던전 CH 14</option><option>(신)이계 던전 CH 15</option>
+								<option>거래 - 경매장 CH 16</option><option>거래 - 경매장 CH 17</option>
+								<option>고대 던전 CH 16</option>
+								<option>망자의 협곡 CH 21</option><option>망자의 협곡 CH 22</option><option>망자의 협곡 CH 23</option><option>망자의 협곡 CH 24</option><option>망자의 협곡 CH 25</option>
+								<option>차원의 균열 CH 11</option><option>차원의 균열 CH 12</option><option>차원의 균열 CH 13</option><option>차원의 균열 CH 14</option><option>차원의 균열 CH 15</option><option>차원의 균열 CH 16</option><option>차원의 균열 CH 17</option><option>차원의 균열 CH 18</option><option>차원의 균열 CH 19</option><option>차원의 균열 CH 20</option>
+							</optgroup>
+							<optgroup label="일반 채널">
+								<option>거래 - 경매장</option>
+								<option>일반채널 (첫번째)</option><option>일반채널 (두번째)</option>
+							</optgroup>
+						</select>
+					</p>
+				</div>
+				
+				<input id="start1" class="min_gap" type="button" value="1회 실행" />
+				
+				<div id="objective" class="wrap long_gap">
+					<p class='title'>
+						특정 조건 탐색
+					</p>
+					
+					<input id="start2" type="button" value="탐색 실시" />
+					<p class='center'>
+						탐색 목표 설정
+					</p>
+					<select id="objective_list" autocomplete="off">
+						<option value="none">목표를 선택하세요 (목표 없음)</option>
+						<option value="" disabled>=======================</option>
+						<option value="item">에픽 아이템 탐색</option>
+						<option value="set">세트 완성</option>
+						<option value="count">실행 횟수</option>
+						<option value="cost">초대장 제한</option>
+						<option value="fatigue">피로도 제한</option>
+					</select>
+					<hr />
+					<!--조건 1 : 없음-->
+					<div id="objective_none">
+						<p>
+							설정된 목표 없음
+							<br/>
+							(수동으로 정지시킬 때까지 무한히 반복됩니다.)
+						</p><p>
+							(<span class="bold">※</span> <span class="bold">에픽 아이템 탐색</span> : 
+							<br />
+							"탐색 목표 설정" 리스트에서 해당 항목을 선택하세요)
+						</p>
+					</div>
+					<!--조건 2 : 아이템 검색-->
+					<div id="objective_item">
+						<p>
+							<span class="bold center">1차 분류 : </span>
+							<select id="objective_item_first" autocomplete="off">
+								<option value="">모든 에픽 아이템</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p><p>
+							<span class="bold center">2차 분류 : </span>
+							<select id="objective_item_second" disabled autocomplete="off">
+								<option value="">모든 에픽 아이템</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p><p>
+							<span class="bold center">3차 분류 : </span>
+							<select id="objective_item_third" disabled autocomplete="off">
+								<option value="">모든 에픽 아이템</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p><p>
+							<span class="bold center">아이템 명칭 : </span>
+							<select id="objective_item_name" disabled autocomplete="off">
+								<option value="">모든 에픽 아이템</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p>
+						<p class="small">
+							(설정한 아이템이 나타나면 탐색이 중단됩니다.)
+						</p>
+					</div>
+					<div id="objective_set">
+						<p>
+							<span class="bold">분류 : </span>
+							<select id="objective_set_first" autocomplete="off">
+								<option value="">모든 세트</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p>
+						<br/>
+						<p>
+							<span class="bold">세트 명칭 : </span>
+							<select id="objective_set_name" disabled autocomplete="off">
+								<option value="">모든 세트</option>
+								<option value="" disabled>=====================</option>
+							</select>
+						</p>
+						<br/>
+						<p class="small">
+							(선택한 세트가 완성되면 탐색이 중단됩니다.)
+						</p>
+					</div>
+					<div id="objective_count">
+						<p>
+							<span class="bold">탐색 횟수  : </span>
+							<input id="objective_count_text" type="text" placeholder='탐색 횟수 입력' >
+						</p>
+						<br/>
+						<p class="small">
+							(입력된 횟수만큼 탐색이 이루어집니다.)
+						</p>
+					</div>
+					<div id="objective_cost">
+						<p>
+							<span class="bold">초대장 개수 : </span>
+							<input id="objective_cost_text" type="text" placeholder='초대장 개수 입력' >
+						</p>
+						<br/>
+						<p class="small">
+							(입력한 초대장을 모두 소모하면 탐색이 중지됩니다.)
+						</p>
+					</div>
+					<div id="objective_fatigue">
+						<p>
+							<span class="bold">전체 피로도 : </span>
+							<input id="objective_fatigue_max" type="text" placeholder='전체 피로도 입력' >
+						</p>
+						<p>
+							<span class="bold">1회당 소모 피로도</span>
+							<input id="objective_fatigue_per" type="text" placeholder='1회당 소모 피로도' >
+						</p>
+						<br/>
+						<p class="small">
+							(피로도를 모두 소모하면 탐색이 중지됩니다.)
+							<br/>
+							(영약 피로도는 전체 피로도를 1번 소모 후, 별도로 설정하여 실행하세요.)
+						</p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div id="frame_top">
+				
+		<!------안내 문구------>
+				<div id="notice_dungeon" class="notice">
+					<span class="bold center">※ 던전 별 지옥파티 입장비용</span>
+					<br/>
+					&lt;시간의 문&gt;
+					<br/>
+					대화재 : 초대장 20장
+					<br/>
+					전염병 : 초대장 20장
+					<br/>
+					결전! 카르텔 : 초대장 20장
+					<br/>
+					검은 성전 : 초대장 21장
+					<br/>
+					극비구역 : 초대장 21장
+					<br/>
+					옛비명굴 : 초대장 22장
+					<br/>
+					태동 : 초대장 22장
+					<br/>
+					자각 : 초대장 22장
+					<br/>
+					<br/>
+					&lt;파워스테이션&gt;
+					<br/>
+					코레 발전소 : 초대장 23장
+					<br/>
+					푸르츠 발전소 : 초대장 24장
+					<br/>
+					트롬베 발전소 : 초대장 24장
+					<br/>
+					그란디네 발전소 : 초대장 24장
+					<br/>
+					<br/>
+					&lt;죽은 자의 성&gt;
+					<br/>
+					매달린 망루 : 초대장 26장
+					<br/>
+					루크린제 : 초대장 26장
+					<br/>
+					강철의 브라키움 : 초대장 26장
+					<br/>
+					샐러맨더의 화로 : 초대장 26장
+					<br/>
+					빛의 연회장 : 초대장 26장
+				</div>
+				
+				<div id="notice_difficulty" class="notice">
+					<span class="bold center">※ 던전 난이도에 따라 다음 아이템들의 드랍률이 달라집니다.</span>
+					<br/>
+					　- 코스모소울
+					<br/>
+					　- 지옥구슬
+					<br/>
+					　- 에픽 조각
+				</div>
+				
+				<div id="notice_channel" class="notice">
+					<span class="bold center">
+						※ 채널은 아이템 드랍률에 영향을 끼치지 않습니다.
+						<br/>
+						<br/>
+						<span class="yellow">※ 변경 단축키 : PageUP, PageDown</span>
+						</span>
+				</div>
+		<!------안내 문구------>
+		
+				<div id="round">
+					<span id="round_count">0</span>
+					회차 : 
+					<span id="round_difficulty" class="orange"></span>
+				</div>
+				
+				<input id="reset" class="min_gap" type="button" value="모두 초기화" />
+				
+				<div id="person">
+					Made By : 루리웹 솔라리어스
+					<br/>
+					맵 이미지 제공 : <span id='person_helper'>루리웹 Aqua3님</span>
+				</div>
+				
+				<div id="filter">
+					<input id="filter_name_normal" type="checkbox" checked />
+					<label for="filter_name_normal">
+						아이템 명칭 보기
+					</label>
+					<br/>
+					<input id="filter_name_jogak" type="checkbox" />
+					<label for="filter_name_jogak">
+						에픽 조각 명칭 보기
+					</label>
+					<hr/>
+					<input id="filter_sound" type="checkbox" />
+					<label id="label_sound" for="filter_sound">
+						에픽 드랍 사운드 출력
+					</label>
+				</div>
+				
+				
+		<!------팝업------>
+				<div id="popup">
+					<div id="popup_title" class="title_record">
+						획득 기록
+					</div>
+					
+					<div id="record_filter" class="filter">
+						<strong>필터링 : </strong>
+						<select id="record_filter_first" class="first" autocomplete="off">
+							<option value="">1차 분류 (전체 보기)</option>
+							<option value="" disabled>=============================</option>
+						</select>
+						<select id="record_filter_second" class="second" disabled autocomplete="off" >
+							<option value="">2차 분류 (전체 보기)</option>
+						</select>
+						<select id="record_filter_third" class="third" disabled autocomplete="off" >
+							<option value="">3차 분류 (전체 보기)</option>
+						</select>
+						<select id="record_filter_level" class="level" autocomplete="off" >
+							<option value="">레벨 (전체 보기)</option>
+							<option value="" disabled>=============</option>
+						</select>
+						<input id="record_filter_clear" class="clear" type="button" value="필터 해제" />
+					</div>
+					<div id="record">
+					</div>
+					
+					<div id="inventory_filter" class="filter">
+						<strong>필터링 : </strong>
+						<select id="inventory_filter_first" class="first" autocomplete="off">
+							<option value="">1차 분류 (전체 보기)</option>
+							<option value="" disabled>=============================</option>
+						</select>
+						<select id="inventory_filter_second" class="second" disabled autocomplete="off" >
+							<option value="">2차 분류 (전체 보기)</option>
+						</select>
+						<select id="inventory_filter_third" class="third" disabled autocomplete="off" >
+							<option value="">3차 분류 (전체 보기)</option>
+						</select>
+						<select id="inventory_filter_level" class="level" autocomplete="off" >
+							<option value="">레벨 (전체 보기)</option>
+							<option value="" disabled>=============</option>
+						</select>
+						<input id="inventory_filter_clear" class="clear" type="button" value="필터 해제" />
+					</div>
+					<div id="inventory">
+						<div id="inventory_head">
+							<table cellspacing="0" >
+								<tr>
+									<td class="col_1">아이템 이름</td>
+									<td class="col_2">종류</td>
+									<td class="col_3">레벨</td>
+									<td class="col_4">해체</td>
+									<td class="col_5">보유</td>
+									<td class="col_6">첫 획득 시점</td>
+								</tr>
+							</table>
+						</div>
+						<div id="inventory_display">
+							<table id="inventory_table" cellspacing="0" >
+							</table>
+						</div>
+					</div>
+					
+					<div id="set_filter" class="filter">
+						<strong>필터링 : </strong>
+						<select id="set_filter_first" class="first" autocomplete="off" >
+							<option value="">1차 분류 (전체 보기)</option>
+							<option value="" disabled>=============================</option>
+						</select>
+						<select id="set_filter_second" class="second" disabled autocomplete="off" >
+							<option value="">2차 분류 (전체 보기)</option>
+						</select>
+						<select id="set_filter_third" class="third" disabled autocomplete="off" >
+							<option value="">3차 분류 (전체 보기)</option>
+						</select>
+						<select id="set_filter_level" class="level" autocomplete="off" >
+							<option value="">레벨 (전체 보기)</option>
+							<option value="" disabled>=============</option>
+						</select>
+						<input id="set_filter_clear" class="clear" type="button" value="필터 해제" />
+					</div>
+					<div id="set">
+						<div id="set_head">
+							<table cellspacing="0" >
+								<tr>
+									<td class="col_1">아이템 이름</td>
+									<td class="col_2">종류</td>
+									<td class="col_3">레벨</td>
+									<td class="col_4">해체</td>
+									<td class="col_5">보유</td>
+									<td class="col_6">첫 획득 시점</td>
+								</tr>
+							</table>
+						</div>
+						<div id="set_display">
+							<table id="set_table" cellspacing="0" >
+							</table>
+						</div>
+					</div>
+					
+					
+					<div id="craft_filter" class="filter">
+						<strong>필터링 : </strong>
+						<select id="craft_filter_first" class="first" autocomplete="off">
+							<option value="">1차 분류 (전체 보기)</option>
+							<option value="" disabled>=============================</option>
+						</select>
+						<select id="craft_filter_second" class="second" disabled autocomplete="off" >
+							<option value="">2차 분류 (전체 보기)</option>
+						</select>
+						<select id="craft_filter_third" class="third" disabled autocomplete="off" >
+							<option value="">3차 분류 (전체 보기)</option>
+						</select>
+						<select id="craft_filter_level" class="level" autocomplete="off" >
+							<option value="">레벨 (전체 보기)</option>
+							<option value="" disabled>=============</option>
+						</select>
+						<input id="craft_filter_clear" class="clear" type="button" value="필터 해제" />
+					</div>
+					<div id="craft">
+						<div id="craft_head">
+							<table cellspacing="0" >
+								<tr>
+									<td class="col_1">아이템 이름</td>
+									<td class="col_2">종류</td>
+									<td class="col_3">레벨</td>
+									<td class="col_4">보유</td>
+									<td class="col_5">조각수</td>
+									<td class="col_6">제작</td>
+									<td class="col_7">소울 비용</td>
+								</tr>
+							</table>
+						</div>
+						<div id="craft_display">
+							<table id="craft_table" cellspacing="0" >
+							</table>
+						</div>
+					</div>
+					
+				</div>
+				<div id="checkbox">
+					<p class="title">
+						세부 설정
+						<hr />
+					</p>
+					<div id="record_check" class="check" >
+						<p>
+							<input id="record_check_cost" type="checkbox" />
+							<label for="record_check_cost">소모 초대장 표시</label>
+								<br/>
+							<input id="record_check_difficulty" type="checkbox" />
+							<label for="record_check_difficulty">획득 난이도 표시</label>
+								<br/>
+							<input id="record_check_quantity" type="checkbox" />
+							<label for="record_check_quantity">중복 획득 횟수 표시</label>
+						</p>
+						<p>
+							<hr />
+							<input id="record_check_reset" type="button" value="획득 기록 초기화" />
+						</p>
+					</div>
+					
+					<div id="inventory_check" class="check" >
+						<p>
+							<input id="inventory_check_cost" type="checkbox">
+							<label for="inventory_check_cost">첫 획득 시 소모 초대장 표시</label>
+								<br/>
+							<input id="inventory_check_all" type="checkbox">
+							<label for="inventory_check_all">모든 아이템 보기</label>
+						</p>
+							<hr />
+						<p>
+							<input id="inventory_check_confirm" type="checkbox">
+							<label for="inventory_check_confirm">수동 해체 시 경고창 출력 X</label>
+						</p>
+							<hr />
+						<p class="center">
+							(수집률 : <span id="inventory_check_collect">0</span>%)
+						</p>
+							<hr />
+						<p>
+							<input id="disassemble_1" type="button" value="중복 에픽 일괄 해체">
+						</p>
+					</div>
+					
+					<div id="set_check" class="check" >
+						<p>
+							<input id="set_check_cost" type="checkbox">
+							<label for="set_check_cost">첫 획득 시 소모 초대장 표시</label>
+								<br/>
+							<input id="set_check_all" type="checkbox">
+							<label for="set_check_all">모든 아이템&세트 보기</label>
+								<br/>
+							<input id="set_check_only" type="checkbox">
+							<label for="set_check_only">세트만 보기</label>
+						</p>
+							<hr />
+						<p>
+							<input id="set_check_confirm" type="checkbox">
+							<label for="set_check_confirm">수동 해체 시 경고창 출력 X</label>
+						</p>
+							<hr />
+						<p>
+							<input id="disassemble_2" type="button" value="중복 세트템 일괄 해체">
+						</p>
+					</div>
+					
+					<div id="craft_check" class="check" >
+						<p>
+							<input id="craft_check_available" type="checkbox">
+							<label for="craft_check_available">제작 가능 아이템만 보기</label>
+							
+						</p>
+						<p>
+							<input id="craft_check_all" type="checkbox">
+							<label for="craft_check_all">모든 아이템 보기</label>
+						</p>
+							<hr />
+						<p class="center">
+							(필요 조각 수 : <span id="craft_check_max">0</span>개)
+						</p>
+						<p class="center">
+							(비용 : 코스모소울만 고려)
+						</p>
+							<hr />
+					</div>
+					
+				</div>
+				
+				<input id="shift1" class="" type="button" value="획득 기록" />
+				<input id="shift2" class="" type="button" value="인벤토리" />
+				<input id="shift3" class="" type="button" value="세트 아이템" />
+				<input id="shift4" class="" type="button" value="도감" />
+		<!------팝업------>
+				
+				<!--
+				<div id="item1" class="item">
+					<div id="description1" class="description">
+						<p id="item_name1" class="item_name"></p>
+					</div>
+					<div id="item_img1" class="item_img"></div>
+					
+					<div id="effect_appear1" class="effect_appear"></div>
+					<div id="effect_land1" class="effect_land"></div>
+					<div id="effect_wait1" class="effect_wait"></div>
+				</div>
+				
+				<div id="item2" class="item">
+					<div id="description2" class="description">
+						<p id="item_name2" class="item_name"></p>
+					</div>
+					<div id="item_img2" class="item_img"></div>
+					
+					<div id="effect_appear2" class="effect_appear"></div>
+					<div id="effect_land2" class="effect_land"></div>
+					<div id="effect_wait2" class="effect_wait"></div>
+				</div>
+				
+				<div id="item3" class="item">
+					<div id="description3" class="description">
+						<p id="item_name3" class="item_name"></p>
+					</div>
+					<div id="item_img3" class="item_img"></div>
+					
+					<div id="effect_appear3" class="effect_appear"></div>
+					<div id="effect_land3" class="effect_land"></div>
+					<div id="effect_wait3" class="effect_wait"></div>
+				</div>
+				
+				<div id="item4" class="item">
+					<div id="description4" class="description">
+						<p id="item_name4" class="item_name"></p>
+					</div>
+					<div id="item_img4" class="item_img"></div>
+					
+					<div id="effect_appear4" class="effect_appear"></div>
+					<div id="effect_land4" class="effect_land"></div>
+					<div id="effect_wait4" class="effect_wait"></div>
+				</div>
+				
+				<div id="item5" class="item">
+					<div id="description5" class="description">
+						<p id="item_name5" class="item_name"></p>
+					</div>
+					<div id="item_img5" class="item_img"></div>
+					
+					<div id="effect_appear5" class="effect_appear"></div>
+					<div id="effect_land5" class="effect_land"></div>
+					<div id="effect_wait5" class="effect_wait"></div>
+				</div>
+				
+				<div id="item6" class="item">
+					<div id="description6" class="description">
+						<p id="item_name6" class="item_name"></p>
+					</div>
+					<div id="item_img6" class="item_img"></div>
+					
+					<div id="effect_appear6" class="effect_appear"></div>
+					<div id="effect_land6" class="effect_land"></div>
+					<div id="effect_wait6" class="effect_wait"></div>
+				</div>
+				
+				<div id="item7" class="item">
+					<div id="description7" class="description">
+						<p id="item_name7" class="item_name"></p>
+					</div>
+					<div id="item_img7" class="item_img"></div>
+					
+					<div id="effect_appear7" class="effect_appear"></div>
+					<div id="effect_land7" class="effect_land"></div>
+					<div id="effect_wait7" class="effect_wait"></div>
+				</div>
+				
+				<div id="item8" class="item">
+					<div id="description8" class="description">
+						<p id="item_name8" class="item_name"></p>
+					</div>
+					<div id="item_img8" class="item_img"></div>
+					
+					<div id="effect_appear8" class="effect_appear"></div>
+					<div id="effect_land8" class="effect_land"></div>
+					<div id="effect_wait8" class="effect_wait"></div>
+				</div>
+				
+				<div id="item9" class="item">
+					<div id="description9" class="description">
+						<p id="item_name9" class="item_name"></p>
+					</div>
+					<div id="item_img9" class="item_img"></div>
+					
+					<div id="effect_appear9" class="effect_appear"></div>
+					<div id="effect_land9" class="effect_land"></div>
+					<div id="effect_wait9" class="effect_wait"></div>
+				</div>
+				
+				<div id="item10" class="item">
+					<div id="description10" class="description">
+						<p id="item_name10" class="item_name"></p>
+					</div>
+					<div id="item_img10" class="item_img"></div>
+					
+					<div id="effect_appear10" class="effect_appear"></div>
+					<div id="effect_land10" class="effect_land"></div>
+					<div id="effect_wait10" class="effect_wait"></div>
+				</div>
+				-->
+				
+			</div>
+			<div id="frame_bottom">
+				<div id="result">
+					<div id="result_text">
+						<table cellspacing="0">
+							<tr>
+								<td class="col_1 head"></td>
+								<td class="col_2 head">획득량</td>
+								<td class="col_3 head">보유량</td>
+								<td class="col_4 head">해체</td>
+								<td class="col_5 head"></td>
+								<td class="col_6 head"></td>
+								<td class="col_7 head">획득량</td>
+							</tr>
+							<tr>
+								<td class="col_1 epic">에픽</td>
+								<td id="result_epic_get" class="col_2">0</td>
+								<td id="result_epic_have" class="col_3">0</td>
+								<td class="col_4">
+									<div>
+										<input id="result_button_epicDisassemble" type="button" value="없음" disabled />
+									</div>
+								</td>
+								<td class="col_5"></td>
+								<td class="col_6"><img class="right" src="./images/hell/cost.png" /></td>
+								<td id="result_cost_get" class="col_7">0</td>
+							</tr>
+							<tr>
+								<td class="col_1"><img class="left" src="./images/hell/soul.png" /></td>
+								<td id="result_soul_get" class="col_2">0</td>
+								<td id="result_soul_have" class="col_3">0</td>
+								<td class="col_4">
+									<div>
+										<input id="result_button_soulDisassemble" type="button" value="없음" disabled />
+									</div>
+								</td>
+								<td class="col_5"></td>
+								<td class="col_6"><img class="right" src="./images/hell/beed.png" /></td>
+								<td id="result_beed_get" class="col_7">0</td>
+							</tr>
+							<tr>
+								<td class="bottom" colspan="7">
+									<input id="result_check_soulAuto" type="checkbox">
+									<label for="result_check_soulAuto">코스모소울 획득 시 자동으로 해체 (초대장 변환)</label>
+								</td>
+							</tr>
+						</table>
+						<!--
+						<div class="left">
+							<span class="epic">획득 에픽</span> x <span id="result_epic">0</span>
+						</div><div class="right">
+							<span class="epic">보유 에픽</span> x <span id="result_epic_real">0</span>
+						</div>
+						<div class="left">
+							<img src="" alt='소울' > x <span id="result_soul">0</span>
+						</div><div class="right">
+							<img src="" alt='구슬' > x <span id="result_beed">0</span>
+						</div>
+						<div class="bottom">
+						(※ <span class='unique'>코스모 소울</span>, <span class='unique'>지옥 구슬</span> 획득 시
+						또는 <span class='epic'>에픽 아이템</span> 해체 시
+						<br/>
+						실질 소모 초대장 개수, 실질 골드 환산 수치가 감소합니다.)
+						</div>
+						-->
+					</div>
+				</div>
+				<div id="cost">
+					<div id="cost_text">
+							<span class="line">
+							총 소모 
+							<img src="./images/hell/cost.png">
+							 : 
+							<span id="cost_invitation">0</span>
+							장 (실질 : 
+							<span id="cost_real">0</span>
+							장)
+							</span>
+							<hr />
+						<div id="line_cover">
+							<span class="line">
+							골드 환산 : 
+							<span id="cost_gold">0</span>
+							 Gold
+							</span>
+							<span class="line">
+							(실질 :
+							<span id="cost_gold_real">0</span>
+							 Gold)
+							</span>
+						</div>
+						<input id="cost_set_gold"type="button" value="도전장
+							가격
+							설정">
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<!--다이나믹 스타일-->
+		<style id="style_inventory_check_cost" type="text/css">
+		</style>
+		<style id="style_inventory_check_all" type="text/css">
+		</style>
+		
+		<style id="style_set_check_cost" type="text/css">
+		</style>
+		<style id="style_set_check_all" type="text/css">
+		</style>
+		<style id="style_set_check_only" type="text/css">
+		</style>
+		
+		<style id="style_craft_check_available" type="text/css">
+		</style>
+		<style id="style_craft_check_all" type="text/css">
+		</style>
+		
+		<style id="style_record_filter_first" type="text/css">"
+		</style>
+		<style id="style_record_filter_second" type="text/css">
+		</style>
+		<style id="style_record_filter_third" type="text/css">
+		</style>
+		<style id="style_record_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_inventory_filter_first" type="text/css">
+		</style>
+		<style id="style_inventory_filter_second" type="text/css">
+		</style>
+		<style id="style_inventory_filter_third" type="text/css">
+		</style>
+		<style id="style_inventory_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_set_filter_first" type="text/css">
+		</style>
+		<style id="style_set_filter_second" type="text/css">
+		</style>
+		<style id="style_set_filter_third" type="text/css">
+		</style>
+		<style id="style_set_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_craft_filter_first" type="text/css">
+		</style>
+		<style id="style_craft_filter_second" type="text/css">
+		</style>
+		<style id="style_craft_filter_third" type="text/css">
+		</style>
+		<style id="style_craft_filter_level" type="text/css">
+		</style>
+		
+		<style id="style_record_check_cost" type="text/css">
+			#record span.cost {
+				display:inline;
+			}
+		</style>
+		<style id="style_record_check_difficulty" type="text/css">
+			#record span.difficulty_0, #record span.difficulty_1 {
+				display:inline;
+			}
+		</style>
+		<style id="style_record_check_quantity" type="text/css">
+			#record span.quantity {
+				display:inline;
+			}
+		</style>
+		
+		<style id="style_name_normal" type="text/css">
+			.description.normal {
+				display:inline-block;
+			};
+		</style>
+		<style id="style_name_jogak" type="text/css">
+		</style>
+		
+		<!--다이나믹 스타일-->
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			<p id="cover_notice">로딩 대기중...</p>
+			<hr/>
+			<p>※ 이 상태가 오래 지속되면 페이지 새로고침(F5)를 시도해보세요.</p>
+			<p>※ 그래도 문제가 해결되지 않으면 <a href="http://bbs1.ruliweb.daum.net/gaia/do/ruliweb/family/1515/read?itemId=2230&bbsId=G001&articleId=8223226" target="_black" >여기</a>에 댓글을 남겨주세요.</p>
+		</div>
+		<!--로딩할 동안 가림막 기능 수행-->
+		
+		<div id="imagePreloader">
+		</div>
+		
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+		
+		<script type="text/javascript" src="./js/placeholders.min.js"></script>
+		<script type="text/javascript" src="./js/shortcut.js"></script>
+		
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<script type="text/javascript" src="./js/hell1_data.js"></script><!--데이터 - 메인-->
+		<script type="text/javascript" src="./js/hell2_data.js"></script><!--데이터 - 보충-->
+		<script type="text/javascript" src="./js/perfect_hell2_function.js"></script>
+		<script type="text/javascript" src="./js/hell2_onload.js"></script>
+	
+	</body>
+
+</html>

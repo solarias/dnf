@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/snack.css" />
+		
+		<title>칸나의 스낵 주머니</title>
+	</head>
+	<body>
+		<img id="kanna" src="./images/snack/kanna.png">
+		
+		<div id="wrapper">
+		
+			<div id="frame_left">
+			
+			
+				<div id="head">
+					<p>
+						<strong>칸나의 스낵 주머니</strong>를 개봉합니다.
+						<br/>
+					</p>
+					<span>
+						<input id="audioCheck" type="checkbox" />
+						<label for="audioCheck">사운드 출력</label>
+					</span>
+				</div>
+				<div id="gauge">
+					<img id="gauge_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302513.jpg" />
+					<div id="gauge_progress">
+						<div id="gauge_bar">
+						</div>
+					</div>
+					<div id="gauge_text">
+						주머니 개봉 대기중 <span class="white">(비용 : <img src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg"> × 3 = 750세라)</span>
+					</div>
+				</div>
+				
+				<div id="control">
+					<p class="top">
+						<span id="control_count">0</span>	회차
+					</p><p>
+						<input id="open1" class="off" type="button" value="1회 개봉" />
+					</p><hr /><p>
+						<input id="open2" class="off" type="button" value="연속 개봉" />
+					</p><p class="normal">
+						&lt;연속 개봉 목표&gt;
+						<select id="objective">
+							<option value="" selected disabled>선택하세요</option>
+							<option value="">목표 없음</option>
+							<option value="month">이달의 아이템</option>
+							<option value="key">열쇠 수량 제한</option>
+							<option value="sera">비용 제한(세라)</option>
+						</select>
+					</p><p>
+						<input id="objective_text" type="text" placeholder="입력하세요"/>
+						<span id="objective_unit" >개</span>
+					</p>
+				</div>
+				<div id="show">
+				
+					<div id="show_title">
+					</div>
+					<div id="show_body">
+						<img id="show_item1_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg">
+						<div id="show_item1_name">
+							<p>대기중</p>
+						</div>
+						
+						<img id="show_item2_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg">
+						<div id="show_item2_name">
+							<p>대기중</p>
+						</div>
+					</div>
+					<div id="show_booster">
+						<img id="show_booster_body" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030246.jpg">
+						<div id="show_booster_bar">
+						</div>
+					</div>
+				
+				</div>
+				
+				<div id="cost">
+					<p>
+						소모 <img src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg"> : <span id="cost_key">0</span> 개
+						( = <span id="cost_sera">0</span> 세라)
+					</p>
+					<hr />
+					<p>
+						　&#8658; 골드 환산 : 약 <span id="cost_gold">0</span> Gold
+					</p>
+				</div>
+				<div id="record">
+					<table id="record_table">
+					</table>
+				</div>
+				<div id="record_check">
+					<p>
+						<input id="record_check_twice" type="checkbox" /><label for="record_check_twice"></label>
+						2배 보상만 보기　<input id="record_check_month" type="checkbox" /><label for="record_check_month"></label>
+						이달의 아이템만 보기
+					</p>
+					<hr />
+					<p>
+						렉이 걸리면 클릭해보세요. ▶▶▶
+						<input id="record_clear" type="button" value="획득 기록 지우기" />
+					</p>
+				</div>
+		
+			
+			</div>
+			<div id="frame_right">
+				<div id="inventory_title">
+					<p>인벤토리</p>
+					<input id="clear" type="button" value="초기화" />
+				</div>
+				
+				<div id="inventory_filter">
+					(획득한 모든 아이템을 정리하여 표시합니다.)
+				</div>
+				<div id="inventory">
+					<div id="inventory_head">
+						<table cellspacing="0" >
+							<tr>
+								<td class="col_1"></td>
+								<td class="col_2">아이템 이름</td>
+								<td class="col_3">수량</td>
+							</tr>
+						</table>
+					</div>
+					<div id="inventory_display">
+						<table id="inventory_table" cellspacing="0" >
+						</table>
+					</div>
+				</div>
+				<div id="inventory_check">
+					<input id="inventory_check_all" type="checkbox" /><label for="inventory_check_all"></label>
+					모든 아이템 표시
+				</div>
+			
+			</div>
+			
+		</div>
+			
+		<!--필터-->
+		<style id="style_record_check_twice" type="text/css">
+		</style>
+		<style id="style_record_check_month" type="text/css">
+		</style>
+		<style id="style_inventory_check_all" type="text/css">
+		</style>
+		
+		<!--로딩할 동안 가림막 기능 수행-->
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		
+		<div id="imagePreloader">
+		</div>
+		
+		
+		<script type="text/javascript" src="./js/snack_itemList.js"></script>
+		
+		<script type="text/javascript" src="./js/placeholders.min.js"></script>
+		<script type="text/javascript" src="./js/snack.js"></script>
+		
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="counter" ><script  type="text/javascript" >
+try {Histats.start(1,3193029,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3193029&101" alt="counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+	</body>
+</html>

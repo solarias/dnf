@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>카드 뒤집기</title>
+		
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+				
+				font-size:13px;
+				font-family:Arial;
+			}
+
+			/*컬러링*/
+			.uncommon {
+				color:skyblue;
+				font-size:inherit;
+			}
+			.rare {
+				color:#B36BFF;
+				font-size:inherit;
+			}
+			.unique {
+				color:#FF00FF;
+				font-size:inherit;
+			}
+			.epic {
+				color:#E5B64A;
+				font-size:inherit;
+			}
+			
+			body {
+				background-color:#FFFFCC;
+			}
+			
+			#wrapper {
+				position:relative;
+				overflow-x:hidden;
+				overflow-y:hidden;
+				
+				width:670px;
+				height:450px;
+				
+				background:url('./images/hell/card_background.png');
+			}
+			
+			.flipcard {
+				float:left;
+				
+				position: relative;
+				
+				margin-top:10px;
+				margin-left:10px;
+				width: 120px;
+				height: 180px;
+				perspective: 500px;
+				transform-style: preserve-3d;
+				
+				border:1px transparent solid;
+				
+				display:block;
+			}
+					.flipcard:hover {
+						border:1px white solid;
+					}
+			
+				.flipcard p.title {
+					width:100%;
+					
+					background-color:rgba(0,0,0,0.5);
+					-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+					filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+					
+					color:white;
+					text-align:center;
+				}
+				.flipcard p.click {
+					position:absolute;
+					
+					bottom:10px;
+					left:20px;
+				}
+				.flipcard img {
+					position:absolute;
+					
+					bottom:30px;
+					left:30px;
+					
+					width:60px;
+					
+					display:block;
+				}
+			
+			.flipcard.v.flipped .front{
+				visibility:hidden;
+			}
+			.flipcard.v.flipped .front{
+				-ms-transform:rotateX(180deg);
+				-webkit-transform: rotateX(180deg);
+				-moz-transform:rotateX(180deg);
+				-o-transform:rotateX(180deg);
+				transform: rotateX(180deg);
+			}
+			
+			.flipcard.v.flipped .back{
+				visibility:visible;
+			}
+			.flipcard.v.flipped .back{
+				-ms-transform:rotateX(0deg);
+				-webkit-transform: rotateX(0deg);
+				-moz-transform:rotateX(0deg);
+				-o-transform:rotateX(0deg);
+				transform: rotateX(0deg);
+			}
+			
+			.flipcard.v .back{
+				visibility:hidden;
+			}
+			.flipcard.v .back{
+				-ms-transform:rotateX(-180deg);
+				-webkit-transform: rotateX(-180deg);
+				-moz-transform:rotateX(-180deg);
+				-o-transform:rotateX(-180deg);
+				transform: rotateX(-180deg);
+			}
+			
+			.flipcard.h.flipped .front{
+				visibility:hidden;
+			}
+			.flipcard.h.flipped .front{
+				-ms-transform:rotateY(180deg);
+				-webkit-transform: rotateY(180deg);
+				-moz-transform:rotateY(180deg);
+				-o-transform:rotateY(180deg);
+				transform: rotateY(180deg);
+			}
+			
+			.flipcard.h.flipped .back{
+				visibility:visible;
+			}
+			.flipcard.h.flipped .back{
+				-ms-transform:rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+				-moz-transform:rotateY(0deg);
+				-o-transform:rotateY(0deg);
+				transform: rotateY(0deg);
+			}
+			
+			.flipcard.h .back{
+				visibility:hidden;
+			}
+			.flipcard.h .back{
+				-ms-transform:rotateY(-180deg);
+				-webkit-transform: rotateY(-180deg);
+				-moz-transform:rotateY(-180deg);
+				-o-transform:rotateY(-180deg);
+				transform: rotateY(-180deg);
+			}
+			.flipcard .front
+			{
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:1;
+				
+				transform: rotateY(0deg);
+				transition: 0.6s;
+				
+				padding: 10px;
+				width: 100%;
+				height: 100%;
+				
+				background-image:url(./images/hell/card_front.png);
+				box-sizing: border-box;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				
+				color: yellow;
+				font-weight:bold;
+			}
+			
+			.flipcard .back
+			{
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:1;
+				
+				transform: rotateY(-180deg);
+				transition: 0.6s;
+				
+				padding: 15px 8px;
+				width: 100%;
+				height: 100%;
+				
+				background-image:url(./images/hell/card_back1.png);
+				box-sizing: border-box;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				
+				color: white;
+				font-weight:bold;
+			}
+				.flipcard .back .gold {
+					background-image:url(./images/hell/card_back2.png);
+				}
+				
+			#round {
+				clear:both;
+				float:left;
+				
+				margin-top:10px;
+				margin-left:10px;
+				padding:8px;
+				
+				width:180px;
+				height:48px;
+				
+				background:#303030;
+				border:1px white solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:white;
+				font-size:30px;
+				text-align:right;
+				line-height:100%;
+			}
+			#smart {
+				margin-top:10px;
+				margin-left:10px;
+				width:458px;
+				height:50px;
+				
+				font-size:30px;
+				font-weight:bold;
+			}
+			
+			
+			#cover {
+				position:absolute;
+				top:0px;
+				left:0px;
+				z-index:2;
+				
+				padding:50px;
+				margin:0;
+				width:670px;
+				height:450px;
+				
+				background-color:#FFFFCC;
+				box-sizing: border-box;
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				
+				font-size:50px;
+				font-weight:bold;
+			}
+					
+
+			#imagePreloader {
+				width:1px;
+				height:1px;
+				
+				display:none;
+			}
+
+			
+		</style>
+	
+	</head>
+	<body>
+
+		<div id="wrapper">
+
+			<div id="card1" class="flipcard h">
+				<div id="card1_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card1_back" class="back">
+					<p id="card1_text"></p>
+					<img id="card1_img" src="" />
+				</div>
+			</div>
+
+			<div id="card2" class="flipcard h">
+				<div id="card2_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card2_back" class="back">
+					<p id="card2_text"></p>
+					<img id="card2_img" src="" />
+				</div>
+			</div>
+
+			<div id="card3" class="flipcard h">
+				<div id="card3_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card3_back" class="back">
+					<p id="card3_text"></p>
+					<img id="card3_img" src="" />
+				</div>
+			</div>
+
+			<div id="card4" class="flipcard h">
+				<div id="card4_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card4_back" class="back">
+					<p id="card4_text"></p>
+					<img id="card4_img" src="" />
+				</div>
+			</div>
+
+			<div id="card5" class="flipcard h">
+				<div id="card5_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card5_back" class="back">
+					<p id="card5_text"></p>
+					<img id="card5_img" src="" />
+				</div>
+			</div>
+
+			<div id="card6" class="flipcard h">
+				<div id="card6_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card6_back" class="back">
+					<p id="card6_text"></p>
+					<img id="card6_img" src="" />
+				</div>
+			</div>
+
+			<div id="card7" class="flipcard h">
+				<div id="card7_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card7_back" class="back">
+					<p id="card7_text"></p>
+					<img id="card7_img" src="" />
+				</div>
+			</div>
+
+			<div id="card8" class="flipcard h">
+				<div id="card8_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card8_back" class="back">
+					<p id="card8_text"></p>
+					<img id="card8_img" src="" />
+				</div>
+			</div>
+
+			<div id="card9" class="flipcard h">
+				<div id="card9_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card9_back" class="back">
+					<p id="card9_text"></p>
+					<img id="card9_img" src="" />
+				</div>
+			</div>
+
+			<div id="card10" class="flipcard h">
+				<div id="card10_front" class="front">
+					<p class="title">지옥파티 보상</p>
+					<p class="click">(클릭하세요)</p>
+				</div>
+				<div id="card10_back" class="back">
+					<p id="card10_text"></p>
+					<img id="card10_img" src="" />
+				</div>
+			</div>
+
+			<div id="round">1 회차</div>
+			
+			<input id="smart" type="button" value="모두 개봉하기" />
+
+		</div>
+
+		<!--기타-->
+		
+		<div id="cover">
+			로딩 대기중...
+		</div>
+		
+		<div id="imagePreloader">
+		</div>
+		
+		<!--기타-->
+		
+		
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		<script type="text/javascript" src="./js/hell_data.js"></script>
+		
+		<script type="text/javascript">
+	//=================================================================================================================
+	//※ 함수 - 선로딩, 기능 보충
+	//=================================================================================================================	
+					// 이미지 불러오기 (원본 //출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
+					function loadImages(arr,callBack){
+
+						var imagesArray = [];
+						var img;
+						var remaining = arr.length;
+						for (var i = 0; i < arr.length; i++) {
+							img = new Image();
+							img.onload = function() {
+								//외부 처리 
+								_cover.innerHTML = "\
+								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								//내부 처리
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.onerror = function() {
+								//외부 처리 
+								_cover.innerHTML = "\
+								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								--remaining;
+								if (remaining <= 0) {
+									callBack();
+								};
+							};
+							img.src = arr[i];
+							imagesArray.push(img);
+						};
+						
+					};
+					
+					//IE8에 indexOf 적용
+					if (!Array.prototype.indexOf)
+					{
+					  Array.prototype.indexOf = function(elt /*, from*/)
+					  {
+						var len = this.length >>> 0;
+
+						var from = Number(arguments[1]) || 0;
+						from = (from < 0)
+							 ? Math.ceil(from)
+							 : Math.floor(from);
+						if (from < 0)
+						  from += len;
+
+						for (; from < len; from++)
+						{
+						  if (from in this &&
+							  this[from] === elt)
+							return from;
+						}
+						return -1;
+					  };
+					}
+					
+					//특정 클래스 삭제
+					function removeClass(target,toErase) {
+						target.className = target.className.replace( new RegExp('(?:^|\\s)'+toErase+'(?!\\S)') ,'');
+					}
+										
+					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+					function thousand(num) {
+						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					}
+	//=================================================================================================================
+	//※ 함수 - 내부작업용
+	//=================================================================================================================
+	//가중치 적용 랜덤
+	function rand(target) {//target : 숫자가 들어있는 배열
+		var number = 0;
+		for (i=0;i<target.length;i++) {
+			number += target[i];
+		}
+		var tmp = Math.random() * number;
+		
+		number = 0;
+		for (i=0;i<target.length;i++) {
+			number += target[i];
+			if (tmp < number) {
+				return i;
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	//※ 변수 및 함수
+	//=================================================================================================================
+	
+	var count = 0;
+	
+	//아이템 드롭 설정
+	function getItem(num) {
+	//=================================
+	//* 본격 : 클리어 후 아이템 확인
+	//=================================
+		//1. 난이도 결정
+		input[1] = 1;//매우 어려움
+		//2. 매우 어려움 만큼 drop() 실시
+		//1. 등급 결정
+		input[2] = chanceList_name[1][input[1]][rand(chanceList_num[1][input[1]])];
+			//IF : 에픽이 아니면 : 드롭
+			if (input[2] != "에픽") {
+				drop(num, input[2]);
+				return;
+			};
+		//2. 고유에픽 결정
+		input[3] = chanceList_name[2][rand(chanceList_num[2])];
+			//IF : 고유 에픽이면 : 드롭
+			if (input[3] == "고유에픽") {
+				//IF : 고유 에픽 리스트가 비어있지 않다면 : 드롭
+				if (currentList_goyu.length > 0) {
+					drop(num, input[3]);
+					return;
+				}
+			};
+		//3. 종류 결정
+		input[4] = chanceList_name[3][rand(chanceList_num[3])];
+		//4. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수, '죽성'은 가중치를 더함)
+			//4-1. 레벨 종류만큼 칸 설정
+			currentList_level = [];
+			for (i=0;i<levelList[input[0]].length;i++) {
+				currentList_level.push(0);
+			}
+			//4-2. 해당 칸은 특정 레벨 & 특정 장비의 개수만큼 숫자가 증가
+			for (i=0;i<currentList.length;i++) {
+				for (j=0;j<levelList[input[0]].length;j++) {
+					//앞에서 선택된 장비이고 레벨이 맞을 경우, 해당 레벨 칸 +1
+					if ((currentList[i][0] == input[4] //무기, 방어구 전용 : 대분류
+					|| currentList[i][1] == input[4])//악세사리, 특수장비 : 1차 소분류
+					&& currentList[i][3] == levelList[input[0]][j]) {
+						currentList_level[j] += 1;
+					}
+				}
+			}
+			//4-3. 추가 가중치 계산
+			for (i=0;i<chanceList_num[4].length;i++) {
+				if (chanceList_num[4][i][0] == input[0]) {
+					for (j=0;j<currentList_level.length;j++) {
+						currentList_level[j] = currentList_level[j] * chanceList_num[4][i][1][j];
+					}
+					break;
+				}
+			}
+		input[5] = levelList[input[0]][rand(currentList_level)];
+		//5. 인풋을 바탕으로 드롭
+		drop(num, input[2]);//('에픽')을 전송, 나머진 drop()에서 해결
+		return;
+	}
+	
+	//아이템 드롭
+	function drop(num, item) {
+		
+		switch (item) {
+		//1. 언커먼
+			case "언커먼":
+				//0. 카드 뒷면 결정
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back1.png)";
+				
+			//출력
+				//_show_display.innerHTML += "<img src = '" + images + "3_언커먼.png' alt='언커' />";//하단 : 다음 마이피 버전
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='uncommon'>언커먼 아이템</span>";
+				document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057031.jpg";
+				
+				break;
+		//2. 마봉
+			case "마봉":
+				//0. 카드 뒷면 결정, 개봉 충격파
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back1.png)";
+				
+			//출력
+				//_show_display.innerHTML += "<img src = '" + images + "3_마봉.png' alt='마봉' />";//하단 : 다음 마이피 버전
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='rare'>마법으로 봉인된 레어 아이템</span>";
+				document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057020.jpg";
+				
+				break;
+		//3. 코스모 소울
+			case "코스모소울":
+				//0. 카드 뒷면 결정, 개봉 충격파
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back2.png)";
+				blast(num, document.getElementById("card" + num.toString()).offsetLeft, document.getElementById("card" + num.toString()).offsetTop);
+				
+				//_show_display.innerHTML += "<img src = '" + images + "3_코스모소울.png' alt='소울' />";//하단 : 다음 마이피 버전
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='unique'>코스모 소울</span>";
+				document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057034.jpg";
+				
+				break;
+		//4. 지옥구슬
+			case "지옥구슬":
+				//0. 카드 뒷면 결정, 개봉 충격파
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back2.png)";
+				blast(num, document.getElementById("card" + num.toString()).offsetLeft, document.getElementById("card" + num.toString()).offsetTop);
+				
+				//_show_display.innerHTML += "<img src = '" + images + "3_지옥구슬.png' alt='구슬' />";//하단 : 다음 마이피 버전
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='unique'>" + areaList[input[0]] + " 지옥 구슬</span>";
+				document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057033.jpg";
+				
+				break;
+		//5. 고유 에픽
+			case "고유에픽":
+				//0. 카드 뒷면 결정, 개봉 충격파
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back2.png)";
+				blast(num, document.getElementById("card" + num.toString()).offsetLeft, document.getElementById("card" + num.toString()).offsetTop);
+				
+				//미리 구축된 현재지역 고유에픽 리스트(currentList_goyu)에서 랜덤으로 선정
+				temp = currentList_goyu[Math.floor(Math.random() * currentList_goyu.length)];
+				//이름 출력
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='epic'>" + temp[4] + "</span>";
+				//아이콘 결정 & 출력
+					//1. 이름으로 검색
+					if (icon[0].indexOf(temp[7]) != -1) {
+						document.getElementById("card" + num.toString() + "_img").src = images + "1_" + temp[7] + ".png";
+					//2. 장비 종류로 검색 (무기 : 3차 분류 / 나머지 : 2차 분류)
+					} else if (icon[1].indexOf(temp[1]) != -1 || icon[1].indexOf(temp[2]) != -1 ) {
+						//2-1. 무기
+						if (temp[0] == "방어구") {
+							document.getElementById("card" + num.toString() + "_img").src = images + "2_" + temp[1] + ".png";
+						//2-2. 방어구, 장신구, 특수장비
+						} else {
+							document.getElementById("card" + num.toString() + "_img").src = images + "2_" + temp[2] + ".png";
+						}
+					//3. 그냥 '에픽' 아이콘 사용
+					} else {
+						//_show_display.innerHTML += "<img src='" + images + "3_에픽.png'>";//하단 : 다음 마이피 버전
+							document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057032.jpg";
+					}
+				//'이번에 드랍한 아이템'에 이름 기록
+				thisTime.push(temp);
+				
+				break;
+		//6. 에픽
+			case "에픽":
+				//0. 카드 뒷면 결정, 개봉 충격파
+				document.getElementById("card" + num.toString() + "_back").style.backgroundImage = "url(" + images + "card_back2.png)";
+				blast(num, document.getElementById("card" + num.toString()).offsetLeft, document.getElementById("card" + num.toString()).offsetTop);
+				
+				//1. 특정 종류&레벨의 아이템 리스트 구축
+				tempArr = [];
+				for (j=0;j<currentList.length;j++) {
+					if ((currentList[j][0] == input[4]/*종류-무기*/
+					|| currentList[j][1] == input[4]/*종류-방어구*/
+					|| currentList[j][2] == input[4])/*종류-악세서리&특수장비*/
+					&& currentList[j][3] == input[5])/*레벨*/ {
+						tempArr.push(currentList[j]);
+					}
+				}
+				//미리 리스트에서 랜덤으로 선정
+				temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+				//이름 출력
+				document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='epic'>" + temp[4] + "</span>";
+				//아이콘 결정 & 출력
+					//1. 이름으로 검색
+					if (icon[0].indexOf(temp[7]) != -1) {
+						document.getElementById("card" + num.toString() + "_img").src = images + "1_" + temp[7] + ".png";
+					//2. 장비 종류로 검색 (무기 : 3차 분류 / 나머지 : 2차 분류)
+					} else if (icon[1].indexOf(temp[1]) != -1 || icon[1].indexOf(temp[2]) != -1 ) {
+						//2-1. 무기
+						if (temp[0] == "방어구") {
+							document.getElementById("card" + num.toString() + "_img").src = images + "2_" + temp[1] + ".png";
+						//2-2. 방어구, 장신구, 특수장비
+						} else {
+							document.getElementById("card" + num.toString() + "_img").src = images + "2_" + temp[2] + ".png";
+						}
+					//3. 그냥 '에픽' 아이콘 사용
+					} else {
+						//_show_display.innerHTML += "<img src='" + images + "3_에픽.png'>";//하단 : 다음 마이피 버전
+							document.getElementById("card" + num.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057032.jpg";
+					}
+				//'이번에 드랍한 아이템'에 이름 기록
+				thisTime.push(temp);
+				
+				break;
+		}
+	}		
+	
+	//충격파 설정
+	function blast(num, posX, posY) {
+		//충격파 div 생성
+		var blaster = document.createElement("div");
+		blaster.style.position = "absolute";
+		blaster.style.left = (posX - 114).toString() + "px";
+		blaster.style.top = (posY - 84).toString() + "px";
+		blaster.style.zIndex = "2";
+		blaster.style.width = "350px";
+		blaster.style.height = "350px";
+		
+		blaster.style.backgroundImage = "url(./images/hell/card_blast.png)";
+		
+		blaster.style.pointerEvents = "none";
+		
+		//충격파 div 이식
+		document.getElementById("wrapper").appendChild(blaster);
+		
+		//충격파 실행
+		animation(blaster,350,4550);
+	}
+	
+	//충격파 실행
+	function animation(target,frameWidth,now) {
+		if (now > 0) {
+			autoBlast = setTimeout(function() {
+				target.style.backgroundPosition = (now - frameWidth).toString() + "px 0px";
+				animation(target,frameWidth,now - frameWidth);
+			}, 40);
+		} else {
+			target.parentElement.removeChild(target);
+		}
+	}
+	
+	//흘러가는 뒷배경
+	function backAni(target,frameWidth,now,limit) {
+		if (now > limit) {
+			autoBlast2 = setTimeout(function() {
+				target.style.backgroundPosition = (now - frameWidth).toString() + "px 0px";
+				backAni(target,frameWidth,now - frameWidth,limit);
+			}, 30);
+		} else {
+			autoBlast2 = setTimeout(function() {
+				target.style.backgroundPosition = "0px 0px";
+				backAni(target,frameWidth,0,limit);
+			}, 30);
+		}
+	}
+	
+	var round = 1;
+	
+	//=================================================================================================================
+	//※ 실행
+	//=================================================================================================================
+	window.onload = function() {
+		//선작업 : 일부 아이템리스트 세팅
+		for (i=0;i<itemList.length;i++) {
+			//고유 에픽
+			if (itemList[i][6] != "") {
+				goyuList.push(itemList[i]);
+			}
+		}
+		
+		//선로딩 : 이미지
+		//1단계 : 아이템 이미지 추가
+		for (i=0;i<itemList.length;i++) {
+			if (itemList[i][7] != "") {//아이콘 이름이 있다면
+				icon[0].push(itemList[i][7]);//"아이콘 이름"을 불러올 대상으로 추가
+				imageList.push(images + "1_" + itemList[i][7] + ".png")//이미지 선로딩 대상에 추가
+			}
+		}
+		//※ 일부 이미지는 다음 마이피에서 가져옴 - 트래픽 초과 방지
+		//1-1단계 : 코스모소울, 지옥구슬 추가
+		//imageList.push(images + "3_코스모소울.png");
+		//imageList.push(images + "3_지옥구슬.png");
+		imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057034.jpg");//코스모소울 - 다음 마이피
+		imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057033.jpg");//지옥구슬 - 다음 마이피
+		
+		
+		//2단계 : 부위 이미지 추가 (equipList 참고)
+		for (i=0;i<equipList.length;i++) {
+			icon[1].push(equipList[i]);
+			imageList.push(images + "2_" + equipList[i] + ".png");
+		}
+		
+		//3단계 : 등급 이미지 추가 (gradeList 참고)
+		/*
+		for (i=0;i<gradeList.length;i++) {
+			icon[2].push(gradeList[i]);
+			imageList.push(images + "3_" + gradeList[i] + ".png");
+		}
+		*/
+		imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057031.jpg");//언커먼 - 다음 마이피
+		imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057020.jpg");//마봉 - 다음 마이피
+		imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057032.jpg");//에픽 - 다음 마이피
+		
+		//4단계 : 기타 이미지 추가
+		imageList.push(images + "card_background.png");//뒷배경
+		imageList.push(images + "card_front.png");//앞면
+		imageList.push(images + "card_back1.png");//뒷면 1
+		imageList.push(images + "card_back2.png");//뒷면 2
+		imageList.push(images + "card_blast.png");//개봉 충격파
+		
+		//5단게 : 이미지 선로딩 실시
+		loadImages(imageList,function(){
+			//=================================================================================================================
+			//※ 선로딩 끝, 본격적 실행 시작
+			//=================================================================================================================
+			//1. 선로딩 잔재 제거 (cover 제거)
+			_cover.style.display = "none";
+			
+			//2.던전 선택
+			input[0] = 4;//그란디네
+			
+			//(실행 전) 에픽 드랍 리스트 구축
+			//1. 현재 지역 고유 에픽 리스트
+			currentList_goyu = [];
+			for (i=0;i<goyuList.length;i++) {
+				if (goyuList[i][6] == areaList[input[0]]) {//지역명 일치 시
+					currentList_goyu.push(goyuList[i]);
+				}
+			}
+			//2. (고유 에픽을 제외한) '레벨대'별 에픽 리스트
+			currentList = [];
+			for (i=0;i<itemList.length;i++) {
+				if (levelList[input[0]].indexOf(itemList[i][3]) != -1
+				&& itemList[i][4] != ""
+				&& itemList[i][6] == "") {//드랍 레벨이 맞으면 & 명칭이 공백이 아니면 &고유 에픽이 아니면
+					currentList.push(itemList[i]);
+				}
+			}
+			
+			//흘러가는 뒷배경
+			backAni(document.getElementById("wrapper"),1,0,-768);
+			
+			for (i=1;i<=10;i++) {
+				document.getElementById("card" + i.toString()).onclick = (function(i) {
+					return function() {
+						if (document.getElementById("card" + i.toString()).className.indexOf("flipped") == -1) {
+							//카드 뒤집은 횟수 증가
+							count += 1;
+							
+							document.getElementById("card" + i.toString()).className += " flipped";
+							
+							//아이템 등장
+							getItem(i);
+								
+							//카드 뒤집힌 횟수가 10 초과 시
+							if (count >= 10) {
+								document.getElementById("smart").value = "다시 개봉하기 (카드 내용이 바뀝니다)";
+								document.getElementById("smart").style.fontSize = "20px";
+							}
+							
+						}
+
+					};
+				})(i);
+			};
+			
+			
+			document.getElementById("smart").onclick = function() {
+				//카드 뒤집힌 횟수가 10 미만일 시
+				if (count < 10) {
+					for (i=1;i<=10;i++) {
+						if (document.getElementById("card" + i.toString()).className.indexOf("flipped") == -1) {
+							//카드 뒤집은 횟수 증가
+							count += 1;
+							
+							document.getElementById("card" + i.toString()).className += " flipped";
+							
+							//아이템 등장
+							getItem(i);
+								
+							
+							if (count >= 10) {
+							};
+						};
+					};
+					document.getElementById("smart").value = "다시 개봉하기 (카드 내용이 바뀝니다)";
+					document.getElementById("smart").style.fontSize = "20px";
+				//카드 뒤집힌 횟수가 10 초과 시
+				} else {
+					document.getElementById("smart").value = "한 번에 열기";
+					document.getElementById("smart").style.fontSize = "30px";
+					count = 0;
+					for (j=1;j<=10;j++) {
+						removeClass(document.getElementById("card" + j.toString()),"flipped");
+					};
+					round += 1;
+					document.getElementById("round").innerHTML = thousand(round) + " 회차";
+				};
+			};
+			
+			
+			
+		});
+	}
+	
+	</script>
+
+</body>
+</html>
