@@ -402,6 +402,9 @@ body {
 		margin:4px 0px 0px 0px;
 		border-top:1px gray solid;
 	}
+	#cost p.gold {
+		line-height:160%;
+	}
 
 #record {
 	overflow-y:scroll;
