@@ -4,6 +4,7 @@
 	
 	font-size:13px;
 	font-family:Arial;
+	line-height:120%;
 }
 
 /*컬러링*/
@@ -141,7 +142,7 @@ span {
 		font-weight:bold;
 		white-space:pre-line;
 		
-		display:block;
+		display:none;
 	}
 		#clear:active {
 			background: #FFAA00;
@@ -525,6 +526,8 @@ span {
 		}
 				#right_buttons input#shift2, #right_buttons input#shift3 {
 					font-size:14px;
+					
+					display:none;
 				}
 			#right_buttons input:active {
 				background:#DEDEDE;
@@ -551,8 +554,9 @@ span {
 		background-color:gray;
 		border:1px black solid;
 		box-sizing: border-box;
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
+		-webkit-box-sizing: hidden;
+		
+		display:none;
 	}
 		#gamble_img {
 			float:left;
@@ -623,6 +627,8 @@ span {
 		font-size:16px;
 		font-weight:bold;
 		text-align:right;
+				
+				display:none;
 	}
 	#gamble_open {
 		float:left;
@@ -641,6 +647,8 @@ span {
 		font-weight:bold;
 		
 		display:inline-block;
+				
+				display:none;
 	}
 		#gamble_open:active {
 			background:#DEDEDE;
