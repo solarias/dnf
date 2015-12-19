@@ -368,6 +368,29 @@ function generateCraft() {
 //=================================================================================================================
 //※ 함수 - 선택 & 실행
 //=================================================================================================================
+//날짜 계산
+function setDate() {
+	var arr = dateSettingList;
+	//a. 날짜 계산
+	if ($round_count.innerHTML == "0") {
+		var tempDate = 0;
+	} else {
+		var tempDate = Math.ceil(count / (Math.ceil(arr[0] / arr[1]) + Math.ceil(arr[2] / arr[1]) + Math.ceil(arr[3] / arr[1]) + Math.ceil(arr[4] / arr[1]) + Math.ceil(arr[5] / arr[1]) + Math.ceil(arr[6] / arr[1])));
+	}
+	//b. 날짜 출력
+	$date_count.innerHTML = thousand(tempDate);
+	//c. 날짜 "요약" 출력
+	//c-1. 1년 이상
+	if (tempDate >= 365) {
+		var tempDate2 = Math.floor(tempDate / 365).toString() + "년 " + Math.min(11,Math.floor((tempDate % 365) / 30)).toString() + "개월";
+	} else {
+		var tempDate2 = Math.min(11,Math.floor(tempDate / 30)).toString() + "개월";
+	}
+	//c-2. 1년 미만 (단, 12 미만 유지)
+	
+	$date_summary_num.innerHTML = "약 " + tempDate2;
+}
+
 //던전 선택
 function dungeon_select() {
 	//1. 변수 조절
@@ -486,6 +509,8 @@ function simulate(num){
 	//* 회차 표기
 	//=================================
 	$round_count.innerHTML = thousand(count);
+		//회차에 따른 날짜 표시
+		setDate();
 	
 	//=================================
 	//* 현재 회차 진행

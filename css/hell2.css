@@ -65,7 +65,7 @@
 /* ※ A. 전체 */
 /*======================================================================================================*/
 body {
-	background-color:#FFFFCC;
+	background-color:#606060;
 }
 	p, span {
 		font-size:inherit;
@@ -1757,30 +1757,23 @@ body {
 /*======================================================================================================*/
 /* ※ 4. 기타 */
 /*======================================================================================================*/
-#frame_chat {
-	position:absolute;
-	top:0px;
-	left:925px;
-	
-	width:250px;
-	height:600px;
-}
 #cover {
-    position:absolute;
+    position:fixed;
 	top:0px;
 	left:0px;
 	z-index:100;
 	
-    margin:0;
+	margin:0px;
     padding:30px;
-	width:925px;
-	height:600px;
+	width:100%;
+	height:100%;
 	
-	background-color:#FFFFCC;
+	background-color:#303030;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	
+	color:white;
 	font-weight:bold;
 }
 	#cover p {
@@ -1790,7 +1783,7 @@ body {
 		font-size:50px;
 	}
 	#cover p a {
-		color:blue;
+		color:red;
 		font-size:20px;
 		font-weight:bold;
 		text-decoration:underline;
@@ -1803,7 +1796,7 @@ body {
 		margin-bottom:20px;
 		width:620px;
 		
-		border:1px black solid;
+		border:1px white solid;
 		
 		text-align:left;
 	}
@@ -1837,3 +1830,47 @@ body {
 ::-webkit-scrollbar-track {
     background-color: #ffffff; 
 }
+
+
+/*관련 사이트 기능*/
+#frame_etc {
+	position:absolute;
+	top:0px;
+	left:925px;
+	
+	width:250px;
+	height:600px;
+}
+	#frame_etc_link {
+		padding:5px;
+		width:100%;
+		height:55px;
+		
+		background-image:url('../images/epic/wrap_title.png');
+		background-size:100% 100%;
+		
+		border:1px gray outset;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+		#frame_etc_link p {
+			color:white;
+			font-weight:bold;
+			text-align:center;
+			
+			font-size:16px;
+		}
+		#frame_etc_link_list {
+			width:100%;
+			
+			border:1px gray solid;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:16px;
+		}
+			#frame_etc_link_list option {
+				font-size:13px;
+			}

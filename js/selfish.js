@@ -3,7 +3,7 @@ var i, temp; //임시
 var auto; //자동실행
 var count = 1;
 
-var	images = "./images/";
+var	images = "./images/selfish/";
 var imageList = []; //이미지 선로딩용 임시저장소
 
 //변수 - DOM 지정
@@ -34,10 +34,6 @@ var list_selfish = [
 
 var count_selfish = [];//누적용
 
-//사운드
-var sound = 0;//1이 되면 사운드 출력
-var sound_open;
-var sound_get;
 
 //함수 (퍼온 거)
 					function loadImages(arr,callBack){ // 이미지 불러오기
@@ -78,11 +74,6 @@ var sound_get;
 
 //함수
 function generate(num) {
-	//사운드 출력
-	if (sound == 1) {
-		sound_open.play();
-	}
-	
 	show_text.style.color = "black";
 	show_text.innerHTML = "항아리 개봉 중...";
 	show_img.src = images + "hang1.gif";
@@ -119,13 +110,6 @@ function generate(num) {
 			show_right.style.backgroundColor = "black";
 			show_text.style.color = "#E5B64A";
 			
-			//사운드 출력
-			if (sound == 1) {
-				sound_open.pause();
-				sound_open.currentTime = 0;
-				sound_get.play();
-			}
-			
 			//대상 선정
 			temp = Math.floor(Math.random() * list_selfish.length);
 			
@@ -152,12 +136,6 @@ function generate(num) {
 function onoff(num) {
 	switch (num) {
 		case 0:
-			//사운드 중단
-			if (sound == 1) {
-				sound_open.pause();
-				sound_open.currentTime = 0;
-			}
-			
 			open1.value="1회 개봉";
 			open2.value="연속 개봉";
 			open1.disabled="";
@@ -192,7 +170,6 @@ function reset(num) {
 	show_text.innerHTML = "";
 	
 	if (num == 1) {
-		
 		count = 1;
 		record.innerHTML = "";
 		//누적용 배열 "재"준비
@@ -209,15 +186,7 @@ function reset(num) {
 
 //실행
 window.onload = function() {
-	//사운드 선로딩
-	try {
-		sound = 1;
-		
-		sound_open = new Audio("./sound/open.mp3");
-		sound_open.volume = 0.5;
-		sound_get = new Audio("./sound/get.mp3");
-	} catch(e) {}
-	//이미지 선로딩
+	//선로딩
 	for (i=0;i<list_selfish.length;i++) {
 		imageList.push(images + list_selfish[i][1] + ".png");
 	}
@@ -268,4 +237,22 @@ window.onload = function() {
 		};
 	});
 	
+}
+
+
+//===============================
+//※ 급조 - 관련 사이트 기능
+//===============================
+var linkDrop = document.getElementById("frame_etc_link_list");
+linkDrop.selectedIndex = 0;
+
+document.getElementById("frame_etc_link_list").onchange = function() {
+	if (linkDrop.value != "") {
+		var yesno = confirm("※ 주의 : 해당 사이트로 이동하면 현재 진행된 기록은 모두 지워집니다.\n그래도 이동하시겠습니까?");
+		if (yesno) {
+			window.location.href = linkDrop.value;
+		} else {
+			linkDrop.selectedIndex = 0;
+		}
+	}
 }
