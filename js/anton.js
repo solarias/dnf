@@ -667,21 +667,3 @@ window.onload = function() {
 	});
 	
 }
-
-
-//===============================
-//※ 급조 - 관련 사이트 기능
-//===============================
-var linkDrop = document.getElementById("frame_etc_link_list");
-linkDrop.selectedIndex = 0;
-
-document.getElementById("frame_etc_link_list").onchange = function() {
-	if (linkDrop.value != "") {
-		var yesno = confirm("※ 주의 : 해당 사이트로 이동하면 현재 진행된 기록은 모두 지워집니다.\n그래도 이동하시겠습니까?");
-		if (yesno) {
-			window.location.href = linkDrop.value;
-		} else {
-			linkDrop.selectedIndex = 0;
-		}
-	}
-}

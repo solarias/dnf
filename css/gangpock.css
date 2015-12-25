@@ -593,15 +593,13 @@ body {
 /* ※ 6. 기타 */
 /*======================================================================================================*/
 #cover {
-    position:fixed;
-	top:0px;
+	position:absolute;
 	left:0px;
-	z-index:100;
-	
-	margin:0px;
-    padding:30px;
-	width:100%;
-	height:100%;
+	top:0px;
+	z-index:10;
+	padding:50px;
+	width:550px;
+	height:800px;
 	
 	background-color:#FFFFCC;
 	
@@ -641,47 +639,3 @@ body {
 ::-webkit-scrollbar-track {
     background-color: #ffffff; 
 }
-
-
-/*관련 사이트 기능*/
-#frame_etc {
-	position:absolute;
-	top:10px;
-	left:647px;
-	
-	width:250px;
-	height:622px;
-}
-	#frame_etc_link {
-		padding:5px;
-		width:100%;
-		height:55px;
-		
-		background-image:url('../images/epic/wrap_title.png');
-		background-size:100% 100%;
-		
-		border:1px gray outset;
-		-moz-box-sizing:border-box;
-		-webkit-box-sizing:border-box;
-		box-sizing:border-box;
-	}
-		#frame_etc_link p {
-			color:white;
-			font-weight:bold;
-			text-align:center;
-			
-			font-size:16px;
-		}
-		#frame_etc_link_list {
-			width:100%;
-			
-			border:1px gray solid;
-			-moz-box-sizing:border-box;
-			-webkit-box-sizing:border-box;
-			box-sizing:border-box;
-			
-			font-size:16px;
-		}
-			#frame_etc_link_list option {
-				font-size:13px;
-			}
