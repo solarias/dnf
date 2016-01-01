@@ -40,15 +40,17 @@
 			}
 			
 			body {
-				background-color:#FFFFCC;
+				background-color:#606060;
 			}
 			
 			#wrapper {
 				padding:5px;
+				margin:0px auto;
 				width:400px;
-				height:523px;
+				height:649px;
 				
 				background:brown;
+				border:1px black solid;
 				
 				color:white;
 				font-weight:bold;
@@ -72,17 +74,24 @@
 			#frame_right {
 				float:right;
 			}
-			#frame_botton {
+			#frame_bottom {
 				clear:both;
 			}
 				select, input {
 					width:190px;
 					height:21px;
 				}
+				input#input_year {
+					padding:2px 5px;
+					width:160px;
+					height:17px;
+					
+					text-align:right;
+				}
 				input[type="button"] {
 					margin-top:2px;
 					width:135px;
-					height:71px;
+					height:96px;
 					
 					background: #FFFFFF; /* default */
 					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
@@ -124,6 +133,9 @@
 					table tr td.short {
 						width:100px;
 					}
+					table tr td.row2 {
+						height:42px;
+					}
 					table tr td.empty {
 						height:10px;
 						
@@ -134,7 +146,7 @@
 	<body>
 		<div id="wrapper">
 			<p class="top">
-				던파 캐릭터 사주 Ver. 1.01
+				던파 캐릭터 사주 Ver. 1.10
 			</p>
 			<hr />
 			<div id="frame_left">
@@ -224,17 +236,26 @@
 							<option value='elvenknight'>엘븐나이트</option>
 							<option value='chaos'>카오스</option>
 						</optgroup>
+						<optgroup label="마창사">
+							<option value='duelist'>듀얼리스트</option>
+							<option value='vanguard'>뱅가드</option>
+						</optgroup>
 						<optgroup label="외전 캐릭터">
 							<option value='darkknight'>다트나이트</option>
 							<option value='creator'>크리에이터</option>
 						</optgroup>
 					</select>
 				</p>
+				<p>
+					연　도 : 
+					<input id="input_year" type="text" value="2016" />
+					년
+				</p>
 			</div>
 			<div id="frame_right">
 				<input id="start" type="button" value="사주 보기" />
 			</div>
-			<div id="frame_botton">
+			<div id="frame_bottom">
 				<hr />
 				<table cellspacing="0">
 					<tr class="black_back">
@@ -286,13 +307,13 @@
 						<td class="short">리버 합성</td>
 						<td class="short">가브리엘</td>
 						<td class="short"></td>
-						<td class="short"></td>
+						<td class="short">이벤트</td>
 					</tr>
 					<tr class="gray_back">
 						<td id="result_30" class="short">0%</td>
 						<td id="result_31" class="short">0%</td>
 						<td class="short"></td>
-						<td class="short"></td>
+						<td id="result_32" class="short">0%</td>
 					</tr>
 					<tr>
 						<td class="empty" colspan="4"></td>
@@ -316,6 +337,20 @@
 						<td class="empty" colspan="4"></td>
 					</tr>
 					<tr class="black_back">
+						<td colspan="4">궁합 적합성</td>
+					</tr>
+					<tr class="black_back">
+						<td class="short" colspan="2">궁합이 좋은 NPC</td>
+						<td class="short" colspan="2">궁합이 좋은 채널</td>
+					</tr>
+					<tr class="gray_back">
+						<td id="result_50" class="short row2" colspan="2">????</td>
+						<td id="result_51" class="short row2" colspan="2">????</td>
+					</tr>
+					<tr>
+						<td class="empty" colspan="4"></td>
+					</tr>
+					<tr class="black_back">
 						<td colspan="4">밸런싱 적합성</td>
 					</tr>
 					<tr class="black_back">
@@ -323,8 +358,8 @@
 						<td class="medium" colspan="2">캐릭터 하향</td>
 					</tr>
 					<tr class="gray_back">
-						<td id="result_50" class="medium" colspan="2">0%</td>
-						<td id="result_51" class="medium" colspan="2">0%</td>
+						<td id="result_60" class="medium" colspan="2">0%</td>
+						<td id="result_61" class="medium" colspan="2">0%</td>
 					</tr>
 				</table>
 			</div>
@@ -336,7 +371,54 @@
 			var $server = document.getElementById("input_server");
 			var $nickname = document.getElementById("input_nickname");
 			var $job = document.getElementById("input_job");
+			var $year = document.getElementById("input_year");
 			var $start = document.getElementById("start");
+			
+			//궁합 - NPC
+			var A_npcList = [
+				"세리아 키르민","청색의 수호자 비탈라","연금술사 모건",
+				"시궁창 공주 패리스","슈시아","싸움개 로엘","알베르트 번스타인",
+				"샤일록 고블린드","스카디 여왕","메이아 여왕","장로 사프론",
+				"클론터","키리 더 레이디","그란디스 그라시아","아이리스 포춘싱어",
+				"조안 페레로","초붕","오란 할머니","칸나","아벨로","게시판",
+				"버켄","로저 레빈","다프네 마브로","시모나","마를렌 키츠카",
+				"단진","하츠 폰 크루거","아니스 바인스타이","GSD","풍진",
+				"샤란","미네트","나이트 로바토","오필리아 베이그란스","이사도라",
+				"돌격대장 반젤리스","카곤","신다","라이너스","브왕가",
+				"아간조","민타이","미쉘 모나헌","발레나","멜빈 리히터",
+				"모래바람의 베릭트","젤딘 슈나이더","황녀 에르제","반 발슈테트","베른 보네거트",
+				"초롱이","쇼난 아스카","시란","우","준","하루(결투장)",
+				"시즈키","백명","구룡",
+				"리아 리히터","마티어스 네스만","중장 니베르","페럴 웨인",
+				"하이람 클라프","잭터 이글아이","운 라이오닐","나엔 시거",
+				"네빌로 유르겐","메릴 파이오니어","헌터 폰","제 3 황녀 이자벨라","하츠 폰 크루거",
+				"아젤리아 로트","사냥개 사이러스","로이 더 버닝펜","파란만장 에리카","다나 도나텔",
+				"캡틴 루터","신궁 루드밀라","나탈리아 수","로리안","카곤",
+				"민타이","오르카","로톤"
+			];
+			
+			//궁합 - 채널
+			var A_channelList = [//서버별 채널 리스트				
+				"[통합 채널]<br/>실버크라운 CH 1","[통합 채널]<br/>실버크라운 CH 2","[통합 채널]<br/>실버크라운 CH 3","[통합 채널]<br/>실버크라운 CH 4","[통합 채널]<br/>실버크라운 CH 5","[통합 채널]<br/>실버크라운 CH 6","[통합 채널]<br/>실버크라운 CH 7","[통합 채널]<br/>실버크라운 CH 8","[통합 채널]<br/>실버크라운 CH 9","[통합 채널]<br/>실버크라운 CH 10","[통합 채널]<br/>실버크라운 CH 11","[통합 채널]<br/>실버크라운 CH 12","[통합 채널]<br/>실버크라운 CH 13","[통합 채널]<br/>실버크라운 CH 14","[통합 채널]<br/>실버크라운 CH 15","[통합 채널]<br/>실버크라운 CH 16","[통합 채널]<br/>실버크라운 CH 17","[통합 채널]<br/>실버크라운 CH 18","[통합 채널]<br/>실버크라운 CH 19","[통합 채널]<br/>실버크라운 CH 20",
+				"[통합 채널]<br/>멜트다운 CH 1","[통합 채널]<br/>멜트다운 CH 2","[통합 채널]<br/>멜트다운 CH 3","[통합 채널]<br/>멜트다운 CH 4","[통합 채널]<br/>멜트다운 CH 5","[통합 채널]<br/>멜트다운 CH 6","[통합 채널]<br/>멜트다운 CH 7","[통합 채널]<br/>멜트다운 CH 8","[통합 채널]<br/>멜트다운 CH 9","[통합 채널]<br/>멜트다운 CH 10","[통합 채널]<br/>멜트다운 CH 11","[통합 채널]<br/>멜트다운 CH 12","[통합 채널]<br/>멜트다운 CH 13","[통합 채널]<br/>멜트다운 CH 14","[통합 채널]<br/>멜트다운 CH 15","[통합 채널]<br/>멜트다운 CH 16","[통합 채널]<br/>멜트다운 CH 17","[통합 채널]<br/>멜트다운 CH 18","[통합 채널]<br/>멜트다운 CH 19","[통합 채널]<br/>멜트다운 CH 20",
+				"[통합 채널]<br/>표류동굴 CH 1","[통합 채널]<br/>표류동굴 CH 2","[통합 채널]<br/>표류동굴 CH 3","[통합 채널]<br/>표류동굴 CH 4","[통합 채널]<br/>표류동굴 CH 5","[통합 채널]<br/>표류동굴 CH 6","[통합 채널]<br/>표류동굴 CH 7","[통합 채널]<br/>표류동굴 CH 8","[통합 채널]<br/>표류동굴 CH 9","[통합 채널]<br/>표류동굴 CH 10","[통합 채널]<br/>표류동굴 CH 11","[통합 채널]<br/>표류동굴 CH 12","[통합 채널]<br/>표류동굴 CH 13","[통합 채널]<br/>표류동굴 CH 14","[통합 채널]<br/>표류동굴 CH 15","[통합 채널]<br/>표류동굴 CH 16","[통합 채널]<br/>표류동굴 CH 17","[통합 채널]<br/>표류동굴 CH 18","[통합 채널]<br/>표류동굴 CH 19","[통합 채널]<br/>표류동굴 CH 20",
+				"[통합 채널]<br/>역천의 폭포 CH 1","[통합 채널]<br/>역천의 폭포 CH 2","[통합 채널]<br/>역천의 폭포 CH 3","[통합 채널]<br/>역천의 폭포 CH 4","[통합 채널]<br/>역천의 폭포 CH 5","[통합 채널]<br/>역천의 폭포 CH 6","[통합 채널]<br/>역천의 폭포 CH 7","[통합 채널]<br/>역천의 폭포 CH 8","[통합 채널]<br/>역천의 폭포 CH 9","[통합 채널]<br/>역천의 폭포 CH 10","[통합 채널]<br/>역천의 폭포 CH 11","[통합 채널]<br/>역천의 폭포 CH 12","[통합 채널]<br/>역천의 폭포 CH 13",
+				"[통합 채널]<br/>체념의 빙벽 CH 14","[통합 채널]<br/>체념의 빙벽 CH 15","[통합 채널]<br/>체념의 빙벽 CH 16","[통합 채널]<br/>체념의 빙벽 CH 17","[통합 채널]<br/>체념의 빙벽 CH 18","[통합 채널]<br/>체념의 빙벽 CH 19","[통합 채널]<br/>체념의 빙벽 CH 20","[통합 채널]<br/>체념의 빙벽 CH 21","[통합 채널]<br/>체념의 빙벽 CH 22","[통합 채널]<br/>체념의 빙벽 CH 23","[통합 채널]<br/>체념의 빙벽 CH 24","[통합 채널]<br/>체념의 빙벽 CH 25","[통합 채널]<br/>체념의 빙벽 CH 26",
+				"[통합 채널]<br/>안트베르 협곡 CH 1","[통합 채널]<br/>안트베르 협곡 CH 2","[통합 채널]<br/>안트베르 협곡 CH 3","[통합 채널]<br/>안트베르 협곡 CH 4","[통합 채널]<br/>안트베르 협곡 CH 5","[통합 채널]<br/>안트베르 협곡 CH 6","[통합 채널]<br/>안트베르 협곡 CH 7","[통합 채널]<br/>안트베르 협곡 CH 8","[통합 채널]<br/>안트베르 협곡 CH 9","[통합 채널]<br/>안트베르 협곡 CH 10",
+				"[통합 채널]<br/>해상열차 CH 1","[통합 채널]<br/>해상열차 CH 2","[통합 채널]<br/>해상열차 CH 3","[통합 채널]<br/>해상열차 CH 4","[통합 채널]<br/>해상열차 CH 5",
+				"[통합 채널]<br/>시간의 문 CH 11","[통합 채널]<br/>시간의 문 CH 12","[통합 채널]<br/>시간의 문 CH 13","[통합 채널]<br/>시간의 문 CH 14","[통합 채널]<br/>시간의 문 CH 15","[통합 채널]<br/>시간의 문 CH 16","[통합 채널]<br/>시간의 문 CH 17","[통합 채널]<br/>시간의 문 CH 18","[통합 채널]<br/>시간의 문 CH 19","[통합 채널]<br/>시간의 문 CH 20","[통합 채널]<br/>시간의 문 CH 21","[통합 채널]<br/>시간의 문 CH 22","[통합 채널]<br/>시간의 문 CH 23",
+				"[통합 채널]<br/>파워 스테이션 CH 1","[통합 채널]<br/>파워 스테이션 CH 2","[통합 채널]<br/>파워 스테이션 CH 3","[통합 채널]<br/>파워 스테이션 CH 4","[통합 채널]<br/>파워 스테이션 CH 5","[통합 채널]<br/>파워 스테이션 CH 6","[통합 채널]<br/>파워 스테이션 CH 7","[통합 채널]<br/>파워 스테이션 CH 8","[통합 채널]<br/>파워 스테이션 CH 9","[통합 채널]<br/>파워 스테이션 CH 10",
+				"[통합 채널]<br/>노블 스카이 CH 21","[통합 채널]<br/>노블 스카이 CH 22","[통합 채널]<br/>노블 스카이 CH 23","[통합 채널]<br/>노블 스카이 CH 24","[통합 채널]<br/>노블 스카이 CH 25",
+				"[통합 채널]<br/>죽은자의 성 CH 21","[통합 채널]<br/>죽은자의 성 CH 22","[통합 채널]<br/>죽은자의 성 CH 23","[통합 채널]<br/>죽은자의 성 CH 24","[통합 채널]<br/>죽은자의 성 CH 25",
+				"[통합 채널]<br/>(구)이계 던전 CH 1","[통합 채널]<br/>(구)이계 던전 CH 2","[통합 채널]<br/>(구)이계 던전 CH 3","[통합 채널]<br/>(구)이계 던전 CH 4","[통합 채널]<br/>(구)이계 던전 CH 5","[통합 채널]<br/>(구)이계 던전 CH 6","[통합 채널]<br/>(구)이계 던전 CH 7",
+				"[통합 채널]<br/>(신)이계 던전 CH 8","[통합 채널]<br/>(신)이계 던전 CH 9","[통합 채널]<br/>(신)이계 던전 CH 10","[통합 채널]<br/>(신)이계 던전 CH 11","[통합 채널]<br/>(신)이계 던전 CH 12","[통합 채널]<br/>(신)이계 던전 CH 13","[통합 채널]<br/>(신)이계 던전 CH 14","[통합 채널]<br/>(신)이계 던전 CH 15",
+				"[통합 채널]<br/>거래 - 경매장 CH 16","[통합 채널]<br/>거래 - 경매장 CH 17",
+				"[통합 채널]<br/>고대 던전 CH 16",
+				"[통합 채널]<br/>망자의 협곡 CH 21","[통합 채널]<br/>망자의 협곡 CH 22","[통합 채널]<br/>망자의 협곡 CH 23","[통합 채널]<br/>망자의 협곡 CH 24","[통합 채널]<br/>망자의 협곡 CH 25",
+				"[통합 채널]<br/>차원의 균열 CH 11","[통합 채널]<br/>차원의 균열 CH 12","[통합 채널]<br/>차원의 균열 CH 13","[통합 채널]<br/>차원의 균열 CH 14","[통합 채널]<br/>차원의 균열 CH 15","[통합 채널]<br/>차원의 균열 CH 16","[통합 채널]<br/>차원의 균열 CH 17","[통합 채널]<br/>차원의 균열 CH 18","[통합 채널]<br/>차원의 균열 CH 19","[통합 채널]<br/>차원의 균열 CH 20",
+				"[일반 채널]<br/>거래 - 경매장",
+				"[일반 채널]<br/>일반채널 (첫번째)","[일반 채널]<br/>일반채널 (두번째)"
+			];
 			
 			var list = [
 				"result_00",
@@ -353,12 +435,13 @@
 				"result_23",
 				"result_30",
 				"result_31",
+				"result_32",
 				"result_40",
 				"result_41",
 				"result_42",
 				"result_43",
-				"result_50",
-				"result_51"
+				"result_60",
+				"result_61"
 			]
 			window.onload = function() {
 				$server.onchange = function() {
@@ -371,7 +454,6 @@
 				
 				$start.onclick = function() {
 					if ($server.value == "") {
-						alert($server.value);
 						alert("※ 경고 : 서버를 선택하지 않았습니다.");
 						return;
 					} else if ($nickname.value == "") {
@@ -380,12 +462,15 @@
 					} else if ($job.value == "") {
 						alert("※ 경고 : 직업을 선택하지 않았습니다.");
 						return;
+					} else if ($year.value == "") {
+						alert("※ 경고 : 연도를 입력하지 않았습니다.");
+						return;
 					} else {
 						//시드 입력
-						var input = $server.value + $nickname.value + $job.value;
+						var input = $server.value + $nickname.value + $job.value + $year.value;
 						Math.seedrandom(input);
 						
-						//결과값 산출
+						//결과값 산출 (수치)
 						for (var i=0;i<list.length;i++) {
 							var output = Math.floor(Math.random() * 1001)/10;
 							if (output > 80) {
@@ -396,6 +481,12 @@
 								document.getElementById(list[i]).innerHTML = "<span class='orange'>" + output.toString() + "%</span>";
 							}
 						}
+						
+						//결과값 산출 (단어)
+						//NPC
+						document.getElementById("result_50").innerHTML = A_npcList[Math.floor(Math.random() * A_npcList.length)];
+						//채널
+						document.getElementById("result_51").innerHTML = A_channelList[Math.floor(Math.random() * A_channelList.length)];
 					}
 				}
 			}
