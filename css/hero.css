@@ -297,13 +297,17 @@ body {
 			color:white;
 			font-size:12px;
 		}
-		.flipcard img {
+		.card_image {/*구 : .flipcard img*/
 			position:absolute;
 			
-			bottom:37px;
-			left:30px;
+			bottom:38px;
+			left:32px;
 			
-			width:60px;
+			width:56px;
+			height:56px;
+			
+			background-image:url('../sprite/images/sprite_hell.png');
+			background-position:0px 0px;
 			
 			display:block;
 		}

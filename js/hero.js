@@ -273,8 +273,9 @@ function cardAni(num,target) {
 					card_detail.id = "card" + (target).toString() + "_detail";
 					card_detail.className = "detail";
 					document.getElementById("card" + (target).toString() + "_back").appendChild(card_detail);
-					var card_img = document.createElement("img");
+					var card_img = document.createElement("div");
 					card_img.id = "card" + (target).toString() + "_img";
+					card_img.className = "card_image";
 					document.getElementById("card" + (target).toString() + "_back").appendChild(card_img);
 			
 			//카드 배치
@@ -413,23 +414,7 @@ function getItem() {
 		document.getElementById("card" + count.toString() + "_text").innerHTML = temp[4] + " <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
 		
 		//아이콘 결정 & 출력
-			//1. 이름으로 검색
-			if (icon[0].indexOf(temp[7]) != -1) {
-				document.getElementById("card" + count.toString() + "_img").src = images + "1_" + temp[7] + ".png";
-			//2. 장비 종류로 검색 (무기 : 3차 분류 / 나머지 : 2차 분류)
-			} else if (icon[1].indexOf(temp[1]) != -1 || icon[1].indexOf(temp[2]) != -1 ) {
-				//2-1. 무기
-				if (temp[0] == "방어구") {
-					document.getElementById("card" + count.toString() + "_img").src = images + "2_" + temp[1] + ".png";
-				//2-2. 방어구, 장신구, 특수장비
-				} else {
-					document.getElementById("card" + count.toString() + "_img").src = images + "2_" + temp[2] + ".png";
-				}
-			//3. 그냥 '에픽' 아이콘 사용
-			} else {
-				//_show_display.innerHTML += "<img src='" + images + "3_에픽.png'>";//하단 : 다음 마이피 버전
-					document.getElementById("card" + count.toString() + "_img").src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057032.jpg";
-			}
+		document.getElementById("card" + count.toString() + "_img").style.backgroundPosition = spritePosition(temp[7]);
 		
 		//세부 사항 출력
 		document.getElementById("card" + count.toString() + "_detail").innerHTML = "[" + temp[2] + "/" + temp[3].toString() + "제]";
@@ -485,39 +470,10 @@ window.onload = function() {
 	};
 	
 	//선로딩 : 이미지
-	//1단계 : 아이템 이미지 추가
-	for (i=0;i<itemList.length;i++) {
-		if (itemList[i][7] != "") {//아이콘 이름이 있다면
-			icon[0].push(itemList[i][7]);//"아이콘 이름"을 불러올 대상으로 추가
-			imageList.push(images + "1_" + itemList[i][7] + ".png")//이미지 선로딩 대상에 추가
-		}
-	}
-	//※ 일부 이미지는 다음 마이피에서 가져옴 - 트래픽 초과 방지
-	//1-1단계 : 코스모소울, 지옥구슬 추가
-	//imageList.push(images + "3_코스모소울.png");
-	//imageList.push(images + "3_지옥구슬.png");
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057034.jpg");//코스모소울 - 다음 마이피
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057033.jpg");//지옥구슬 - 다음 마이피
+	//1단계 : 아이템 이미지 스프라이트 추가(sprite_hell)
+	imageList.push('./sprite/images/sprite_hell.png');
 	
-	
-	//2단계 : 부위 이미지 추가 (equipList 참고)
-	for (i=0;i<equipList.length;i++) {
-		icon[1].push(equipList[i]);
-		imageList.push(images + "2_" + equipList[i] + ".png");
-	}
-	
-	//3단계 : 등급 이미지 추가 (gradeList 참고)
-	/*
-	for (i=0;i<gradeList.length;i++) {
-		icon[2].push(gradeList[i]);
-		imageList.push(images + "3_" + gradeList[i] + ".png");
-	}
-	*/
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057031.jpg");//언커먼 - 다음 마이피
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057020.jpg");//마봉 - 다음 마이피
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/4/o/3771057032.jpg");//에픽 - 다음 마이피
-	
-	//4단계 : 기타 이미지 추가
+	//2단계 : 기타 이미지 추가
 	imageList.push(images + "pot.png");//상단 항아리
 	imageList.push(images + "main_background.png");//메인 배경
 	imageList.push(images + "record_background.png");//기록 배경

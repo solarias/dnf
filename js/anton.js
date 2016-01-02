@@ -553,7 +553,7 @@ window.onload = function() {
 	
 	//선로딩 : 이미지
 	//1단계 : 스프아이트 이미지 추가 (일반 에픽은 여길 참고)
-	imageList.push("./sprite/images/sprite_anton.png");
+	imageList.push("./sprite/images/sprite_hell.png");
 	
 	//2단계 : 안톤 관련 이미지 추가 (인벤토리/상점 전용)
 	for (i=0;i<antonList.length;i++) {
