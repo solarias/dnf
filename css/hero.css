@@ -428,6 +428,9 @@ body {
 		.flipcard.No7 .front {
 			background-image:url(../images/hell/card_front_7.png);
 		}
+		.flipcard.No8 .front {
+			background-image:url(../images/hell/card_front_8.png);
+		}
 	
 	.flipcard .back
 	{

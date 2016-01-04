@@ -67,6 +67,7 @@ var chanceList_num = [
 	[33, 33, 12, 15, 7],//마법사(각 레벨 별)
 	[33, 33, 12, 15, 7],//프리스트(각 레벨 별)
 	[33, 33, 12, 15, 7],//도적(각 레벨 별)
+	[33, 33, 12, 15, 7],//마창사(각 레벨 별)
 	[33, 45, 22],//보조장비(60&65 / 70&75 / 80&85)
 	[50, 50]//마법석(65 / 75&85)
 ];
@@ -78,6 +79,7 @@ var chanceList_name = [
 	[[60], [70], [75], [80], [85]],//마법사
 	[[60], [70], [75], [80], [85]],//프리스트
 	[[60], [70], [75], [80], [85]],//도적
+	[[60], [70], [75], [80], [85]],//마창사
 	[[60, 65], [70, 75], [80, 85]],//보조장비
 	[[60, 65],[70, 75, 80, 85]]//마법석
 ];
@@ -103,6 +105,7 @@ var potList = [
 	"영웅의 마법사 항아리",
 	"영웅의 프리스트 항아리",
 	"영웅의 도적 항아리",
+	"영웅의 마창사 항아리",
 	"영웅의 보조장비 항아리",
 	"영웅의 마법석 항아리"
 ];
@@ -114,6 +117,7 @@ var conditionList = [
 	"마법사，크리에이터",
 	"프리스트",
 	"도적",
+	"마창사",
 	"보조장비",
 	"마법석"
 ];
@@ -124,6 +128,7 @@ var equipList = [
 	"창","봉","로드","스탭","빗자루",
 	"십자가","염주","토템","낫","배틀액스",
 	"단검","쌍검","완드","차크라웨펀",
+	"장창","미늘창",
 	"천","가죽","경갑","중갑","판금",
 	"목걸이","팔찌","반지","보조장비","마법석"
 ];
@@ -477,14 +482,15 @@ window.onload = function() {
 	imageList.push(images + "pot.png");//상단 항아리
 	imageList.push(images + "main_background.png");//메인 배경
 	imageList.push(images + "record_background.png");//기록 배경
-	imageList.push(images + "card_front_0.png");//카드 앞면 1 - 귀검사
-	imageList.push(images + "card_front_1.png");//카드 앞면 2 - 격투가
-	imageList.push(images + "card_front_2.png");//카드 앞면 3 - 거너
-	imageList.push(images + "card_front_3.png");//카드 앞면 4 - 마법사
-	imageList.push(images + "card_front_4.png");//카드 앞면 5 - 프리스트
-	imageList.push(images + "card_front_5.png");//카드 앞면 6 - 도적
-	imageList.push(images + "card_front_6.png");//카드 앞면 7 - 보조장비
-	imageList.push(images + "card_front_7.png");//카드 앞면 8 - 마법석
+	imageList.push(images + "card_front_0.png");//카드 앞면 0 - 귀검사
+	imageList.push(images + "card_front_1.png");//카드 앞면 1 - 격투가
+	imageList.push(images + "card_front_2.png");//카드 앞면 2 - 거너
+	imageList.push(images + "card_front_3.png");//카드 앞면 3 - 마법사
+	imageList.push(images + "card_front_4.png");//카드 앞면 4 - 프리스트
+	imageList.push(images + "card_front_5.png");//카드 앞면 5 - 도적
+	imageList.push(images + "card_front_6.png");//카드 앞면 6 - 마창사
+	imageList.push(images + "card_front_7.png");//카드 앞면 7 - 보조장비
+	imageList.push(images + "card_front_8.png");//카드 앞면 8 - 마법석
 	imageList.push(images + "card_back2.png");//카드 뒷면
 	imageList.push(images + "card_blast.png");//개봉 충격파
 	
