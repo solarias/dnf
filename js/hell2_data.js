@@ -4,7 +4,11 @@
 //신규 변수
 var autoRunning;
 var autoLooting = [,,,,,,,,,];
-var autoEffect = [,,,,,,,,,];
+var autoEffect = {
+	appear:[,,,,,,,,,],
+	land:[,,,,,,,,,],
+	wait:[,,,,,,,,,]
+}
 var autoSound = [,];//[0] : sound_appear, [1] : sound_land
 
 var dateSettingList = [0,0,0,0,0,0,0];//[최대치,1회,1번,2번,3번,4번,5번];

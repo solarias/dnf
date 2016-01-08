@@ -413,7 +413,9 @@ function dungeon_select() {
 		
 		//애니메이션 정지
 		clearTimeout(autoLooting[i-1]);
-		clearTimeout(autoEffect[i-1]);
+		clearTimeout(autoEffect["appear"][i-1]);
+		clearTimeout(autoEffect["land"][i-1]);
+		clearTimeout(autoEffect["wait"][i-1]);
 		document.getElementById("item_img"+ i.toString()).className = "item_img";
 	}
 	//4. 에픽 조각 드랍 가능 zone 설정 (에픽 조각이 일반 장비 아이콘을 덮지 않도록)
@@ -501,7 +503,9 @@ function simulate(num){
 		//애니메이션 정지 (탐색 시 2번째 실행부터 : 무시)
 		if (num != 3) {
 			clearTimeout(autoLooting[i-1]);
-			clearTimeout(autoEffect[i-1]);
+			clearTimeout(autoEffect["appear"][i-1]);
+			clearTimeout(autoEffect["land"][i-1]);
+			clearTimeout(autoEffect["wait"][i-1]);
 			document.getElementById("item_img"+ i.toString()).className = "item_img";
 		}
 	}
@@ -1244,7 +1248,7 @@ function sortItem(type, zone, zoneArr) {
 		switch (info[2]) {
 			case "에픽":
 				//애니메이션 실행
-				animation(document.getElementById("effect_appear" + info[0].toString()),info[0],341,0,-4091,40,0);
+				animation(document.getElementById("effect_appear" + info[0].toString()),"appear",info[0],341,0,-4091,40,0);
 				
 				//루팅 개시
 				looting(info[2], info[0], info[1], 1, 1, 1);
@@ -1699,7 +1703,9 @@ function update(type, info) {
 			
 			//애니메이션 정지
 			clearTimeout(autoLooting[i-1]);
-			clearTimeout(autoEffect[i-1]);
+			clearTimeout(autoEffect["appear"][i-1]);
+			clearTimeout(autoEffect["land"][i-1]);
+			clearTimeout(autoEffect["wait"][i-1]);
 			document.getElementById("item_img"+ i.toString()).className = "item_img";
 		}
 		//6. 아이템 드롭
@@ -1761,28 +1767,28 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			document.getElementById("effect_land" + zone.toString()).style.left = (-302).toString() + "px";
 			document.getElementById("effect_land" + zone.toString()).style.top = (-161+25+(document.getElementById("item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			document.getElementById("effect_land" + zone.toString()).style.visibility = "visible";
-			animation(document.getElementById("effect_land" + zone.toString()),zone,604,0,-4227,150,0);
-			
+			animation(document.getElementById("effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
+						
 			//대기 이펙트 가시화
 			document.getElementById("effect_wait" + zone.toString()).style.left = (-99).toString() + "px";
 			document.getElementById("effect_wait" + zone.toString()).style.top = (-98+25+(document.getElementById("item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			document.getElementById("effect_wait" + zone.toString()).style.visibility = "visible";
-			animation(document.getElementById("effect_wait" + zone.toString()),zone,188,0,-2255,100,1);
+			animation(document.getElementById("effect_wait" + zone.toString()),"wait",zone,188,0,-2255,100,1);
 		}
 	}
 }
 
 //에픽 드랍 이펙트 출력
-function animation(target,zone,frameWidth,now,limit,speed,repeat) {
+function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 	if (now - frameWidth >= limit) {
 		target.style.backgroundPosition = (now - frameWidth).toString() + "px 0px";
-		autoEffect[zone-1] = setTimeout(function() {
-			animation(target,zone,frameWidth,now - frameWidth,limit,speed,repeat);
+		autoEffect[type][zone-1] = setTimeout(function() {
+			animation(target,type,zone,frameWidth,now - frameWidth,limit,speed,repeat);
 		}, speed);
 	} else if (repeat == 1){
 		target.style.backgroundPosition = "0px 0px";
-		setTimeout(function() {
-			animation(target,zone,frameWidth,0,limit,speed,repeat);
+		autoEffect[type][zone-1] = setTimeout(function() {
+			animation(target,type,zone,frameWidth,0,limit,speed,repeat);
 		}, speed);
 	} else {
 		target.style.visibility = "hidden";

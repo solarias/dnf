@@ -285,6 +285,41 @@
 					회차 : 
 					<span id="round_difficulty" class="orange"></span>
 				</div>
+					<!--퍼펙트 헬 : 날짜 설정 대신 "퍼펙트 헬" 표시-->
+					<div id="date">
+						퍼펙트 헬 : 에픽 아이템 드랍률 <span class="yellow">100%</span>
+
+						<span id="date_count" style="display:none;"></span>
+						<span id="date_summary" style="display:none;"> (<span id="date_summary_num"></span>)</span>
+						
+						<input id="date_config" class="" type="button" value="날짜 설정" style="display:none;" />
+					</div>
+					<div id="date_setting" style="display:none;">
+						<p>하루 피로도 총량 : <input id="date_setting_1" type="text" value="156" /></p>
+						<p>1회 피로도 소모 : <input id="date_setting_2" type="text" value="4" /></p>
+							<hr/>
+						<p>1번 비약 피로도 : <input id="date_setting_3" type="text" value="0" /></p>
+						<p>2번 비약 피로도 : <input id="date_setting_4" type="text" value="0" /></p>
+						<p>3번 비약 피로도 : <input id="date_setting_5" type="text" value="0" /></p>
+						<p>4번 비약 피로도 : <input id="date_setting_6" type="text" value="0" /></p>
+						<p>5번 비약 피로도 : <input id="date_setting_7" type="text" value="0" /></p>
+							<hr/>
+						<p>요약 표시 : 
+							<select id="date_setting_summary">
+								<option value="0">없음</option>
+								<option value="1">월/년 환산</option>
+							</select>
+						</p>
+							<hr/>
+						<p class="date_description">
+							(요약 표시시 소숫점은 버림)
+						</p>
+						
+						<p>
+							<input id="date_cancel" type="button" value="취소" />
+							<input id="date_apply" type="button" value="설정 적용" />
+						</p>
+					</div>
 				
 				<input id="reset" class="min_gap" type="button" value="모두 초기화" />
 				
