@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+		
+		<title></title>
+		
+		<style type="text/css">
+			@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+			
+			* {
+				margin:0px;
+				padding:0px;
+				
+				border:0px;
+				
+				font-family:"Nanum Gothic", sans-serif;
+				text-decoration:none;
+				line-height:120%;
+			}
+			
+			body {
+				background:#303030;
+			}
+			
+			#wrapper {
+				margin:0px auto;
+				padding:10px;
+				width:320px;
+				height:135px;
+				
+				background:brown;
+				border:1px black solid;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+			
+			#item_frame {
+				position:relative;
+				clear:both;
+				
+				padding:2px;
+				width:300px;
+				height:62px;
+				
+				background:gray;
+				border:1px black solid;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+			#item_image {
+				position:relative;
+				float:left;
+				
+				width:56px;
+				height:56px;
+				
+				background-color:black;
+				background-image:url('./sprite/images/sprite_hell.png');
+			}
+			#item_name {
+				position:relative;
+				float:left;
+				
+				margin-left:2px;
+				padding-left:5px;
+				width:236px;
+				height:56px;
+				
+				background:black;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:#E5B64A;
+				font-size:22px;
+				font-weight:bold;
+				
+				display:table;
+			}
+				#item_name p {
+					position:relative;
+					
+					vertical-align:middle;
+					line-height:100%;
+					
+					display:table-cell;
+				}
+			
+			#count {
+				clear:both;
+				float:left;
+				
+				margin-top:10px;
+				padding-right:5px;
+				width:110px;
+				height:40px;
+				
+				background:#202020;
+				border:2px white inset;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				color:white;
+				font-size:18px;
+				font-weight:bold;
+				text-align:right;
+				line-height:36px;
+			}
+			
+			#click {
+				float:right;
+				
+				margin-top:10px;
+				width:180px;
+				height:40px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:5px;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				
+				font-size:22px;
+				font-weight:bold;
+			}
+				#click:hover {
+					border:1px white solid;
+					
+					cursor:pointer;
+					cursor:hand;
+				}
+				#click:active {
+					background: #DEDEDE;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="item_frame">
+				<div id="item_image">
+				</div>
+				<div id="item_name">
+					<p>슬롯머신 대기중</p>
+				</div>
+			</div>
+			
+			<div id="count">0 회</div>
+			<input id="click" type="button" value="로딩 중..." disabled />
+		</div>
+		
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<script type="text/javascript" src="./js/hell1_data.js"></script>
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		
+		<script type="text/javascript">
+			//변수 통제
+			var setting = {
+				item_image:"",
+				item_name:"",
+				count:0,
+				auto:null,
+				sound_rolling:null,
+				sound_result:null,
+				process:"initial"
+			}
+			//던전 : 그란디네
+			input[0] = 11;
+			//에픽 드랍 리스트 구축
+				//1. 현재 지역 고유 에픽 리스트
+				currentList_goyu = [];
+				for (i=0;i<goyuList.length;i++) {
+					if (goyuList[i][6] == areaList[input[0]]) {//지역명 일치 시
+						currentList_goyu.push(goyuList[i]);
+					}
+				}
+				//2. (고유 에픽을 제외한) '레벨대'별 에픽 리스트
+				currentList = [];
+				for (i=0;i<itemList.length;i++) {
+					if (levelList[input[0]].indexOf(itemList[i][3]) != -1
+					&& itemList[i][4] != ""
+					&& itemList[i][6] == "") {//드랍 레벨이 맞으면 & 명칭이 공백이 아니면 &고유 에픽이 아니면
+						currentList.push(itemList[i]);
+					}
+				}
+			
+			
+			//DOM 선택자
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			function $$(parameter) {
+				return document.querySelectorAll(parameter);
+			}
+			
+			//IE8에 indexOf 적용
+			if (!Array.prototype.indexOf)
+			{
+			  Array.prototype.indexOf = function(elt /*, from*/)
+			  {
+				var len = this.length >>> 0;
+
+				var from = Number(arguments[1]) || 0;
+				from = (from < 0)
+					 ? Math.ceil(from)
+					 : Math.floor(from);
+				if (from < 0)
+				  from += len;
+
+				for (; from < len; from++)
+				{
+				  if (from in this &&
+					  this[from] === elt)
+					return from;
+				}
+				return -1;
+			  };
+			};
+			
+			//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			};
+			
+			//가중치 적용 랜덤
+			function rand(target) {//target : 숫자가 들어있는 배열
+				var number = 0;
+				for (i=0;i<target.length;i++) {
+					number += target[i];
+				}
+				var tmp = Math.random() * number;
+				
+				number = 0;
+				for (i=0;i<target.length;i++) {
+					number += target[i];
+					if (tmp < number) {
+						return i;
+					}
+				}
+			}
+			
+			
+			
+			//아이템 호출
+			function getItem() {
+				//1. 종류 결정
+				var temp_type = chanceList_name[3][rand(chanceList_num[3])];
+				//2. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수)
+					//4-1. 레벨 종류만큼 칸 설정
+					var currentList_level = [];
+					for (var i=0;i<levelList[input[0]].length;i++) {
+						currentList_level.push(levelList[input[0]][i]);
+					}
+					//4-2. 해당 칸은 특정 레벨 & 특정 장비의 개수만큼 숫자가 증가
+					for (var i=0;i<currentList.length;i++) {
+						for (var j=0;j<levelList[input[0]].length;j++) {
+							//앞에서 선택된 장비이고 레벨이 맞을 경우, 해당 레벨 칸 +1
+							if ((currentList[i][0] == input[5] //무기, 방어구 전용 : 대분류
+							|| currentList[i][1] == input[5])//악세사리, 특수장비 : 1차 소분류
+							&& currentList[i][3] == levelList[input[0]][j]) {
+								currentList_level[j] += 1;
+							}
+						}
+					}
+					//4-3. 추가 가중치 계산
+					for (var i=0;i<chanceList_num[4].length;i++) {
+						if (chanceList_num[4][i][0].indexOf(input[0]) != -1) {
+							for (var j=0;j<currentList_level.length;j++) {
+								currentList_level[j] = currentList_level[j] * chanceList_num[4][i][1][j];
+							}
+							break;
+						}
+					}
+					var temp_level = levelList[input[0]][rand(currentList_level)];
+					
+				tempArr = [];
+				for (j=0;j<currentList.length;j++) {
+					if ((currentList[j][0] == temp_type/*종류-무기*/
+					|| currentList[j][1] == temp_type/*종류-방어구*/
+					|| currentList[j][2] == temp_type)/*종류-악세서리&특수장비*/
+					&& currentList[j][3] == temp_level)/*레벨*/ {
+						tempArr.push(currentList[j]);
+					}
+				}
+				//아이템 확정
+				var temp = tempArr[Math.floor(Math.random() * tempArr.length)];
+				//아이템 출력
+					//이미지 출력
+						setting["item_image"] = temp[7];
+						$("#item_image").style.backgroundPosition = spritePosition(setting["item_image"]);
+					//이름 출력
+						setting["item_name"] = temp[4];
+						$("#item_name").innerHTML = "<P>" + setting["item_name"] + "</p>"
+			}
+			
+			//진행 함수
+			function process(step) {
+				//아이템 출력
+				getItem();
+				
+				//스텝 별 처리
+				if (step > 0) {
+					setTimeout(function() {
+						process(step - 1);
+					}, 50);
+				} else {
+					//사운드 출력
+					setting["sound_rolling"].pause();
+					setting["sound_rolling"].currentTime = 0;
+					setting["sound_result"].currentTime = 0;
+					setting["sound_result"].play();
+					
+					//진행상황 변경
+					setting["process"] = "stop";
+					
+					//버튼 정상화
+					$("#click").value = "슬롯머신 돌리기";
+					$("#click").disabled = "";
+				}
+			}
+			
+			window.onload = function() {
+				//아이템리스트 정리
+				var tempList = [];
+				for (i=0;i<itemList.length;i++) {
+					//고유 에픽 제거
+					if (itemList[i][6] != "") {
+						tempList.push(i);
+					}
+				};
+				for (i=tempList.length-1;i>=0;i--) {
+					itemList.splice(tempList[i],1);
+				};
+				
+				//사운드 선로드
+				setting["sound_rolling"] = new Audio("./sound/slot_rolling.mp3");
+					setting["sound_rolling"].volume = 0.2;
+				setting["sound_result"] = new Audio("./sound/slot_result.mp3");
+					setting["sound_result"].volume = 0.2;
+				
+				//버튼 잠금 해제
+				$("#click").value = "슬롯머신 돌리기"
+				$("#click").disabled = "";
+				
+				//버튼 액션
+				$("#click").onclick = function() {
+					//사운드 출력
+					if (setting["process"] == "stop") {
+						setting["sound_result"].pause();
+						setting["sound_result"].currentTime = 0;
+					}
+					setting["sound_rolling"].currentTime = 0;
+					setting["sound_rolling"].play()
+					
+					//진행상황 변경
+					setting["process"] = "run";
+					
+					//횟수 증가
+					setting["count"] += 1;
+					//횟수 출력
+					$("#count").innerHTML = thousand(setting["count"]) + " 회";
+					
+					//버튼 잠금
+					$("#click").value = "실행 중"
+					$("#click").disabled = "disabled";
+					
+					//실행
+					process(40);
+				};
+			}
+		</script>
+	
+	
+	</body>
+</html>
+
