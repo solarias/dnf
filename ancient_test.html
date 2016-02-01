@@ -1,0 +1,539 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+		
+		<title>고대의 문 시뮬레이터 - 테스트</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-size:13px;
+				font-familt:Arial;
+				line-height:120%;
+			}
+			
+			body {
+				background-color:#303030;
+			}
+			
+			#wrapper {
+				position:relative;
+				
+				padding:10px;
+				margin:0px auto;
+				width:350px;
+				height:110px;
+				
+				background-color:brown;
+				border:1px black solid;
+			}
+			
+			#item {
+				float:both;
+				
+				margin-bottom:10px;
+				padding:5px;
+				width:100%;
+				height:30px;
+				
+				background:black;
+				border:1px gray solid;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+				box-sizing:border-box;
+				
+				color:orange;
+				font-size:15px;
+			}
+			
+			#count {
+				clear:both;
+				float:left;
+				
+				padding:5px 7px;
+				width:120px;
+				height:29px;
+				
+				background-color:black;
+				border:1px gray solid;
+				border-radius:10px;
+				
+				color:white;
+				font-size:20px;
+				text-align:right;
+			}
+			
+			#start {
+				float:right;
+				
+				width:200px;
+				height:40px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:5px;
+				
+				font-size:25px;
+				font-weight:bold;
+			}
+				#start:hover {
+					border:1px white solid;
+					
+					cursor:pointer;
+					cursor:hand;
+				}
+				#start:active {
+					background: #DEDEDE;
+				}
+			
+			#list {
+				margin-top:10px;
+				width:100%;
+				height:20px;
+				
+				font-size:15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="item"></div>
+			
+			<div id="count">0 일째</div>
+			<input id="start" type="button" value="로딩 중..." disabled />
+			
+			<select id="list">
+				<option disabled>획득한 아이템 리스트</option>
+			</select>
+		</div>
+	
+		
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		
+		<script type="text/javascript">
+			//변수 관리
+			var itemList = [
+				"위대한 영광의 견장 (천/어깨)",
+				"위대한 영광의 로브 (천/상의)",
+				"위대한 영광의 트라우저 (천/하의)",
+				"위대한 영광의 새쉬 (천/벨트)",
+				"위대한 영광의 슈즈 (천/신발)",
+				"위대한 영광의 맨틀 (가죽/어깨)",
+				"위대한 영광의 튜닉 (가죽/상의)",
+				"위대한 영광의 그리브 (가죽/하의)",
+				"위대한 영광의 새쉬 (가죽/벨트)",
+				"위대한 영광의 부츠 (가죽/신발)",
+				"위대한 영광의 맨틀 (경갑/어깨)",
+				"위대한 영광의 메일 (경갑/상의)",
+				"위대한 영광의 레깅스 (경갑/하의)",
+				"위대한 영광의 벨트 (경갑/벨트)",
+				"위대한 영광의 오버슈즈 (경갑/신발)",
+				"위대한 영광의 맨틀 (중갑/어깨)",
+				"위대한 영광의 메일 (중갑/상의)",
+				"위대한 영광의 레깅스 (중갑/하의)",
+				"위대한 영광의 코일 (중갑/벨트)",
+				"위대한 영광의 사바톤 (중갑/신발)",
+				"위대한 영광의 티타늄 맨틀 (판금/어깨)",
+				"위대한 영광의 티타늄 아머 (판금/상의)",
+				"위대한 영광의 티타늄 레깅스 (판금/하의)",
+				"위대한 영광의 티타늄 코일 (판금/벨트)",
+				"위대한 영광의 티타늄 사바톤 (판금/신발)",
+				"위대한 영광의 목걸이",
+				"위대한 영광의 팔찌",
+				"위대한 영광의 반지",
+				"위대한 영광의 보조장비",
+				"위대한 영광의 마법석",
+				"애끓는 비탄의 견장 (천/어깨)",
+				"애끓는 비탄의 로브 (천/상의)",
+				"애끓는 비탄의 트라우저 (천/하의)",
+				"애끓는 비탄의 새쉬 (천/벨트)",
+				"애끓는 비탄의 슈즈 (천/신발)",
+				"애끓는 비탄의 맨틀 (가죽/어깨)",
+				"애끓는 비탄의 튜닉 (가죽/상의)",
+				"애끓는 비탄의 그리브 (가죽/하의)",
+				"애끓는 비탄의 새쉬 (가죽/벨트)",
+				"애끓는 비탄의 부츠 (가죽/신발)",
+				"애끓는 비탄의 맨틀 (경갑/어깨)",
+				"애끓는 비탄의 메일 (경갑/상의)",
+				"애끓는 비탄의 레깅스 (경갑/하의)",
+				"애끓는 비탄의 벨트 (경갑/벨트)",
+				"애끓는 비탄의 오버슈즈 (경갑/신발)",
+				"애끓는 비탄의 맨틀 (중갑/어깨)",
+				"애끓는 비탄의 메일 (중갑/상의)",
+				"애끓는 비탄의 레깅스 (중갑/하의)",
+				"애끓는 비탄의 코일 (중갑/벨트)",
+				"애끓는 비탄의 사바톤 (중갑/신발)",
+				"애끓는 비탄의 티타늄 맨틀 (판금/어깨)",
+				"애끓는 비탄의 티타늄 아머 (판금/상의)",
+				"애끓는 비탄의 티타늄 레깅스 (판금/하의)",
+				"애끓는 비탄의 티타늄 코일 (판금/벨트)",
+				"애끓는 비탄의 티타늄 사바톤 (판금/신발)",
+				"애끓는 비탄의 목걸이",
+				"애끓는 비탄의 팔찌",
+				"애끓는 비탄의 반지",
+				"애끓는 비탄의 보조장비",
+				"애끓는 비탄의 마법석",
+				"파묻힌 비명의 견장 (천/어깨)",
+				"파묻힌 비명의 로브 (천/상의)",
+				"파묻힌 비명의 트라우저 (천/하의)",
+				"파묻힌 비명의 새쉬 (천/벨트)",
+				"파묻힌 비명의 슈즈 (천/신발)",
+				"파묻힌 비명의 맨틀 (가죽/어깨)",
+				"파묻힌 비명의 튜닉 (가죽/상의)",
+				"파묻힌 비명의 그리브 (가죽/하의)",
+				"파묻힌 비명의 새쉬 (가죽/벨트)",
+				"파묻힌 비명의 부츠 (가죽/신발)",
+				"파묻힌 비명의 맨틀 (경갑/어깨)",
+				"파묻힌 비명의 메일 (경갑/상의)",
+				"파묻힌 비명의 레깅스 (경갑/하의)",
+				"파묻힌 비명의 벨트 (경갑/벨트)",
+				"파묻힌 비명의 오버슈즈 (경갑/신발)",
+				"파묻힌 비명의 맨틀 (중갑/어깨)",
+				"파묻힌 비명의 메일 (중갑/상의)",
+				"파묻힌 비명의 레깅스 (중갑/하의)",
+				"파묻힌 비명의 코일 (중갑/벨트)",
+				"파묻힌 비명의 사바톤 (중갑/신발)",
+				"파묻힌 비명의 티타늄 맨틀 (판금/어깨)",
+				"파묻힌 비명의 티타늄 아머 (판금/상의)",
+				"파묻힌 비명의 티타늄 레깅스 (판금/하의)",
+				"파묻힌 비명의 티타늄 코일 (판금/벨트)",
+				"파묻힌 비명의 티타늄 사바톤 (판금/신발)",
+				"파묻힌 비명의 목걸이",
+				"파묻힌 비명의 팔찌",
+				"파묻힌 비명의 반지",
+				"파묻힌 비명의 보조장비",
+				"파묻힌 비명의 마법석",
+				"질병의 근원 견장 (천/어깨)",
+				"질병의 근원 로브 (천/상의)",
+				"질병의 근원 트라우저 (천/하의)",
+				"질병의 근원 새쉬 (천/벨트)",
+				"질병의 근원 슈즈 (천/신발)",
+				"질병의 근원 맨틀 (가죽/어깨)",
+				"질병의 근원 튜닉 (가죽/상의)",
+				"질병의 근원 그리브 (가죽/하의)",
+				"질병의 근원 새쉬 (가죽/벨트)",
+				"질병의 근원 부츠 (가죽/신발)",
+				"질병의 근원 맨틀 (경갑/어깨)",
+				"질병의 근원 메일 (경갑/상의)",
+				"질병의 근원 레깅스 (경갑/하의)",
+				"질병의 근원 벨트 (경갑/벨트)",
+				"질병의 근원 오버슈즈 (경갑/신발)",
+				"질병의 근원 맨틀 (중갑/어깨)",
+				"질병의 근원 메일 (중갑/상의)",
+				"질병의 근원 레깅스 (중갑/하의)",
+				"질병의 근원 코일 (중갑/벨트)",
+				"질병의 근원 사바톤 (중갑/신발)",
+				"질병의 근원 티타늄 맨틀 (판금/어깨)",
+				"질병의 근원 티타늄 아머 (판금/상의)",
+				"질병의 근원 티타늄 레깅스 (판금/하의)",
+				"질병의 근원 티타늄 코일 (판금/벨트)",
+				"질병의 근원 티타늄 사바톤 (판금/신발)",
+				"질병의 근원 목걸이",
+				"질병의 근원 팔찌",
+				"질병의 근원 반지",
+				"질병의 근원 보조장비",
+				"질병의 근원 마법석",
+				"그라시아 가문의 유산 - 견장 (천/어깨)",
+				"그라시아 가문의 유산 - 로브 (천/상의)",
+				"그라시아 가문의 유산 - 트라우저 (천/하의)",
+				"그라시아 가문의 유산 - 새쉬 (천/벨트)",
+				"그라시아 가문의 유산 - 슈즈 (천/신발)",
+				"그라시아 가문의 유산 - 맨틀 (가죽/어깨)",
+				"그라시아 가문의 유산 - 튜닉 (가죽/상의)",
+				"그라시아 가문의 유산 - 그리브 (가죽/하의)",
+				"그라시아 가문의 유산 - 새쉬 (가죽/벨트)",
+				"그라시아 가문의 유산 - 부츠 (가죽/신발)",
+				"그라시아 가문의 유산 - 맨틀 (경갑/어깨)",
+				"그라시아 가문의 유산 - 메일 (경갑/상의)",
+				"그라시아 가문의 유산 - 레깅스 (경갑/하의)",
+				"그라시아 가문의 유산 - 벨트 (경갑/벨트)",
+				"그라시아 가문의 유산 - 오버슈즈 (경갑/신발)",
+				"그라시아 가문의 유산 - 맨틀 (중갑/어깨)",
+				"그라시아 가문의 유산 - 메일 (중갑/상의)",
+				"그라시아 가문의 유산 - 레깅스 (중갑/하의)",
+				"그라시아 가문의 유산 - 코일 (중갑/벨트)",
+				"그라시아 가문의 유산 - 사바톤 (중갑/신발)",
+				"그라시아 가문의 유산 - 티타늄 맨틀 (판금/어깨)",
+				"그라시아 가문의 유산 - 티타늄 아머 (판금/상의)",
+				"그라시아 가문의 유산 - 티타늄 레깅스 (판금/하의)",
+				"그라시아 가문의 유산 - 티타늄 코일 (판금/벨트)",
+				"그라시아 가문의 유산 - 티타늄 사바톤 (판금/신발)",
+				"그라시아 가문의 유산 - 목걸이",
+				"그라시아 가문의 유산 - 팔찌",
+				"그라시아 가문의 유산 - 반지",
+				"그라시아 가문의 유산 - 보조장비",
+				"그라시아 가문의 유산 - 마법석",
+				"해신의 저주를 받은 견장 (천/어깨)",
+				"해신의 저주를 받은 로브 (천/상의)",
+				"해신의 저주를 받은 트라우저 (천/하의)",
+				"해신의 저주를 받은 새쉬 (천/벨트)",
+				"해신의 저주를 받은 슈즈 (천/신발)",
+				"해신의 저주를 받은 맨틀 (가죽/어깨)",
+				"해신의 저주를 받은 튜닉 (가죽/상의)",
+				"해신의 저주를 받은 그리브 (가죽/하의)",
+				"해신의 저주를 받은 새쉬 (가죽/벨트)",
+				"해신의 저주를 받은 부츠 (가죽/신발)",
+				"해신의 저주를 받은 맨틀 (경갑/어깨)",
+				"해신의 저주를 받은 메일 (경갑/상의)",
+				"해신의 저주를 받은 레깅스 (경갑/하의)",
+				"해신의 저주를 받은 벨트 (경갑/벨트)",
+				"해신의 저주를 받은 오버슈즈 (경갑/신발)",
+				"해신의 저주를 받은 맨틀 (중갑/어깨)",
+				"해신의 저주를 받은 메일 (중갑/상의)",
+				"해신의 저주를 받은 레깅스 (중갑/하의)",
+				"해신의 저주를 받은 코일 (중갑/벨트)",
+				"해신의 저주를 받은 사바톤 (중갑/신발)",
+				"해신의 저주를 받은 티타늄 맨틀 (판금/어깨)",
+				"해신의 저주를 받은 티타늄 아머 (판금/상의)",
+				"해신의 저주를 받은 티타늄 레깅스 (판금/하의)",
+				"해신의 저주를 받은 티타늄 코일 (판금/벨트)",
+				"해신의 저주를 받은 티타늄 사바톤 (판금/신발)",
+				"해신의 저주를 받은 목걸이",
+				"해신의 저주를 받은 팔찌",
+				"해신의 저주를 받은 반지",
+				"해신의 저주를 받은 보조장비",
+				"해신의 저주를 받은 마법석",
+				"붉게 물든 서녘의 견장 (천/어깨)",
+				"붉게 물든 서녘의 로브 (천/상의)",
+				"붉게 물든 서녘의 트라우저 (천/하의)",
+				"붉게 물든 서녘의 새쉬 (천/벨트)",
+				"붉게 물든 서녘의 슈즈 (천/신발)",
+				"붉게 물든 서녘의 맨틀 (가죽/어깨)",
+				"붉게 물든 서녘의 튜닉 (가죽/상의)",
+				"붉게 물든 서녘의 그리브 (가죽/하의)",
+				"붉게 물든 서녘의 새쉬 (가죽/벨트)",
+				"붉게 물든 서녘의 부츠 (가죽/신발)",
+				"붉게 물든 서녘의 맨틀 (경갑/어깨)",
+				"붉게 물든 서녘의 메일 (경갑/상의)",
+				"붉게 물든 서녘의 레깅스 (경갑/하의)",
+				"붉게 물든 서녘의 벨트 (경갑/벨트)",
+				"붉게 물든 서녘의 오버슈즈 (경갑/신발)",
+				"붉게 물든 서녘의 맨틀 (중갑/어깨)",
+				"붉게 물든 서녘의 메일 (중갑/상의)",
+				"붉게 물든 서녘의 레깅스 (중갑/하의)",
+				"붉게 물든 서녘의 코일 (중갑/벨트)",
+				"붉게 물든 서녘의 사바톤 (중갑/신발)",
+				"붉게 물든 서녘의 티타늄 맨틀 (판금/어깨)",
+				"붉게 물든 서녘의 티타늄 아머 (판금/상의)",
+				"붉게 물든 서녘의 티타늄 레깅스 (판금/하의)",
+				"붉게 물든 서녘의 티타늄 코일 (판금/벨트)",
+				"붉게 물든 서녘의 티타늄 사바톤 (판금/신발)",
+				"붉게 물든 서녘의 목걸이",
+				"붉게 물든 서녘의 팔찌",
+				"붉게 물든 서녘의 반지",
+				"붉게 물든 서녘의 보조장비",
+				"붉게 물든 서녘의 마법석",
+				"그라시아 가문의 유산 - 소검",
+				"그라시아 가문의 유산 - 도",
+				"그라시아 가문의 유산 - 둔기",
+				"그라시아 가문의 유산 - 대검",
+				"그라시아 가문의 유산 - 광검",
+				"그라시아 가문의 유산 - 너클",
+				"그라시아 가문의 유산 - 건틀릿",
+				"그라시아 가문의 유산 - 클로",
+				"그라시아 가문의 유산 - 권투글러브",
+				"그라시아 가문의 유산 - 통파",
+				"그라시아 가문의 유산 - 리볼버",
+				"그라시아 가문의 유산 - 자동권총",
+				"그라시아 가문의 유산 - 머스켓",
+				"그라시아 가문의 유산 - 핸드캐넌",
+				"그라시아 가문의 유산 - 보우건",
+				"그라시아 가문의 유산 - 창",
+				"그라시아 가문의 유산 - 봉",
+				"그라시아 가문의 유산 - 로드",
+				"그라시아 가문의 유산 - 스탭",
+				"그라시아 가문의 유산 - 빗자루",
+				"그라시아 가문의 유산 - 십자가",
+				"그라시아 가문의 유산 - 염주",
+				"그라시아 가문의 유산 - 토템",
+				"그라시아 가문의 유산 - 낫",
+				"그라시아 가문의 유산 - 배틀액스",
+				"그라시아 가문의 유산 - 단검",
+				"그라시아 가문의 유산 - 쌍검",
+				"그라시아 가문의 유산 - 완드",
+				"그라시아 가문의 유산 - 차크라웨펀",
+				"그라시아 가문의 유산 - 장창",
+				"그라시아 가문의 유산 - 미늘창",
+				"붉게 물든 서녘의 소검",
+				"붉게 물든 서녘의 도",
+				"붉게 물든 서녘의 둔기",
+				"붉게 물든 서녘의 대검",
+				"붉게 물든 서녘의 광검",
+				"붉게 물든 서녘의 너클",
+				"붉게 물든 서녘의 건틀릿",
+				"붉게 물든 서녘의 클로",
+				"붉게 물든 서녘의 권투글러브",
+				"붉게 물든 서녘의 통파",
+				"붉게 물든 서녘의 리볼버",
+				"붉게 물든 서녘의 자동권총",
+				"붉게 물든 서녘의 머스켓",
+				"붉게 물든 서녘의 핸드캐넌",
+				"붉게 물든 서녘의 보우건",
+				"붉게 물든 서녘의 창",
+				"붉게 물든 서녘의 봉",
+				"붉게 물든 서녘의 로드",
+				"붉게 물든 서녘의 스탭",
+				"붉게 물든 서녘의 빗자루",
+				"붉게 물든 서녘의 십자가",
+				"붉게 물든 서녘의 염주",
+				"붉게 물든 서녘의 토템",
+				"붉게 물든 서녘의 낫",
+				"붉게 물든 서녘의 배틀액스",
+				"붉게 물든 서녘의 단검",
+				"붉게 물든 서녘의 쌍검",
+				"붉게 물든 서녘의 완드",
+				"붉게 물든 서녘의 차크라웨펀",
+				"붉게 물든 서녘의 장창",
+				"붉게 물든 서녘의 미늘창"
+			]
+			
+			//변수 통제
+			var setting = {
+				item_image:"",
+				item_name:"",
+				count:0,
+				auto:null,
+				sound_rolling:null,
+				sound_result:null,
+				process:"initial"
+			}
+			
+			
+			//DOM 선택자
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			function $$(parameter) {
+				return document.querySelectorAll(parameter);
+			}
+			
+			//IE8에 indexOf 적용
+			if (!Array.prototype.indexOf)
+			{
+			  Array.prototype.indexOf = function(elt /*, from*/)
+			  {
+				var len = this.length >>> 0;
+
+				var from = Number(arguments[1]) || 0;
+				from = (from < 0)
+					 ? Math.ceil(from)
+					 : Math.floor(from);
+				if (from < 0)
+				  from += len;
+
+				for (; from < len; from++)
+				{
+				  if (from in this &&
+					  this[from] === elt)
+					return from;
+				}
+				return -1;
+			  };
+			};
+			
+			//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
+			function thousand(num) {
+				return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			};
+			
+			//실행 함수
+			function process(step) {
+				//아이템 출력
+				$("#item").innerHTML = itemList[Math.floor(Math.random() * itemList.length)];
+				
+				//스텝 별 처리
+				if (step > 0) {
+					setTimeout(function() {
+						process(step - 1);
+					}, 50);
+				} else {
+					//사운드 출력
+					setting["sound_rolling"].pause();
+					setting["sound_rolling"].currentTime = 0;
+					setting["sound_result"].currentTime = 0;
+					setting["sound_result"].play();
+					
+					//진행상황 변경
+					setting["process"] = "stop";
+					
+					//획득 아이템 리스트 갱신
+					var option = document.createElement("option");
+					option.text = setting["count"].toString() + "일차 : " + $("#item").innerHTML;
+					option.disabled = "disabled";
+					$("#list").add(option);
+					
+					//버튼 & 리스트 정상화
+					$("#start").value = "고대의 문 돌기";
+					$("#start").disabled = "";
+					$("#list").disabled = "";
+				}
+			}
+			
+			
+			//실행
+			window.onload = function() {
+				//audio 파일 선로딩
+				setting["sound_rolling"] = new Audio("./sound/slot_rolling.mp3");
+					setting["sound_rolling"].volume = 0.2;
+				setting["sound_result"] = new Audio("./sound/slot_result.mp3");
+					setting["sound_result"].volume = 0.2;
+				
+				//로딩 완료
+				$("#start").disabled = "";
+				$("#start").value = "고대의 문 돌기";
+				
+				//함수 실행
+				$("#start").onclick = function() {
+					//사운드 출력
+					if (setting["process"] == "stop") {
+						setting["sound_result"].pause();
+						setting["sound_result"].currentTime = 0;
+					}
+					setting["sound_rolling"].currentTime = 0;
+					setting["sound_rolling"].play()
+					
+					//진행상황 변경
+					setting["process"] = "run";
+					
+					//횟수 증가
+					setting["count"] += 1;
+					//횟수 출력
+					$("#count").innerHTML = thousand(setting["count"]) + " 일째";
+					
+					//버튼 & 리스트 잠금
+					$("#start").value = "실행 중"
+					$("#start").disabled = "disabled";
+					$("#list").disabled = "disabled";
+					
+					//실행
+					process(40);
+				}
+				
+			}
+		</script>
+	
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="free web site hit counter" ><script  type="text/javascript" >
+try {Histats.start(1,3327529,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3327529&101" alt="free web site hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->	
+	</body>
+</html>
