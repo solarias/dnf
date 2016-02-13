@@ -393,8 +393,12 @@ function setDate() {
 
 //던전 선택
 function dungeon_select() {
-	//1. 변수 조절
-	input[0] = parseInt($dungeon.value);
+	//1. 변수 조절 (오류 대비 - 공백이면 숫자 "0" 반환)
+	if ($dungeon.value == "") {
+		input[0] = 0;
+	} else {
+		input[0] = parseInt($dungeon.value);
+	}
 	//2. 배경 변경
 	$frame_top.style.background = "url('./images/epic/background_" + input[0].toString() + ".jpg')"
 	//3. 아이템 정리
