@@ -518,6 +518,10 @@ window.onload = function() {
 		}
 	}
 	
+	//게임 시작 버튼 활성화
+	$("#loading_start").value = "게임 실행";
+	$("#loading_start").disabled = "";
+	
 	//이미지 선로딩 - 실시
 	$("#loading_start").onclick = function() {
 		//버튼 비활성화

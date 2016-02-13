@@ -53,8 +53,6 @@
 /* ※ 0. 프레임 */
 /*======================================================================================================*/
 body {
-	padding:10px;
-	
 	background-color:#FFFFCC;
 }
 	#kanna {
@@ -76,6 +74,7 @@ body {
 	height:660px;
 }
 #frame_right {
+	position:relative;
 	float:left;
 	
 	width:357px;
@@ -511,8 +510,8 @@ body {
 
 #clear {
 	position:absolute;
-	top:18px;
-	left:675px;
+	top:8px;
+	right:8px;
 	
 	background: #FF6A00; /* default */
 	background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);

@@ -22,9 +22,13 @@
 
 
 body {
-	padding:10px;
-	
 	background-color:white;
+}
+
+#wrapper {
+	padding-top:5px;
+	width:450px;
+	height:660px;
 }
 
 #press {
@@ -87,6 +91,7 @@ body {
 		}
 
 #show {
+	position:relative;
 	padding:4px;
 	margin-top:10px;
 

@@ -33,9 +33,7 @@
 }
 
 body {
-	padding:10px;
-	
-	background-color:#FFFFCC;
+	background-color:#505050;
 }
 	select {
 		border:1px gray solid;
@@ -158,6 +156,7 @@ body {
 		}
 
 	#message {
+		position:relative;
 		padding:0px 4px;
 
 		width:521px;
@@ -175,7 +174,7 @@ body {
 			visibility:hidden;
 		}
 		#message_text {
-			positon:relative;
+			position:relative;
 			z-index:0;
 			float:right;
 			
@@ -188,9 +187,12 @@ body {
 			
 			color:white;
 			font-weight:bold;
+			line-height:130%;
 		}
 		
 	#show {
+		position:relative;
+		
 		padding:4px;
 
 		width:521px;
@@ -222,7 +224,7 @@ body {
 			}
 		#show_text {
 			position:absolute;
-			left:115px;
+			left:5px;
 			z-index:2;
 			float:left;
 			padding:5px;
@@ -598,11 +600,12 @@ body {
 	top:0px;
 	z-index:10;
 	padding:50px;
-	width:550px;
-	height:800px;
+	width:100%;
+	height:100%;
 	
-	background-color:#FFFFCC;
+	background-color:#303030;
 	
+	color:white;
 	font-size:50px;
 	font-weight:bold;
 }

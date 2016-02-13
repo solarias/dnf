@@ -535,11 +535,11 @@ function generate(num, goal) {
 }
 
 	function loading(num, goal) {
-		if (($show_bar.offsetWidth/$show_right.offsetWidth)*100+5 < 100) {
-			$show_bar.style.width = (($show_bar.offsetWidth/$show_right.offsetWidth)*100+5).toString() + "%";
+		if (($show_bar.offsetWidth/$show_right.offsetWidth)*100+2 < 100) {
+			$show_bar.style.width = (($show_bar.offsetWidth/$show_right.offsetWidth)*100+2).toString() + "%";
 			auto = setTimeout(function() {
 					loading(num, goal);
-				},50);
+				},1000/60);
 		} else {
 			get(num, goal);
 			if (grade == 20) {//20강 달성
