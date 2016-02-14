@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+		
+		<title>에픽템 부위 맞추기</title>
+		
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+				border:0px;
+				
+				font-size:16px;
+				font-family:Arial;
+			}
+			
+			body {
+				background-color:#505050;
+			}
+			
+			#wrapper {
+				margin:0px auto;
+				padding:5px;
+				width:400px;
+				height:350px;
+				
+				background-color:brown;
+				border:1px black solid;
+				box-sizing:border-box;
+			}
+			
+			#item_image {
+				float:left;
+				
+				width:56px;
+				height:56px;
+				
+				background-color:black;
+				background-image:url('./sprite/images/sprite_hell.png');
+			}
+			#item_name {
+				float:left;
+				
+				margin-left:5px;
+				padding:2px;
+				width:327px;
+				height:56px;
+				
+				background-color:black;
+				box-sizing:border-box;
+				
+				display:table;
+			}
+				#item_name p {
+					color:white;
+					font-weight:bold;
+					text-align:center;
+					vertical-align:middle;
+					line-height:100%;
+					
+					display:table-cell;
+				}
+			
+			#item_progress {
+				position:relative;
+				clear:both;
+				float:left;
+				
+				margin-top:3px;
+				width:100%;
+				height:20px;
+				
+				background-color:black;
+				border:1px gray solid;
+				border-radius:2px;
+			}
+				#item_progress_bar {
+					position:absolute;
+					top:0px;
+					left:0px;
+					
+					width:0%;
+					height:100%;
+					
+					background-color:yellow;
+				}
+			
+			#cha1, #cha2 {
+				clear:both;
+				float:left;
+				
+				width:220px;
+				height:auto;
+			}
+				#cha2 {
+					display:none;
+				}
+			
+			input[type="button"] {
+				clear:right;
+				float:right;
+				
+				margin-bottom:10px;
+				width:160px;
+				height:42px;
+				
+				background-color:skyblue;
+				border:1px gray solid;
+				border-radius:5px;
+				
+				font-size:22px;
+				font-weight:bold;
+			}
+					#input1 {
+						margin-top:10px;
+					}
+				input[type="button"]:hover {
+					border:1px white solid;
+					
+					font-size:25px;
+					cursor:pointer;
+					cursor:hand;
+				}
+				input[type="button"]:active {
+					background-color:aqua;
+				}
+				input[type="button"].failed {
+					background-color:orange;
+				}
+			
+			button {
+				clear:both;
+				float:left;
+				
+				width:180px;
+				height:40px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:10px;
+				
+				font-size:25px;
+				font-weight:bold;
+			}
+				button:hover {
+					border:1px white solid;
+					
+					cursor:pointer;
+					cursor:hand;
+				}
+				button:active {
+					background: #DEDEDE;
+				}
+			#point {
+				float:right;
+				
+				padding-left:10px;
+				width:200px;
+				height:40px;
+				
+				background-color:#101010;
+				border:1px gray solid;
+				box-sizing:border-box;
+				
+				color:white;
+				font-size:24px;
+				font-weight:bold;
+				line-height:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="item_image">
+			</div>
+			<div id="item_name">
+				<p>????<br/>(????)</p>
+			</div>
+			<div id="item_progress">
+				<div id="item_progress_bar">
+				</div>
+			</div>
+			
+			<img id="cha1" src="./images/etc/stand1.png" />
+			<img id="cha2" src="./images/etc/stand2.png" />
+			
+			<input id="input1" type="button" value="무기(Q)" disabled />
+			<input id="input2" type="button" value="방어구(W)" disabled />
+			<input id="input3" type="button" value="장신구(O)" disabled />
+			<input id="input4" type="button" value="특수장비(P)" disabled />
+			
+			<button id="start" disabled>로딩 중...</button>
+			<div id="point">
+				점수 : 0
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		<script type="text/javascript" src="./js/shortcut.js"></script>
+		
+		<script type="text/javascript">
+			//변수
+			var typeList = [];
+			var count = 0;
+			var item = {};
+			var suggest = "";
+			var randomList = ["무기","무기","방어구","방어구","악세서리","특수장비"];
+			var max = 300;
+			var sound_file = [,];//[성공,실패]
+			var sound_playing = [0,0];//[성공,실패]
+			var auto;
+			
+			//함수
+			//DOM 선택자
+			function $(parameter) {
+				return document.querySelector(parameter);
+			}
+			function $$(parameter) {
+				return document.querySelectorAll(parameter);
+			}
+			
+			//메인 함수
+			function play(num) {
+				for (var i=0;i<2;i++) {
+					if (sound_playing[i] == 1) {
+						sound_file[i].pause();
+						sound_file[i].currentTime = 0;
+						sound_playing[i] = 0;
+					}
+				}
+				sound_file[num].play();
+				sound_playing[num] = 1;
+			}
+			
+			function show(step) {
+				//출력 부위 선정
+				var target1 = randomList[Math.floor(Math.random() * randomList.length)];
+				var targetList = [];
+				//아이템 결정
+				for (var i=0;i<typeList.length;i++) {
+					if (typeList[i]["type"] == target1) {
+						targetList.push(typeList[i]);
+					}
+				}
+				var target2 = targetList[Math.floor(Math.random() * targetList.length)];
+				//아이템 저장
+				item["name"] = target2["name"];
+				item["type"] = target2["type"];
+				//아이템 이미지 표출
+				$("#item_image").style.backgroundPosition = spritePosition(item["name"]);
+				main(step,step);
+			}
+			
+			function main(step,maxStep) {
+				$("#item_progress_bar").style.width = ((step / maxStep) * 100).toString() + "%";
+				
+				//1. 미선택
+				if (suggest == "") {
+					//1-1. 시간 초과
+					if (step == 0) {
+						gameover("");
+					} else {
+						auto = setTimeout(function() {
+							main(step - 1,maxStep);
+						},1000/60)
+					}
+				//2. 잘못 선택
+				} else if (suggest != item["type"]) {
+					gameover(suggest);
+				//3. 제대로 선택
+				} else {
+					play(0);
+					
+					suggest = "";
+					count += 1;
+					$("#item_name").innerHTML = "<p>" + (count+1).toString() + "번째 : ????<br/>(????)</p>"
+					$("#point").innerHTML = "점수 : " + count.toString();
+					show(Math.max(45,max-count*3));
+				}
+				
+				//버튼 액션
+				$("#input1").onclick = function() {
+					suggest = "무기";
+				}
+				$("#input2").onclick = function() {
+					suggest = "방어구";
+				}
+				$("#input3").onclick = function() {
+					suggest = "악세서리";
+				}
+				$("#input4").onclick = function() {
+					suggest = "특수장비";
+				}
+			}
+			
+			function gameover(type) {
+				play(1);
+				
+				if (type != "") {
+					switch (type) {
+						case "무기":
+							$("#input1").className = "failed";
+							break;
+						case "방어구":
+							$("#input2").className = "failed";
+							break;
+						case "악세서리":
+							$("#input3").className = "failed";
+							break;
+						case "특수장비":
+							$("#input4").className = "failed";
+							break;
+					}
+				} else {
+					$("#input1").className = "failed";
+					$("#input2").className = "failed";
+					$("#input3").className = "failed";
+					$("#input4").className = "failed";	
+				}
+				$("#input1").disabled = "disabled";
+				$("#input2").disabled = "disabled";
+				$("#input3").disabled = "disabled";
+				$("#input4").disabled = "disabled";
+				
+				//뚱뚱해지기
+				$("#cha1").style.display = "none";
+				$("#cha2").style.display = "block";
+				
+				//아이템 공개
+				$("#item_name").innerHTML = "<p>" + item["type"] + "<br/>(" + item["name"] + ")</p>";
+				
+				//재시작 버튼 활성화
+				$("#start").disabled = false;
+			}
+			
+			//가동
+			window.onload = function() {
+				//사운드 불러오기
+				sound_file[0] = new Audio("./sound/get.mp3");
+					sound_file[0].volume = 0.5;
+				sound_file[1] = new Audio("./sound/gameover.mp3");
+					sound_file[1].volume = 0.1;
+				
+				//부위 리스트 설정
+				var tempCounter;
+				for (var i=0;i<itemList.length;i++) {
+					tempCounter = 0;
+					for (var j=0;j<typeList.length;j++) {
+						if (itemList[i][7] == "" || itemList[i][7] == typeList[j]["name"]) {
+							tempCounter += 1;
+						}
+					}
+					if (tempCounter == 0) {
+						if (itemList[i][0] != "악세서리／특수장비") {
+							 typeList.push({
+								name:itemList[i][7],
+								type:itemList[i][0]
+							 });
+						} else {
+							 typeList.push({
+								name:itemList[i][7],
+								type:itemList[i][1]
+							 });
+						}
+					}
+				}
+				
+				//시작 버튼 활성화
+				$("#start").innerHTML = "시작(SPACE)";
+				$("#start").disabled = false;
+				
+				//시작 버튼 클릭
+				$("#start").onclick = function() {
+					//나름대로 초기화
+					$("#item_name").innerHTML = "<p>1번째 : ????<br/>(????)</p>"
+					$("#cha1").style.display = "block";
+					$("#cha2").style.display = "none";
+					
+					$("#input1").className = "";
+					$("#input2").className = "";
+					$("#input3").className = "";
+					$("#input4").className = "";	
+					
+					suggest = "";
+					count = 0;
+					$("#point").innerHTML = "점수 : 0";
+					
+					//부팅
+					play(0);
+					
+					$("#start").disabled = true;
+					$("#input1").disabled = "";
+					$("#input2").disabled = "";
+					$("#input3").disabled = "";
+					$("#input4").disabled = "";
+					show(max);
+				}
+				
+				//단축키
+				shortcut.add("space",function() {
+					$("#start").click();
+				});
+				shortcut.add("Q",function() {
+					$("#input1").click();
+				});
+				shortcut.add("W",function() {
+					$("#input2").click();
+				});
+				shortcut.add("O",function() {
+					$("#input3").click();
+				});
+				shortcut.add("P",function() {
+					$("#input4").click();
+				});
+			}
+		</script>
+	
+	
+	</body>
+</html>
