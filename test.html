@@ -1,15 +1,10 @@
-﻿<<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 		<script type="text/javascript" src="./js/fastclick.js"></script>
-		<script type="text/javascript">
-			window.onload = function() {
-				FastClick.attach(document.body);
-			}
-		</script>
 		<!--
 		<link rel="stylesheet" type="text/css" href="./css/.css" />
 		-->
@@ -62,7 +57,10 @@
 			}
 			
 			window.onload = function() {
+				FastClick.attach(document.body);
+				
 				var music = new Audio("./sound/snack_month.mp3");
+				music.volume = 0.1;
 				
 				document.getElementById("click").onclick = function() {
 					play(music);
