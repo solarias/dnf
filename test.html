@@ -1,0 +1,76 @@
+﻿<<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		<script type="text/javascript" src="./js/fastclick.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				FastClick.attach(document.body);
+			}
+		</script>
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+		
+		<title></title>
+		
+		<style type="text/css">
+			body {
+				background-color:#505050;
+			}
+			
+			input {
+				width:100px;
+				height:40px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:3px;
+				
+				font-size:25px;
+				font-weight:bold;
+			}
+				input:active {
+					background: #DEDEDE;
+				}
+		</style>
+	</head>
+	<body>
+		<input id="click" type="button" value="클릭" />
+		
+		<script type="text/javascript">
+			var playing = 0;
+			
+			function play(music) {
+				switch (playing) {
+					case 0:
+						playing = 1;
+						music.play();
+						break;
+					case 1:
+						music.currentTime = 0;
+						break;
+				}
+			}
+			
+			window.onload = function() {
+				var music = new Audio("./sound/snack_month.mp3");
+				
+				document.getElementById("click").onclick = function() {
+					play(music);
+				}
+			}
+			
+		</script>
+	
+	
+	</body>
+</html>
