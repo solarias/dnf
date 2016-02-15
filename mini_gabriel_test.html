@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
 		<!--모바일 최적화 : 해상도 맞추기, 터치 딜레이 제거 (시작)-->
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<script type="" src="./js/fastclick.js"></script>
 		<!--모바일 최적화 : 해상도 맞추기, 터치 딜레이 제거 (끝)-->
 		<!--
 		<link rel="stylesheet" type="text/css" href="./css/.css" />
@@ -23,11 +24,12 @@
 			}
 			
 			html {
-			-ms-touch-action: manipulation;
-			touch-action: manipulation;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
 			}
 			
 			body {
+				width:400px;
 				background-color:#505050;
 			}
 			
@@ -357,6 +359,9 @@
 			
 			//가동
 			window.onload = function() {
+				//fastclick.js 실행
+				FastClick.attach(document.body);
+				
 				//사운드 불러오기
 				sound_file[0] = new Audio("./sound/get.mp3");
 					sound_file[0].volume = 0.5;
