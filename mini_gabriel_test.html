@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
+		<!--모바일 최적화 : 해상도 맞추기, 터치 딜레이 제거 (시작)-->
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<!--모바일 최적화 : 해상도 맞추기, 터치 딜레이 제거 (끝)-->
 		<!--
 		<link rel="stylesheet" type="text/css" href="./css/.css" />
 		-->
@@ -17,6 +20,11 @@
 				
 				font-size:16px;
 				font-family:Arial;
+			}
+			
+			html {
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
 			}
 			
 			body {
