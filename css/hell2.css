@@ -76,6 +76,9 @@ body {
 	
 	width:925px;
 	height:600px;
+	
+	border:1px black solid;
+		border-top:0px;
 }
 /*======================================================================================================*/
 /* ※ 1. 좌단 */
@@ -625,33 +628,38 @@ body {
 		position:absolute;
 		bottom:5px;
 		left:5px;
-		z-index:10;
+		z-index:90;
 		
-		padding:3px;
-		padding-left:6px;
-		width:205px;
-		height:70px;
+		padding:5px;
+		width:155px;
+		height:168px;
 		
-		background-color:rgba(192,192,192,0.7);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3C0C0C0,endColorstr=#B3C0C0C0);
+		background-color:rgba(30,30,30,0.9);
+		border:1px white solid;
 		border-radius:8px;
 		-moz-box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		box-sizing:border-box;
 		
-		font-size:14px;
+		color:white;
+		font-size:12px;
 		font-weight:bold;
-		line-height:140%;
+		line-height:180%;
+		
+		display:none;
 	}
 		#filter input[type="checkbox"] {
 			width:17px;
 			height:17px;
 			
-			vertical-align:top;
+			vertical-align:middle;
 		}
 		#filter input[type="checkbox"]:hover {
 			cursor:pointer;
 			cursor:hand;
+		}
+		#filter label {
+			font-size:12px;
 		}
 		#filter label:hover {
 			cursor:pointer;
@@ -660,11 +668,77 @@ body {
 			text-decoration:underline;
 		}
 		#filter hr {
-			margin:2px 0px;
+			margin:5px 0px;
 			
-			border:1px black dashed;
+			border:1px white dashed;
 		}
-	
+		#filter input[type="button"] {
+			width:100%;
+			height:20px;
+			
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+			
+			border:1px gray outset;
+			border-radius:5px;
+			
+			font-size:15px;
+			font-weight:bold;
+		}
+			#filter input[type="button"]:hover {
+				border:1px white solid;
+			}
+			#filter input[type="button"]:active {
+				background:#dedede;
+			}
+	#filter_button {
+		position:absolute;
+		bottom:10px;
+		left:10px;
+		z-index:100;
+		
+		width:145px;
+		height:40px;
+		
+		background: #FFD83E; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FFD83E);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FFD83E));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FFD83E);
+		background: linear-gradient(to bottom, #ffffff, #FFD83E);
+		
+		border:1px gray outset;
+		border-radius:5px;
+		
+		font-size:22px;
+		font-weight:bold;
+	}
+			#filter_button:hover {
+				border:1px white solid;
+			}
+			#filter_button:active {
+				background: #FFD800;
+			}
+			#filter_button.selected {
+				background: #FF6A00; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+				background: linear-gradient(to bottom, #ffffff, #FF6A00);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+			}
+			#filter_button.selected:active {
+				background:#ffaaoo;
+			}
+		#filter_button img {
+			width:25px;
+			height:25px;
+			
+			vertical-align:top;
+		}
 	/*======================================================================================================*/
 	/* ※ 2.5 팝업창 - 시작 */
 	/*======================================================================================================*/
@@ -1392,7 +1466,196 @@ body {
 	/*======================================================================================================*/
 	/* ※ 2.5 팝업창 - 끝 */
 	/*======================================================================================================*/
-	
+	/*======================================================================================================*/
+	/* ※ 2.6 확률 팝업창 - 시작 */
+	/*======================================================================================================*/
+	#popup_chance {
+		position:absolute;
+		top:5px;
+		right:5px;
+		z-index:20;
+		
+		padding:0px 5px;
+		width:520px;
+		height:420px;
+		
+		background:rgba(60,80,120,0.7);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B33C5078,endColorstr=#B33C5078);
+		border:1px white solid;
+		border-radius:5px;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		display:none;
+	}
+		#popup_chance_title {
+			margin:0px auto;
+			padding:5px;
+			width:200px;
+			
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:yellow;
+			font-size:25px;
+			font-weight:bold;
+			text-align:center;
+		}
+		#popup_chance_reset {
+			position:absolute;
+			top:5px;
+			left:5px;
+			
+			width:120px;
+			height:30px;
+			
+			background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+			
+			border:1px gray solid;
+			border-radius:5px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:16px;
+			font-weight:bold;
+			
+			display:block;
+		}
+			#popup_chance_reset:hover {
+				border:1px white solid;
+				
+				cursor:pointer;
+				cursor:hand;
+			}
+			#popup_chance_reset:active {
+				background:#FFAA00;
+			}
+		#popup_chance_info {
+			padding:2px;
+			width:100%;
+			height:23px;
+			
+			background-color:#DCDCDC;
+			background-color:rgba(220,220,220,0.7);
+			border:1px gray solid;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-weight:bold;
+			text-align:center;
+		}
+		#popup_chance_main {
+			overflow-x:hidden;
+			overflow-y:scroll;
+			
+			width:100%;
+			height:316px;
+			
+			background-color:#404040;
+			background-color:rgba(64,64,64,0.8);
+			border:1px black solid;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			color:white;
+			font-weight:bold;
+		}
+			#popup_chance_main table {
+				margin:5px auto 20px auto;
+				
+				border-collapse:collapse;
+			}
+			#popup_chance_main table tr {
+				
+			}
+			#popup_chance_main table tr td {
+				border-right:2px gray solid;
+				border-bottom:2px gray solid;
+				
+				text-align:center;
+			}
+				#popup_chance_main .col_2, #popup_chance_main .col_3 {
+					padding:2px;
+					width:190px;
+					
+					line-height:160%;
+				}
+				#popup_chance_main table tr td.head.hard {
+					background-color:yellow;
+					
+					color:black;
+				}
+				#popup_chance_main table tr td.head.very {
+					background-color:orange;
+					
+					color:black;
+				}
+				#popup_chance_main .col_2:not(.head), #popup_chance_main .col_3:not(.head) {
+					text-align:right;
+				}
+				#popup_chance_main table tr td input[type="text"]{
+					padding:1px;
+					width:60px;
+					
+					border:1px gray solid;
+					
+					text-align:right;
+				}
+		#popup_chance .input {
+			margin-top:5px;
+			height:30px;
+			
+			border:1px gray outset;
+			border-radius:5px;
+			
+			font-size:18px;
+			font-weight:bold;
+		}
+				#popup_chance .input#popup_chance_apply {
+					
+					width:300px;
+					
+					background: #FFFFFF; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				}
+				#popup_chance .input#popup_chance_cancel {
+					float:right;
+					width:100px;
+					
+					background: #FF6A00; /* default */
+					background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+					background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+					background: linear-gradient(to bottom, #ffffff, #FF6A00);
+					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+				}
+			#popup_chance .input:hover {
+				border:1px white solid;
+			}
+				#popup_chance .input#popup_chance_apply:active {
+					background:#DEDEDE;
+				}
+				#popup_chance .input#popup_chance_cancel:active {
+					background:#FFAA00;
+				}
+	/*======================================================================================================*/
+	/* ※ 2.6 확률 팝업창 - 끝 */
+	/*======================================================================================================*/
+		
 	.item {
 		position:absolute;
 		top:180px;
@@ -1515,8 +1778,7 @@ body {
 		height:100px;
 		
 		background-color:orange;
-		border:1px black solid;
-		border-right:0px;
+		border-top:1px black solid;
 		-moz-box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		box-sizing:border-box;
@@ -1682,8 +1944,7 @@ body {
 		height:100px;
 		
 		background-color:orange;
-		border:1px black solid;
-		border-left:0px;
+		border-top:1px black solid;
 		-moz-box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		box-sizing:border-box;

@@ -345,9 +345,12 @@
 					<hr/>
 					<input id="filter_sound" type="checkbox" />
 					<label id="label_sound" for="filter_sound">
-						에픽 드랍 사운드 출력
+						에픽 사운드 출력
 					</label>
+					<hr/>
+					<input id="shift_chance" type="button" value="드랍 확률 설정" />
 				</div>
+				<button id="filter_button"><img src="./images/epic/icon_option.png" /> 옵션 설정</button>
 				
 				
 		<!------팝업------>
@@ -585,6 +588,94 @@
 				<input id="shift3" class="" type="button" value="세트 아이템" />
 				<input id="shift4" class="" type="button" value="도감" />
 		<!------팝업------>
+		<!---확률 팝업---->
+				<div id="popup_chance">
+					<div id="popup_chance_title">
+						드랍 확률 설정
+					</div>
+					<input id="popup_chance_reset" type="button" value="확률 초기화" />
+					<div id="popup_chance_info">
+						아이템 <span class="u">하나</span>당 드랍 확률을 설정할 수 있습니다
+					</div>
+					<div id="popup_chance_main">
+						<table>
+							<tr>
+								<td class="col_1"></td>
+								<td class="col_2 head hard">어려움 (아이템 4개)</td>
+								<td class="col_3 head very">매우 어려움 (아이템 6개)</td>
+							</tr>
+							<tr>
+								<td class="col_1">노멀</td>
+								<td class="col_2">
+									<p>에픽 아이템 : <input id="chance_text_111" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_112" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_113" type="text" /> %</p>
+								</td>
+								<td class="col_3">
+									<p>에픽 아이템 : <input id="chance_text_211" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_212" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_213" type="text" /> %</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="col_1">익스퍼트</td>
+								<td class="col_2">
+									<p>에픽 아이템 : <input id="chance_text_121" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_122" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_123" type="text" /> %</p>
+								</td>
+								<td class="col_3">
+									<p>에픽 아이템 : <input id="chance_text_221" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_222" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_223" type="text" /> %</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="col_1">마스터</td>
+								<td class="col_2">
+									<p>에픽 아이템 : <input id="chance_text_131" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_132" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_133" type="text" /> %</p>
+								</td>
+								<td class="col_3">
+									<p>에픽 아이템 : <input id="chance_text_231" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_232" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_233" type="text" /> %</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="col_1">킹</td>
+								<td class="col_2">
+									<p>에픽 아이템 : <input id="chance_text_141" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_142" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_143" type="text" /> %</p>
+								</td>
+								<td class="col_3">
+									<p>에픽 아이템 : <input id="chance_text_241" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_242" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_243" type="text" /> %</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="col_1">슬레이어</td>
+								<td class="col_2">
+									<p>에픽 아이템 : <input id="chance_text_151" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_152" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_153" type="text" /> %</p>
+								</td>
+								<td class="col_3">
+									<p>에픽 아이템 : <input id="chance_text_251" type="text" /> %</p>
+									<p>코스모 소울 : <input id="chance_text_252" type="text" /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_253" type="text" /> %</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+					<input id="popup_chance_apply" class="input" type="button" value="적용" />
+					<input id="popup_chance_cancel" class="input" type="button" value="닫기" />
+				</div>
+		<!---확률 팝업---->
 				
 				<!--
 				<div id="item1" class="item">
