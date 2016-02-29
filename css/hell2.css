@@ -1503,10 +1503,44 @@ body {
 			font-weight:bold;
 			text-align:center;
 		}
-		#popup_chance_reset {
+		#popup_chance_perfect {
 			position:absolute;
 			top:5px;
 			left:5px;
+			
+			width:120px;
+			height:30px;
+			
+			background: #FFD83E; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FFD83E);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FFD83E));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FFD83E);
+			background: linear-gradient(to bottom, #ffffff, #FFD83E);
+			
+			border:1px gray solid;
+			border-radius:5px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			
+			font-size:16px;
+			font-weight:bold;
+			
+			display:block;
+		}
+			#popup_chance_perfect:hover {
+				border:1px white solid;
+				
+				cursor:pointer;
+				cursor:hand;
+			}
+			#popup_chance_perfect:active {
+				background:#FFD800;
+			}
+		#popup_chance_reset {
+			position:absolute;
+			top:5px;
+			right:5px;
 			
 			width:120px;
 			height:30px;

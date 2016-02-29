@@ -1597,6 +1597,10 @@ window.onload = function() {
 			$("#popup_chance_reset").onclick = function() {
 				setChance("reset");
 			}
+			//5. 퍼펙트
+			$("#popup_chance_perfect").onclick = function() {
+				setChance("perfect");
+			}
 		
 		//3. 날짜 환산
 			//3-0. 날짜 계산 함수

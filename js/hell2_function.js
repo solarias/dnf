@@ -2118,6 +2118,16 @@ function setChance(cmd) {
 						chanceList_num[1][i-1][j-1][k] = chanceList_num_default[1][i-1][j-1][k];
 						
 						break;
+					case "perfect":
+						//에픽
+						if (k == 1) {
+							$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = 100;
+							chanceList_num[1][i-1][j-1][k] = 1;
+						//비에픽
+						} else {
+							$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = 0;
+							chanceList_num[1][i-1][j-1][k] = 0;
+						}
 					case "apply":
 						//입력된 값이 숫자인지 확인
 						if (!isNumber($("#chance_text_" + i.toString() + j.toString() + k.toString()).value)) {
@@ -2136,9 +2146,14 @@ function setChance(cmd) {
 			}
 			
 			switch (cmd) {
-			//"초기화 : 마봉 확률 초기화
+			//"초기화" : 마봉 확률 초기화
 				case "reset":
 					chanceList_num[1][i-1][j-1][0] = chanceList_num_default[1][i-1][j-1][0];
+					
+					break;
+			//"퍼펙트" : 마봉 확률 = 0
+				case "perfect":
+					chanceList_num[1][i-1][j-1][0] = 0;
 					
 					break;
 			//"적용" : 아이템 3종 확률 합이 100% 이하면 적용
@@ -2170,6 +2185,10 @@ function setChance(cmd) {
 	switch (cmd) {
 		case "reset":
 			alert("드랍 확률이 초기화되었습니다.");
+			
+			break;
+		case "perfect":
+			alert("에픽 드랍률이 100%가 되었습니다.");
 			
 			break;
 		case "apply":
