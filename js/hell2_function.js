@@ -729,7 +729,7 @@ function simulate(num){
 			if (running == 1) {//'자동 실행 변수'가 ON일때만 반응
 				autoRunning = setTimeout(function() {
 					simulate(2);
-				}, 50);
+				}, 25);
 				return;
 			} else {
 				//뒷처리
@@ -882,7 +882,7 @@ function simulate(num){
 				//재실행
 				autoRunning = setTimeout(function() {
 					simulate(3);
-				}, 50);
+				}, 25);
 			} else {
 				//아이템 드롭 - 실시
 				for (var i=0;i<thisTime.length;i++) {
