@@ -41,6 +41,8 @@ body {
 	background-color:#606060;
 }
 #wrapper {
+	position:relative;
+	
 	width:500px;
 }
 	input[type="button"] {
