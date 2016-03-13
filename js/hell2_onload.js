@@ -1356,7 +1356,7 @@ window.onload = function() {
 			}
 		}
 		$("#cost_compare").onclick = function() {
-			if (gold < 0) {
+			if (gold <= 0) {
 				alert('※ 경고 : 도전장 골드 가격이 제대로 입력되지 않았습니다.\n(도전장 골드 가격이 입력되어야 현금 시세 계산이 가능함)');
 				
 				return;
