@@ -1365,7 +1365,7 @@ window.onload = function() {
 			if (! isNumber(market)) {
 				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
 			} else {
-				alert("현재 쓴 돈으로 총 " + Math.floor(cost[0] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 먹을 수 있습니다.\n\
+				alert("현재 쓴 돈으로 총 " + Math.floor(cost[0] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
 (현금 환산 : " + setWon(Math.floor(cost[0] * gold / 10000000 * market)) + "원)\n\
 (치킨 1마리 당 15,000원 기준)");
 			}
