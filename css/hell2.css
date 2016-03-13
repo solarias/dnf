@@ -632,7 +632,7 @@ body {
 		
 		padding:5px;
 		width:155px;
-		height:168px;
+		height:165px;
 		
 		background-color:rgba(30,30,30,0.9);
 		border:1px white solid;
@@ -736,6 +736,8 @@ body {
 		#filter_button img {
 			width:25px;
 			height:25px;
+			
+			pointer-events: none;
 			
 			vertical-align:top;
 		}
@@ -1996,8 +1998,9 @@ body {
 			box-sizing:border-box;
 			
 			color:white;
-			font-size:16px;
+			font-size:15px;
 			font-weight:bold;
+			line-height:100%;
 		}
 			#cost_text .line {
 				margin:3px 0px 3px 3px;
@@ -2013,12 +2016,10 @@ body {
 			#line_cover {
 				float:left;
 				
-				width:305px;
+				font-size:14px;
 			}
 			#cost_text input {
-				float:right;
-				width:48px;
-				height:58px;
+				height:20px;
 				
 				background: #FFFFFF; /* default */
 				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
@@ -2031,10 +2032,23 @@ body {
 				
 				font-size:12px;
 				font-weight:bold;
-				white-space:pre-line;
 				
-				display:inline-block;
+				display:block;
 			}
+					#cost_text input.left {
+						float:left;
+						
+						width:161px;
+						
+						border-bottom-left-radius:4px;
+					}
+					#cost_text input.right {
+						float:right;
+						
+						width:201px;
+						
+						border-bottom-right-radius:4px;
+					}
 				#cost_text input:hover {
 					border:1px white solid;
 				}
@@ -2042,11 +2056,13 @@ body {
 					background:#DEDEDE;
 				}
 			#cost_text hr {
+				margin-bottom:3px;	
+				
 				border-top:1px gray solid;
 			}
 		#cost img {
 			height:16px;
-			vertical-align:top;
+			vertical-align:bottom;
 		}
 			
 /*======================================================================================================*/

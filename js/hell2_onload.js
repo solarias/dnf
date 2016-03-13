@@ -122,9 +122,9 @@ window.onload = function() {
 	try {
 		//음악파일 업로드 위치 : 다음 블로그
 		sound_appear = new Audio;
-			sound_appear.volume = 0.4;
+			sound_appear.volume = 0.3;
 		sound_land = new Audio;
-			sound_land.volume = 0.4;
+			sound_land.volume = 0.3;
 		
 		if (sound_appear.canPlayType("audio/mpeg") !== "") {
 			//mp3 출력 가능
@@ -1346,13 +1346,28 @@ window.onload = function() {
 		}
 		
 		$("#cost_set_gold").onclick = function() {
-			var challenge = prompt("도전장 가격을 입력하세요.\n(현재 가격 : " + thousand(gold) + " Gold)");
+			var challenge = prompt("도전장 골드 가격을 입력하세요.\n(현재 가격 : " + thousand(gold) + " Gold)");
 			if (! isNumber(challenge)) {
 				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
 			} else {
 				gold = challenge;
 				$("#cost_gold").innerHTML = setWon(cost[0]*gold);
 				$("#cost_gold_real").innerHTML = setWon(cost[1]*gold);
+			}
+		}
+		$("#cost_compare").onclick = function() {
+			if (gold < 0) {
+				alert('※ 경고 : 도전장 골드 가격이 제대로 입력되지 않았습니다.\n(도전장 골드 가격이 입력되어야 현금 시세 계산이 가능함)');
+				
+				return;
+			}
+			var market = prompt("던파 골드당 현금 시세를 입력해주세요.\n(1,000만골드 기준, 현재 도전장 골드 가격 : " + thousand(gold) + " Gold)");
+			if (! isNumber(market)) {
+				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
+			} else {
+				alert("현재 쓴 돈으로 총 " + Math.floor(cost[0] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 먹을 수 있습니다.\n\
+(현금 환산 : " + setWon(Math.floor(cost[0] * gold / 10000000 * market)) + "원)\n\
+(치킨 1마리 당 15,000원 기준)");
 			}
 		}
 		
@@ -1389,6 +1404,8 @@ window.onload = function() {
 				
 				//4-1. 상단 - 획득기록 초기화
 				$("#record").innerHTML = "";
+					//4-1-1. 획득기록 내부정보 초기화
+					content_text[0] = "";
 				//4-2. 상단 - 인벤토리 초기화
 				$("#inventory_table").innerHTML = "";
 				generateInventory();
