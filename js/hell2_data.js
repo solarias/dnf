@@ -10,6 +10,9 @@ var autoEffect = {
 	wait:[,,,,,,,,,]
 }
 var autoSound = [,];//[0] : sound_appear, [1] : sound_land
+var bgm = "none";//"" : 정지, (숫자) : 던전 브금, "hell" : 헬 브금
+var bgmList = {};//차후에 BGM 리스트 생성
+var sfxList = {};//차후에 효과음 리스트 생서
 
 var dateSettingList = [0,0,0,0,0,0,0];//[최대치,1회,1번,2번,3번,4번,5번];
 var dateSettingName = ["하루 피로도 총량","1회 피로도 소모","1번 비약 피로도","2번 비약 피로도","3번 비약 피로도","4번 비약 피로도","5번 비약 피로도"];//

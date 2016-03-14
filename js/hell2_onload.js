@@ -135,10 +135,52 @@ window.onload = function() {
 			sound_appear.src = "http://cfile225.uf.daum.net/attach/221A6F44559DD6D31E0F30";
 			sound_land.src = "http://cfile226.uf.daum.net/attach/2722E144559DD6D41A932A";
 		}
+		
+		//BGM 준비
+		bgmList = {
+			"0":new Audio("./sound/bgm_0.mp3"),
+			"1":new Audio("./sound/bgm_1.mp3"),
+			"2":new Audio("./sound/bgm_2.mp3"),
+			"3":new Audio("./sound/bgm_3.mp3"),
+			"4":new Audio("./sound/bgm_4.mp3"),
+			"5":new Audio("./sound/bgm_5.mp3"),
+			"6":new Audio("./sound/bgm_6.mp3"),
+			"7":new Audio("./sound/bgm_7.mp3"),
+			"8":new Audio("./sound/bgm_8.mp3"),
+			"9":new Audio("./sound/bgm_9.mp3"),
+			"10":new Audio("./sound/bgm_10.mp3"),
+			"11":new Audio("./sound/bgm_11.mp3"),
+			"12":new Audio("./sound/bgm_12.mp3"),
+			"13":new Audio("./sound/bgm_13.mp3"),
+			"14":new Audio("./sound/bgm_14.mp3"),
+			"15":new Audio("./sound/bgm_15.mp3"),
+			"16":new Audio("./sound/bgm_16.mp3"),
+			"hell":new Audio("./sound/bgm_hell.mp3")
+		};
+			//BGM 반복여부 & 볼륨 조절
+			for (var key in bgmList) {
+				if (bgmList.hasOwnProperty(key)) {
+					bgmList[key].loop = true;
+					bgmList[key].volume = 0.3;
+				}
+			}
+		
+		//창 열기/닫기 효과음 준비
+		sfxList = {
+			"open":new Audio("./sound/win_open.mp3"),
+			"close":new Audio("./sound/win_close.mp3")
+		}
+			//사운드 반복여부
+			sfxList["open"].volume = 0.5;
+			sfxList["close"].volume = 0.5;
 	} catch(e) {
 		//audio 태그를 지원하지 않을 시
 		$("#filter_sound").disabled = "disabled";
-		$("#label_sound").innerHTML = "사운드 출력 불가"
+		$("#label_sound").innerHTML = "사운드 미지원"
+		$("#filter_bgm").disabled = "disabled";
+		$("#label_bgm").innerHTML = "BGM 미지원"
+		$("#bgm_type").disabled = "disabled";
+		$("#bgm_type").style.width = "40px";
 	}
 	
 	//이미지 선로딩
@@ -1525,7 +1567,16 @@ window.onload = function() {
 			}
 		}
 		
-		//2-4. 옵션 버튼
+		//2-4. BGM 출력
+			//2-4-1. BGM 체크박스
+			$("#filter_bgm").onclick = function() {
+				play($("#bgm_type").value);
+			}
+			//2-4-2. BGM 타입 드롭다운 메뉴
+			$("#bgm_type").onchange = function() {
+				play($("#bgm_type").value);
+			}
+		//2-5. 옵션 버튼
 		$("#filter_button").onclick = function() {
 			if ($("#filter").style.display != "block") {
 				$("#filter").style.display = "block";

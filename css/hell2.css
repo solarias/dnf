@@ -632,7 +632,7 @@ body {
 		
 		padding:5px;
 		width:155px;
-		height:165px;
+		height:190px;
 		
 		background-color:rgba(30,30,30,0.9);
 		border:1px white solid;
@@ -694,6 +694,16 @@ body {
 			}
 			#filter input[type="button"]:active {
 				background:#dedede;
+			}
+		#filter select {
+			width:60px;
+			
+			border:1px gray solid;
+			
+			font-size:12px;
+		}
+			#filter select option {
+				font-size:12px;
 			}
 	#filter_button {
 		position:absolute;

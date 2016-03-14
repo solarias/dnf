@@ -345,8 +345,17 @@
 					<hr/>
 					<input id="filter_sound" type="checkbox" />
 					<label id="label_sound" for="filter_sound">
-						에픽 사운드 출력
+						효과음 출력
 					</label>
+					<br/>
+					<input id="filter_bgm" type="checkbox" />
+					<label id="label_bgm" for="filter_bgm">
+						BGM 출력
+					</label>
+					<select id="bgm_type">
+						<option value="dungeon" selected>던전</option>
+						<option value="hell">헬</option>
+					</select>
 					<hr/>
 					<input id="shift_chance" type="button" value="드랍 확률 설정" />
 				</div>
@@ -995,7 +1004,7 @@
 		
 		<script type="text/javascript" src="./js/placeholders.min.js"></script>
 		<script type="text/javascript" src="./js/shortcut.js"></script>
-		
+		<script type="text/javascript" src="../function/tool/zoom.js"></script>
 		
 		<script type="text/javascript" src="./js/hell_itemList.js"></script>
 		

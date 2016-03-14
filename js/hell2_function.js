@@ -445,6 +445,11 @@ function dungeon_select() {
 	
 	//6. 기여자 이름 변경
 	$("#person_helper").innerHTML = helpList[input[0]];
+	
+	//7. 브금 실행
+	if ($("#filter_bgm").value = true) {
+		play($("#bgm_type").value);
+	}
 };
 
 //(실행 전) 에픽 드랍 리스트 구축
@@ -1808,8 +1813,44 @@ function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 }
 
 //=================================================================================================================
-//※ 함수 - 기타 (버튼 변경, 창 변경, 확률 변경)
+//※ 함수 - 기타 (브금 실행, 버튼 변경, 창 변경, 확률 변경)
 //=================================================================================================================
+//브금 실행
+function play(type) {
+	//IF(기존 브금 실행중) 해당 브금 종료
+	if (bgm != "none") {
+		switch (bgm) {
+			case "hell":
+				bgmList["hell"].currentTime = 0;
+				bgmList["hell"].pause();
+				
+				break;
+			default:
+				bgmList[bgm.toString()].currentTime = 0;
+				bgmList[bgm.toString()].pause();
+				break;
+		}
+	}
+	
+	//신규 브금 실행 or 브금 정지
+	if ($("#filter_bgm").checked == false) {
+		bgm = "none";
+	} else {
+		switch (type) {
+			case "dungeon":
+				bgmList[input[0].toString()].play();
+				bgm = input[0];
+				
+				break;
+			case "hell":
+				bgmList["hell"].play();
+				bgm = "hell";
+				
+				break;
+		}
+	}
+}
+
 //버튼 변경
 function onoff(num) {
 	switch (num) {
@@ -2057,6 +2098,8 @@ function shift(target) {
 		//(chance 빼고) 하나라도 열렸다면
 		$("#popup").style.display = "block";
 		$("#checkbox").style.display = "block";
+		
+		//공용팝업창 -> 열기 효과음
 	} else {
 		//(chance 빼고) 열린 게 없다면
 		$("#popup").style.display = "none";
@@ -2064,6 +2107,15 @@ function shift(target) {
 		right_display = "none";
 	}
 	
+	//열었음 : 열기 효과음
+	if ($("#filter_sound").checked == true) {
+		if (temp > 0) {
+			sfxList["open"].play();
+		//닫았음 : 닫기 효과음
+		} else {
+			sfxList["close"].play();
+		}
+	}
 }
 
 //확률 변경
