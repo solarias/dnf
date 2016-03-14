@@ -164,6 +164,8 @@ window.onload = function() {
 					bgmList[key].volume = 0.3;
 				}
 			}
+			//특정 브금 볼륨 조절 (너무 시끄러움)
+			bgmList["hell"].volume = 0.2;
 		
 		//창 열기/닫기 효과음 준비
 		sfxList = {
