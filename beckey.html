@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/beckey.css" />
+
+		<title>베키 어드벤처</title>
+	</head>
+	<body>
+		<div id="wrapper">
+
+			<div id="init">
+				<img id="init_illust" src="./images/beckey/beckey_illust.png" alt="베키" />
+				<div id="init_description">
+					나쁜 안톤이 우리 루크 할아범을 납치해갔어! 루크 할아범을 구출해야 하는데
+					안톤을 쓰러뜨리기엔 아직 내 힘이 부족한 거 같아. 나 좀 도와줄래?
+				</div>
+
+				<input id="init_start" type="button" value="실행 준비중" disabled />
+			</div>
+
+			<div id="main">
+				<div id="frame_left">
+					<div id="date">구출작전 <span id="date_num">0</span>일차</div>
+					<img id="sprite" src="./images/beckey/beckey_sprite.gif" alt="베키" />
+					<div id="stat">
+						전투력 : <span id="power">0</span>
+						<br/>
+						무기재련 : +<span id="enchant">0</span>
+						<hr/>
+						초대장 : <span id="invite">0</span>장
+						<br/>
+						강렬한 기운 : <span id="ganggi">0</span>개
+					</div>
+				</div>
+				<div id="frame_right">
+					<div id="equipment">
+						<p id="title">장비 현황</p>
+						<hr/>
+						무기 : <span id="equip0" class="rarity_0">마법의 거대 새총</span>
+						<br/>
+						상의 : <span id="equip1" class="rarity_0">마법의 악동 상의</span>
+						<br/>
+						하의 : <span id="equip2" class="rarity_0">마법의 악동 하의</span>
+						<br/>
+						어깨 : <span id="equip3" class="rarity_0">마법의 악동 어깨</span>
+						<br/>
+						벨트 : <span id="equip4" class="rarity_0">마법의 악동 벨트</span>
+						<br/>
+						신발 : <span id="equip5" class="rarity_0">마법의 악동 신발</span>
+						<br/>
+						목걸이 : <span id="equip6" class="rarity_0">마법의 엘팅 메모리얼 목걸이</span>
+						<br/>
+						팔찌 : <span id="equip7" class="rarity_0">마법의 엘팅 메모리얼 팔찌</span>
+						<br/>
+						반지 : <span id="equip8" class="rarity_0">마법의 엘팅 메모리얼 반지</span>
+						<br/>
+						보조장비 : <span id="equip9" class="rarity_0">마법의 특수 고글</span>
+						<br/>
+						마법석 : <span id="equip10" class="rarity_0">마법의 호문쿨루스 정수</span>
+						<br/>
+					</div>
+
+					<input id="run_farm" type="button" value="농사" />
+					<input id="run_hell" type="button" value="발굴" />
+					<input id="run_battle" type="button" value="대련" />
+					<input id="run_enchant" type="button" value="재련" />
+					<input id="run_challenge" type="button" value="구출" />
+				</div>
+			</div>
+
+			<div id="process">
+				<div id="process_box">
+					<div id="process_title">
+						<span id="process_type">농사</span> 중...
+					</div>
+					<div id="process_beckey">
+					</div>
+					<div id="process_image" class="farm">
+					</div>
+					<div id="process_bar">
+						<div id="process_stick"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="../function/tool/zoom.js"></script>
+		<script type="text/javascript" src="./js/beckey.js">
+
+
+		</script>
+
+
+	</body>
+</html>

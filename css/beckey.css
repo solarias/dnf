@@ -1,0 +1,292 @@
+* {
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+.rarity0 {/*마봉*/
+    color:#CEA0FF;
+    font-size:inherit;
+    font-weight:bold;
+}
+.rarity1 {/*에픽*/
+    color:#E5B64A;
+    font-size:inherit;
+    font-weight:bold;
+}
+
+body {
+    background-color:#303030;
+}
+    hr {
+        margin:5px 0px;
+
+        border:1px white solid;
+    }
+
+#wrapper {
+    position:relative;
+
+    margin:0px auto;
+    width:600px;
+    height:400px;
+
+    border:1px black solid;
+}
+
+#init {
+    width:100%;
+    height:100%;
+
+    background:brown;
+}
+    #init #init_illust {
+        float:left;
+
+        margin:30px 0px 0px 30px;
+        width:200px;
+        height:auto;
+
+        background-color:white;
+        border:5px gray outset;
+    }
+    #init #init_description {
+        float:right;
+
+        margin:30px 30px 0px 0px;
+        padding:5px;
+        width:300px;
+        height:210px;
+
+        background-color:black;
+        border:5px gray outset;
+
+        color:white;
+        font-size:22px;
+    }
+
+    #init #init_start {
+        float:right;
+
+        margin:20px 30px;
+        width:250px;
+        height:70px;
+
+        background: #FFD83E; /* default */
+        background: -moz-linear-gradient(top center, #FFFFFF, #FFD83E);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FFD83E));
+        background: -ms-linear-gradient(top center, #FFFFFF, #FFD83E);
+        background: linear-gradient(to bottom, #ffffff, #FFD83E);
+
+        border:1px gray solid;
+        border-radius:5px;
+
+        font-size:40px;
+        font-weight:bold;
+    }
+        #init #init_start:hover {
+            border:1px white solid;
+
+            cursor:pointer;
+            cursor:hand;
+        }
+        #init #init_start:active {
+			background: #FFD800;
+        }
+
+
+#main {
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    background-color:white;
+
+    display:none;
+}
+    #frame_left {
+        float:left;
+
+        width:50%;
+        height:100%;
+        border-right:1px black solid;
+    }
+        #frame_left #date {
+            margin:10px auto;
+            padding:5px;
+            width:270px;
+            height:37px;
+
+            background:#303030;
+            border:2px gray outset;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing: border-box;
+
+            color:white;
+            font-size:25px;
+            text-align:right;
+            line-height: 100%;
+        }
+        #frame_left #sprite {
+            margin:0px auto;
+            width:150px;
+
+            display:block;
+        }
+        #frame_left #stat {
+            margin:0 auto;
+            margin-top:20px;
+            padding:5px;
+            width:270px;
+            height:120px;
+
+            background:brown;
+            border:2px gray outset;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing: border-box;
+
+            color:white;
+            line-height:120%;
+            font-size:20px;
+        }
+
+    #frame_right {
+        float:right;
+
+        width:calc(50% - 1px);
+        height:100%;
+    }
+        #frame_right #equipment {
+            margin:0 auto;
+            margin-top:10px;
+            padding:5px;
+            width:270px;
+            height:285px;
+
+            background:brown;
+            border:2px gray outset;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing: border-box;
+
+            color:white;
+            font-size:13px;
+            line-height: 170%;
+        }
+            #frame_right #equipment #title {
+                font-size:20px;
+                text-align: center;
+            }
+
+        #frame_right input {
+            margin:8px 0px 0px 4px;
+            width:90px;
+            height:40px;
+
+    		background: #FFFFFF; /* default */
+    		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+    		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+    		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+    		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+    		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+            border:1px gray solid;
+            border-radius:5px;
+
+            font-size:25px;
+            font-weight:bold;
+        }
+            #frame_right input:hover {
+                border:1px white solid;
+
+                cursor:pointer;
+                cursor:hand;
+            }
+            #frame_right input:active {
+    			background: #DEDEDE;
+            }
+
+    #process {
+        position:absolute;
+        top:0;
+        left:0;
+
+        width:100%;
+        height:100%;
+
+        background-color:rgba(0,0,0,0.7);
+
+        display:none;
+    }
+        #process #process_box {
+            margin:80px auto;
+            width:350px;
+            height:180px;
+
+            background-color:white;
+            border:1px black solid;
+        }
+        #process_title {
+            width:100%;
+
+            border-bottom:2px black solid;
+
+            font-size:20px;
+            text-align:center;
+        }
+        #process_beckey {
+            clear:both;
+            float:left;
+
+            margin:35px 30px;
+            width:42px;
+            height:43px;
+
+            background-image:url('../images/beckey/beckey_run.gif');
+        }
+        #process_image {
+            float:right;
+
+            margin:20px 30px;
+            width:168px;
+            height:73px;
+        }
+            #process_image.farm {
+                background-image:url('../images/beckey/farm.png');
+            }
+            #process_image.hell {
+                background-image:url('../images/beckey/hell.png');
+            }
+            #process_image.battle {
+                background-image:url('../images/beckey/battle.png');
+            }
+            #process_image.enchant {
+                background-image:url('../images/beckey/enchant.png');
+            }
+            #process_image.challenge {
+                background-image:url('../images/beckey/challenge.png');
+            }
+        #process_bar {
+            position:relative;
+            clear:both;
+
+            margin:0px auto;
+            width:340px;
+            height:32px;
+
+            border:1px black solid;
+        }
+            #process_stick {
+                position:absolute;;
+                top:0px;
+                left:0px;
+                z-index:1;
+
+                width:0%;
+                height:100%;
+
+                background-color:blue;
+            }
