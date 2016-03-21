@@ -15,8 +15,8 @@ var game = {
     },
     "farm":50,
     "hell_price":500,
-    "hell_get_other":0.3,
-    "hell_get_me":0.3,
+    "hell_get_other":0.4,
+    "hell_get_me":0.4,
     "hell_recycle":120,
     "battle_get":80,
     "enchant_price":[
