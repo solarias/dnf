@@ -108,7 +108,7 @@ body {
     #frame_left {
         float:left;
 
-        width:50%;
+        width:300px;
         height:100%;
         border-right:1px black solid;
     }
@@ -156,7 +156,7 @@ body {
     #frame_right {
         float:right;
 
-        width:calc(50% - 1px);
+        width:299px;
         height:100%;
     }
         #frame_right #equipment {
