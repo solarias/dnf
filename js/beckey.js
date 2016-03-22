@@ -218,8 +218,11 @@ function init(cmd) {
         $("#equip" + k.toString()).innerHTML = rarityList[player["equip"][k]] + equipList[k];
     }
 
-    //사운드 출력
-    soundList["init"].play();
+    //BGM 출력
+    if(game["sound"] > 0) soundList["BGM"].play();
+
+    //시작 사운드 출력
+    if(game["sound"] > 0) soundList["init"].play();
 
     //화면 전환
     $("#init").style.display = "none";
@@ -556,10 +559,10 @@ function run(cmd,step) {
             if (player["power"] < 13300) {
                 //실패 사운드 출력
                 try {
-                    soundList["fail"].pause();
-                    soundList["fail"].currentTime = 0;
+                    soundList["fail_anton"].pause();
+                    soundList["fail_anton"].currentTime = 0;
                 } catch(e) {}
-                if(game["sound"] === 1)soundList["fail"].play();
+                if(game["sound"] === 1)soundList["fail_anton"].play();
 
                 //실패 문구 출력
                 alert("안톤에게 패배해버렸어...\n포기하면 안돼! 힘을 조금 더 모아서 다시 도전하자구!");
@@ -569,6 +572,11 @@ function run(cmd,step) {
                 //시간 경과 가시화
                 $("#date_num").innerHTML = thousand(player["date"]);
             } else {
+                //BGM 중단
+                try {
+                    soundList["BGM"].pause();
+                    soundList["BGM"].currentTime = 0;
+                } catch(e) {}
                 //클리어 사운드 출력
                 try {
                     soundList["clear"].pause();
@@ -613,17 +621,23 @@ window.onload = function() {
     try {
         soundList = {
             "init":new Audio("./sound/beckey_init.mp3"),
+            "BGM":new Audio("./sound/beckey_bgm.mp3"),
             "start":new Audio("./sound/beckey_start.mp3"),
             "farm":new Audio("./sound/beckey_farm.mp3"),
             "get":new Audio("./sound/beckey_get.mp3"),
             "fail":new Audio("./sound/beckey_fail.mp3"),
+            "fail_anton":new Audio("./sound/beckey_fail_anton.mp3"),
             "clear":new Audio("./sound/snack_month.mp3")
         };
+        //볼륨 세팅
         for (var key in soundList) {
             if (soundList.hasOwnProperty(key)) {
                 soundList[key].volume = 0.1;
             }
         }
+        //개별 세팅
+        soundList["BGM"].loop = true;
+        soundList["BGM"].volume = 0.1;
     } catch(e) {
         game["sound"] = 0;
     }
