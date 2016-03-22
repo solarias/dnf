@@ -92,7 +92,7 @@ var equipList = [
 ];
 
 //쓸모없는 모험가 에픽
-var ueslessList = [
+var uselessList = [
     "음검 : 막야",
     "양검 : 간장",
     "별운검",
@@ -440,7 +440,7 @@ function run(cmd,step) {
                 if(game["sound"] === 1)soundList["fail"].play();
 
                 //실패 문구 출력
-                alert("이런, 아무 쓸모없는 ''" + ueslessList[Math.floor(Math.random() * ueslessList.length)] + "''이(가) 나왔잖아!\n갈아서 초대장 " + game['hell_recycle'].toString() + "장으로 바꿔야겠다.");
+                alert("이런, 아무 쓸모없는 ''" + uselessList[Math.floor(Math.random() * uselessList.length)] + "''이(가) 나왔잖아!\n난 모험가들 장비는 끼지 못한다구.\n\n갈아서 초대장 " + game['hell_recycle'].toString() + "장으로 바꿔야겠다.");
             //자기 장비 득템
             } else {
                 //장비부위 선택
@@ -518,7 +518,7 @@ function run(cmd,step) {
             //강기 소모
             player["ganggi"] -= game['enchant_price'][player["enchant"]];
             //초대장 숫자 가시화
-            $("#ganggi").innerHTML = player["ganggi"].toString();
+            $("#ganggi").innerHTML = thousand(player["ganggi"]);
 
             //성공 여부 판단
             var success = Math.random();
