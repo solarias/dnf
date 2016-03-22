@@ -210,11 +210,11 @@ function init(cmd) {
     }
 
     //플레이어 데이터 출력
-    $("#date_num").innerHTML = player["date"];
-    $("#power").innerHTML = player["power"];
-    $("#enchant").innerHTML = player["enchant"];
-    $("#invite").innerHTML = player["invite"];
-    $("#ganggi").innerHTML = player["ganggi"];
+    $("#date_num").innerHTML = thousand(player["date"]);
+    $("#power").innerHTML = thousand(player["power"]);
+    $("#enchant").innerHTML = player["enchant"].toString();
+    $("#invite").innerHTML = thousand(player["invite"]);
+    $("#ganggi").innerHTML = thousand(player["ganggi"]);
     for (var k=0;k<player["equip"].length;k++) {
         $("#equip" + k.toString()).className = "rarity" + player["equip"][k].toString();
         $("#equip" + k.toString()).innerHTML = rarityList[player["equip"][k]] + equipList[k];
@@ -587,7 +587,7 @@ function run(cmd,step) {
                 if(game["sound"] === 1)soundList["clear"].play();
 
                 //첫 화면 문구 변환
-                $("#init_description").innerHTML = "안톤을 무찔렀다! 덕분에 우리 루크 할아범을 무사히 구출할 수 있었어. 정말 고마워!<br/><br/>※ 총 경과할 날짜 : " + player["date"].toString() + "일";
+                $("#init_description").innerHTML = "안톤을 무찔렀다! 덕분에 우리 루크 할아범을 무사히 구출할 수 있었어. 정말 고마워!<br/><br/>※ 총 경과할 날짜 : " + thousand(player["date"]) + "일";
                 //첫 화면 버튼 변경
                 $("#init_start").value = "처음부터 다시";
                 $("#init_start").onclick = function() {
