@@ -1,26 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
+		<!--모바일 최적화 : 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+		<script type="text/javascript" src="../function/tool/zoom.js"></script>
+		<!--모바일 최적화 : 터치 딜레이 제거 (끝)-->
 		<link rel="stylesheet" type="text/css" href="./css/hero.css" />
-		
+
 		<title>영웅의 항아리 시뮬레이터</title>
-		
+
 	</head>
 	<body>
 		<div id="frame_ad" class="dnf_hero"></div>
 			<link rel="stylesheet" type="text/css" href="http://solarias.github.io/function/frame_ad/frame_ad.css" />
 			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
-		
+
 		<div id="wrapper">
 			<div id="frame_head">
 				<img src="./images/hell/pot.png">
 				항아리를 선택한 후, 카드를 클릭하세요.
-				
+
 				<input id="clear" type="button" value="초기화"/>
 			</div>
-			
+
 			<div id="frame_menu">
 				<div class="wrap">
 					<p class='center'>
@@ -53,27 +57,27 @@
 					</select>
 					</p>
 				</div>
-				
+
 				<div id="show_cost" class="wrap">
 					<p class='center'>
 					&lt;항아리 개봉 비용&gt;
 					</p><p>
-						＊<span id='select_cost'>0<strong> Gold</strong></span> 
+						＊<span id='select_cost'>0<strong> Gold</strong></span>
 					</p>
 				</div>
-				
+
 				<div id="filter_effect" class="wrap">
 					<input id="select_effect" type="checkbox">
 					<label for="select_effect">개봉 이펙트 제거</label>
 				</div>
 			</div>
-		
-		
+
+
 			<div id="frame_main">
 				<div id="main_count_cover">
 					<span id="main_count">0</span> 회차
 				</div>
-				
+
 				<!--
 				<div id="card1" class="flipcard h not_flipped">
 					<div id="card1_front" class="front">
@@ -96,49 +100,49 @@
 					</div>
 				</div>
 				-->
-				
+
 			</div>
-			
+
 			<div id="frame_cost">
 				<div id="cost_text">
 				소모 비용 : <span class="yellow"><span id="cost_gold">0</span> Gold</span> ( + <span id="cost_date">0</span>일)
 				</div>
 			</div>
-			
+
 			<div id="frame_record">
 			</div>
 			<div id="frame_filter">
 				※ 검색 : "Ctrl + F" 기능을 활용하세요.
 				<input id="record_clear" type="button" value="획득기록창 지우기">
 			</div>
-			
+
 		</div>
-		
+
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-		
-		
+
+
 		<!--로딩할 동안 가림막 기능 수행-->
 		<div id="cover">
 			로딩 대기중...
 		</div>
 		<!--로딩할 동안 가림막 기능 수행-->
-		
+
 		<!--이미지 임시 저장-->
 		<div id="imagePreloader">
 		</div>
 		<!--이미지 임시 저장-->
-		
+
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-		
+
 		<script type="text/javascript" src="./js/hell_itemList.js"></script>
-		
+
 		<script type="text/javascript" src="./sprite/spriteList.js"></script>
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
-		
+
 		<script type="text/javascript" src="./js/hero.js"></script>
-		
+
 		<!-- Histats.com  START (hidden counter)-->
 		<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
 		<a href="http://www.histats.com" target="_blank" title="free hit counter code" ><script  type="text/javascript" >
@@ -147,6 +151,6 @@
 		</script></a>
 		<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3075670&101" alt="free hit counter code" border="0"></a></noscript>
 		<!-- Histats.com  END  -->
-		
+
 	</body>
 </body>

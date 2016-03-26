@@ -1,22 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
-		
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+		<script type="text/javascript" src="../function/tool/zoom.js"></script>
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (끝)-->
+
 		<title>던파 캐릭터 사주</title>
-		
+
 		<style type="text/css">
 			* {
 				padding:0px;
 				margin:0px;
 				border:0px;
-				
+
 				font-family:Arial;
 				font-size:16px;
 				text-decoration:none;
 			}
-			
+
 			.red {
 				color:red;
 			}
@@ -38,20 +42,20 @@
 			.gray_back {
 				background:#505050;
 			}
-			
+
 			body {
 				background-color:#606060;
 			}
-			
+
 			#wrapper {
 				padding:5px;
 				margin:0px auto;
 				width:400px;
 				height:649px;
-				
+
 				background:brown;
 				border:1px black solid;
-				
+
 				color:white;
 				font-weight:bold;
 			}
@@ -67,7 +71,7 @@
 				hr {
 					border-top:1px white solid;
 				}
-			
+
 			#frame_left {
 				float:left;
 			}
@@ -85,46 +89,46 @@
 					padding:2px 5px;
 					width:160px;
 					height:17px;
-					
+
 					text-align:right;
 				}
 				input[type="button"] {
 					margin-top:2px;
 					width:135px;
 					height:96px;
-					
+
 					background: #FFFFFF; /* default */
 					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
 					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
 					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
 					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
 					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-					
+
 					border:1px gray outset;
 					border-radius:3px;
-					
+
 					font-size:26px;
 					font-weight:bold;
 				}
 					input[type="button"]:hover {
 						border:1px white solid;
-						
+
 						cursor:pointer;
 						cursor:hand;
 					}
 					input[type="button"]:active {
 						background: #DEDEDE;
 					}
-			
+
 			table {
 				margin-top:5px;
 				width:100%;
 			}
 				table tr td {
 					height:22px;
-					
+
 					border:1px gray outset;
-					
+
 					text-align:center;
 				}
 					table tr td.long {
@@ -141,7 +145,7 @@
 					}
 					table tr td.empty {
 						height:10px;
-						
+
 						border:0px;
 					}
 		</style>
@@ -150,7 +154,7 @@
 		<div id="frame_ad" class="dnf_saju"></div>
 			<link rel="stylesheet" type="text/css" href="http://solarias.github.io/function/frame_ad/frame_ad.css" />
 			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
-			
+
 		<div id="wrapper">
 			<p class="top">
 				던파 캐릭터 사주 Ver. 1.10
@@ -158,7 +162,7 @@
 			<hr />
 			<div id="frame_left">
 				<p class="top">
-					서　버 : 
+					서　버 :
 					<select id='input_server'>
 						<option value='' selected disabled>선택하세요</option>
 						<option value='' disabled>------------------------</option>
@@ -173,11 +177,11 @@
 					</select>
 				</p>
 				<p>
-					닉네임 : 
+					닉네임 :
 					<input id="input_nickname" type="text" value="" />
 				</p>
 				<p>
-					직　업 : 
+					직　업 :
 					<select id='input_job'>
 						<option value='' selected disabled>선택하세요</option>
 						<option value='' disabled>------------------------</option>
@@ -266,7 +270,7 @@
 					</select>
 				</p>
 				<p>
-					연　도 : 
+					연　도 :
 					<input id="input_year" type="text" />
 					년
 				</p>
@@ -383,16 +387,16 @@
 				</table>
 			</div>
 		</div>
-	
+
 		<script type="text/javascript" src="./js/seedrandom.js"></script>
-	
+
 		<script type="text/javascript">
 			var $server = document.getElementById("input_server");
 			var $nickname = document.getElementById("input_nickname");
 			var $job = document.getElementById("input_job");
 			var $year = document.getElementById("input_year");
 			var $start = document.getElementById("start");
-			
+
 			//궁합 - NPC
 			var A_npcList = [
 				"세리아 키르민","청색의 수호자 비탈라","연금술사 모건",
@@ -415,9 +419,9 @@
 				"캡틴 루터","신궁 루드밀라","나탈리아 수","로리안","카곤",
 				"민타이","오르카","로톤"
 			];
-			
+
 			//궁합 - 채널
-			var A_channelList = [//서버별 채널 리스트				
+			var A_channelList = [//서버별 채널 리스트
 				"[통합 채널]<br/>실버크라운 CH 1","[통합 채널]<br/>실버크라운 CH 2","[통합 채널]<br/>실버크라운 CH 3","[통합 채널]<br/>실버크라운 CH 4","[통합 채널]<br/>실버크라운 CH 5","[통합 채널]<br/>실버크라운 CH 6","[통합 채널]<br/>실버크라운 CH 7","[통합 채널]<br/>실버크라운 CH 8","[통합 채널]<br/>실버크라운 CH 9","[통합 채널]<br/>실버크라운 CH 10","[통합 채널]<br/>실버크라운 CH 11","[통합 채널]<br/>실버크라운 CH 12","[통합 채널]<br/>실버크라운 CH 13","[통합 채널]<br/>실버크라운 CH 14","[통합 채널]<br/>실버크라운 CH 15","[통합 채널]<br/>실버크라운 CH 16","[통합 채널]<br/>실버크라운 CH 17","[통합 채널]<br/>실버크라운 CH 18","[통합 채널]<br/>실버크라운 CH 19","[통합 채널]<br/>실버크라운 CH 20",
 				"[통합 채널]<br/>멜트다운 CH 1","[통합 채널]<br/>멜트다운 CH 2","[통합 채널]<br/>멜트다운 CH 3","[통합 채널]<br/>멜트다운 CH 4","[통합 채널]<br/>멜트다운 CH 5","[통합 채널]<br/>멜트다운 CH 6","[통합 채널]<br/>멜트다운 CH 7","[통합 채널]<br/>멜트다운 CH 8","[통합 채널]<br/>멜트다운 CH 9","[통합 채널]<br/>멜트다운 CH 10","[통합 채널]<br/>멜트다운 CH 11","[통합 채널]<br/>멜트다운 CH 12","[통합 채널]<br/>멜트다운 CH 13","[통합 채널]<br/>멜트다운 CH 14","[통합 채널]<br/>멜트다운 CH 15","[통합 채널]<br/>멜트다운 CH 16","[통합 채널]<br/>멜트다운 CH 17","[통합 채널]<br/>멜트다운 CH 18","[통합 채널]<br/>멜트다운 CH 19","[통합 채널]<br/>멜트다운 CH 20",
 				"[통합 채널]<br/>표류동굴 CH 1","[통합 채널]<br/>표류동굴 CH 2","[통합 채널]<br/>표류동굴 CH 3","[통합 채널]<br/>표류동굴 CH 4","[통합 채널]<br/>표류동굴 CH 5","[통합 채널]<br/>표류동굴 CH 6","[통합 채널]<br/>표류동굴 CH 7","[통합 채널]<br/>표류동굴 CH 8","[통합 채널]<br/>표류동굴 CH 9","[통합 채널]<br/>표류동굴 CH 10","[통합 채널]<br/>표류동굴 CH 11","[통합 채널]<br/>표류동굴 CH 12","[통합 채널]<br/>표류동굴 CH 13","[통합 채널]<br/>표류동굴 CH 14","[통합 채널]<br/>표류동굴 CH 15","[통합 채널]<br/>표류동굴 CH 16","[통합 채널]<br/>표류동굴 CH 17","[통합 채널]<br/>표류동굴 CH 18","[통합 채널]<br/>표류동굴 CH 19","[통합 채널]<br/>표류동굴 CH 20",
@@ -438,7 +442,7 @@
 				"[일반 채널]<br/>거래 - 경매장",
 				"[일반 채널]<br/>일반채널 (첫번째)","[일반 채널]<br/>일반채널 (두번째)"
 			];
-			
+
 			var list = [
 				"result_00",
 				"result_01",
@@ -465,15 +469,15 @@
 			window.onload = function() {
 				//올해 연도 자동 입력
 				document.getElementById("input_year").value = (new Date()).getFullYear();
-				
+
 				$server.onchange = function() {
 					$server.style.backgroundColor = "#F4FA58";
 				}
-				
+
 				$job.onchange = function() {
 					$job.style.backgroundColor = "#F4FA58";
 				}
-				
+
 				$start.onclick = function() {
 					if ($server.value == "") {
 						alert("※ 경고 : 서버를 선택하지 않았습니다.");
@@ -491,7 +495,7 @@
 						//시드 입력
 						var input = $server.value + $nickname.value + $job.value + $year.value;
 						Math.seedrandom(input);
-						
+
 						//결과값 산출 (수치)
 						for (var i=0;i<list.length;i++) {
 							var output = Math.floor(Math.random() * 1001)/10;
@@ -503,7 +507,7 @@
 								document.getElementById(list[i]).innerHTML = "<span class='orange'>" + output.toString() + "%</span>";
 							}
 						}
-						
+
 						//결과값 산출 (단어)
 						//NPC
 						document.getElementById("result_50").innerHTML = A_npcList[Math.floor(Math.random() * A_npcList.length)];

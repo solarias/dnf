@@ -2,7 +2,7 @@
 	padding:0px;
 	margin:0px;
 	border:0px;
-	
+
 	font-family:Arial;
 	font-size:16px;
 	text-decoration:none;
@@ -37,15 +37,15 @@
 
 body {
 	overflow:hidden;
-	
+
 	background-color:#606060;
 }
 #wrapper {
 	position:relative;
-	
+
 	margin:0px auto;
-	width:500px;
-	height:638px;
+	width:470px;
+	height:620px;
 }
 	input[type="button"] {
 		background: #FFFFFF; /* default */
@@ -53,10 +53,10 @@ body {
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
 		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
 		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
-		
+
 		width:100%;
 		height:40px;
-		
+
 		font-size:25px;
 		font-weight:bold;
 	}
@@ -65,18 +65,18 @@ body {
 			}
 		input#clear {
 			float:right;
-			
+
 			width:80px;
 			height:20px;
-			
+
 			background: #FF6A00; /* default */
 			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
 			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
 			background: linear-gradient(to bottom, #ffffff, #FF6A00);
-			
+
 			font-size:16px;
-			
+
 			display:block;
 		}
 			input#clear:active {
@@ -84,7 +84,7 @@ body {
 			}
 	#frame_right input {
 		width:165px;
-		
+
 		font-size:20px;
 	}
 		#frame_right input.selected {
@@ -97,24 +97,24 @@ body {
 		#frame_right input.selected:active {
 			background: #3855FF;
 		}
-			
+
 /*======================================================================================================*/
 /* ※ 1. 상단 */
 /*======================================================================================================*/
 #frame_head {
 	float:left;
-	
+
 	padding:5px;
 	width:470px;
 	height:32px;
-	
+
 	background:brown;
 	border:1px black solid;
 	border-bottom:0px;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
-	
+
 	color:white;
 	font-size:18px;
 	font-weight:bold;
@@ -130,11 +130,11 @@ body {
 #frame_menu {
 	clear:both;
 	float:left;
-	
+
 	padding:0px 5px;
 	width:185px;
 	height:220px;
-	
+
 	background:brown;
 	border:1px black solid;
 	border-top:1px brown solid;
@@ -163,7 +163,7 @@ body {
 	}
 	#frame_menu .bold {
 		font-weight:bold;
-	
+
 	}
 	#frame_menu .gap {
 		margin-top:20px;
@@ -178,7 +178,7 @@ body {
 		padding:5px;
 		width:100%;
 		height:auto;
-		
+
 		background:#EFEFEF;
 		border:1px black solid;
 		-moz-box-sizing:border-box;
@@ -200,17 +200,17 @@ body {
 		#show_cost p {
 			font-size:14px;
 		}
-	
+
 	#filter_effect {
 		margin-top:9px;
-		
+
 		font-weight:bold;
 		line-height:100%;
 	}
 		#select_effect {
 			width:16px;
 			height:16px;
-			
+
 			vertical-align:bottom;
 		}
 /*======================================================================================================*/
@@ -221,11 +221,11 @@ body {
 	overflow-y:hidden;
 	position:relative;
 	float:left;
-	
+
 	padding:10px 5px;
 	width:285px;
 	height:220px;
-	
+
 	background:url(../images/hell/main_background.png);
 	border:1px black solid;
 	-moz-box-sizing:border-box;
@@ -236,30 +236,30 @@ body {
 		position:absolute;
 		top:2px;
 		left:151px;
-		
+
 		padding:2px 5px;
-		
+
 		background:blue;
 		border:1px black solid;
-		
+
 		color:white;
 		font-size:14px;
 		font-weight:bold;
-		
+
 		display:none;
 	}
 	.flipcard {
 		float:left;
-		
+
 		position: absolute;
-		
+
 		width: 120px;
 		height: 180px;
 		perspective: 500px;
 		transform-style: preserve-3d;
-		
+
 		border:1px transparent solid;
-		
+
 		display:block;
 	}
 			.flipcard:not(.flipped):hover {
@@ -267,15 +267,15 @@ body {
 				cursor:pointer;
 				cursor:hand;
 			}
-	
+
 		.flipcard p.title {
 			padding:4px 0px;
 			width:100%;
-			
+
 			background-color:rgba(0,0,0,0.5);
 			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
 			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
-			
+
 			color:white;
 			font-size:12px;
 			text-align:center;
@@ -284,11 +284,11 @@ body {
 			position:absolute;
 			bottom:10px;
 			left:20px;
-			
+
 			background-color:rgba(0,0,0,0.8);
 			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
 			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
-			
+
 			font-size:13px;
 		}
 		.flipcard p.text {
@@ -297,25 +297,25 @@ body {
 		.flipcard p.detail {
 			position:absolute;
 			bottom:10px;
-			
+
 			color:white;
 			font-size:12px;
 		}
 		.card_image {/*구 : .flipcard img*/
 			position:absolute;
-			
+
 			bottom:38px;
 			left:32px;
-			
+
 			width:56px;
 			height:56px;
-			
+
 			background-image:url('../sprite/images/sprite_hell.png');
 			background-position:0px 0px;
-			
+
 			display:block;
 		}
-	
+
 	/*세로로 뒤집기*/
 	.flipcard.v.flipped .front{
 		visibility:hidden;
@@ -327,7 +327,7 @@ body {
 		-o-transform:rotateX(180deg);
 		transform: rotateX(180deg);
 	}
-	
+
 	.flipcard.v.flipped .back{
 		visibility:visible;
 	}
@@ -338,7 +338,7 @@ body {
 		-o-transform:rotateX(0deg);
 		transform: rotateX(0deg);
 	}
-	
+
 	.flipcard.v .back{
 		visibility:hidden;
 	}
@@ -350,7 +350,7 @@ body {
 		transform: rotateX(-180deg);
 	}
 	/*세로로 뒤집기*/
-	
+
 	/*가로로 뒤집기*/
 	.flipcard.h.flipped .front{
 		visibility:hidden;
@@ -362,7 +362,7 @@ body {
 		-o-transform:rotateY(180deg);
 		transform: rotateY(180deg);
 	}
-	
+
 	.flipcard.h.flipped .back{
 		visibility:visible;
 	}
@@ -373,7 +373,7 @@ body {
 		-o-transform:rotateY(0deg);
 		transform: rotateY(0deg);
 	}
-	
+
 	.flipcard.h .back{
 		visibility:hidden;
 	}
@@ -385,7 +385,7 @@ body {
 		transform: rotateY(-180deg);
 	}
 	/*가로로 뒤집기*/
-	
+
 	/*카드 앞뒷면*/
 	.flipcard .front
 	{
@@ -393,18 +393,18 @@ body {
 		top:0;
 		left:0;
 		z-index:1;
-		
+
 		transform: rotateY(0deg);
 		transition: 0.3s;
-		
+
 		padding: 10px;
 		width: 100%;
 		height: 100%;
-		
+
 		box-sizing: border-box;
 		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
-		
+
 		color: yellow;
 		font-weight:bold;
 	}
@@ -435,32 +435,32 @@ body {
 		.flipcard.No8 .front {
 			background-image:url(../images/hell/card_front_8.png);
 		}
-	
+
 	.flipcard .back
 	{
 		position:absolute;
 		top:0;
 		left:0;
 		z-index:1;
-		
+
 		transform: rotateY(-180deg);
 		transition: 0.3s;
-		
+
 		padding: 16px 8px;
 		width: 100%;
 		height: 100%;
-		
+
 		background-image:url(../images/hell/card_back2.png);
 		box-sizing: border-box;
 		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
-		
+
 		color: white;
 		font-size:12px;
 		font-weight:bold;
 	}
 	/*카드 앞뒷면*/
-				
+
 
 /*======================================================================================================*/
 /* ※ 4. 비용 & 기록 */
@@ -468,11 +468,11 @@ body {
 #frame_cost {
 	clear:both;
 	float:left;
-	
+
 	padding:5px;
 	width:470px;
 	height:40px;
-	
+
 	background:brown;
 	border:1px black solid;
 	border-top:0px;
@@ -484,13 +484,13 @@ body {
 		padding:5px;
 		width:100%;
 		height:100%;
-		
+
 		background:black;
 		border:1px gray solid;
 		-moz-box-sizing:border-box;
 		-webkit-box-sizing:border-box;
 		box-sizing:border-box;
-		
+
 		color:white;
 		font-weight:bold;
 	}
@@ -499,11 +499,11 @@ body {
 	-webkit-overflow-scrolling: touch;
 	clear:both;
 	float:left;
-	
+
 	padding:5px;
 	width:470px;
 	height:300px;
-	
+
 	background-color:#303030;
 	background-image:url(../images/hell/record_background.png);
 	border:1px black solid;
@@ -511,7 +511,7 @@ body {
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
-	
+
 	color:white;
 	font-weight:bold;
 }
@@ -522,36 +522,36 @@ body {
 #frame_filter {
 	clear:both;
 	float:left;
-	
+
 	padding:2px 5px;
 	width:470px;
 	height:25px;
-	
+
 	background:brown;
 	border:1px black solid;
 	border-top:0px;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
-	
+
 	color:white;
 	font-weight:bold;
 }
 	#frame_filter input {
 		float:right;
-		
+
 		width:140px;
 		height:20px;
-		
+
 		background: #FF6A00; /* default */
 		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
 		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
 		background: linear-gradient(to bottom, #ffffff, #FF6A00);
-		
+
 		font-size:14px;
 		vertical-align:bottom;
-		
+
 		display:block;
 	}
 		#frame_filter input:active {
@@ -565,17 +565,17 @@ body {
 	top:0px;
 	left:0px;
 	z-index:100;
-	
+
     margin:0;
     padding:30px;
 	width:100%;
 	height:100%;
-	
+
 	background-color:#303030;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
-	
+
 	color:white;
 	font-size:50px;
 	font-weight:bold;
@@ -584,7 +584,7 @@ body {
 #imagePreloader {
 	width:1px;
 	height:1px;
-	
+
 	display:none;
 }
 
@@ -609,5 +609,5 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }

@@ -1,22 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+		<script type="text/javascript" src="../function/tool/zoom.js"></script>
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (끝)-->
 		<link rel="stylesheet" type="text/css" href="./css/hell2.css" />
-		
+
 		<title>지옥파티 시뮬레이터 2</title>
 	</head>
 	<body>
 		<div id="frame_ad" class="dnf_hell2"></div>
 			<link rel="stylesheet" type="text/css" href="http://solarias.github.io/function/frame_ad/frame_ad.css" />
 			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
-		
-		
+
+
 		<div id="wrapper">
-			
+
 			<div id="frame_left">
-				
+
 				<div class="wrap long_gap">
 					<p class='title'>
 						지옥파티 설정
@@ -89,14 +93,14 @@
 						</select>
 					</p>
 				</div>
-				
+
 				<input id="start1" class="min_gap" type="button" value="1회 실행" />
-				
+
 				<div id="objective" class="wrap long_gap">
 					<p class='title'>
 						특정 조건 탐색
 					</p>
-					
+
 					<input id="start2" type="button" value="탐색 실시" />
 					<p class='center'>
 						탐색 목표 설정
@@ -118,7 +122,7 @@
 							<br/>
 							(수동으로 정지시킬 때까지 무한히 반복됩니다.)
 						</p><p>
-							(<span class="bold">※</span> <span class="bold">에픽 아이템 탐색</span> : 
+							(<span class="bold">※</span> <span class="bold">에픽 아이템 탐색</span> :
 							<br />
 							"탐색 목표 설정" 리스트에서 해당 항목을 선택하세요)
 						</p>
@@ -212,11 +216,11 @@
 						</p>
 					</div>
 				</div>
-				
+
 			</div>
-			
+
 			<div id="frame_top">
-				
+
 		<!------안내 문구------>
 				<div id="notice_dungeon" class="notice">
 					<span class="bold center">※ 던전 별 지옥파티 입장비용</span>
@@ -263,7 +267,7 @@
 					<br/>
 					빛의 연회장 : 초대장 26장
 				</div>
-				
+
 				<div id="notice_difficulty" class="notice">
 					<span class="bold center">※ 던전 난이도에 따라 다음 아이템들의 드랍률이 달라집니다.</span>
 					<br/>
@@ -275,7 +279,7 @@
 					<br/>
 					　- 에픽 조각
 				</div>
-				
+
 				<div id="notice_channel" class="notice">
 					<span class="bold center">
 						※ 채널은 아이템 드랍률에 영향을 끼치지 않습니다.
@@ -285,16 +289,16 @@
 						</span>
 				</div>
 		<!------안내 문구------>
-		
+
 				<div id="round">
 					<span id="round_count">0</span>
-					회차 : 
+					회차 :
 					<span id="round_difficulty" class="orange"></span>
 				</div>
 					<div id="date">
 						<span id="date_count">0</span> 일차
 						<span id="date_summary" style="display:none;"> (<span id="date_summary_num"></span>)</span>
-						
+
 						<input id="date_config" class="" type="button" value="날짜 설정" />
 					</div>
 					<div id="date_setting">
@@ -307,7 +311,7 @@
 						<p>4번 비약 피로도 : <input id="date_setting_6" type="text" value="0" /></p>
 						<p>5번 비약 피로도 : <input id="date_setting_7" type="text" value="0" /></p>
 							<hr/>
-						<p>요약 표시 : 
+						<p>요약 표시 :
 							<select id="date_setting_summary">
 								<option value="0">없음</option>
 								<option value="1">월/년 환산</option>
@@ -317,21 +321,21 @@
 						<p class="date_description">
 							(요약 표시시 소숫점은 버림)
 						</p>
-						
+
 						<p>
 							<input id="date_cancel" type="button" value="취소" />
 							<input id="date_apply" type="button" value="설정 적용" />
 						</p>
 					</div>
-				
+
 				<input id="reset" class="min_gap" type="button" value="모두 초기화" />
-				
+
 				<div id="person">
 					Made By : 루리웹 솔라리어스
 					<br/>
 					맵 이미지 제공 : <span id='person_helper'>루리웹 Aqua3님</span>
 				</div>
-				
+
 				<div id="filter">
 					<input id="filter_name_normal" type="checkbox" checked />
 					<label for="filter_name_normal">
@@ -360,14 +364,14 @@
 					<input id="shift_chance" type="button" value="드랍 확률 설정" />
 				</div>
 				<button id="filter_button"><img src="./images/epic/icon_option.png" /> 옵션 설정</button>
-				
-				
+
+
 		<!------팝업------>
 				<div id="popup">
 					<div id="popup_title" class="title_record">
 						획득 기록
 					</div>
-					
+
 					<div id="record_filter" class="filter">
 						<strong>필터링 : </strong>
 						<select id="record_filter_first" class="first" autocomplete="off">
@@ -388,7 +392,7 @@
 					</div>
 					<div id="record">
 					</div>
-					
+
 					<div id="inventory_filter" class="filter">
 						<strong>필터링 : </strong>
 						<select id="inventory_filter_first" class="first" autocomplete="off">
@@ -425,7 +429,7 @@
 							</table>
 						</div>
 					</div>
-					
+
 					<div id="set_filter" class="filter">
 						<strong>필터링 : </strong>
 						<select id="set_filter_first" class="first" autocomplete="off" >
@@ -462,8 +466,8 @@
 							</table>
 						</div>
 					</div>
-					
-					
+
+
 					<div id="craft_filter" class="filter">
 						<strong>필터링 : </strong>
 						<select id="craft_filter_first" class="first" autocomplete="off">
@@ -501,7 +505,7 @@
 							</table>
 						</div>
 					</div>
-					
+
 				</div>
 				<div id="checkbox">
 					<p class="title">
@@ -524,7 +528,7 @@
 							<input id="record_check_reset" type="button" value="획득 기록 초기화" />
 						</p>
 					</div>
-					
+
 					<div id="inventory_check" class="check" >
 						<p>
 							<input id="inventory_check_cost" type="checkbox">
@@ -547,7 +551,7 @@
 							<input id="disassemble_1" type="button" value="중복 에픽 일괄 해체">
 						</p>
 					</div>
-					
+
 					<div id="set_check" class="check" >
 						<p>
 							<input id="set_check_cost" type="checkbox">
@@ -569,12 +573,12 @@
 							<input id="disassemble_2" type="button" value="중복 세트템 일괄 해체">
 						</p>
 					</div>
-					
+
 					<div id="craft_check" class="check" >
 						<p>
 							<input id="craft_check_available" type="checkbox">
 							<label for="craft_check_available">제작 가능 아이템만 보기</label>
-							
+
 						</p>
 						<p>
 							<input id="craft_check_all" type="checkbox">
@@ -589,9 +593,9 @@
 						</p>
 							<hr />
 					</div>
-					
+
 				</div>
-				
+
 				<input id="shift1" class="" type="button" value="획득 기록" />
 				<input id="shift2" class="" type="button" value="인벤토리" />
 				<input id="shift3" class="" type="button" value="세트 아이템" />
@@ -681,124 +685,124 @@
 							</tr>
 						</table>
 					</div>
-					
+
 					<input id="popup_chance_apply" class="input" type="button" value="적용" />
 					<input id="popup_chance_cancel" class="input" type="button" value="닫기" />
 				</div>
 		<!---확률 팝업---->
-				
+
 				<!--
 				<div id="item1" class="item">
 					<div id="description1" class="description">
 						<p id="item_name1" class="item_name"></p>
 					</div>
 					<div id="item_img1" class="item_img"></div>
-					
+
 					<div id="effect_appear1" class="effect_appear"></div>
 					<div id="effect_land1" class="effect_land"></div>
 					<div id="effect_wait1" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item2" class="item">
 					<div id="description2" class="description">
 						<p id="item_name2" class="item_name"></p>
 					</div>
 					<div id="item_img2" class="item_img"></div>
-					
+
 					<div id="effect_appear2" class="effect_appear"></div>
 					<div id="effect_land2" class="effect_land"></div>
 					<div id="effect_wait2" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item3" class="item">
 					<div id="description3" class="description">
 						<p id="item_name3" class="item_name"></p>
 					</div>
 					<div id="item_img3" class="item_img"></div>
-					
+
 					<div id="effect_appear3" class="effect_appear"></div>
 					<div id="effect_land3" class="effect_land"></div>
 					<div id="effect_wait3" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item4" class="item">
 					<div id="description4" class="description">
 						<p id="item_name4" class="item_name"></p>
 					</div>
 					<div id="item_img4" class="item_img"></div>
-					
+
 					<div id="effect_appear4" class="effect_appear"></div>
 					<div id="effect_land4" class="effect_land"></div>
 					<div id="effect_wait4" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item5" class="item">
 					<div id="description5" class="description">
 						<p id="item_name5" class="item_name"></p>
 					</div>
 					<div id="item_img5" class="item_img"></div>
-					
+
 					<div id="effect_appear5" class="effect_appear"></div>
 					<div id="effect_land5" class="effect_land"></div>
 					<div id="effect_wait5" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item6" class="item">
 					<div id="description6" class="description">
 						<p id="item_name6" class="item_name"></p>
 					</div>
 					<div id="item_img6" class="item_img"></div>
-					
+
 					<div id="effect_appear6" class="effect_appear"></div>
 					<div id="effect_land6" class="effect_land"></div>
 					<div id="effect_wait6" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item7" class="item">
 					<div id="description7" class="description">
 						<p id="item_name7" class="item_name"></p>
 					</div>
 					<div id="item_img7" class="item_img"></div>
-					
+
 					<div id="effect_appear7" class="effect_appear"></div>
 					<div id="effect_land7" class="effect_land"></div>
 					<div id="effect_wait7" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item8" class="item">
 					<div id="description8" class="description">
 						<p id="item_name8" class="item_name"></p>
 					</div>
 					<div id="item_img8" class="item_img"></div>
-					
+
 					<div id="effect_appear8" class="effect_appear"></div>
 					<div id="effect_land8" class="effect_land"></div>
 					<div id="effect_wait8" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item9" class="item">
 					<div id="description9" class="description">
 						<p id="item_name9" class="item_name"></p>
 					</div>
 					<div id="item_img9" class="item_img"></div>
-					
+
 					<div id="effect_appear9" class="effect_appear"></div>
 					<div id="effect_land9" class="effect_land"></div>
 					<div id="effect_wait9" class="effect_wait"></div>
 				</div>
-				
+
 				<div id="item10" class="item">
 					<div id="description10" class="description">
 						<p id="item_name10" class="item_name"></p>
 					</div>
 					<div id="item_img10" class="item_img"></div>
-					
+
 					<div id="effect_appear10" class="effect_appear"></div>
 					<div id="effect_land10" class="effect_land"></div>
 					<div id="effect_wait10" class="effect_wait"></div>
 				</div>
 				-->
-				
+
 			</div>
 			<div id="frame_bottom">
 				<div id="result">
@@ -869,18 +873,18 @@
 				<div id="cost">
 					<div id="cost_text">
 							<span class="line">
-							총 소모 
+							총 소모
 							<img src="./images/hell/cost.png">
-							 : 
+							 :
 							<span id="cost_invitation">0</span>
-							장 (실질 : 
+							장 (실질 :
 							<span id="cost_real">0</span>
 							장)
 							</span>
 							<hr />
 						<div id="line_cover">
 							<span class="line">
-							골드 환산 : 
+							골드 환산 :
 							<span id="cost_gold">0</span>
 							 Gold
 							</span>
@@ -889,38 +893,38 @@
 							<span id="cost_gold_real">0</span>
 							 Gold)
 							</span>
-							
+
 							<input id="cost_set_gold" class="left" type="button" value="도전장 골드 가격 설정" />
 							<input id="cost_compare" class="right" type="button" value="이 돈으로 치킨을 사먹는다면..." />
 						</div>
 					</div>
 				</div>
 			</div>
-		
+
 		</div>
-		
-		
+
+
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-		
+
 		<!--다이나믹 스타일-->
 		<style id="style_inventory_check_cost" type="text/css">
 		</style>
 		<style id="style_inventory_check_all" type="text/css">
 		</style>
-		
+
 		<style id="style_set_check_cost" type="text/css">
 		</style>
 		<style id="style_set_check_all" type="text/css">
 		</style>
 		<style id="style_set_check_only" type="text/css">
 		</style>
-		
+
 		<style id="style_craft_check_available" type="text/css">
 		</style>
 		<style id="style_craft_check_all" type="text/css">
 		</style>
-		
+
 		<style id="style_record_filter_first" type="text/css">"
 		</style>
 		<style id="style_record_filter_second" type="text/css">
@@ -929,7 +933,7 @@
 		</style>
 		<style id="style_record_filter_level" type="text/css">
 		</style>
-		
+
 		<style id="style_inventory_filter_first" type="text/css">
 		</style>
 		<style id="style_inventory_filter_second" type="text/css">
@@ -938,7 +942,7 @@
 		</style>
 		<style id="style_inventory_filter_level" type="text/css">
 		</style>
-		
+
 		<style id="style_set_filter_first" type="text/css">
 		</style>
 		<style id="style_set_filter_second" type="text/css">
@@ -947,7 +951,7 @@
 		</style>
 		<style id="style_set_filter_level" type="text/css">
 		</style>
-		
+
 		<style id="style_craft_filter_first" type="text/css">
 		</style>
 		<style id="style_craft_filter_second" type="text/css">
@@ -956,7 +960,7 @@
 		</style>
 		<style id="style_craft_filter_level" type="text/css">
 		</style>
-		
+
 		<style id="style_record_check_cost" type="text/css">
 			#record span.cost {
 				display:inline;
@@ -972,7 +976,7 @@
 				display:inline;
 			}
 		</style>
-		
+
 		<style id="style_name_normal" type="text/css">
 			.description.normal {
 				display:inline-block;
@@ -980,13 +984,13 @@
 		</style>
 		<style id="style_name_jogak" type="text/css">
 		</style>
-		
+
 		<!--다이나믹 스타일-->
-		
+
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-		
-		
+
+
 		<!--로딩할 동안 가림막 기능 수행-->
 		<div id="cover">
 			<p id="cover_notice">로딩 대기중...</p>
@@ -995,27 +999,26 @@
 			<p>※ 그래도 문제가 해결되지 않으면 <a href="http://blog.naver.com/ansewo/220622642452" target="_black" >여기</a>에 댓글을 남겨주세요.</p>
 		</div>
 		<!--로딩할 동안 가림막 기능 수행-->
-		
+
 		<div id="imagePreloader">
 		</div>
-		
+
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-		
+
 		<script type="text/javascript" src="./js/placeholders.min.js"></script>
 		<script type="text/javascript" src="./js/shortcut.js"></script>
-		<script type="text/javascript" src="../function/tool/zoom.js"></script>
-		
+
 		<script type="text/javascript" src="./js/hell_itemList.js"></script>
-		
+
 		<script type="text/javascript" src="./sprite/spriteList.js"></script>
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
-		
+
 		<script type="text/javascript" src="./js/hell1_data.js"></script><!--데이터 - 메인-->
 		<script type="text/javascript" src="./js/hell2_data.js"></script><!--데이터 - 보충-->
 		<script type="text/javascript" src="./js/hell2_function.js"></script>
 		<script type="text/javascript" src="./js/hell2_onload.js"></script>
-	
+
 	</body>
 
 <!-- Histats.com  START (hidden counter)-->
