@@ -1,0 +1,144 @@
+* {
+    margin:0px;
+    padding:0px;
+    border:0px;
+
+    color:inherit;
+    font-size:inherit;
+    font-weight:bold;
+}
+
+/*단계별 레어리티*/
+.rarity0 {/*대상 : 커먼*/
+    color:#FFFFFF;
+}
+.rarity1 {/*대상 : 언커먼*/
+    color:#68D5ED;
+}
+.rarity2 {/*대상 : 세트*/
+    color:#78FF1E;
+}
+.rarity3 {/*대상 : 레어*/
+    color:#B36BFF;
+}
+.rarity4 {/*대상 : 유니크*/
+    color:#FF00FF;
+}
+.rarity5 {/*대상 : 크로니클*/
+    color:#FF6666;
+}
+.rarity6 {/*대상 : 레전더리*/
+    color:#FF7900;
+}
+.rarity7 {/*대상 : 에픽*/
+    color:#FFB400;
+}
+
+body {
+    background-color:#303030;
+}
+
+#wrapper {
+    position:relative;
+
+    margin:0px auto;
+    width:700px;
+    height:400px;
+
+    background-color:white;
+    border:1px black solid;
+}
+
+#frame_left {
+    position:relative;
+    float:left;
+
+    width:399px;
+    height:330px;
+
+    border-right:1px black solid;
+}
+
+
+
+#frame_right {
+    position:relative;
+    float:left;
+
+    width:300px;
+    height:330px;
+
+    background:blue;
+
+    color:white;
+}
+    #equip_title {
+        font-size:16px;
+        text-align:center;
+    }
+        #equip_title img {
+            width:20px;
+            height:auto;
+
+            vertical-align:bottom;
+        }
+    #equip {
+        margin:3px auto 0px auto;
+        border-collapse: collapse;
+
+        font-size:10px;
+        text-align:center;
+    }
+        #equip tr.gap {
+            height:3px;
+        }
+        #equip td {
+            background-color:#404040;
+            border:1px black solid;
+        }
+            #equip td.type {
+                width:30px;
+                height:30px;
+            }
+                #equip td.type.small {
+                    font-size:10px;
+                }
+            #equip td.name {
+                padding-left:5px;
+                width:245px;
+                height:15px;
+
+                text-align:left;
+            }
+            #equip td.level {
+                padding-left:5px;
+                width:45px;
+                height:15px;
+
+                text-align:left;
+            }
+            #equip td.stat {
+                padding-left:5px;
+                width:95px;
+                height:15px;
+
+                text-align:left;
+            }
+    #frame_right hr {
+        margin:5px 0px;
+
+        border:1px white solid;
+    }
+
+
+#frame_bottom {
+    position:relative;
+    clear:both;
+    float:left;
+
+    width:700px;
+    height:69px;
+
+    background-color:yellow;
+    border-top:1px black solid;
+}

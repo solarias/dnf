@@ -1,15 +1,16 @@
-﻿			//=================================================================================================================
+
+			//=================================================================================================================
 			//※ 함수 - 선로딩, 내부작업용
 			//=================================================================================================================
 					// 이미지 선로딩 (출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
-					function loadImages(arr,callBack){ 
+					function loadImages(arr,callBack){
 						var imagesArray = [];
 						var img;
 						var remaining = arr.length;
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover_notice").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								//내부 처리
@@ -19,7 +20,7 @@
 								};
 							};
 							img.onerror = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover_notice").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								--remaining;
@@ -32,7 +33,7 @@
 							imagesArray.push(img);
 						};
 					};
-					
+
 					//DOM 선택자
 					function $(parameter) {
 						return document.querySelector(parameter);
@@ -64,7 +65,7 @@
 						return -1;
 					  };
 					};
-					
+
 					//배열 최대치&최소치 함수
 					Array.prototype.max = function() {
 					  return Math.max.apply(null, this);
@@ -89,19 +90,19 @@
 						ele.className=ele.className.replace(reg,' ');
 					  }
 					}
-					
+
 					//특정 select 비우기
 					function clearSelect(selectbox)	{
 						for (var i = selectbox.options.length-1;i>=0;i--) {
 							selectbox.remove(i);
 						}
 					}
-					
+
 					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
 					function thousand(num) {
 						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					};
-	
+
 					//가중치 적용 랜덤
 					function rand(target) {//target : 숫자가 들어있는 배열
 						var number = 0;
@@ -109,7 +110,7 @@
 							number += target[i];
 						}
 						var tmp = Math.random() * number;
-						
+
 						number = 0;
 						for (i=0;i<target.length;i++) {
 							number += target[i];
@@ -118,7 +119,7 @@
 							}
 						}
 					}
-					
+
 					//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
 					function setWon(pWon) {
 						var won  = pWon.toString();
@@ -144,7 +145,7 @@
 						if (s == '' || isNaN(s)) return false;
 						return true;
 					}
-					
+
 					//셔플
 					function shuffle(array) {
 						var currentIndex = array.length, temporaryValue, randomIndex ;
@@ -163,7 +164,7 @@
 
 						return array;
 					}
-					
+
 					//코스모소울 비용 계산
 					function soulCount(level) {
 						for (var i=0;i<soulCostList.length;i++) {
@@ -172,7 +173,7 @@
 							}
 						}
 					}
-					
+
 					//레벨별 해체 결과물 계산
 					function disCount(type,level) {
 						switch (type) {
@@ -182,7 +183,7 @@
 										return cutList[2][i][1];
 									}
 								}
-								
+
 								break;
 							case "코스모소울":
 								for (var i=0;i<cutList[3].length;i++) {
@@ -190,7 +191,7 @@
 										return cutList[3][i][1];
 									}
 								}
-								
+
 								break;
 						}
 					}
@@ -289,7 +290,7 @@ function generateSet() {
 					var cell_6 = row.insertCell(5);
 						cell_6.innerHTML = "";//획득 시기 : 차후에 정보를 받음
 						cell_6.className = "col_6";
-				
+
 					num += 1;
 				}
 				//3-3. 세트 파츠 아이템 등록
@@ -323,7 +324,7 @@ function generateSet() {
 				var cell_6 = row.insertCell(5);
 					cell_6.innerHTML = "";//획득 시기 : 차후에 정보를 받음
 					cell_6.className = "col_6";
-					
+
 				num += 1;
 			}
 		}
@@ -395,34 +396,34 @@ function setDate() {
 		var tempDate2 = Math.min(11,Math.floor(tempDate / 30)).toString() + "개월";
 	}
 	//c-2. 1년 미만 (단, 12 미만 유지)
-	
+
 	$("#date_summary_num").innerHTML = "약 " + tempDate2;
 }
 
 //던전 선택
 function dungeon_select() {
 	//1. 변수 조절 (오류 대비 - 공백이면 숫자 "0" 반환)
-	if ($("#dungeon").value == "") {
+	if ($("#dungeon").value === "") {
 		input[0] = 0;
 	} else {
 		input[0] = parseInt($("#dungeon").value);
 	}
 	//2. 배경 변경
-	$("#frame_top").style.background = "url('./images/epic/background_" + input[0].toString() + ".jpg')"
+	$("#frame_top").style.background = "url('./images/epic/background_" + input[0].toString() + ".jpg')";
 	//3. 아이템 정리
 	for (var i=0;i<maxQuantity;i++) {
 		$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
 		$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
-		
+
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
 			$("#description" + i.toString()).style.left = "0px";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
-		
+
 		$("#effect_appear" + i.toString()).style.visibility = "hidden";
 		$("#effect_land" + i.toString()).style.visibility = "hidden";
 		$("#effect_wait" + i.toString()).style.visibility = "hidden";
-		
+
 		//애니메이션 정지
 		clearTimeout(autoLooting[i-1]);
 		clearTimeout(autoEffect["appear"][i-1]);
@@ -437,15 +438,15 @@ function dungeon_select() {
 			zoneList.push([i,j]);
 		}
 	}
-	
+
 	//5. 일반 장비 드랍 가능 zone 설정
 	for (var i=0;i<coopList[input[0]].length;i++) {
 		zoneList.push(coopList[input[0]][i]);
 	}
-	
+
 	//6. 기여자 이름 변경
 	$("#person_helper").innerHTML = helpList[input[0]];
-	
+
 	//7. 브금 실행
 	if ($("#filter_bgm").value = true) {
 		play($("#bgm_type").value);
@@ -475,6 +476,10 @@ function getEpicList() {
 //실행
 function simulate(num){
 	//=================================
+	//* 회차 증가
+	//=================================
+	count += 1;
+	//=================================
 	//* 입장료 지불
 	//=================================
 	//0-1. 소모한 초대장 수 증가
@@ -485,16 +490,16 @@ function simulate(num){
 	$("#cost_real").innerHTML = thousand(cost[1]);
 	$("#cost_gold").innerHTML = setWon(cost[0]*gold);
 	$("#cost_gold_real").innerHTML = setWon(cost[1]*gold);
-	
+
 	//=================================
 	//* 변수 초기화
 	//=================================
 	//아이템 착지 개수 초기화
 	dropCount = 0;
-	
+
 	//해당 회차에서 획득한 아이템 리스트 초기화
 	thisTime = [];
-	
+
 	//=================================
 	//* 아이템들 재정렬 (탐색 시 2번째 실행부터는 일부 기능을 수행하지 않음)
 	//=================================
@@ -504,19 +509,19 @@ function simulate(num){
 			$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
 			$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
 		}
-		
+
 		//아이템 이름 숨기기&이동, 이미지 숨기기
 		$("#description" + i.toString()).className = "description";
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
 			$("#description" + i.toString()).style.left = "0px";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
-		
+
 		//에픽 이펙트 숨기기
 		$("#effect_appear" + i.toString()).style.visibility = "hidden";
 		$("#effect_land" + i.toString()).style.visibility = "hidden";
 		$("#effect_wait" + i.toString()).style.visibility = "hidden";
-		
+
 		//애니메이션 정지 (탐색 시 2번째 실행부터 : 무시)
 		if (num != 3) {
 			clearTimeout(autoLooting[i-1]);
@@ -532,7 +537,7 @@ function simulate(num){
 	$("#round_count").innerHTML = thousand(count);
 		//회차에 따른 날짜 표시
 		setDate();
-	
+
 	//=================================
 	//* 현재 회차 진행
 	//=================================
@@ -541,7 +546,7 @@ function simulate(num){
 	//2. 지옥파티 난이도 결정
 	input[2] = rand(chanceList_num[0]);
 	$("#round_difficulty").innerHTML =  chanceList_name[0][input[2]];//난이도 출력
-	
+
 	//3. zone 딥카피
 	var zoneArr = [];
 	for (var i=0;i<zoneList.length;i++) {
@@ -581,7 +586,7 @@ function simulate(num){
 		var invitation_quantity = dropQuantityList[2][input[1]][Math.floor(Math.random() * dropQuantityList[2][input[1]].length)];
 		//5-4 총 드랍 개수 저장
 		quantity = equip_quantity + invitation_quantity + jogak_quantity;
-		
+
 	//6. 아이템 분류 & 결정 & 출력
 		//6-1. 에픽 조각
 		for (var i = 0;i < jogak_quantity;i++) {
@@ -610,22 +615,22 @@ function simulate(num){
 				switch(thisTime[i][2]) {
 					case "마봉" :
 						//아무것도 실시하지 않음
-						
+
 						break;
 					case "코스모소울" :
 					case "지옥구슬" :
 					case "초대장" :
 						update(thisTime[i][2]);
-						
+
 						break;
 					case "조각" :
 						update(thisTime[i][2], thisTime[i][3]);
-						
+
 						break;
 				}
 			}
 		}
-	
+
 	//8. (에픽 한정) 드랍 아이템 사운드 출력, 일괄 업데이트
 		//IF 방금 에픽이 있었으면
 		if (thisEpic.length > 0) {
@@ -638,12 +643,12 @@ function simulate(num){
 				}
 			} catch(e) {
 			}
-			
+
 			//8-2. inventory, set, craft - 개별 업데이트 실시
 			for (var i=0;i<thisEpic.length;i++) {
 				update("에픽", thisEpic[i]);
 			}
-			
+
 			//8-3. record - 일괄 업데이트
 				//8-3-1. 회차, 초대장 소모량, 지옥파티 난이도 (등장한 아이템의 모든 분류정보를 class에 입력)
 				var text = "<span class='equip";
@@ -705,15 +710,9 @@ function simulate(num){
 						//내용 저장
 						content_text[0] += text;
 				}
-				
+
 		}
-	
-	
-	//=================================
-	//* 회차 증가
-	//=================================
-	count += 1;
-	
+
 	//=================================
 	//* 차후 계획
 	//=================================
@@ -857,7 +856,7 @@ function simulate(num){
 				objective[3] += objective[2];
 			}
 		}
-		
+
 		//정지 조건 달성
 		if (out > 0) {
 			//메세지 출력
@@ -898,7 +897,7 @@ function simulate(num){
 			}
 		}
 	}
-	
+
 }
 
 //아이템 분류
@@ -976,7 +975,7 @@ function sortItem(type, zone, zoneArr) {
 	function getItem(type, item, zone, zoneArr) {
 		switch (type) {
 			case "장비" :
-				
+
 				switch (item) {
 					case "마봉":
 						//아이템 필드 이미지 & 이름 결정
@@ -986,76 +985,76 @@ function sortItem(type, zone, zoneArr) {
 						} else {
 							var name2 = name1.split("_")[3];
 						}
-						
+
 						//아이템 이름 변경
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " rare";
 						$("#item_name" + zone.toString()).innerHTML = "마법으로 봉인된 " + name2;
 							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-						
+
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
 							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
-						
+
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
 						$("#item_img" + zone.toString()).style.visibility = "visible";
-						
+
 						//아이템 등록
 						thisTime.push([zone, zoneArr, item]);
-						
+
 						break;
-						
+
 					case "코스모소울":
 						//아이템 필드 이미지 & 이름 결정
 						var name1 = "field_기타";
 						var name2 = "코스모 소울";
-						
+
 						//아이템 이름 변경
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " epic";
 						$("#item_name" + zone.toString()).innerHTML = name2;
 							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-						
+
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
 							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
-						
+
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
 						$("#item_img" + zone.toString()).style.visibility = "visible";
-						
+
 						//아이템 등록
 						thisTime.push([zone, zoneArr, item]);
-						
+
 						break;
 					case "지옥구슬":
 						var name1 = "field_기타";
 						var name2 =  areaList[input[0]] + " 지옥구슬";
-						
+
 						//아이템 이름 변경
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " unique";
 						$("#item_name" + zone.toString()).innerHTML = name2;
 							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-						
+
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
 							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
-						
+
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
 						$("#item_img" + zone.toString()).style.visibility = "visible";
-						
+
 						//아이템 등록
 						thisTime.push([zone, zoneArr, item]);
-						
+
 						break;
 					default:
 						if (item == "고유에픽") {
@@ -1073,33 +1072,33 @@ function sortItem(type, zone, zoneArr) {
 							//미리 리스트에서 랜덤으로 선정
 							temp = tempArr[Math.floor(Math.random() * tempArr.length)];
 						}
-						
+
 						//아이템 이름 변경, 이후 미리 측정한 길이 부여
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " epic";
 						$("#item_name" + zone.toString()).innerHTML = temp[4];
 							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-						
+
 						//아이템 필드 이미지 변경, 크기 조절
 						var field_name = "field_" + temp[0] + "_" + temp[1] + "_" + temp[2];
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
 							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
-						
+
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
 						$("#item_img" + zone.toString()).style.visibility = "visible";
-								
+
 						//출현 이펙트 가시화 (에픽 전용)
 						$("#effect_appear" + zone.toString()).style.left = (-144).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.visibility = "visible";
-						
+
 						//아이템 등록
 						thisTime.push([zone, zoneArr, "에픽", temp]);
 				}
-			
+
 				break;
 			case "조각" :
 				//에픽 장비 선정
@@ -1114,24 +1113,24 @@ function sortItem(type, zone, zoneArr) {
 				}
 				//미리 리스트에서 랜덤으로 선정
 				temp = tempArr[Math.floor(Math.random() * tempArr.length)];
-				
+
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
 				$("#description" + zone.toString()).className += " jogak";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " jogak";
 				$("#item_name" + zone.toString()).innerHTML = temp[4] + " 조각";
 					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-				
+
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_에픽조각";
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
 					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
-				
+
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
 				$("#item_img" + zone.toString()).style.visibility = "visible";
-				
+
 				//아이템 등록
 				thisTime.push([zone, zoneArr, type, temp]);
 
@@ -1139,29 +1138,29 @@ function sortItem(type, zone, zoneArr) {
 			case "완성" :
 				//item 인수를 드랍할 장비로 선정
 				temp = item;
-				
+
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
 				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " epic";
 				$("#item_name" + zone.toString()).innerHTML = "(조각 완성) " + temp[4];
 					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-				
+
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp[0] + "_" + temp[1] + "_" + temp[2];
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
 					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
-				
+
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
 				$("#item_img" + zone.toString()).style.visibility = "visible";
-						
+
 				//출현 이펙트 가시화 (에픽 전용)
 				$("#effect_appear" + zone.toString()).style.left = (-144).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
-				
+
 				//=================================
 				//* 완성템 개별 드랍 & 업데이트 - 시작
 				//=================================
@@ -1170,7 +1169,7 @@ function sortItem(type, zone, zoneArr) {
 					//버튼 활성화 대기
 					onoff(2.5);
 					dropCount = quantity - 1;//한 개 드롭되면 바로 버튼 활성화되도록
-					
+
 					//8-1. 출현 사운드 출력
 					try {
 						if ($("#filter_sound").checked) {
@@ -1180,10 +1179,10 @@ function sortItem(type, zone, zoneArr) {
 						}
 					} catch(e) {
 					}
-					
+
 					//아이템 업데이트 (inventory, set, craft)
 					update("완성", temp);
-					
+
 					//아이템 업데이트 (record)
 					var makeCount = count - 1;//(제작 시점은 일반 회차보다 1 낮게 설정)
 					//8-3-1. 회차, 초대장 소모량, 지옥파티 난이도 (등장한 아이템의 모든 분류정보를 class에 입력)
@@ -1229,7 +1228,7 @@ function sortItem(type, zone, zoneArr) {
 				//=================================
 				//* 완성템 개별 드랍 & 업데이트 - 끝
 				//=================================
-				
+
 				break;
 			case "초대장" :
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
@@ -1237,44 +1236,44 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_name" + zone.toString()).className += " rare";
 				$("#item_name" + zone.toString()).innerHTML = "지옥파티 초대장";
 					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-				
+
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_초대장";
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
 					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
-				
+
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
 				$("#item_img" + zone.toString()).style.visibility = "visible";
-				
+
 				//아이템 등록
 				thisTime.push([zone, zoneArr, type, temp]);
-				
+
 				break;
 		}
-		
+
 	}
-	
+
 	//아이템 드롭
 	function dropItem(info) {
 		//아이템 회전 시작
 		$("#item_img" + info[0].toString()).className += " rotate";
-		
+
 		switch (info[2]) {
 			case "에픽":
 				//애니메이션 실행
 				animation($("#effect_appear" + info[0].toString()),"appear",info[0],341,0,-4091,40,0);
-				
+
 				//루팅 개시
 				looting(info[2], info[0], info[1], 1, 1, 1);
-				
+
 				break;
 			default:
 				//루팅 개시
 				looting(info[2], info[0], info[1], 1, 0, 0);
-				
+
 				break;
 		}
 	}
@@ -1358,9 +1357,9 @@ function update(type, info) {
 		//2. itemList에 획득량 기록
 		itemList[num][13] += 1;//해당 조각 수 증가
 	}
-	
+
 	//3. record에 기록 - simulate() 함수에서 일괄 처리
-	
+
 	//4. inventory에 기록 (에픽 한정)
 	if (type == "에픽" || type == "완성") {
 		var tr_inventory = $("#inventory_row_" + num);
@@ -1481,7 +1480,7 @@ function update(type, info) {
 			}
 		}
 		//set 기록 끝
-	
+
 	}
 	//6. craft에 기록 (에픽, 조각 한정)
 	if (((type == "에픽" || type == "완성") && info[6] == "") || type == "조각") {
@@ -1523,7 +1522,7 @@ function update(type, info) {
 			addClass(tr_craft,"show");
 		}
 	}
-	
+
 }
 
 	//inventory, set에서 아이템 해체
@@ -1649,11 +1648,11 @@ function update(type, info) {
 					removeClass(tr_set,"show");
 					addClass(tr_set,"not_show");
 				}
-			
+
 			}
 		}
-		
-		
+
+
 	}
 
 	//craft에서 아이템 제작
@@ -1705,19 +1704,19 @@ function update(type, info) {
 			//아이템 루팅 시작 위치로 이동
 			$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
 			$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
-			
+
 			//아이템 이름 숨기기&이동, 이미지 숨기기
 			$("#description" + i.toString()).className = "description";
 			$("#item_name" + i.toString()).className = "item_name";
 			$("#item_name" + i.toString()).style.visibility = "hidden";
 				$("#description" + i.toString()).style.left = "0px";
 			$("#item_img" + i.toString()).style.visibility = "hidden";
-			
+
 			//에픽 이펙트 숨기기
 			$("#effect_appear" + i.toString()).style.visibility = "hidden";
 			$("#effect_land" + i.toString()).style.visibility = "hidden";
 			$("#effect_wait" + i.toString()).style.visibility = "hidden";
-			
+
 			//애니메이션 정지
 			clearTimeout(autoLooting[i-1]);
 			clearTimeout(autoEffect["appear"][i-1]);
@@ -1737,21 +1736,21 @@ function update(type, info) {
 //=================================================================================================================
 //아이템 루팅
 function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove, topMoveModify) {
-	
+
 	if (step == 1) {
 		var leftMove = zoneArr[zone][0];
 		var topMove = zoneArr[zone][1];
 		var topMoveModify = 5;//5로 고정
 	}
-	
+
 	if (step < 12) {
-		
+
 		$("#item" + zone.toString()).style.left = ($("#item" + zone.toString()).offsetLeft + leftMove).toString() + "px";
 		$("#item" + zone.toString()).style.top = ($("#item" + zone.toString()).offsetTop - topMove).toString() + "px";
-		
+
 		step += 1;
 		topMove -= topMoveModify;
-		
+
 		autoLooting[zone-1] = setTimeout(function() {
 			looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove, topMoveModify);
 		},50);
@@ -1767,17 +1766,17 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			} catch(e) {
 			}
 		}
-		
+
 		//이미지 회전 중단
 		$("#item_img"+ zone.toString()).className = "item_img shadow";
-		
+
 		//버튼 활성화
 		dropCount += 1;
 		if (dropCount == quantity) {//모든 아이템 드랍 완료
 			running = 0;
 			onoff(0);
 		}
-		
+
 		//애니메이션 지속
 		if (animating == 1) {
 			//착지 이펙트 가시화
@@ -1785,7 +1784,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			$("#effect_land" + zone.toString()).style.top = (-161+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_land" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
-						
+
 			//대기 이펙트 가시화
 			$("#effect_wait" + zone.toString()).style.left = (-99).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.top = (-98+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
@@ -1823,7 +1822,7 @@ function play(type) {
 			case "hell":
 				bgmList["hell"].currentTime = 0;
 				bgmList["hell"].pause();
-				
+
 				break;
 			default:
 				bgmList[bgm.toString()].currentTime = 0;
@@ -1831,7 +1830,7 @@ function play(type) {
 				break;
 		}
 	}
-	
+
 	//신규 브금 실행 or 브금 정지
 	if ($("#filter_bgm").checked == false) {
 		bgm = "none";
@@ -1840,12 +1839,12 @@ function play(type) {
 			case "dungeon":
 				bgmList[input[0].toString()].play();
 				bgm = input[0];
-				
+
 				break;
 			case "hell":
 				bgmList["hell"].play();
 				bgm = "hell";
-				
+
 				break;
 		}
 	}
@@ -1857,14 +1856,14 @@ function onoff(num) {
 		case 0:
 			$("#start1").disabled = "";
 			$("#start2").disabled = "";
-			
+
 			$("#start1").value = "1회 실행";
 			$("#start2").value = "탐색 실시";
-			
+
 			$("#dungeon").disabled = "";
 			$("#difficulty").disabled = "";
 			$("#channel").disabled = "";
-			
+
 			$("#objective_list").disabled = "";
 				$("#objective_item_first").disabled = "";
 				if ($("#objective_item_first").value != "") {
@@ -1876,7 +1875,7 @@ function onoff(num) {
 				if ($("#objective_item_third").value != "") {
 					$("#objective_item_name").disabled = "";
 				}
-				
+
 				$("#objective_set_first").disabled = "";
 				if ($("#objective_set_first").value != "") {
 					$("#objective_set_name").disabled = "";
@@ -1885,19 +1884,19 @@ function onoff(num) {
 				$("#objective_cost_text").disabled = "";
 				$("#objective_fatigue_max").disabled = "";
 				$("#objective_fatigue_per").disabled = "";
-			
+
 			$("#reset").disabled = "";
 			break;
 		case 1:
 			$("#start1").disabled = "disabled";
 			$("#start2").disabled = "disabled";
-			
+
 			$("#start1").value = "실행 중";
-			
+
 			$("#dungeon").disabled = "disabled";
 			$("#difficulty").disabled = "disabled";
 			$("#channel").disabled = "disabled";
-			
+
 			$("#objective_list").disabled = "disabled";
 			$("#objective_item_first").disabled = "disabled";
 			$("#objective_item_second").disabled = "disabled";
@@ -1909,19 +1908,19 @@ function onoff(num) {
 			$("#objective_cost_text").disabled = "disabled";
 			$("#objective_fatigue_max").disabled = "disabled";
 			$("#objective_fatigue_per").disabled = "disabled";
-			
+
 			$("#reset").disabled = "disabled";
 			break;
 		case 2:
 			$("#start1").disabled = "disabled";
 			$("#start2").disabled = "";
-			
+
 			$("#start2").value = "탐색 중지";
-			
+
 			$("#dungeon").disabled = "disabled";
 			$("#difficulty").disabled = "disabled";
 			$("#channel").disabled = "disabled";
-			
+
 			$("#objective_list").disabled = "disabled";
 			$("#objective_item_first").disabled = "disabled";
 			$("#objective_item_second").disabled = "disabled";
@@ -1933,15 +1932,15 @@ function onoff(num) {
 			$("#objective_cost_text").disabled = "disabled";
 			$("#objective_fatigue_max").disabled = "disabled";
 			$("#objective_fatigue_per").disabled = "disabled";
-			
+
 			$("#reset").disabled = "disabled";
 			break;
 		case 2.5:
 			$("#start1").disabled = "disabled";
 			$("#start2").disabled = "disabled";
-			
+
 			$("#start2").value = "확인 중";
-			
+
 			break;
 	}
 }
@@ -1949,26 +1948,26 @@ function onoff(num) {
 //창 변경
 function shift(target) {
 	var temp = 0;
-	
+
 	//record
 	if (target == "record")  {
 		//1. 열렸다고 기록
 		temp = 1;
 		right_display = "record";
-		
+
 		//2. 제목 표시
 		$("#popup_title").className = "title_record";//클래스 설정 이유 : 배경이미지 변경
 		$("#popup_title").innerHTML = "획득 기록";
-		
+
 		//3. 필터링, 본문, 체크박스 표시
 		$("#record_filter").style.display = "block";
 		$("#record").style.display = "block";
 		$("#record_check").style.display = "block";
-		
+
 		//4. 버튼 변경
 		$("#shift1").className = "selected";
 		$("#shift1").value = "창 닫기";
-		
+
 		//5. 최신 내용 업데이트 (최신 업데이트 회차가 현 회차와 다를 경우)
 		if ($("#record").innerHTML != content_text[0]) {
 			//내용 업데이트
@@ -1976,7 +1975,7 @@ function shift(target) {
 			//스크롤바 이동
 			$("#record").scrollTop = $("#record").scrollHeight;
 		}
-		
+
 		//6. 화면 스크롤
 		$("#record").scrollTop = $("#record").scrollHeight;
 	} else {
@@ -1984,27 +1983,27 @@ function shift(target) {
 		$("#record_filter").style.display = "none";
 		$("#record").style.display = "none";
 		$("#record_check").style.display = "none";
-		
+
 		//2. 버튼 초기화
 		$("#shift1").className = "";
 		$("#shift1").value = "획득 기록";
 	}
-	
+
 	//inventory
 	if (target == "inventory")  {
 		//1. 열렸다고 기록
 		temp = 1;
 		right_display = "inventory";
-		
+
 		//2. 제목 표시
 		$("#popup_title").className = "title_inventory";//클래스 설정 이유 : 배경이미지 변경
 		$("#popup_title").innerHTML = "인벤토리";
-		
+
 		//3. 필터링, 본문, 체크박스 표시
 		$("#inventory_filter").style.display = "block";
 		$("#inventory").style.display = "block";
 		$("#inventory_check").style.display = "block";
-		
+
 		//4. 버튼 변경
 		$("#shift2").className = "selected";
 		$("#shift2").value = "창 닫기";
@@ -2013,27 +2012,27 @@ function shift(target) {
 		$("#inventory_filter").style.display = "none";
 		$("#inventory").style.display = "none";
 		$("#inventory_check").style.display = "none";
-		
+
 		//2. 버튼 초기화
 		$("#shift2").className = "";
 		$("#shift2").value = "인벤토리";
 	}
-	
+
 	//set
 	if (target == "set")  {
 		//1. 열렸다고 기록
 		temp = 1;
 		right_display = "set";
-		
+
 		//2. 제목 표시
 		$("#popup_title").className = "title_set";//클래스 설정 이유 : 배경이미지 변경
 		$("#popup_title").innerHTML = "세트 아이템";
-		
+
 		//3. 필터링, 본문, 체크박스 표시
 		$("#set_filter").style.display = "block";
 		$("#set").style.display = "block";
 		$("#set_check").style.display = "block";
-		
+
 		//4. 버튼 변경
 		$("#shift3").className = "selected";
 		$("#shift3").value = "창 닫기";
@@ -2042,27 +2041,27 @@ function shift(target) {
 		$("#set_filter").style.display = "none";
 		$("#set").style.display = "none";
 		$("#set_check").style.display = "none";
-		
+
 		//2. 버튼 초기화
 		$("#shift3").className = "";
 		$("#shift3").value = "세트 아이템";
 	}
-	
+
 	//craft
 	if (target == "craft")  {
 		//1. 열렸다고 기록
 		temp = 1;
 		right_display = "craft";
-		
+
 		//2. 제목 표시
 		$("#popup_title").className = "title_craft";//클래스 설정 이유 : 배경이미지 변경
 		$("#popup_title").innerHTML = "에픽 도감";
-		
+
 		//3. 필터링, 본문, 체크박스 표시
 		$("#craft_filter").style.display = "block";
 		$("#craft").style.display = "block";
 		$("#craft_check").style.display = "block";
-		
+
 		//4. 버튼 변경
 		$("#shift4").className = "selected";
 		$("#shift4").value = "닫기";
@@ -2071,34 +2070,34 @@ function shift(target) {
 		$("#craft_filter").style.display = "none";
 		$("#craft").style.display = "none";
 		$("#craft_check").style.display = "none";
-		
+
 		//2. 버튼 초기화
 		$("#shift4").className = "";
 		$("#shift4").value = "도감";
 	}
-	
+
 	//chance
 	if (target == "chance")  {
 		//1. 열렸다고 기록
 		temp = 2;
 		right_display = "chance";
-		
+
 		//2. chance 팝업 표시
 		$("#popup_chance").style.display = "block";
-		
+
 		//6. 화면 스크롤 (위로)
 		$("#popup_chance_main").scrollTop = 0;
 	} else {
 		//1. chance 팝업 미표시
 		$("#popup_chance").style.display = "none";
 	}
-	
+
 	//(chance 빼고) 공용 팝업창
 	if (temp == 1) {
 		//(chance 빼고) 하나라도 열렸다면
 		$("#popup").style.display = "block";
 		$("#checkbox").style.display = "block";
-		
+
 		//공용팝업창 -> 열기 효과음
 	} else {
 		//(chance 빼고) 열린 게 없다면
@@ -2106,7 +2105,7 @@ function shift(target) {
 		$("#checkbox").style.display = "none";
 		right_display = "none";
 	}
-	
+
 	//열었음 : 열기 효과음
 	if ($("#filter_sound").checked == true) {
 		if (temp > 0) {
@@ -2143,32 +2142,32 @@ function setChance(cmd) {
 				- (match[2] ? +match[2] : 0)
 			);
 		}
-		
+
 		if (!multi) {
 			num = num.toFixed(temp) + 3;
 		} else {
 			num = (num * multi).toFixed(Math.max(0,temp - Math.log(multi) + 3));
 		}
-		
+
 		return parseFloat(num);
 	}
-	
+
 	//작업 개시
 	for (var i=1;i<=chanceList[0].length;i++) {
 		for (var j=1;j<=chanceList[1].length;j++) {
 			//드랍률 3종 합계 초기화
 			num = 0;
-			
+
 			for (var k=1;k<=chanceList[2].length;k++) {
 				switch (cmd) {
 					case "show":
 						$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = fixed(chanceList_num[1][i-1][j-1][k],100).toString();
-						
+
 						break;
 					case "reset":
 						$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = fixed(chanceList_num_default[1][i-1][j-1][k],100).toString();
 						chanceList_num[1][i-1][j-1][k] = chanceList_num_default[1][i-1][j-1][k];
-						
+
 						break;
 					case "perfect":
 						//에픽
@@ -2184,35 +2183,35 @@ function setChance(cmd) {
 						//입력된 값이 숫자인지 확인
 						if (!isNumber($("#chance_text_" + i.toString() + j.toString() + k.toString()).value)) {
 							alert("※ 경고 : \"" + chanceList[0][i-1] + "\" & \"" + chanceList[1][j-1] + "\" 난이도의 \"" + chanceList[2][k-1] + "\" 드랍률이 숫자가 아닙니다.");
-							
+
 							return;
 						//공란이면 "0"을 입력
 						} else if ($("#chance_text_" + i.toString() + j.toString() + k.toString()).value == "") {
 							$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = "0";
 						}
-						
+
 						num += fixed(parseFloat($("#chance_text_" + i.toString() + j.toString() + k.toString()).value),0.01);
-						
+
 						break;
 				}
 			}
-			
+
 			switch (cmd) {
 			//"초기화" : 마봉 확률 초기화
 				case "reset":
 					chanceList_num[1][i-1][j-1][0] = chanceList_num_default[1][i-1][j-1][0];
-					
+
 					break;
 			//"퍼펙트" : 마봉 확률 = 0
 				case "perfect":
 					chanceList_num[1][i-1][j-1][0] = 0;
-					
+
 					break;
 			//"적용" : 아이템 3종 확률 합이 100% 이하면 적용
 				case "apply":
 					if (num > 1) {
 						alert("※ 경고 : \"" + chanceList[0][i-1] + "\" & \"" + chanceList[1][j-1] + "\" 난이도의 드랍률의 합계가 100%를 넘습니다.");
-						
+
 						return;
 					}
 					//마봉
@@ -2227,25 +2226,25 @@ function setChance(cmd) {
 					//지옥 구슬
 					chanceList_num[1][i-1][j-1][3] = fixed(parseFloat($("#chance_text_" + i.toString() + j.toString() + "3").value),0.01);
 					console.log(chanceList_num[1][i-1][j-1][3]);
-					
+
 					break;
 			}
 		}
 	}
-	
+
 	//안내 메시지
 	switch (cmd) {
 		case "reset":
 			alert("드랍 확률이 초기화되었습니다.");
-			
+
 			break;
 		case "perfect":
 			alert("에픽 드랍률이 100%가 되었습니다.");
-			
+
 			break;
 		case "apply":
 			alert("드랍 확률이 정상적으로 적용되었습니다.");
-			
+
 			break;
 	}
 }

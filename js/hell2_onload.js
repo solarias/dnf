@@ -1,4 +1,5 @@
-﻿//=================================================================================================================
+
+//=================================================================================================================
 //※ 실행
 //=================================================================================================================
 window.onload = function() {
@@ -41,15 +42,15 @@ window.onload = function() {
 			itemList.splice(tempList4[i],1);
 		}
 		itemList.push(["","","",,"","","","",0,0,0,0,0]);
-		
+
 	//아이템 정리 작업 2 : 일부 아이템리스트 세팅
 	for (i=0;i<itemList.length;i++) {
 		//고유 에픽
-		if (itemList[i][6] != "") {
+		if (itemList[i][6] !== "") {
 			goyuList.push(itemList[i]);
 		}
 	}
-	
+
 	//아이템 정리 작업 3 : 모든 아이템 종류 구분
 	for (var i=0;i<itemList.length;i++) {
 		switch (itemList[i][0]) {
@@ -57,7 +58,7 @@ window.onload = function() {
 				if (equipList.indexOf(itemList[i][1]) < 0) {
 					equipList.push(itemList[i][1]);
 				}
-				
+
 				break;
 			case "":
 				break;
@@ -65,11 +66,11 @@ window.onload = function() {
 				if (equipList.indexOf(itemList[i][2]) < 0) {
 					equipList.push(itemList[i][2]);
 				}
-				
+
 				break;
 		}
 	}
-	
+
 	//(실행 전) 최대 드랍가능 아이템 수량 조사
 	maxQuantity = 0;
 	//일반 장비 드랍 수량
@@ -114,7 +115,7 @@ window.onload = function() {
 				<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>";
 		$("#frame_top").appendChild(slot);
 	}
-	
+
 	//======================
 	//※ 선로딩 실시
 	//======================
@@ -125,7 +126,7 @@ window.onload = function() {
 			sound_appear.volume = 0.3;
 		sound_land = new Audio;
 			sound_land.volume = 0.3;
-		
+
 		if (sound_appear.canPlayType("audio/mpeg") !== "") {
 			//mp3 출력 가능
 			sound_appear.src = "http://cfile206.uf.daum.net/attach/26393B3B559DCAF43351BB";
@@ -135,7 +136,7 @@ window.onload = function() {
 			sound_appear.src = "http://cfile225.uf.daum.net/attach/221A6F44559DD6D31E0F30";
 			sound_land.src = "http://cfile226.uf.daum.net/attach/2722E144559DD6D41A932A";
 		}
-		
+
 		//BGM 준비
 		bgmList = {
 			"0":new Audio("./sound/bgm_0.mp3"),
@@ -166,7 +167,7 @@ window.onload = function() {
 			}
 			//특정 브금 볼륨 조절 (너무 시끄러움)
 			bgmList["hell"].volume = 0.2;
-		
+
 		//창 열기/닫기 효과음 준비
 		sfxList = {
 			"open":new Audio("./sound/win_open.mp3"),
@@ -184,7 +185,7 @@ window.onload = function() {
 		$("#bgm_type").disabled = "disabled";
 		$("#bgm_type").style.width = "40px";
 	}
-	
+
 	//이미지 선로딩
 	//1. 아이템 스프라이트
 	imageList.push("./sprite/images/sprite_item.png");
@@ -205,7 +206,7 @@ window.onload = function() {
 	imageList.push("./images/epic/popup_inventory.png");
 	imageList.push("./images/epic/popup_set.png");
 	imageList.push("./images/epic/popup_craft.png");
-	
+
 	//5단게 : 이미지 선로딩 실시
 	loadImages(imageList,function(){
 		//=================================================================================================================
@@ -213,17 +214,17 @@ window.onload = function() {
 		//=================================================================================================================
 		//로딩 커버 제거
 		$("#cover").style.display = "none";
-		
+
 		//2. 일부 값 미리 입력
 		dungeon_select();//2-1. 던전 선택
-		
+
 		//3-1. 인벤토리 구성 (만들어둔 첫 줄 아래로 생성)
 		generateInventory();
 		//3-2. 세트 아이템 구성 (만들어둔 첫 줄 아래로 생성)
 		generateSet();
 		//3-3. 에픽 도감 구성 (만들어둔 첫 줄 아래로 생성)
 		generateCraft();
-	
+
 		//4. 조건부 실행 - 아이템 탐색 구성
 		var tempArr = [];//[0] : 일반 1차 분류,
 		for (i=0;i<itemList.length;i++) {
@@ -257,7 +258,7 @@ window.onload = function() {
 				option.text = tempArr[i];
 				$("#objective_set_first").add(option);
 			}
-		
+
 		//6. 필터 구성
 		var tempArr = [[],[],[],[]];//[0] : 일반 1차 분류, [1] : 일반 레벨, [2] : 세트 1차 분류, [3] : 세트 레벨
 		for (i=0;i<itemList.length;i++) {
@@ -288,12 +289,12 @@ window.onload = function() {
 				option1.value = tempArr[0][i];
 				option1.text = tempArr[0][i];
 				$("#record_filter_first").add(option1);
-				
+
 				var option2 = document.createElement("option");
 				option2.value = tempArr[0][i];
 				option2.text = tempArr[0][i];
 				$("#inventory_filter_first").add(option2);
-				
+
 				var option3 = document.createElement("option");
 				option3.value = tempArr[0][i];
 				option3.text = tempArr[0][i];
@@ -305,12 +306,12 @@ window.onload = function() {
 				option1.value = tempArr[1][i].toString();
 				option1.text = "Lv." + tempArr[1][i].toString();
 				$("#record_filter_level").add(option1);
-				
+
 				var option2 = document.createElement("option");
 				option2.value = tempArr[1][i].toString();
 				option2.text = "Lv." + tempArr[1][i].toString();
 				$("#inventory_filter_level").add(option2);
-				
+
 				var option3 = document.createElement("option");
 				option3.value = tempArr[1][i].toString();
 				option3.text = "Lv." + tempArr[1][i].toString();
@@ -330,12 +331,12 @@ window.onload = function() {
 				option.text = "Lv." + tempArr[3][i].toString();
 				$("#set_filter_level").add(option);
 			}
-		
+
 		//final. 조건부 실행, 필터, 체크박스, 버튼 세팅
 			//final-1. 조건부 실행, 필터링, 체크박스
 			//final-1-1. 조건부 실행, 필터링
 			//final-1-1-0. 조건부 실행
-			
+
 			//final-1-1-0-1. 조건부 실행 - 목표 리스트
 			$("#objective_list").onchange = function() {
 				//설정창 변경
@@ -355,7 +356,7 @@ window.onload = function() {
 					$("#objective_list").style.background = "";
 				}
 			}
-			
+
 			//final-1-1-0-1. 조건부 실행 - 에픽 아이템 탐색
 			$("#objective_item_first").onchange = function() {
 				var value = $("#objective_item_first").value;
@@ -375,7 +376,7 @@ window.onload = function() {
 					//두번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_second");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -383,7 +384,7 @@ window.onload = function() {
 					//세번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_third");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -391,7 +392,7 @@ window.onload = function() {
 					//네번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_name");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -413,18 +414,18 @@ window.onload = function() {
 						//두번째 탐색 비우고 새로 입력
 						var dropdown = $("#objective_item_second");
 						clearSelect(dropdown);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.text = "모든 " + value + " 아이템";
 						dropdown.add(option);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.disabled = "disabled";
 						option.text = "===============";
 						dropdown.add(option);
-						
+
 						for (i=0;i<tempArr.length;i++) {
 							var option = document.createElement("option");
 							option.value = tempArr[i];
@@ -433,7 +434,7 @@ window.onload = function() {
 						}
 				}
 			}
-			
+
 			$("#objective_item_second").onchange = function() {
 				var value = $("#objective_item_second").value;
 				//1. 세번째, 네번째 '무조건' 초기화
@@ -449,7 +450,7 @@ window.onload = function() {
 					//세번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_third");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -457,7 +458,7 @@ window.onload = function() {
 					//네번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_name");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -479,18 +480,18 @@ window.onload = function() {
 						//두번째 탐색 비우고 새로 입력
 						var dropdown = $("#objective_item_third");
 						clearSelect(dropdown);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.text = "모든 " + value + " 아이템";
 						dropdown.add(option);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.disabled = "disabled";
 						option.text = "===============";
 						dropdown.add(option);
-						
+
 						for (i=0;i<tempArr.length;i++) {
 							var option = document.createElement("option");
 							option.value = tempArr[i];
@@ -499,7 +500,7 @@ window.onload = function() {
 						}
 				}
 			}
-			
+
 			$("#objective_item_third").onchange = function() {
 				var value = $("#objective_item_third").value;
 				//1. 네번째 '무조건' 초기화
@@ -512,7 +513,7 @@ window.onload = function() {
 					//네번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_item_name");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 에픽 아이템";
@@ -536,18 +537,18 @@ window.onload = function() {
 						//두번째 탐색 비우고 새로 입력
 						var dropdown = $("#objective_item_name");
 						clearSelect(dropdown);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.text = "모든 " + value + " 아이템";
 						dropdown.add(option);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.disabled = "disabled";
 						option.text = "===============";
 						dropdown.add(option);
-						
+
 						for (i=0;i<tempArr[0].length;i++) {
 							var option = document.createElement("option");
 							option.value = tempArr[0][i];
@@ -560,7 +561,7 @@ window.onload = function() {
 						}
 				}
 			}
-		
+
 			//final-1-1-0-2. 조건부 실행 - 세트 완성
 			$("#objective_set_first").onchange = function() {
 				var value = $("#objective_set_first").value;
@@ -574,7 +575,7 @@ window.onload = function() {
 					//두번째 탐색 비우고 새로 입력
 					var dropdown = $("#objective_set_name");
 					clearSelect(dropdown);
-					
+
 					var option = document.createElement("option");
 					option.value = "";
 					option.text = "모든 세트";
@@ -597,18 +598,18 @@ window.onload = function() {
 						//두번째 탐색 비우고 새로 입력
 						var dropdown = $("#objective_set_name");
 						clearSelect(dropdown);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.text = "모든 " + value + " 세트";
 						dropdown.add(option);
-						
+
 						var option = document.createElement("option");
 						option.value = "";
 						option.disabled = "disabled";
 						option.text = "===============";
 						dropdown.add(option);
-						
+
 						for (i=0;i<tempArr[0].length;i++) {
 							var option = document.createElement("option");
 							option.value = tempArr[0][i];
@@ -617,7 +618,7 @@ window.onload = function() {
 						}
 				}
 			}
-			
+
 			$("#objective_set_name").onchange = function() {
 				temp2 = _set_table.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
 				for (i=0;i<temp2;i++) {
@@ -631,7 +632,7 @@ window.onload = function() {
 					$("#objective_set_name").selectedIndex = 0;
 				}
 			}
-		
+
 		//record, inventory, set, craft 필터링
 		var tempFilter = ["record", "inventory", "set", "craft"];
 		for (var i=0;i<tempFilter.length;i++) {
@@ -664,7 +665,7 @@ window.onload = function() {
 							//두번째 필터링 비우고 새로 입력
 							var dropdown = $("#" + i + "_filter_second");
 							clearSelect(dropdown);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.text = "2차 분류 (전체 보기)";
@@ -672,7 +673,7 @@ window.onload = function() {
 							//세번째 필터링 비우고 새로 입력
 							var dropdown = $("#" + i + "_filter_third");
 							clearSelect(dropdown);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.text = "3차 분류 (전체 보기)";
@@ -715,18 +716,18 @@ window.onload = function() {
 							//두번째 필터링 비우고 새로 입력
 							var dropdown = $("#" + i + "_filter_second");
 							clearSelect(dropdown);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.text = "2차 분류 (전체 보기)";
 							dropdown.add(option);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.disabled = "disabled";
 							option.text = "===============";
 							dropdown.add(option);
-							
+
 							for (i=0;i<tempArr.length;i++) {
 								var option = document.createElement("option");
 								option.value = tempArr[i];
@@ -739,7 +740,7 @@ window.onload = function() {
 						$("#" + i + "_filter_first").selectedIndex = 0;
 					}
 				}
-				
+
 				//b. 2차 분류 필터링
 				$("#" + i + "_filter_second").onchange = (function(i) {
 					return function() {
@@ -764,12 +765,12 @@ window.onload = function() {
 							//세번째 필터링 비우고 새로 입력
 							var dropdown = $("#" + i + "_filter_third");
 							clearSelect(dropdown);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.text = "3차 분류 (전체 보기)";
 							dropdown.add(option);
-						
+
 						//2. 두번째 값이 있으면 (필터링 후) 세번째 생성
 						if ($("#" + i + "_filter_second").value != "") {
 							//필터링 적용
@@ -808,18 +809,18 @@ window.onload = function() {
 							//세번째 필터링 비우고 새로 입력
 							var dropdown = $("#" + i + "_filter_third");
 							clearSelect(dropdown);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.text = "3차 분류 (전체 보기)";
 							dropdown.add(option);
-							
+
 							var option = document.createElement("option");
 							option.value = "";
 							option.disabled = "disabled";
 							option.text = "===============";
 							dropdown.add(option);
-							
+
 							for (i=0;i<tempArr.length;i++) {
 								var option = document.createElement("option");
 								option.value = tempArr[i];
@@ -827,13 +828,13 @@ window.onload = function() {
 								dropdown.add(option);
 							}
 						}
-						
+
 					} catch(e) {
 						alert("＊경고 : \"2차 분류\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 						$("#" + i + "_filter_second").selectedIndex = 0;
 					}
 				}
-				
+
 				//c. 3차 분류 필터링
 				$("#" + i + "_filter_third").onchange = (function(i) {
 					return function() {
@@ -874,13 +875,13 @@ window.onload = function() {
 							//select 배경색 복구
 							$("#" + i + "_filter_third").style.backgroundColor = "white";
 						}
-						
+
 					} catch(e) {
 						alert("＊경고 : \"3차 분류\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 						$("#" + i + "_filter_second").selectedIndex = 0;
 					}
 				}
-				
+
 				//d. 레벨 필터링
 				$("#" + i + "_filter_level").onchange = (function(i) {
 					return function() {
@@ -913,7 +914,7 @@ window.onload = function() {
 						$("#" + i + "_filter_level").selectedIndex = 0;
 					}
 				}
-				
+
 				//e. 필터링 초기화
 				$("#" + i + "_filter_clear").onclick = (function(i) {
 					return function() {
@@ -942,8 +943,8 @@ window.onload = function() {
 				}
 			})(tempFilter[i]);
 		}
-			
-		
+
+
 			//1-1-2. 체크박스
 			//1-1-2-1. record 체크박스
 			$("#record_check_cost").setAttribute('checked', 'checked');//수동 체크 설정 : IE8용
@@ -981,7 +982,7 @@ window.onload = function() {
 			}
 			$("#record_check_quantity").setAttribute('checked', 'checked');//수동 체크 설정 : IE8용
 			$("#record_check_quantity").onclick = function() {
-				
+
 				var sheet = $("#style_record_check_quantity");
 				try {
 					if ($("#record_check_quantity").checked) {
@@ -996,7 +997,7 @@ window.onload = function() {
 					$("#record_check_quantity").checked = false;
 				}
 			}
-			
+
 			//1-1-2-2. inventory 체크박스
 			$("#inventory_check_cost").onclick = function() {
 				var sheet = $("#style_inventory_check_cost");
@@ -1028,7 +1029,7 @@ window.onload = function() {
 					$("#inventory_check_all").checked = false;
 				}
 			}
-			
+
 			//1-1-2-3. set 체크박스
 			$("#set_check_cost").onclick = function() {
 				var sheet = $("#style_set_check_cost");
@@ -1075,7 +1076,7 @@ window.onload = function() {
 					$("#set_check_only").checked = false;
 				}
 			}
-			
+
 			//1-1-2-4. craft 체크박스
 			$("#craft_check_available").onclick = function() {
 				var sheet = $("#style_craft_check_available");
@@ -1117,8 +1118,8 @@ window.onload = function() {
 					$("#craft_check_all").checked = false;
 				}
 			}
-		
-		
+
+
 			//번외-1. 획득 기록 초기화 버튼
 			$("#record_check_reset").onclick = function() {
 				if (confirm("\n획득 기록을 초기화하시겠습니까?\
@@ -1254,8 +1255,8 @@ window.onload = function() {
 					}
 				}
 			}
-		
-		
+
+
 		//2. 버튼 세팅
 		//1. frame_left
 		//1-1. 던전 선택
@@ -1321,11 +1322,11 @@ window.onload = function() {
 						if ($("#objective_fatigue_max").value == "") {
 							alert("＊경고 : 전체 피로도를 입력하세요.");
 							return;
-						} else 
+						} else
 						if ($("#objective_fatigue_per").value == "") {
 							alert("＊경고 : 1회동 소모 피로도를 입력하세요.");
 							return;
-						} else 
+						} else
 						if (! isNumber($("#objective_fatigue_max").value)) {
 							alert("＊경고 : 전체 피로도는 숫자를 입력해야 합니다.");
 							return;
@@ -1365,12 +1366,12 @@ window.onload = function() {
 				onoff(2.5);//잠긴 버튼 복구
 			}
 		}
-		
+
 		$("#result_button_epicDisassemble").onclick = function() {
 			alert("※ 에픽 해체는 인벤토리 항목에서 이용하실 수 있습니다.\n\n(각 아이템별마다 개별적으로 실시)");
 			shift("inventory");
 		}
-		
+
 		$("#result_button_soulDisassemble").onclick = function() {
 			var input = prompt("해체하실 코스모소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get[3]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 코스모소울을 해체합니다.");
 			if (! isNumber(input)) {
@@ -1390,7 +1391,7 @@ window.onload = function() {
 				}
 			}
 		}
-		
+
 		$("#cost_set_gold").onclick = function() {
 			var challenge = prompt("도전장 골드 가격을 입력하세요.\n(현재 가격 : " + thousand(gold) + " Gold)");
 			if (! isNumber(challenge)) {
@@ -1404,7 +1405,7 @@ window.onload = function() {
 		$("#cost_compare").onclick = function() {
 			if (gold <= 0) {
 				alert('※ 경고 : 도전장 골드 가격이 제대로 입력되지 않았습니다.\n(도전장 골드 가격이 입력되어야 현금 시세 계산이 가능함)');
-				
+
 				return;
 			}
 			var market = prompt("던파 골드당 현금 시세를 입력해주세요.\n(1,000만골드 기준, 현재 도전장 골드 가격 : " + thousand(gold) + " Gold)");
@@ -1416,38 +1417,38 @@ window.onload = function() {
 (치킨 1마리 당 15,000원 기준)");
 			}
 		}
-		
+
 		$("#reset").onclick = function() {
 			if (confirm("초기화를 하면 모든 기록이 사라집니다.\n'정말로' 초기화하시겠습니까?")) {
 				//1. 필드 - 아이템 정리
 				for (var i=0;i<maxQuantity;i++) {
 					$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
 					$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
-					
+
 					$("#item_name" + i.toString()).className = "item_name";
 					$("#item_name" + i.toString()).style.visibility = "hidden";
 						$("#description" + i.toString()).style.left = "0px";
 					$("#item_img" + i.toString()).style.visibility = "hidden";
-					
+
 					$("#effect_appear" + i.toString()).style.visibility = "hidden";
 					$("#effect_land" + i.toString()).style.visibility = "hidden";
 					$("#effect_wait" + i.toString()).style.visibility = "hidden";
-					
+
 					//애니메이션 정지
 					clearTimeout(autoLooting[i-1]);
 					clearTimeout(autoEffect[i-1]);
 					$("#item_img"+ i.toString()).className = "item_img";
 				}
 				//2. 회차 & 난이도 초기화
-				count = 1;
+				count = 0;
 				$("#round_count").innerHTML = 0;
 				$("#round_difficulty").innerHTML = "";
 					//회차에 따른 날짜 표시
 					setDate();
-				
+
 				//3. 메뉴 - 연속실행 관련 설정 초기화
 				search = ["","","",""];
-				
+
 				//4-1. 상단 - 획득기록 초기화
 				$("#record").innerHTML = "";
 					//4-1-1. 획득기록 내부정보 초기화
@@ -1464,7 +1465,7 @@ window.onload = function() {
 				//4-5. 상단 - 수집률 초기화
 				collect = 0;
 				$("#inventory_check_collect").innerHTML = "0";
-				
+
 				//5. 좌측 하단 - 획득 정보 초기화
 				get = [0,0,0,0,0,0];
 				$("#result_epic_get").innerHTML = "0";
@@ -1473,14 +1474,14 @@ window.onload = function() {
 				$("#result_soul_have").innerHTML = "0";
 				$("#result_cost_get").innerHTML = "0";
 				$("#result_beed_get").innerHTML = "0";
-				
+
 				//6. 우측 하단 - 비용 초기화
 				cost = [0,0];
 				$("#cost_invitation").innerHTML = "0";
 				$("#cost_real").innerHTML = "0";
 				$("#cost_gold").innerHTML = "0";
 				$("#cost_gold_real").innerHTML = "0";
-				
+
 				//7. 내부 - itemList 초기화
 				for (i=0;i<itemList.length;i++) {
 					itemList[i][8] = 0;//획득 수
@@ -1490,7 +1491,7 @@ window.onload = function() {
 					itemList[i][12] = 0;//첫 : 실질
 					itemList[i][13] = 0;//조각 수
 				};
-				
+
 				//8. 필터링 초기화
 					//8-1. 초기화 대상 : record, inventory, set, craft
 					var tempClear = ["record", "inventory", "set", "craft"];
@@ -1516,10 +1517,10 @@ window.onload = function() {
 					}
 				//8. 버튼 정상화
 				onoff(0);
-				
+
 			}
 		}
-		
+
 		//2-2. 아이템 명칭 출력 여부
 		$("#filter_name_normal").onclick = function() {
 			var sheet = $("#style_name_normal");
@@ -1543,7 +1544,7 @@ window.onload = function() {
 				$("#filter_name_normal").checked = true;
 			}
 		}
-		
+
 		//2-3. 에픽 조각 명칭 출력 여부
 		$("#filter_name_jogak").onclick = function() {
 			var sheet = $("#style_name_jogak");
@@ -1562,13 +1563,13 @@ window.onload = function() {
 					//필터링 해제
 					sheet.innerHTML = "";
 				}
-				
+
 			} catch(e) {
 				alert("＊경고 : \"에픽 조각 명칭\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 				$("#filter_name_jogak").checked = false;
 			}
 		}
-		
+
 		//2-4. BGM 출력
 			//2-4-1. BGM 체크박스
 			$("#filter_bgm").onclick = function() {
@@ -1598,8 +1599,8 @@ window.onload = function() {
 					$("#filter_button").innerHTML = $("#filter_button").innerHTML.replace("닫기","설정");
 				}
 			}
-		
-		//2-5. shift1 ~ 4 + chance
+
+		//2-5. shift1 ~ 4
 		$("#shift1").onclick = function() {
 			if (right_display != "record") {
 				shift("record");
@@ -1628,6 +1629,46 @@ window.onload = function() {
 				shift("");
 			}
 		}
+
+		//2-6. func_getItem, shift_chance
+		$("#func_getItem").onclick = function() {
+			var tempItem = "";
+			var input = prompt("※ 초기에 획득하려는 장비 이름을 \"정확히\" 입력해주세요.\n(인벤토리에서 '모든 아이템 보기' 설정 후 이름 확인가능)\n");
+			//아무것도 입력하지 않음
+			if (!input) {
+				//입력창 닫기
+				return;
+			}
+			//장비 이름 찾아보기
+			var found = null;
+			for (var i=0;i<itemList.length;i++) {
+				if (input === itemList[i][4]) {
+					found = itemList[i];
+				}
+			}
+			//장비를 찾지 못했으면
+			if (!found) {
+				alert("※ 해당 장비를 찾지 못했습니다.\n\n\"" + input + "\"");
+
+				return;
+			//장비를 찾았으면
+			} else {
+				//장비 업데이트
+				update("에픽",found);
+				//출현 사운드 출력
+				try {
+					if ($("#filter_sound").checked) {
+						sound_appear.pause();
+						sound_appear.currentTime = 0;
+						sound_appear.play();
+					}
+				} catch(e) {
+				}
+				alert("※ 장비를 인벤토리에 등록하였습니다.\n\n\"" + input + "\"");
+
+				return;
+			}
+		};
 		$("#shift_chance").onclick = function() {
 			if (right_display != "chance") {
 				//옵션창 닫기
@@ -1642,8 +1683,8 @@ window.onload = function() {
 				shift("");
 			}
 		}
-		
-		//2-6. 드랍 확률 설정창
+
+		//2-7. 드랍 확률 설정창
 			//1. text창 포커스 & 클릭 시 자동 드래그
 			var tempArr = $$("#popup_chance_main input[type='text']");
 			for (var i=0;i<tempArr.length;i++) {
@@ -1673,11 +1714,11 @@ window.onload = function() {
 			$("#popup_chance_perfect").onclick = function() {
 				setChance("perfect");
 			}
-		
+
 		//3. 날짜 환산
 			//3-0. 날짜 계산 함수
 				//hell2_function -> 372번째 줄 참고
-			
+
 			//3-1. 날짜환산 - 초기치 설정
 			for (var i = 0;i < dateSettingList.length;i++) {
 				dateSettingList[i] = dateSettingDefault[i];
@@ -1690,7 +1731,7 @@ window.onload = function() {
 						$("#date_config").className = "cancel";
 						$("#date_config").value = "설정 취소";
 						$("#date_setting").style.display = "block";
-						
+
 						break;
 					case "cancel":
 						//a. 설정값 복구
@@ -1700,18 +1741,18 @@ window.onload = function() {
 						switch($("#date_summary").style.display) {
 							case "inline":
 								$("#date_setting_summary").selectedIndex = 1;
-								
+
 								break;
 							case "none":
 								$("#date_setting_summary").selectedIndex = 0;
-								
+
 								break;
 						}
 						//b. 설정창 닫기
 						$("#date_config").className = "";
 						$("#date_config").value = "날짜 설정";
 						$("#date_setting").style.display = "none";
-						
+
 						break;
 				}
 			}
@@ -1740,11 +1781,11 @@ window.onload = function() {
 					switch ($("#date_setting_summary").value) {
 						case "1"://On
 							$("#date_summary").style.display = "inline";
-							
+
 							break;
 						case "0"://Off
 							$("#date_summary").style.display = "none";
-							
+
 							break;
 					}
 					//a-4. 설정에 따라 날짜 재계산
@@ -1765,11 +1806,11 @@ window.onload = function() {
 				switch($("#date_summary").style.display) {
 					case "inline":
 						$("#date_setting_summary").selectedIndex = 1;
-						
+
 						break;
 					case "none":
 						$("#date_setting_summary").selectedIndex = 0;
-						
+
 						break;
 				}
 				//b. 설정창 닫기
@@ -1777,9 +1818,9 @@ window.onload = function() {
 				$("#date_config").value = "날짜 환산 설정";
 				$("#date_setting").style.display = "none";
 			}
-		
-		
-		
+
+
+
 		//단축키
 		shortcut.add("Page_up",function() {
 			if ($("#channel").selectedIndex != 0) {
@@ -1791,7 +1832,7 @@ window.onload = function() {
 				$("#channel").selectedIndex += 1;
 			}
 		});
-		
+
 		//안내창 출력
 		$("#dungeon").onmouseover = function() {
 			$("#notice_dungeon").style.display = "block";
@@ -1799,21 +1840,21 @@ window.onload = function() {
 		$("#dungeon").onmouseout = function() {
 			$("#notice_dungeon").style.display = "none";
 		}
-		
+
 		$("#difficulty").onmouseover = function() {
 			$("#notice_difficulty").style.display = "block";
 		}
 		$("#difficulty").onmouseout = function() {
 			$("#notice_difficulty").style.display = "none";
 		}
-		
+
 		$("#channel").onmouseover = function() {
 			$("#notice_channel").style.display = "block";
 		}
 		$("#channel").onmouseout = function() {
 			$("#notice_channel").style.display = "none";
 		}
-		
-	
+
+
 	});
 }
