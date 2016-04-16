@@ -36,7 +36,7 @@ var dateSettingWeek = ["월","화","수","목","금","토","일"];
 var dateSettingWeekDefault = ["월","화","수","목","금","토","일"];
 
 var dropCount = 0;//아이템 착지 개수
-var maxJogak = 50;//필요 조각 수
+var maxJogak = 1000;//필요 조각 수
 
 var zoneList = [];//일반 장비&초대장 드랍 위치
 
