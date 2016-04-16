@@ -145,7 +145,7 @@ var equipList = [
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								//내부 처리
@@ -155,7 +155,7 @@ var equipList = [
 								};
 							};
 							img.onerror = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								--remaining;
@@ -166,7 +166,7 @@ var equipList = [
 							img.src = arr[i];
 							imagesArray.push(img);
 						};
-						
+
 					};
 
 					//IE8에 indexOf 적용
@@ -192,7 +192,7 @@ var equipList = [
 						return -1;
 					  };
 					}
-					
+
 					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
 					function thousand(num) {
 						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -223,7 +223,7 @@ var equipList = [
 						if (s == '' || isNaN(s)) return false;
 						return true;
 					}
-					
+
 					//가중치 적용 랜덤
 					function rand(target) {//target : 숫자가 들어있는 배열
 						var number = 0;
@@ -231,7 +231,7 @@ var equipList = [
 							number += target[i];
 						}
 						var tmp = Math.random() * number;
-						
+
 						number = 0;
 						for (i=0;i<target.length;i++) {
 							number += target[i];
@@ -282,11 +282,11 @@ function cardAni(num,target) {
 					card_img.id = "card" + (target).toString() + "_img";
 					card_img.className = "card_image";
 					document.getElementById("card" + (target).toString() + "_back").appendChild(card_img);
-			
+
 			//카드 배치
 			document.getElementById("card" + (target).toString()).style.top = "25px";
 			document.getElementById("card" + (target).toString()).style.left = "-122px";
-			
+
 			//카드 등장시키기
 			auto = setTimeout(function() {
 				cardAni(1, target);
@@ -352,7 +352,7 @@ function cardAni(num,target) {
 					erase.parentElement.removeChild(erase);
 				}
 			};
-			
+
 			break;
 	}
 }
@@ -366,18 +366,18 @@ function cardAni(num,target) {
 		blaster.style.zIndex = "2";
 		blaster.style.width = "350px";
 		blaster.style.height = "350px";
-		
+
 		blaster.style.backgroundImage = "url(./images/hell/card_blast.png)";
-		
+
 		blaster.style.pointerEvents = "none";
-		
+
 		//충격파 div 이식
 		$wrapper.appendChild(blaster);
-		
+
 		//충격파 실행
 		animation(blaster,350,4550);
 	}
-	
+
 	//카드 공개 충격파 실행
 	function animation(target,frameWidth,now) {
 		if (now > 0) {
@@ -391,7 +391,7 @@ function cardAni(num,target) {
 	}
 
 
-	
+
 //아이템 출현
 function getItem() {
 	//1. 레벨 가중치 적용 후 레벨 선정
@@ -400,9 +400,9 @@ function getItem() {
 		//2-1. 특정 종류&레벨의 아이템 리스트 구축
 		var tempArr = [];
 		for (i=0;i<itemList.length;i++) {
-			if ((itemList[i][1] == conditionList[pot]/*종류-각 직업 무기*/
-			|| itemList[i][2] == conditionList[pot])/*종류-악세서리&특수장비*/
-			&& level.indexOf(itemList[i][3]) != -1)/*레벨*/ {
+			if ((itemList[i]["sort2"] == conditionList[pot]/*종류-각 직업 무기*/
+			|| itemList[i]["sort3"] == conditionList[pot])/*종류-악세서리&특수장비*/
+			&& level.indexOf(itemList[i]["level"]) != -1)/*레벨*/ {
 				tempArr.push(itemList[i]);
 			}
 		}
@@ -411,22 +411,22 @@ function getItem() {
 		//보유 수량 증가
 		for (i=0;i<itemList.length;i++) {
 			if (itemList[i] == temp) {
-				itemList[i][9] += 1;
+				itemList[i]["have"] += 1;
 			}
 		}
-		
+
 		//이름 출력
-		document.getElementById("card" + count.toString() + "_text").innerHTML = temp[4] + " <span class='skyblue'>(x" + temp[9].toString() + ")</span>";
-		
+		document.getElementById("card" + count.toString() + "_text").innerHTML = temp["name"] + " <span class='skyblue'>(x" + temp["have"].toString() + ")</span>";
+
 		//아이콘 결정 & 출력
-		document.getElementById("card" + count.toString() + "_img").style.backgroundPosition = spritePosition(temp[7]);
-		
+		document.getElementById("card" + count.toString() + "_img").style.backgroundPosition = spritePosition(temp["icon"]);
+
 		//세부 사항 출력
-		document.getElementById("card" + count.toString() + "_detail").innerHTML = "[" + temp[2] + "/" + temp[3].toString() + "제]";
-		
+		document.getElementById("card" + count.toString() + "_detail").innerHTML = "[" + temp["sort3"] + "/" + temp["level"].toString() + "제]";
+
 		//업데이트
 		$frame_record.innerHTML += "<p>" + count.toString() + "회차 : \
-			<span class='epic'>" + temp[4] + "</span> [" + temp[2] + " / " + temp[3].toString() + "제] <span class='skyblue'>(x" + temp[9].toString() + ")</span></p>";
+			<span class='epic'>" + temp["name"] + "</span> [" + temp["sort3"] + " / " + temp["level"].toString() + "제] <span class='skyblue'>(x" + temp["have"].toString() + ")</span></p>";
 		//업데이트 창 이동
 		$frame_record.scrollTop = $frame_record.scrollHeight;
 }
@@ -435,10 +435,10 @@ function getItem() {
 function reset() {
 	//자동실행 중단
 	clearTimeout(auto);
-	
+
 	//카드 지우기
 	cardAni(3);
-	
+
 	//회차, 비용 초기화
 	count = 1;
 		$main_count.innerHTML = thousand(count);
@@ -449,11 +449,11 @@ function reset() {
 		$cost_date.innerHTML = "0";
 	//보유개수 초기화
 	for (i=0;i<itemList.length;i++) {
-		itemList[i][9] = 0;
+		itemList[i]["have"] = 0;
 	}
 	//획득기록창 비우기
 	$frame_record.innerHTML = "";
-			
+
 	//카드 재생성
 	cardAni(0,count);
 }
@@ -466,18 +466,18 @@ window.onload = function() {
 	var tempList = [];
 	for (i=0;i<itemList.length;i++) {
 		//고유 에픽 제거
-		if (itemList[i][6] != "") {
+		if (itemList[i]["goyu"] != "") {
 			tempList.push(i);
 		}
 	};
 	for (i=tempList.length-1;i>=0;i--) {
 		itemList.splice(tempList[i],1);
 	};
-	
+
 	//선로딩 : 이미지
 	//1단계 : 아이템 이미지 스프라이트 추가(sprite_hell)
 	imageList.push('./sprite/images/sprite_hell.png');
-	
+
 	//2단계 : 기타 이미지 추가
 	imageList.push(images + "pot.png");//상단 항아리
 	imageList.push(images + "main_background.png");//메인 배경
@@ -493,7 +493,7 @@ window.onload = function() {
 	imageList.push(images + "card_front_8.png");//카드 앞면 8 - 마법석
 	imageList.push(images + "card_back2.png");//카드 뒷면
 	imageList.push(images + "card_blast.png");//개봉 충격파
-	
+
 	//5단게 : 이미지 선로딩 실시
 	loadImages(imageList,function(){
 		//=================================================================================================================
@@ -501,22 +501,22 @@ window.onload = function() {
 		//=================================================================================================================
 			//0. 선로딩 잔재 제거 (cover 제거)
 			$cover.style.display = "none";
-			
+
 			$select_pot.onchange = function() {
 				switch (pre_selectedIndex) {
 					case -1://처음 변경
 						//변수 변경
 						pot = parseInt($select_pot.value);
 						pre_selectedIndex = pot;
-						
+
 						//교환 여부 활성화
 						$select_trade.disabled = "";
 						$select_trade.style.backgroundColor = "#F4FA58";
 						$select_cost.innerHTML = costList_name[parseInt($select_trade.value)];
-						
+
 						//카드 세팅
 						cardAni(0, count);
-						
+
 						break;
 					default ://처음 변경이 아닐 경우
 						switch (count) {
@@ -524,20 +524,20 @@ window.onload = function() {
 								//변수 변경
 								pot = parseInt($select_pot.value);
 								pre_selectedIndex = $select_pot.selectedIndex;
-								
+
 								//리셋 후 카드 세팅
 								reset();
-								
+
 								break;
 							default://1회차가 아닐 경우
 								if (confirm("다른 항아리를 선택하면 기존 기록/정보가 사라집니다.\n항아리를 바꾸시겠습니까?")) {
 									//변수 변경
 									pot = parseInt($select_pot.value);
 									pre_selectedIndex = $select_pot.selectedIndex;
-									
+
 									//리셋 후 카드 세팅
 									reset();
-									
+
 									break;
 								} else {
 									$select_pot.selectedIndex = pre_selectedIndex;
@@ -545,22 +545,22 @@ window.onload = function() {
 						}
 				}
 			};
-			
+
 			$select_trade.onchange = function() {
 				$select_cost.innerHTML = costList_name[parseInt($select_trade.value)];
 			};
-			
+
 			$clear.onclick = function() {
 				if (confirm("\n초기화하시겠습니까?\n기존의 모든 정보가 사라집니다.")) {
 					reset();
 				}
 			};
-			
+
 			$record_clear.onclick = function() {
 				if (confirm("\n획득 기록창을 지우시겠습니까?\n(아이템 획득 정보, 회차, 소모 비용은 초기화되지 않습니다)")) {
 					$frame_record.innerHTML = "";
 				}
 			};
 	});
-	
+
 };

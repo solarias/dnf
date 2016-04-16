@@ -3,10 +3,10 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
-		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<!--라이브러리 패키지 : 함수모음, 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/subtool.js"></script>
 		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
-		<script type="text/javascript" src="../function/tool/zoom.js"></script>
-		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (끝)-->
+		<!--라이브러리 패키지 (끝)-->
 		<link rel="stylesheet" type="text/css" href="./css/hell2.css" />
 
 		<title>지옥파티 시뮬레이터 2</title>
@@ -25,7 +25,7 @@
 					<p class='title'>
 						지옥파티 설정
 					</p>
-					<p class='center large'>
+					<p class='text_center large'>
 						던전 선택
 					</p><p>
 					<select id="dungeon" autocomplete="off">
@@ -55,7 +55,7 @@
 					</select>
 					</p>
 					<hr />
-					<p class='center'>
+					<p class='text_center bold'>
 					난이도 & 채널
 					</p><p>
 						<select id="difficulty" autocomplete="off">
@@ -102,12 +102,12 @@
 					</p>
 
 					<input id="start2" type="button" value="탐색 실시" />
-					<p class='center'>
+					<p class='text_center bold'>
 						탐색 목표 설정
 					</p>
 					<select id="objective_list" autocomplete="off">
 						<option value="none">목표를 선택하세요 (목표 없음)</option>
-						<option value="" disabled>=======================</option>
+						<option value="" disabled>====================</option>
 						<option value="item">에픽 아이템 탐색</option>
 						<option value="set">세트 완성</option>
 						<option value="count">실행 횟수</option>
@@ -116,11 +116,11 @@
 					</select>
 					<hr />
 					<!--조건 1 : 없음-->
-					<div id="objective_none">
+					<div id="objective_none" class="objective">
 						<p>
 							설정된 목표 없음
 							<br/>
-							(수동으로 정지시킬 때까지 무한히 반복됩니다.)
+							(수동으로 정지시킬 때까지 탐색을 무한히 반복됩니다.)
 						</p><p>
 							(<span class="bold">※</span> <span class="bold">에픽 아이템 탐색</span> :
 							<br />
@@ -128,37 +128,49 @@
 						</p>
 					</div>
 					<!--조건 2 : 아이템 검색-->
-					<div id="objective_item">
+					<div id="objective_item" class="objective">
 						<p>
-							<span class="bold center">1차 분류 : </span>
+							<span class="bold text_center">1차 분류 : </span>
 							<select id="objective_item_first" autocomplete="off">
 								<option value="">모든 에픽 아이템</option>
 								<option value="" disabled>=====================</option>
 							</select>
 						</p><p>
-							<span class="bold center">2차 분류 : </span>
+							<span class="bold text_center">2차 분류 : </span>
 							<select id="objective_item_second" disabled autocomplete="off">
 								<option value="">모든 에픽 아이템</option>
 								<option value="" disabled>=====================</option>
 							</select>
 						</p><p>
-							<span class="bold center">3차 분류 : </span>
+							<span class="bold text_center">3차 분류 : </span>
 							<select id="objective_item_third" disabled autocomplete="off">
 								<option value="">모든 에픽 아이템</option>
 								<option value="" disabled>=====================</option>
 							</select>
 						</p><p>
-							<span class="bold center">아이템 명칭 : </span>
+							<span class="bold text_center">아이템 명칭 : </span>
 							<select id="objective_item_name" disabled autocomplete="off">
 								<option value="">모든 에픽 아이템</option>
 								<option value="" disabled>=====================</option>
 							</select>
 						</p>
-						<p class="small">
-							(설정한 아이템이 나타나면 탐색이 중단됩니다.)
-						</p>
+						<hr />
+						<table id="objective_state_item" class="objective_state">
+							<tr>
+								<td class="col_1 bold">수집현황</td>
+								<td class="col_2">수량</td>
+								<td class="col_3">조각</td>
+								<td class="col_4">완료</td>
+							</tr>
+							<tr>
+								<td id="objective_state_item_name" class="col_1"></td>
+								<td id="objective_state_item_quantity" class="col_2"></td>
+								<td id="objective_state_item_jogak" class="col_3"></td>
+								<td id="objective_state_item_complete" class="col_4"></td>
+							</tr>
+						</table>
 					</div>
-					<div id="objective_set">
+					<div id="objective_set" class="objective">
 						<p>
 							<span class="bold">분류 : </span>
 							<select id="objective_set_first" autocomplete="off">
@@ -166,7 +178,6 @@
 								<option value="" disabled>=====================</option>
 							</select>
 						</p>
-						<br/>
 						<p>
 							<span class="bold">세트 명칭 : </span>
 							<select id="objective_set_name" disabled autocomplete="off">
@@ -174,12 +185,47 @@
 								<option value="" disabled>=====================</option>
 							</select>
 						</p>
-						<br/>
-						<p class="small">
-							(선택한 세트가 완성되면 탐색이 중단됩니다.)
-						</p>
+						<hr />
+						<table id="objective_set_state" class="objective_state">
+							<tr>
+								<td class="col_1 bold">수집현황</td>
+								<td class="col_2">수량</td>
+								<td class="col_3">조각</td>
+								<td class="col_4">완료</td>
+							</tr>
+							<tr>
+								<td id="objective_state_set_1_name" class="col_1"></td>
+								<td id="objective_state_set_1_quantity" class="col_2"></td>
+								<td id="objective_state_set_1_jogak" class="col_3"></td>
+								<td id="objective_state_set_1_complete" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="objective_state_set_2_name" class="col_1"></td>
+								<td id="objective_state_set_2_quantity" class="col_2"></td>
+								<td id="objective_state_set_2_jogak" class="col_3"></td>
+								<td id="objective_state_set_2_complete" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="objective_state_set_3_name" class="col_1"></td>
+								<td id="objective_state_set_3_quantity" class="col_2"></td>
+								<td id="objective_state_set_3_jogak" class="col_3"></td>
+								<td id="objective_state_set_3_complete" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="objective_state_set_4_name" class="col_1"></td>
+								<td id="objective_state_set_4_quantity" class="col_2"></td>
+								<td id="objective_state_set_4_jogak" class="col_3"></td>
+								<td id="objective_state_set_4_complete" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="objective_state_set_5_name" class="col_1"></td>
+								<td id="objective_state_set_5_quantity" class="col_2"></td>
+								<td id="objective_state_set_5_jogak" class="col_3"></td>
+								<td id="objective_state_set_5_complete" class="col_4"></td>
+							</tr>
+						</table>
 					</div>
-					<div id="objective_count">
+					<div id="objective_count" class="objective">
 						<p>
 							<span class="bold">탐색 횟수  : </span>
 							<input id="objective_count_text" type="text" placeholder='탐색 횟수 입력' >
@@ -189,7 +235,7 @@
 							(입력된 횟수만큼 탐색이 이루어집니다.)
 						</p>
 					</div>
-					<div id="objective_cost">
+					<div id="objective_cost" class="objective">
 						<p>
 							<span class="bold">초대장 개수 : </span>
 							<input id="objective_cost_text" type="text" placeholder='초대장 개수 입력' >
@@ -199,7 +245,7 @@
 							(입력한 초대장을 모두 소모하면 탐색이 중지됩니다.)
 						</p>
 					</div>
-					<div id="objective_fatigue">
+					<div id="objective_fatigue" class="objective">
 						<p>
 							<span class="bold">전체 피로도 : </span>
 							<input id="objective_fatigue_max" type="text" placeholder='전체 피로도 입력' >
@@ -223,7 +269,7 @@
 
 		<!------안내 문구------>
 				<div id="notice_dungeon" class="notice">
-					<span class="bold center">※ 던전 별 지옥파티 입장비용</span>
+					<span class="bold text_center">※ 던전 별 지옥파티 입장비용</span>
 					<br/>
 					&lt;시간의 문&gt;
 					<br/>
@@ -269,7 +315,7 @@
 				</div>
 
 				<div id="notice_difficulty" class="notice">
-					<span class="bold center">※ 던전 난이도에 따라 다음 아이템들의 드랍률이 달라집니다.</span>
+					<span class="bold text_center">※ 던전 난이도에 따라 다음 아이템들의 드랍률이 달라집니다.</span>
 					<br/>
 					　- 코스모소울
 					<br/>
@@ -281,7 +327,7 @@
 				</div>
 
 				<div id="notice_channel" class="notice">
-					<span class="bold center">
+					<span class="bold text_center">
 						※ 채널은 아이템 드랍률에 영향을 끼치지 않습니다.
 						<br/>
 						<br/>
@@ -296,32 +342,38 @@
 					<span id="round_difficulty" class="orange"></span>
 				</div>
 					<div id="date">
-						<span id="date_count">0</span> 일차
-						<span id="date_summary" style="display:none;"> (<span id="date_summary_num"></span>)</span>
-
-						<input id="date_config" class="" type="button" value="날짜 설정" />
+						<div id="date_fatigue">
+						</div>
+						<span id="date_inline">
+							<span id="date_count">0</span>일차
+							<span id="date_summary"> (<span id="date_summary_num">1주차 월요일</span>)</span>
+						</span>
+						<input id="date_config" class="" type="button" value="피로도 설정" />
 					</div>
 					<div id="date_setting">
-						<p>하루 피로도 총량 : <input id="date_setting_1" type="text" value="156" /></p>
-						<p>1회 피로도 소모 : <input id="date_setting_2" type="text" value="4" /></p>
+						<p>평일 피로도 총량 : <input id="date_setting_1" type="text" value="156" /></p>
+						<p>주말 피로도 총량 : <input id="date_setting_2" type="text" value="176" /></p>
 							<hr/>
-						<p>1번 비약 피로도 : <input id="date_setting_3" type="text" value="0" /></p>
-						<p>2번 비약 피로도 : <input id="date_setting_4" type="text" value="0" /></p>
-						<p>3번 비약 피로도 : <input id="date_setting_5" type="text" value="0" /></p>
-						<p>4번 비약 피로도 : <input id="date_setting_6" type="text" value="0" /></p>
-						<p>5번 비약 피로도 : <input id="date_setting_7" type="text" value="0" /></p>
+						<p>1회 피로도 소모 : <input id="date_setting_3" type="text" value="4" /></p>
 							<hr/>
-						<p>요약 표시 :
-							<select id="date_setting_summary">
-								<option value="0">없음</option>
-								<option value="1">월/년 환산</option>
+						<p>1번 비약 피로도 : <input id="date_setting_4" type="text" value="0" /></p>
+						<p>2번 비약 피로도 : <input id="date_setting_5" type="text" value="0" /></p>
+						<p>3번 비약 피로도 : <input id="date_setting_6" type="text" value="0" /></p>
+						<p>4번 비약 피로도 : <input id="date_setting_7" type="text" value="0" /></p>
+						<p>5번 비약 피로도 : <input id="date_setting_8" type="text" value="0" /></p>
+							<hr/>
+						<p>시작 요일 :
+							<select id="date_setting_week">
+								<option value="월,화,수,목,금,토,일">월요일</option>
+								<option value="화,수,목,금,토,일,월">화요일</option>
+								<option value="수,목,금,토,일,월,화">수요일</option>
+								<option value="목,금,토,일,월,화,수">목요일</option>
+								<option value="금,토,일,월,화,수,목">금요일</option>
+								<option value="토,일,월,화,수,목,금">토요일</option>
+								<option value="일,월,화,수,목,금,토">일요일</option>
 							</select>
 						</p>
-							<hr/>
-						<p class="date_description">
-							(요약 표시시 소숫점은 버림)
-						</p>
-
+								<hr/>
 						<p>
 							<input id="date_cancel" type="button" value="취소" />
 							<input id="date_apply" type="button" value="설정 적용" />
@@ -336,35 +388,61 @@
 					맵 이미지 제공 : <span id='person_helper'>루리웹 Aqua3님</span>
 				</div>
 
-				<div id="filter">
-					<input id="filter_name_normal" type="checkbox" checked />
-					<label for="filter_name_normal">
-						아이템 명칭 보기
-					</label>
-					<br/>
-					<input id="filter_name_jogak" type="checkbox" />
-					<label for="filter_name_jogak">
-						에픽 조각 명칭 보기
-					</label>
-					<hr/>
-					<input id="filter_sound" type="checkbox" />
-					<label id="label_sound" for="filter_sound">
-						효과음 출력
-					</label>
-					<br/>
-					<input id="filter_bgm" type="checkbox" />
-					<label id="label_bgm" for="filter_bgm">
-						BGM 출력
-					</label>
-					<select id="bgm_type">
-						<option value="dungeon" selected>던전</option>
-						<option value="hell">헬</option>
-					</select>
-					<hr/>
-					<input id="func_getItem" type="button" value="초기 장비 획득" />
-					<input id="shift_chance" type="button" value="드랍 확률 설정" />
+				<div id="option">
+					<div id="option_title">
+						설정창
+					</div>
+					<div id="option_left">
+						<input id="option_name_normal" type="checkbox" checked />
+						<label for="option_name_normal">
+							아이템 명칭 보기
+						</label>
+						<br/>
+						<input id="option_name_jogak" type="checkbox" />
+						<label for="option_name_jogak">
+							에픽 조각 명칭 보기
+						</label>
+						<hr/>
+						<input id="option_sound" type="checkbox" />
+						<label id="label_sound" for="option_sound">
+							효과음 출력
+						</label>
+						<br/>
+						<input id="option_bgm" type="checkbox" />
+						<label id="label_bgm" for="option_bgm">
+							BGM 출력
+						</label>
+							&nbsp;<select id="bgm_type">
+								<option value="dungeon" selected>던전</option>
+								<option value="hell">헬</option>
+							</select>
+						<hr/>
+						<input id="option_gabriel" type="checkbox" />
+						<label id="label_gabriel" for="option_gabriel" class="yellow">
+							에픽 조각 교환
+						</label>
+							<select id="gabriel_type">
+								<option value="manual" selected>수동</option>
+								<option value="auto">자동</option>
+							</select>
+						<hr/>
+						<input id="func_basicItem" type="button" value="기본 장비 설정" />
+
+						<input id="option_basicItem" type="checkbox" />
+						<label id="label_basicItem" for="option_basicItem">
+							기본 장비 초기화 방지
+						</label>
+						<hr/>
+						<input id="shift_chance" type="button" value="드랍 확률 설정" />
+					</div>
+					<div id="option_right">
+
+					</div>
+					<div id="option_bottom">
+						창 바깥을 클릭하면 설정창이 닫힙니다.
+					</div>
 				</div>
-				<button id="filter_button"><img src="./images/epic/icon_option.png" /> 옵션 설정</button>
+				<button id="option_button"><img src="./images/epic/icon_option.png" /> 설정</button>
 
 
 		<!------팝업------>
@@ -497,7 +575,7 @@
 									<td class="col_4">보유</td>
 									<td class="col_5">조각수</td>
 									<td class="col_6">제작</td>
-									<td class="col_7">소울 비용</td>
+									<td class="col_7">조각 교환</td>
 								</tr>
 							</table>
 						</div>
@@ -544,7 +622,7 @@
 							<label for="inventory_check_confirm">수동 해체 시 경고창 출력 X</label>
 						</p>
 							<hr />
-						<p class="center">
+						<p class="text_center">
 							(수집률 : <span id="inventory_check_collect">0</span>%)
 						</p>
 							<hr />
@@ -579,18 +657,19 @@
 						<p>
 							<input id="craft_check_available" type="checkbox">
 							<label for="craft_check_available">제작 가능 아이템만 보기</label>
-
 						</p>
 						<p>
 							<input id="craft_check_all" type="checkbox">
 							<label for="craft_check_all">모든 아이템 보기</label>
 						</p>
 							<hr />
-						<p class="center">
-							(필요 조각 수 : <span id="craft_check_max">0</span>개)
+						<p class="text_center">
+							(필요 에픽 조각 수 : <span id="craft_check_max">0</span>개)
 						</p>
-						<p class="center">
-							(비용 : 코스모소울만 고려)
+						<p class="text_center multi">
+							(제작 시 코스모 소울 소모량만큼
+							<br/>
+							실질 초대장 소모량 증가)
 						</p>
 							<hr />
 					</div>
@@ -599,8 +678,9 @@
 
 				<input id="shift1" class="" type="button" value="획득 기록" />
 				<input id="shift2" class="" type="button" value="인벤토리" />
-				<input id="shift3" class="" type="button" value="세트 아이템" />
-				<input id="shift4" class="" type="button" value="도감" />
+				<input id="shift3" class="" type="button" value="세트 현황" />
+				<input id="shift4" class="" type="button" value="에픽 도감" />
+					<div id="shift4_effect" class="effect_appear"></div>
 		<!------팝업------>
 		<!---확률 팝업---->
 				<div id="popup_chance">
@@ -691,8 +771,70 @@
 					<input id="popup_chance_cancel" class="input" type="button" value="닫기" />
 				</div>
 		<!---확률 팝업---->
+		<!---가브리엘 팝업---->
+				<div id="popup_gabriel">
+					<div id="popup_gabriel_title">
+					</div>
+					<div id="popup_gabriel_left">
+						<img src="./images/epic/gabriel.png" />
+						<p>자네가 원하는 에픽 조각으로 바꿔주지!</p>
+						<input id="gabriel_yes" class="gabriel_button" type="button" value="교환" disabled />
+						<input id="gabriel_no" class="gabriel_button" type="button" value="취소" />
+					</div>
+					<div id="popup_gabriel_right">
+						<p id="gabriel_right_title">에픽 조각 교환 상점</p>
+						<input id="gabriel_change" class="gabriel_button" type="button" value="재료 변경" />
+						<table id="gabriel_item_get" class="gabriel_item">
+							<tr>
+								<td id="gabriel_item_get_type" class="col_1"></td>
+								<td id="gabriel_item_get_icon" class="col_2"></td>
+								<td id="gabriel_item_get_name" class="col_3"></td>
+								<td id="gabriel_item_get_jogak" class="col_4"></td>
+							</tr>
+						</table>
+						<p id="gabriel_arrow">▲&nbsp;&nbsp;▲&nbsp;&nbsp;▲</p>
+						<table id="gabriel_item_give" class="gabriel_item">
+							<tr>
+								<td id="gabriel_item_give_1_type" class="col_1"></td>
+								<td id="gabriel_item_give_1_icon" class="col_2"></td>
+								<td id="gabriel_item_give_1_name" class="col_3"></td>
+								<td id="gabriel_item_give_1_jogak" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="gabriel_item_give_2_type" class="col_1"></td>
+								<td id="gabriel_item_give_2_icon" class="col_2"></td>
+								<td id="gabriel_item_give_2_name" class="col_3"></td>
+								<td id="gabriel_item_give_2_jogak" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="gabriel_item_give_3_type" class="col_1"></td>
+								<td id="gabriel_item_give_3_icon" class="col_2"></td>
+								<td id="gabriel_item_give_3_name" class="col_3"></td>
+								<td id="gabriel_item_give_3_jogak" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="gabriel_item_give_4_type" class="col_1"></td>
+								<td id="gabriel_item_give_4_icon" class="col_2"></td>
+								<td id="gabriel_item_give_4_name" class="col_3"></td>
+								<td id="gabriel_item_give_4_jogak" class="col_4"></td>
+							</tr>
+							<tr>
+								<td id="gabriel_item_give_5_type" class="col_1"></td>
+								<td id="gabriel_item_give_5_icon" class="col_2"></td>
+								<td id="gabriel_item_give_5_name" class="col_3"></td>
+								<td id="gabriel_item_give_5_jogak" class="col_4"</td>
+							</tr>
+						</table>
+						<div id="gabriel_message_box">
+							<!--에픽 조각을 받고 싶은 장비를<br/>에픽 도감에서 선택해주세요.-->
+							<!--동일 레벨의 에픽 조각이<br/>부족하여 교환할 수 없습니다.-->
+							<p id="gabriel_message">에픽 조각을 받고 싶은 장비를<br/>에픽 도감에서 선택해주세요.</p>
+						</div>
+					</div>
+				</div>
+		<!---가브리엘 팝업---->
 
-				<!--
+				<!-- (아이템 개별 DOM 예시)
 				<div id="item1" class="item">
 					<div id="description1" class="description">
 						<p id="item_name1" class="item_name"></p>
@@ -702,105 +844,6 @@
 					<div id="effect_appear1" class="effect_appear"></div>
 					<div id="effect_land1" class="effect_land"></div>
 					<div id="effect_wait1" class="effect_wait"></div>
-				</div>
-
-				<div id="item2" class="item">
-					<div id="description2" class="description">
-						<p id="item_name2" class="item_name"></p>
-					</div>
-					<div id="item_img2" class="item_img"></div>
-
-					<div id="effect_appear2" class="effect_appear"></div>
-					<div id="effect_land2" class="effect_land"></div>
-					<div id="effect_wait2" class="effect_wait"></div>
-				</div>
-
-				<div id="item3" class="item">
-					<div id="description3" class="description">
-						<p id="item_name3" class="item_name"></p>
-					</div>
-					<div id="item_img3" class="item_img"></div>
-
-					<div id="effect_appear3" class="effect_appear"></div>
-					<div id="effect_land3" class="effect_land"></div>
-					<div id="effect_wait3" class="effect_wait"></div>
-				</div>
-
-				<div id="item4" class="item">
-					<div id="description4" class="description">
-						<p id="item_name4" class="item_name"></p>
-					</div>
-					<div id="item_img4" class="item_img"></div>
-
-					<div id="effect_appear4" class="effect_appear"></div>
-					<div id="effect_land4" class="effect_land"></div>
-					<div id="effect_wait4" class="effect_wait"></div>
-				</div>
-
-				<div id="item5" class="item">
-					<div id="description5" class="description">
-						<p id="item_name5" class="item_name"></p>
-					</div>
-					<div id="item_img5" class="item_img"></div>
-
-					<div id="effect_appear5" class="effect_appear"></div>
-					<div id="effect_land5" class="effect_land"></div>
-					<div id="effect_wait5" class="effect_wait"></div>
-				</div>
-
-				<div id="item6" class="item">
-					<div id="description6" class="description">
-						<p id="item_name6" class="item_name"></p>
-					</div>
-					<div id="item_img6" class="item_img"></div>
-
-					<div id="effect_appear6" class="effect_appear"></div>
-					<div id="effect_land6" class="effect_land"></div>
-					<div id="effect_wait6" class="effect_wait"></div>
-				</div>
-
-				<div id="item7" class="item">
-					<div id="description7" class="description">
-						<p id="item_name7" class="item_name"></p>
-					</div>
-					<div id="item_img7" class="item_img"></div>
-
-					<div id="effect_appear7" class="effect_appear"></div>
-					<div id="effect_land7" class="effect_land"></div>
-					<div id="effect_wait7" class="effect_wait"></div>
-				</div>
-
-				<div id="item8" class="item">
-					<div id="description8" class="description">
-						<p id="item_name8" class="item_name"></p>
-					</div>
-					<div id="item_img8" class="item_img"></div>
-
-					<div id="effect_appear8" class="effect_appear"></div>
-					<div id="effect_land8" class="effect_land"></div>
-					<div id="effect_wait8" class="effect_wait"></div>
-				</div>
-
-				<div id="item9" class="item">
-					<div id="description9" class="description">
-						<p id="item_name9" class="item_name"></p>
-					</div>
-					<div id="item_img9" class="item_img"></div>
-
-					<div id="effect_appear9" class="effect_appear"></div>
-					<div id="effect_land9" class="effect_land"></div>
-					<div id="effect_wait9" class="effect_wait"></div>
-				</div>
-
-				<div id="item10" class="item">
-					<div id="description10" class="description">
-						<p id="item_name10" class="item_name"></p>
-					</div>
-					<div id="item_img10" class="item_img"></div>
-
-					<div id="effect_appear10" class="effect_appear"></div>
-					<div id="effect_land10" class="effect_land"></div>
-					<div id="effect_wait10" class="effect_wait"></div>
 				</div>
 				-->
 
@@ -828,26 +871,28 @@
 									</div>
 								</td>
 								<td class="col_5"></td>
-								<td class="col_6"><img class="right" src="./images/hell/cost.png" /></td>
+								<td class="col_6"><img class="right" src="./images/epic/cost.png" /></td>
 								<td id="result_cost_get" class="col_7">0</td>
 							</tr>
 							<tr>
-								<td class="col_1"><img class="left" src="./images/hell/soul.png" /></td>
+								<td class="col_1"><img class="left" src="./images/epic/soul.png" /></td>
 								<td id="result_soul_get" class="col_2">0</td>
 								<td id="result_soul_have" class="col_3">0</td>
 								<td class="col_4">
 									<div>
-										<input id="result_button_soulDisassemble" type="button" value="없음" disabled />
+										<input id="result_button_soulDisassemble" type="button" value="자동" disabled />
 									</div>
 								</td>
 								<td class="col_5"></td>
-								<td class="col_6"><img class="right" src="./images/hell/beed.png" /></td>
+								<td class="col_6"><img class="right" src="./images/epic/beed.png" /></td>
 								<td id="result_beed_get" class="col_7">0</td>
 							</tr>
-							<tr>
+							<tr class="bottom">
 								<td class="bottom" colspan="7">
-									<input id="result_check_soulAuto" type="checkbox" checked>
-									<label for="result_check_soulAuto">코스모소울 획득 시 자동으로 해체 (초대장 변환)</label>
+									<input type="checkbox" checked disabled />
+									<label>
+										코스모 소울 획득 시 자동으로 초대장 변환 (변경 불가)
+									</label>
 								</td>
 							</tr>
 						</table>
@@ -875,7 +920,7 @@
 					<div id="cost_text">
 							<span class="line">
 							총 소모
-							<img src="./images/hell/cost.png">
+							<img src="./images/epic/cost.png">
 							 :
 							<span id="cost_invitation">0</span>
 							장 (실질 :

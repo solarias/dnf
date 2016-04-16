@@ -68,7 +68,7 @@ var chanceList_num = [
 	[50,50],//[6] : 저지1 응토 가중치
 	[74,14,12],//[7] : 저지2 응토 가중치
 	[74,14,12]//[8] : 토벌1 응토 가중치
-	
+
 ];
 var chanceList_name = [
 	["에픽", "안톤"],
@@ -95,7 +95,7 @@ var chanceList_name = [
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								//내부 처리
@@ -105,7 +105,7 @@ var chanceList_name = [
 								};
 							};
 							img.onerror = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								--remaining;
@@ -116,7 +116,7 @@ var chanceList_name = [
 							img.src = arr[i];
 							imagesArray.push(img);
 						};
-						
+
 					};
 
 					//IE8에 indexOf 적용
@@ -142,7 +142,7 @@ var chanceList_name = [
 						return -1;
 					  };
 					}
-					
+
 					//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
 					function thousand(num) {
 						return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -173,7 +173,7 @@ var chanceList_name = [
 						if (s == '' || isNaN(s)) return false;
 						return true;
 					}
-					
+
 					//가중치 적용 랜덤
 					function rand(target) {//target : 숫자가 들어있는 배열
 						var number = 0;
@@ -181,7 +181,7 @@ var chanceList_name = [
 							number += target[x];
 						}
 						var tmp = Math.random() * number;
-						
+
 						number = 0;
 						for (x=0;x<target.length;x++) {
 							number += target[x];
@@ -190,12 +190,12 @@ var chanceList_name = [
 							}
 						}
 					}
-					
+
 					//특정 클래스 지우기
 					function removeClass(target,toErase) {
 						target.className = target.className.replace( new RegExp('(?:^|\\s)'+toErase+'(?!\\S)') ,'');
 					}
-					
+
 					//애니메이션 감지
 					function transitionEndEventName () {
 						var i,
@@ -214,7 +214,7 @@ var chanceList_name = [
 							}
 						}
 
-						//TODO: throw 'TransitionEnd event is not supported in this browser'; 
+						//TODO: throw 'TransitionEnd event is not supported in this browser';
 					}
 //=================================================================================================================
 //※ 함수 - 작동용
@@ -235,9 +235,9 @@ function generateBlast() {
 		blaster.style.zIndex = "3";
 		blaster.style.width = "350px";
 		blaster.style.height = "350px";
-		
+
 		blaster.style.backgroundImage = "url(./images/anton/card_blast.png)";
-		
+
 		//충격파 div 이식
 		$frame_left.appendChild(blaster);
 	}
@@ -276,7 +276,7 @@ function simulate(num) {
 		$left_antonium_num.innerHTML = getAntonium.toString();
 		$get_antonium.innerHTML = thousand(antonList[0][4]);
 		$get_spirit.innerHTML = thousand(antonList[1][4]);
-		
+
 	//카드 보상, 이후 다음 회차로
 	switch (num) {
 		case 1:
@@ -332,7 +332,7 @@ function simulate(num) {
 					}, 600);
 				})(i);
 			}
-			
+
 			break;
 		case 2:
 			for (var i=1;i<=20;i++) {
@@ -368,20 +368,20 @@ function drop(num) {
 	if (type1 == "에픽") {
 		//카드 뒷면 설정
 		document.getElementById("card" + num.toString() + "_back").style.backgroundPosition = "0px 0px";
-		
+
 		//에픽 종류 선정
 		var type2 = chanceList_name[1][rand(chanceList_num[1])];
-		
+
 		//레벨 선정
 		var level = chanceList_name[2 + chanceList_name[1].indexOf(type2)][rand(chanceList_num[2 + chanceList_name[1].indexOf(type2)])];
-		
+
 		//특정 종류&레벨의 아이템 리스트 구축
 		var tempArr = [];
 		for (var i=0;i<itemList.length;i++) {
-			if ((itemList[i][0] == type2/*종류-무기*/
-			|| itemList[i][1] == type2/*종류-악세서리*/
-			|| itemList[i][2] == type2)/*종류-보조장비&마법석*/
-			&& level.indexOf(itemList[i][3]) != -1) {/*레벨*/
+			if ((itemList[i]["sort1"] == type2/*종류-무기*/
+			|| itemList[i]["sort2"] == type2/*종류-악세서리*/
+			|| itemList[i]["sort3"] == type2)/*종류-보조장비&마법석*/
+			&& level.indexOf(itemList[i]["level"]) != -1) {/*레벨*/
 				tempArr.push(itemList[i]);
 			}
 		}
@@ -396,10 +396,10 @@ function drop(num) {
 		}
 		*/
 		//이름 출력
-		document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='epic'>" + temp[4] + "</span>";
+		document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='epic'>" + temp["name"] + "</span>";
 		//아이콘 출력
-		document.getElementById("card" + num.toString() + "_img").style.backgroundPosition = spritePosition(temp[7]);
-		
+		document.getElementById("card" + num.toString() + "_img").style.backgroundPosition = spritePosition(temp["icon"]);
+
 		//내 꺼일 때 한정
 		if (num == 1) {
 			//업데이트
@@ -415,7 +415,7 @@ function drop(num) {
 		}
 		//가중치에 따라 드랍 대상 선정
 		var temp = antonList[tempArr[0][rand(tempArr[1])]];
-		
+
 		//카드 뒷면 설정
 		if (temp[0] == "안톤의 영혼 조각") {
 			document.getElementById("card" + num.toString() + "_back").style.backgroundPosition = "0px 0px";
@@ -425,14 +425,14 @@ function drop(num) {
 				blast(num);
 			}
 		}
-		
+
 		//이름 출력
 		document.getElementById("card" + num.toString() + "_text").innerHTML = "<span class='" + temp[1] + "'>" + temp[0] + "</span>";
 		//아이콘 출력
 		document.getElementById("card" + num.toString() + "_img").style.backgroundPosition = spritePosition(temp[0]);
-		
-		
-		
+
+
+
 		//내 꺼일 때 한정
 		if (num == 1) {
 			//보유 수량 증가
@@ -451,10 +451,10 @@ function drop(num) {
 	function blast(num) {
 		//충격파 실행
 		var blaster = document.getElementById("card" + num.toString() + "_blast");
-		
+
 		animation(blaster,350,4900);
 	}
-	
+
 	//카드 공개 충격파 실행
 	function animation(target,frameWidth,now) {
 		if (now > 0) {
@@ -467,12 +467,12 @@ function drop(num) {
 		}
 	}
 
-	
+
 //업데이트
 function update(num, target) {
 	//획득 기록
 	if (num == 1) {
-		var text1 = "<span class='yellow'>" + target[4] + "</span>" + " [" + target[2] + "/" + target[3].toString() + "제]";
+		var text1 = "<span class='yellow'>" + target["name"] + "</span>" + " [" + target["sort3"] + "/" + target["level"].toString() + "제]";
 	} else {
 		var text1 = "<span class='" + target[1] + "'>" + target[0] + "</span>";
 	}
@@ -484,13 +484,13 @@ function update(num, target) {
 	$record.innerHTML += "<p>" + count.toString() + "회차 (" + date.toString() + "일차)\
 	<span class='skyblue'>(응축된 안토니움 : <span class='white'>" + getAntonium.toString() + "개 + 2개</span>)</span>\
 	<br/>┗ " + text1 + text2 + "</p>";
-	
+
 	$record.scrollTop = $record.scrollHeight;
 	//get 부분
 	$get_spirit.innerHTML = thousand(antonList[1][4]);
-	
+
 	//인벤토리
-	
+
 }
 
 //버튼 활성화/비활성화
@@ -501,7 +501,7 @@ function onoff(num) {
 			$open2.disabled = "";
 			$clear.disabled = "";
 			$gamble_open.disabled = "";
-			
+
 			$open1.value = "1회 토벌";
 			$open2.value = "연속 토벌";
 			break;
@@ -509,12 +509,12 @@ function onoff(num) {
 			clearTimeout(auto1);
 			clearTimeout(auto2);
 			clearTimeout(auto3);
-			
+
 			$open1.disabled = "disabled";
 			$open2.disabled = "disabled";
 			$clear.disabled = "disabled";
 			$gamble_open.disabled = "disabled";
-			
+
 			$open1.value = "토벌 중";
 			$open2.value = "연속 토벌";
 			break;
@@ -522,12 +522,12 @@ function onoff(num) {
 			clearTimeout(auto1);
 			clearTimeout(auto2);
 			clearTimeout(auto3);
-			
+
 			$open1.disabled = "disabled";
 			$open2.disabled = "";
 			$clear.disabled = "disabled";
 			$gamble_open.disabled = "disabled";
-			
+
 			$open1.value = "1회 토벌";
 			$open2.value = "토벌 중지";
 			break;
@@ -542,7 +542,7 @@ window.onload = function() {
 	var tempList = [];
 	for (i=0;i<itemList.length;i++) {
 		//방어구 아이템, 85레벨 아이템, 고유 에픽 제거
-		if (itemList[i][0] == "방어구" || itemList[i][3] == 85 || itemList[i][6] != "") {
+		if (itemList[i]["sort1"] == "방어구" || itemList[i]["level"] == 85 || itemList[i]["goyu"] != "") {
 			tempList.push(i);
 		}
 	};
@@ -550,16 +550,16 @@ window.onload = function() {
 	for (i=tempList.length-1;i>=0;i--) {
 		itemList.splice(tempList[i],1);
 	};
-	
+
 	//선로딩 : 이미지
 	//1단계 : 스프아이트 이미지 추가 (일반 에픽은 여길 참고)
 	imageList.push("./sprite/images/sprite_hell.png");
-	
+
 	//2단계 : 안톤 관련 이미지 추가 (인벤토리/상점 전용)
 	for (i=0;i<antonList.length;i++) {
 		imageList.push(images + "antonImg/" + "1_" + antonList[i][0] + ".png")//이미지 선로딩 대상에 추가
 	}
-	
+
 	//3단계 : 기타 이미지 추가
 	imageList.push(images + "background.jpg");//메인 배경
 	imageList.push(images + "card_front.png");//카드 앞면
@@ -569,7 +569,7 @@ window.onload = function() {
 	imageList.push(images + "hang.png");//항아리
 	imageList.push(images + "record.png");//항아리
 	imageList.push(images + "inventory.png");//항아리
-	
+
 	//5단게 : 이미지 선로딩 실시
 	loadImages(imageList,function(){
 		//=================================================================================================================
@@ -577,10 +577,10 @@ window.onload = function() {
 		//=================================================================================================================
 			//0. 선로딩 잔재 제거 (cover 제거)
 			$cover.style.display = "none";
-			
+
 			//1. 충격파 배치
 			generateBlast()
-			
+
 			//2. 버튼 설정
 			$open1.onclick = function() {
 				onoff(1);
@@ -593,7 +593,7 @@ window.onload = function() {
 					simulate(2);
 				} else {
 					clearTimeout(auto3);
-					
+
 					//카드 앞면&뒷면 뒤집기 활성화
 					for (var i=1;i<=20;i++) {
 						document.getElementById("card" + i.toString() + "_front").style.WebkitTransition = "0.6s";
@@ -609,19 +609,19 @@ window.onload = function() {
 							blast(i);
 						}
 					}
-					
+
 					running = 0;
 					onoff(0);
 				}
 			}
 			$clear.onclick = function() {
-				
+
 			}
-			
+
 			$gamble_open.onclick = function() {
-				
+
 			}
-			
+
 			$shift1.onclick = function() {
 				//버튼 변경
 				$shift1.className = "selected";
@@ -665,5 +665,5 @@ window.onload = function() {
 				$shop.style.display = "block";
 			}
 	});
-	
+
 }
