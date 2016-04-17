@@ -1178,10 +1178,7 @@ window.onload = function() {
 					return;
 				} else {
 					if (confirm("\n중복 에픽 아이템을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
-\n(총 " + temp.toString() + "개의 에픽 아이템이 해체됩니다.)\
-\n\n※ 코스모소울 자동해체 체크 여부에 따라 해체 결과가 달라집니다.\
-\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-\n　- 자동 해체 OFF : 코스모소울 보유량 증가")) {
+\n(총 " + temp.toString() + "개의 에픽 아이템이 해체됩니다.)")) {
 						var not_checked = 0;
 						if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
 							not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
@@ -1194,13 +1191,8 @@ window.onload = function() {
 							if (itemList[i]["have"] > 1) {//2개 이상 보유 시
 								var target_amount = itemList[i]["have"] - 1;//1개만 남기고 모조리 해체
 								recycle(i,target_amount);
-								if ($("#result_check_soulAuto").checked) {
-									//체크 ON - 결과물 : 초대장
-									output += disCount("초대장",itemList[i]["level"]) * target_amount;
-								} else {
-									//체크 OFF - 결과물 : 코스모소울
-									output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
-								}
+								//해체 결과물 : 초대장
+								output += disCount("초대장",itemList[i]["level"]) * target_amount;
 							}
 						}
 						//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
@@ -1209,14 +1201,9 @@ window.onload = function() {
 							$("#inventory_check_confirm").checked = false;
 						}
 						//최종 결과 메세지 출력
-						if ($("#result_check_soulAuto").checked) {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+						var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
 \n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
 \n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
-						} else {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
-						}
 						alert(text);
 					}
 				}
