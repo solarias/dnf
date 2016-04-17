@@ -817,7 +817,9 @@ body {
 				#option_left select option {
 					font-size:12px;
 				}
-		#option_right {
+		#option_notice {
+			overflow-y:scroll;
+
 			float:left;
 
 			padding:5px;
@@ -827,7 +829,14 @@ body {
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
 			box-sizing:border-box;
+
+			font-size:12px;
+			line-height:160%;
 		}
+			#option_notice .date {
+				color:yellow;
+				font-size:16px;
+			}
 		#option_bottom {
 			clear:both;
 

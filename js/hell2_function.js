@@ -1203,8 +1203,22 @@ function nextStep(num, cmd) {
 
 //가브리엘 출현
 function setGabriel(cmd) {
-	//0. 수동일 때만 일부 실행
+	//0. 수동일 때 일부 실행
 	if ($("#gabriel_type").value === "manual" && cmd != "settingOnly") {
+		//사운드 출력
+		if ($("#option_sound").checked === true) {
+			try {
+				sound_appear.pause();
+				sound_appear.currentTime = 0;
+			} catch(e) {};
+			sound_appear.play();
+		}
+		//가브리엘 출현 중이라고 기억
+		gabrielSetting["trading"] = true;
+	//1. 자동일 때 (아이템 선정 안해놨다면) 일부 "부랴부랴" 실행
+	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null) {
+		//창 오픈
+		onoff("gabriel_autoFirst");
 		//사운드 출력
 		if ($("#option_sound").checked === true) {
 			try {
@@ -1251,7 +1265,7 @@ function setGabriel(cmd) {
 			$("#gabriel_change").disabled = "disabled";
 			//버튼 액션
 			if (cmd != "settingOnly") {
-				doGabriel("no");
+				doGabriel("notSet");
 			}
 			return;
 	//3-2. 아이템 지정됨
@@ -1411,7 +1425,7 @@ function doGabriel(cmd) {
 	}
 
 	//자동 교환
-	if ($("#gabriel_type").value === "auto") {
+	if ($("#gabriel_type").value === "auto" && cmd != "notSet") {
 		switch (cmd) {
 			case "no":
 				no();
@@ -2534,6 +2548,19 @@ function onoff(cmd) {
 			if ($("#gabriel_type").value === "manual") {
 				$("#popup_gabriel").style.display = "block";
 			}
+
+			break;
+		//자동일 때 가브리엘 첫 등장
+		case "gabriel_autoFirst" :
+			//버튼
+			$("#start1").disabled = "disabled";
+			$("#start2").disabled = "disabled";
+
+			$("#start1").value = "조각 교환 중";
+			$("#start2").value = "조각 교환 중";
+
+			//창 (이번에만 딱 한번)
+			$("#popup_gabriel").style.display = "block";
 
 			break;
 		//아이템 드랍 중

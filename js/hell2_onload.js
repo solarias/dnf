@@ -197,24 +197,30 @@ window.onload = function() {
 
 	//이미지 선로딩
 	//1. 아이템 스프라이트
+	imageList.push("./sprite/images/sprite_hell.png");
 	imageList.push("./sprite/images/sprite_item.png");
 	//2. 뒷배경 - 1
 	for (var i=0;i<=16;i++) {
 		imageList.push("./images/epic/background_" + i.toString() + ".jpg");
 	}
 	//3. 뒷배경 - 2
-	imageList.push("./images/epic/head_background.png");
 	imageList.push("./images/epic/menu_background.png");
 	imageList.push("./images/epic/wrap_title.png");
 	//4. 획득창 아이콘, 초대장
-	imageList.push("./images/hell/soul.png");
-	imageList.push("./images/hell/beed.png");
-	imageList.push("./images/hell/cost.png");
+	imageList.push("./images/epic/soul.png");
+	imageList.push("./images/epic/beed.png");
+	imageList.push("./images/epic/cost.png");
+	//5. 에픽 이펙트
+	imageList.push("./images/epic/epic_appear.png");
+	imageList.push("./images/epic/epic_land.png");
+	imageList.push("./images/epic/epic_wait.png");
 	//5. 기타
 	imageList.push("./images/epic/popup_record.png");
 	imageList.push("./images/epic/popup_inventory.png");
 	imageList.push("./images/epic/popup_set.png");
 	imageList.push("./images/epic/popup_craft.png");
+	imageList.push("./images/epic/icon_option.png");
+	imageList.push("./images/epic/gabriel.png");
 
 	//5단게 : 이미지 선로딩 실시
 	loadImages(imageList,function(){
@@ -1538,17 +1544,34 @@ window.onload = function() {
 			if ($("#option").style.display !== "none") {
 				$("#option").style.display = "none";
 				$("#option_button").className = "";
+				//닫기 효과음
+				if ($("#option_sound").checked === true) {
+					sfxList["close"].play();
+				}
 			} else {
 				$("#option").style.display = "block";
 				$("#option_button").className = "selected";
+				//열기 효과음
+				if ($("#option_sound").checked === true) {
+					sfxList["open"].play();
+				}
 			}
 		}
 			//옵션 바깥 클릭 시 알아서 숨기기
 			$("html").addEventListener("click",function() {
-				if (event.target !== $("#option") && event.target.parentNode !== $("#option") && event.target.parentNode.parentNode !== $("#option") && event.target !== $("#option_button")) {
-					$("#option").style.display = "none";
-					$("#option_button").className = "";
-					$("#option_button").innerHTML = $("#option_button").innerHTML.replace("닫기","설정");
+				if ($("#option").style.display !== "none") {
+					if (event.target !== $("#option") &&
+						event.target.parentNode !== $("#option") &&
+						event.target.parentNode.parentNode !== $("#option") &&
+						event.target.parentNode.parentNode.parentNode !== $("#option") && 
+						event.target !== $("#option_button")) {
+						$("#option").style.display = "none";
+						$("#option_button").className = "";
+						//닫기 효과음
+						if ($("#option_sound").checked === true) {
+							sfxList["close"].play();
+						}
+					}
 				}
 			});
 
