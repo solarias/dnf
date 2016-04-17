@@ -262,6 +262,8 @@ function generateCraft() {
 					//새로운 것 등록
 					var tempNum = parseInt(tempChk[i].id.split("_")[2]);
 					gabrielSetting["get"] = itemList[tempNum];
+					//체크박스 다시 한번 더 활성화 (버그 방지)
+					tempChk[i].checked = true;
 				//1-2. 조각 교환 비활성화 시
 				} else {
 					//기존 거 등록 제거
