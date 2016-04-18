@@ -9,6 +9,17 @@
 	font-size:16px;
 	text-decoration:none;
 }
+/*뼈대*/
+body {
+	background-color:#606060;
+}
+	p, span, tr, td {
+		font-size:inherit;
+	}
+	table {
+		table-layout:fixed;
+		word-break:break-all;
+	}
 
 /*컬러링(등급)*/
 .uncommon {
@@ -70,13 +81,6 @@
 /*======================================================================================================*/
 /* ※ A. 전체 */
 /*======================================================================================================*/
-body {
-	background-color:#606060;
-}
-	p, span, tr, td {
-		font-size:inherit;
-	}
-
 #wrapper {
 	position:relative;
 
@@ -148,7 +152,7 @@ body {
 			font-size:12px;
 		}
 		#frame_left hr {
-			margin:8px 0px;
+			margin:6px 0px;
 			border:1px black dashed;
 		}
 		#frame_left .bold {
@@ -277,7 +281,7 @@ body {
 		}
 
 		.objective_state {
-			margin-top:10px;
+			margin-top:5px;
 			width:100%;
 
 			background-color:#505050;
@@ -313,16 +317,16 @@ body {
 						border-right:0px;
 					}
 			.objective_state td.col_1 {
-				width:70px;
+				width:57px;
 			}
 			.objective_state td.col_2 {
-				width:40px;
+				width:33px;
 			}
 			.objective_state td.col_3 {
-				width:45px;
+				width:37px;
 			}
 			.objective_state td.col_4 {
-				width:30px;
+				width:25px;
 			}
 				.objective_state td.col_4.true {
 					background-color:#59FF00;
@@ -2058,7 +2062,7 @@ body {
 			text-align:center;
 		}
 			#gabriel_right_title {
-				margin-bottom:12px;
+				margin-bottom:8px;
 
 				color:yellow;
 				font-size:24px;
@@ -2156,11 +2160,11 @@ body {
 				}
 			#gabriel_message_box {
 				position:absolute;
-				top:97px;
+				top:96px;
 				left:7px;
 
 				width:430px;
-				height:153px;
+				height:156px;
 
 				background:black;
 				border:1px gray solid;
