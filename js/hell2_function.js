@@ -250,7 +250,7 @@ function generateCraft() {
 				//1-1. 조각 교환 활성화 시
 				if (tempChk[i].checked === true) {
 					//기존 거 (있으면) 비활성화
-					if (gabrielSetting["get"] != null) {
+					if (gabrielSetting["get"] !== null) {
 						for (var j=0;j<itemList.length;j++) {
 							if (itemList[j]["name"] === gabrielSetting["get"]["name"]) {
 								$("#gabriel_checkbox_" + j.toString()).checked = false;

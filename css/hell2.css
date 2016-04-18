@@ -1407,7 +1407,7 @@ body {
 				font-size:12px;
 			}
 				#craft table .col_1 {/*아이템 명칭*/
-					width:177px;
+					width:173px;
 				}
 					#craft_display table .col_1 {/*(하단) 아이템 명칭*/
 						padding-left:10px;
@@ -2166,11 +2166,11 @@ body {
 				}
 			#gabriel_message_box {
 				position:absolute;
-				top:96px;
+				top:93px;
 				left:7px;
 
-				width:430px;
-				height:156px;
+				width:436px;
+				height:159px;
 
 				background:black;
 				border:1px gray solid;
