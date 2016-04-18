@@ -17,8 +17,14 @@ body {
 		font-size:inherit;
 	}
 	table {
+		/*테이블 크기 고정*/
 		table-layout:fixed;
+		/*자동 띄어쓰기 허용*/
 		word-break:break-all;
+		/*모바일 테이블 크기 변형 방지*/
+	    max-width: none;
+	    width: auto;
+	    min-width: 100%;
 	}
 
 /*컬러링(등급)*/
