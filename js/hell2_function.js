@@ -470,71 +470,71 @@ function setObjective(cmd) {
 
 			break;
 		case "count":
-			if (cmd === "run") {
-				if ($("#objective_count_text").value === "") {
-					alert("＊경고 : 실행 횟수를 입력하세요.");
-					return;
-				} else if (! isNumber($("#objective_count_text").value)) {
-					alert("＊경고 : 실행 횟수는 숫자를 입력해야 합니다.");
-					return;
-				} else if (parseInt($("#objective_count_text").value) <= 0) {
-					alert("＊경고 : 실행 횟수는 0보다 커야 합니다.");
-					return;
-				}
+		if (cmd === "run") {
+			if ($("#objective_count_text").value === "") {
+				alert("＊경고 : 실행 횟수를 입력하세요.");
+				return;
+			} else if (! isNumber($("#objective_count_text").value)) {
+				alert("＊경고 : 실행 횟수는 숫자를 입력해야 합니다.");
+				return;
+			} else if (parseInt($("#objective_count_text").value) <= 0) {
+				alert("＊경고 : 실행 횟수는 0보다 커야 합니다.");
+				return;
 			}
-			objective.push(parseInt($("#objective_count_text").value));//입력 2. 실행 횟수
-			objective.push(0);//입력 3. 현재 진행한 횟수
+		}
+		objective.push(parseInt($("#objective_count_text").value));//입력 2. 실행 횟수
+		objective.push(count);//입력 3. 시점
 
-			break;
+		break;
 		case "cost":
-			if (cmd === "run") {
-				if ($("#objective_cost_text").value === "") {
-					alert("＊경고 : 초대장 개수를 입력하세요.");
-					return;
-				} else if (! isNumber($("#objective_cost_text").value)) {
-					alert("＊경고 : 초대장 개수는 숫자를 입력해야 합니다.");
-					return;
-				} else if (parseInt($("#objective_cost_text").value) <= 0) {
-					alert("＊경고 : 초대장 개수는 0보다 커야 합니다.");
-					return;
-				} else if (parseInt($("#objective_cost_text").value) < costList[input[0]]) {
-					alert("＊경고 : 초대장 개수가 입장 조건(" + costList[input[0]] + "장)보다 부족합니다.");
-					return;
-				}
+		if (cmd === "run") {
+			if ($("#objective_cost_text").value === "") {
+				alert("＊경고 : 초대장 개수를 입력하세요.");
+				return;
+			} else if (! isNumber($("#objective_cost_text").value)) {
+				alert("＊경고 : 초대장 개수는 숫자를 입력해야 합니다.");
+				return;
+			} else if (parseInt($("#objective_cost_text").value) <= 0) {
+				alert("＊경고 : 초대장 개수는 0보다 커야 합니다.");
+				return;
+			} else if (parseInt($("#objective_cost_text").value) < costList[input[0]]) {
+				alert("＊경고 : 초대장 개수가 입장 조건(" + costList[input[0]] + "장)보다 부족합니다.");
+				return;
 			}
-			objective.push(parseInt($("#objective_cost_text").value));//입력 2. 초대장 제한
-			objective.push(0);//입력 3. 현재 소모한 초대장
+		}
+		objective.push(parseInt($("#objective_cost_text").value));//입력 2. 초대장 제한
+		objective.push(count);//입력 3. 현재 시점
 
-			break;
+		break;
 		case "fatigue":
-			if (cmd === "run") {
-				if ($("#objective_fatigue_max").value === "") {
-					alert("＊경고 : 전체 피로도를 입력하세요.");
-					return;
-				} else
-				if ($("#objective_fatigue_per").value === "") {
-					alert("＊경고 : 1회동 소모 피로도를 입력하세요.");
-					return;
-				} else
-				if (! isNumber($("#objective_fatigue_max").value)) {
-					alert("＊경고 : 전체 피로도는 숫자를 입력해야 합니다.");
-					return;
-				} else if (! isNumber($("#objective_fatigue_per").value)) {
-					alert("＊경고 : 1회당 소모 피로도는 숫자를 입력해야 합니다.");
-					return;
-				} else if (parseInt($("#objective_fatigue_max").value) <= 0) {
-					alert("＊경고 : 전체 피로도는 0보다 커야 합니다.");
-					return;
-				} else if (parseInt($("#objective_fatigue_per").value) <= 0) {
-					alert("＊경고 : 1회동 소모 피로도는 0보다 커야 합니다.");
-					return;
-				}
+		if (cmd === "run") {
+			if ($("#objective_fatigue_max").value === "") {
+				alert("＊경고 : 전체 피로도를 입력하세요.");
+				return;
+			} else
+			if ($("#objective_fatigue_per").value === "") {
+				alert("＊경고 : 1회동 소모 피로도를 입력하세요.");
+				return;
+			} else
+			if (! isNumber($("#objective_fatigue_max").value)) {
+				alert("＊경고 : 전체 피로도는 숫자를 입력해야 합니다.");
+				return;
+			} else if (! isNumber($("#objective_fatigue_per").value)) {
+				alert("＊경고 : 1회당 소모 피로도는 숫자를 입력해야 합니다.");
+				return;
+			} else if (parseInt($("#objective_fatigue_max").value) <= 0) {
+				alert("＊경고 : 전체 피로도는 0보다 커야 합니다.");
+				return;
+			} else if (parseInt($("#objective_fatigue_per").value) <= 0) {
+				alert("＊경고 : 1회동 소모 피로도는 0보다 커야 합니다.");
+				return;
 			}
-			objective.push(parseInt($("#objective_fatigue_max").value));//입력 2. 전체 피로도
-			objective.push(parseInt($("#objective_fatigue_per").value));//입력 3. 1회당 소모 피로도
-			objective.push(0);//입력 4. 현재 소모한 피로도
+		}
+		objective.push(parseInt($("#objective_fatigue_max").value));//입력 2. 전체 피로도
+		objective.push(parseInt($("#objective_fatigue_per").value));//입력 3. 1회당 소모 피로도
+		objective.push(count);//입력 4. 시점
 
-			break;
+		break;
 	}
 
 	if (cmd === "run") {
@@ -545,7 +545,7 @@ function setObjective(cmd) {
 
 //목표 현황 체크
 function checkObjective(cmd) {
-	//목표현황 체크
+	//목표 확인
 	setObjective();
 
 	//================================================
@@ -553,81 +553,83 @@ function checkObjective(cmd) {
 	//================================================
 	var target = [];//수집할 대상(item : 개체 하나, set : 개체 여럿)
 
-	switch (objective[0]) {
-		//a. 특정 아이템 탐색
-		case "item" :
-			if (objective[4] !== "") {
-				//수집현황 검색
-				for (var i=0;i<itemList.length;i++) {
-					if (objective[4] === itemList[i]["name"]) {
-						target.push(itemList[i]);
+	//A-1. ()별도 cmd가 없으면) 목표 수집
+	if (!cmd) {
+		switch (objective[0]) {
+			//a. 특정 아이템 탐색
+			case "item" :
+				if (objective[4] !== "") {
+					//수집현황 검색
+					for (var i=0;i<itemList.length;i++) {
+						if (objective[4] === itemList[i]["name"]) {
+							target.push(itemList[i]);
 
-						break;
+							break;
+						}
 					}
-				}
 
-				//수집현황 표시
-				$("#objective_state_item_name").innerHTML = target[0]["sort3"];
-				$("#objective_state_item_quantity").innerHTML = target[0]["have"];
-				$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
-				if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
-					$("#objective_state_item_complete").classList.remove("true");
-					$("#objective_state_item_complete").classList.add("false");
-				} else {
-					$("#objective_state_item_complete").classList.remove("false");
-					$("#objective_state_item_complete").classList.add("true");
-				}
-			}
-			//표시되지 않은 수집현황 지우기
-			if (target.length === 0) {
-				$("#objective_state_item_name").innerHTML = "";
-				$("#objective_state_item_quantity").innerHTML = "";
-				$("#objective_state_item_jogak").innerHTML = "";
-				$("#objective_state_item_complete").classList.remove("true");
-				$("#objective_state_item_complete").classList.remove("false");
-			}
-
-			break;
-		//b. 특정 세트 탐색
-		case "set" :
-			if (objective[2] !== "") {
-				//수집현황 검색
-				for (var i=0;i<itemList.length;i++) {
-					if (objective[2] === itemList[i]["set"]) {
-						target.push(itemList[i]);
-					}
-				}
-
-				//수집현황 표시
-				for (var i=0;i<target.length;i++) {
-					$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = target[i]["sort3"];
-					$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = target[i]["have"];
-					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = target[i]["jogak"];
-					if (target[i]["have"] === 0 && target[i]["jogak"] < maxJogak) {
-						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
-						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("false");
+					//수집현황 표시
+					$("#objective_state_item_name").innerHTML = target[0]["sort3"];
+					$("#objective_state_item_quantity").innerHTML = target[0]["have"];
+					$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
+					if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
+						$("#objective_state_item_complete").classList.remove("true");
+						$("#objective_state_item_complete").classList.add("false");
 					} else {
-						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
-						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("true");
+						$("#objective_state_item_complete").classList.remove("false");
+						$("#objective_state_item_complete").classList.add("true");
 					}
 				}
-			}
-			//표시되지 않은 수집현황 지우기
-			for (var i=0;i<5;i++) {
-				if (i+1 > target.length) {
-					$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = "";
-					$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = "";
-					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = "";
-					$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
-					$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
+				//표시되지 않은 수집현황 지우기
+				if (target.length === 0) {
+					$("#objective_state_item_name").innerHTML = "";
+					$("#objective_state_item_quantity").innerHTML = "";
+					$("#objective_state_item_jogak").innerHTML = "";
+					$("#objective_state_item_complete").classList.remove("true");
+					$("#objective_state_item_complete").classList.remove("false");
 				}
-			}
 
-			break;
+				break;
+			//b. 특정 세트 탐색
+			case "set" :
+				if (objective[2] !== "") {
+					//수집현황 검색
+					for (var i=0;i<itemList.length;i++) {
+						if (objective[2] === itemList[i]["set"]) {
+							target.push(itemList[i]);
+						}
+					}
+
+					//수집현황 표시
+					for (var i=0;i<target.length;i++) {
+						$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = target[i]["sort3"];
+						$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = target[i]["have"];
+						$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = target[i]["jogak"];
+						if (target[i]["have"] === 0 && target[i]["jogak"] < maxJogak) {
+							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
+							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("false");
+						} else {
+							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
+							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("true");
+						}
+					}
+				}
+				//표시되지 않은 수집현황 지우기
+				for (var i=0;i<5;i++) {
+					if (i+1 > target.length) {
+						$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = "";
+						$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = "";
+						$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = "";
+						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
+						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
+					}
+				}
+
+				break;
+		}
+		//여기까지
+		return;
 	}
-
-	//A-1. 별도 cmd가 없으면 여기서 중단
-	if (!cmd) return;
 
 
 	//================================================
@@ -735,28 +737,22 @@ function checkObjective(cmd) {
 		}
 	//3. 실행 횟수
 	} else if (objective[0] === "count") {
-		if (objective[2] + 1 >= objective[1]) {
-			showing = (objective[2] + 1).toString() + "회 실행";
+		if (objective[2] + objective[1] <= count) {
+			showing = objective[1].toString() + "회 실행";
 			out = true;
-		} else {
-			objective[2] += 1;
 		}
 	//4. 초대장 제한
 	} else if (objective[0] === "cost") {
-		if (objective[2] + (costList[input[0]]*2) > objective[1]) {
-			showing = objective[1].toString() + "장 중 " + (objective[2] + costList[input[0]]).toString() + "장 사용 \
+		if (objective[2] + Math.floor(objective[1]/costList[input[0]]) <= count) {
+			showing = objective[1].toString() + "장 중 " + ( Math.floor(objective[1]/costList[input[0]]) * costList[input[0]]).toString() + "장 사용 \
 				(총 " + Math.floor(objective[1]/costList[input[0]]).toString() + "회 실행)";
 			out = true;
-		} else {
-			objective[2] += costList[input[0]];
 		}
 	//5. 피로도 제한
 	} else if (objective[0] === "fatigue") {
-		if  (objective[3] + objective[2] >= objective[1]) {
+		if  (objective[3] + Math.ceil(objective[1]/objective[2]) <= count) {
 			showing = Math.ceil(objective[1]/objective[2]).toString() + "회 실행 (전체 피로도 : " + objective[1].toString() + ")";
 			out = true;
-		} else {
-			objective[3] += objective[2];
 		}
 	}
 
@@ -1083,7 +1079,10 @@ function checkDrop(num) {
 			var tempText = "<span class='system'>====================&lt;탐색 종료&gt;====================";
 				tempText += "<br/>※ 종료 조건 : " + $("#objective_list").options[$("#objective_list").selectedIndex].text + " － " + showing
 				tempText += "<br/>================================================</span>";
-			$("#record").innerHTML += tempText;
+			content_text[0] += tempText;
+			$("#record").innerHTML = content_text[0];
+			//a-0. 메시지 출력함
+			gabrielSetting["alreadySatisfy"] = true;
 			//b. 스크롤바 이동 (종료 메세지가 보이도록)
 			if ($("#record").style.display === "block") {
 				$("#record").scrollTop = $("#record").scrollHeight;
@@ -1170,11 +1169,14 @@ function nextStep(num, cmd) {
 			if (out === true) {
 				//a. (아직 메시지 출력 안했다면)
 				if (gabrielSetting["alreadySatisfy"] === false) {
+					//a-0. 이제 메시지 출력함
+					gabrielSetting["alreadySatisfy"] = true;
 					//a-1. 메세지 출력
 					var tempText = "<span class='system'>====================&lt;탐색 종료&gt;====================";
 						tempText += "<br/>※ 종료 조건 : " + $("#objective_list").options[$("#objective_list").selectedIndex].text + " － " + showing
 						tempText += "<br/>================================================</span>";
-					$("#record").innerHTML += tempText;
+					content_text[0] += tempText;
+					$("#record").innerHTML = content_text[0];
 					//a-1. 스크롤바 이동 (종료 메세지가 보이도록)
 					if ($("#record").style.display === "block") {
 						$("#record").scrollTop = $("#record").scrollHeight;
@@ -1185,8 +1187,8 @@ function nextStep(num, cmd) {
 						//목표 초기화
 						objective = [];
 				}
-				//b. 버튼 정상화
-				onoff(0);
+				//b. 버튼 정상화 대기
+				onoff(2.5);
 				//추가실행 : 하지 않음
 			//2-2. 종료 조건 미달성 or 무조건 실행
 			} else {
@@ -1218,7 +1220,7 @@ function setGabriel(cmd) {
 		//가브리엘 출현 중이라고 기억
 		gabrielSetting["trading"] = true;
 	//1. 자동일 때 (아이템 선정 안해놨다면) 일부 "부랴부랴" 실행
-	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null) {
+	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null && cmd !== "settingOnly") {
 		//창 오픈
 		onoff("gabriel_autoFirst");
 		//사운드 출력
@@ -1480,7 +1482,15 @@ function sortItem(type, zone, zoneArr) {
 			break;
 	}
 	//3. 종류 결정
-	input[5] = chanceList_name[3][rand(chanceList_num[3])];
+		//안톤 레이드(17번) : 방어구 제외
+		var arr_name = deepCopy(chanceList_name[3]);
+		var arr_num = deepCopy(chanceList_num[3]);
+		if (input[0] === 17) {
+			arr_name.splice(1,1);
+			arr_num.splice(1,1);
+		//나머지 : 전 종류 취급
+		} else {}
+	input[5] = arr_name[rand(arr_num)];
 	//4. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수)
 		//4-1. 레벨 종류만큼 칸 설정
 		currentList_level = [];
@@ -1846,7 +1856,7 @@ function update(type, info, quantity) {
 		//실질 초대장 감소
 		cost[1] -= 1;
 		$("#cost_real").innerHTML = thousand(cost[1]);
-	} else if (type === "에픽" || type === "완성"){//에픽
+	} else if (type === "에픽" || type === "완성" || type === "항아리"){//에픽
 		num = 0;//순번 찾기
 		for (var i=0;i<itemList.length;i++) {
 			if (itemList[i]["name"] === info["name"]) {
@@ -1907,7 +1917,7 @@ function update(type, info, quantity) {
 	//3. record에 기록 - simulate() 함수에서 일괄 처리
 
 	//4. inventory에 기록 (에픽 한정)
-	if (type === "에픽" || type === "완성") {
+	if (type === "에픽" || type === "완성" || type === "항아리") {
 		var tr_inventory = $("#inventory_row_" + num);
 		//4-1. 보유량 업데이트
 		tr_inventory.getElementsByTagName("td")[4].innerHTML = itemList[num]["have"].toString();
@@ -1918,17 +1928,19 @@ function update(type, info, quantity) {
 		}
 		//4-3. 첫 획득 (없으면) 업데이트
 		if (tr_inventory.getElementsByTagName("td")[5].innerHTML === "") {
+			var tempText = "";
+				tempText += thousand(itemList[num]["firstCount"]) + "회차 ";
 			if (type === "에픽") {//드랍으로 첫 획득시
-				tr_inventory.getElementsByTagName("td")[5].innerHTML = "\
-					" + thousand(itemList[num]["firstCount"]) + "회차 (드랍)\
-					<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
-					<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+				tempText += "(드랍)";
 			} else if (type === "완성") {//완성으로 첫 획득시
-				tr_inventory.getElementsByTagName("td")[5].innerHTML = "\
-					" + thousand(itemList[num]["firstCount"]) + "회차 <span class='yellow'>(완성)</span>\
-					<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
-					<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+				tempText += "<span class='yellow'>(완성)</span>";
+			} else if (type === "항아리") {//완성으로 첫 획득시
+				tempText += "<span class='set'>(항아리)</span>";
 			}
+			tempText += "\
+				<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
+				<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+			tr_inventory.getElementsByTagName("td")[5].innerHTML = tempText;
 		}
 		//4-4. 해당 아이템 (색깔 입혀서) 가시화
 		if (tr_inventory.className.indexOf("not_show") !== -1) {
@@ -1959,17 +1971,19 @@ function update(type, info, quantity) {
 			}
 			//5-3. 첫 획득 (없으면) 업데이트
 			if (tr_set.getElementsByTagName("td")[5].innerHTML === "") {
-				if (type === "에픽") {//드랍으로 첫 획득시
-					tr_set.getElementsByTagName("td")[5].innerHTML = "\
-						" + thousand(itemList[num]["firstCount"]) + "회차 (드랍)\
-						<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
-						<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+				var tempText = "";
+					tempText += thousand(itemList[num]["firstCount"]) + "회차 ";
+					tempText += "\
+					<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
+					<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+				if (type === "에픽") {
+					tempText += "(드랍)"
 				} else if (type === "완성") {//완성으로 첫 획득시
-					tr_set.getElementsByTagName("td")[5].innerHTML = "\
-						" + thousand(itemList[num]["firstCount"]) + "회차 <span class='yellow'>(완성)</span>\
-						<br/><span class='cost'>(초대장 : " + thousand(itemList[num]["firstInvite"]) + "\
-						<br/>/ 실질 : " + thousand(itemList[num]["firstReal"]) + ")";
+					tempText += "<span class='yellow'>(완성)</span>"
+				} else if (type === "항아리") {//항아리로 첫 획득시
+					tempText += "<span class='set'>(항아리)</span>"
 				}
+				tr_set.getElementsByTagName("td")[5].innerHTML = tempText;
 			}
 			//5-4. 해당 아이템 (색깔 입혀서) 가시화
 			if (tr_set.className.indexOf("not_show") !== -1) {
@@ -2030,10 +2044,10 @@ function update(type, info, quantity) {
 	}
 
 	//6. craft에 기록 (에픽, 조각 한정)
-	if (((type === "에픽" || type === "완성") && info["goyu"] === "") || type === "조각") {
+	if (((type === "에픽" || type === "완성" || type === "항아리") && info["goyu"] === "") || type === "조각") {
 		var tr_craft = $("#craft_row_" + num);
 		//6-1. 보유량 업데이트
-		if ((type === "에픽" || type === "완성")) {
+		if ((type === "에픽" || type === "완성" || type === "항아리")) {
 			tr_craft.getElementsByTagName("td")[3].innerHTML = itemList[num]["have"].toString();
 		}
 		//6-2. 조각수 업데이트
@@ -2071,11 +2085,33 @@ function update(type, info, quantity) {
 
 	//7. 수집현황 업데이트
 	checkObjective();
+
+	//8. equip에 기록 (에픽 한정)
+	if (type === "에픽" || type === "완성" || type === "항아리") {
+		//내 캐릭터 지정됨 & 장착 가능한 부위
+		if (myCharacter !== "" &&
+		(info["class"] === "" ||
+		info["class"].indexOf(myCharacter) >= 0)) {
+			//장비 부위 업데이트
+			setEquip();
+		}
+	}
 }
 
 
 //inventory, set에서 아이템 해체
-function recycle(num,amount) {
+function recycle(num,amount,cmd) {
+	//(보유량 = 1 & 장착 중) 해체 불가 (cmd가 skip일 경우 경고창 없이 중지)
+		//해체하려는 장비 부위 파악
+		var tempPart = itemList[num]["sort3"];
+		if (itemList[num]["sort1"] === "무기") tempPart = itemList[num]["sort1"];
+		if (itemList[num]["have"] === 1 && wearingList[tempPart] === itemList[num]) {
+			if (cmd !== "skip") {
+				alert ("※ 경고 : " + itemList[num]["name"] + "을(를) 해체하려면 장비 장착 메뉴에서 해당 장비를 장착해제 하세요.");
+			}
+			//해체 중단
+			return;
+		}
 	//정말로 해체할지 질문
 	if (!$("#inventory_check_confirm").checked || !$("#set_check_confirm").checked) {
 		if (!confirm("'" + itemList[num]["name"] + "' 을(를) " + amount.toString() + "개 해체하시겠습니까?\n(보유 수량 : " + itemList[num]["have"].toString() + ")")) {
@@ -2115,14 +2151,16 @@ function recycle(num,amount) {
 	//3. IF : 해체를 해서 보유량이 0이 되었을 경우
 	if (itemList[num]["have"] === 0) {
 		//3-1. '첫 획득 정보' 초기화
-		itemList[num]["firstCount"] === 0;//첫 득템 당시 회차
-		itemList[num]["firstInvite"] === 0;//첫 득템 당시 총 소모 초대장
-		itemList[num]["firstReal"] === 0;//첫 득템 당시 실질 소모 초대장
-		//3-2. 수집률 감소
+		itemList[num]["firstCount"] = 0;//첫 득템 당시 회차
+		itemList[num]["firstInvite"] = 0;//첫 득템 당시 총 소모 초대장
+		itemList[num]["firstReal"] = 0;//첫 득템 당시 실질 소모 초대장
+		//3-2. 강화 등급 0으로 초기화
+		itemList[num]["enchant"] = 0;
+		//3-3. 수집률 감소
 		collect -= 1;
 		var gathered = Math.floor((collect/itemList.length)*1000)/10;
 		$("#inventory_check_collect").innerHTML = gathered.toString();
-		//3-3. inventory 설정
+		//3-4. inventory 설정
 			//3-3-1. inventory - '해체' 버튼 제거
 			tr.getElementsByTagName("td")[3].innerHTML = "없음";
 			//3-3-2. inventory - '첫 획득' 기록 제거
@@ -2131,7 +2169,7 @@ function recycle(num,amount) {
 			tr.getElementsByTagName("td")[0].innerHTML = (tr.getElementsByTagName("td")[0].innerText || tr.getElementsByTagName("td")[0].textContent);
 			tr.classList.remove("show");
 			tr.classList.add("not_show");
-		//3-4. set 설정
+		//3-5. set 설정
 		if (itemList[num]["set"] !== "") {
 			//3-4-1. inventory - '해체' 버튼 제거
 			tr2.getElementsByTagName("td")[3].innerHTML = "없음";
@@ -2391,6 +2429,111 @@ function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 				target.style.visibility = "hidden";
 			}
 	}
+}
+
+//=================================================================================================================
+//※ 함수 - 장비 장착
+//=================================================================================================================
+//장비 장착하기
+function setEquip(cmd, toWearName) {
+	//cmd 없음 : 착용 가능한 모든 장비 검색 후 등록
+	if (!cmd) {
+		//장비창 비우기
+		for (var i=0;i<partList.length;i++) {
+			clearSelect($("#list_" + partList[i] + "_select"));
+			var option = document.createElement("option");
+				option.value = "";
+				option.innerHTML = "Lv.60 | 마법으로 봉인된 모험가 " + partList[i];
+			$("#list_" + partList[i] + "_select").add(option);
+		}
+		//탐색 개시
+		for (var i=0;i<itemList.length;i++) {
+			//착용 가능한 장비이고 보유 수량이 1 이상일 경우
+			if ((itemList[i]["class"] === "" ||
+			itemList[i]["class"].indexOf(myCharacter) >= 0) &&
+			itemList[i]["have"] > 0) {
+				var option = document.createElement("option");
+					option.value = itemList[i]["name"];
+					option.innerHTML = "Lv." + itemList[i]["level"] + " | " + itemList[i]["name"]
+				//무기 : sort1 기준 저장
+				if (itemList[i]["sort1"] === "무기") {
+					$("#list_" + itemList[i]["sort1"] + "_select").add(option);
+				//나머지 : sort3 기준 저장
+				} else {
+					$("#list_" + itemList[i]["sort3"] + "_select").add(option);
+				}
+			}
+		}
+		for (var i=0;i<partList.length;i++) {
+			(function(i) {
+				//(현재 착용중인 장비가 있다면)해당 장비 선택
+				if (wearingList[partList[i]] !== null) {
+					for (var j=0;j<$("#list_" + partList[i] + "_select").options.length;j++) {
+						if ($("#list_" + partList[i] + "_select").options[j].value === wearingList[partList[i]]["name"]) {
+							$("#list_" + partList[i] + "_select").selectedIndex = j;
+							break;
+						}
+					}
+				}
+				//(SELECT 변경 시)각 장비마다 착용 효과 적용
+				$("#list_" + partList[i] + "_select").onchange = function() {
+					setEquip(partList[i], $("#list_" + partList[i] + "_select").value);
+				}
+			})(i)
+		}
+	//기본 장비 장착
+	} else if (toWearName === "") {
+		//1. 착용장비 정보 초기화
+		wearingList[cmd] = null;
+		//2. 대상 리스트창 초기화
+			//2-1. 세트 여부 판별
+			$("#list_" + cmd + "_type").classList.remove("set");
+			//2-2. 아이콘 변경
+			$("#list_" + cmd + "_icon").style.backgroundPosition = "0px 0px";
+			//2-3. 강화 수치 표시
+			$("#list_" + cmd + "_enchant").innerHTML = "+0";
+		//3, 상단 현황 초기화
+			//아이콘 변경
+			$("#state_" + cmd + "_icon").style.backgroundPosition = "0px 0px";
+			//강화 수치 변경
+			$("#state_" + cmd + "_enchant").innerHTML = "+0";
+		//4. 사운드 출력
+		if ($("#option_sound").checked === true) {
+			sfxList["wearing"].play();
+		}
+
+	//특정 부위 징칙
+	} else {
+		//1. 착용장비 정보 등록
+		for (var i=0;i<itemList.length;i++) {
+			if (itemList[i]["name"] === toWearName) {
+				wearingList[cmd] = itemList[i];
+
+				break;
+			}
+		}
+		//2. 대상 리스트창 최신화
+			//2-1. 세트 여부 판별
+			if (wearingList[cmd]["set"] !== "") {
+				$("#list_" + cmd + "_type").classList.add("set");
+			} else {
+				$("#list_" + cmd + "_type").classList.remove("set");
+			}
+			//2-2. 아이콘 변경
+			$("#list_" + cmd + "_icon").style.backgroundPosition = spritePosition(wearingList[cmd]["icon"], 1);
+			//2-3. 강화 수치 표시
+			$("#list_" + cmd + "_enchant").innerHTML = "+" + wearingList[cmd]["enchant"];
+		//3, 상단 현황 최신화
+			//아이콘 변경
+			$("#state_" + cmd + "_icon").style.backgroundPosition = spritePosition(wearingList[cmd]["icon"], 1);
+			//강화 수치 변경
+			$("#state_" + cmd + "_enchant").innerHTML = "+" + wearingList[cmd]["enchant"];
+		//4. 사운드 출력
+		if ($("#option_sound").checked === true) {
+			sfxList["wearing"].play();
+		}
+	}
+
 }
 
 //=================================================================================================================
@@ -2708,6 +2851,46 @@ function shift(target) {
 		//2. 버튼 초기화
 		$("#shift4").classList.remove("selected");
 		$("#shift4").value = "에픽 도감";
+	}
+
+	//equip
+	if (target === "equip")  {
+		//1. 열렸다고 기록
+		temp = 1;
+		right_display = "equip";
+
+		//2. 제목 표시
+		$("#popup_title").className = "title_equip";//클래스 설정 이유 : 배경이미지 변경
+		$("#popup_title").innerHTML = "장비 장착";
+
+		//3. 필터링, 본문, 체크박스 표시
+		$("#equip_state").style.display = "block";
+			//3-1. 캐릭터를 선택했을 때만 본문 표시
+			if (myCharacter === "") {
+				$("#equip_notice").style.display = "table";
+				$("#equip_list").style.display = "none";
+			} else {
+				$("#equip_notice").style.display = "none";
+				$("#equip_list").style.display = "block";
+			}
+		$("#equip_enchant").style.display = "block";
+		$("#equip_character").style.display = "block";
+
+		//4. 버튼 변경
+		$("#shift5").classList.add("selected");
+		$("#shift5").classList.remove("ready");//색상 변화 효과 제거
+		$("#shift5").value = "닫기";
+	} else {
+		//1. 필터링, 본문, 체크박스 미표시
+		$("#equip_state").style.display = "none";
+		$("#equip_notice").style.display = "none";
+		$("#equip_list").style.display = "none";
+		$("#equip_enchant").style.display = "none";
+		$("#equip_character").style.display = "none";
+
+		//2. 버튼 초기화
+		$("#shift5").classList.remove("selected");
+		$("#shift5").value = "장착";
 	}
 
 	//chance

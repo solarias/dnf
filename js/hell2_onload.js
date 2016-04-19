@@ -161,6 +161,7 @@ window.onload = function() {
 			"14":new Audio("./sound/bgm_14.mp3"),
 			"15":new Audio("./sound/bgm_15.mp3"),
 			"16":new Audio("./sound/bgm_16.mp3"),
+			"17":new Audio("./sound/bgm_17.mp3"),
 			"hell":new Audio("./sound/bgm_hell.mp3")
 		};
 			//BGM 반복여부 & 볼륨 조절
@@ -173,18 +174,26 @@ window.onload = function() {
 			//특정 브금 볼륨 조절 (너무 시끄러움)
 			bgmList["hell"].volume = 0.2;
 
-		//창 열기/닫기 효과음 준비
+		//각종 효과음 준비
 		sfxList = {
 			"open":new Audio("./sound/win_open.mp3"),
 			"close":new Audio("./sound/win_close.mp3"),
 			"hell_gabriel_yes":new Audio("./sound/hell_gabriel_yes.mp3"),
-			"hell_gabriel_no":new Audio("./sound/hell_gabriel_no.mp3")
+			"hell_gabriel_no":new Audio("./sound/hell_gabriel_no.mp3"),
+			"wearing":new Audio("./sound/hell_wearing.mp3"),
+			"enchant_success":new Audio("./sound/enchant_success.mp3"),
+			"enchant_fail":new Audio("./sound/enchant_fail.mp3"),
+			"enchant_zero":new Audio("./sound/enchant_zero.mp3")
 		};
-			//사운드 반복여부
+			//각종 효과음 설정
 			sfxList["open"].volume = 0.5;
 			sfxList["close"].volume = 0.5;
 			sfxList["hell_gabriel_yes"].volume = 0.5;
 			sfxList["hell_gabriel_no"].volume = 0.5;
+			sfxList["wearing"].volume = 0.5;
+			sfxList["enchant_success"].volume = 0.5;
+			sfxList["enchant_fail"].volume = 0.5;
+			sfxList["enchant_zero"].volume = 0.5;
 	} catch(e) {
 		//audio 태그를 지원하지 않을 시
 		$("#option_sound").disabled = "disabled";
@@ -200,7 +209,7 @@ window.onload = function() {
 	imageList.push("./sprite/images/sprite_hell.png");
 	imageList.push("./sprite/images/sprite_item.png");
 	//2. 뒷배경 - 1
-	for (var i=0;i<=16;i++) {
+	for (var i=0;i<=17;i++) {
 		imageList.push("./images/epic/background_" + i.toString() + ".jpg");
 	}
 	//3. 뒷배경 - 2
@@ -210,6 +219,7 @@ window.onload = function() {
 	imageList.push("./images/epic/soul.png");
 	imageList.push("./images/epic/beed.png");
 	imageList.push("./images/epic/cost.png");
+	imageList.push("./images/epic/heroPot.png");
 	//5. 에픽 이펙트
 	imageList.push("./images/epic/epic_appear.png");
 	imageList.push("./images/epic/epic_land.png");
@@ -219,6 +229,7 @@ window.onload = function() {
 	imageList.push("./images/epic/popup_inventory.png");
 	imageList.push("./images/epic/popup_set.png");
 	imageList.push("./images/epic/popup_craft.png");
+	imageList.push("./images/epic/popup_equip.png");
 	imageList.push("./images/epic/icon_option.png");
 	imageList.push("./images/epic/gabriel.png");
 
@@ -296,6 +307,8 @@ window.onload = function() {
 			if (tempArr[1].indexOf(itemList[i]["level"]) === -1 && typeof itemList[i]["level"] !== "undefined") {
 				//일반 레벨
 				tempArr[1].push(itemList[i]["level"]);
+				//레벨 정렬
+				tempArr[1].sort();
 			}
 		}
 			//6-1. 일반 1차 분류 추가
@@ -1145,6 +1158,26 @@ window.onload = function() {
 					$("#craft_check_all").checked = false;
 				}
 			}
+				//기본적으로 모든 조각 보이도록 설정
+				$("#craft_check_all").click();
+
+
+			//1-1-2-5. equip관련 설정
+			$("#character_type").onchange = function() {
+				if (confirm("＊경고 : 한번 정한 캐릭터 직업은 초기화하기 전엔 바꿀 수 없습니다.\
+\n\"" + $("#character_type").value + "\"로 직업을 정하시겠습니까?")) {
+					//캐릭터 변경 못하게 설정
+					$("#character_type").disabled = "disabled";
+					//내 캐릭터 저장
+					myCharacter = $("#character_type").value;
+					//내 장비 설정
+					setEquip();
+					//창 열기
+					shift("equip");
+				} else {
+					$("#character_type").selectedIndex = 0;
+				}
+			}
 
 
 			//번외-1. 획득 기록 초기화 버튼
@@ -1171,7 +1204,7 @@ window.onload = function() {
 					$("#inventory_check_confirm").checked = false;
 				}
 			}
-			//번외-3. 중복 에픽 일괄 해체
+			//번외-3. 중복 에픽 일괄 해체 & 타캐릭터 장비 일괄 해체
 			$("#disassemble_1").onclick = function() {
 				var temp = 0;
 				for (i=0;i<itemList.length;i++) {
@@ -1208,6 +1241,57 @@ window.onload = function() {
 						}
 						//최종 결과 메세지 출력
 						var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
+\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
+						alert(text);
+					}
+				}
+			}
+			$("#disassemble_other").onclick = function() {
+				//내 캐릭터가 지정되었을 때만 이용 가능
+				if (myCharacter === "") {
+					alert("※ 경고 : 내 캐릭터 직업이 지정되지 않았습니다.\n'장착' 메뉴에서 캐릭터 직업을 먼저 지정해주세요.");
+					return;
+				}
+				var temp = [];
+				for (i=0;i<itemList.length;i++) {
+					//1개 이상 보유 시 && 장착 불과
+					if (itemList[i]["have"] > 0 &&
+					(itemList[i]["class"] !== "" &&
+					itemList[i]["class"].indexOf(myCharacter) < 0)) {
+						temp.push(itemList[i]["name"]);
+					}
+				}
+				if (temp.length === 0) {
+					alert("※ 경고 : 현재 타직업 장비가 없습니다.");
+					return;
+				} else {
+					if (confirm("\n타직업 장비를 모두 해체하시겠습니까?\
+\n(총 " + (temp.length).toString() + "개의 에픽 아이템이 해체됩니다.)")) {
+						var not_checked = 0;
+						if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
+							not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
+							$("#set_check_confirm").checked = true;
+							$("#inventory_check_confirm").checked = true;
+						}
+						//해체 실시 & 결과물 수량 체크
+						var output = 0;
+						for (i=0;i<itemList.length;i++) {
+							if (temp.indexOf(itemList[i]["name"]) >= 0) {
+								//몽땅 해체
+								var target_amount = itemList[i]["have"];
+								recycle(i,target_amount);
+								//해체 결과물 : 초대장
+								output += disCount("초대장",itemList[i]["level"]) * target_amount;
+							}
+						}
+						//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
+						if (not_checked === 1) {
+							$("#set_check_confirm").checked = false;
+							$("#inventory_check_confirm").checked = false;
+						}
+						//최종 결과 메세지 출력
+						var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
 \n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
 \n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
 						alert(text);
@@ -1284,7 +1368,8 @@ window.onload = function() {
 			var tempText = "<span class='system'>====================&lt;탐색 종료&gt;====================";
 				tempText += "<br/>※ 종료 조건 : 수동 정지"
 				tempText += "<br/>================================================</span>";
-			$("#record").innerHTML += tempText;
+			content_text[0] += tempText;
+			$("#record").innerHTML = content_text[0];
 				//final. 스크롤바 이동 (종료 메세지가 보이도록)
 				if ($("#record").style.display === "block") {
 					$("#record").scrollTop = $("#record").scrollHeight;
@@ -1435,9 +1520,26 @@ window.onload = function() {
 						//일반 초기화
 						itemList[i]["init"] = 0;
 					}
+					itemList[i]["enchant"] = 0;//강화 단계
 				}
 					//7-1. 습득현황 갱신
 					checkObjective();
+					//7-2. 상단 - 장비 장착 초기화
+						//캐릭터 초기화
+						myCharacter = "";
+							$("#character_type").selectedIndex = 0;
+							$("#character_type").disabled = "";
+							power = 0;
+						//장착 장비 초기화
+						for (var k in wearingList) {
+							if (wearingList.hasOwnProperty(k)) {
+								wearingList[k] = null;
+							}
+						} 0;
+						//장착 창 초기화
+						for (var i=0;i<partList.length;i++) {
+							setEquip(partList[i],"")
+						}
 
 				//8. 필터링 초기화
 					//8-1. 초기화 대상 : record, inventory, set, craft
@@ -1563,7 +1665,7 @@ window.onload = function() {
 					if (event.target !== $("#option") &&
 						event.target.parentNode !== $("#option") &&
 						event.target.parentNode.parentNode !== $("#option") &&
-						event.target.parentNode.parentNode.parentNode !== $("#option") && 
+						event.target.parentNode.parentNode.parentNode !== $("#option") &&
 						event.target !== $("#option_button")) {
 						$("#option").style.display = "none";
 						$("#option_button").className = "";
@@ -1600,6 +1702,13 @@ window.onload = function() {
 		$("#shift4").onclick = function() {
 			if (right_display !== "craft") {
 				shift("craft");
+			} else {
+				shift("");
+			}
+		}
+		$("#shift5").onclick = function() {
+			if (right_display !== "equip") {
+				shift("equip");
 			} else {
 				shift("");
 			}

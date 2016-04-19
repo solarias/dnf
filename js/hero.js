@@ -87,15 +87,15 @@ var chanceList_name = [
 var costList_gold = [
 	5000000,//교불
 	50000000//교가
-]
+];
 var costList_date = [
 	100,//교불
 	0//교가
-]
+];
 var costList_name = [
 	"500만 <strong>Gold</strong> (+100일)",//교불
 	"5000만 <strong>Gold</strong>"//교불
-]
+];
 
 //항아리 명칭
 var potList = [

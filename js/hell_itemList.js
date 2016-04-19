@@ -18,7 +18,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -37,7 +37,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -56,7 +56,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -75,7 +75,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -94,7 +94,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -113,7 +113,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -132,7 +132,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -151,7 +151,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"귀검사，다크나이트，나이트",
+		"sort3":"소검",
+		"level":90,
+		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"name":"구원의 이기 - 소검",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 소검",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -170,7 +189,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -189,7 +208,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -208,7 +227,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -227,7 +246,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -246,7 +265,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -265,7 +284,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -284,7 +303,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -303,7 +322,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"귀검사，다크나이트，나이트",
+		"sort3":"도",
+		"level":90,
+		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"name":"구원의 이기 - 도",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 도",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -322,7 +360,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -341,7 +379,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -360,7 +398,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -379,7 +417,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -398,7 +436,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -417,7 +455,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"귀검사，다크나이트，나이트",
+		"sort3":"둔기",
+		"level":90,
+		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"name":"구원의 이기 - 둔기",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 둔기",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -436,7 +493,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -455,7 +512,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -474,7 +531,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -493,7 +550,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -512,7 +569,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -531,7 +588,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -550,7 +607,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"귀검사，다크나이트，나이트",
+		"sort3":"대검",
+		"level":90,
+		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"name":"구원의 이기 - 대검",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 대검",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -569,7 +645,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -588,7 +664,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -607,7 +683,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -626,7 +702,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -645,7 +721,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -664,7 +740,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
@@ -683,7 +759,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"귀검사，다크나이트，나이트",
+		"sort3":"광검",
+		"level":90,
+		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"name":"구원의 이기 - 광검",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 광검",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -702,7 +797,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -721,7 +816,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -740,7 +835,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -759,7 +854,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -778,7 +873,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -797,7 +892,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -816,7 +911,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"격투가",
+		"sort3":"너클",
+		"level":90,
+		"class":"격투가(남), 격투가(여)",
+		"name":"구원의 이기 - 너클",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 너클",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -835,7 +949,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -854,7 +968,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -873,7 +987,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -892,7 +1006,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -911,7 +1025,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -930,7 +1044,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -949,7 +1063,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -968,7 +1082,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"격투가",
+		"sort3":"건틀릿",
+		"level":90,
+		"class":"격투가(남), 격투가(여)",
+		"name":"구원의 이기 - 건틀릿",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 건틀릿",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -987,7 +1120,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1006,7 +1139,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1025,7 +1158,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1044,7 +1177,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1063,7 +1196,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1082,7 +1215,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1101,7 +1234,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1120,7 +1253,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"격투가",
+		"sort3":"클로",
+		"level":90,
+		"class":"격투가(남), 격투가(여)",
+		"name":"구원의 이기 - 클로",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 클로",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1139,7 +1291,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1158,7 +1310,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1177,7 +1329,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1196,7 +1348,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1215,7 +1367,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1234,7 +1386,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1253,7 +1405,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"격투가",
+		"sort3":"권투글러브",
+		"level":90,
+		"class":"격투가(남), 격투가(여)",
+		"name":"구원의 이기 - 권투글러브",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 권투글러브",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1272,7 +1443,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1291,7 +1462,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1310,7 +1481,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1329,7 +1500,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1348,7 +1519,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
@@ -1367,7 +1538,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"격투가",
+		"sort3":"통파",
+		"level":90,
+		"class":"격투가(남), 격투가(여)",
+		"name":"구원의 이기 - 통파",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 통파",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1386,7 +1576,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1405,7 +1595,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1424,7 +1614,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1443,7 +1633,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1462,7 +1652,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1481,7 +1671,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1500,7 +1690,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"거너",
+		"sort3":"리볼버",
+		"level":90,
+		"class":"거너(남), 거너(여)",
+		"name":"구원의 이기 - 리볼버",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 리볼버",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1519,7 +1728,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1538,7 +1747,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1557,7 +1766,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1576,7 +1785,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1595,7 +1804,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1614,7 +1823,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"거너",
+		"sort3":"자동권총",
+		"level":90,
+		"class":"거너(남), 거너(여)",
+		"name":"구원의 이기 - 자동권총",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 자동권총",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1633,7 +1861,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1652,7 +1880,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1671,7 +1899,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1690,7 +1918,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1709,7 +1937,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1728,7 +1956,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"거너",
+		"sort3":"머스켓",
+		"level":90,
+		"class":"거너(남), 거너(여)",
+		"name":"구원의 이기 - 머스켓",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 머스켓",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1747,7 +1994,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1766,7 +2013,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1785,7 +2032,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1804,7 +2051,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1823,7 +2070,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1842,7 +2089,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1861,7 +2108,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1880,7 +2127,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"거너",
+		"sort3":"핸드캐넌",
+		"level":90,
+		"class":"거너(남), 거너(여)",
+		"name":"구원의 이기 - 핸드캐넌",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 핸드캐넌",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1899,7 +2165,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1918,7 +2184,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1937,7 +2203,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1956,7 +2222,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1975,7 +2241,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -1994,7 +2260,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
@@ -2013,7 +2279,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"거너",
+		"sort3":"보우건",
+		"level":90,
+		"class":"거너(남), 거너(여)",
+		"name":"구원의 이기 - 보우건",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 보우건",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2032,7 +2317,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2051,7 +2336,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2070,7 +2355,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2089,7 +2374,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2108,7 +2393,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2127,7 +2412,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2146,7 +2431,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마법사，크리에이터",
+		"sort3":"창",
+		"level":90,
+		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"name":"구원의 이기 - 창",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 창",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2165,7 +2469,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2184,7 +2488,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2203,7 +2507,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2222,7 +2526,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2241,7 +2545,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2260,7 +2564,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마법사，크리에이터",
+		"sort3":"봉",
+		"level":90,
+		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"name":"구원의 이기 - 봉",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 봉",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2279,7 +2602,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2298,7 +2621,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2317,7 +2640,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2336,7 +2659,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2355,7 +2678,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2374,7 +2697,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마법사，크리에이터",
+		"sort3":"로드",
+		"level":90,
+		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"name":"구원의 이기 - 로드",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 로드",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2393,7 +2735,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2412,7 +2754,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2431,7 +2773,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2450,7 +2792,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2469,7 +2811,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2488,7 +2830,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2507,7 +2849,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마법사，크리에이터",
+		"sort3":"스탭",
+		"level":90,
+		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"name":"구원의 이기 - 스탭",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 스탭",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2526,7 +2887,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2545,7 +2906,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2564,7 +2925,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2583,7 +2944,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2602,7 +2963,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2621,7 +2982,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2640,7 +3001,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2659,7 +3020,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
@@ -2678,7 +3039,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마법사，크리에이터",
+		"sort3":"빗자루",
+		"level":90,
+		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"name":"구원의 이기 - 빗자루",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 빗자루",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2697,7 +3077,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2716,7 +3096,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2735,7 +3115,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2754,7 +3134,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2773,7 +3153,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2792,7 +3172,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2811,7 +3191,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"프리스트",
+		"sort3":"십자가",
+		"level":90,
+		"class":"프리스트(남)",
+		"name":"구원의 이기 - 십자가",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 십자가",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2830,7 +3229,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2849,7 +3248,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2868,7 +3267,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2887,7 +3286,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2906,7 +3305,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2925,7 +3324,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"프리스트",
+		"sort3":"염주",
+		"level":90,
+		"class":"프리스트(남)",
+		"name":"구원의 이기 - 염주",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 염주",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2944,7 +3362,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2963,7 +3381,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -2982,7 +3400,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3001,7 +3419,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3020,7 +3438,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3039,7 +3457,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"프리스트",
+		"sort3":"토템",
+		"level":90,
+		"class":"프리스트(남)",
+		"name":"구원의 이기 - 토템",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 토템",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3058,7 +3495,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3077,7 +3514,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3096,7 +3533,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3115,7 +3552,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3134,7 +3571,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3153,7 +3590,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3172,7 +3609,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"프리스트",
+		"sort3":"낫",
+		"level":90,
+		"class":"프리스트(남)",
+		"name":"구원의 이기 - 낫",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 낫",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3191,7 +3647,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3210,7 +3666,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3229,7 +3685,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3248,7 +3704,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3267,7 +3723,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
@@ -3286,7 +3742,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"프리스트",
+		"sort3":"배틀액스",
+		"level":90,
+		"class":"프리스트(남)",
+		"name":"구원의 이기 - 배틀액스",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 배틀액스",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3305,7 +3780,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3324,7 +3799,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3343,7 +3818,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3362,7 +3837,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3381,7 +3856,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3400,7 +3875,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3419,7 +3894,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3438,7 +3913,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"도적",
+		"sort3":"단검",
+		"level":90,
+		"class":"도적(여)",
+		"name":"구원의 이기 - 단검",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 단검",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3457,7 +3951,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3476,7 +3970,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3495,7 +3989,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3514,7 +4008,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3533,7 +4027,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3552,7 +4046,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3571,7 +4065,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"도적",
+		"sort3":"쌍검",
+		"level":90,
+		"class":"도적(여)",
+		"name":"구원의 이기 - 쌍검",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 쌍검",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3590,7 +4103,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3609,7 +4122,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3628,7 +4141,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3647,7 +4160,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3666,7 +4179,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3685,7 +4198,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"도적",
+		"sort3":"완드",
+		"level":90,
+		"class":"도적(여)",
+		"name":"구원의 이기 - 완드",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 완드",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3704,7 +4236,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3723,7 +4255,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3742,7 +4274,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3761,7 +4293,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3780,7 +4312,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3799,7 +4331,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
@@ -3818,7 +4350,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"도적",
+		"sort3":"차크라웨펀",
+		"level":90,
+		"class":"도적(여)",
+		"name":"구원의 이기 - 차크라웨펀",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 차크라웨펀",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3837,7 +4388,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3856,7 +4407,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3875,7 +4426,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3894,7 +4445,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3913,7 +4464,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3932,7 +4483,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3951,7 +4502,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마창사",
+		"sort3":"장창",
+		"level":90,
+		"class":"마창사(남)",
+		"name":"구원의 이기 - 장창",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 장창",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3970,7 +4540,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -3989,7 +4559,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -4008,7 +4578,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -4027,7 +4597,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -4046,7 +4616,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -4065,7 +4635,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
@@ -4084,7 +4654,26 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"무기",
+		"sort2":"마창사",
+		"sort3":"미늘창",
+		"level":90,
+		"class":"마창사(남)",
+		"name":"구원의 이기 - 미늘창",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"구원의 이기 - 미늘창",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4103,7 +4692,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4122,7 +4711,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4141,7 +4730,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4160,7 +4749,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4179,7 +4768,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4198,7 +4787,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4217,7 +4806,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4236,7 +4825,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4255,7 +4844,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4274,7 +4863,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4293,7 +4882,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4312,7 +4901,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4331,7 +4920,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4350,7 +4939,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4369,7 +4958,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4388,7 +4977,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4407,7 +4996,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4426,7 +5015,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4445,7 +5034,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4464,7 +5053,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4483,7 +5072,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4502,7 +5091,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4521,7 +5110,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4540,7 +5129,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4559,7 +5148,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4578,7 +5167,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4597,7 +5186,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4616,7 +5205,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4635,7 +5224,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4654,7 +5243,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4673,7 +5262,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4692,7 +5281,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4711,7 +5300,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4730,7 +5319,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4749,7 +5338,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4768,7 +5357,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4787,7 +5376,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4806,7 +5395,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4825,7 +5414,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4844,7 +5433,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4863,7 +5452,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4882,7 +5471,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4901,7 +5490,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4920,7 +5509,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4939,7 +5528,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4958,7 +5547,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4977,7 +5566,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -4996,7 +5585,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5015,7 +5604,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5034,7 +5623,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5053,7 +5642,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5072,7 +5661,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5091,7 +5680,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5110,7 +5699,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5129,7 +5718,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5148,7 +5737,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5167,7 +5756,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5186,7 +5775,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5205,7 +5794,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5224,7 +5813,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5243,7 +5832,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5262,7 +5851,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5281,7 +5870,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5300,7 +5889,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5319,7 +5908,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5338,7 +5927,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5357,7 +5946,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5376,7 +5965,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5395,7 +5984,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5414,7 +6003,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5433,7 +6022,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5452,7 +6041,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5471,7 +6060,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5490,7 +6079,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5509,7 +6098,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5528,7 +6117,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5547,7 +6136,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5566,7 +6155,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5585,7 +6174,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5604,7 +6193,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5623,7 +6212,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5642,7 +6231,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5661,7 +6250,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5680,7 +6269,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5699,7 +6288,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5718,7 +6307,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5737,7 +6326,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5756,7 +6345,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5775,7 +6364,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5794,7 +6383,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5813,7 +6402,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5832,7 +6421,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5851,7 +6440,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5870,7 +6459,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5889,7 +6478,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5908,7 +6497,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5927,7 +6516,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5946,7 +6535,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5965,7 +6554,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -5984,7 +6573,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6003,7 +6592,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6022,7 +6611,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6041,7 +6630,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6060,7 +6649,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6079,7 +6668,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6098,7 +6687,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6117,7 +6706,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6136,7 +6725,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6155,7 +6744,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6174,7 +6763,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6193,7 +6782,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6212,7 +6801,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6231,7 +6820,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6250,7 +6839,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6269,7 +6858,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6288,7 +6877,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6307,7 +6896,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6326,7 +6915,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6345,7 +6934,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6364,7 +6953,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6383,7 +6972,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6402,7 +6991,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6421,7 +7010,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6440,7 +7029,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6459,7 +7048,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6478,7 +7067,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6497,7 +7086,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6516,7 +7105,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6535,7 +7124,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6554,7 +7143,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6573,7 +7162,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6592,7 +7181,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6611,7 +7200,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6630,7 +7219,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6649,7 +7238,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6668,7 +7257,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6687,7 +7276,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6706,7 +7295,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6725,7 +7314,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6744,7 +7333,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6763,7 +7352,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6782,7 +7371,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6801,7 +7390,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6820,7 +7409,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6839,7 +7428,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6858,7 +7447,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6877,7 +7466,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6896,7 +7485,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6915,7 +7504,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6934,7 +7523,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6953,7 +7542,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6972,7 +7561,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -6991,7 +7580,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7010,7 +7599,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7029,7 +7618,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7048,7 +7637,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7067,7 +7656,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7086,7 +7675,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7105,7 +7694,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7124,7 +7713,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7143,7 +7732,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7162,7 +7751,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7181,7 +7770,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7200,7 +7789,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7219,7 +7808,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7238,7 +7827,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7257,7 +7846,121 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"목걸이",
+		"level":90,
+		"class":"",
+		"name":"이기의 조력자 - 쿠로",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"이기의 조력자 - 쿠로",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"팔찌",
+		"level":90,
+		"class":"",
+		"name":"이기의 조력자 - 마테카",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"이기의 조력자 - 마테카",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"반지",
+		"level":90,
+		"class":"",
+		"name":"이기의 조력자 - 네르베",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"이기의 조력자 - 네르베",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"목걸이",
+		"level":90,
+		"class":"",
+		"name":"탐식의 형상",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"탐식의 형상",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"반지",
+		"level":90,
+		"class":"",
+		"name":"탐식의 얼개",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"탐식의 얼개",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"악세서리",
+		"sort3":"팔찌",
+		"level":90,
+		"class":"",
+		"name":"탐식의 잔재",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"탐식의 잔재",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7276,7 +7979,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7295,7 +7998,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7314,7 +8017,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7333,7 +8036,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7352,7 +8055,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7371,7 +8074,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7390,7 +8093,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7409,7 +8112,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7428,7 +8131,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7447,7 +8150,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7466,7 +8169,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7485,7 +8188,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7504,7 +8207,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7523,7 +8226,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7542,7 +8245,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7561,7 +8264,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7580,7 +8283,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7599,7 +8302,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7618,7 +8321,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7637,7 +8340,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7656,7 +8359,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7675,7 +8378,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7694,7 +8397,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7713,7 +8416,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7732,7 +8435,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7751,7 +8454,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7770,7 +8473,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7789,7 +8492,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7808,7 +8511,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7827,7 +8530,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7846,7 +8549,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7865,7 +8568,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7884,7 +8587,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7903,7 +8606,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7922,7 +8625,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7941,7 +8644,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7960,7 +8663,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7979,7 +8682,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7998,7 +8701,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8017,7 +8720,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8036,7 +8739,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8055,7 +8758,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8074,7 +8777,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8093,7 +8796,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8112,7 +8815,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8131,7 +8834,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8150,7 +8853,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8169,7 +8872,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8188,7 +8891,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8207,7 +8910,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8226,7 +8929,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8245,7 +8948,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8264,7 +8967,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8283,7 +8986,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8302,7 +9005,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8321,7 +9024,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8340,7 +9043,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8359,7 +9062,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8378,7 +9081,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8397,7 +9100,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8416,7 +9119,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8435,7 +9138,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8454,7 +9157,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8473,7 +9176,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8492,7 +9195,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8511,7 +9214,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8530,7 +9233,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8549,7 +9252,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8568,7 +9271,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8587,7 +9290,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8606,7 +9309,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8625,7 +9328,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8644,7 +9347,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8663,7 +9366,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8682,7 +9385,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8701,7 +9404,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8720,7 +9423,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8739,7 +9442,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8758,7 +9461,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8777,7 +9480,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8796,7 +9499,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8815,7 +9518,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8834,7 +9537,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8853,7 +9556,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8872,7 +9575,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8891,7 +9594,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8910,7 +9613,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8929,7 +9632,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8948,7 +9651,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8967,7 +9670,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8986,7 +9689,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9005,7 +9708,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9024,7 +9727,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9043,7 +9746,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9062,7 +9765,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9081,7 +9784,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9100,7 +9803,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9119,7 +9822,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9138,7 +9841,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9157,7 +9860,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9176,7 +9879,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9195,7 +9898,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9214,7 +9917,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9233,7 +9936,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9252,7 +9955,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9271,7 +9974,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9290,7 +9993,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9309,7 +10012,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9328,7 +10031,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9347,7 +10050,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9366,7 +10069,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9385,7 +10088,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9404,7 +10107,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9423,7 +10126,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9442,7 +10145,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9461,7 +10164,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9480,7 +10183,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9499,7 +10202,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9518,7 +10221,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9537,7 +10240,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9556,7 +10259,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9575,7 +10278,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9594,7 +10297,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9613,7 +10316,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9632,7 +10335,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9651,7 +10354,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9670,7 +10373,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9689,7 +10392,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9708,7 +10411,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9727,7 +10430,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9746,7 +10449,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9765,7 +10468,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9784,7 +10487,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9803,7 +10506,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9822,7 +10525,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9841,7 +10544,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9860,7 +10563,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9879,7 +10582,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9898,7 +10601,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9917,7 +10620,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9936,7 +10639,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9955,7 +10658,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9974,7 +10677,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9993,7 +10696,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10012,7 +10715,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10031,7 +10734,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10050,7 +10753,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10069,7 +10772,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10088,7 +10791,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10107,7 +10810,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10126,7 +10829,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10145,7 +10848,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10164,7 +10867,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10183,7 +10886,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10202,7 +10905,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10221,7 +10924,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10240,7 +10943,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10259,7 +10962,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10278,7 +10981,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10297,7 +11000,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10316,7 +11019,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10335,7 +11038,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10354,7 +11057,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10373,7 +11076,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10392,7 +11095,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10411,7 +11114,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10430,7 +11133,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10449,7 +11152,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10468,7 +11171,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10487,7 +11190,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10506,7 +11209,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10525,7 +11228,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10544,7 +11247,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10563,7 +11266,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10582,7 +11285,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10601,7 +11304,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10620,7 +11323,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10639,7 +11342,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10658,7 +11361,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10677,7 +11380,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10696,7 +11399,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10715,7 +11418,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10734,7 +11437,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10753,7 +11456,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10772,7 +11475,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10791,7 +11494,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10810,7 +11513,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10829,7 +11532,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10848,7 +11551,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10867,7 +11570,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10886,7 +11589,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10905,7 +11608,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10924,7 +11627,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10943,7 +11646,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10962,7 +11665,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -10981,7 +11684,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11000,7 +11703,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11019,7 +11722,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11038,7 +11741,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11057,7 +11760,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11076,7 +11779,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11095,7 +11798,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11114,7 +11817,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11133,7 +11836,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11152,7 +11855,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11171,7 +11874,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11190,7 +11893,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11209,7 +11912,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11228,7 +11931,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11247,7 +11950,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11266,7 +11969,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11285,7 +11988,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11304,7 +12007,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11323,7 +12026,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11342,7 +12045,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11361,7 +12064,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11380,7 +12083,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11399,7 +12102,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11418,7 +12121,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11437,7 +12140,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11456,7 +12159,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11475,7 +12178,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11494,7 +12197,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11513,7 +12216,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11532,7 +12235,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11551,7 +12254,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11570,7 +12273,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11589,7 +12292,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11608,7 +12311,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11627,7 +12330,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11646,7 +12349,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11665,7 +12368,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11684,7 +12387,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11703,7 +12406,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11722,7 +12425,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11741,7 +12444,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11760,7 +12463,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11779,7 +12482,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11798,7 +12501,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11817,7 +12520,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11836,7 +12539,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11855,7 +12558,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11874,7 +12577,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11893,7 +12596,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11912,7 +12615,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11931,7 +12634,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11950,7 +12653,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11969,7 +12672,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11988,7 +12691,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12007,7 +12710,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12026,7 +12729,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12045,7 +12748,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12064,7 +12767,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12083,7 +12786,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12102,7 +12805,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12121,7 +12824,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12140,7 +12843,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12159,7 +12862,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12178,7 +12881,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12197,7 +12900,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12216,7 +12919,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12235,7 +12938,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12254,7 +12957,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12273,7 +12976,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12292,7 +12995,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12311,7 +13014,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12330,7 +13033,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12349,7 +13052,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12368,7 +13071,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12387,7 +13090,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12406,7 +13109,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12425,7 +13128,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12444,7 +13147,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12463,7 +13166,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12482,7 +13185,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12501,7 +13204,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12520,7 +13223,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12539,7 +13242,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12558,7 +13261,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12577,7 +13280,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12596,7 +13299,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12615,7 +13318,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12634,7 +13337,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12653,7 +13356,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12672,7 +13375,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12691,7 +13394,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12710,7 +13413,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12729,7 +13432,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12748,7 +13451,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12767,7 +13470,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12786,7 +13489,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12805,7 +13508,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12824,7 +13527,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12843,7 +13546,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12862,7 +13565,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12881,7 +13584,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12900,7 +13603,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12919,7 +13622,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12938,7 +13641,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12957,7 +13660,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12976,7 +13679,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12995,7 +13698,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13014,7 +13717,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13033,7 +13736,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13052,7 +13755,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13071,7 +13774,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13090,7 +13793,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13109,7 +13812,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13128,7 +13831,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13147,7 +13850,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13166,7 +13869,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13185,7 +13888,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13204,7 +13907,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13223,7 +13926,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13242,7 +13945,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13261,7 +13964,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13280,7 +13983,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13299,7 +14002,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13318,7 +14021,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13337,7 +14040,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13356,7 +14059,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13375,7 +14078,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13394,7 +14097,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13413,7 +14116,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13432,7 +14135,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13451,7 +14154,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13470,7 +14173,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13489,7 +14192,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13508,7 +14211,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13527,7 +14230,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13546,7 +14249,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13565,7 +14268,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13584,7 +14287,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13603,7 +14306,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13622,7 +14325,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13641,7 +14344,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13660,7 +14363,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13679,7 +14382,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13698,7 +14401,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13717,7 +14420,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13736,7 +14439,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13755,7 +14458,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13774,7 +14477,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13793,7 +14496,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13812,7 +14515,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13831,7 +14534,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13850,7 +14553,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13869,7 +14572,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13888,7 +14591,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13907,7 +14610,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13926,7 +14629,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13945,7 +14648,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13964,7 +14667,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -13983,7 +14686,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14002,7 +14705,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14021,7 +14724,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14040,7 +14743,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14059,7 +14762,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14078,7 +14781,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14097,7 +14800,45 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"특수장비",
+		"sort3":"보조장비",
+		"level":90,
+		"class":"",
+		"name":"이기의 조력자 - 로크",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"이기의 조력자 - 로크",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"특수장비",
+		"sort3":"보조장비",
+		"level":90,
+		"class":"",
+		"name":"탐식의 증적",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"탐식의 증적",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14116,7 +14857,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14135,7 +14876,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14154,7 +14895,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14173,7 +14914,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14192,7 +14933,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14211,7 +14952,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14230,7 +14971,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14249,7 +14990,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14268,7 +15009,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14287,7 +15028,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14306,7 +15047,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14325,7 +15066,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14344,7 +15085,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14363,7 +15104,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14382,7 +15123,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14401,7 +15142,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14420,7 +15161,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14439,7 +15180,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14458,7 +15199,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14477,7 +15218,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14496,7 +15237,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14515,7 +15256,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14534,7 +15275,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14553,7 +15294,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14572,7 +15313,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14591,7 +15332,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14610,7 +15351,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14629,7 +15370,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14648,7 +15389,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14667,7 +15408,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14686,7 +15427,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14705,7 +15446,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14724,7 +15465,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14743,7 +15484,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14762,7 +15503,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14781,7 +15522,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14800,7 +15541,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14819,7 +15560,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14838,7 +15579,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14857,7 +15598,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14876,7 +15617,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14895,7 +15636,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14914,7 +15655,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14933,7 +15674,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14952,7 +15693,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14971,7 +15712,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14990,7 +15731,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15009,7 +15750,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15028,7 +15769,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15047,7 +15788,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15066,7 +15807,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15085,7 +15826,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15104,7 +15845,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15123,7 +15864,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15142,7 +15883,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15161,7 +15902,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15180,7 +15921,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15199,7 +15940,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15218,7 +15959,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15237,7 +15978,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15256,7 +15997,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15275,7 +16016,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15294,7 +16035,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15313,7 +16054,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15332,7 +16073,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15351,7 +16092,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15370,7 +16111,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15389,7 +16130,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15408,7 +16149,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15427,7 +16168,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15446,7 +16187,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15465,7 +16206,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15484,7 +16225,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15503,7 +16244,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15522,7 +16263,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15541,7 +16282,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15560,7 +16301,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15579,7 +16320,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15598,7 +16339,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15617,7 +16358,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15636,7 +16377,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15655,7 +16396,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15674,7 +16415,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15693,7 +16434,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15712,7 +16453,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15731,7 +16472,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15750,7 +16491,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15769,7 +16510,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15788,7 +16529,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15807,7 +16548,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15826,7 +16567,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15845,7 +16586,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15864,7 +16605,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15883,7 +16624,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15902,7 +16643,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15921,7 +16662,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15940,7 +16681,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15959,7 +16700,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15978,7 +16719,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15997,7 +16738,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16016,7 +16757,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16035,7 +16776,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16054,7 +16795,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16073,7 +16814,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16092,7 +16833,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16111,7 +16852,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16130,7 +16871,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16149,7 +16890,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16168,7 +16909,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16187,7 +16928,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16206,7 +16947,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16225,7 +16966,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16244,7 +16985,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16263,7 +17004,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16282,7 +17023,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16301,7 +17042,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16320,7 +17061,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16339,7 +17080,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16358,7 +17099,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16377,7 +17118,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16396,7 +17137,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16415,7 +17156,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16434,7 +17175,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16453,7 +17194,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16472,7 +17213,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16491,7 +17232,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16510,7 +17251,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16529,7 +17270,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16548,7 +17289,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16567,7 +17308,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16586,7 +17327,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16605,7 +17346,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16624,7 +17365,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16643,7 +17384,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16662,7 +17403,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16681,7 +17422,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16700,7 +17441,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16719,7 +17460,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16738,7 +17479,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16757,7 +17498,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16776,7 +17517,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16795,7 +17536,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16814,7 +17555,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16833,7 +17574,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16852,7 +17593,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16871,7 +17612,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -16882,6 +17623,44 @@ var itemList = [
 		"set":"",
 		"goyu":"",
 		"icon":"폐왕의 눈물",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"특수장비",
+		"sort3":"마법석",
+		"level":90,
+		"class":"",
+		"name":"이기의 조력자 - 아그네스",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"이기의 조력자 - 아그네스",
+		"get":0,
+		"have":0,
+		"firstCount":0,
+		"firstInvite":0,
+		"firstReal":0,
+		"jogak":0,
+		"init":0,
+		"enchant":0
+	}, 
+	{
+		"sort1":"악세서리／특수장비",
+		"sort2":"특수장비",
+		"sort3":"마법석",
+		"level":90,
+		"class":"",
+		"name":"탐식의 근원",
+		"set":"",
+		"goyu":"안톤 레이드",
+		"icon":"탐식의 근원",
 		"get":0,
 		"have":0,
 		"firstCount":0,
