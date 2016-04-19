@@ -1554,7 +1554,7 @@ body {
 					background-color:#0F3F45;
 					background-image:url('../sprite/images/sprite_hell.png');
 					background-size:630px auto;
-					border:2px #192731 outset;
+					border:2px orange outset;
 					border-radius:1px;
 				}
 				.state_box_enchant {
@@ -1672,7 +1672,7 @@ body {
 				float:left;
 
 				margin-right:2px;
-				width:290px;
+				width:285px;
 				height:30px;
 
 				background-color:#303030;
@@ -1680,7 +1680,6 @@ body {
 
 				color:white;
 				font-size:13px;
-				text-align:right;
 
 				display:block;
 			}

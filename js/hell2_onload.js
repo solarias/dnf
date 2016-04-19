@@ -1,4 +1,6 @@
 
+
+
 //=================================================================================================================
 //※ 실행
 //=================================================================================================================
@@ -1660,7 +1662,7 @@ window.onload = function() {
 			}
 		}
 			//옵션 바깥 클릭 시 알아서 숨기기
-			$("html").addEventListener("click",function() {
+			$("html").addEventListener("click",function(event) {
 				if ($("#option").style.display !== "none") {
 					if (event.target !== $("#option") &&
 						event.target.parentNode !== $("#option") &&
@@ -1889,7 +1891,7 @@ window.onload = function() {
 				$("#date_setting").style.display = "none";
 			}
 				//옵션 외각 클릭 시 - (열려있다면)취소
-				$("html").addEventListener("click",function() {
+				$("html").addEventListener("click",function(event) {
 					if (event.target !== $("#date_setting") &&
 					event.target.parentNode !== $("#date_setting") &&
 					event.target.parentNode.parentNode !== $("#date_setting") &&
