@@ -2442,7 +2442,16 @@ body {
 			.gabriel_item {
 
 			}
-				.gabriel_item tr td {
+				.gabriel_item .row {
+					clear:left;
+
+					margin:2px 0px;
+					height:30px;
+				}
+				.gabriel_item .row .col {
+					float:left;
+
+					margin-right:2px;
 					height:28px;
 
 					border:1px gray solid;
@@ -2451,11 +2460,20 @@ body {
 					color:yellow;
 					font-size:12px;
 					font-weight:bold;
+
+					display:table;
 				}
-					#gabriel_item_get tr td {
-						border:1px skyblue solid;
+						#gabriel_item_get .row .col {
+							border:1px skyblue solid;
+						}
+						.gabriel_item .row .col:last-of-type {
+							margin-right:0px;
+						}
+					.gabriel_item .row .col p {
+						vertical-align:middle;
+						display:table-cell;
 					}
-				.gabriel_item tr td.col_1 {
+				.gabriel_item .row .col.col_1 {
 					width:65px;
 
 					background: #a37531; /* Old browsers */
@@ -2464,16 +2482,17 @@ body {
 					background: linear-gradient(#a37531 0%, #752d00 50%, #a37531 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 					-ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a37531', endColorstr='#a37531',GradientType=0 ); /* IE6-9 */
 				}
-				.gabriel_item tr td.col_2 {
+				.gabriel_item .row .col.col_2 {
 					width:28px;
 
 					background-image:url('../sprite/images/sprite_hell.png');
 					background-size:630px auto;
 					background-position:0px 0px;
 				}
-				.gabriel_item tr td.col_3 {
+				.gabriel_item .row .col.col_3 {
 					padding:5px 2px;
 					width:225px;
+					height:30px;/*box-sizing 때문에 늪은 수치가 필요*/
 
 					background: #505050; /* Old browsers */
 					background: -moz-linear-gradient(top, #505050 0%, #000000 50%, #505050 100%); /* FF3.6-15 */
@@ -2488,9 +2507,10 @@ body {
 					color:#E5B64A;
 					font-size:12px;
 				}
-				.gabriel_item tr td.col_4 {
+				.gabriel_item .row .col.col_4 {
 					padding:5px;
 					width:105px;
+					height:30px;/*box-sizing 때문에 늪은 수치가 필요*/
 
 					background: #505050; /* Old browsers */
 					background: -moz-linear-gradient(top, #505050 0%, #000000 50%, #505050 100%); /* FF3.6-15 */
@@ -2507,8 +2527,8 @@ body {
 				}
 			#gabriel_message_box {
 				position:absolute;
-				top:93px;
-				left:7px;
+				top:92px;
+				left:3px;
 
 				width:436px;
 				height:159px;

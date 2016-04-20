@@ -1275,10 +1275,10 @@ function setGabriel(cmd) {
 	//3-2. 아이템 지정됨
 	} else {
 		//받을 아이템 출력
-		$("#gabriel_item_get_type").innerHTML = gabrielSetting["get"]["sort1"];
+		$("#gabriel_item_get_type").innerHTML = "<p>" + gabrielSetting["get"]["sort1"] + "</p>";
 		$("#gabriel_item_get_icon").style.backgroundPosition = spritePosition(gabrielSetting["get"]["icon"], 1);
-		$("#gabriel_item_get_name").innerHTML = gabrielSetting["get"]["name"];
-		$("#gabriel_item_get_jogak").innerHTML = gabrielSetting["get"]["jogak"] + " 조각 (+ 5)";
+		$("#gabriel_item_get_name").innerHTML = "<p>" + gabrielSetting["get"]["name"] + "</p>";
+		$("#gabriel_item_get_jogak").innerHTML = "<p>" + gabrielSetting["get"]["jogak"] + " 조각 (+ 5)" + "</p>";
 	}
 
 	//4. 조각 제공 아이템 수집
@@ -1334,10 +1334,10 @@ function setGabriel(cmd) {
 		gabrielSetting["give"] = tempArr3;
 		//c. 기억된 아이템 출력
 		for (var i=0;i<5;i++) {
-			$("#gabriel_item_give_" + (i+1).toString() + "_type").innerHTML = gabrielSetting["give"][i]["sort1"];
+			$("#gabriel_item_give_" + (i+1).toString() + "_type").innerHTML = "<p>" + gabrielSetting["give"][i]["sort1"] + "</p>";
 			$("#gabriel_item_give_" + (i+1).toString() + "_icon").style.backgroundPosition = spritePosition(gabrielSetting["give"][i]["icon"], 1);
-			$("#gabriel_item_give_" + (i+1).toString() + "_name").innerHTML = gabrielSetting["give"][i]["name"];
-			$("#gabriel_item_give_" + (i+1).toString() + "_jogak").innerHTML = gabrielSetting["give"][i]["jogak"] + " 조각 (-10)";
+			$("#gabriel_item_give_" + (i+1).toString() + "_name").innerHTML = "<p>" + gabrielSetting["give"][i]["name"] + "</p>";
+			$("#gabriel_item_give_" + (i+1).toString() + "_jogak").innerHTML = "<p>" + gabrielSetting["give"][i]["jogak"] + " 조각 (-10)" + "</p>";
 		}
 		//버튼 액션
 		if (cmd != "settingOnly") {
@@ -1466,7 +1466,14 @@ function sortItem(type, zone, zoneArr) {
 	switch (type) {
 		case "장비":
 			//일반 장비 : 일반에픽, 고유에픽
-			input[4] = chanceList_name[2][rand(chanceList_num[2])];
+			var temp_name = deepCopy(chanceList_name[2]);
+			var temp_num = deepCopy(chanceList_num[2]);
+				//안톤 레이드 :
+				if (input[0] === 17) {
+					temp_num[1] *= 10;
+					temp_num[0] = 1 - temp_num[1];
+				}
+			input[4] = temp_name[rand(temp_num)];
 				//IF : 고유 에픽이면 : 드롭
 				if (input[4] === "고유에픽") {
 					//IF : 고유 에픽 리스트가 비어있지 않다면 : 드롭
@@ -2343,8 +2350,10 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 
 	if (step < 12) {
 
-		$("#item" + zone.toString()).style.left = ($("#item" + zone.toString()).offsetLeft + leftMove).toString() + "px";
-		$("#item" + zone.toString()).style.top = ($("#item" + zone.toString()).offsetTop - topMove).toString() + "px";
+		var tempX = $("#item" + zone.toString()).offsetLeft;
+		var tempY = $("#item" + zone.toString()).offsetTop;
+		$("#item" + zone.toString()).style.left = (tempX + leftMove).toString() + "px";
+		$("#item" + zone.toString()).style.top = (tempY - topMove).toString() + "px";
 
 		step += 1;
 		topMove -= topMoveModify;
@@ -2352,6 +2361,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		autoLooting[zone-1] = setTimeout(function() {
 			looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove, topMoveModify);
 		},50);
+
 	} else {
 		//사운드 출력
 		if (sound === 1) {
