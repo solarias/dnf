@@ -553,7 +553,7 @@ function checkObjective(cmd) {
 
 	//A-1. ()별도 cmd가 없으면) 목표 수집
 	if (!cmd) {
-		checkObjective();
+		setObjective();
 
 		switch (objective[0]) {
 			//a. 특정 아이템 탐색
