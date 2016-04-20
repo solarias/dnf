@@ -545,8 +545,6 @@ function setObjective(cmd) {
 
 //목표 현황 체크
 function checkObjective(cmd) {
-	//목표 확인
-	setObjective();
 
 	//================================================
 	//* A. 수집현황 출력
