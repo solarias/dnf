@@ -2464,7 +2464,15 @@ body {
 					display:table;
 				}
 						#gabriel_item_get .row .col {
-							border:1px skyblue solid;
+							box-shadow:
+								-1px 0px 1px skyblue,
+								-1px -1px 1px skyblue,
+								0px -1px 1px skyblue,
+								1px -1px 1px skyblue,
+								1px 0px 1px skyblue,
+								1px 1px 1px skyblue,
+								0px 1px 1px skyblue,
+								-1px 1px 1px skyblue;
 						}
 						.gabriel_item .row .col:last-of-type {
 							margin-right:0px;
