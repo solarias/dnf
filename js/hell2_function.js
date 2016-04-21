@@ -555,80 +555,84 @@ function checkObjective(cmd) {
 	if (cmd === "setting") {
 		//목표 생성
 		setObjective();
+	}
+	
+	//목표 업데이트
+	switch (objective[0]) {
+		//a. 특정 아이템 탐색
+		case "item" :
+			if (objective[4] !== "") {
+				//수집현황 검색
+				for (var i=0;i<itemList.length;i++) {
+					if (objective[4] === itemList[i]["name"]) {
+						target.push(itemList[i]);
 
-		switch (objective[0]) {
-			//a. 특정 아이템 탐색
-			case "item" :
-				if (objective[4] !== "") {
-					//수집현황 검색
-					for (var i=0;i<itemList.length;i++) {
-						if (objective[4] === itemList[i]["name"]) {
-							target.push(itemList[i]);
-
-							break;
-						}
-					}
-
-					//수집현황 표시
-					$("#objective_state_item_name").innerHTML = target[0]["sort3"];
-					$("#objective_state_item_quantity").innerHTML = target[0]["have"];
-					$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
-					if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
-						$("#objective_state_item_complete").classList.remove("true");
-						$("#objective_state_item_complete").classList.add("false");
-					} else {
-						$("#objective_state_item_complete").classList.remove("false");
-						$("#objective_state_item_complete").classList.add("true");
+						break;
 					}
 				}
-				//표시되지 않은 수집현황 지우기
-				if (target.length === 0) {
-					$("#objective_state_item_name").innerHTML = "";
-					$("#objective_state_item_quantity").innerHTML = "";
-					$("#objective_state_item_jogak").innerHTML = "";
+
+				//수집현황 표시
+				$("#objective_state_item_name").innerHTML = target[0]["sort3"];
+				$("#objective_state_item_quantity").innerHTML = target[0]["have"];
+				$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
+				if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
 					$("#objective_state_item_complete").classList.remove("true");
+					$("#objective_state_item_complete").classList.add("false");
+				} else {
 					$("#objective_state_item_complete").classList.remove("false");
+					$("#objective_state_item_complete").classList.add("true");
 				}
+			}
+			//표시되지 않은 수집현황 지우기
+			if (target.length === 0) {
+				$("#objective_state_item_name").innerHTML = "";
+				$("#objective_state_item_quantity").innerHTML = "";
+				$("#objective_state_item_jogak").innerHTML = "";
+				$("#objective_state_item_complete").classList.remove("true");
+				$("#objective_state_item_complete").classList.remove("false");
+			}
 
-				break;
-			//b. 특정 세트 탐색
-			case "set" :
-				if (objective[2] !== "") {
-					//수집현황 검색
-					for (var i=0;i<itemList.length;i++) {
-						if (objective[2] === itemList[i]["set"]) {
-							target.push(itemList[i]);
-						}
-					}
-
-					//수집현황 표시
-					for (var i=0;i<target.length;i++) {
-						$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = target[i]["sort3"];
-						$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = target[i]["have"];
-						$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = target[i]["jogak"];
-						if (target[i]["have"] === 0 && target[i]["jogak"] < maxJogak) {
-							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
-							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("false");
-						} else {
-							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
-							$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("true");
-						}
+			break;
+		//b. 특정 세트 탐색
+		case "set" :
+			if (objective[2] !== "") {
+				//수집현황 검색
+				for (var i=0;i<itemList.length;i++) {
+					if (objective[2] === itemList[i]["set"]) {
+						target.push(itemList[i]);
 					}
 				}
-				//표시되지 않은 수집현황 지우기
-				for (var i=0;i<5;i++) {
-					if (i+1 > target.length) {
-						$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = "";
-						$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = "";
-						$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = "";
+
+				//수집현황 표시
+				for (var i=0;i<target.length;i++) {
+					$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = target[i]["sort3"];
+					$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = target[i]["have"];
+					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = target[i]["jogak"];
+					if (target[i]["have"] === 0 && target[i]["jogak"] < maxJogak) {
 						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
+						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("false");
+					} else {
 						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
+						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("true");
 					}
 				}
+			}
+			//표시되지 않은 수집현황 지우기
+			for (var i=0;i<5;i++) {
+				if (i+1 > target.length) {
+					$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = "";
+					$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = "";
+					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = "";
+					$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
+					$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("false");
+				}
+			}
 
-				break;
-		}
-		//여기까지
+			break;
+	}
+	
+	//(cmd가 report가 아니라면) 여기까지
+	if (cmd !== "report") {
 		return;
 	}
 
