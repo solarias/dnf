@@ -37,7 +37,7 @@ var dateSettingWeekDefault = ["월","화","수","목","금","토","일"];
 
 var rpg = false;//RPG 모드인지 기억
 var dropCount = 0;//아이템 착지 개수
-var maxJogak = 20;//필요 조각 수
+var maxJogak = 1000;//필요 조각 수
 
 var myCharacter = "";
 var power = 0;
