@@ -387,7 +387,7 @@ window.onload = function() {
 				}
 
 				//3. 수집현황 업데이트
-				checkObjective();
+				checkObjective("setting");
 			};
 
 			//final-1-1-0-1. 조건부 실행 - 에픽 아이템 탐색
@@ -468,7 +468,7 @@ window.onload = function() {
 				}
 
 				//3. 수집현황 비우기
-				checkObjective();
+				checkObjective("setting");
 			}
 
 			$("#objective_item_second").onchange = function() {
@@ -537,7 +537,7 @@ window.onload = function() {
 				}
 
 				//3. 수집현황 비우기
-				checkObjective();
+				checkObjective("setting");
 			}
 
 			$("#objective_item_third").onchange = function() {
@@ -601,12 +601,12 @@ window.onload = function() {
 				}
 
 				//3. 수집현황 비우기
-				checkObjective();
+				checkObjective("setting");
 			}
 
 			$("#objective_item_name").onchange = function() {
 				//선택한 아이템 수집현황 출력
-				checkObjective();
+				checkObjective("setting");
 			}
 
 
@@ -667,12 +667,12 @@ window.onload = function() {
 				}
 
 				//3. 수집현황 비우기
-				checkObjective();
+				checkObjective("setting");
 			}
 
 			$("#objective_set_name").onchange = function() {
 				//선택한 세트 소집상황 출력
-				checkObjective();
+				checkObjective("setting");
 			}
 
 		//record, inventory, set, craft 필터링
@@ -1525,7 +1525,7 @@ window.onload = function() {
 					itemList[i]["enchant"] = 0;//강화 단계
 				}
 					//7-1. 습득현황 갱신
-					checkObjective();
+					checkObjective("setting");
 					//7-2. 상단 - 장비 장착 초기화
 						//캐릭터 초기화
 						myCharacter = "";
