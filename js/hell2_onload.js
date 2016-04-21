@@ -1120,41 +1120,36 @@ window.onload = function() {
 			}
 
 			//1-1-2-4. craft 체크박스
-			$("#craft_check_available").onclick = function() {
-				var sheet = $("#style_craft_check_available");
+			$("#craft_check_have").onclick = function() {
+				var sheet1 = $("#style_craft_check_available");
+				var sheet2 = $("#style_craft_check_all");
 				try {
-					if ($("#craft_check_available").checked) {
-						sheet.innerHTML = "#craft_display table tr:not(.available) {\
-							display:none;\
-						}";
-						if ($("#craft_check_all").checked) {
-							sheet = $("#style_craft_check_all");
-							sheet.innerHTML = "";
-							$("#craft_check_all").checked = false;
-						}
-					} else {
-						sheet.innerHTML = "";
-					}
+					sheet1.innerHTML = "";
+					sheet2.innerHTML = "";
+				} catch(e) {
+					alert("＊경고 : \"조각 보유 아이템만 보기\" 설정을 변경할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
+					$("#craft_check_available").checked = false;
+				}
+			}
+			$("#craft_check_available").onclick = function() {
+				var sheet1 = $("#style_craft_check_available");
+				var sheet2 = $("#style_craft_check_all");
+				try {
+					sheet1.innerHTML = "#craft_display table tr:not(.available) {\
+						display:none;}";
+					sheet2.innerHTML = "";
 				} catch(e) {
 					alert("＊경고 : \"제작 가능 아이템만 보기\" 설정을 변경할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 					$("#craft_check_available").checked = false;
 				}
 			}
 			$("#craft_check_all").onclick = function() {
-				var sheet = $("#style_craft_check_all");
+				var sheet1 = $("#style_craft_check_available");
+				var sheet2 = $("#style_craft_check_all");
 				try {
-					if ($("#craft_check_all").checked) {
-						sheet.innerHTML = "#craft_display table tr.not_show {\
-							display:inline;\
-						}";
-						if ($("#craft_check_available").checked) {
-							sheet = $("#style_craft_check_available");
-							sheet.innerHTML = "";
-							$("#craft_check_available").checked = false;
-						}
-					} else {
-						sheet.innerHTML = "";
-					}
+					sheet1.innerHTML = "";
+					sheet2.innerHTML = "#craft_display table tr.not_show {\
+						display:inline;}";
 				} catch(e) {
 					alert("＊경고 : \"모든 아이템 보기\" 설정을 변경할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 					$("#craft_check_all").checked = false;

@@ -556,7 +556,7 @@ function checkObjective(cmd) {
 		//목표 생성
 		setObjective();
 	}
-	
+
 	//목표 업데이트
 	switch (objective[0]) {
 		//a. 특정 아이템 탐색
@@ -630,7 +630,7 @@ function checkObjective(cmd) {
 
 			break;
 	}
-	
+
 	//(cmd가 report가 아니라면) 여기까지
 	if (cmd !== "report") {
 		return;
@@ -951,7 +951,7 @@ function simulate(num){
 						if (thisTime[i][3]["jogak"] === maxJogak) {
 							//thisJogak에 추가되지 않았다면(중복등록 방지)
 							for (var j=0;j<thisJogak.length;j++) {
-								if (thisTime[i][3]["name"] === thisEpic[j]["name"]) continue;
+								if (thisTime[i][3]["name"] === thisJogak[j]["name"]) continue;
 							}
 							//thisJogak에 등록
 							thisJogak.push(thisTime[i][3]);

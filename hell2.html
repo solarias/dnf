@@ -860,11 +860,15 @@
 
 					<div id="craft_check" class="check" >
 						<p>
-							<input id="craft_check_available" type="checkbox">
+							<input id="craft_check_have" type="radio" name="craft">
+							<label for="craft_check_have">조각 보유 아이템만 보기</label>
+						</p>
+						<p>
+							<input id="craft_check_available" type="radio" name="craft">
 							<label for="craft_check_available">제작 가능 아이템만 보기</label>
 						</p>
 						<p>
-							<input id="craft_check_all" type="checkbox">
+							<input id="craft_check_all" type="radio" name="craft">
 							<label for="craft_check_all">모든 아이템 보기</label>
 						</p>
 							<hr />
@@ -910,7 +914,7 @@
 				<input id="shift2" class="" type="button" value="인벤토리" />
 				<input id="shift3" class="" type="button" value="세트 현황" />
 				<input id="shift4" class="" type="button" value="에픽 도감" />
-					<div id="shift4_effect" class="effect_appear"></div>
+					<div id="shift4_effect"></div>
 				<input id="shift5" class="" type="button" value="장착" />
 		<!------팝업------>
 		<!---확률 팝업---->

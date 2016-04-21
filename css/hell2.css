@@ -1854,13 +1854,13 @@ body {
 				margin:5px 0px;
 				border-top:1px white solid;
 			}
-			#checkbox input[type="checkbox"] {
+			#checkbox input[type="checkbox"], #checkbox input[type="radio"] {
 				width:18px;
 				height:18px;
 
 				vertical-align:middle;
 			}
-				#checkbox input[type="checkbox"]:hover {
+				#checkbox input[type="checkbox"]:hover, #checkbox input[type="radio"]:hover {
 					cursor:pointer;
 					cursor:hand;
 				}
@@ -2049,12 +2049,12 @@ body {
 					width:680px;
 					height:792px;
 
+					background-image:url(../images/epic/epic_appear.png);
 					background-size:auto 100%;
 
 					pointer-events: none;
 
-					display:block;
-					visibility:hidden;
+					display:none;
 				}
 			#shift1:hover, #shift2:hover, #shift3:hover, #shift4:hover, #shift5:hover {
 				border:1px white solid;
