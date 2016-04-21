@@ -462,7 +462,7 @@ function setObjective(cmd) {
 				}
 				if (tr_set.getElementsByTagName("td")[5].innerHTML !== "") {
 					alert("＊경고 : 해당 세트는 이미 완성되었습니다.\n대상 : \"" + $("#objective_set_name").value + "\"");
-					return;
+					return false;
 				}
 			}
 			objective.push($("#objective_set_first").value);//입력 2. 세트 분류
@@ -473,13 +473,13 @@ function setObjective(cmd) {
 		if (cmd === "run") {
 			if ($("#objective_count_text").value === "") {
 				alert("＊경고 : 실행 횟수를 입력하세요.");
-				return;
+				return false;
 			} else if (! isNumber($("#objective_count_text").value)) {
 				alert("＊경고 : 실행 횟수는 숫자를 입력해야 합니다.");
-				return;
+				return false;
 			} else if (parseInt($("#objective_count_text").value) <= 0) {
 				alert("＊경고 : 실행 횟수는 0보다 커야 합니다.");
-				return;
+				return false;
 			}
 		}
 		objective.push(parseInt($("#objective_count_text").value));//입력 2. 실행 횟수
@@ -490,16 +490,16 @@ function setObjective(cmd) {
 		if (cmd === "run") {
 			if ($("#objective_cost_text").value === "") {
 				alert("＊경고 : 초대장 개수를 입력하세요.");
-				return;
+				return false;
 			} else if (! isNumber($("#objective_cost_text").value)) {
 				alert("＊경고 : 초대장 개수는 숫자를 입력해야 합니다.");
-				return;
+				return false;
 			} else if (parseInt($("#objective_cost_text").value) <= 0) {
 				alert("＊경고 : 초대장 개수는 0보다 커야 합니다.");
-				return;
+				return false;
 			} else if (parseInt($("#objective_cost_text").value) < costList[input[0]]) {
 				alert("＊경고 : 초대장 개수가 입장 조건(" + costList[input[0]] + "장)보다 부족합니다.");
-				return;
+				return false;
 			}
 		}
 		objective.push(parseInt($("#objective_cost_text").value));//입력 2. 초대장 제한
@@ -510,24 +510,24 @@ function setObjective(cmd) {
 		if (cmd === "run") {
 			if ($("#objective_fatigue_max").value === "") {
 				alert("＊경고 : 전체 피로도를 입력하세요.");
-				return;
+				return false;
 			} else
 			if ($("#objective_fatigue_per").value === "") {
 				alert("＊경고 : 1회동 소모 피로도를 입력하세요.");
-				return;
+				return false;
 			} else
 			if (! isNumber($("#objective_fatigue_max").value)) {
 				alert("＊경고 : 전체 피로도는 숫자를 입력해야 합니다.");
-				return;
+				return false;
 			} else if (! isNumber($("#objective_fatigue_per").value)) {
 				alert("＊경고 : 1회당 소모 피로도는 숫자를 입력해야 합니다.");
-				return;
+				return false;
 			} else if (parseInt($("#objective_fatigue_max").value) <= 0) {
 				alert("＊경고 : 전체 피로도는 0보다 커야 합니다.");
-				return;
+				return false;
 			} else if (parseInt($("#objective_fatigue_per").value) <= 0) {
 				alert("＊경고 : 1회동 소모 피로도는 0보다 커야 합니다.");
-				return;
+				return false;
 			}
 		}
 		objective.push(parseInt($("#objective_fatigue_max").value));//입력 2. 전체 피로도
@@ -551,8 +551,9 @@ function checkObjective(cmd) {
 	//================================================
 	var target = [];//수집할 대상(item : 개체 하나, set : 개체 여럿)
 
-	//A-1. ()별도 cmd가 없으면) 목표 수집
-	if (!cmd) {
+	//A-1. (cmd가 "setting"이라면 - 준비, 실행) 목표 수집
+	if (cmd === "setting") {
+		//목표 생성
 		setObjective();
 
 		switch (objective[0]) {
@@ -2091,7 +2092,7 @@ function update(type, info, quantity) {
 	}
 
 	//7. 수집현황 업데이트
-	checkObjective();
+	checkObjective("update");
 
 	//8. equip에 기록 (에픽 한정)
 	if (type === "에픽" || type === "완성" || type === "항아리") {
@@ -2235,7 +2236,7 @@ function recycle(num,amount,cmd) {
 	}
 
 	//수집현황 업데이트
-	checkObjective();
+	checkObjective("update");
 }
 
 
