@@ -1222,8 +1222,6 @@ function setGabriel(cmd) {
 			} catch(e) {};
 			sound_appear.play();
 		}
-		//가브리엘 출현 중이라고 기억
-		gabrielSetting["trading"] = true;
 	//1. 자동일 때 (아이템 선정 안해놨다면) 일부 "부랴부랴" 실행
 	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null && cmd !== "settingOnly") {
 		//창 오픈
@@ -1236,8 +1234,16 @@ function setGabriel(cmd) {
 			} catch(e) {};
 			sound_appear.play();
 		}
+	}
+
+	//1-5. ("settingOnly"가 아니라면)상태 변경
+	if (cmd !== "settingOnly") {
 		//가브리엘 출현 중이라고 기억
 		gabrielSetting["trading"] = true;
+		//변경 횟수 충전
+		gabrielSetting["changable"] = gabrielSetting["maxChangable"];
+			//충전 수치 반영
+			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"] + ")"
 	}
 
 	//2. 기존 설정 초기화
@@ -1259,7 +1265,13 @@ function setGabriel(cmd) {
 		$("#gabriel_message_box").style.visibility = "hidden";
 		//d. 버튼
 		$("#gabriel_yes").disabled = "";
-		$("#gabriel_change").disabled = "";
+		//교환 횟가 0이라면 버튼 잠금
+		if (gabrielSetting["changable"] <= 0) {
+			$("#gabriel_change").disabled = "disabled";
+		//아니라면 교환 버튼 열기
+		} else {
+			$("#gabriel_change").disabled = "";
+		}
 
 	//3-1. 아이템 지정 안됨
 	if (gabrielSetting["get"] === null) {
@@ -1291,11 +1303,44 @@ function setGabriel(cmd) {
 		var type = gabrielSetting["get"]["sort1"];
 		var level = gabrielSetting["get"]["level"];
 		var name = gabrielSetting["get"]["name"];
+		var set = gabrielSetting["get"]["set"];
 		//4-2. 이름이 다르고 레벨 & 제 1분류가 모두 동일하고 조각이 10개 이상인 아이템 3종
 		var tempArr1 = [];
+		var tempArr1_real = [];//실제로 선정된 템 개수 파악용
 		for (var i=0;i<itemList.length;i++) {
 			if (itemList[i]["name"] != name && itemList[i]["sort1"] === type && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10) {
-				tempArr1.push(itemList[i]);
+				//세트템 지정 시, 동일 세트면 20번 집어넣기
+				if (set !== "" && itemList[i]["set"] === set) {
+					//아이템 선정용
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);
+					//아이템 선정 종류 수 파악용
+					tempArr1_real.push(itemList[i]);
+				//아니면 1번만 집어넣기
+				} else {
+					//아이템 선정용
+					tempArr1.push(itemList[i]);
+					//아이템 선정 종류 수 파악용
+					tempArr1_real.push(itemList[i]);
+				}
 			}
 		}
 		//4-3. 이름이 다르고 레벨이 동일하고 제 1분류가 다르고 조각이 10개 이상이고 4-2에서 선정 안된 아이템 2종
@@ -1307,7 +1352,7 @@ function setGabriel(cmd) {
 		}
 
 	//5-1. 조각 제공 아이템 조각 부족
-	if (tempArr1.length < 3 || tempArr2.length < 2) {
+	if (tempArr1_real.length < 3 || tempArr2.length < 2) {
 		//a. 메세지 준비
 		$("#gabriel_message").innerHTML = "동일 레벨의 에픽 조각이<br/>부족하여 교환할 수 없습니다.";
 		//b. 메세지 출력
@@ -1329,9 +1374,15 @@ function setGabriel(cmd) {
 		tempArr2 = shuffle(tempArr2);
 		//b. 1 배열에서 3개, 2 배열에서 2개 기억
 		var tempArr3 = [];
-			tempArr3.push(tempArr1[0]);
-			tempArr3.push(tempArr1[1]);
-			tempArr3.push(tempArr1[2]);
+			for (var i=0;i<tempArr1.length;i++) {
+				//지정되지 않은 템만 집어넣기 (세트 선정 시 동일 세트템은 중복해서 들어가므로)
+				if (tempArr3.indexOf(tempArr1[i]) < 0) {
+					tempArr3.push(tempArr1[i]);
+				}
+				if (tempArr3.length === 3) {
+					break;
+				}
+			}
 			tempArr3.push(tempArr2[0]);
 			tempArr3.push(tempArr2[1]);
 			//b-1 합친 배열 섞어주기
@@ -1418,8 +1469,12 @@ function doGabriel(cmd) {
 			}
 	}
 
-	//아이템 교환
+	//재료 교환
 	$("#gabriel_change").onclick = function() {
+		//교환 횟수 감소
+		gabrielSetting["changable"] -= 1;
+			//수치 반영
+			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"].toString() + ")";
 		//가브리엘 다시 출현 (배열 을섞기 위해)
 		setGabriel("settingOnly");
 	}

@@ -560,6 +560,8 @@ var gabrielSetting = {
 	"get":null,//조각 줄 장비
 	"give":null,//조각 받을 장비
 	"trading":false,//현재 교환 중
+	"changable":0,//현재 교환 중
+	"maxChangable":5,//현재 교환 중
 	//상태
 	"replay":false,//교환 or 취소 완료 후 재실행 여부
 	"alreadySatisfy":false//가브리엘 출현 전 종료 조건 충족 여부
