@@ -884,7 +884,7 @@ window.onload = function() {
 					}
 				})(i)
 				function filter_3(i) {
-					var sheet = $("#style_" + i + "_filter_second");
+					var sheet = $("#style_" + i + "_filter_third");
 					var value = $("#" + i + "_filter_third").value;
 					try {
 						if ($("#" + i + "_filter_third").value !== "") {
