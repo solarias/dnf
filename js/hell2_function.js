@@ -1243,7 +1243,7 @@ function setGabriel(cmd) {
 		//변경 횟수 충전
 		gabrielSetting["changable"] = gabrielSetting["maxChangable"];
 			//충전 수치 반영
-			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"] + ")"
+			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"] + "/" + gabrielSetting["maxChangable"] + ")"
 	}
 
 	//2. 기존 설정 초기화
@@ -1478,7 +1478,7 @@ function doGabriel(cmd) {
 		//교환 횟수 감소
 		gabrielSetting["changable"] -= 1;
 			//수치 반영
-			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"].toString() + ")";
+			$("#gabriel_change").value = "재료 변경 (" + gabrielSetting["changable"].toString() + "/" + gabrielSetting["maxChangable"] + ")";
 		//가브리엘 다시 출현 (배열 을섞기 위해)
 		setGabriel("settingOnly");
 	}
