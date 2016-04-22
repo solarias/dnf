@@ -1405,8 +1405,6 @@ function setGabriel(cmd) {
 function doGabriel(cmd) {
 	//취소
 	function no() {
-		//가브리엘 거래 종료
-		gabrielSetting["trading"] = false;
 		//취소 사운드 출력
 		if ($("#option_sound").checked === true) {
 			try {
@@ -1419,21 +1417,23 @@ function doGabriel(cmd) {
 			//재실행 시
 			if (gabrielSetting["replay"] === true) {
 				//재실형 변수 제거
-				gabrielSetting["replay"] === false
+				gabrielSetting["replay"] = false;
+				//가브리엘 거래 종료
+				gabrielSetting["trading"] = false;
 				//버튼 재설정
 				onoff(2);
 				//재실행 여부 체크
 				nextStep(3);
 			//재실행 필요없으면
 			} else {
+				//가브리엘 거래 종료
+				gabrielSetting["trading"] = false;
 				//버튼 정상화
 				onoff(0);
 			}
 	}
 	//교환
 	function yes() {
-		//가브리엘 거래 종료
-		gabrielSetting["trading"] = false;
 		//교환 사운드 출력
 		if ($("#option_sound").checked === true) {
 			try {
@@ -1457,13 +1457,17 @@ function doGabriel(cmd) {
 			//재실행 시
 			if (gabrielSetting["replay"] === true) {
 				//재실형 변수 제거
-				gabrielSetting["replay"] === false
+				gabrielSetting["replay"] = false;
+				//가브리엘 거래 종료
+				gabrielSetting["trading"] = false;
 				//버튼 재설정
 				onoff(2);
 				//재실행 여부 체크
 				nextStep(3);
 			//재실행 필요없으면
 			} else {
+				//가브리엘 거래 종료
+				gabrielSetting["trading"] = false;
 				//버튼 정상화
 				onoff(0);
 			}
@@ -2443,8 +2447,6 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		if (dropCount === quantity) {//모든 아이템 드랍 완료
 			//가브리엘 미출현 중에만 버튼 활성화
 			if (gabrielSetting["trading"] === false) {
-				//자동 실행 변수 = ofF
-				running = 0;
 				//버튼 활성화
 				onoff(0);
 			}
