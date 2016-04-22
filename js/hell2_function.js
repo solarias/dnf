@@ -2986,6 +2986,11 @@ function shift(target) {
 		//(chance 빼고) 하나라도 열렸다면
 		$("#popup").style.display = "block";
 		$("#checkbox").style.display = "block";
+
+		//(record라면) 흭득기록 창 내리기 (popup div가 열려있을 때만 스크롤 효과 가능함)
+		if (target === "record") {
+			$("#record").scrollTop = $("#record").scrollHeight;
+		}
 	} else {
 		//(chance 빼고) 열린 게 없다면
 		$("#popup").style.display = "none";
