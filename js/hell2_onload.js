@@ -1512,44 +1512,6 @@ window.onload = function() {
 			}
 		}
 
-		//항아리 개봉 버튼 세팅
-		function setPotOpen(type) {
-			switch (type) {
-				case "tradable":
-					//세팅 가능
-					$("#pot_type").disabled = "";
-					$("#pot_tradable").disabled = "";
-
-					$("#pot_open").className = "";
-					$("#pot_open").value = "개봉 (∞)"
-					$("#pot_open").disabled = "";
-
-					break;
-				case "notTradable":
-					//세팅 가능
-					$("#pot_type").disabled = "";
-					$("#pot_tradable").disabled = "";
-
-					$("#pot_open").className = "";
-					$("#pot_open").value = "개봉 (" + tower.toString() + ")"
-					if (tower > 0) {
-						$("#pot_open").disabled = "";
-					} else {
-						$("#pot_open").disabled = "disabled";
-					}
-
-					break;
-				case "cancel":
-					//세팅 봉인
-					$("#pot_type").disabled = "disabled";
-					$("#pot_tradable").disabled = "disabled";
-
-					$("#pot_open").className = "cancel";
-					$("#pot_open").value = "개봉 취소"
-
-					break;
-			}
-		}
 		$("#pot_tradable").onchange = function() {
 			setPotOpen($("#pot_tradable").value);
 		}
@@ -1702,12 +1664,7 @@ window.onload = function() {
 							//항아리
 							tower = 0;
 								//"교환 불가" 항아리 지정해놨으면
-								if ($("#pot_tradable").value === "tradable") {
-									//문구 변경
-									$("#pot_open").value = "개봉 (0)";
-									//버튼 활성화
-									$("#pot_open").disabled = "disabled";
-								}
+								setPotOpen($("#pot_tradable").value);
 						//장착 장비 초기화
 						for (var k in wearingList) {
 							if (wearingList.hasOwnProperty(k)) {

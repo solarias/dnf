@@ -3199,7 +3199,6 @@ function onoff(cmd) {
 				$("#objective_fatigue_per").disabled = "";
 
 			$("#reset").disabled = "";
-			$("#pot_open").disabled = "";
 
 			//창
 			$("#popup_gabriel").style.display = "none";
@@ -3231,7 +3230,6 @@ function onoff(cmd) {
 				$("#objective_fatigue_per").disabled = "disabled";
 
 			$("#reset").disabled = "disabled";
-			$("#pot_open").disabled = "disabled";
 
 			//창
 			$("#popup_gabriel").style.display = "none";
@@ -3263,7 +3261,6 @@ function onoff(cmd) {
 				$("#objective_fatigue_per").disabled = "disabled";
 
 			$("#reset").disabled = "disabled";
-			$("#pot_open").disabled = "disabled";
 
 			//창
 			$("#popup_gabriel").style.display = "none";
