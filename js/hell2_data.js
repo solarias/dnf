@@ -35,12 +35,14 @@ var dateSettingDefault = [156,176,4,0,0,0,0,0];//[최대치,1회,1번,2번,3번,
 var dateSettingWeek = ["월","화","수","목","금","토","일"];
 var dateSettingWeekDefault = ["월","화","수","목","금","토","일"];
 
-var rpg = false;//RPG 모드인지 기억
+var rpg = "";//RPG 모드인지 기억
 var dropCount = 0;//아이템 착지 개수
 var maxJogak = 1000;//필요 조각 수
 
+//내 캐릭터 정보
 var myCharacter = "";
-var power = 0;
+var power = 1100;
+var tower = 0;//100일 도달 횟수
 var wearingList = {
 	"무기":null,
 	"상의":null,

@@ -13,7 +13,7 @@ var natram = {//드래곤스톤 능력치
 };
 var nen = 0;//넨 결정
 
-var delay = 3;//1레벨 기준 공격 딜레이 (기준 : 이펙트 간격 / 준비 -> 이펙트 : 2배 딜레이)
+var delay = 0.7;//1레벨 기준 공격 딜레이 (기준 : 이펙트 간격 / 준비 -> 이펙트 : 2배 딜레이)
 var stat = {//각종 능력치 레벨
 	attack:3,
 	speed:1,
@@ -38,7 +38,7 @@ var spritePosition = [
 		function $(parameter) {
 			return document.getElementById(parameter);
 		}
-		
+
 		//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
 		function thousand(num) {
 			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -56,14 +56,14 @@ function animation() {
 		motion1 = (motion1 == stat.motion - 1 ? 0 : motion1 + 1)
 	}
 	$("character").style.backgroundPosition = spritePosition[motion1][motion2];
-	
+
 	//스톤 애니메이션
 	if (motion2 == 1) {
 		$("stone").style.right = "-120px";
 	} else {
 		$("stone").style.right = "-110px";
 	}
-	
+
 	//능력치 변경 (모션 1 한정)
 	if (motion2 == 1) {
 		natram.HP_now -= stat.attack;
@@ -82,20 +82,20 @@ function animation() {
 		$("natram_num").innerHTML = thousand(natram.HP_now);
 		$("natram_health_bar").style.width = ((natram.HP_now/natram.HP_max)*100).toString() + "%";
 	}
-	
+
 	//향후
 	switch (motion2) {
 		case 0:
 			var auto = setTimeout(function() {
 				animation();
 			},1000*delay*2/FPS);
-			
+
 			break;
 		default:
 			var auto = setTimeout(function() {
 				animation();
 			},1000*delay/FPS);
-			
+
 			break;
 	}
 }
@@ -106,11 +106,11 @@ function animation() {
 
 window.onload = function() {
 	//이미지 선로딩
-	
-	
-	
+
+
+
 	//본격
-	
+
 	//메뉴 열고 닫기
 	$("upgrade_title").onmouseenter = function() {
 		if (upgrade_win == "off") {
@@ -125,7 +125,7 @@ window.onload = function() {
 					upgrade_win = "on";
 				}
 			}
-			
+
 			moveRight();
 		};
 	}
@@ -142,11 +142,11 @@ window.onload = function() {
 					upgrade_win = "off";
 				}
 			}
-			
+
 			moveLeft();
 		};
 	}
-	
+
 	//애니메이션
 	animation();
 }

@@ -727,12 +727,12 @@ body {
 		overflow:hidden;
 
 		position:absolute;
-		top:90px;
+		top:80px;
 		left:175px;
 		z-index:110;
 
 		width:400px;
-		height:310px;
+		height:355px;
 
 		background-color:rgba(30,30,30,0.9);
 		border:1px white solid;
@@ -767,7 +767,7 @@ body {
 
 			padding:5px;
 			width:160px;
-			height:260px;
+			height:305px;
 
 			border-right:1px white solid;
 			-webkit-box-sizing:border-box;
@@ -799,6 +799,7 @@ body {
 				border:1px white dashed;
 			}
 			#option_left input[type="button"] {
+				margin-bottom:2px;
 				width:100%;
 				height:22px;
 
@@ -842,7 +843,7 @@ body {
 
 			padding:5px;
 			width:240px;
-			height:260px;
+			height:305px;
 
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
@@ -1785,6 +1786,9 @@ body {
 				font-weight:bold;
 				line-height:30px;
 			}
+				#enchant_text.enchanting {
+					color:black;
+				}
 			#enchant_progress {
 				float:left;
 				position:relative;
@@ -2561,6 +2565,74 @@ body {
 	/*======================================================================================================*/
 	/* ※ 2.7 조각교환 팝업창 - 끝 */
 	/*======================================================================================================*/
+	/*======================================================================================================*/
+	/* ※ 2.8 항아리 팝업창 - 시작 */
+	/*======================================================================================================*/
+	#popup_pot {
+		overflow:hidden;
+
+		position:absolute;
+		top:110px;
+		left:177px;
+		z-index:95;
+
+		width:386px;
+		height:302px;
+
+		background-color:rgba(30,30,30,0.8);
+		border:1px gray solid;
+		border-radius:5px;
+
+		display:none;
+	}
+		#popup_pot_title {
+			width:100%;
+			height:25px;
+
+			border-bottom:1px gray solid;
+
+			color:white;
+			font-size:20px;
+			line-height:25px;
+			text-align:center;
+		}
+		#popup_pot_image {
+			width:384px;
+			height:228px;
+
+			background-image:url("../images/epic/pot_opening.gif");
+			border-bottom:1px gray solid;
+		}
+		#popup_pot_message {
+			width:100%;
+			height:20px;
+
+			border-bottom:1px gray solid;
+
+			color:white;
+			font-size:13px;
+			line-height:20px;
+			text-align:center;
+		}
+		#popup_pot_progress {
+			position:relative;
+
+			width:100%;
+			height:25px;
+		}
+			#popup_pot_progress_bar {
+				position:absolute;
+				top:0px;
+				left:0px;
+
+				width:0%;
+				height:100%;
+
+				background-color:yellow;
+			}
+	/*======================================================================================================*/
+	/* ※ 2.8 항아리 팝업창 - 끝 */
+	/*======================================================================================================*/
 	.item {
 		position:absolute;
 		top:180px;
@@ -2817,6 +2889,9 @@ body {
 									-2px 2px 2px skyblue;
 							}
 						#result_text table tr.bottom option {
+							background-color:white;
+
+							color:black;
 							font-size:12px;
 						}
 					#pot_open {
@@ -2829,6 +2904,8 @@ body {
 						background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
 						background: linear-gradient(to bottom, #ffffff, #516BFF);
 						-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#516BFF)";
+
+						font-weight:bold;
 					}
 						#pot_open:hover {
 							cursor:pointer;
@@ -2844,8 +2921,19 @@ body {
 								0px 2px 2px skyblue,
 								-2px 2px 2px skyblue;
 						}
-						#pot_open.active {
-							background:#38FF00;
+						#pot_open:active {
+							background:#3855FF;
+						}
+					#pot_open.cancel {
+						background: #FF6A00; /* default */
+						background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+						background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+						background: linear-gradient(to bottom, #ffffff, #FF6A00);
+						-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+					}
+						#pot_open.cancel:active {
+							background:#FFAA00;
 						}
 			#result_text img {
 				width:20px;

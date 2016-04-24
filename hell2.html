@@ -412,6 +412,11 @@
 						<label for="option_name_jogak">
 							에픽 조각 명칭 보기
 						</label>
+						<br/>
+						<input id="option_sprite" type="checkbox" disabled />
+						<label id="label_sprite" for="option_sprite">
+							캐릭터 이미지 출력
+						</label>
 						<hr/>
 						<input id="option_sound" type="checkbox" />
 						<label id="label_sound" for="option_sound">
@@ -435,20 +440,31 @@
 								<option value="manual" selected>수동</option>
 								<option value="auto">자동</option>
 							</select>
+						<br/>
+						<input id="option_soul" type="checkbox" checked />
+						<label id="label_soul" for="option_soul">
+							코스모소울 자동 해체
+						</label>
 						<hr/>
-						<input id="func_basicItem" type="button" value="기본 장비 설정" />
+						<input id="func_basicItem" type="button" value="기본 장비 설정" autocomplete="" />
 
-						<input id="option_basicItem" type="checkbox" />
+						<input id="option_basicItem" type="checkbox" autocomplete="" />
 						<label id="label_basicItem" for="option_basicItem">
 							기본 장비 초기화 방지
 						</label>
 						<hr/>
-						<input id="shift_chance" type="button" value="드랍 확률 설정" />
+						<input id="shift_chance" type="button" value="드랍 확률 설정" autocomplete="" />
+						<input id="achievement" type="button" value="업적 보기 (RPG)" disabled autocomplete="" />
 					</div>
 					<div id="option_notice">
 						<p>
+							<span class="date">2016-04-24</span><br/>
+							영웅의 항아리를 개봉할 수 있습니다. 시뮬레이터 중앙 하단에서 이용해보세요.
+						</p>
+						<br/>
+						<p>
 							<span class="date">2016-04-19</span><br/>
-							"장비 장착" 기능이 추가되었습니다. 캐릭터 직업을 정한 후 원하는 장비를 장착해보세요. 장비 강화기능은 차후에 공개됩니다.
+							"장비 장착" 기능이 추가되었습니다. 캐릭터 직업을 정한 후 원하는 장비를 장착해보세요. 장비 강화도 해볼 수 있습니다.
 						</p>
 						<br/>
 						<p>
@@ -676,7 +692,7 @@
 							<select id="list_무기_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 무기</option>
 							</select>
-							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 
 						<hr />
@@ -688,7 +704,7 @@
 							<select id="list_상의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 상의</option>
 							</select>
-							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_하의" class="list_box">
 							<div id="list_하의_type" class="list_type">하의</div>
@@ -697,7 +713,7 @@
 							<select id="list_하의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 하의</option>
 							</select>
-							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_머리어깨" class="list_box">
 							<div id="list_머리어깨_type" class="list_type">머리어깨</div>
@@ -706,7 +722,7 @@
 							<select id="list_머리어깨_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 머리어깨</option>
 							</select>
-							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_벨트" class="list_box">
 							<div id="list_벨트_type"v class="list_type">벨트</div>
@@ -715,7 +731,7 @@
 							<select id="list_벨트_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 벨트</option>
 							</select>
-							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_신발" class="list_box">
 							<div id="list_신발_type" class="list_type">신발</div>
@@ -724,7 +740,7 @@
 							<select id="list_신발_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 신발</option>
 							</select>
-							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 
 						<hr />
@@ -736,7 +752,7 @@
 							<select id="list_목걸이_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 목걸이</option>
 							</select>
-							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_팔찌" class="list_box">
 							<div id="list_팔찌_type" class="list_type">팔찌</div>
@@ -745,7 +761,7 @@
 							<select id="list_팔찌_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 팔찌</option>
 							</select>
-							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_반지" class="list_box">
 							<div id="list_반지_type" class="list_type">반지</div>
@@ -754,7 +770,7 @@
 							<select id="list_반지_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 반지</option>
 							</select>
-							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 
 						<hr />
@@ -766,7 +782,7 @@
 							<select id="list_보조장비_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 보조장비</option>
 							</select>
-							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 						<div id="list_마법석" class="list_box">
 							<div id="list_마법석_type" class="list_type">마법석</div>
@@ -775,12 +791,12 @@
 							<select id="list_마법석_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 마법석</option>
 							</select>
-							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="강화" disabled />
+							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="강화" />
 						</div>
 					</div>
 					<div id="equip_enchant">
 						<div id="enchant_icon" class="init"></div>
-						<div id="enchant_text">강화기 : 현재 준비중입니다.</div>
+						<div id="enchant_text">강화기 대기 중</div>
 						<div id="enchant_progress">
 							<div id="enchant_progress_bar"></div>
 						</div>
@@ -1068,6 +1084,16 @@
 					</div>
 				</div>
 		<!---가브리엘 팝업---->
+		<!---항아리 팝업---->
+				<div id="popup_pot">
+					<div id="popup_pot_title">항아리 개봉 중</div>
+					<div id="popup_pot_image"></div>
+					<div id="popup_pot_message"></div>
+					<div id="popup_pot_progress">
+						<div id="popup_pot_progress_bar"></div>
+					</div>
+				</div>
+		<!---항아리 팝업---->
 
 				<!-- (아이템 개별 DOM 예시)
 				<div id="item1" class="item">
@@ -1115,19 +1141,18 @@
 								<td id="result_soul_have" class="col_3">0</td>
 								<td class="col_4">
 									<div>
-										<input id="result_button_soulDisassemble" type="button" value="자동" disabled />
+										<input id="result_button_soulDisassemble" type="button" value="없음" disabled />
 									</div>
 								</td>
 								<td class="col_5 bottom_line"></td>
 								<td class="col_6"><img class="right" src="./images/epic/beed.png" /></td>
 								<td id="result_beed_get" class="col_7">0</td>
 							</tr>
-							<!-- 아직은 활성화 안하기 (영웅의 항아리)
 							<tr class="bottom">
 								<td><img class="left" src="./images/epic/heroPot.png" /></td>
 								<td colspan="2">
 									<div class="select1">
-										<select>
+										<select id="pot_type">
 											<option value="무기" selected>영웅의 무기 항아리</option>
 											<option value="보조장비">영웅의 보조장비 항아리</option>
 											<option value="마법석">영웅의 마법석 항아리</option>
@@ -1136,7 +1161,7 @@
 								</td>
 								<td colspan="3">
 									<div class="select2">
-										<select>
+										<select  id="pot_tradable">
 											<option value="notTradable" selected>교환 불가</option>
 											<option value="tradable">교환 가능</option>
 										</select>
@@ -1148,7 +1173,6 @@
 									</div>
 								</td>
 							</tr>
-							-->
 						</table>
 					</div>
 				</div>
@@ -1166,7 +1190,7 @@
 							<hr />
 						<div id="line_cover">
 							<span class="line">
-							골드 환산 :
+							골드 소모 :
 							<span id="cost_gold">0</span>
 							 Gold
 							</span>
