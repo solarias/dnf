@@ -461,7 +461,7 @@ function dungeon_select() {
 		if (input[0] === 6) {//위치 예외 : 태동
 			$("#hellgate_level").style.top = (startList[input[0]][1] - 40) + "px";
 		}
-		text = "[";
+		text = "[Lv.";
 		for (var i=0;i<levelList[playMode][input[0]].length;i++) {
 			text += levelList[playMode][input[0]][i];
 			if (i+1 < levelList[playMode][input[0]].length) text += ", ";
@@ -3495,7 +3495,9 @@ function onoff(cmd) {
 			$("#start2").value = "탐색 실시";
 
 			$("#dungeon").disabled = "";
-			$("#difficulty").disabled = "";
+			if (playMode !== "rpg") {
+				$("#difficulty").disabled = "";
+			}
 			$("#channel").disabled = "";
 
 			$("#objective_list").disabled = "";
