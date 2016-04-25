@@ -1287,7 +1287,7 @@ function main() {
 					$("#list_" + partList[i] + "_enchant_run").onclick = function() {
 						//기본 장비 - 강화 불가
 						if (wearingList[partList[i]] === null) {
-							alert("※ 경고 : 60제 기본 장비는 강화할 수 없습니다.");
+							alert("※ 경고 : 기본 장비는 강화할 수 없습니다.");
 							return;
 						}
 						//실행 중 - 강화 불가
