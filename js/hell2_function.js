@@ -108,7 +108,7 @@ function generateInventory() {
 
 //세트 창 생성
 function generateSet() {
-	tempArr = [];
+	var tempArr = [];
 	num = 0;//세트 현황 테이블 순번 (td의 아이디에 붙여넣음, 하나 작성할 때마다 1씩 증가)
 	for (var i=0;i<itemList.length;i++) {
 		if (itemList[i]["name"] !== "") {
@@ -311,14 +311,14 @@ function setDate() {
 			dateState['week'] = 1;
 			dateState['day'] = dateSettingWeek[0];//1일차 요일 적용
 			dateState['dayType'] = dayTypeList[dateState['day']];
-			if (count === 0) {
+			if (dateCount === 0) {
 				//첫 실행 전 : 피로도 꽉 채우기
 				dateState['remain'] = dateState['len_' + dateState['dayType']];
 				//피로도 게이지 100%
 				$("#date_fatigue").style.width = "100%";
 			} else {
 				//나머지 : 남은 피로도 계산
-				dateState['remain'] = count;//일단 count 수치 부여, 이후 하루씩 깎아가기
+				dateState['remain'] = dateCount;//일단 count 수치 부여, 이후 하루씩 깎아가기
 				if (dateState['remain'] - dateState['len_' + dateState['dayType']] >= 0) {
 					while (1) {
 						//남은 회차 감소
@@ -401,8 +401,9 @@ function dungeon_select() {
 	$("#frame_top").style.background = "url('./images/epic/background_" + input[0].toString() + ".jpg')";
 	//3. 아이템 정리
 	for (var i=0;i<maxQuantity;i++) {
-		$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
-		$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
+		//item - left, top 수치는 여기서만 다룸 (나머지는 translate() 활용)
+		$("#item" + i.toString()).style.left = startList[input[0]][0].toString() + "px";
+		$("#item" + i.toString()).style.top = startList[input[0]][1].toString() + "px";
 
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
@@ -436,7 +437,67 @@ function dungeon_select() {
 	//6. 기여자 이름 변경
 	$("#person_helper").innerHTML = helpList[input[0]];
 
-	//7. 브금 실행
+	//7. 캐릭터 & 기둥 레벨 & 체력 배치
+		//x축
+		if (startList[input[0]][0] < 100) {
+			$("#character_sprite").style.left = (startList[input[0]][0] - 40) + "px";
+			$("#character_sprite").className = "right";
+		} else {
+			$("#character_sprite").style.left = (startList[input[0]][0] - 140 - 25) + "px";
+			$("#character_sprite").className = "left";
+		}
+		//y축
+		$("#character_sprite").style.top = (startList[input[0]][1] - 15) + "px";
+		//상태
+		$("#character_sprite").classList.add("wait");
+
+	//8. (For rpg모드) 기둥 레벨, 부위, 체력 출력
+	if (playMode === "rpg") {
+		//출력 텍스트 메모장
+		var text = "";
+		//기둥 레벨
+		$("#hellgate_level").style.left = (startList[input[0]][0] - 125) + "px";
+		$("#hellgate_level").style.top = (startList[input[0]][1] - 70) + "px";
+		if (input[0] === 6) {//위치 예외 : 태동
+			$("#hellgate_level").style.top = (startList[input[0]][1] - 40) + "px";
+		}
+		text = "[";
+		for (var i=0;i<levelList[playMode][input[0]].length;i++) {
+			text += levelList[playMode][input[0]][i];
+			if (i+1 < levelList[playMode][input[0]].length) text += ", ";
+		}
+		text += "]";
+		$("#hellgate_level").innerHTML = text;
+		//기둥 부위
+		$("#hellgate_item").style.left = (startList[input[0]][0] - 125) + "px";
+		$("#hellgate_item").style.top = (startList[input[0]][1] - 55) + "px";
+		if (input[0] === 6) {//위치 예외 : 태동
+			$("#hellgate_item").style.top = (startList[input[0]][1] - 25) + "px";
+		}
+		text = "[";
+		for (var i=0;i<dropPartList[playMode][input[0]].length;i++) {
+			if (dropPartList[playMode][input[0]][i] !== "")  {
+				text += dropPartList[playMode][input[0]][i];
+				if (i+1 < dropPartList[playMode][input[0]].length) text += ", ";
+			}
+		}
+		if (text[text.length-2] === ",") text = text.slice(0,text.length-2);
+		text += "]";
+		$("#hellgate_item").innerHTML = text;
+		//기둥 체력
+		$("#hellgate_life").style.left = (startList[input[0]][0] - 125) + "px";
+		$("#hellgate_life").style.top = (startList[input[0]][1] - 40) + "px";
+		if (input[0] === 6) {//위치 예외 : 태동
+			$("#hellgate_life").style.top = (startList[input[0]][1] - 10) + "px";
+		}
+		hellgate = lifeList[input[0]];
+		$("#hellgate_life").innerHTML = thousand(lifeList[input[0]]);
+	} else {
+		hellgate = 1;
+	}
+
+
+	//8. 브금 실행
 	if ($("#option_bgm").checked === true) {
 		play($("#bgm_type").value);
 	}
@@ -678,19 +739,19 @@ function checkObjective(cmd) {
 					out = true;
 				//3차 분류
 				} else if (objective[4] === "" && objective[3] === thisArray[i]["sort3"]) {
-					showing = thisEpic[i]["name"] + " (모든 " + objective[3] + " 아이템)";
+					showing = thisArray[i]["name"] + " (모든 " + objective[3] + " 아이템)";
 					out = true;
 				//2차 분류
 				} else if (objective[4] === "" && objective[3] === "" && objective[2] === thisArray[i]["sort2"]) {
-					showing = thisEpic[i]["name"] + " (모든 " + objective[2] + " 아이템)";
+					showing = thisArray[i]["name"] + " (모든 " + objective[2] + " 아이템)";
 					out = true;
 				//1차 분류
 				} else if (objective[4] === "" && objective[3] === "" && objective[2] === "" && objective[1] === thisArray[i]["sort1"]) {
-					showing = thisEpic[i]["name"] + " (모든 " + objective[1] + " 아이템)";
+					showing = thisArray[i]["name"] + " (모든 " + objective[1] + " 아이템)";
 					out = true;
 				//'모든 에픽'
 				} else if (objective[4] === "" && objective[3] === "" && objective[2] === "" && objective[1] === "") {
-					showing = thisEpic[i]["name"] + " (모든 에픽 아이템 )";
+					showing = thisArray[i]["name"] + " (모든 에픽 아이템 )";
 					out = true;
 				}
 			}
@@ -794,7 +855,7 @@ function getEpicList() {
 	//2. (고유 에픽을 제외한) '레벨대'별 에픽 리스트
 	currentList = [];
 	for (var i=0;i<itemList.length;i++) {
-		if (levelList[input[0]].indexOf(itemList[i]["level"]) !== -1 &&
+		if (levelList[playMode][input[0]].indexOf(itemList[i]["level"]) !== -1 &&
 			itemList[i]["name"] !== "" &&
 			itemList[i]["goyu"] === "") {//드랍 레벨이 맞으면 & 명칭이 공백이 아니면 &고유 에픽이 아니면
 				currentList.push(itemList[i]);
@@ -802,24 +863,86 @@ function getEpicList() {
 	}
 }
 
+//기둥 부수기
+function trigger(num, step) {
+	switch (step) {
+		case 0:
+			//=================================
+			//* 회차 증가
+			//=================================
+			count += 1;
+			//=================================
+			//* 회차 표기
+			//=================================
+			$("#round_count").innerHTML = thousand(count);
+			//=================================
+			//* 입장료 지불
+			//=================================
+			//0-1. 소모한 초대장 수 증가
+			cost[0] += costList[input[0]];//총 소모
+			cost[1] += costList[input[0]];//실질 소모
+			//0-2. 소모한 초대장 수 반영
+			$("#cost_invitation").innerHTML = thousand(cost[0]);
+			$("#cost_real").innerHTML = thousand(cost[1]);
+			$("#cost_gold").innerHTML = setWon(cost[0]*gold + cost[2]);
+			$("#cost_gold_real").innerHTML = setWon(cost[1]*gold + cost[3]);
+			//=================================
+			//* 체력 감소 개시
+			//=================================
+			switch (playMode) {
+				//RPG모드에서만 trigger 중단 가능 (normal에서는 통제 불가)
+				case "normal":
+					setTimeout(function() {
+						trigger(num, 1);
+					},playSpeed[playMode]);
+
+					break;
+				case "rpg":
+					autoRunning = setTimeout(function() {
+						trigger(num, 1);
+					},playSpeed[playMode]);
+
+					break;
+			}
+
+			break;
+		default:
+			//=================================
+			//* 체력 감소
+			//=================================
+			hellgate = Math.max(0, hellgate - power);
+			$("#hellgate_life").innerHTML = thousand(hellgate);
+			//날짜 증가
+			dateCount += 1;
+				//회차에 따른 날짜 표시
+				setDate();
+			if (hellgate > 0) {
+				//RPG모드에서만 trigger 중단 가능 (normal에서는 통제 불가)
+				switch (playMode) {
+					case "normal":
+						setTimeout(function() {
+							trigger(num, 1);
+						},playSpeed[playMode]);
+
+						break;
+					case "rpg":
+						autoRunning = setTimeout(function() {
+							trigger(num, 1);
+						},playSpeed[playMode]);
+
+						break;
+				}
+			} else {
+				//(실행 중지 명령 감지) 실행 상태를 바꾸지 않음
+				if (runningState === "trigger") runningState = "simulate";
+				simulate(num);
+			}
+			break;
+	}
+}
+
 //실행
 function simulate(num){
-	//=================================
-	//* 회차 증가
-	//=================================
-	count += 1;
-	//=================================
-	//* 입장료 지불
-	//=================================
-	//0-1. 소모한 초대장 수 증가
-	cost[0] += costList[input[0]];//총 소모
-	cost[1] += costList[input[0]];//실질 소모
-	//0-2. 소모한 초대장 수 반영
-	$("#cost_invitation").innerHTML = thousand(cost[0]);
-	$("#cost_real").innerHTML = thousand(cost[1]);
-	$("#cost_gold").innerHTML = setWon(cost[0]*gold + cost[2]);
-	$("#cost_gold_real").innerHTML = setWon(cost[1]*gold + cost[3]);
-
 	//=================================
 	//* 변수 초기화
 	//=================================
@@ -834,10 +957,10 @@ function simulate(num){
 	//=================================
 	for (var i=0;i<maxQuantity;i++) {
 		//아이템 루팅 시작 위치로 이동 (탐색 시 2번째 실행부터 : 무시)
-		if (num !== 3) {
-			$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
-			$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
-		}
+		coordinate[i-1] = [0,0];
+		$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
+		$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+		$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 		//아이템 이름 숨기기&이동, 이미지 숨기기
 		$("#description" + i.toString()).className = "description";
@@ -851,7 +974,7 @@ function simulate(num){
 		$("#effect_land" + i.toString()).style.visibility = "hidden";
 		$("#effect_wait" + i.toString()).style.visibility = "hidden";
 
-		//애니메이션 정지 (탐색 시 2번째 실행부터 : 무시)
+	//애니메이션 정지 (탐색 시 2번째 실행부터 : 무시)
 		if (num !== 3) {
 			clearTimeout(autoLooting[i-1]);
 			clearTimeout(autoEffect["appear"][i-1]);
@@ -860,12 +983,6 @@ function simulate(num){
 			$("#item_img"+ i.toString()).className = "item_img";
 		}
 	}
-	//=================================
-	//* 회차 표기
-	//=================================
-	$("#round_count").innerHTML = thousand(count);
-		//회차에 따른 날짜 표시
-		setDate();
 
 	//=================================
 	//* 현재 회차 진행
@@ -1079,7 +1196,7 @@ function checkDrop(num) {
 			//버튼 재활성화 준비
 			onoff('drop');
 			//재실행 여부 체크
-			nextStep(3);
+			nextStep(1);
 		}
 		//추가실행 : 하지 않음
 	//IF - 탐색 실시 (2 : 첫번째 탐색, 3 : 두번째 이후 탐색)
@@ -1105,7 +1222,21 @@ function checkDrop(num) {
 			}
 			//c. 변수 처리
 				//'자동 실행 변수' OFF
-				running = 0;
+				runningState = "";
+					//=================================
+					//* 캐릭터 스프라이트 정지
+					//=================================
+					$("#character_sprite").classList.remove("attack");
+					$("#character_sprite").classList.add("wait");
+					//=================================
+					//* 기둥 체력 회복
+					//=================================
+					if (playMode === "rpg") {
+						hellgate = lifeList[input[0]];
+						$("#hellgate_life").innerHTML = thousand(hellgate);
+					} else {
+						hellgate = 1;
+					}
 				//목표 초기화
 				objective = [];
 			//d-1. 아이템 드롭
@@ -1128,7 +1259,7 @@ function checkDrop(num) {
 			}
 		//2-2. 종료 조건 미달성 or 무조건 실행
 		} else {
-			if (running === 1) {//'자동 실행 변수'가 ON일 경우
+			if (runningState !== "") {//'자동 실행 변수'가 ON일 경우
 				//a. 가브리엘 출현 시
 				if (tempGabriel === true) {
 					//아이템 드롭
@@ -1142,7 +1273,12 @@ function checkDrop(num) {
 					setGabriel();
 				//b. 가브리엘 미출현
 				} else {
-					//아이템 드롭 - 실시하지 않음 (생략하고 다음 회차로 넘어감)
+					//(RPG 모드일 때만)아이템 드롭
+					if (playMode === "rpg") {
+						for (var i=0;i<thisTime.length;i++) {
+							dropItem(thisTime[i]);
+						}
+					}
 					//재실행 여부 체크
 					nextStep(num);
 				}
@@ -1174,7 +1310,21 @@ function nextStep(num, cmd) {
 		//IF - 1회 실행
 		if (num === 1) {
 			//'자동 실행 변수' OFF
-			running = 0;
+			runningState = "";
+				//=================================
+				//* 캐릭터 스프라이트 정지
+				//=================================
+				$("#character_sprite").classList.remove("attack");
+				$("#character_sprite").classList.add("wait");
+				//=================================
+				//* 기둥 체력 회복
+				//=================================
+				if (playMode === "rpg") {
+					hellgate = lifeList[input[0]];
+					$("#hellgate_life").innerHTML = thousand(hellgate);
+				} else {
+					hellgate = 1;
+				}
 			//추가실행 : 하지 않음
 		//IF - 탐색 실시 (2 : 첫번째 탐색, 3 : 두번째 이후 탐색)
 		} else if (num === 2 || num === 3) {
@@ -1201,7 +1351,21 @@ function nextStep(num, cmd) {
 					}
 					//a-2. 변수 처리
 						//'자동 실행 변수' OFF
-						running = 0;
+						runningState = "";
+							//=================================
+							//* 캐릭터 스프라이트 정지
+							//=================================
+							$("#character_sprite").classList.remove("attack");
+							$("#character_sprite").classList.add("wait");
+							//=================================
+							//* 기둥 체력 회복
+							//=================================
+							if (playMode === "rpg") {
+								hellgate = lifeList[input[0]];
+								$("#hellgate_life").innerHTML = thousand(hellgate);
+							} else {
+								hellgate = 1;
+							}
 						//목표 초기화
 						objective = [];
 				}
@@ -1210,14 +1374,36 @@ function nextStep(num, cmd) {
 				//추가실행 : 하지 않음
 			//2-2. 종료 조건 미달성 or 무조건 실행
 			} else {
-				if (running === 1) {//'자동 실행 변수'가 ON일 경우
+				if (runningState !== "") {//'자동 실행 변수'가 ON일 경우
+					//=================================
+					//* 기둥 체력 회복
+					//=================================
+					if (playMode === "rpg") {
+						hellgate = lifeList[input[0]];
+						$("#hellgate_life").innerHTML = thousand(hellgate);
+					} else {
+						hellgate = 1;
+					}
 					//추가실행 : 실시
-					autoRunning = setTimeout(function() {
-						simulate(2);
-					}, 25);
+					runningState = "trigger";
+					trigger(2,0);
 				} else {
 					//'자동 실행 변수' OFF
-					running = 0;
+					runningState = "";
+						//=================================
+						//* 캐릭터 스프라이트 정지
+						//=================================
+						$("#character_sprite").classList.remove("attack");
+						$("#character_sprite").classList.add("wait");
+						//=================================
+						//* 기둥 체력 회복
+						//=================================
+						if (playMode === "rpg") {
+							hellgate = lifeList[input[0]];
+							$("#hellgate_life").innerHTML = thousand(hellgate);
+						} else {
+							hellgate = 1;
+						}
 					//추가실행 : 하지 않음
 				}
 			}
@@ -1253,6 +1439,9 @@ function setGabriel(cmd) {
 
 	//1-5. ("settingOnly"가 아니라면)상태 변경
 	if (cmd !== "settingOnly") {
+		//공격모션 잠시 중지
+		$("#character_sprite").classList.remove("attack");
+		$("#character_sprite").classList.add("wait");
 		//가브리엘 출현 중이라고 기억
 		gabrielSetting["trading"] = true;
 		//변경 횟수 충전
@@ -1431,6 +1620,9 @@ function doGabriel(cmd) {
 		//재실행 여부 체크
 			//재실행 시
 			if (gabrielSetting["replay"] === true) {
+				//공격모션 재개
+				$("#character_sprite").classList.remove("wait");
+				$("#character_sprite").classList.add("attack");
 				//재실형 변수 제거
 				gabrielSetting["replay"] = false;
 				//가브리엘 거래 종료
@@ -1471,6 +1663,9 @@ function doGabriel(cmd) {
 		//재실행 여부 체크
 			//재실행 시
 			if (gabrielSetting["replay"] === true) {
+				//공격모션 재개
+				$("#character_sprite").classList.remove("wait");
+				$("#character_sprite").classList.add("attack");
 				//재실형 변수 제거
 				gabrielSetting["replay"] = false;
 				//가브리엘 거래 종료
@@ -1568,42 +1763,54 @@ function sortItem(type, zone, zoneArr) {
 			break;
 	}
 	//3. 종류 결정
-		//안톤 레이드(17번) : 방어구 제외
-		var arr_name = deepCopy(chanceList_name[3]);
+		//(for RPG모드) 드랍되는 장비 종류 불러오기
+		var arr_name = deepCopy(dropPartList[playMode][input[0]]);
 		var arr_num = deepCopy(chanceList_num[3]);
-		if (input[0] === 17) {
-			arr_name.splice(1,1);
-			arr_num.splice(1,1);
-		//나머지 : 전 종류 취급
-		} else {}
+		var searchLength = arr_name.length;
+		for (var i=searchLength-1;i>=0;i--) {
+			if (arr_name[i] === "") {
+				arr_name.splice(i,1);
+				arr_num.splice(i,1);
+			}
+		}
 	input[5] = arr_name[rand(arr_num)];
 	//4. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수)
-		//4-1. 레벨 종류만큼 칸 설정
-		currentList_level = [];
-		for (var i=0;i<levelList[input[0]].length;i++) {
-			currentList_level.push(0);
-		}
-		//4-2. 해당 칸은 특정 레벨 & 특정 장비의 개수만큼 숫자가 증가
-		for (var i=0;i<currentList.length;i++) {
-			for (var j=0;j<levelList[input[0]].length;j++) {
-				//앞에서 선택된 장비이고 레벨이 맞을 경우, 해당 레벨 칸 +1
-				if ((currentList[i]["sort1"] === input[5] //무기, 방어구 전용 : 대분류
-				|| currentList[i]["sort2"] === input[5])//악세사리, 특수장비 : 1차 소분류
-				&& currentList[i]["level"] === levelList[input[0]][j]) {
-					currentList_level[j] += 1;
+	switch (playMode) {
+		case "normal":
+			//4-1. 레벨 종류만큼 칸 설정
+			currentList_level = [];
+			for (var i=0;i<levelList[playMode][input[0]].length;i++) {
+				currentList_level.push(0);
+			}
+			//4-2. 해당 칸은 특정 레벨 & 특정 장비의 개수만큼 숫자가 증가
+			for (var i=0;i<currentList.length;i++) {
+				for (var j=0;j<levelList[playMode][input[0]].length;j++) {
+					//앞에서 선택된 장비이고 레벨이 맞을 경우, 해당 레벨 칸 +1
+					if ((currentList[i]["sort1"] === input[5] //무기, 방어구 전용 : 대분류
+					|| currentList[i]["sort2"] === input[5])//악세사리, 특수장비 : 1차 소분류
+					&& currentList[i]["level"] === levelList[playMode][input[0]][j]) {
+						currentList_level[j] += 1;
+					}
 				}
 			}
-		}
-		//4-3. 추가 가중치 계산
-		for (var i=0;i<chanceList_num[4].length;i++) {
-			if (chanceList_num[4][i][0].indexOf(input[0]) !== -1) {
-				for (var j=0;j<currentList_level.length;j++) {
-					currentList_level[j] = currentList_level[j] * chanceList_num[4][i][1][j];
+			//4-3. 추가 가중치 계산
+			for (var i=0;i<chanceList_num[4].length;i++) {
+				if (chanceList_num[4][i][0].indexOf(input[0]) !== -1) {
+					for (var j=0;j<currentList_level.length;j++) {
+						currentList_level[j] = currentList_level[j] * chanceList_num[4][i][1][j];
+					}
+					break;
 				}
-				break;
 			}
-		}
-		input[6] = levelList[input[0]][rand(currentList_level)];
+			input[6] = levelList[playMode][input[0]][rand(currentList_level)];
+
+			break;
+		//RPG모드 : 레벨별 가주치 미구현 - 그냥 랜덤
+		case "rpg":
+			input[6] = levelList[playMode][input[0]][Math.floor(Math.random() * levelList[playMode][input[0]].length)];
+
+			break;
+	}
 	//5. 인풋을 바탕으로 드롭
 	getItem(type, input[3], zone, zoneArr);//('에픽')을 전송, 나머진 getItem()에서 해결
 	return;
@@ -1698,12 +1905,12 @@ function sortItem(type, zone, zoneArr) {
 						if (item === "고유에픽") {
 							temp = currentList_goyu[Math.floor(Math.random() * currentList_goyu.length)];
 						} else if (item === "에픽") {
-							tempArr = [];
+							var tempArr = [];
 							for (j=0;j<currentList.length;j++) {
 								if ((currentList[j]["sort1"] === input[5]/*종류-무기*/
 								|| currentList[j]["sort2"] === input[5]/*종류-방어구*/
 								|| currentList[j]["sort3"] === input[5])/*종류-악세서리&특수장비*/
-								&& currentList[j]["level"] === input[6])/*레벨*/ {
+								&& (playMode === "rpg" || currentList[j]["level"] === input[6]))/*레벨*/ {
 									tempArr.push(currentList[j]);
 								}
 							}
@@ -1740,12 +1947,12 @@ function sortItem(type, zone, zoneArr) {
 				break;
 			case "조각" :
 				//에픽 장비 선정
-				tempArr = [];
+				var tempArr = [];
 				for (var j=0;j<currentList.length;j++) {
 					if ((currentList[j]["sort1"] === input[5]/*종류-무기*/
 					|| currentList[j]["sort2"] === input[5]/*종류-방어구*/
 					|| currentList[j]["sort3"] === input[5])/*종류-악세서리&특수장비*/
-					&& currentList[j]["level"] === input[6])/*레벨*/ {
+					&& (playMode === "rpg" || currentList[j]["level"] === input[6]))/*레벨*/ {
 						tempArr.push(currentList[j]);
 					}
 				}
@@ -2455,7 +2662,7 @@ function recycle(num,amount,cmd) {
 //craft에서 아이템 제작
 function make(num,amount) {
 	//0-0. 시뮬레이터 실행중 - 제작 불가
-	if (running === 1) {
+	if (runningState !== "") {
 		alert("※ 경고 : 탐색 중에는 아이템 제작을 할 수 없습니다.");
 		return;
 	}
@@ -2517,8 +2724,10 @@ function make(num,amount) {
 	//6. 필드 아이템 정리
 	for (var i=0;i<maxQuantity;i++) {
 		//아이템 루팅 시작 위치로 이동
-		$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
-		$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
+		coordinate[i-1] = [0,0];
+		$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
+		$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+		$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 		//아이템 이름 숨기기&이동, 이미지 숨기기
 		$("#description" + i.toString()).className = "description";
@@ -2560,10 +2769,12 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 
 	if (step < 12) {
 
-		var tempX = $("#item" + zone.toString()).offsetLeft;
-		var tempY = $("#item" + zone.toString()).offsetTop;
-		$("#item" + zone.toString()).style.left = (tempX + leftMove).toString() + "px";
-		$("#item" + zone.toString()).style.top = (tempY - topMove).toString() + "px";
+		coordinate[zone-1][0] += leftMove;
+		coordinate[zone-1][1] -= topMove;
+		var coo = coordinate[zone-1][0].toString() + "px," + coordinate[zone-1][1].toString() + "px"
+		$("#item" + zone.toString()).style.msTransform = "translate(" + coo + ") rotateY(0deg)";
+		$("#item" + zone.toString()).style.webkitTransform = "translate(" + coo + ") rotateY(0deg)";
+		$("#item" + zone.toString()).style.transform = "translate(" + coo + ") rotateY(0deg)";
 
 		step += 1;
 		topMove -= topMoveModify;
@@ -2591,8 +2802,8 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		//아이템 드랍 대기
 		dropCount += 1;
 		if (dropCount === quantity) {//모든 아이템 드랍 완료
-			//가브리엘 미출현 중에만 버튼 활성화
-			if (gabrielSetting["trading"] === false) {
+			//()가브리엘 미출현 중 & 미 실행 중)에만 버튼 활성화
+			if (gabrielSetting["trading"] === false && runningState === "") {
 				//버튼 활성화
 				onoff(0);
 			}
@@ -2704,12 +2915,12 @@ function setEquip(cmd, toWearName, noSound) {
 		//1. 착용장비 정보 초기화
 		wearingList[cmd] = null;
 		//2. 대상 리스트창 초기화
-			//2-1. 세트 여부 판별
-			$("#list_" + cmd + "_type").classList.remove("set");
 			//2-2. 아이콘 변경
 			$("#list_" + cmd + "_icon").style.backgroundPosition = "0px 0px";
 			//2-3. 강화 수치 표시
 			$("#list_" + cmd + "_enchant").innerHTML = "+0";
+			//2-4. 세트 표시
+			$("#list_" + cmd + "_set").innerHTML = "";
 		//3, 상단 현황 초기화
 			//아이콘 변경
 			$("#state_" + cmd + "_icon").style.backgroundPosition = "0px 0px";
@@ -2721,6 +2932,8 @@ function setEquip(cmd, toWearName, noSound) {
 				sfxList["wearing"].play();
 			}
 		}
+		//5. 전투력 계산
+		setPower();
 
 	//특정 부위 징칙
 	} else {
@@ -2733,16 +2946,12 @@ function setEquip(cmd, toWearName, noSound) {
 			}
 		}
 		//2. 대상 리스트창 최신화
-			//2-1. 세트 여부 판별
-			if (wearingList[cmd]["set"] !== "") {
-				$("#list_" + cmd + "_type").classList.add("set");
-			} else {
-				$("#list_" + cmd + "_type").classList.remove("set");
-			}
 			//2-2. 아이콘 변경
 			$("#list_" + cmd + "_icon").style.backgroundPosition = spritePosition(wearingList[cmd]["icon"], 1);
 			//2-3. 강화 수치 표시
 			$("#list_" + cmd + "_enchant").innerHTML = "+" + wearingList[cmd]["enchant"];
+			//2-4. 세트 표시
+			$("#list_" + cmd + "_set").innerHTML = wearingList[cmd]["set"];
 		//3, 상단 현황 최신화
 			//아이콘 변경
 			$("#state_" + cmd + "_icon").style.backgroundPosition = spritePosition(wearingList[cmd]["icon"], 1);
@@ -2754,8 +2963,114 @@ function setEquip(cmd, toWearName, noSound) {
 				sfxList["wearing"].play();
 			}
 		}
+		//5. 전투력 계산
+		setPower();
 	}
 
+}
+
+//아이템 전투력 판단
+function calcPower(item) {
+	//기본 장비 : 별도 계산 후 반환
+	if (typeof(item) != "object") {
+		//부위 파악
+		var cmd = item;
+		var toPower = 0;
+		if (cmd === "무기")
+			toPower = pplList["lv0"] * 3;
+		else if (cmd === "보조장비" || cmd === "마법석")
+			toPower = pplList["lv0"] * 2;
+		else
+			toPower = pplList["lv0"];
+		return {
+			"power":toPower,
+			"setted":0
+		}
+	}
+
+	//전투력 준비
+	var tempPower = 0;
+	//부위 파악
+	var part = "";
+	if (item["sort1"] === "무기") part = "무기";
+		else part = item["sort3"];
+	//레벨 파악
+	var level = "lv" + item["level"].toString();
+	//레벨 & 부위 따른 전투력
+	switch (part) {
+		case "무기":
+			tempPower += pplList[level] * 3;
+			break;
+		case "보조장비":
+			tempPower += pplList[level] * 2;
+			break;
+		case "마법석":
+			tempPower += pplList[level] * 2;
+			break;
+		default:
+			tempPower += pplList[level];
+			break;
+	}
+	//세트에 따른 전투력
+	var set = item["set"];
+	var setted = 0;
+	var setCount = [0,0];//0 : 장착, 1 : 전체
+	for (var i=0;i<partList.length;i++) {
+		if (wearingList[partList[i]] !== null && wearingList[partList[i]]["set"] === set) setCount[0] += 1;
+	}
+	for (var i=0;i<itemList.length;i++) {
+		if (itemList[i]["set"] === set) setCount[1] += 1;
+	}
+		//(총 세트 부위 수 & 장착 세트 부위 수가 동일) 50% 강화
+		if (setCount[0] === setCount[1]) {
+			tempPower *= 1.5;
+			setted = 1;
+		}
+	//레벨 & 강화수치에 따른 전투력
+	var enchant = item["enchant"];
+	for (var i=0;i<=enchant;i++) {
+		if (i > 0 && i <= 5) tempPower += eplList[level][0];
+		else if (i > 5 && i <= 12) tempPower += eplList[level][1];
+		else if (i > 12 && i <= 15) tempPower += eplList[level][2];
+		if (i > 15 && i <= 20) tempPower += eplList[level][3];
+	}
+	//전투력 반환
+	return {
+		"power":tempPower,
+		"set":setted
+	};
+}
+
+
+//총 전투력 측정
+function setPower() {
+	//RPG모드에서만 실시
+	if (playMode === "rpg") {
+		//전투력 준비
+		var tempPower = 0;
+		//전투력 합산
+		var report = {};
+		for (var i=0;i<partList.length;i++) {
+			if (wearingList[partList[i]] === null) {
+				report = calcPower(partList[i]);
+				tempPower += report["power"];
+			} else {
+				report = calcPower(wearingList[partList[i]]);
+				tempPower += report["power"];
+			}
+			$("#list_" + partList[i] + "_power").innerHTML = "전투력 : " + thousand(report["power"]);
+			//세트 완성 - 카테고리란을 녹색 표시
+			if (report["set"] === 1) {
+				$("#list_" + partList[i] + "_type").classList.add("set");
+			//아니면 그냥 놔둠
+			} else {
+				$("#list_" + partList[i] + "_type").classList.remove("set");
+			}
+		}
+		//전투력 적용
+		power = tempPower;
+		$("#character_power").innerHTML = thousand(power);
+	}
 }
 
 //장비 강화
@@ -2900,7 +3215,9 @@ function doEnchant(target, part, step) {
 			$("#shift" + i.toString()).disabled = "";
 		})(i)
 	}
-	$("#shift_chance").disabled = "";
+	if (playMode === "normal") {
+		$("#shift_chance").disabled = "";
+	}
 	//모든 강화 버튼 활성화
 	for (var i=0;i<partList.length;i++) {
 		(function(i) {
@@ -3092,8 +3409,10 @@ function openPot(type, tradable, step) {
 				//A. 필드 아이템 정리
 				for (var i=0;i<maxQuantity;i++) {
 					//아이템 루팅 시작 위치로 이동
-					$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
-					$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
+					coordinate[i-1] = [0,0];
+					$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
+					$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+					$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 					//아이템 이름 숨기기&이동, 이미지 숨기기
 					$("#description" + i.toString()).className = "description";
@@ -3207,10 +3526,10 @@ function onoff(cmd) {
 		//1회 실행 중(= 1회 실행 후 아이템 드랍 중)
 		case 1:
 			//버튼
-			$("#start1").disabled = "disabled";
+			$("#start1").disabled = "";
 			$("#start2").disabled = "disabled";
 
-			$("#start1").value = "실행 중";
+			$("#start1").value = "실행 중지";
 			$("#start2").value = "탐색 실시";
 
 			$("#dungeon").disabled = "disabled";
@@ -3300,6 +3619,7 @@ function onoff(cmd) {
 			$("#start1").disabled = "disabled";
 			$("#start2").disabled = "disabled";
 
+			$("#start1").value = "확인 중";
 			$("#start2").value = "확인 중";
 
 			//창

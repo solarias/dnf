@@ -17,6 +17,25 @@
 			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
 
 
+		<div id="titleScreen">
+			<p id="titleScreen_title">지옥파티 시뮬레이터</p>
+			<p id="titleScreen_person">Made By : 루리웹 솔라리어스</p>
+
+			<div id="titleScreen_description_nothing" class="titleScreen_description">
+			</div>
+			<div id="titleScreen_description_normal" class="titleScreen_description">
+				<p>아무 조건없이 시뮬레이터를 이용할 수 있는 모드입니다.</p>
+				<p>기존의 지옥파티 시뮬레이터가 이 모드에 해당되며, 착용 장비와 관련없이 실행 속도가 빠릅니다.</p>
+			</div>
+			<div id="titleScreen_description_rpg" class="titleScreen_description">
+				<p>저레벨에서 고레벨까지 순차적으로 아이템파밍을 즐길 수 있는 모드입니다.</p>
+				<p>장착하는 장비 레벨에 따라 캐릭터가 강해지며, 이에 따라 실행 속도도 빨라집니다.</p>
+				<p>교환 가능 항아리 개봉, 확률 조절 등 일부 기능을 이용할 수 없습니다.</p>
+			</div>
+			<input id="titleScreen_normal" class="titleScreen_button" type="button" value="로딩 중" disabled />
+			<input id="titleScreen_rpg" class="titleScreen_button" type="button" value="로딩 중" disabled />
+		</div>
+
 		<div id="wrapper">
 
 			<div id="frame_left">
@@ -109,7 +128,7 @@
 						탐색 목표 설정
 					</p>
 					<select id="objective_list" autocomplete="off">
-						<option value="none">목표를 선택하세요 (목표 없음)</option>
+						<option value="none" selected>목표를 선택하세요 (목표 없음)</option>
 						<option value="" disabled>====================</option>
 						<option value="item">에픽 아이템 탐색</option>
 						<option value="set">세트 완성</option>
@@ -356,7 +375,7 @@
 							<span id="date_count">0</span>일차
 							<span id="date_summary"> (<span id="date_summary_num">1주차 월요일</span>)</span>
 						</span>
-						<input id="date_config" class="" type="button" value="피로도 설정" />
+						<input id="date_config" class="" type="button" value="피로도 설정" autocomplete="off" />
 					</div>
 					<div id="date_setting">
 						<p>평일 피로도 총량 : <input id="date_setting_1" type="text" value="156" /></p>
@@ -395,7 +414,7 @@
 					<br/>
 					맵 이미지 제공 : <span id='person_helper'>루리웹 Aqua3님</span>
 					<br/>
-					<span id='mode'>일반</span> 모드 진행 중
+					<span id='mode'></span> 모드 진행 중
 				</div>
 
 				<div id="option">
@@ -413,8 +432,8 @@
 							에픽 조각 명칭 보기
 						</label>
 						<br/>
-						<input id="option_sprite" type="checkbox" disabled />
-						<label id="label_sprite" for="option_sprite">
+						<input id="option_character" type="checkbox" checked />
+						<label id="label_character" for="option_character">
 							캐릭터 이미지 출력
 						</label>
 						<hr/>
@@ -448,15 +467,22 @@
 						<hr/>
 						<input id="func_basicItem" type="button" value="기본 장비 설정" autocomplete="" />
 
-						<input id="option_basicItem" type="checkbox" autocomplete="" />
+						<input id="option_basicItem" type="checkbox" autocomplete="off" />
 						<label id="label_basicItem" for="option_basicItem">
 							기본 장비 초기화 방지
 						</label>
 						<hr/>
-						<input id="shift_chance" type="button" value="드랍 확률 설정" autocomplete="" />
-						<input id="achievement" type="button" value="업적 보기 (RPG)" disabled autocomplete="" />
+						<input id="shift_chance" type="button" value="드랍 확률 설정" autocomplete="off" />
+						<!--업적 : 나중에 생각나면 추가
+						<input id="achievement" type="button" value="업적 보기 (RPG)" disabled autocomplete="off" />
+						-->
 					</div>
 					<div id="option_notice">
+						<p>
+							<span class="date">2016-04-25</span><br/>
+							RPG 모드가 추가되었습니다. 저레벨부터 차근차근 템파밍을 즐겨보세요.
+						</p>
+						<br/>
 						<p>
 							<span class="date">2016-04-24</span><br/>
 							영웅의 항아리를 개봉할 수 있습니다. 시뮬레이터 중앙 하단에서 이용해보세요.
@@ -692,7 +718,10 @@
 							<select id="list_무기_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 무기</option>
 							</select>
-							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_무기_set" class="list_set"></div>
+							<div id="list_무기_power" class="list_power"></div>
+							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 
 						<hr />
@@ -704,7 +733,10 @@
 							<select id="list_상의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 상의</option>
 							</select>
-							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_상의_set" class="list_set"></div>
+							<div id="list_상의_power" class="list_power"></div>
+							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_하의" class="list_box">
 							<div id="list_하의_type" class="list_type">하의</div>
@@ -713,7 +745,10 @@
 							<select id="list_하의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 하의</option>
 							</select>
-							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_하의_set" class="list_set"></div>
+							<div id="list_하의_power" class="list_power"></div>
+							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_머리어깨" class="list_box">
 							<div id="list_머리어깨_type" class="list_type">머리어깨</div>
@@ -722,7 +757,10 @@
 							<select id="list_머리어깨_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 머리어깨</option>
 							</select>
-							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_머리어깨_set" class="list_set"></div>
+							<div id="list_머리어깨_power" class="list_power"></div>
+							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_벨트" class="list_box">
 							<div id="list_벨트_type"v class="list_type">벨트</div>
@@ -731,7 +769,10 @@
 							<select id="list_벨트_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 벨트</option>
 							</select>
-							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_벨트_set" class="list_set"></div>
+							<div id="list_벨트_power" class="list_power"></div>
+							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_신발" class="list_box">
 							<div id="list_신발_type" class="list_type">신발</div>
@@ -740,7 +781,10 @@
 							<select id="list_신발_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 신발</option>
 							</select>
-							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_신발_set" class="list_set"></div>
+							<div id="list_신발_power" class="list_power"></div>
+							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 
 						<hr />
@@ -752,7 +796,10 @@
 							<select id="list_목걸이_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 목걸이</option>
 							</select>
-							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_목걸이_set" class="list_set"></div>
+							<div id="list_목걸이_power" class="list_power"></div>
+							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_팔찌" class="list_box">
 							<div id="list_팔찌_type" class="list_type">팔찌</div>
@@ -761,7 +808,10 @@
 							<select id="list_팔찌_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 팔찌</option>
 							</select>
-							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_팔찌_set" class="list_set"></div>
+							<div id="list_팔찌_power" class="list_power"></div>
+							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_반지" class="list_box">
 							<div id="list_반지_type" class="list_type">반지</div>
@@ -770,7 +820,10 @@
 							<select id="list_반지_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 반지</option>
 							</select>
-							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_반지_set" class="list_set"></div>
+							<div id="list_반지_power" class="list_power"></div>
+							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 
 						<hr />
@@ -782,7 +835,10 @@
 							<select id="list_보조장비_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 보조장비</option>
 							</select>
-							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_보조장비_set" class="list_set"></div>
+							<div id="list_보조장비_power" class="list_power"></div>
+							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 						<div id="list_마법석" class="list_box">
 							<div id="list_마법석_type" class="list_type">마법석</div>
@@ -791,7 +847,10 @@
 							<select id="list_마법석_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 마법석</option>
 							</select>
-							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="강화" />
+
+							<div id="list_마법석_set" class="list_set"></div>
+							<div id="list_마법석_power" class="list_power"></div>
+							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
 						</div>
 					</div>
 					<div id="equip_enchant">
@@ -919,6 +978,11 @@
 							<option value="마창사(남)">마창사(남)</option>
 						</select>
 							<hr/>
+						<div id="power_area">
+							<p>&lt;전투력&gt;</p>
+							<p id="character_power">1,500</p>
+								<hr/>
+						</div>
 						<input id="equip_check_enchant" type="checkbox" />
 						<label for="equip_check_enchant">강화 시 경고창을 띄우지 않음</label>
 							<hr/>
@@ -1094,6 +1158,12 @@
 					</div>
 				</div>
 		<!---항아리 팝업---->
+		<!---캐릭터 스프라이트, 기둥 체력---->
+				<div id="character_sprite" class="wait"></div>
+				<div id="hellgate_level"></div>
+				<div id="hellgate_item"></div>
+				<div id="hellgate_life"></div>
+		<!---캐릭터 스프라이트, 기둥 체력---->
 
 				<!-- (아이템 개별 DOM 예시)
 				<div id="item1" class="item">

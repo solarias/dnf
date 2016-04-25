@@ -1,10 +1,68 @@
 
-
-
 //=================================================================================================================
-//※ 실행
+//※ 첫 화면
 //=================================================================================================================
 window.onload = function() {
+	//모드 설명
+	$("#titleScreen_normal").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_normal").style.display = "block";
+		$("#titleScreen_description_rpg").style.display = "none";
+	};
+	$("#titleScreen_rpg").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_normal").style.display = "none";
+		$("#titleScreen_description_rpg").style.display = "block";
+	};
+
+	//버튼 활성화
+	$("#titleScreen_normal").value = "일반 모드";
+		$("#titleScreen_normal").disabled = "";
+	$("#titleScreen_rpg").value = "RPG 모드";
+		$("#titleScreen_rpg").disabled = "";
+
+	//버튼 클릭
+	$("#titleScreen_normal").onclick = function() {
+		playMode = "normal";
+		//일반모드 : 표시만 해줌
+			$("#mode").innerHTML = "일반";
+		$("#cover").style.display = "block";
+		$("#wrapper").style.display = "block";
+		$("#titleScreen").style.display = "none";
+		main();
+	};
+	$("#titleScreen_rpg").onclick = function() {
+		playMode = "rpg";
+		//RPG모드 : 일부 기능 표시
+			//모드 표시
+			$("#mode").innerHTML = "RPG";
+			//전투력 표시
+			$("#power_area").style.display = "block";
+		//RPG모드 : 일부 기능 막음
+			//던전 난이도
+			$("#difficulty").selectedIndex = 4;
+			$("#difficulty").disabled = "disabled";
+			//피로도 변경
+			$("#date_config").disabled = "disabled";
+			//교환가능 항아리
+			$("#pot_tradable").disabled = "disabled";
+			//기본 장비 획득
+			$("#func_basicItem").disabled = "disabled";
+			$("#option_basicItem").disabled = "disabled";
+			//드랍 확률 조절
+			$("#shift_chance").disabled = "disabled";
+		$("#cover").style.display = "block";
+		$("#wrapper").style.display = "block";
+		$("#titleScreen").style.display = "none";
+		main();
+	};
+};
+
+
+//=================================================================================================================
+//※ 본격적인 실행
+//=================================================================================================================
+function main() {
 	//======================
 	//※ 데이터 정리
 	//======================
@@ -22,11 +80,18 @@ window.onload = function() {
 		tempList3.push("");//"비 고유에픽"
 		for (i=0;i<tempList.length;i++) {
 			//레벨
-			for (j=0;j<levelList[tempList[i]].length;j++) {
-				if (tempList2.indexOf(levelList[tempList[i]][j]) === -1) {
-					tempList2.push(levelList[tempList[i]][j]);
+				//노멀 모드
+				for (j=0;j<levelList["normal"][tempList[i]].length;j++) {
+					if (tempList2.indexOf(levelList["normal"][tempList[i]][j]) === -1) {
+						tempList2.push(levelList["normal"][tempList[i]][j]);
+					}
 				}
-			}
+				//RPG 모드
+				for (j=0;j<levelList["rpg"][tempList[i]].length;j++) {
+					if (tempList2.indexOf(levelList["rpg"][tempList[i]][j]) === -1) {
+						tempList2.push(levelList["rpg"][tempList[i]][j]);
+					}
+				}
 			//지역
 			if (tempList3.indexOf(areaList[tempList[i]]) === -1) {
 				tempList3.push(areaList[tempList[i]]);
@@ -116,12 +181,19 @@ window.onload = function() {
 				<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>";
 		$("#frame_top").appendChild(slot);
 	}
+	//최대 드랍 가능 아이템 수량만큼 좌표 정보 생성
+	for (var i=0;i<maxQuantity;i++) {
+		coordinate.push([0,0]);
+	}
 
 	//확률 수치 default에 맞추기
 	chanceList_num = deepCopy(chanceList_num_default);
 
 	//날짜 최초 계산
 	setDate();
+
+	//전투력 최초 계산
+	setPower();
 
 	//======================
 	//※ 선로딩 실시
@@ -170,11 +242,11 @@ window.onload = function() {
 			for (var key in bgmList) {
 				if (bgmList.hasOwnProperty(key)) {
 					bgmList[key].loop = true;
-					bgmList[key].volume = 0.3;
+					bgmList[key].volume = 0.2;
 				}
 			}
 			//특정 브금 볼륨 조절 (너무 시끄러움)
-			bgmList["hell"].volume = 0.2;
+			bgmList["hell"].volume = 0.1;
 
 		//각종 효과음 준비
 		sfxList = {
@@ -190,16 +262,16 @@ window.onload = function() {
 			"pot_opening":new Audio("./sound/pot_opening.mp3"),
 		};
 			//각종 효과음 설정
-			sfxList["open"].volume = 0.5;
-			sfxList["close"].volume = 0.5;
-			sfxList["hell_gabriel_yes"].volume = 0.5;
-			sfxList["hell_gabriel_no"].volume = 0.5;
-			sfxList["wearing"].volume = 0.5;
-			sfxList["enchant_progress"].volume = 0.5;
-			sfxList["enchant_success"].volume = 0.5;
-			sfxList["enchant_fail"].volume = 0.5;
-			sfxList["enchant_zero"].volume = 0.5;
-			sfxList["pot_opening"].volume = 0.5;
+			sfxList["open"].volume = 0.4;
+			sfxList["close"].volume = 0.4;
+			sfxList["hell_gabriel_yes"].volume = 0.4;
+			sfxList["hell_gabriel_no"].volume = 0.4;
+			sfxList["wearing"].volume = 0.4;
+			sfxList["enchant_progress"].volume = 0.4;
+			sfxList["enchant_success"].volume = 0.4;
+			sfxList["enchant_fail"].volume = 0.4;
+			sfxList["enchant_zero"].volume = 0.4;
+			sfxList["pot_opening"].volume = 0.4;
 	} catch(e) {
 		//audio 태그를 지원하지 않을 시
 		$("#option_sound").disabled = "disabled";
@@ -1219,7 +1291,7 @@ window.onload = function() {
 							return;
 						}
 						//실행 중 - 강화 불가
-						if (running === 1) {
+						if (runningState !== "") {
 							alert("※ 시뮬레이터 실행 중에는 강화할 수 없습니다.");
 							return;
 						}
@@ -1455,18 +1527,44 @@ window.onload = function() {
 		};
 		//1-2. 실행
 		$("#start1").onclick = function() {
-			onoff(1);
-			getEpicList();//에픽 리스트 구축
-			simulate(1);
+			if (runningState === "") {//0 : 정지상태
+				runningState = "trigger";//'자동 실행 변수' ON
+					$("#character_sprite").classList.remove("wait");
+					$("#character_sprite").classList.add("attack");
+				onoff(1);
+				getEpicList();//에픽 리스트 구축
+				trigger(1,0);
+			} else {
+				clearTimeout(autoRunning);//자동실행 해제
+				runningState = "";
+					//=================================
+					//* 캐릭터 스프라이트 정지
+					//=================================
+					$("#character_sprite").classList.remove("attack");
+					$("#character_sprite").classList.add("wait");
+					//=================================
+					//* 기둥 체력 회복
+					//=================================
+					if (playMode === "rpg") {
+						hellgate = lifeList[input[0]];
+						$("#hellgate_life").innerHTML = thousand(hellgate);
+					} else {
+						hellgate = 1;
+					}
+				objective = []//목표 초기화
+				onoff(0);//잠긴 버튼 복구
+			}
 		}
 		$("#start2").onclick = function() {
-			if (running !== 1) {//0 : 정지상태
+			if (runningState === "") {//0 : 정지상태
 				//목표 입력
 				if (setObjective("run") === true) {
-					running = 1;//'자동 실행 변수' ON
+					runningState = "trigger";//'자동 실행 변수' ON
+						$("#character_sprite").classList.remove("wait");
+						$("#character_sprite").classList.add("attack");
 					onoff(2);//버튼 잠그기
 					getEpicList();//에픽 리스트 구축
-					simulate(2);//실행
+					trigger(2,0);
 				}
 			} else {
 				//메세지 출력
@@ -1479,11 +1577,34 @@ window.onload = function() {
 				if ($("#record").style.display === "block") {
 					$("#record").scrollTop = $("#record").scrollHeight;
 				}
-				//뒷처리
-				clearTimeout(autoRun);//자동실행 해제
-				running = 0;//'자동 실행 변수' OFF
+			//뒷처리
+			clearTimeout(autoRunning);//자동실행 해제
+				//=================================
+				//* 캐릭터 스프라이트 정지
+				//=================================
+				$("#character_sprite").classList.remove("attack");
+				$("#character_sprite").classList.add("wait");
+				//=================================
+				//* 기둥 체력 회복
+				//=================================
+				if (playMode === "rpg") {
+					hellgate = lifeList[input[0]];
+					$("#hellgate_life").innerHTML = thousand(hellgate);
+				} else {
+					hellgate = 1;
+				}
 				objective = []//목표 초기화
-				onoff("drop");//잠긴 버튼 복구
+				//잠긴 버튼 복구
+				switch (runningState) {
+					case "trigger":
+						runningState = "";
+						onoff(0);
+						break;
+					case "simulate":
+						runningState = "";
+						onoff("drop");
+						break;
+				}
 			}
 		}
 
@@ -1574,8 +1695,8 @@ window.onload = function() {
 			if (confirm("초기화를 하면 모든 기록이 사라집니다.\n'정말로' 초기화하시겠습니까?" + temp)) {
 				//1. 필드 - 아이템 정리
 				for (var i=0;i<maxQuantity;i++) {
-					$("#item" + i.toString()).style.top = startList[input[0]][0].toString() + "px";
-					$("#item" + i.toString()).style.left = startList[input[0]][1].toString() + "px";
+					$("#item" + i.toString()).style.left = startList[input[0]][0].toString() + "px";
+					$("#item" + i.toString()).style.top = startList[input[0]][1].toString() + "px";
 
 					$("#item_name" + i.toString()).className = "item_name";
 					$("#item_name" + i.toString()).style.visibility = "hidden";
@@ -1593,6 +1714,7 @@ window.onload = function() {
 				}
 				//2. 회차 & 난이도 초기화
 				count = 0;
+				dateCount = 0;//일차도 초기화
 				$("#round_count").innerHTML = 0;
 				$("#round_difficulty").innerHTML = "";
 					//회차에 따른 날짜 재계산
@@ -1660,7 +1782,7 @@ window.onload = function() {
 						myCharacter = "";
 							$("#character_type").selectedIndex = 0;
 							$("#character_type").disabled = "";
-							power = 0;
+							setPower();
 							//항아리
 							tower = 0;
 								//"교환 불가" 항아리 지정해놨으면
@@ -1718,6 +1840,10 @@ window.onload = function() {
 			}
 		}
 
+		//========================================================
+		// ※ 각종 옵션 설정
+		//========================================================
+
 		//2-2. 아이템 명칭 출력 여부
 		$("#option_name_normal").onclick = function() {
 			var sheet = $("#style_name_normal");
@@ -1764,6 +1890,15 @@ window.onload = function() {
 			} catch(e) {
 				alert("＊경고 : \"에픽 조각 명칭\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
 				$("#option_name_jogak").checked = false;
+			}
+		}
+
+		//2. 캐릭터 이미지 출력
+		$("#option_character").onclick = function() {
+			if ($("#option_character").checked) {
+				$("#character_sprite").style.display = "block";
+			} else {
+				$("#character_sprite").style.display = "none";
 			}
 		}
 
