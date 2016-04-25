@@ -1805,9 +1805,9 @@ function sortItem(type, zone, zoneArr) {
 			input[6] = levelList[playMode][input[0]][rand(currentList_level)];
 
 			break;
-		//RPG모드 : 레벨별 가주치 미구현 - 그냥 랜덤
+		//RPG모드 : 레벨별 가주치 미구현 - 전부 다 집어넣음
 		case "rpg":
-			input[6] = levelList[playMode][input[0]][Math.floor(Math.random() * levelList[playMode][input[0]].length)];
+			input[6] = levelList[playMode][input[0]];
 
 			break;
 	}
@@ -1910,7 +1910,8 @@ function sortItem(type, zone, zoneArr) {
 								if ((currentList[j]["sort1"] === input[5]/*종류-무기*/
 								|| currentList[j]["sort2"] === input[5]/*종류-방어구*/
 								|| currentList[j]["sort3"] === input[5])/*종류-악세서리&특수장비*/
-								&& (playMode === "rpg" || currentList[j]["level"] === input[6]))/*레벨*/ {
+								&& ((playMode === "normal" && currentList[j]["level"] === input[6])
+							|| (playMode === "rpg" && input[6].indexOf(currentList[j]["level"]) >= 0)))/*레벨*/ {
 									tempArr.push(currentList[j]);
 								}
 							}
@@ -1952,7 +1953,8 @@ function sortItem(type, zone, zoneArr) {
 					if ((currentList[j]["sort1"] === input[5]/*종류-무기*/
 					|| currentList[j]["sort2"] === input[5]/*종류-방어구*/
 					|| currentList[j]["sort3"] === input[5])/*종류-악세서리&특수장비*/
-					&& (playMode === "rpg" || currentList[j]["level"] === input[6]))/*레벨*/ {
+					&& ((playMode === "normal" && currentList[j]["level"] === input[6])
+				|| (playMode === "rpg" && input[6].indexOf(currentList[j]["level"]) >= 0)))/*레벨*/ {
 						tempArr.push(currentList[j]);
 					}
 				}
