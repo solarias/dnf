@@ -102,13 +102,21 @@ body {
 	height:600px;
 
 	background-image:url('../images/epic/background_title.jpg');
+		animation:background_move 30s linear infinite;
 	background-size:925px 600px;
+	background-position:0px 0px;
 	border:1px black solid;
 		border-top:0px;
 
 	color:white;
 	font-weight:bold;
 }
+		@-webkit-keyframes background_move {
+			100% {background-position:-925px 0px;}
+		}
+		@keyframes background_move {
+			100% {background-position:-925px 0px;}
+		}
 	#titleScreen_title {
 		font-size:80px;
 		text-align:center;
