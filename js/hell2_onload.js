@@ -1637,6 +1637,10 @@ function main() {
 			setPotOpen($("#pot_tradable").value);
 		}
 		$("#pot_open").onclick = function() {
+			if (runningState !== "") {
+				alert("※ 시뮬레이터 실행 중에는 항아리를 개봉할 수 없습니다.");
+				return;
+			}
 			if (potList["opening"] === 0) {
 				//()무기 항아리 & 캐릭터 미지정) 취소
 				if ($("#pot_type").value === "무기" && myCharacter === "") {

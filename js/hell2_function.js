@@ -3239,7 +3239,9 @@ function setPotOpen(type) {
 
 			$("#pot_open").className = "";
 			$("#pot_open").value = "개봉 (∞)"
-			$("#pot_open").disabled = "";
+			if (runningState === "") {
+				$("#pot_open").disabled = "";
+			}
 
 			break;
 		case "notTradable":
@@ -3249,7 +3251,7 @@ function setPotOpen(type) {
 
 			$("#pot_open").className = "";
 			$("#pot_open").value = "개봉 (" + tower.toString() + ")"
-			if (tower > 0) {
+			if (tower > 0 && runningState === "") {
 				$("#pot_open").disabled = "";
 			} else {
 				$("#pot_open").disabled = "disabled";
