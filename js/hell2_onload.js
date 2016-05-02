@@ -4,31 +4,41 @@
 //=================================================================================================================
 window.onload = function() {
 	//모드 설명
+	$("#titleScreen_continue").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "block";
+		$("#titleScreen_description_normal").style.display = "none";
+		$("#titleScreen_description_rpg").style.display = "none";
+	};
 	$("#titleScreen_normal").onmouseover = function() {
 		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "block";
 		$("#titleScreen_description_rpg").style.display = "none";
 	};
 	$("#titleScreen_rpg").onmouseover = function() {
 		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "block";
 	};
 
 	//버튼 활성화
-	$("#titleScreen_normal").value = "일반 모드";
-		$("#titleScreen_normal").disabled = "";
-	$("#titleScreen_rpg").value = "RPG 모드";
-		$("#titleScreen_rpg").disabled = "";
+	$("#titleScreen_continue").innerHTML = "이어서 하기";
+		$("#titleScreen_continue").disabled = false;
+		$("#titleScreen_continue").style.color = "gray";
+	$("#titleScreen_normal").innerHTML = "일반 모드 시작";
+		$("#titleScreen_normal").disabled = false;
+	$("#titleScreen_rpg").innerHTML = "RPG 모드 시작";
+		$("#titleScreen_rpg").disabled = false;
 
 	//버튼 클릭
 	$("#titleScreen_normal").onclick = function() {
 		playMode = "normal";
 		//일반모드 : 표시만 해줌
 			$("#mode").innerHTML = "일반";
-		$("#cover").style.display = "block";
-		$("#wrapper").style.display = "block";
-		$("#titleScreen").style.display = "none";
+		$("#titleScreen_main").style.display = "none";
+		$("#titleScreen_loading").style.display = "block";
 		main();
 	};
 	$("#titleScreen_rpg").onclick = function() {
@@ -51,9 +61,12 @@ window.onload = function() {
 			$("#option_basicItem").disabled = "disabled";
 			//드랍 확률 조절
 			$("#shift_chance").disabled = "disabled";
-		$("#cover").style.display = "block";
-		$("#wrapper").style.display = "block";
-		$("#titleScreen").style.display = "none";
+			//도전장 가격 = 20,000 Gold
+			$("#cost_set_gold").disabled = "disabled";
+			$("#cost_set_gold").value = "도전장 가격 = 20,000 Gold";
+				gold = 20000;
+		$("#titleScreen_main").style.display = "none";
+		$("#titleScreen_loading").style.display = "block";
 		main();
 	};
 };
@@ -208,12 +221,12 @@ function main() {
 
 		if (sound_appear.canPlayType("audio/mpeg") !== "") {
 			//mp3 출력 가능
-			sound_appear.src = "http://cfile206.uf.daum.net/attach/26393B3B559DCAF43351BB";
-			sound_land.src = "http://cfile237.uf.daum.net/attach/220E343D559CD61C10451E";
+			sound_appear.src = "./sound/epic_appear.mp3";
+			sound_land.src = "./sound/epic_land.mp3";
 		} else {
 			//mp3 출력 불가 - ogg로 대체
-			sound_appear.src = "http://cfile225.uf.daum.net/attach/221A6F44559DD6D31E0F30";
-			sound_land.src = "http://cfile226.uf.daum.net/attach/2722E144559DD6D41A932A";
+			sound_appear.src = "./sound/epic_appear.ogg";
+			sound_land.src = "./sound/epic_land.pgg";
 		}
 
 		//BGM 준비
@@ -252,6 +265,8 @@ function main() {
 		sfxList = {
 			"open":new Audio("./sound/win_open.mp3"),
 			"close":new Audio("./sound/win_close.mp3"),
+			"hit":new Audio("./sound/hell_hit2.mp3"),
+			"item_drop":new Audio("./sound/hell_item_drop.mp3"),
 			"hell_gabriel_yes":new Audio("./sound/hell_gabriel_yes.mp3"),
 			"hell_gabriel_no":new Audio("./sound/hell_gabriel_no.mp3"),
 			"wearing":new Audio("./sound/hell_wearing.mp3"),
@@ -264,6 +279,8 @@ function main() {
 			//각종 효과음 설정
 			sfxList["open"].volume = 0.4;
 			sfxList["close"].volume = 0.4;
+			sfxList["hit"].volume = 0.1;
+			sfxList["item_drop"].volume = 0.4;
 			sfxList["hell_gabriel_yes"].volume = 0.4;
 			sfxList["hell_gabriel_no"].volume = 0.4;
 			sfxList["wearing"].volume = 0.4;
@@ -317,8 +334,11 @@ function main() {
 		//=================================================================================================================
 		//※ 선로딩 끝, 본격적 실행 시작
 		//=================================================================================================================
-		//로딩 커버 제거
-		$("#cover").style.display = "none";
+		//로딩 화면 제거
+		$("#titleScreen_loading").style.display = "none";
+		$("#titleScreen").style.display = "none";
+		//wrapper 개봉
+		$("#wrapper").style.display = "block";
 
 		//2. 일부 값 미리 입력
 		dungeon_select();//2-1. 던전 선택
@@ -1699,12 +1719,17 @@ function main() {
 			if (confirm("초기화를 하면 모든 기록이 사라집니다.\n'정말로' 초기화하시겠습니까?" + temp)) {
 				//1. 필드 - 아이템 정리
 				for (var i=0;i<maxQuantity;i++) {
-					$("#item" + i.toString()).style.left = startList[input[0]][0].toString() + "px";
-					$("#item" + i.toString()).style.top = startList[input[0]][1].toString() + "px";
+					coordinate[i-1] = [0,0];
+					$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
+					$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+					$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 					$("#item_name" + i.toString()).className = "item_name";
 					$("#item_name" + i.toString()).style.visibility = "hidden";
-						$("#description" + i.toString()).style.left = "0px";
+						//$("#description" + i.toString()).style.left = "0px";
+						$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
+						$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+						$("#description" + i.toString()).style.transform = "translate(0px,0px)";
 					$("#item_img" + i.toString()).style.visibility = "hidden";
 
 					$("#effect_appear" + i.toString()).style.visibility = "hidden";
@@ -1860,7 +1885,10 @@ function main() {
 					}";
 					//필드 아이템 이름 재배치
 					for (var i=0;i<maxQuantity;i++) {
-						$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
+						//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
+						$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
+						$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
+						$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
 					}
 				} else {
 					//필터링 해제
@@ -1884,7 +1912,10 @@ function main() {
 					}";
 					//필드 아이템 이름 재배치
 					for (var i=0;i<maxQuantity;i++) {
-						$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
+						//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
+						$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
+						$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
+						$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
 					}
 				} else {
 					//필터링 해제

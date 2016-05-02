@@ -117,107 +117,198 @@ body {
 		@keyframes background_move {
 			100% {background-position:-925px 0px;}
 		}
-	#titleScreen_title {
-		font-size:80px;
-		text-align:center;
-
-		text-shadow:
-			0px -1px black,
-			1px -1px black,
-			1px 0px black,
-			1px 1px black,
-			0px 1px black,
-			-1px 1px black,
-			-1px 0px black,
-			-1px -1px black;
+	#titleScreen_main {
+		display:block;
 	}
-	#titleScreen_person {
-		margin-right:20px;
+		#titleScreen_title {
+			font-size:80px;
+			text-align:center;
 
-		color:#BBBBBB;
-		font-size:30px;
-		text-align:right;
-
-		text-shadow:
-			0px -1px black,
-			1px -1px black,
-			1px 0px black,
-			1px 1px black,
-			0px 1px black,
-			-1px 1px black,
-			-1px 0px black,
-			-1px -1px black;
-	}
-	.titleScreen_description {
-		position:absolute;
-		top:240px;
-		left:220px;
-
-		padding:10px;
-		width:350px;
-		height:330px;
-
-		background-color:rgba(30,30,30,0.8);
-		border-radius:20px;
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
-
-		color:white;
-		font-size:25px;
-	}
-		.titleScreen_description p {
-			margin-bottom:10px;
+			text-shadow:
+				0px -1px black,
+				1px -1px black,
+				1px 0px black,
+				1px 1px black,
+				0px 1px black,
+				-1px 1px black,
+				-1px 0px black,
+				-1px -1px black;
 		}
-		#titleScreen_description_nothing {
-			display:none;
+		#titleScreen_person {
+			margin-right:20px;
+
+			color:#BBBBBB;
+			font-size:30px;
+			text-align:right;
+
+			text-shadow:
+				0px -1px black,
+				1px -1px black,
+				1px 0px black,
+				1px 1px black,
+				0px 1px black,
+				-1px 1px black,
+				-1px 0px black,
+				-1px -1px black;
 		}
-		#titleScreen_description_normal {
-			display:block;
+		.titleScreen_description {
+			position:absolute;
+			top:220px;
+			left:220px;
+
+			padding:10px;
+			width:350px;
+			height:360px;
+
+			background-color:rgba(30,30,30,0.8);
+			border-radius:20px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+
+			color:white;
+			font-size:22px;
 		}
-		#titleScreen_description_rpg {
-			display:none;
-		}
-	.titleScreen_button {
-		position:absolute;
-
-		width:300px;
-		height:150px;
-
-		background: #FFFFFF; /* default */
-		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
-		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
-		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-
-		border-radius:20px;
-
-		font-size:60px;
-		font-weight:bold;
-	}
-			.titleScreen_button:hover {
-				box-shadow:
-					-2px 0px 10px skyblue,
-					-2px 2px 10px skyblue,
-					0px 2px 10px skyblue,
-					2px 2px 10px skyblue,
-					2px 0px 10px skyblue,
-					2px -2px 10px skyblue,
-					0px -2px 10px skyblue,
-					-2px -2px 10px skyblue;
+			.titleScreen_description p {
+				margin-bottom:10px;
 			}
-			.titleScreen_button:active {
-				background:#dedede;
+			#titleScreen_description_nothing {
+				display:block;
 			}
-		#titleScreen_normal {
-			right:30px;
-			bottom:210px;
+			#titleScreen_description_continue {
+				display:none;
+			}
+				#titleScreen_description_continue span p{
+					color:yellow;
+					text-indent:20px;
+				}
+			#titleScreen_description_normal {
+				display:none;
+			}
+			#titleScreen_description_rpg {
+				display:none;
+			}
+		.titleScreen_button {
+			position:absolute;
+
+			width:320px;
+			height:105px;
+
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+			border-radius:20px;
+
+			font-size:45px;
+			font-weight:700;
+			text-align:center;
 		}
-		#titleScreen_rpg {
-			right:30px;
-			bottom:30px;
+				.titleScreen_button img {
+					width:auto;
+					height:90px;
+
+					vertical-align:middle;
+				}
+				.titleScreen_button:hover {
+					box-shadow:
+						-2px 0px 10px skyblue,
+						-2px 2px 10px skyblue,
+						0px 2px 10px skyblue,
+						2px 2px 10px skyblue,
+						2px 0px 10px skyblue,
+						2px -2px 10px skyblue,
+						0px -2px 10px skyblue,
+						-2px -2px 10px skyblue;
+
+					font-weight:900;
+				}
+				.titleScreen_button:active {
+					background:#dedede;
+				}
+			#titleScreen_continue {
+				right:20px;
+				bottom:275px;
+
+				background: #FFD83E; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #FFD83E);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FFD83E));
+				background: -ms-linear-gradient(top center, #FFFFFF, #FFD83E);
+				background: linear-gradient(to bottom, #ffffff, #FFD83E);
+
+				font-size:60px;
+			}
+				#titleScreen_continue:active {
+					background:#ffd800;
+				}
+			#titleScreen_normal {
+				right:20px;
+				bottom:140px;
+			}
+			#titleScreen_rpg {
+				right:20px;
+				bottom:20px;
+			}
+
+	#titleScreen_loading {
+		display:none;
+	}
+		#loading_description {
+			margin:190px auto 0px auto;
+			padding:20px;
+			width:800px;
+			height:130px;
+
+			background-color:rgba(30,30,30,0.8);
+			border-radius:20px;
 		}
+			#loading_description p {
+				color:white;
+				font-size:20px;
+			}
+			#loading_description p#loading_notice {
+				font-size:50px;
+			}
+			#loading_description p a {
+				color:red;
+				font-size:20px;
+				font-weight:bold;
+				text-decoration:underline;
+			}
+				#loading_description p a:hover {
+					color:red;
+				}
+			#loading_description hr {
+				margin:10px 0px;
+
+				border:1px white solid;
+
+				text-align:left;
+			}
+		#loading_progress {
+			position:relative;
+
+			margin:20px auto;
+			width:820px;
+			height:50px;
+
+			background-color:rgba(30,30,30,0.9);
+			border:10px #303030 solid;
+			border-radius:10px;
+		}
+			#loading_progress_bar {
+				position:absolute;
+				left:0px;
+				top:0px;
+
+				width:0%;
+				height:100%;
+
+				background-color:yellow;
+			}
 /*======================================================================================================*/
 /* ※ A. 전체 */
 /*======================================================================================================*/
@@ -516,7 +607,7 @@ body {
 	/*======================================================================================================*/
 	#frame_top .notice {
 		position:absolute;
-		z-index:101;
+		z-index:1010;
 
 		padding:3px;
 		width:205px;
@@ -550,7 +641,7 @@ body {
 		position:absolute;
 		top:5px;
 		left:5px;
-		z-index:10;
+		z-index:990;
 
 		padding:5px 7px;
 		width:320px;
@@ -572,7 +663,7 @@ body {
 			position:absolute;
 			top:40px;
 			left:15px;
-			z-index:10;
+			z-index:980;
 
 			width:300px;
 			height:22px;
@@ -675,7 +766,7 @@ body {
 				position:absolute;
 				top:62px;
 				left:145px;
-				z-index:10;
+				z-index:100;
 
 				padding:5px;
 				width:153px;
@@ -813,7 +904,7 @@ body {
 		position:absolute;
 		top:5px;
 		right:5px;
-		z-index:10;
+		z-index:100;
 
 		background: #FF6A00; /* default */
 		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
@@ -857,7 +948,7 @@ body {
 		position:absolute;
 		top:80px;
 		left:175px;
-		z-index:110;
+		z-index:1100;
 
 		width:400px;
 		height:355px;
@@ -915,12 +1006,15 @@ body {
 			#option_left label {
 				font-size:12px;
 			}
-			#option_left label:hover {
-				cursor:pointer;
-				cursor:hand;
+				#label_sound {
+					margin-right:10px;
+				}
+				#option_left label:hover {
+					cursor:pointer;
+					cursor:hand;
 
-				text-decoration:underline;
-			}
+					text-decoration:underline;
+				}
 			#option_left hr {
 				margin:4px 0px;
 
@@ -1001,7 +1095,7 @@ body {
 		position:absolute;
 		bottom:10px;
 		left:10px;
-		z-index:100;
+		z-index:1000;
 
 		width:100px;
 		height:40px;
@@ -1050,7 +1144,7 @@ body {
 		position:absolute;
 		top:5px;
 		right:5px;
-		z-index:100;
+		z-index:1000;
 
 		padding:0px 5px;
 		width:520px;
@@ -1801,7 +1895,7 @@ body {
 				float:left;
 
 				margin-right:2px;
-				width:329px;
+				width:327px;
 				height:30px;
 
 				background-color:#303030;
@@ -1869,7 +1963,7 @@ body {
 				float:left;
 
 				margin-top:2px;
-				width:85px;
+				width:83px;
 				height:22px;
 
 				background: #FFFFFF; /* default */
@@ -1984,7 +2078,7 @@ body {
 		position:absolute;
 		top:100px;
 		right:524px;
-		z-index:100;
+		z-index:1000;
 
 		padding:5px;
 		width:200px;
@@ -2097,7 +2191,7 @@ body {
 
 	#shift1, #shift2, #shift3, #shift4, #shift5 {
 		position:absolute;
-		z-index:100;
+		z-index:1000;
 
 		height:40px;
 
@@ -2216,7 +2310,7 @@ body {
 					position:absolute;
 					top:2px;
 					left:333px;
-					z-index:101;
+					z-index:1010;
 
 					width:680px;
 					height:792px;
@@ -2255,7 +2349,7 @@ body {
 		position:absolute;
 		top:5px;
 		right:5px;
-		z-index:101;
+		z-index:1010;
 
 		padding:0px 5px;
 		width:520px;
@@ -2478,7 +2572,7 @@ body {
 		position:absolute;
 		top:119px;
 		left:44px;
-		z-index:90;
+		z-index:980;
 
 		width:660px;
 		height:260px;
@@ -2742,7 +2836,7 @@ body {
 		position:absolute;
 		top:110px;
 		left:177px;
-		z-index:95;
+		z-index:990;
 
 		width:386px;
 		height:302px;
@@ -2813,7 +2907,7 @@ body {
 			position:absolute;
 			top:0px;
 			left:0px;
-			z-index:4;
+			z-index:5;
 		}
 			.description.normal {
 				display:none;
@@ -2824,6 +2918,7 @@ body {
 		.item_name {
 			padding:3px 5px;
 			width:auto;
+			z-index:5;
 
 			background:rgba(0,0,0,0.6);
 			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
@@ -2840,7 +2935,7 @@ body {
 		.item_img {
 			position:absolute;
 			top:25px;
-			z-index:2;
+			z-index:5;
 
 			width:1px;
 			height:1px;
@@ -2851,12 +2946,14 @@ body {
 			visibility:hidden;
 		}
 			.item_img.rotate {
+				-ms-transform:rotate(360deg);
+				-webkit-transform:rotate(360deg);
 				transform:rotate(360deg);
 
-				-webkit-transition: all 0.72s ease-in-out;
-				-moz-transition: all 0.72s ease-in-out;
-				-o-transition: all 0.72s ease-in-out;
-				transition: all 0.72s ease-in-out;
+				-webkit-transition: all 0.5s linear;
+				-moz-transition: all 0.5s linear;
+				-o-transition: all 0.5s linear;
+				transition: all 0.5s linear;
 			}
 			.item_img.shadow {
 				/*성능 문제로 사용하지 않음
@@ -2870,8 +2967,10 @@ body {
 		.effect_appear {
 			position:absolute;
 			top:0px;
+			left:-144px;
+
 			height:0px;
-			z-index:3;
+			z-index:4;
 
 			width:340px;
 			height:396px;
@@ -2883,8 +2982,8 @@ body {
 		.effect_land {
 			position:absolute;
 			top:0px;
-			height:0px;
-			z-index:1;
+			left:-302px;
+			z-index:4;
 
 			width:603px;
 			height:316px;
@@ -2896,7 +2995,8 @@ body {
 		.effect_wait {
 			position:absolute;
 			top:0px;
-			height:0px;
+			left:-99px;
+			z-index:4;
 
 			width:187px;
 			height:186px;
@@ -2910,7 +3010,7 @@ body {
 		position:absolute;
 		top:0px;
 		left:0px;
-		z-index:5;
+		z-index:720;
 
 		width:208px;
 		height:140px;
@@ -3341,52 +3441,6 @@ body {
 /*======================================================================================================*/
 /* ※ 4. 기타 */
 /*======================================================================================================*/
-#cover {
-    position:absolute;
-	top:0px;
-	left:0px;
-	z-index:1000;
-
-    margin:0;
-    padding:30px;
-	width:100%;
-	height:100%;
-
-	background-color:#303030;
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	box-sizing:border-box;
-
-	color:white;
-	font-weight:bold;
-
-	display:none;
-}
-	#cover p {
-		font-size:20px;
-	}
-	#cover p#cover_notice {
-		font-size:50px;
-	}
-	#cover p a {
-		color:red;
-		font-size:20px;
-		font-weight:bold;
-		text-decoration:underline;
-	}
-		#cover p a:hover {
-			color:red;
-		}
-	#cover hr {
-		margin-left:0px;
-		margin-bottom:20px;
-		width:620px;
-
-		border:1px white solid;
-
-		text-align:left;
-	}
-
 #imagePreloader {
 	width:1px;
 	height:1px;

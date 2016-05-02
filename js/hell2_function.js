@@ -7,12 +7,16 @@
 						var imagesArray = [];
 						var img;
 						var remaining = arr.length;
+						var percent = "0%";
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
+								//퍼센트 계산
+								percent = Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString() + "%";
 								//외부 처리
-								document.getElementById("cover_notice").innerHTML = "\
-								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								$("#loading_notice").innerHTML = "" +
+									"로딩 " + percent + " 완료";
+								$("#loading_progress_bar").style.width = percent;
 								//내부 처리
 								--remaining;
 								if (remaining <= 0) {
@@ -20,10 +24,14 @@
 								}
 							};
 							img.onerror = function() {
+								//퍼센트 계산
+								percent = Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString() + "%";
 								//외부 처리
-								document.getElementById("cover_notice").innerHTML = "\
-								이미지 로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
+								$("#loading_notice").innerHTML = "" +
+									"로딩 " + percent + " 완료";
+								$("#loading_progress_bar").style.width = percent;
 								--remaining;
+								//내부 처리W
 								if (remaining <= 0) {
 									callBack();
 								}
@@ -389,6 +397,10 @@ function setDate() {
 	$("#date_fatigue").style.width = ((dateState['remain'] / dateState['len_' + dateState['dayType']]) * 100).toString() + "%";
 }
 
+//던전 로딩
+function dungeon_loading(dun) {
+
+}
 //던전 선택
 function dungeon_select() {
 	//1. 변수 조절 (오류 대비 - 공백이면 숫자 "0" 반환)
@@ -407,7 +419,10 @@ function dungeon_select() {
 
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			$("#description" + i.toString()).style.left = "0px";
+			//$("#description" + i.toString()).style.left = "0px";
+			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
+			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
+			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		$("#effect_appear" + i.toString()).style.visibility = "hidden";
@@ -443,7 +458,7 @@ function dungeon_select() {
 			$("#character_sprite").style.left = (startList[input[0]][0] - 40) + "px";
 			$("#character_sprite").className = "right";
 		} else {
-			$("#character_sprite").style.left = (startList[input[0]][0] - 140 - 25) + "px";
+			$("#character_sprite").style.left = (startList[input[0]][0]- 140 - 25) + "px";
 			$("#character_sprite").className = "left";
 		}
 		//y축
@@ -907,9 +922,20 @@ function trigger(num, step) {
 
 			break;
 		default:
+			//타격음 재생
+			if ($("#option_hitsound").checked) {
+				if (sfxList["hit"].paused) {
+					sfxList["hit"].play();
+				} else {
+					try {
+						sfxList["hit"].currentTime = 0;
+					} catch(e) {}
+				}
+			}
 			//=================================
 			//* 체력 감소
 			//=================================
+
 			hellgate = Math.max(0, hellgate - power);
 			$("#hellgate_life").innerHTML = thousand(hellgate);
 			//날짜 증가
@@ -966,7 +992,10 @@ function simulate(num){
 		$("#description" + i.toString()).className = "description";
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			$("#description" + i.toString()).style.left = "0px";
+			//$("#description" + i.toString()).style.left = "0px";
+			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
+			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
+			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		//에픽 이펙트 숨기기
@@ -1157,7 +1186,7 @@ function simulate(num){
 						//내용 저장
 						content_text[0] += text;
 						//내용 출력
-						$("#record").innerHTML += text;
+						$("#record").innerHTML = content_text[0];
 						//스크롤바 이동
 						$("#record").scrollTop = $("#record").scrollHeight;
 				} else {
@@ -1184,6 +1213,14 @@ function checkDrop(num) {
 	//IF - 1회 실행
 	if (num === 1) {
 		//1. 아이템 드롭
+			//아이템 드롭 사운드
+			if ($("#option_sound").checked) {
+				try {
+					sfxList["item_drop"].pause();
+					sfxList["item_drop"].currentTime = 0;
+				} catch(e) {}
+				sfxList["item_drop"].play();
+			}
 		for (var i=0;i<thisTime.length;i++) {
 			dropItem(thisTime[i]);
 		}
@@ -1240,6 +1277,14 @@ function checkDrop(num) {
 				//목표 초기화
 				objective = [];
 			//d-1. 아이템 드롭
+				//아이템 드롭 사운드
+				if ($("#option_sound").checked) {
+					try {
+						sfxList["item_drop"].pause();
+						sfxList["item_drop"].currentTime = 0;
+					} catch(e) {}
+					sfxList["item_drop"].play();
+				}
 			for (var i=0;i<thisTime.length;i++) {
 				dropItem(thisTime[i]);
 			}
@@ -1262,6 +1307,14 @@ function checkDrop(num) {
 			if (runningState !== "") {//'자동 실행 변수'가 ON일 경우
 				//a. 가브리엘 출현 시
 				if (tempGabriel === true) {
+					//아이템 드롭 사운드
+					if ($("#option_sound").checked) {
+						try {
+							sfxList["item_drop"].pause();
+							sfxList["item_drop"].currentTime = 0;
+						} catch(e) {}
+						sfxList["item_drop"].play();
+					}
 					//아이템 드롭
 					for (var i=0;i<thisTime.length;i++) {
 						dropItem(thisTime[i]);
@@ -1275,6 +1328,14 @@ function checkDrop(num) {
 				} else {
 					//(RPG 모드일 때만)아이템 드롭
 					if (playMode === "rpg") {
+						//아이템 드롭 사운드
+						if ($("#option_sound").checked) {
+							try {
+								sfxList["item_drop"].pause();
+								sfxList["item_drop"].currentTime = 0;
+							} catch(e) {}
+							sfxList["item_drop"].play();
+						}
 						for (var i=0;i<thisTime.length;i++) {
 							dropItem(thisTime[i]);
 						}
@@ -1283,6 +1344,22 @@ function checkDrop(num) {
 					nextStep(num);
 				}
 			} else {
+				//아이템 드롭 사운드
+				if ($("#option_sound").checked) {
+					try {
+						sfxList["item_drop"].pause();
+						sfxList["item_drop"].currentTime = 0;
+					} catch(e) {}
+					sfxList["item_drop"].play();
+				}
+					//아이템 드롭 사운드
+					if ($("#option_sound").checked) {
+						try {
+							sfxList["item_drop"].pause();
+							sfxList["item_drop"].currentTime = 0;
+						} catch(e) {}
+						sfxList["item_drop"].play();
+					}
 				//아이템 드롭
 				for (var i=0;i<thisTime.length;i++) {
 					dropItem(thisTime[i]);
@@ -1835,7 +1912,10 @@ function sortItem(type, zone, zoneArr) {
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " rare";
 						$("#item_name" + zone.toString()).innerHTML = "마법으로 봉인된 " + name2;
-							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
@@ -1861,7 +1941,10 @@ function sortItem(type, zone, zoneArr) {
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " epic";
 						$("#item_name" + zone.toString()).innerHTML = name2;
-							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
+							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
@@ -1885,7 +1968,10 @@ function sortItem(type, zone, zoneArr) {
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " unique";
 						$("#item_name" + zone.toString()).innerHTML = name2;
-							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
+							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
@@ -1923,7 +2009,10 @@ function sortItem(type, zone, zoneArr) {
 						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 						$("#item_name" + zone.toString()).className += " epic";
 						$("#item_name" + zone.toString()).innerHTML = temp["name"];
-							$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
@@ -1937,7 +2026,6 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_img" + zone.toString()).style.visibility = "visible";
 
 						//출현 이펙트 가시화 (에픽 전용)
-						$("#effect_appear" + zone.toString()).style.left = (-144).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
@@ -1965,7 +2053,10 @@ function sortItem(type, zone, zoneArr) {
 				$("#description" + zone.toString()).className += " jogak";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " jogak";
 				$("#item_name" + zone.toString()).innerHTML = temp["name"] + " 조각";
-					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_에픽조각";
@@ -1990,7 +2081,10 @@ function sortItem(type, zone, zoneArr) {
 				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " epic";
 				$("#item_name" + zone.toString()).innerHTML = "(조각 완성) " + temp["name"];
-					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
@@ -2004,7 +2098,6 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.left = (-144).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
@@ -2088,7 +2181,10 @@ function sortItem(type, zone, zoneArr) {
 				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " epic";
 				$("#item_name" + zone.toString()).innerHTML = "(항아리) " + temp["name"];
-					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
@@ -2102,13 +2198,20 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.left = (-144).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 				//=================================
 				//* 완성템 개별 드랍 & 업데이트 - 시작
 				//=================================
+					//아이템 드롭 사운드
+					if ($("#option_sound").checked) {
+						try {
+							sfxList["item_drop"].pause();
+							sfxList["item_drop"].currentTime = 0;
+						} catch(e) {}
+						sfxList["item_drop"].play();
+					}
 					//아이템 드랍 실시
 					dropItem([zone,zoneArr,"에픽",temp]);
 					//버튼 활성화 대기
@@ -2183,7 +2286,10 @@ function sortItem(type, zone, zoneArr) {
 				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
 				$("#item_name" + zone.toString()).className += " rare";
 				$("#item_name" + zone.toString()).innerHTML = "지옥파티 초대장";
-					$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
+					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
+					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_초대장";
@@ -2735,7 +2841,10 @@ function make(num,amount) {
 		$("#description" + i.toString()).className = "description";
 		$("#item_name" + i.toString()).className = "item_name";
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			$("#description" + i.toString()).style.left = "0px";
+			//$("#description" + i.toString()).style.left = "0px";
+			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
+			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
+			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		//에픽 이펙트 숨기기
@@ -2767,6 +2876,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		var leftMove = zoneArr[zone][0];
 		var topMove = zoneArr[zone][1];
 		var topMoveModify = 5;//5로 고정
+		$("#item" + zone.toString()).style.zIndex = 900 - (zoneArr[zone][1]*10);
 	}
 
 	if (step < 12) {
@@ -2774,7 +2884,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		coordinate[zone-1][0] += leftMove;
 		coordinate[zone-1][1] -= topMove;
 		var coo = coordinate[zone-1][0].toString() + "px," + coordinate[zone-1][1].toString() + "px"
-		$("#item" + zone.toString()).style.msTransform = "translate(" + coo + ") rotateY(0deg)";
+		$("#item" + zone.toString()).style.msTransform = "translate(" + coo + ")";
 		$("#item" + zone.toString()).style.webkitTransform = "translate(" + coo + ") rotateY(0deg)";
 		$("#item" + zone.toString()).style.transform = "translate(" + coo + ") rotateY(0deg)";
 
@@ -2814,13 +2924,11 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		//애니메이션 지속
 		if (animating === 1) {
 			//착지 이펙트 가시화
-			$("#effect_land" + zone.toString()).style.left = (-302).toString() + "px";
 			$("#effect_land" + zone.toString()).style.top = (-161+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_land" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
 
 			//대기 이펙트 가시화
-			$("#effect_wait" + zone.toString()).style.left = (-99).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.top = (-98+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_wait" + zone.toString()),"wait",zone,188,0,-2255,100,1);
@@ -3422,7 +3530,10 @@ function openPot(type, tradable, step) {
 					$("#description" + i.toString()).className = "description";
 					$("#item_name" + i.toString()).className = "item_name";
 					$("#item_name" + i.toString()).style.visibility = "hidden";
-						$("#description" + i.toString()).style.left = "0px";
+						//$("#description" + i.toString()).style.left = "0px";
+						$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
+						$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
+						$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 					$("#item_img" + i.toString()).style.visibility = "hidden";
 
 					//에픽 이펙트 숨기기

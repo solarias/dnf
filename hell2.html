@@ -21,19 +21,58 @@
 			<p id="titleScreen_title">지옥파티 시뮬레이터</p>
 			<p id="titleScreen_person">Made By : 루리웹 솔라리어스</p>
 
-			<div id="titleScreen_description_nothing" class="titleScreen_description">
+			<div id="titleScreen_main">
+				<div id="titleScreen_description_nothing" class="titleScreen_description">
+				</div>
+				<div id="titleScreen_description_continue" class="titleScreen_description">
+					<p>이전에 하던 게임을 이어서 할 수 있습니다.</p>
+					<br />
+					<p>곧 구현될 예정입니다.</p>
+					<!--
+					<p>※ 지난번에 하던 게임 : </p>
+					<span id="continue_no">
+						<p>- 저장된 내용이 없습니다</p>
+					</span>
+					<span id="continue_yes">
+						<p>  - 모드 : <span id="continue_mode">????</span></p>
+						<p>  - 플레이 회차 : <span id="continue_count">????</span> 회</p>
+						<p>  - 플레이 일차 : <span id="continue_count">????</span> 일</p>
+						<p>  - 캐릭터 직업 : <span id="continue_character">????</span></p>
+						<p>  - 전투력 : <span id="continue_power">????</span></p>
+					</span>
+					-->
+				</div>
+				<div id="titleScreen_description_normal" class="titleScreen_description">
+					<p>새로운 <span class="yellow">일반 모드</span>를 시작합니다.</p>
+					<br/>
+					<p>아무 조건없이 시뮬레이터를 이용할 수 있습니다.</p>
+					<p>기존의 지옥파티 시뮬레이터가 이 모드에 해당되며, 착용 장비와 관련없이 실행 속도가 빠릅니다.</p>
+				</div>
+				<div id="titleScreen_description_rpg" class="titleScreen_description">
+					<p>새로운 <span class="yellow">RPG 모드</span>를 시작합니다.</p>
+					<br/>
+					<p>저레벨에서 고레벨까지 순차적으로 아이템파밍을 즐길 수 있습니다.</p>
+					<p>장착하는 장비 레벨에 따라 캐릭터가 강해지며, 이에 따라 실행 속도도 빨라집니다.</p>
+					<p>교환 가능 항아리 개봉, 확률 조절 등 일부 기능을 이용할 수 없습니다.</p>
+				</div>
+				<button id="titleScreen_continue" class="titleScreen_button" disabled="true">로딩 중</button>
+				<button id="titleScreen_normal" class="titleScreen_button" disabled="true">로딩 중</button>
+				<button id="titleScreen_rpg" class="titleScreen_button" disabled="true">로딩 중</button>
 			</div>
-			<div id="titleScreen_description_normal" class="titleScreen_description">
-				<p>아무 조건없이 시뮬레이터를 이용할 수 있는 모드입니다.</p>
-				<p>기존의 지옥파티 시뮬레이터가 이 모드에 해당되며, 착용 장비와 관련없이 실행 속도가 빠릅니다.</p>
+
+			<div id="titleScreen_loading">
+				<div id="loading_description">
+					<p id="loading_notice">로딩 0% 완료</p>
+					<hr/>
+					<p>※ 이 상태가 오래 지속되면 페이지 새로고침(F5)를 시도해보세요.</p>
+					<p>※ 그래도 문제가 해결되지 않으면 <a href="http://blog.naver.com/ansewo/220622642452" target="_black" >여기</a>에 댓글을 남겨주세요.</p>
+				</div>
+				<div id="loading_progress">
+					<div id="loading_progress_bar">
+
+					</div>
+				</div>
 			</div>
-			<div id="titleScreen_description_rpg" class="titleScreen_description">
-				<p>저레벨에서 고레벨까지 순차적으로 아이템파밍을 즐길 수 있는 모드입니다.</p>
-				<p>장착하는 장비 레벨에 따라 캐릭터가 강해지며, 이에 따라 실행 속도도 빨라집니다.</p>
-				<p>교환 가능 항아리 개봉, 확률 조절 등 일부 기능을 이용할 수 없습니다.</p>
-			</div>
-			<input id="titleScreen_normal" class="titleScreen_button" type="button" value="로딩 중" disabled />
-			<input id="titleScreen_rpg" class="titleScreen_button" type="button" value="로딩 중" disabled />
 		</div>
 
 		<div id="wrapper">
@@ -439,7 +478,11 @@
 						<hr/>
 						<input id="option_sound" type="checkbox" />
 						<label id="label_sound" for="option_sound">
-							효과음 출력
+							효과음
+						</label>
+						<input id="option_hitsound" type="checkbox" />
+						<label id="label_hitsound" for="option_hitsound">
+							타격음
 						</label>
 						<br/>
 						<input id="option_bgm" type="checkbox" />
@@ -981,8 +1024,8 @@
 						<span id="power_area">
 						<p>&lt;전투력&gt;</p>
 						<p id="character_power">1,500</p>
-						</span
 							<hr/>
+						</span>
 						<input id="equip_check_enchant" type="checkbox" />
 						<label for="equip_check_enchant">강화 시 경고창을 띄우지 않음</label>
 							<hr/>
@@ -1367,15 +1410,6 @@
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 
-		<!--로딩할 동안 가림막 기능 수행-->
-		<div id="cover">
-			<p id="cover_notice">로딩 대기중...</p>
-			<hr/>
-			<p>※ 이 상태가 오래 지속되면 페이지 새로고침(F5)를 시도해보세요.</p>
-			<p>※ 그래도 문제가 해결되지 않으면 <a href="http://blog.naver.com/ansewo/220622642452" target="_black" >여기</a>에 댓글을 남겨주세요.</p>
-		</div>
-		<!--로딩할 동안 가림막 기능 수행-->
-
 		<div id="imagePreloader">
 		</div>
 
@@ -1390,8 +1424,10 @@
 		<script type="text/javascript" src="./sprite/spriteList.js"></script>
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
 
-		<script type="text/javascript" src="./js/hell1_data.js"></script><!--데이터 - 메인-->
-		<script type="text/javascript" src="./js/hell2_data.js"></script><!--데이터 - 보충-->
+		<script type="text/javascript" src="./js/hell2_data_game.js"></script>
+		<script type="text/javascript" src="./js/hell2_data_user.js"></script>
+		<script type="text/javascript" src="./js/hell2_saveload.js"></script>
+
 		<script type="text/javascript" src="./js/hell2_function.js"></script>
 		<script type="text/javascript" src="./js/hell2_onload.js"></script>
 
