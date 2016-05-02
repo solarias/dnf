@@ -1408,11 +1408,13 @@ body {
 						color:darkgray;
 						text-align:left;
 					}
-						#inventory_display table .col_1 .epic {/*에픽 장비 이름*/
+						#inventory_display table .col_1.color_epic {/*에픽 장비 이름*/
+							color:#E5B64A;
 							font-weight:bold;
 							text-decoration:none;
 						}
-						#inventory_display table .col_1 .set {/*세트 파츠 이름*/
+						#inventory_display table .col_1.color_set {/*세트 파츠 이름*/
+							color:#59FF00;
 							font-weight:bold;
 							text-decoration:none;
 						}
@@ -1525,11 +1527,13 @@ body {
 						color:darkgray;
 						text-align:left;
 					}
-						#set_display table .col_1 .epic {/*에픽 장비 이름*/
+						#set_display table .col_1.color_epic {/*에픽 장비 이름*/
+							color:#E5B64A;
 							font-weight:bold;
 							text-decoration:none;
 						}
-						#set_display table .col_1 .set {/*세트 파츠, 완성된 '세트' 이름*/
+						#set_display table .col_1.color_set {/*세트 파츠, 완성된 '세트' 이름*/
+							color:#59FF00;
 							font-weight:bold;
 							text-decoration:none;
 						}
@@ -1544,7 +1548,7 @@ body {
 						#set_display table .hap .col_1 {/*진행중 '세트' 이름*/
 							font-size:16px;
 						}
-						#set_display table .hap.show .col_1 {/*진행중 '세트' 이름*/
+						#set_display table .hap.show .col_1:not(.color_epic) {/*진행중 '세트' 이름*/
 							color:#C1C1C1;
 							text-decoration:underline;
 						}
@@ -1653,11 +1657,13 @@ body {
 						color:darkgray;
 						text-align:left;
 					}
-						#craft_display table .col_1 .epic {/*에픽 장비 이름*/
+						#craft_display table .col_1.color_epic {/*에픽 장비 이름*/
+							color:#E5B64A;
 							font-weight:bold;
 							text-decoration:none;
 						}
-						#craft_display table .col_1 .set {/*세트 파츠 이름*/
+						#craft_display table .col_1.color_set {/*세트 파츠 이름*/
+							color:#59FF00;
 							font-weight:bold;
 							text-decoration:none;
 						}

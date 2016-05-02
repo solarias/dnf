@@ -135,14 +135,14 @@ function generateSet() {
 						temp = 0;//현 파츠 전체 개수
 						for (j=0;j<itemList.length;j++) {
 							if (itemList[j]["set"] === itemList[i]["set"]) {
-								if (row.className !== itemList[j]["sort1"]) {//2차 분류
-									row.className += " " + itemList[j]["sort1"];
+								if (!row.classList.contains(itemList[j]["sort1"])) {//2차 분류
+									row.classList.add(itemList[j]["sort1"]);
 								}
-								if (row.className !== itemList[j]["sort2"]) {//2차 분류
-									row.className += " " + itemList[j]["sort2"];
+								if (!row.classList.contains(itemList[j]["sort2"])) {//2차 분류
+									row.classList.add(itemList[j]["sort2"]);
 								}
-								if (row.className !== itemList[j]["sort3"]) {//3차 분류
-									row.className += " " + itemList[j]["sort3"];
+								if (!row.classList.contains(itemList[j]["sort3"])) {//3차 분류
+									row.classList.add(itemList[j]["sort3"]);
 								}
 								temp += 1;
 							}
@@ -922,7 +922,9 @@ function trigger(num, step) {
 
 			break;
 		default:
-			//타격음 재생
+			//=================================
+			//* 타격음 재생
+			//=================================
 			if ($("#option_hitsound").checked) {
 				if (sfxList["hit"].paused) {
 					sfxList["hit"].play();
@@ -935,8 +937,13 @@ function trigger(num, step) {
 			//=================================
 			//* 체력 감소
 			//=================================
-
-			hellgate = Math.max(0, hellgate - power);
+			//일반 모드 : 방어력 무시 (즉사 처리를 위해)
+			if (playMode === "normal") {
+				hellgate = Math.max(0, hellgate - power);
+			//RPG모드 : 방어력 적용
+			} else {
+				hellgate = Math.max(0, hellgate - Math.max(0,(power - defList[input[0]])));
+			}
 			$("#hellgate_life").innerHTML = thousand(hellgate);
 			//날짜 증가
 			dateCount += 1;
@@ -2465,9 +2472,9 @@ function update(type, info, quantity) {
 		//4-4. 해당 아이템 (색깔 입혀서) 가시화
 		if (tr_inventory.className.indexOf("not_show") !== -1) {
 			if (info["set"] !== "") {//세트
-				tr_inventory.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr_inventory.getElementsByTagName("td")[0].innerHTML + "</span>";
+				tr_inventory.getElementsByTagName("td")[0].classList.add("color_set");
 			} else {//그 외
-				tr_inventory.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr_inventory.getElementsByTagName("td")[0].innerHTML + "</span>";
+				tr_inventory.getElementsByTagName("td")[0].classList.add("color_epic");
 			}
 		}
 		tr_inventory.classList.remove("not_show");
@@ -2507,7 +2514,7 @@ function update(type, info, quantity) {
 			}
 			//5-4. 해당 아이템 (색깔 입혀서) 가시화
 			if (tr_set.className.indexOf("not_show") !== -1) {
-				tr_set.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr_set.getElementsByTagName("td")[0].innerHTML + "</span>";
+				tr_set.getElementsByTagName("td")[0].classList.add("color_set");
 			}
 			tr_set.classList.remove("not_show");
 			tr_set.classList.add("show");
@@ -2524,7 +2531,7 @@ function update(type, info, quantity) {
 			var a = 0;//해당 세트 보유 파츠 수
 			var b = 0;//해당 세트 총 파츠 수
 			for (var i=0;i<itemList.length;i++) {
-				if (itemList[i]["set"] === (tr_set_hap.getElementsByTagName("td")[0].innerText || tr_set_hap.getElementsByTagName("td")[0].textContent)) {
+				if (itemList[i]["set"] === tr_set_hap.getElementsByTagName("td")[0].innerHTML) {
 					if (itemList[i]["have"] > 0) {
 						a += 1; //보유한 것만 증가
 					};
@@ -2535,13 +2542,12 @@ function update(type, info, quantity) {
 			tr_set_hap.getElementsByTagName("td")[4].innerHTML = a.toString() + "/" + b.toString();
 			//5-5-4. 세트 이름 스타일 변경
 				//5-5-4-1. 진행중
-				var tr_name = (tr_set_hap.getElementsByTagName("td")[0].innerText || tr_set_hap.getElementsByTagName("td")[0].textContent);
 				if (a < b) {
-					tr_set_hap.getElementsByTagName("td")[0].innerHTML = tr_name;
+					tr_set_hap.getElementsByTagName("td")[0].classList.remove("color_epic");
 					tr_set_hap.getElementsByTagName("td")[5].innerHTML = "";
 				//5-5-4-2. 완성
 				} else {
-					tr_set_hap.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr_name + "</span>"
+					tr_set_hap.getElementsByTagName("td")[0].classList.add("color_epic");
 				//5-5-4-2-1. (완성 '시' 한정) 세트 첫 획득 지정
 					if (tr_set_hap.getElementsByTagName("td")[5].innerHTML === "") {
 						tr_set_hap.getElementsByTagName("td")[5].innerHTML = "\
@@ -2593,9 +2599,9 @@ function update(type, info, quantity) {
 		if (type === "조각") {
 			if (tr_craft.className.indexOf("not_show") !== -1) {
 				if (info["set"] !== "") {//세트
-					tr_craft.getElementsByTagName("td")[0].innerHTML = "<span class='set'>" + tr_craft.getElementsByTagName("td")[0].innerHTML + "</span>";
+					tr_craft.getElementsByTagName("td")[0].classList.add("color_set");
 				} else {//그 외
-					tr_craft.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr_craft.getElementsByTagName("td")[0].innerHTML + "</span>";
+					tr_craft.getElementsByTagName("td")[0].classList.add("color_epic");
 				}
 			}
 			tr_craft.classList.remove("not_show");
@@ -2701,7 +2707,7 @@ function recycle(num,amount,cmd) {
 			//3-3-2. inventory - '첫 획득' 기록 제거
 			tr.getElementsByTagName("td")[5].innerHTML = "";
 			//3-3-3. inventory - 해당 아이템 (색깔 지우고) 가시화 해제
-			tr.getElementsByTagName("td")[0].innerHTML = (tr.getElementsByTagName("td")[0].innerText || tr.getElementsByTagName("td")[0].textContent);
+			tr.getElementsByTagName("td")[0].classList.remove("color_epic", "color_set");
 			tr.classList.remove("show");
 			tr.classList.add("not_show");
 		//3-5. set 설정
@@ -2711,7 +2717,7 @@ function recycle(num,amount,cmd) {
 			//3-4-2. inventory - '첫 획득' 기록 제거
 			tr2.getElementsByTagName("td")[5].innerHTML = "";
 			//3-4-3. inventory - 해당 아이템 (색깔 지우고) 가시화 해제
-			tr2.getElementsByTagName("td")[0].innerHTML = (tr2.getElementsByTagName("td")[0].innerText || tr2.getElementsByTagName("td")[0].textContent);
+			tr2.getElementsByTagName("td")[0].classList.remove("color_epic", "color_set");
 			tr2.classList.remove("show");
 			tr2.classList.add("not_show");
 			//3-5. set에서 '세트' 설정
@@ -2726,7 +2732,7 @@ function recycle(num,amount,cmd) {
 			var a = 0;
 			var b = 0;
 			for (var i=0;i<itemList.length;i++) {
-				if (itemList[i]["set"] === (tr_set.getElementsByTagName("td")[0].innerText || tr_set.getElementsByTagName("td")[0].textContent)) {
+				if (itemList[i]["set"] === tr_set.getElementsByTagName("td")[0].innerHTML) {
 					if (itemList[i]["have"] > 0) {
 						a += 1; //보유한 것만 증가
 					};
@@ -2737,13 +2743,12 @@ function recycle(num,amount,cmd) {
 			tr_set.getElementsByTagName("td")[4].innerHTML = a.toString() + "/" + b.toString();
 			//5-5-4. 세트 이름 스타일 변경
 				//5-5-4-1. 진행중
-				var tr_name = (tr_set.getElementsByTagName("td")[0].innerText || tr_set.getElementsByTagName("td")[0].textContent);
 				if (a < b) {
-					tr_set.getElementsByTagName("td")[0].innerHTML = tr_name;
+					tr_set.getElementsByTagName("td")[0].classList.remove("color_epic", "color_set");
 					tr_set.getElementsByTagName("td")[5].innerHTML = "";
 				//5-5-4-2. 완성
 				} else {
-					tr_set.getElementsByTagName("td")[0].innerHTML = "<span class='epic'>" + tr_name + "</span>"
+					tr_set.getElementsByTagName("td")[0].classList.add("color_epic");
 				//5-5-4-2-1. (완성 시 한정) 세트 첫 획득 지정
 					tr_set.getElementsByTagName("td")[5].innerHTML = "\
 						" + thousand(count) + "회차\

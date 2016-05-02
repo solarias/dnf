@@ -63,7 +63,7 @@ window.onload = function() {
 			$("#shift_chance").disabled = "disabled";
 			//도전장 가격 = 20,000 Gold
 			$("#cost_set_gold").disabled = "disabled";
-			$("#cost_set_gold").value = "도전장 가격 = 20,000 Gold";
+			$("#cost_set_gold").value = "도전장 = 20,000 Gold";
 				gold = 20000;
 		$("#titleScreen_main").style.display = "none";
 		$("#titleScreen_loading").style.display = "block";
