@@ -507,7 +507,7 @@ function main(cmd) {
 	imageList.push("./sprite/images/sprite_hell.png");
 	imageList.push("./sprite/images/sprite_item.png");
 	//2. 뒷배경 - 1
-	for (var i=0;i<=17;i++) {
+	for (var i=0;i<=18;i++) {
 		imageList.push("./images/epic/background/background_" + i.toString() + ".jpg");
 	}
 	imageList.push("./images/epic/background/background_ending.png");
