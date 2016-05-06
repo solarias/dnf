@@ -539,7 +539,9 @@ function dungeon_select(cmd) {
 		$("#dungeon").selectedIndex = indexSelectByValue($("#dungeon"),cmd.toString());
 	}
 	//0. (오류 임시처방) RPG & 베키 : 난이도 슬레이어로 고정
-	$("#difficulty").selectedIndex = 4;
+	if (playMode !== "normal") {
+		$("#difficulty").selectedIndex = 4;
+	}
 
 	//1. 변수 조절 (오류 대비 - 공백이면 숫자 "0" 반환)
 	if ($("#dungeon").value === "") {
