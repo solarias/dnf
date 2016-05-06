@@ -584,7 +584,6 @@ function main(cmd) {
 			$("#channel").selectedIndex = dataObj["channel"];//2-3. 채널 적용
 		} else {
 			dungeon_select();//2-1. 던전 선택
-
 		}
 
 		//3. 팝업창 구성 : 로드하지 않았을 경우에만

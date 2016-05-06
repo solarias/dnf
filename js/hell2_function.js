@@ -535,7 +535,9 @@ function dungeon_loading(dun) {
 //던전 선택
 function dungeon_select(cmd) {
 	//0. (정해둔 던전이 있다면) 해당 던전 표시
-	if (cmd) $("#dungeon").selectedIndex = $("#dungeon").options[cmd].index;
+	if (cmd) {
+		$("#dungeon").selectedIndex = indexSelectByValue($("#dungeon"),cmd.toString());
+	}
 
 	//1. 변수 조절 (오류 대비 - 공백이면 숫자 "0" 반환)
 	if ($("#dungeon").value === "") {
@@ -3101,7 +3103,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		}
 
 		//이미지 회전 중단
-		$("#item_img"+ zone.toString()).className = "item_img shadow";
+		$("#item_img"+ zone.toString()).className = "item_img";
 
 		//아이템 드랍 대기
 		dropCount += 1;
