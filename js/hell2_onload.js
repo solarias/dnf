@@ -1557,12 +1557,13 @@ function main(cmd) {
 					}
 					$("#list_" + partList[i] + "_enchant_run").onclick = function() {
 						//기본 장비 - 강화 불가
-						if (wearingList[partList[i]]["enchant"] === 20) {
-							alert("※ 경고 : 이미 최대치(+20)까지 강화하였습니다.");
+						if (!wearingList[partList[i]]) {
+							alert("※ 경고 : 기본 장비는 강화할 수 없습니다.");
 							return;
 						}
-						if (wearingList[partList[i]] === null) {
-							alert("※ 경고 : 기본 장비는 강화할 수 없습니다.");
+						//현재 20강 : 강화 불가
+						if (wearingList[partList[i]]["enchant"] === 20) {
+							alert("※ 경고 : 이미 최대치(+20)까지 강화하였습니다.");
 							return;
 						}
 						//실행 중 - 강화 불가

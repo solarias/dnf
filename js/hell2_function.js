@@ -3389,7 +3389,7 @@ function setPower() {
 			}
 		}
 		//베키 : 전투력 2배 뻥튀기
-		if (myCharacter === "beckey") tempPower *= 1.5;
+		if (myCharacter === "beckey") tempPower *= 2;
 		//전투력 적용
 		power = tempPower;
 		$("#character_power").innerHTML = thousand(power);
