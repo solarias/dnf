@@ -4,17 +4,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
 		<!--라이브러리 패키지 : 함수모음, 화면 자동확대, 터치 딜레이 제거 (시작)-->
-		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/subtool.min.js"></script>
 		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
 		<!--라이브러리 패키지 (끝)-->
-		<link rel="stylesheet" type="text/css" href="./css/hell2.css" />
+		<link rel="stylesheet" type="text/css" href="./css/hell2.min.css" />
 
 		<title>지옥파티 시뮬레이터 2</title>
 	</head>
 	<body>
 		<div id="frame_ad" class="dnf_hell2"></div>
-			<link rel="stylesheet" type="text/css" href="http://solarias.github.io/function/frame_ad/frame_ad.css" />
-			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
+			<link rel="stylesheet" type="text/css" href="../function/frame_ad/frame_ad.css" />
+			<script type="text/javascript" src="../function/frame_ad/frame_ad.js"></script>
 
 
 		<div id="titleScreen">
@@ -27,8 +27,6 @@
 				<div id="titleScreen_description_continue" class="titleScreen_description">
 					<p>이전에 하던 게임을 이어서 할 수 있습니다.</p>
 					<br />
-					<p>곧 구현될 예정입니다.</p>
-					<!--
 					<p>※ 지난번에 하던 게임 : </p>
 					<span id="continue_no">
 						<p>- 저장된 내용이 없습니다</p>
@@ -36,11 +34,10 @@
 					<span id="continue_yes">
 						<p>  - 모드 : <span id="continue_mode">????</span></p>
 						<p>  - 플레이 회차 : <span id="continue_count">????</span> 회</p>
-						<p>  - 플레이 일차 : <span id="continue_count">????</span> 일</p>
+						<p>  - 플레이 일차 : <span id="continue_dayCount">????</span> 일</p>
 						<p>  - 캐릭터 직업 : <span id="continue_character">????</span></p>
 						<p>  - 전투력 : <span id="continue_power">????</span></p>
 					</span>
-					-->
 				</div>
 				<div id="titleScreen_description_normal" class="titleScreen_description">
 					<p>새로운 <span class="yellow">일반 모드</span>를 시작합니다.</p>
@@ -50,14 +47,62 @@
 				</div>
 				<div id="titleScreen_description_rpg" class="titleScreen_description">
 					<p>새로운 <span class="yellow">RPG 모드</span>를 시작합니다.</p>
+					<p>모험가를 강하게 만들어서 안톤을 쓰러뜨리세요.</p>
 					<br/>
 					<p>저레벨에서 고레벨까지 순차적으로 아이템파밍을 즐길 수 있습니다.</p>
-					<p>장착하는 장비 레벨에 따라 캐릭터가 강해지며, 이에 따라 실행 속도도 빨라집니다.</p>
+					<p>장착하는 장비의 <span class="yellow">레벨</span>과 <span class="yellow">강화도</span>에 따라 캐릭터가 강해지며, 이에 따라 실행 속도도 빨라집니다.</p>
 					<p>교환 가능 항아리 개봉, 확률 조절 등 일부 기능을 이용할 수 없습니다.</p>
 				</div>
-				<button id="titleScreen_continue" class="titleScreen_button" disabled="true">로딩 중</button>
-				<button id="titleScreen_normal" class="titleScreen_button" disabled="true">로딩 중</button>
-				<button id="titleScreen_rpg" class="titleScreen_button" disabled="true">로딩 중</button>
+				<div id="titleScreen_description_beckey" class="titleScreen_description">
+					<p>안톤이 루크 할아범을 납치해버렸어! 루크 할아범을 되찾을 수 있도록 나에게 힘을 줘!</p>
+					<br/>
+					<p><span class="yellow">베키</span>를 캐릭터로 설정하여 <span class="yellow">RPG 모드</span>를 진행합니다.</p>
+					<p>베키의 공격속도는 모험가의 절반밖에 되지 않지만, 전투력은 1.5배입니다.</p>
+					<p>베키는 거너 무기만 장비할 수 있습니다.</p>
+					<br/>
+					<p>베키로 안톤을 쓰러뜨리면 <span class="yellow">베키</span>전용 엔딩컷</span>을 볼 수 있습니다.</p>
+				</div>
+				<div id="titleScreen_description_password" class="titleScreen_description">
+					<p>패스워드를 입력하여 게임을 이어할 수 있습니다.</p>
+					<br/>
+					<p>곧 구현될 예정입니다.</p>
+				</div>
+
+				<button id="titleScreen_continue" class="titleScreen_button" disabled="true" autocomplete="off">로딩 중</button>
+				<button id="titleScreen_normal" class="titleScreen_button" disabled="true" autocomplete="off">로딩 중</button>
+				<button id="titleScreen_rpg" class="titleScreen_button" disabled="true" autocomplete="off">로딩 중</button>
+				<button id="titleScreen_password" class="titleScreen_button" disabled="true" autocomplete="off">로딩 중</button>
+				<button id="titleScreen_beckey" class="titleScreen_button" disabled="true" autocomplete="off">로딩 중</button>
+			</div>
+
+			<div id="titleScreen_startOption">
+				<div id="startOption_description">
+					<p id="startOption_description_title">캐릭터 직업을 선택해주세요</p>
+					<div id="startOption_description_sprite_box">
+						<div id="startOption_description_sprite" class=""></div>
+					</div>
+
+					<input id="startPption_select_gunner_f" class="startPption_select off" type="button" value="gunner_f" />
+					<input id="startPption_select_gunner_m" class="startPption_select off" type="button" value="gunner_m" />
+					<input id="startPption_select_fighter_f" class="startPption_select off" type="button" value="fighter_f" />
+					<input id="startPption_select_fighter_m" class="startPption_select off" type="button" value="fighter_m" />
+					<input id="startPption_select_darkknight_m" class="startPption_select off" type="button" value="darkknight_m" />
+					<input id="startPption_select_swordman_f" class="startPption_select off" type="button" value="swordman_f" />
+					<input id="startPption_select_swordman_m" class="startPption_select off"type="button"  value="swordman_m" />
+
+					<input id="startPption_select_lancer_m" class="startPption_select off" type="button" value="lancer_m" />
+					<input id="startPption_select_knight_f" class="startPption_select off" type="button" value="knight_f" />
+					<input id="startPption_select_thief_f" class="startPption_select off" type="button" value="thief_f" />
+					<input id="startPption_select_priest_m" class="startPption_select off"type="button"  value="priest_m" />
+					<input id="startPption_select_creator_f" class="startPption_select off"type="button"  value="creator_f" />
+					<input id="startPption_select_mage_f" class="startPption_select off" type="button" value="mage_f" />
+					<input id="startPption_select_mage_m" class="startPption_select off" type="button" value="mage_m" />
+
+					<p id="startPption_selected">내 캐릭터 직업 : <span id="startPption_selected_text">없음</span></p>
+				</div>
+
+				<button id="startOption_start" class="titleScreen_button" disabled="true" autocomplete="off">RPG 모드 시작</button>
+				<button id="startOption_cancel" class="titleScreen_button" autocomplete="off">취소</button>
 			</div>
 
 			<div id="titleScreen_loading">
@@ -76,6 +121,8 @@
 		</div>
 
 		<div id="wrapper">
+			<div id="frame_cover">
+			</div>
 
 			<div id="frame_left">
 
@@ -110,8 +157,9 @@
 							<option value = "15">샐러맨더의 화로</option><!--5-->
 							<option value = "16">빛의 연회장</option><!--5-->
 						</optgroup>
-						<optgroup label="안톤 레이드(가상)">
+						<optgroup id="final_area" label="안톤 레이드">
 							<option value = "17">검은 화산</option><!--6-->
+							<option id="final_dungeon" value = "18">안톤 심장부</option><!--6-->
 						</optgroup>
 					</select>
 					</p>
@@ -492,6 +540,7 @@
 							&nbsp;<select id="bgm_type">
 								<option value="dungeon" selected>던전</option>
 								<option value="hell">헬</option>
+								<option value="beckey">베키</option>
 							</select>
 						<hr/>
 						<input id="option_gabriel" type="checkbox" />
@@ -756,144 +805,144 @@
 					<div id="equip_list">
 						<div id="list_무기" class="list_box">
 							<div id="list_무기_type" class="list_type">무기</div>
-							<div id="list_무기_icon" class="list_icon"></div>
-							<div id="list_무기_enchant" class="list_enchant">+0</div>
 							<select id="list_무기_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 무기</option>
 							</select>
+							<div id="list_무기_enchant" class="list_enchant">+0</div>
+							<div id="list_무기_icon" class="list_icon"></div>
 
-							<div id="list_무기_set" class="list_set"></div>
+							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_무기_power" class="list_power"></div>
-							<input id="list_무기_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_무기_set" class="list_set"></div>
 						</div>
 
 						<hr />
 
 						<div id="list_상의" class="list_box">
 							<div id="list_상의_type" class="list_type">상의</div>
-							<div id="list_상의_icon" class="list_icon"></div>
-							<div id="list_상의_enchant" class="list_enchant">+0</div>
 							<select id="list_상의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 상의</option>
 							</select>
+							<div id="list_상의_enchant" class="list_enchant">+0</div>
+							<div id="list_상의_icon" class="list_icon"></div>
 
-							<div id="list_상의_set" class="list_set"></div>
+							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_상의_power" class="list_power"></div>
-							<input id="list_상의_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_상의_set" class="list_set"></div>
 						</div>
 						<div id="list_하의" class="list_box">
 							<div id="list_하의_type" class="list_type">하의</div>
-							<div id="list_하의_icon" class="list_icon"></div>
-							<div id="list_하의_enchant" class="list_enchant">+0</div>
 							<select id="list_하의_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 하의</option>
 							</select>
+							<div id="list_하의_enchant" class="list_enchant">+0</div>
+							<div id="list_하의_icon" class="list_icon"></div>
 
-							<div id="list_하의_set" class="list_set"></div>
+							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_하의_power" class="list_power"></div>
-							<input id="list_하의_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_하의_set" class="list_set"></div>
 						</div>
 						<div id="list_머리어깨" class="list_box">
 							<div id="list_머리어깨_type" class="list_type">머리어깨</div>
-							<div id="list_머리어깨_icon" class="list_icon"></div>
-							<div id="list_머리어깨_enchant" class="list_enchant">+0</div>
 							<select id="list_머리어깨_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 머리어깨</option>
 							</select>
+							<div id="list_머리어깨_enchant" class="list_enchant">+0</div>
+							<div id="list_머리어깨_icon" class="list_icon"></div>
 
-							<div id="list_머리어깨_set" class="list_set"></div>
+							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_머리어깨_power" class="list_power"></div>
-							<input id="list_머리어깨_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_머리어깨_set" class="list_set"></div>
 						</div>
 						<div id="list_벨트" class="list_box">
 							<div id="list_벨트_type"v class="list_type">벨트</div>
-							<div id="list_벨트_icon" class="list_icon"></div>
-							<div id="list_벨트_enchant" class="list_enchant">+0</div>
 							<select id="list_벨트_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 벨트</option>
 							</select>
+							<div id="list_벨트_enchant" class="list_enchant">+0</div>
+							<div id="list_벨트_icon" class="list_icon"></div>
 
-							<div id="list_벨트_set" class="list_set"></div>
+							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_벨트_power" class="list_power"></div>
-							<input id="list_벨트_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_벨트_set" class="list_set"></div>
 						</div>
 						<div id="list_신발" class="list_box">
 							<div id="list_신발_type" class="list_type">신발</div>
-							<div id="list_신발_icon" class="list_icon"></div>
-							<div id="list_신발_enchant" class="list_enchant">+0</div>
 							<select id="list_신발_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 신발</option>
 							</select>
+							<div id="list_신발_enchant" class="list_enchant">+0</div>
+							<div id="list_신발_icon" class="list_icon"></div>
 
-							<div id="list_신발_set" class="list_set"></div>
+							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_신발_power" class="list_power"></div>
-							<input id="list_신발_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_신발_set" class="list_set"></div>
 						</div>
 
 						<hr />
 
 						<div id="list_목걸이" class="list_box">
 							<div id="list_목걸이_type" class="list_type">목걸이</div>
-							<div id="list_목걸이_icon" class="list_icon"></div>
-							<div id="list_목걸이_enchant" class="list_enchant">+0</div>
 							<select id="list_목걸이_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 목걸이</option>
 							</select>
+							<div id="list_목걸이_enchant" class="list_enchant">+0</div>
+							<div id="list_목걸이_icon" class="list_icon"></div>
 
-							<div id="list_목걸이_set" class="list_set"></div>
+							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_목걸이_power" class="list_power"></div>
-							<input id="list_목걸이_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_목걸이_set" class="list_set"></div>
 						</div>
 						<div id="list_팔찌" class="list_box">
 							<div id="list_팔찌_type" class="list_type">팔찌</div>
-							<div id="list_팔찌_icon" class="list_icon"></div>
-							<div id="list_팔찌_enchant" class="list_enchant">+0</div>
 							<select id="list_팔찌_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 팔찌</option>
 							</select>
+							<div id="list_팔찌_enchant" class="list_enchant">+0</div>
+							<div id="list_팔찌_icon" class="list_icon"></div>
 
-							<div id="list_팔찌_set" class="list_set"></div>
+							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_팔찌_power" class="list_power"></div>
-							<input id="list_팔찌_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_팔찌_set" class="list_set"></div>
 						</div>
 						<div id="list_반지" class="list_box">
 							<div id="list_반지_type" class="list_type">반지</div>
-							<div id="list_반지_icon" class="list_icon"></div>
-							<div id="list_반지_enchant" class="list_enchant">+0</div>
 							<select id="list_반지_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 반지</option>
 							</select>
+							<div id="list_반지_enchant" class="list_enchant">+0</div>
+							<div id="list_반지_icon" class="list_icon"></div>
 
-							<div id="list_반지_set" class="list_set"></div>
+							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_반지_power" class="list_power"></div>
-							<input id="list_반지_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_반지_set" class="list_set"></div>
 						</div>
 
 						<hr />
 
 						<div id="list_보조장비" class="list_box">
 							<div id="list_보조장비_type" class="list_type">보조장비</div>
-							<div id="list_보조장비_icon" class="list_icon"></div>
-							<div id="list_보조장비_enchant" class="list_enchant">+0</div>
 							<select id="list_보조장비_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 보조장비</option>
 							</select>
+							<div id="list_보조장비_enchant" class="list_enchant">+0</div>
+							<div id="list_보조장비_icon" class="list_icon"></div>
 
-							<div id="list_보조장비_set" class="list_set"></div>
+							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_보조장비_power" class="list_power"></div>
-							<input id="list_보조장비_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_보조장비_set" class="list_set"></div>
 						</div>
 						<div id="list_마법석" class="list_box">
 							<div id="list_마법석_type" class="list_type">마법석</div>
-							<div id="list_마법석_icon" class="list_icon"></div>
-							<div id="list_마법석_enchant" class="list_enchant">+0</div>
 							<select id="list_마법석_select" class="list_select">
 								<option value="">Lv.60 | 마법으로 봉인된 모험가 마법석</option>
 							</select>
+							<div id="list_마법석_enchant" class="list_enchant">+0</div>
+							<div id="list_마법석_icon" class="list_icon"></div>
 
-							<div id="list_마법석_set" class="list_set"></div>
+							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_마법석_power" class="list_power"></div>
-							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="장비 강화" />
+							<div id="list_마법석_set" class="list_set"></div>
 						</div>
 					</div>
 					<div id="equip_enchant">
@@ -1005,20 +1054,20 @@
 						<p>&lt;캐릭터 직업&gt;</p>
 						<select id="character_type" autocomplete="off">
 							<option value="" disabled selected>선택하세요</option>
-							<option value="귀검사(남)">귀검사(남)</option>
-							<option value="귀검사(여)">귀검사(여)</option>
-							<option value="다크나이트(남">다크나이트(남)</option>
-							<option value="격투가(남)">격투가(남)</option>
-							<option value="격투가(여)">격투가(여)</option>
-							<option value="거너(남)">거너(남)</option>
-							<option value="거너(여)">거너(여)</option>
-							<option value="마법사(남)">마법사(남)</option>
-							<option value="마법사(여)">마법사(여)</option>
-							<option value="크리에이터(여)">크리에이터(여)</option>
-							<option value="프리스트(남)">프리스트(남)</option>
-							<option value="도적(여)">도적(여)</option>
-							<option value="나이트(여)">나이트(여)</option>
-							<option value="마창사(남)">마창사(남)</option>
+							<option value="swordman_m">귀검사(남)</option>
+							<option value="swordman_f">귀검사(여)</option>
+							<option value="darkknight_m">다크나이트(남)</option>
+							<option value="fighter_m">격투가(남)</option>
+							<option value="fighter_f">격투가(여)</option>
+							<option value="gunner_m">거너(남)</option>
+							<option value="gunner_f">거너(여)</option>
+							<option value="mage_m">마법사(남)</option>
+							<option value="mage_f">마법사(여)</option>
+							<option value="creator_f">크리에이터(여)</option>
+							<option value="priest_m">프리스트(남)</option>
+							<option value="thief_f">도적(여)</option>
+							<option value="knight_f">나이트(여)</option>
+							<option value="lancer_m">마창사(남)</option>
 						</select>
 							<hr/>
 						<span id="power_area">
@@ -1322,6 +1371,43 @@
 
 		</div>
 
+		<!--RPG모드 & 베키모드 엔딩-->
+		<div id="beckey_ending">
+			<div id="beckey_ending_picture">
+			</div>
+			<input id="beckey_ending_button_first" class="beckey_ending_button" type="button" value="첫 사진으로" />
+			<input id="beckey_ending_button_end" class="beckey_ending_button" type="button" value="사진을 클릭하세요" />
+		</div>
+
+		<div id="ending">
+			<div class="ending_info top">
+				<span class="ending_info_left">캐릭터 직업</span>
+				<span id="ending_character" class="ending_info_right"></span>
+			</div>
+			<div class="ending_info">
+				<span class="ending_info_left">플레이 회차</span>
+				<span id="ending_count" class="ending_info_right"></span>
+			</div>
+			<div class="ending_info">
+				<span class="ending_info_left">플레이 일차</span>
+				<span id="ending_date" class="ending_info_right"></span>
+			</div>
+			<div class="ending_info">
+				<span class="ending_info_left">실질 소모 초대장</span>
+				<span id="ending_invite" class="ending_info_right"></span>
+			</div>
+			<div class="ending_info">
+				<span class="ending_info_left">실질 소모 골드</span>
+				<span id="ending_gold" class="ending_info_right"></span>
+			</div>
+			<div class="ending_info">
+				<span class="ending_info_left">최종 전투력</span>
+				<span id="ending_power" class="ending_info_right"></span>
+			</div>
+
+			<input id="ending_confirm" type="button" value="확인 완료" disabled />
+		</div>
+		<!--RPG모드 & 베키모드 엔딩-->
 
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -1424,12 +1510,12 @@
 		<script type="text/javascript" src="./sprite/spriteList.js"></script>
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
 
-		<script type="text/javascript" src="./js/hell2_data_game.js"></script>
-		<script type="text/javascript" src="./js/hell2_data_user.js"></script>
-		<script type="text/javascript" src="./js/hell2_saveload.js"></script>
+		<script type="text/javascript" src="./js/hell2_data_game.min.js"></script>
+		<script type="text/javascript" src="./js/hell2_data_user.min.js"></script>
+		<script type="text/javascript" src="./js/hell2_saveload.min.js"></script>
 
-		<script type="text/javascript" src="./js/hell2_function.js"></script>
-		<script type="text/javascript" src="./js/hell2_onload.js"></script>
+		<script type="text/javascript" src="./js/hell2_function.min.js"></script>
+		<script type="text/javascript" src="./js/hell2_onload.min.js"></script>
 
 	</body>
 

@@ -89,6 +89,52 @@ body {
 .text_center {
 	text-align:center;
 }
+/*캐릭터 스프라이트(공용)*/
+.swordman_m {
+	background-image:url('../images/epic/character_sprite/character_swordman_m.png');
+}
+.swordman_f {
+	background-image:url('../images/epic/character_sprite/character_swordman_f.png');
+}
+.darkknight_m {
+	background-image:url('../images/epic/character_sprite/character_darkknight_m.png');
+}
+.fighter_m {
+	background-image:url('../images/epic/character_sprite/character_fighter_m.png');
+}
+.fighter_f {
+	background-image:url('../images/epic/character_sprite/character_fighter_f.png');
+}
+.gunner_m {
+	background-image:url('../images/epic/character_sprite/character_gunner_m.png');
+}
+.gunner_f {
+	background-image:url('../images/epic/character_sprite/character_gunner_f.png');
+}
+.mage_m {
+	background-image:url('../images/epic/character_sprite/character_mage_m.png');
+}
+.mage_f {
+	background-image:url('../images/epic/character_sprite/character_mage_f.png');
+}
+.creator_f {
+	background-image:url('../images/epic/character_sprite/character_creator_f.png');
+}
+.priest_m {
+	background-image:url('../images/epic/character_sprite/character_priest_m.png');
+}
+.thief_f {
+	background-image:url('../images/epic/character_sprite/character_thief_f.png');
+}
+.knight_f {
+	background-image:url('../images/epic/character_sprite/character_knight_f.png');
+}
+.lancer_m {
+	background-image:url('../images/epic/character_sprite/character_lancer_m.png');
+}
+.beckey {
+	background-image:url('../images/epic/character_sprite/character_beckey.png');
+}
 
 
 /*======================================================================================================*/
@@ -101,7 +147,7 @@ body {
 	width:925px;
 	height:600px;
 
-	background-image:url('../images/epic/background_title.jpg');
+	background-image:url('../images/epic/background/background_title.jpg');
 		animation:background_move 30s linear infinite;
 	background-size:925px 600px;
 	background-position:0px 0px;
@@ -154,10 +200,10 @@ body {
 		.titleScreen_description {
 			position:absolute;
 			top:220px;
-			left:220px;
+			left:200px;
 
 			padding:10px;
-			width:350px;
+			width:355px;
 			height:360px;
 
 			background-color:rgba(30,30,30,0.8);
@@ -167,7 +213,7 @@ body {
 			box-sizing:border-box;
 
 			color:white;
-			font-size:22px;
+			font-size:20px;
 		}
 			.titleScreen_description p {
 				margin-bottom:10px;
@@ -178,6 +224,9 @@ body {
 			#titleScreen_description_continue {
 				display:none;
 			}
+				#continue_yes {
+					display:none;
+				}
 				#titleScreen_description_continue span p{
 					color:yellow;
 					text-indent:20px;
@@ -186,6 +235,12 @@ body {
 				display:none;
 			}
 			#titleScreen_description_rpg {
+				display:none;
+			}
+			#titleScreen_description_beckey {
+				display:none;
+			}
+			#titleScreen_description_password {
 				display:none;
 			}
 		.titleScreen_button {
@@ -252,6 +307,219 @@ body {
 				right:20px;
 				bottom:20px;
 			}
+			#titleScreen_beckey {
+				left:20px;
+				bottom:140px;
+
+				width:150px;
+			}
+			#titleScreen_password {
+				left:20px;
+				bottom:20px;
+
+				width:150px;
+			}
+
+	#titleScreen_startOption {
+		display:none;
+	}
+		#startOption_description {
+			position:relative;
+
+			margin:15px auto 0px auto;
+			padding:20px;
+			width:900px;
+			height:300px;
+
+			background-color:rgba(30,30,30,0.8);
+			border-radius:20px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+		}
+			#startOption_description_title {
+				float:both;
+				font-size:30px;
+				text-align:center;
+			}
+			#startOption_description_sprite_box {
+				position:relative;
+				overflow:hidden;
+				clear:both;
+				float:left;
+
+				margin-top:20px;
+				width:300px;
+				height:200px;
+
+				border:1px white solid;
+			}
+				#startOption_description_sprite {
+					position:absolute;
+					left:-100px;
+					top:-140px;
+
+					width:500px;
+					height:400px;
+
+					animation: sprite_wait 2s steps(12) infinite;
+				}
+			.startPption_select {
+				float:right;
+
+				margin:20px 0px 0px 8px;
+				width:70px;
+				height:60px;
+
+				font-size:0px;
+			}
+				.startPption_select:hover {
+					cursor:pointer;
+					cursor:hand;
+
+					box-shadow:
+						-2px 0px 2px white,
+						-2px 2px 2px white,
+						0px 2px 2px white,
+						2px 2px 2px white,
+						2px 0px 2px white,
+						2px -2px 2px white,
+						0px -2px 2px white,
+						-2px -2px 2px white;
+				}
+			#startPption_select_gunner_f.off {
+				background-image:url('../images/epic/character_button/gunner_f_off.png');
+			}
+			#startPption_select_gunner_f.on {
+				background-image:url('../images/epic/character_button/gunner_f_on.png');
+			}
+			#startPption_select_gunner_m.off {
+				background-image:url('../images/epic/character_button/gunner_m_off.png');
+			}
+			#startPption_select_gunner_m.on {
+				background-image:url('../images/epic/character_button/gunner_m_on.png');
+			}
+			#startPption_select_fighter_f.off {
+				background-image:url('../images/epic/character_button/fighter_f_off.png');
+			}
+			#startPption_select_fighter_f.on {
+				background-image:url('../images/epic/character_button/fighter_f_on.png');
+			}
+			#startPption_select_fighter_m.off {
+				background-image:url('../images/epic/character_button/fighter_m_off.png');
+			}
+			#startPption_select_fighter_m.on {
+				background-image:url('../images/epic/character_button/fighter_m_on.png');
+			}
+			#startPption_select_darkknight_m.off {
+				background-image:url('../images/epic/character_button/darkknight_m_off.png');
+			}
+			#startPption_select_darkknight_m.on {
+				background-image:url('../images/epic/character_button/darkknight_m_on.png');
+			}
+			#startPption_select_swordman_f.off {
+				background-image:url('../images/epic/character_button/swordman_f_off.png');
+			}
+			#startPption_select_swordman_f.on {
+				background-image:url('../images/epic/character_button/swordman_f_on.png');
+			}
+			#startPption_select_swordman_m.off {
+				background-image:url('../images/epic/character_button/swordman_m_off.png');
+			}
+			#startPption_select_swordman_m {
+				margin-left:0px;
+			}
+			#startPption_select_swordman_m.on {
+				background-image:url('../images/epic/character_button/swordman_m_on.png');
+			}
+			#startPption_select_lancer_m.off {
+				background-image:url('../images/epic/character_button/lancer_m_off.png');
+			}
+			#startPption_select_lancer_m.on {
+				background-image:url('../images/epic/character_button/lancer_m_on.png');
+			}
+			#startPption_select_knight_f.off {
+				background-image:url('../images/epic/character_button/knight_f_off.png');
+			}
+			#startPption_select_knight_f.on {
+				background-image:url('../images/epic/character_button/knight_f_on.png');
+			}
+			#startPption_select_thief_f.off {
+				background-image:url('../images/epic/character_button/thief_f_off.png');
+			}
+			#startPption_select_thief_f.on {
+				background-image:url('../images/epic/character_button/thief_f_on.png');
+			}
+			#startPption_select_priest_m.off {
+				background-image:url('../images/epic/character_button/priest_m_off.png');
+			}
+			#startPption_select_priest_m.on {
+				background-image:url('../images/epic/character_button/priest_m_on.png');
+			}
+			#startPption_select_creator_f.off {
+				background-image:url('../images/epic/character_button/creator_f_off.png');
+			}
+			#startPption_select_creator_f.on {
+				background-image:url('../images/epic/character_button/creator_f_on.png');
+			}
+			#startPption_select_mage_f.off {
+				background-image:url('../images/epic/character_button/mage_f_off.png');
+			}
+			#startPption_select_mage_f.on {
+				background-image:url('../images/epic/character_button/mage_f_on.png');
+			}
+			#startPption_select_mage_m {
+				margin-left:0px;
+			}
+			#startPption_select_mage_m.off {
+				background-image:url('../images/epic/character_button/mage_m_off.png');
+			}
+			#startPption_select_mage_m.on {
+				background-image:url('../images/epic/character_button/mage_m_on.png');
+			}
+
+		#startPption_selected {
+			clear:right;
+			float:right;
+
+			margin-top:25px;
+			width:538px;
+
+			font-size:20px;
+			text-align:center;
+		}
+			#startPption_selected_text {
+				color:yellow;
+			}
+		#startOption_start{
+			left:20px;
+			bottom:20px;
+		}
+		#startOption_start.able {
+			background: #516BFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+			background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+			background: linear-gradient(to bottom, #ffffff, #516BFF);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#516BFF)";
+		}
+			#startOption_start.able:active {
+				background:#3855FF;
+			}
+		#startOption_cancel {
+			right:20px;
+			bottom:20px;
+
+			background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+		}
+			#startOption_cancel:active {
+				background:#FFAA00;
+			}
 
 	#titleScreen_loading {
 		display:none;
@@ -312,6 +580,10 @@ body {
 /*======================================================================================================*/
 /* ※ A. 전체 */
 /*======================================================================================================*/
+#titleScreen {
+	display:block;
+}
+
 #wrapper {
 	position:relative;
 
@@ -324,6 +596,201 @@ body {
 
 	display:none;
 }
+
+#frame_cover {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10000;
+
+	background-color:white;
+	opacity:0;
+
+	display:none;
+}
+
+#beckey_ending {
+	position:relative;
+
+	margin:0px auto;
+	padding:30px;
+	width:925px;
+	height:600px;
+
+	background:url('../images/epic/background/background_ending.png');
+	border:1px black solid;
+		border-top:0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+
+	display:none;
+}
+	#beckey_ending_picture {
+		margin:0 auto;
+		width:800px;
+		height:408px;
+
+		background-color:black;
+		background-size:800px 408px;
+		border:5px gray outset;
+	}
+		#beckey_ending_picture:hover {
+			cursor:pointer;
+			cursor:hand;
+		}
+	#beckey_ending_button_first, #beckey_ending_button_end {
+		position:absolute;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border-radius:10px;
+
+		font-weight:bold;
+
+		display:block;
+	}
+			#beckey_ending_button_first {
+				left:30px;
+				bottom:30px;
+
+				width:200px;
+				height:60px;
+
+				font-size:30px;
+			}
+			#beckey_ending_button_end {
+				right:30px;
+				bottom:30px;
+
+				width:400px;
+				height:60px;
+
+				font-size:30px;
+			}
+		.beckey_ending_button:hover {
+			cursor:pointer;
+			cursor:hand;
+
+			box-shadow:
+				-2px 0px 2px skyblue,
+				-2px 2px 2px skyblue,
+				0px 2px 2px skyblue,
+				2px 2px 2px skyblue,
+				2px 0px 2px skyblue,
+				2px -2px 2px skyblue,
+				0px -2px 2px skyblue,
+				-2px -2px 2px skyblue;
+		}
+		#beckey_ending_button_first:active, #beckey_ending_button_end:active {
+			background:#DEDEDE;
+		}
+
+#ending {
+	position:relative;
+
+	margin:0px auto;
+	width:925px;
+	height:600px;
+
+	background-image:url('../images/epic/background/background_ending.png');
+	border:1px black solid;
+		border-top:0px;
+
+	display:none;
+}
+	.ending_info {
+		clear:left;
+		float:left;
+
+		margin-top:-1px;
+		margin-left:20px;
+		width:570px;
+		height:61px;
+
+		background-image:url('../images/epic/ending_info_background.png');
+
+		color:white;
+		font-size:20px;
+		font-weight:bold;
+		line-height:61px;
+	}
+			.ending_info.top {
+				margin-top:180px;
+			}
+		.ending_info_left {
+			float:left;
+
+			margin-left:30px;
+			width:170px;
+			height:61px;
+
+			color:yellow;
+			text-align:center;
+
+			display:block
+		}
+		.ending_info_right {
+			float:right;
+
+			margin-right:30px;
+			width:330px;
+			height:61px;
+
+			text-align:center;
+
+			display:block
+		}
+
+	#ending_confirm {
+		position:absolute;
+		right:20px;
+		bottom:20px;
+
+		width:250px;
+		height:80px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border-radius:20px;
+
+		font-size:40px;
+		font-weight:bold;
+	}
+		#ending_confirm:hover {
+			cursor:pointer;
+			cursor:hand;
+
+			box-shadow:
+				-2px 0px 2px skyblue,
+				-2px 2px 2px skyblue,
+				0px 2px 2px skyblue,
+				2px 2px 2px skyblue,
+				2px 0px 2px skyblue,
+				2px -2px 2px skyblue,
+				0px -2px 2px skyblue,
+				-2px -2px 2px skyblue;
+		}
+		#ending_confirm.able {background: #FF6A00; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+			background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+			background: linear-gradient(to bottom, #ffffff, #FF6A00);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+		}
+		#ending_confirm.able:active {
+			background:#FFAA00;
+		}
 /*======================================================================================================*/
 /* ※ 1. 좌단 */
 /*======================================================================================================*/
@@ -595,7 +1062,7 @@ body {
 	width:740px;
 	height:500px;
 
-	background-image:url('../images/epic/background_0.jpg');
+	background-image:url('../images/epic/background/background_0.jpg');
 
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -916,7 +1383,7 @@ body {
 		border:1px gray outset;
 		border-radius:3px;
 
-		width:177px;
+		width:150px;
 		height:30px;
 
 		font-size:20px;
@@ -1837,12 +2304,12 @@ body {
 				margin:10px 0px;
 				height:56px;
 			}
-			.list_box .list_type {
+			.list_type {
 				float:left;
 
 				margin-right:2px;
 				width:70px;
-				height:28px;
+				height:54px;
 
 				background: #a37531; /* Old browsers */
 				background: -webkit-linear-gradient(#a37531 0%, #752d00 50%, #a37531 100%);
@@ -1853,19 +2320,20 @@ body {
 				border-radius:1px;
 
 				color:yellow;
+				font-size:18px;
 				font-weight:bold;
 				text-align:center;
-				line-height:28px;
+				line-height:54px;
 			}
-				.list_box .list_type.set {
+				.list_type.set {
 					background: #37A12F; /* Old browsers */
 					background: -webkit-linear-gradient(#37A12F 0%, #217601 50%, #37A12F 100%);
 					background: -o-linear-gradient(#37A12F 0%, #217601 50%, #37A12F 100%);
 					background: linear-gradient(#37A12F 0%, #217601 50%, #37A12F 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 					-ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37A12F', endColorstr='#217601',GradientType=0 ); /* IE6-9 */
 				}
-			.list_box .list_icon {
-				float:left;
+			.list_icon {
+				float:right;
 
 				margin-right:2px;
 				width:28px;
@@ -1877,8 +2345,8 @@ body {
 				border:1px gray solid;
 				border-radius:1px;
 			}
-			.list_box .list_enchant {
-				float:left;
+			.list_enchant {
+				float:right;
 
 				margin-right:2px;
 				width:40px;
@@ -1897,11 +2365,10 @@ body {
 				text-align:center;
 				line-height:28px;
 			}
-			.list_box .list_select {
-				float:left;
+			.list_select {
+				float:right;
 
-				margin-right:2px;
-				width:327px;
+				width:330px;
 				height:30px;
 
 				background-color:#303030;
@@ -1912,7 +2379,7 @@ body {
 
 				display:block;
 			}
-					.list_box .list_select:hover {
+					.list_select:hover {
 						box-shadow:
 							-2px 0px 2px skyblue,
 							-2px -2px 2px skyblue,
@@ -1923,20 +2390,19 @@ body {
 							0px 2px 2px skyblue,
 							-2px 2px 2px skyblue;
 					}
-				.list_box .list_select option {
+				.list_select option {
 					background-color:white;
 
 					color:black;
 					font-size:13px;
 				}
-			.list_box .list_set {
-				clear:left;
-				float:left;
+			.list_set {
+				float:right;
 
 				margin-top:2px;
 				margin-right:2px;
 				padding:1px 5px;
-				width:136px;
+				width:132px;
 				height:20px;
 
 				background-color:#153C12;
@@ -1947,13 +2413,13 @@ body {
 				font-size:12px;
 				line-height:22px;
 			}
-			.list_box .list_power {
-				float:left;
+			.list_power {
+				float:right;
 
 				margin-top:2px;
 				margin-right:2px;
 				padding:1px 5px;
-				width:230px;
+				width:201px;
 				height:20px;
 
 				background-color:#4D0000;
@@ -1964,11 +2430,12 @@ body {
 				font-size:16px;
 				line-height:22px;
 			}
-			.list_box .list_enchant_run {
-				float:left;
+			.list_enchant_run {
+				clear:right;
+				float:right;
 
 				margin-top:2px;
-				width:83px;
+				width:45px;
 				height:22px;
 
 				background: #FFFFFF; /* default */
@@ -2320,7 +2787,7 @@ body {
 					width:680px;
 					height:792px;
 
-					background-image:url(../images/epic/epic_appear.png);
+					background-image:url('../images/epic/epic_appear.png');
 					background-size:auto 100%;
 
 					pointer-events: none;
@@ -2980,7 +3447,7 @@ body {
 			width:340px;
 			height:396px;
 
-			background-image:url(../images/epic/epic_appear.png);
+			background-image:url('../images/epic/epic_appear.png');
 
 			visibility:hidden;
 		}
@@ -2993,7 +3460,7 @@ body {
 			width:603px;
 			height:316px;
 
-			background-image:url(../images/epic/epic_land.png);
+			background-image:url('../images/epic/epic_land.png');
 
 			visibility:hidden;
 		}
@@ -3006,7 +3473,7 @@ body {
 			width:187px;
 			height:186px;
 
-			background-image:url(../images/epic/epic_wait.png);
+			background-image:url('../images/epic/epic_wait.png');
 
 			visibility:hidden;
 		}
@@ -3017,10 +3484,10 @@ body {
 		left:0px;
 		z-index:720;
 
-		width:208px;
-		height:140px;
+		width:500px;
+		height:400px;
 
-		background-image:url('../images/epic/character_sprite.png');
+		/*캐릭터 이미지 : 공용 클래스 스타일 적용*/
 	}
 		#character_sprite.left {
 		}
@@ -3034,26 +3501,26 @@ body {
 		}
 		/*대기모션은 자체적인 애니메이셔으로 소화*/
 		#character_sprite.wait {
-			animation: sprite_wait 1s steps(8) infinite;
+			animation: sprite_wait 2s steps(12) infinite;
 			background-position:0px 0px;
 			opacity:0.5;
 		}
 			@-webkit-keyframes sprite_wait {
-				100% {background-position:-1664px 0px;}
+				100% {background-position:-6000px 0px;}
 			}
 			@keyframes sprite_wait {
-				100% {background-position:-1664px 0px;}
+				100% {background-position:-6000px 0px;}
 			}
 		#character_sprite.attack {
-			animation: sprite_attack 0.25s steps(8) infinite;
-			background-position:0px 140px;
+			animation: sprite_attack 0.24s steps(12) infinite;
+			background-position:0px -400px;
 			opacity:1;
 		}
 			@-webkit-keyframes sprite_attack {
-				100% {background-position:-1664px 140px;}
+				100% {background-position:-6000px -400px;}
 			}
 			@keyframes sprite_attack {
-				100% {background-position:-1664px 140px;}
+				100% {background-position:-6000px -400px;}
 			}
 	#hellgate_level, #hellgate_item, #hellgate_life {
 		position:absolute;

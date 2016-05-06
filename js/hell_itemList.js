@@ -5,7 +5,7 @@ var itemList = [
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"브로큰 데스티니",
 		"set":"",
 		"goyu":"",
@@ -18,13 +18,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"수라의 길",
 		"set":"",
 		"goyu":"",
@@ -37,13 +37,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"반의 소검",
 		"set":"",
 		"goyu":"시간의 문",
@@ -56,13 +56,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"세븐스 러키",
 		"set":"",
 		"goyu":"",
@@ -75,13 +75,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"무형검 아르게스",
 		"set":"",
 		"goyu":"",
@@ -94,13 +94,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"본 레드 드래곤",
 		"set":"",
 		"goyu":"",
@@ -113,13 +113,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"천총운검",
 		"set":"",
 		"goyu":"",
@@ -132,13 +132,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"음검 : 막야",
 		"set":"",
 		"goyu":"",
@@ -151,13 +151,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"소검",
 		"level":90,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"구원의 이기 - 소검",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -170,13 +170,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"궁극의 아란드라 블레이드",
 		"set":"",
 		"goyu":"",
@@ -189,13 +189,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"디펜드 오브 고스트",
 		"set":"",
 		"goyu":"",
@@ -208,13 +208,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"혈검 다인슬라이프",
 		"set":"",
 		"goyu":"",
@@ -227,13 +227,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"블리츠 쟝닝",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -246,13 +246,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"염화도 - 카라벨라",
 		"set":"",
 		"goyu":"",
@@ -265,13 +265,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"트리니티 이터니아",
 		"set":"",
 		"goyu":"",
@@ -284,13 +284,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"명도 마사무네",
 		"set":"",
 		"goyu":"",
@@ -303,13 +303,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"마법검 : 칠지도",
 		"set":"",
 		"goyu":"",
@@ -322,13 +322,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"도",
 		"level":90,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"구원의 이기 - 도",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -341,13 +341,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"키린 뇌전 방망이",
 		"set":"",
 		"goyu":"",
@@ -360,13 +360,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"심장 분쇄기",
 		"set":"",
 		"goyu":"",
@@ -379,13 +379,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"야그르쉬 아야무르",
 		"set":"",
 		"goyu":"",
@@ -398,13 +398,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"분노한 헤라클레스",
 		"set":"",
 		"goyu":"",
@@ -417,13 +417,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"미스틸테인",
 		"set":"",
 		"goyu":"",
@@ -436,13 +436,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"양얼의 나뭇가지",
 		"set":"",
 		"goyu":"",
@@ -455,13 +455,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"둔기",
 		"level":90,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"구원의 이기 - 둔기",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -474,13 +474,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"생환자의 비밀을 간직한 대검",
 		"set":"",
 		"goyu":"",
@@ -493,13 +493,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"가드 워리어",
 		"set":"",
 		"goyu":"",
@@ -512,13 +512,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"아스테레미아",
 		"set":"",
 		"goyu":"시간의 문",
@@ -531,13 +531,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"현철대검",
 		"set":"",
 		"goyu":"",
@@ -550,13 +550,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"데빌 오브 플레어",
 		"set":"",
 		"goyu":"",
@@ -569,13 +569,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"별운검",
 		"set":"",
 		"goyu":"",
@@ -588,13 +588,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"양검 : 간장",
 		"set":"",
 		"goyu":"",
@@ -607,13 +607,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"대검",
 		"level":90,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"구원의 이기 - 대검",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -626,13 +626,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"우요의 흩날림",
 		"set":"",
 		"goyu":"",
@@ -645,13 +645,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":60,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"극마혈광검",
 		"set":"",
 		"goyu":"",
@@ -664,13 +664,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":70,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"냉룡의 분노",
 		"set":"",
 		"goyu":"",
@@ -683,13 +683,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":75,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"피의한",
 		"set":"",
 		"goyu":"",
@@ -702,13 +702,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":80,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"고통의 여왕의 비명",
 		"set":"",
 		"goyu":"",
@@ -721,13 +721,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"뇌검 : 고룬",
 		"set":"",
 		"goyu":"",
@@ -740,13 +740,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":85,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"발뭉",
 		"set":"",
 		"goyu":"",
@@ -759,13 +759,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"귀검사，다크나이트，나이트",
 		"sort3":"광검",
 		"level":90,
-		"class":"귀검사(남), 귀검사(여), 다크나이트(남), 나이트(여)",
+		"class":"swordman_m, swordman_f, darkknight_m, knight_f",
 		"name":"구원의 이기 - 광검",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -778,13 +778,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"창공을 가르는 주먹",
 		"set":"",
 		"goyu":"",
@@ -797,13 +797,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"분신진권",
 		"set":"",
 		"goyu":"",
@@ -816,13 +816,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"쾨니히스티거",
 		"set":"",
 		"goyu":"",
@@ -835,13 +835,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"너클 바일런스",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -854,13 +854,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"마나증강",
 		"set":"",
 		"goyu":"",
@@ -873,13 +873,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"라이키리",
 		"set":"",
 		"goyu":"",
@@ -892,13 +892,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"베르세르크",
 		"set":"",
 		"goyu":"",
@@ -911,13 +911,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"너클",
 		"level":90,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"구원의 이기 - 너클",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -930,13 +930,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"무적의 아이언 암",
 		"set":"",
 		"goyu":"",
@@ -949,13 +949,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"괴력의 건틀릿",
 		"set":"",
 		"goyu":"",
@@ -968,13 +968,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"호로비 미티어기어",
 		"set":"",
 		"goyu":"무법지대",
@@ -987,13 +987,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"크레이지 스톰핑",
 		"set":"",
 		"goyu":"",
@@ -1006,13 +1006,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"타락한 악마의 손",
 		"set":"",
 		"goyu":"",
@@ -1025,13 +1025,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"맹호연환장",
 		"set":"",
 		"goyu":"",
@@ -1044,13 +1044,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"미완성 인피니티 건틀릿",
 		"set":"",
 		"goyu":"",
@@ -1063,13 +1063,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"룰렛러시안",
 		"set":"",
 		"goyu":"",
@@ -1082,13 +1082,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"건틀릿",
 		"level":90,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"구원의 이기 - 건틀릿",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1101,13 +1101,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"우요의 가시",
 		"set":"",
 		"goyu":"",
@@ -1120,13 +1120,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"스콜피온의 집게발",
 		"set":"",
 		"goyu":"",
@@ -1139,13 +1139,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"휴먼킬링",
 		"set":"",
 		"goyu":"",
@@ -1158,13 +1158,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"루이제의 피묻은 갈퀴",
 		"set":"",
 		"goyu":"",
@@ -1177,13 +1177,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"허무의 추적",
 		"set":"",
 		"goyu":"미등장",
@@ -1196,13 +1196,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"원귀의 손톱",
 		"set":"",
 		"goyu":"",
@@ -1215,13 +1215,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"타르위 자리체",
 		"set":"",
 		"goyu":"",
@@ -1234,13 +1234,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"악마의 갈퀴 : 이그노어",
 		"set":"",
 		"goyu":"",
@@ -1253,13 +1253,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"클로",
 		"level":90,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"구원의 이기 - 클로",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1272,13 +1272,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"멸악의 팬텀글러브",
 		"set":"",
 		"goyu":"",
@@ -1291,13 +1291,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"파이터의 본능",
 		"set":"",
 		"goyu":"",
@@ -1310,13 +1310,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"전광석화",
 		"set":"",
 		"goyu":"",
@@ -1329,13 +1329,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"마나유즈",
 		"set":"",
 		"goyu":"",
@@ -1348,13 +1348,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"파울 키드니블로",
 		"set":"",
 		"goyu":"",
@@ -1367,13 +1367,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"그림자 유랑가",
 		"set":"",
 		"goyu":"",
@@ -1386,13 +1386,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"N.O.V.A",
 		"set":"",
 		"goyu":"",
@@ -1405,13 +1405,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"권투글러브",
 		"level":90,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"구원의 이기 - 권투글러브",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1424,13 +1424,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":60,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"울리 매머드 아이보리",
 		"set":"",
 		"goyu":"",
@@ -1443,13 +1443,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":70,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"기습타파",
 		"set":"",
 		"goyu":"",
@@ -1462,13 +1462,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":75,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"흑의 계약자",
 		"set":"",
 		"goyu":"",
@@ -1481,13 +1481,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":80,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"마나 미스릴 바",
 		"set":"",
 		"goyu":"",
@@ -1500,13 +1500,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"우요의 골든 통파",
 		"set":"",
 		"goyu":"",
@@ -1519,13 +1519,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":85,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"습격의 드라우프니르",
 		"set":"",
 		"goyu":"",
@@ -1538,13 +1538,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"격투가",
 		"sort3":"통파",
 		"level":90,
-		"class":"격투가(남), 격투가(여)",
+		"class":"fighter_m, fighter_f",
 		"name":"구원의 이기 - 통파",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1557,13 +1557,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"바이팅 진 스팅어",
 		"set":"",
 		"goyu":"",
@@ -1576,13 +1576,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":70,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"골드 아나콘다 33mm",
 		"set":"",
 		"goyu":"",
@@ -1595,13 +1595,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"리졸브 투 리벤지",
 		"set":"",
 		"goyu":"",
@@ -1614,13 +1614,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"외톨이 잭볼버",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -1633,13 +1633,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"총열개조 웨블리 마크",
 		"set":"",
 		"goyu":"",
@@ -1652,13 +1652,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"실버 불렛",
 		"set":"",
 		"goyu":"",
@@ -1671,13 +1671,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"로드 오브 레인저",
 		"set":"",
 		"goyu":"",
@@ -1690,13 +1690,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"리볼버",
 		"level":90,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"구원의 이기 - 리볼버",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1709,13 +1709,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"버닝 불릿 헤클러",
 		"set":"",
 		"goyu":"",
@@ -1728,13 +1728,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":70,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"롤 컨플렉트 건",
 		"set":"",
 		"goyu":"",
@@ -1747,13 +1747,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"네오 오토매틱 건",
 		"set":"",
 		"goyu":"",
@@ -1766,13 +1766,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"반자동 셔플렉터",
 		"set":"",
 		"goyu":"",
@@ -1785,13 +1785,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"마이스터의 분노",
 		"set":"",
 		"goyu":"",
@@ -1804,13 +1804,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"오픈 파이어",
 		"set":"",
 		"goyu":"",
@@ -1823,13 +1823,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"자동권총",
 		"level":90,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"구원의 이기 - 자동권총",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1842,13 +1842,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"레텀 비아",
 		"set":"",
 		"goyu":"",
@@ -1861,13 +1861,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":70,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"캐리 백 파티",
 		"set":"",
 		"goyu":"",
@@ -1880,13 +1880,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"롤링 블록",
 		"set":"",
 		"goyu":"",
@@ -1899,13 +1899,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"화염의 닐 스나이퍼",
 		"set":"",
 		"goyu":"",
@@ -1918,13 +1918,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"코드넘버 608",
 		"set":"",
 		"goyu":"",
@@ -1937,13 +1937,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"룰 오브 썸",
 		"set":"",
 		"goyu":"",
@@ -1956,13 +1956,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"머스켓",
 		"level":90,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"구원의 이기 - 머스켓",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -1975,13 +1975,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"아쿠아리우스",
 		"set":"",
 		"goyu":"",
@@ -1994,13 +1994,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":70,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"익탄 핸드캐논",
 		"set":"",
 		"goyu":"",
@@ -2013,13 +2013,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"중합캐논 다이다로스",
 		"set":"",
 		"goyu":"무법지대",
@@ -2032,13 +2032,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"나로 스페이스",
 		"set":"",
 		"goyu":"시간의 문",
@@ -2051,13 +2051,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"천재의 유작 : 핸드캐넌",
 		"set":"",
 		"goyu":"",
@@ -2070,13 +2070,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"붐 엔드 붐",
 		"set":"",
 		"goyu":"",
@@ -2089,13 +2089,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"우요의 황금 캐넌",
 		"set":"",
 		"goyu":"",
@@ -2108,13 +2108,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"레이저 홀릭",
 		"set":"",
 		"goyu":"",
@@ -2127,13 +2127,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"핸드캐넌",
 		"level":90,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"구원의 이기 - 핸드캐넌",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2146,13 +2146,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"우요의 줄기탄",
 		"set":"",
 		"goyu":"",
@@ -2165,13 +2165,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":60,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"사탄 아데트",
 		"set":"",
 		"goyu":"",
@@ -2184,13 +2184,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":70,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"다중오라 보우건",
 		"set":"",
 		"goyu":"",
@@ -2203,13 +2203,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":75,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"전략가의 보우건",
 		"set":"",
 		"goyu":"",
@@ -2222,13 +2222,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":80,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"폭풍의 역살",
 		"set":"",
 		"goyu":"",
@@ -2241,13 +2241,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"제네럴 보우건",
 		"set":"",
 		"goyu":"",
@@ -2260,13 +2260,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":85,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"얼음 불꽃의 보우건",
 		"set":"",
 		"goyu":"",
@@ -2279,13 +2279,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"거너",
 		"sort3":"보우건",
 		"level":90,
-		"class":"거너(남), 거너(여)",
+		"class":"gunner_m, gunner_f, beckey",
 		"name":"구원의 이기 - 보우건",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2298,13 +2298,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":60,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"지옥마그마의 창",
 		"set":"",
 		"goyu":"",
@@ -2317,13 +2317,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"톨스피어",
 		"set":"",
 		"goyu":"",
@@ -2336,13 +2336,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"M1893 기병창",
 		"set":"",
 		"goyu":"무법지대",
@@ -2355,13 +2355,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"무투장의 꽃",
 		"set":"",
 		"goyu":"",
@@ -2374,13 +2374,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":80,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"황실 근위대의 총검",
 		"set":"",
 		"goyu":"",
@@ -2393,13 +2393,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"미완성 인피니티 피어스",
 		"set":"",
 		"goyu":"",
@@ -2412,13 +2412,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"전장의 여신의 창",
 		"set":"",
 		"goyu":"",
@@ -2431,13 +2431,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"창",
 		"level":90,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"구원의 이기 - 창",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2450,13 +2450,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":60,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"우요의 기둥",
 		"set":"",
 		"goyu":"",
@@ -2469,13 +2469,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"아쿠아 크리스탈",
 		"set":"",
 		"goyu":"",
@@ -2488,13 +2488,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"크리스탈 트윙클 매직샷",
 		"set":"",
 		"goyu":"",
@@ -2507,13 +2507,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":80,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"체스 나이트",
 		"set":"",
 		"goyu":"",
@@ -2526,13 +2526,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"마스터 오브 체이서",
 		"set":"",
 		"goyu":"",
@@ -2545,13 +2545,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"러브러브! 크리스탈 트윙클 매직샷",
 		"set":"",
 		"goyu":"",
@@ -2564,13 +2564,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"봉",
 		"level":90,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"구원의 이기 - 봉",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2583,13 +2583,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":60,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"네코 네코",
 		"set":"",
 		"goyu":"",
@@ -2602,13 +2602,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"래리 래빗",
 		"set":"",
 		"goyu":"",
@@ -2621,13 +2621,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"노바디 캔 스톱 미",
 		"set":"",
 		"goyu":"",
@@ -2640,13 +2640,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":80,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"에어 로드",
 		"set":"",
 		"goyu":"",
@@ -2659,13 +2659,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"정령왕의 수호",
 		"set":"",
 		"goyu":"",
@@ -2678,13 +2678,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"양치기의 로드",
 		"set":"",
 		"goyu":"",
@@ -2697,13 +2697,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"로드",
 		"level":90,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"구원의 이기 - 로드",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2716,13 +2716,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":60,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"대현자의 스태프",
 		"set":"",
 		"goyu":"",
@@ -2735,13 +2735,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"쇼크스타 스태프",
 		"set":"",
 		"goyu":"",
@@ -2754,13 +2754,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"전이 소환 지팡이",
 		"set":"",
 		"goyu":"시간의 문",
@@ -2773,13 +2773,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"전략가의 스탭",
 		"set":"",
 		"goyu":"",
@@ -2792,13 +2792,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":80,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"악어새의 신축 둥지",
 		"set":"",
 		"goyu":"",
@@ -2811,13 +2811,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"샤이닝 인텔리전스",
 		"set":"",
 		"goyu":"",
@@ -2830,13 +2830,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"스탭 오브 위저드",
 		"set":"",
 		"goyu":"",
@@ -2849,13 +2849,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"스탭",
 		"level":90,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"구원의 이기 - 스탭",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -2868,13 +2868,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":60,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"럭키 롤러",
 		"set":"",
 		"goyu":"",
@@ -2887,13 +2887,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"신의 눈썹",
 		"set":"",
 		"goyu":"",
@@ -2906,13 +2906,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":70,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"딩클핑클 마술 빗자루",
 		"set":"",
 		"goyu":"무법지대",
@@ -2925,13 +2925,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":75,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"마녀의 호박 빗자루",
 		"set":"",
 		"goyu":"",
@@ -2944,13 +2944,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":80,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"핸드메이드 빗자루",
 		"set":"",
 		"goyu":"",
@@ -2963,13 +2963,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"인어의 파리채",
 		"set":"",
 		"goyu":"",
@@ -2982,13 +2982,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"래쿤 배큠",
 		"set":"",
 		"goyu":"",
@@ -3001,13 +3001,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"스노우 프린세스",
 		"set":"",
 		"goyu":"",
@@ -3020,13 +3020,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":85,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"마나 브룸",
 		"set":"",
 		"goyu":"",
@@ -3039,13 +3039,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마법사，크리에이터",
 		"sort3":"빗자루",
 		"level":90,
-		"class":"마법사(남), 마법사(여), 크리에이터(여)",
+		"class":"mage_m, mage_f, creator_f",
 		"name":"구원의 이기 - 빗자루",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3058,13 +3058,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"우요의 십자가",
 		"set":"",
 		"goyu":"",
@@ -3077,13 +3077,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 크럭스",
 		"set":"",
 		"goyu":"",
@@ -3096,13 +3096,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"절망의 시계태엽",
 		"set":"",
 		"goyu":"",
@@ -3115,13 +3115,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"욕망의 번뇌",
 		"set":"",
 		"goyu":"",
@@ -3134,13 +3134,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"뿌리깊은 십자가",
 		"set":"",
 		"goyu":"",
@@ -3153,13 +3153,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"라바룸",
 		"set":"",
 		"goyu":"",
@@ -3172,13 +3172,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"저주 받은 십자가 : 토루아",
 		"set":"",
 		"goyu":"",
@@ -3191,13 +3191,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"십자가",
 		"level":90,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 이기 - 십자가",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3210,13 +3210,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"번뇌하는 대신관의 염주",
 		"set":"",
 		"goyu":"",
@@ -3229,13 +3229,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"마의 로저리",
 		"set":"",
 		"goyu":"",
@@ -3248,13 +3248,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"신수의 가호",
 		"set":"",
 		"goyu":"",
@@ -3267,13 +3267,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"명강성주",
 		"set":"",
 		"goyu":"",
@@ -3286,13 +3286,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"우요의 황금 염주",
 		"set":"",
 		"goyu":"",
@@ -3305,13 +3305,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"백팔 뇌주",
 		"set":"",
 		"goyu":"",
@@ -3324,13 +3324,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"염주",
 		"level":90,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 이기 - 염주",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3343,13 +3343,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"밀림의 신성 토템",
 		"set":"",
 		"goyu":"",
@@ -3362,13 +3362,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"스톤 엣지",
 		"set":"",
 		"goyu":"",
@@ -3381,13 +3381,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"질풍가도",
 		"set":"",
 		"goyu":"",
@@ -3400,13 +3400,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"청룡대",
 		"set":"",
 		"goyu":"",
@@ -3419,13 +3419,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"쿵 : 쿵타",
 		"set":"",
 		"goyu":"",
@@ -3438,13 +3438,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"풍운뇌우",
 		"set":"",
 		"goyu":"",
@@ -3457,13 +3457,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"토템",
 		"level":90,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 이기 - 토템",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3476,13 +3476,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"워터 토쳐 사이드",
 		"set":"",
 		"goyu":"",
@@ -3495,13 +3495,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"하트 슬레이어",
 		"set":"",
 		"goyu":"",
@@ -3514,13 +3514,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"부정한 손길",
 		"set":"",
 		"goyu":"",
@@ -3533,13 +3533,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"처형자의 낫",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -3552,13 +3552,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"얼어붙은 공진의 낫",
 		"set":"",
 		"goyu":"",
@@ -3571,13 +3571,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"선고 : 사신의 낫",
 		"set":"",
 		"goyu":"",
@@ -3590,13 +3590,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"앙그라 마이뉴",
 		"set":"",
 		"goyu":"",
@@ -3609,13 +3609,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"낫",
 		"level":90,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 이기 - 낫",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3628,13 +3628,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"신의 대행자",
 		"set":"",
 		"goyu":"",
@@ -3647,13 +3647,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"한이 서린 울분의 배틀액스",
 		"set":"",
 		"goyu":"",
@@ -3666,13 +3666,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"물아일체",
 		"set":"",
 		"goyu":"",
@@ -3685,13 +3685,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"학살의 단두대",
 		"set":"",
 		"goyu":"",
@@ -3704,13 +3704,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"디스트럭션",
 		"set":"",
 		"goyu":"",
@@ -3723,13 +3723,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":85,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"하이퍼리온",
 		"set":"",
 		"goyu":"",
@@ -3742,13 +3742,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"프리스트",
 		"sort3":"배틀액스",
 		"level":90,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"구원의 이기 - 배틀액스",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3761,13 +3761,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"시련의 어쌔신 대거",
 		"set":"",
 		"goyu":"",
@@ -3780,13 +3780,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"데스 나이프",
 		"set":"",
 		"goyu":"",
@@ -3799,13 +3799,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"허리케인 블루",
 		"set":"",
 		"goyu":"시간의 문",
@@ -3818,13 +3818,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"블라디미르",
 		"set":"",
 		"goyu":"",
@@ -3837,13 +3837,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"실버 플래쉬",
 		"set":"",
 		"goyu":"시간의 문",
@@ -3856,13 +3856,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"스파이럴 스핀",
 		"set":"",
 		"goyu":"",
@@ -3875,13 +3875,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"실버 스피릿",
 		"set":"",
 		"goyu":"",
@@ -3894,13 +3894,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"찬란한 여왕의 은장도",
 		"set":"",
 		"goyu":"",
@@ -3913,13 +3913,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"단검",
 		"level":90,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"구원의 이기 - 단검",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -3932,13 +3932,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"에지테이트 페어",
 		"set":"",
 		"goyu":"",
@@ -3951,13 +3951,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"실버 나이트",
 		"set":"",
 		"goyu":"",
@@ -3970,13 +3970,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"빛보다 빠른 자",
 		"set":"",
 		"goyu":"",
@@ -3989,13 +3989,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"흑미쌍검",
 		"set":"",
 		"goyu":"",
@@ -4008,13 +4008,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"스파이럴 애쉬",
 		"set":"",
 		"goyu":"",
@@ -4027,13 +4027,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"디 엔드",
 		"set":"",
 		"goyu":"",
@@ -4046,13 +4046,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"오버 더 페이트",
 		"set":"",
 		"goyu":"",
@@ -4065,13 +4065,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"쌍검",
 		"level":90,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"구원의 이기 - 쌍검",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -4084,13 +4084,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"하토르의 방울",
 		"set":"",
 		"goyu":"",
@@ -4103,13 +4103,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"블러들레팅",
 		"set":"",
 		"goyu":"",
@@ -4122,13 +4122,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"데드맨 네크로멘서",
 		"set":"",
 		"goyu":"",
@@ -4141,13 +4141,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"파멸의 철퇴",
 		"set":"",
 		"goyu":"",
@@ -4160,13 +4160,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"로드 오브 다크니스",
 		"set":"",
 		"goyu":"",
@@ -4179,13 +4179,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"프린스 오브 스파이더",
 		"set":"",
 		"goyu":"",
@@ -4198,13 +4198,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"완드",
 		"level":90,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"구원의 이기 - 완드",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -4217,13 +4217,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"인술의 비기",
 		"set":"",
 		"goyu":"",
@@ -4236,13 +4236,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"분노의 불두꺼비",
 		"set":"",
 		"goyu":"",
@@ -4255,13 +4255,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"히츠메츠",
 		"set":"",
 		"goyu":"",
@@ -4274,13 +4274,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"화광충천 : 멸",
 		"set":"",
 		"goyu":"",
@@ -4293,13 +4293,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"크리드 오브 닌자",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -4312,13 +4312,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"화둔의 비기 : 폭영",
 		"set":"",
 		"goyu":"",
@@ -4331,13 +4331,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":85,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"여섯세계의 순환",
 		"set":"",
 		"goyu":"",
@@ -4350,13 +4350,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"도적",
 		"sort3":"차크라웨펀",
 		"level":90,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"구원의 이기 - 차크라웨펀",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -4369,13 +4369,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"빙섬창",
 		"set":"",
 		"goyu":"",
@@ -4388,13 +4388,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"사능철간 - 장",
 		"set":"",
 		"goyu":"",
@@ -4407,13 +4407,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"파괴창 - 광익",
 		"set":"",
 		"goyu":"",
@@ -4426,13 +4426,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"빛의 심판자",
 		"set":"",
 		"goyu":"",
@@ -4445,13 +4445,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"대나무창",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -4464,13 +4464,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":85,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"철등사모",
 		"set":"",
 		"goyu":"",
@@ -4483,13 +4483,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":85,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"청월령",
 		"set":"",
 		"goyu":"",
@@ -4502,13 +4502,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"장창",
 		"level":90,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"구원의 이기 - 장창",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -4521,13 +4521,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"레드 스콜",
 		"set":"",
 		"goyu":"",
@@ -4540,13 +4540,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"속전속결",
 		"set":"",
 		"goyu":"",
@@ -4559,13 +4559,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"전이체 : 각골통한",
 		"set":"",
 		"goyu":"",
@@ -4578,13 +4578,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"광염의 극",
 		"set":"",
 		"goyu":"",
@@ -4597,13 +4597,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"검은 재앙 - 절멸",
 		"set":"",
 		"goyu":"파워스테이션",
@@ -4616,13 +4616,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":85,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"방천극",
 		"set":"",
 		"goyu":"",
@@ -4635,13 +4635,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":85,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"황룡언월도",
 		"set":"",
 		"goyu":"",
@@ -4654,13 +4654,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"무기",
 		"sort2":"마창사",
 		"sort3":"미늘창",
 		"level":90,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"구원의 이기 - 미늘창",
 		"set":"",
 		"goyu":"안톤 레이드",
@@ -4673,7 +4673,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4692,7 +4692,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4711,7 +4711,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4730,7 +4730,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4749,7 +4749,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4768,7 +4768,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4787,7 +4787,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4806,7 +4806,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4825,7 +4825,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4844,7 +4844,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4863,7 +4863,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4882,7 +4882,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4901,7 +4901,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4920,7 +4920,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4939,7 +4939,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4958,7 +4958,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4977,7 +4977,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -4996,7 +4996,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5015,7 +5015,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5034,7 +5034,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5053,7 +5053,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5072,7 +5072,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5091,7 +5091,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5110,7 +5110,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5129,7 +5129,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5148,7 +5148,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5167,7 +5167,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5186,7 +5186,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"천",
@@ -5205,7 +5205,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5224,7 +5224,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5243,7 +5243,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5262,7 +5262,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5281,7 +5281,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5300,7 +5300,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5319,7 +5319,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5338,7 +5338,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5357,7 +5357,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5376,7 +5376,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5395,7 +5395,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5414,7 +5414,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5433,7 +5433,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5452,7 +5452,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5471,7 +5471,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5490,7 +5490,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5509,7 +5509,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5528,7 +5528,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5547,7 +5547,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5566,7 +5566,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5585,7 +5585,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5604,7 +5604,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5623,7 +5623,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5642,7 +5642,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5661,7 +5661,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5680,7 +5680,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5699,7 +5699,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5718,7 +5718,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"가죽",
@@ -5737,7 +5737,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5756,7 +5756,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5775,7 +5775,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5794,7 +5794,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5813,7 +5813,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5832,7 +5832,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5851,7 +5851,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5870,7 +5870,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5889,7 +5889,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5908,7 +5908,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5927,7 +5927,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5946,7 +5946,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5965,7 +5965,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -5984,7 +5984,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6003,7 +6003,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6022,7 +6022,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6041,7 +6041,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6060,7 +6060,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6079,7 +6079,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6098,7 +6098,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6117,7 +6117,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6136,7 +6136,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6155,7 +6155,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6174,7 +6174,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6193,7 +6193,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6212,7 +6212,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6231,7 +6231,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6250,7 +6250,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"경갑",
@@ -6269,7 +6269,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6288,7 +6288,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6307,7 +6307,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6326,7 +6326,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6345,7 +6345,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6364,7 +6364,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6383,7 +6383,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6402,7 +6402,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6421,7 +6421,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6440,7 +6440,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6459,7 +6459,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6478,7 +6478,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6497,7 +6497,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6516,7 +6516,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6535,7 +6535,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6554,7 +6554,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6573,7 +6573,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6592,7 +6592,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6611,7 +6611,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6630,7 +6630,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6649,7 +6649,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6668,7 +6668,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6687,7 +6687,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6706,7 +6706,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6725,7 +6725,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6744,7 +6744,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6763,7 +6763,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6782,7 +6782,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"중갑",
@@ -6801,7 +6801,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6820,7 +6820,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6839,7 +6839,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6858,7 +6858,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6877,7 +6877,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6896,7 +6896,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6915,7 +6915,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6934,7 +6934,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6953,7 +6953,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6972,7 +6972,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -6991,7 +6991,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7010,7 +7010,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7029,7 +7029,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7048,7 +7048,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7067,7 +7067,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7086,7 +7086,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7105,7 +7105,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7124,7 +7124,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7143,7 +7143,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7162,7 +7162,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7181,7 +7181,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7200,7 +7200,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7219,7 +7219,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7238,7 +7238,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7257,7 +7257,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7276,7 +7276,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7295,7 +7295,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7314,7 +7314,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"방어구",
 		"sort2":"판금",
@@ -7333,7 +7333,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7352,7 +7352,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7371,7 +7371,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7390,7 +7390,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7409,7 +7409,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7428,7 +7428,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7447,7 +7447,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7466,7 +7466,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7485,7 +7485,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7504,7 +7504,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7523,7 +7523,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7542,7 +7542,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7561,7 +7561,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7580,7 +7580,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7599,7 +7599,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7618,7 +7618,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7637,7 +7637,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7656,7 +7656,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7675,7 +7675,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7694,7 +7694,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7713,7 +7713,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7732,7 +7732,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7751,7 +7751,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7770,7 +7770,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7789,7 +7789,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7808,7 +7808,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7827,7 +7827,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7846,7 +7846,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7865,7 +7865,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7884,7 +7884,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7903,7 +7903,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7922,7 +7922,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7941,7 +7941,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"악세서리",
@@ -7960,7 +7960,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -7979,13 +7979,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"시란의 잿빛 장갑",
 		"set":"",
 		"goyu":"",
@@ -7998,13 +7998,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"카밀라의 귀기 장갑",
 		"set":"",
 		"goyu":"",
@@ -8017,13 +8017,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"다크나이트(남)",
+		"class":"darkknight_m",
 		"name":"시란의 흑빛장갑",
 		"set":"",
 		"goyu":"",
@@ -8036,13 +8036,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"시스키의 대련 장갑",
 		"set":"",
 		"goyu":"",
@@ -8055,13 +8055,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아스카의 여행 장갑",
 		"set":"",
 		"goyu":"",
@@ -8074,13 +8074,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"하이람의 복수",
 		"set":"",
 		"goyu":"",
@@ -8093,13 +8093,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"오드리의 돌격 장갑",
 		"set":"",
 		"goyu":"",
@@ -8112,13 +8112,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"사르포자의 검은 눈",
 		"set":"",
 		"goyu":"",
@@ -8131,13 +8131,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"니우의 수호 장갑",
 		"set":"",
 		"goyu":"",
@@ -8150,13 +8150,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"크리에이터(여)",
+		"class":"creator_f",
 		"name":"파이의 손장갑",
 		"set":"",
 		"goyu":"",
@@ -8169,13 +8169,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"세인트 아우라",
 		"set":"",
 		"goyu":"",
@@ -8188,13 +8188,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"블랙 핀드",
 		"set":"",
 		"goyu":"",
@@ -8207,13 +8207,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"휘르실라의 조련 장갑",
 		"set":"",
 		"goyu":"",
@@ -8226,13 +8226,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"사냥꾼 크록의 돌격장갑",
 		"set":"",
 		"goyu":"",
@@ -8245,7 +8245,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -8264,13 +8264,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"투신의 부적 - 웨펀마스터",
 		"set":"",
 		"goyu":"",
@@ -8283,13 +8283,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"투신의 부적 - 소울브링어",
 		"set":"",
 		"goyu":"",
@@ -8302,13 +8302,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"투신의 부적 - 버서커",
 		"set":"",
 		"goyu":"",
@@ -8321,13 +8321,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"투신의 부적 - 아수라",
 		"set":"",
 		"goyu":"",
@@ -8340,13 +8340,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"투신의 부적 - 소드마스터",
 		"set":"",
 		"goyu":"",
@@ -8359,13 +8359,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"투신의 부적 - 데몬슬레이어",
 		"set":"",
 		"goyu":"",
@@ -8378,13 +8378,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"투신의 부적 - 베가본드",
 		"set":"",
 		"goyu":"",
@@ -8397,13 +8397,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"투신의 부적 - 다크템플러",
 		"set":"",
 		"goyu":"",
@@ -8416,13 +8416,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"투신의 부적 - 넨마스터(남)",
 		"set":"",
 		"goyu":"",
@@ -8435,13 +8435,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"투신의 부적 - 스트라이커(남)",
 		"set":"",
 		"goyu":"",
@@ -8454,13 +8454,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"투신의 부적 - 스트리트파이터(남)",
 		"set":"",
 		"goyu":"",
@@ -8473,13 +8473,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"투신의 부적 - 그래플러(남)",
 		"set":"",
 		"goyu":"",
@@ -8492,13 +8492,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"투신의 부적 - 넨마스터(여)",
 		"set":"",
 		"goyu":"",
@@ -8511,13 +8511,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"투신의 부적 - 스트라이커(여)",
 		"set":"",
 		"goyu":"",
@@ -8530,13 +8530,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"투신의 부적 - 스트리트파이터(여)",
 		"set":"",
 		"goyu":"",
@@ -8549,13 +8549,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"투신의 부적 - 그래플러(여)",
 		"set":"",
 		"goyu":"",
@@ -8568,13 +8568,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"투신의 부적 - 레인저(남)",
 		"set":"",
 		"goyu":"",
@@ -8587,13 +8587,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"투신의 부적 - 런처(남)",
 		"set":"",
 		"goyu":"",
@@ -8606,13 +8606,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"투신의 부적 - 메카닉(남)",
 		"set":"",
 		"goyu":"",
@@ -8625,13 +8625,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"투신의 부적 - 스핏파이어(남)",
 		"set":"",
 		"goyu":"",
@@ -8644,13 +8644,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"투신의 부적 - 레인저(여)",
 		"set":"",
 		"goyu":"",
@@ -8663,13 +8663,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"투신의 부적 - 런처(여)",
 		"set":"",
 		"goyu":"",
@@ -8682,13 +8682,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"투신의 부적 - 메카닉(여)",
 		"set":"",
 		"goyu":"",
@@ -8701,13 +8701,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"투신의 부적 - 스핏파이어(여)",
 		"set":"",
 		"goyu":"",
@@ -8720,13 +8720,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"투신의 부적 - 엘레멘탈 바머",
 		"set":"",
 		"goyu":"",
@@ -8739,13 +8739,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"투신의 부적 - 빙결사",
 		"set":"",
 		"goyu":"",
@@ -8758,13 +8758,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"투신의 부적 - 엘레멘탈마스터",
 		"set":"",
 		"goyu":"",
@@ -8777,13 +8777,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"투신의 부적 - 마도학자",
 		"set":"",
 		"goyu":"",
@@ -8796,13 +8796,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"투신의 부적 - 크루세이더",
 		"set":"",
 		"goyu":"",
@@ -8815,13 +8815,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"투신의 부적 - 인파이터",
 		"set":"",
 		"goyu":"",
@@ -8834,13 +8834,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"투신의 부적 - 퇴마사",
 		"set":"",
 		"goyu":"",
@@ -8853,13 +8853,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"투신의 부적 - 어벤저",
 		"set":"",
 		"goyu":"",
@@ -8872,13 +8872,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"투신의 부적 - 로그",
 		"set":"",
 		"goyu":"",
@@ -8891,13 +8891,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"투신의 부적 - 사령술사",
 		"set":"",
 		"goyu":"",
@@ -8910,13 +8910,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"투신의 부적 - 쿠노이치",
 		"set":"",
 		"goyu":"",
@@ -8929,13 +8929,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"투신의 부적 - 섀도우 댄서",
 		"set":"",
 		"goyu":"",
@@ -8948,13 +8948,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"투신의 부적 - 엘븐나이트",
 		"set":"",
 		"goyu":"",
@@ -8967,13 +8967,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"투신의 부적 - 카오스",
 		"set":"",
 		"goyu":"",
@@ -8986,13 +8986,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"투신의 부적 - 듀얼리스트",
 		"set":"",
 		"goyu":"",
@@ -9005,13 +9005,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"투신의 부적 - 뱅가드",
 		"set":"",
 		"goyu":"",
@@ -9024,13 +9024,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"초월자의 진의 - 검성",
 		"set":"",
 		"goyu":"",
@@ -9043,13 +9043,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"초월자의 진의 - 소울테이커",
 		"set":"",
 		"goyu":"",
@@ -9062,13 +9062,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"초월자의 진의 - 헬벤터",
 		"set":"",
 		"goyu":"",
@@ -9081,13 +9081,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"초월자의 진의 - 대암흑천",
 		"set":"",
 		"goyu":"",
@@ -9100,13 +9100,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"초월자의 진의 - 노블레스",
 		"set":"",
 		"goyu":"",
@@ -9119,13 +9119,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"초월자의 진의 - 검마",
 		"set":"",
 		"goyu":"",
@@ -9138,13 +9138,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"초월자의 진의 - 검호",
 		"set":"",
 		"goyu":"",
@@ -9157,13 +9157,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"초월자의 진의 - 암제",
 		"set":"",
 		"goyu":"",
@@ -9176,13 +9176,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"초월자의 진의 - 광호제",
 		"set":"",
 		"goyu":"",
@@ -9195,13 +9195,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"초월자의 진의 - 무극",
 		"set":"",
 		"goyu":"",
@@ -9214,13 +9214,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"초월자의 진의 - 천수나한",
 		"set":"",
 		"goyu":"",
@@ -9233,13 +9233,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"초월자의 진의 - 자이언트",
 		"set":"",
 		"goyu":"",
@@ -9252,13 +9252,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"초월자의 진의 - 백화요란",
 		"set":"",
 		"goyu":"",
@@ -9271,13 +9271,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"초월자의 진의 - 챔피언",
 		"set":"",
 		"goyu":"",
@@ -9290,13 +9290,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"초월자의 진의 - 독왕",
 		"set":"",
 		"goyu":"",
@@ -9309,13 +9309,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"초월자의 진의 - 토네이도",
 		"set":"",
 		"goyu":"",
@@ -9328,13 +9328,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"초월자의 진의 - 데스페라도",
 		"set":"",
 		"goyu":"",
@@ -9347,13 +9347,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"초월자의 진의 - 블래스터",
 		"set":"",
 		"goyu":"",
@@ -9366,13 +9366,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"초월자의 진의 - 마이스터",
 		"set":"",
 		"goyu":"",
@@ -9385,13 +9385,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"초월자의 진의 - 제너럴",
 		"set":"",
 		"goyu":"",
@@ -9404,13 +9404,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"초월자의 진의 - 블러디아",
 		"set":"",
 		"goyu":"",
@@ -9423,13 +9423,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"초월자의 진의 - 헤비배럴",
 		"set":"",
 		"goyu":"",
@@ -9442,13 +9442,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"초월자의 진의 - 메탈하트",
 		"set":"",
 		"goyu":"",
@@ -9461,13 +9461,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"초월자의 진의 - 발키리",
 		"set":"",
 		"goyu":"",
@@ -9480,13 +9480,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"초월자의 진의 - 워록(화암)",
 		"set":"",
 		"goyu":"",
@@ -9499,13 +9499,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"초월자의 진의 - 워록(수명)",
 		"set":"",
 		"goyu":"",
@@ -9518,13 +9518,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"초월자의 진의 - 프로즌하트",
 		"set":"",
 		"goyu":"",
@@ -9537,13 +9537,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 아크메이지(화암)",
 		"set":"",
 		"goyu":"",
@@ -9556,13 +9556,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 아크메이지(명암)",
 		"set":"",
 		"goyu":"",
@@ -9575,13 +9575,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 아크메이지(수암)",
 		"set":"",
 		"goyu":"",
@@ -9594,13 +9594,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 문엠프레스(정령희생)",
 		"set":"",
 		"goyu":"",
@@ -9613,13 +9613,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 문엠프레스(환수폭주)",
 		"set":"",
 		"goyu":"",
@@ -9632,13 +9632,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 트릭스터(화수)",
 		"set":"",
 		"goyu":"",
@@ -9651,13 +9651,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 트릭스터(명암)",
 		"set":"",
 		"goyu":"",
@@ -9670,13 +9670,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"초월자의 진의 - 벨라트릭스",
 		"set":"",
 		"goyu":"",
@@ -9689,13 +9689,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 홀리오더(버프)",
 		"set":"",
 		"goyu":"",
@@ -9708,13 +9708,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 홀리오더(배틀)",
 		"set":"",
 		"goyu":"",
@@ -9727,13 +9727,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 갓핸드",
 		"set":"",
 		"goyu":"",
@@ -9746,13 +9746,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 용투사(물리)",
 		"set":"",
 		"goyu":"",
@@ -9765,13 +9765,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 용투사(마법)",
 		"set":"",
 		"goyu":"",
@@ -9784,13 +9784,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"초월자의 진의 - 둠스가디언",
 		"set":"",
 		"goyu":"",
@@ -9803,13 +9803,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"초월자의 진의 - 실버문",
 		"set":"",
 		"goyu":"",
@@ -9822,13 +9822,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"초월자의 진의 - 데스브링어",
 		"set":"",
 		"goyu":"",
@@ -9841,13 +9841,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"초월자의 진의 - 이즈나비",
 		"set":"",
 		"goyu":"",
@@ -9860,13 +9860,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"초월자의 진의 - 나이트메어",
 		"set":"",
 		"goyu":"",
@@ -9879,13 +9879,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"초월자의 진의 - 피스메이커",
 		"set":"",
 		"goyu":"",
@@ -9898,13 +9898,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"초월자의 진의 - 마왕",
 		"set":"",
 		"goyu":"",
@@ -9917,13 +9917,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"초월자의 진의 - 하이랜더",
 		"set":"",
 		"goyu":"",
@@ -9936,13 +9936,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":60,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"초월자의 진의 - 레버넌트",
 		"set":"",
 		"goyu":"",
@@ -9955,7 +9955,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9974,7 +9974,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -9993,13 +9993,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아레스의 토시 - 웨펀마스터",
 		"set":"",
 		"goyu":"",
@@ -10012,13 +10012,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아레스의 토시 - 소울브링어",
 		"set":"",
 		"goyu":"",
@@ -10031,13 +10031,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아레스의 토시 - 버서커",
 		"set":"",
 		"goyu":"",
@@ -10050,13 +10050,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아레스의 토시 - 아수라",
 		"set":"",
 		"goyu":"",
@@ -10069,13 +10069,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아레스의 토시 - 소드마스터",
 		"set":"",
 		"goyu":"",
@@ -10088,13 +10088,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아레스의 토시 - 데몬슬레이어",
 		"set":"",
 		"goyu":"",
@@ -10107,13 +10107,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아레스의 토시 - 베가본드",
 		"set":"",
 		"goyu":"",
@@ -10126,13 +10126,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아레스의 토시 - 다크템플러",
 		"set":"",
 		"goyu":"",
@@ -10145,13 +10145,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아레스의 토시 - 넨마스터(남)",
 		"set":"",
 		"goyu":"",
@@ -10164,13 +10164,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아레스의 토시 - 스트라이커(남)",
 		"set":"",
 		"goyu":"",
@@ -10183,13 +10183,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아레스의 토시 - 스트리트 파이터(남)",
 		"set":"",
 		"goyu":"",
@@ -10202,13 +10202,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아레스의 토시 - 그래플러(남)",
 		"set":"",
 		"goyu":"",
@@ -10221,13 +10221,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아레스의 토시 - 넨마스터(여)",
 		"set":"",
 		"goyu":"",
@@ -10240,13 +10240,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아레스의 토시 - 스트라이커(여)",
 		"set":"",
 		"goyu":"",
@@ -10259,13 +10259,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아레스의 토시 - 스트리트 파이터(여)",
 		"set":"",
 		"goyu":"",
@@ -10278,13 +10278,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아레스의 토시 - 그래플러(여)",
 		"set":"",
 		"goyu":"",
@@ -10297,13 +10297,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아레스의 토시 - 레인저(남)",
 		"set":"",
 		"goyu":"",
@@ -10316,13 +10316,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아레스의 토시 - 런처(남)",
 		"set":"",
 		"goyu":"",
@@ -10335,13 +10335,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아레스의 토시 - 메카닉(남)",
 		"set":"",
 		"goyu":"",
@@ -10354,13 +10354,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아레스의 토시 - 스핏 파이어(남)",
 		"set":"",
 		"goyu":"",
@@ -10373,13 +10373,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아레스의 토시 - 레인저(여)",
 		"set":"",
 		"goyu":"",
@@ -10392,13 +10392,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아레스의 토시 - 런처(여)",
 		"set":"",
 		"goyu":"",
@@ -10411,13 +10411,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아레스의 토시 - 메카닉(여)",
 		"set":"",
 		"goyu":"",
@@ -10430,13 +10430,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아레스의 토시 - 스핏 파이어(여)",
 		"set":"",
 		"goyu":"",
@@ -10449,13 +10449,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아레스의 토시 - 엘레멘탈바머",
 		"set":"",
 		"goyu":"",
@@ -10468,13 +10468,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아레스의 토시 - 빙결사",
 		"set":"",
 		"goyu":"",
@@ -10487,13 +10487,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아레스의 토시 - 엘레멘탈 마스터",
 		"set":"",
 		"goyu":"",
@@ -10506,13 +10506,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아레스의 토시 - 소환사",
 		"set":"",
 		"goyu":"",
@@ -10525,13 +10525,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아레스의 토시 - 배틀메이지",
 		"set":"",
 		"goyu":"",
@@ -10544,13 +10544,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아레스의 토시 - 마도학자",
 		"set":"",
 		"goyu":"",
@@ -10563,13 +10563,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아레스의 토시 - 크루세이더",
 		"set":"",
 		"goyu":"",
@@ -10582,13 +10582,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아레스의 토시 - 인파이터",
 		"set":"",
 		"goyu":"",
@@ -10601,13 +10601,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아레스의 토시 - 퇴마나(물리)",
 		"set":"",
 		"goyu":"",
@@ -10620,13 +10620,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아레스의 토시 - 퇴마사(마법)",
 		"set":"",
 		"goyu":"",
@@ -10639,13 +10639,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아레스의 토시 - 어벤저",
 		"set":"",
 		"goyu":"",
@@ -10658,13 +10658,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아레스의 토시 - 로그",
 		"set":"",
 		"goyu":"",
@@ -10677,13 +10677,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아레스의 토시 - 사령술사",
 		"set":"",
 		"goyu":"",
@@ -10696,13 +10696,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아레스의 토시 - 쿠노이치",
 		"set":"",
 		"goyu":"",
@@ -10715,13 +10715,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아레스의 토시 - 섀도우 댄서",
 		"set":"",
 		"goyu":"",
@@ -10734,13 +10734,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아레스의 토시 - 엘븐나이트",
 		"set":"",
 		"goyu":"",
@@ -10753,13 +10753,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아레스의 토시 - 카오스",
 		"set":"",
 		"goyu":"",
@@ -10772,13 +10772,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아레스의 토시 - 듀얼리스트",
 		"set":"",
 		"goyu":"",
@@ -10791,13 +10791,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아레스의 토시 - 뱅가드",
 		"set":"",
 		"goyu":"",
@@ -10810,13 +10810,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"대현자의 진의 - 검성",
 		"set":"",
 		"goyu":"",
@@ -10829,13 +10829,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"대현자의 진의 - 헬벤터",
 		"set":"",
 		"goyu":"",
@@ -10848,13 +10848,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"대현자의 진의 - 소울테이커",
 		"set":"",
 		"goyu":"",
@@ -10867,13 +10867,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"대현자의 진의 - 대암흑천",
 		"set":"",
 		"goyu":"",
@@ -10886,13 +10886,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"대현자의 진의 - 노블레스",
 		"set":"",
 		"goyu":"",
@@ -10905,13 +10905,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"대현자의 진의 - 검마",
 		"set":"",
 		"goyu":"",
@@ -10924,13 +10924,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"대현자의 진의 - 검호",
 		"set":"",
 		"goyu":"",
@@ -10943,13 +10943,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"대현자의 진의 - 암제",
 		"set":"",
 		"goyu":"",
@@ -10962,13 +10962,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"대현자의 진의 - 광호제",
 		"set":"",
 		"goyu":"",
@@ -10981,13 +10981,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"대현자의 진의 - 무극",
 		"set":"",
 		"goyu":"",
@@ -11000,13 +11000,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"대현자의 진의 - 천수나한",
 		"set":"",
 		"goyu":"",
@@ -11019,13 +11019,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"대현자의 진의 - 자이언트",
 		"set":"",
 		"goyu":"",
@@ -11038,13 +11038,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"대현자의 진의 - 백화요란",
 		"set":"",
 		"goyu":"",
@@ -11057,13 +11057,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"대현자의 진의 - 챔피언",
 		"set":"",
 		"goyu":"",
@@ -11076,13 +11076,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"대현자의 진의 - 독왕",
 		"set":"",
 		"goyu":"",
@@ -11095,13 +11095,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"대현자의 진의 - 토네이도",
 		"set":"",
 		"goyu":"",
@@ -11114,13 +11114,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"대현자의 진의 - 데스페라도",
 		"set":"",
 		"goyu":"",
@@ -11133,13 +11133,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"대현자의 진의 - 블래스터",
 		"set":"",
 		"goyu":"",
@@ -11152,13 +11152,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"대현자의 진의 - 마이스터",
 		"set":"",
 		"goyu":"",
@@ -11171,13 +11171,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"대현자의 진의 - 제너럴",
 		"set":"",
 		"goyu":"",
@@ -11190,13 +11190,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"대현자의 진의 - 블러디아",
 		"set":"",
 		"goyu":"",
@@ -11209,13 +11209,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"대현자의 진의 - 헤비배럴",
 		"set":"",
 		"goyu":"",
@@ -11228,13 +11228,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"대현자의 진의 - 메탈하트",
 		"set":"",
 		"goyu":"",
@@ -11247,13 +11247,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"대현자의 진의 - 발키리",
 		"set":"",
 		"goyu":"",
@@ -11266,13 +11266,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"대현자의 진의 - 워록",
 		"set":"",
 		"goyu":"",
@@ -11285,13 +11285,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"대현자의 진의 - 프로즌하트",
 		"set":"",
 		"goyu":"",
@@ -11304,13 +11304,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"대현자의 진의 - 아크메이지",
 		"set":"",
 		"goyu":"",
@@ -11323,13 +11323,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"대현자의 진의 - 문엠프레스",
 		"set":"",
 		"goyu":"",
@@ -11342,13 +11342,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"대현자의 진의 - 벨라트릭스",
 		"set":"",
 		"goyu":"",
@@ -11361,13 +11361,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"대현자의 진의 - 트릭스터",
 		"set":"",
 		"goyu":"",
@@ -11380,13 +11380,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"대현자의 진의 - 홀리오더",
 		"set":"",
 		"goyu":"",
@@ -11399,13 +11399,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"대현자의 진의 - 갓핸드",
 		"set":"",
 		"goyu":"",
@@ -11418,13 +11418,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"대현자의 진의 - 용투사(물리)",
 		"set":"",
 		"goyu":"",
@@ -11437,13 +11437,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"대현자의 진의 - 용투사(마법)",
 		"set":"",
 		"goyu":"",
@@ -11456,13 +11456,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"대현자의 진의 - 둠스가디언",
 		"set":"",
 		"goyu":"",
@@ -11475,13 +11475,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"대현자의 진의 - 실버문",
 		"set":"",
 		"goyu":"",
@@ -11494,13 +11494,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"대현자의 진의 - 데스브링어",
 		"set":"",
 		"goyu":"",
@@ -11513,13 +11513,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"대현자의 진의 - 이즈나비",
 		"set":"",
 		"goyu":"",
@@ -11532,13 +11532,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"대현자의 진의 - 나이트메어",
 		"set":"",
 		"goyu":"",
@@ -11551,13 +11551,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"대현자의 진의 - 피스메이커",
 		"set":"",
 		"goyu":"",
@@ -11570,13 +11570,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"대현자의 진의 - 마왕",
 		"set":"",
 		"goyu":"",
@@ -11589,13 +11589,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"대현자의 진의 - 하이랜더",
 		"set":"",
 		"goyu":"",
@@ -11608,13 +11608,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"대현자의 진의 - 레버넌트",
 		"set":"",
 		"goyu":"",
@@ -11627,7 +11627,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11646,13 +11646,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"신검의 검은손",
 		"set":"",
 		"goyu":"",
@@ -11665,13 +11665,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"로바토의 지휘 장갑",
 		"set":"",
 		"goyu":"",
@@ -11684,13 +11684,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"다크나이트(남)",
+		"class":"darkknight_m",
 		"name":"신검의 타락한 손",
 		"set":"",
 		"goyu":"",
@@ -11703,13 +11703,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"다르의 붕권",
 		"set":"",
 		"goyu":"",
@@ -11722,13 +11722,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"테루시아의 장갑",
 		"set":"",
 		"goyu":"",
@@ -11741,13 +11741,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"엘티스의 실험장갑",
 		"set":"",
 		"goyu":"",
@@ -11760,13 +11760,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"스카이 듀얼 글러브",
 		"set":"",
 		"goyu":"",
@@ -11779,13 +11779,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"미카엘라의 신의 장갑",
 		"set":"",
 		"goyu":"",
@@ -11798,13 +11798,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"코니의 스페이스 글러브",
 		"set":"",
 		"goyu":"",
@@ -11817,13 +11817,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"크리에이터(여)",
+		"class":"creator_f",
 		"name":"마이더스의 잿빛 장갑",
 		"set":"",
 		"goyu":"",
@@ -11836,13 +11836,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"운조의 전장 장갑",
 		"set":"",
 		"goyu":"",
@@ -11855,13 +11855,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"시리엘의 타락한 장갑",
 		"set":"",
 		"goyu":"",
@@ -11874,13 +11874,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"말피르의 보호 장갑",
 		"set":"",
 		"goyu":"",
@@ -11893,13 +11893,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":70,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"듈리스의 전투장갑",
 		"set":"",
 		"goyu":"",
@@ -11912,7 +11912,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11931,7 +11931,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11950,7 +11950,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11969,7 +11969,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -11988,7 +11988,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -12007,13 +12007,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아테나의 지혜 - 웨펀마스터",
 		"set":"",
 		"goyu":"",
@@ -12026,13 +12026,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아테나의 지혜 - 버서커",
 		"set":"",
 		"goyu":"",
@@ -12045,13 +12045,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아테나의 지혜 - 소울브링어",
 		"set":"",
 		"goyu":"",
@@ -12064,13 +12064,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아테나의 지혜 - 아수라",
 		"set":"",
 		"goyu":"",
@@ -12083,13 +12083,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아테나의 지혜 - 소드마스터",
 		"set":"",
 		"goyu":"",
@@ -12102,13 +12102,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아테나의 지혜 - 데몬슬레이어",
 		"set":"",
 		"goyu":"",
@@ -12121,13 +12121,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아테나의 지혜 - 베가본드",
 		"set":"",
 		"goyu":"",
@@ -12140,13 +12140,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아테나의 지혜 - 다크템플러",
 		"set":"",
 		"goyu":"",
@@ -12159,13 +12159,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아테나의 지혜 - 넨마스터(여)",
 		"set":"",
 		"goyu":"",
@@ -12178,13 +12178,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아테나의 지혜 - 스트라이커(여)",
 		"set":"",
 		"goyu":"",
@@ -12197,13 +12197,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아테나의 지혜 - 스트리트 파이터(여)",
 		"set":"",
 		"goyu":"",
@@ -12216,13 +12216,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아테나의 지혜 - 그래플러(여)",
 		"set":"",
 		"goyu":"",
@@ -12235,13 +12235,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아테나의 지혜 - 넨마스터(남)",
 		"set":"",
 		"goyu":"",
@@ -12254,13 +12254,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아테나의 지혜 - 스트라이커(남)",
 		"set":"",
 		"goyu":"",
@@ -12273,13 +12273,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아테나의 지혜 - 스트리트 파이터(남)",
 		"set":"",
 		"goyu":"",
@@ -12292,13 +12292,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아테나의 지혜 - 그래플러(남)",
 		"set":"",
 		"goyu":"",
@@ -12311,13 +12311,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아테나의 지혜 - 레인저(남)",
 		"set":"",
 		"goyu":"",
@@ -12330,13 +12330,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아테나의 지혜 - 런처(남)",
 		"set":"",
 		"goyu":"",
@@ -12349,13 +12349,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아테나의 지혜 - 메카닉(남)",
 		"set":"",
 		"goyu":"",
@@ -12368,13 +12368,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아테나의 지혜 - 스핏 파이어(남)",
 		"set":"",
 		"goyu":"",
@@ -12387,13 +12387,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아테나의 지혜 - 레인저(여)",
 		"set":"",
 		"goyu":"",
@@ -12406,13 +12406,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아테나의 지혜 - 런처(여)",
 		"set":"",
 		"goyu":"",
@@ -12425,13 +12425,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아테나의 지혜 - 메카닉(여)",
 		"set":"",
 		"goyu":"",
@@ -12444,13 +12444,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아테나의 지혜 - 스핏 파이어(여)",
 		"set":"",
 		"goyu":"",
@@ -12463,13 +12463,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아테나의 지혜 - 엘레멘탈 마스터",
 		"set":"",
 		"goyu":"",
@@ -12482,13 +12482,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아테나의 지혜 - 소환사",
 		"set":"",
 		"goyu":"",
@@ -12501,13 +12501,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아테나의 지혜 - 배틀메이지",
 		"set":"",
 		"goyu":"",
@@ -12520,13 +12520,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아테나의 지혜 - 마도학자",
 		"set":"",
 		"goyu":"",
@@ -12539,13 +12539,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아테나의 지혜 - 엘레멘탈 바머",
 		"set":"",
 		"goyu":"",
@@ -12558,13 +12558,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아테나의 지혜 - 빙결사",
 		"set":"",
 		"goyu":"",
@@ -12577,13 +12577,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아테나의 지혜 - 크루세이더",
 		"set":"",
 		"goyu":"",
@@ -12596,13 +12596,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아테나의 지혜 - 인파이터",
 		"set":"",
 		"goyu":"",
@@ -12615,13 +12615,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아테나의 지혜 - 물리/퇴마사",
 		"set":"",
 		"goyu":"",
@@ -12634,13 +12634,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아테나의 지혜 - 마법/퇴마사",
 		"set":"",
 		"goyu":"",
@@ -12653,13 +12653,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아테나의 지혜 - 어벤저",
 		"set":"",
 		"goyu":"",
@@ -12672,13 +12672,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아테나의 지혜 - 로그",
 		"set":"",
 		"goyu":"",
@@ -12691,13 +12691,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아테나의 지혜 - 사령술사",
 		"set":"",
 		"goyu":"",
@@ -12710,13 +12710,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아테나의 지혜 - 쿠노이치",
 		"set":"",
 		"goyu":"",
@@ -12729,13 +12729,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아테나의 지혜 - 섀도우 댄서",
 		"set":"",
 		"goyu":"",
@@ -12748,13 +12748,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아테나의 지혜 - 엘븐나이트",
 		"set":"",
 		"goyu":"",
@@ -12767,13 +12767,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아테나의 지혜 - 카오스",
 		"set":"",
 		"goyu":"",
@@ -12786,13 +12786,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아테나의 지혜 - 듀얼리스트",
 		"set":"",
 		"goyu":"",
@@ -12805,13 +12805,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아테나의 지혜 - 뱅가드",
 		"set":"",
 		"goyu":"",
@@ -12824,13 +12824,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"헤라의 수호 - 검성",
 		"set":"",
 		"goyu":"",
@@ -12843,13 +12843,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"헤라의 수호 - 헬벤터",
 		"set":"",
 		"goyu":"",
@@ -12862,13 +12862,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"헤라의 수호 - 소울테이커",
 		"set":"",
 		"goyu":"",
@@ -12881,13 +12881,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"헤라의 수호 - 대암흑천",
 		"set":"",
 		"goyu":"",
@@ -12900,13 +12900,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"헤라의 수호 - 노블레스",
 		"set":"",
 		"goyu":"",
@@ -12919,13 +12919,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"헤라의 수호 - 검마",
 		"set":"",
 		"goyu":"",
@@ -12938,13 +12938,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"헤라의 수호 - 검호",
 		"set":"",
 		"goyu":"",
@@ -12957,13 +12957,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"헤라의 수호 - 암제",
 		"set":"",
 		"goyu":"",
@@ -12976,13 +12976,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"헤라의 수호 - 백화요란",
 		"set":"",
 		"goyu":"",
@@ -12995,13 +12995,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"헤라의 수호 - 챔피언",
 		"set":"",
 		"goyu":"",
@@ -13014,13 +13014,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"헤라의 수호 - 독왕",
 		"set":"",
 		"goyu":"",
@@ -13033,13 +13033,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"헤라의 수호 - 토네이도",
 		"set":"",
 		"goyu":"",
@@ -13052,13 +13052,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"헤라의 수호 - 광호제",
 		"set":"",
 		"goyu":"",
@@ -13071,13 +13071,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"헤라의 수호 - 무극",
 		"set":"",
 		"goyu":"",
@@ -13090,13 +13090,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"헤라의 수호 - 천수나한",
 		"set":"",
 		"goyu":"",
@@ -13109,13 +13109,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"헤라의 수호 - 자이언트",
 		"set":"",
 		"goyu":"",
@@ -13128,13 +13128,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"헤라의 수호 - 데스페라도",
 		"set":"",
 		"goyu":"",
@@ -13147,13 +13147,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"헤라의 수호 - 블래스터",
 		"set":"",
 		"goyu":"",
@@ -13166,13 +13166,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"헤라의 수호 - 마이스터",
 		"set":"",
 		"goyu":"",
@@ -13185,13 +13185,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"헤라의 수호 - 제너럴",
 		"set":"",
 		"goyu":"",
@@ -13204,13 +13204,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"헤라의 수호 - 블러디아",
 		"set":"",
 		"goyu":"",
@@ -13223,13 +13223,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"헤라의 수호 - 헤비배럴",
 		"set":"",
 		"goyu":"",
@@ -13242,13 +13242,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"헤라의 수호 - 메탈하트",
 		"set":"",
 		"goyu":"",
@@ -13261,13 +13261,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"헤라의 수호 - 발키리",
 		"set":"",
 		"goyu":"",
@@ -13280,13 +13280,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"헤라의 수호 - 아크메이지",
 		"set":"",
 		"goyu":"",
@@ -13299,13 +13299,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"헤라의 수호 - 문엠프레스",
 		"set":"",
 		"goyu":"",
@@ -13318,13 +13318,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"헤라의 수호 - 벨라트릭스",
 		"set":"",
 		"goyu":"",
@@ -13337,13 +13337,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"헤라의 수호 - 트릭스터",
 		"set":"",
 		"goyu":"",
@@ -13356,13 +13356,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"헤라의 수호 - 워록",
 		"set":"",
 		"goyu":"",
@@ -13375,13 +13375,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"헤라의 수호 - 프로즌하트",
 		"set":"",
 		"goyu":"",
@@ -13394,13 +13394,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"헤라의 수호 - 홀리오더",
 		"set":"",
 		"goyu":"",
@@ -13413,13 +13413,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"헤라의 수호 - 갓핸드",
 		"set":"",
 		"goyu":"",
@@ -13432,13 +13432,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"헤라의 수호 - 용투사",
 		"set":"",
 		"goyu":"",
@@ -13451,13 +13451,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"헤라의 수호 - 둠스가디언",
 		"set":"",
 		"goyu":"",
@@ -13470,13 +13470,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"헤라의 수호 - 실버문",
 		"set":"",
 		"goyu":"",
@@ -13489,13 +13489,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"헤라의 수호 - 데스브링어",
 		"set":"",
 		"goyu":"",
@@ -13508,13 +13508,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"헤라의 수호 - 이즈나비",
 		"set":"",
 		"goyu":"",
@@ -13527,13 +13527,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"헤라의 수호 - 나이트메어",
 		"set":"",
 		"goyu":"",
@@ -13546,13 +13546,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"헤라의 수호 - 피스메이커",
 		"set":"",
 		"goyu":"",
@@ -13565,13 +13565,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"헤라의 수호 - 마왕",
 		"set":"",
 		"goyu":"",
@@ -13584,13 +13584,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"헤라의 수호 - 하이랜더",
 		"set":"",
 		"goyu":"",
@@ -13603,13 +13603,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"헤라의 수호 - 레버넌트",
 		"set":"",
 		"goyu":"",
@@ -13622,13 +13622,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"각성한 자의 각오 - 검신",
 		"set":"",
 		"goyu":"",
@@ -13641,13 +13641,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"각성한 자의 각오 - 블러드이블",
 		"set":"",
 		"goyu":"",
@@ -13660,13 +13660,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"각성한 자의 각오 - 다크로드",
 		"set":"",
 		"goyu":"",
@@ -13679,13 +13679,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"각성한 자의 각오 - 인다라천",
 		"set":"",
 		"goyu":"",
@@ -13698,13 +13698,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"각성한 자의 각오 - 마제스티",
 		"set":"",
 		"goyu":"",
@@ -13717,13 +13717,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"각성한 자의 각오 - 디어사이드",
 		"set":"",
 		"goyu":"",
@@ -13736,13 +13736,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"각성한 자의 각오 - 네메시스",
 		"set":"",
 		"goyu":"",
@@ -13755,13 +13755,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"각성한 자의 각오 - 검제",
 		"set":"",
 		"goyu":"",
@@ -13774,13 +13774,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"각성한 자의 각오 - 염제 폐월수화",
 		"set":"",
 		"goyu":"",
@@ -13793,13 +13793,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"각성한 자의 각오 - 카이저",
 		"set":"",
 		"goyu":"",
@@ -13812,13 +13812,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"각성한 자의 각오 - 용독문주",
 		"set":"",
 		"goyu":"",
@@ -13831,13 +13831,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"각성한 자의 각오 - 얼티밋 디바",
 		"set":"",
 		"goyu":"",
@@ -13850,13 +13850,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"각성한 자의 각오 - 염황 광풍제월",
 		"set":"",
 		"goyu":"",
@@ -13869,13 +13869,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"각성한 자의 각오 - 패황",
 		"set":"",
 		"goyu":"",
@@ -13888,13 +13888,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"각성한 자의 각오 - 명왕",
 		"set":"",
 		"goyu":"",
@@ -13907,13 +13907,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"각성한 자의 각오 - 그랜드 마스터",
 		"set":"",
 		"goyu":"",
@@ -13926,13 +13926,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"각성한 자의 각오 - 레이븐",
 		"set":"",
 		"goyu":"",
@@ -13945,13 +13945,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"각성한 자의 각오 - 디스트로이어",
 		"set":"",
 		"goyu":"",
@@ -13964,13 +13964,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"각성한 자의 각오 - 프라임",
 		"set":"",
 		"goyu":"",
@@ -13983,13 +13983,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"각성한 자의 각오 - 커맨더",
 		"set":"",
 		"goyu":"",
@@ -14002,13 +14002,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"각성한 자의 각오 - 크림슨 로제",
 		"set":"",
 		"goyu":"",
@@ -14021,13 +14021,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"각성한 자의 각오 - 스톰트루퍼",
 		"set":"",
 		"goyu":"",
@@ -14040,13 +14040,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"각성한 자의 각오 - 옵티머스",
 		"set":"",
 		"goyu":"",
@@ -14059,13 +14059,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"각성한 자의 각오 - 프레이야",
 		"set":"",
 		"goyu":"",
@@ -14078,13 +14078,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"각성한 자의 각오 - 오버마인드",
 		"set":"",
 		"goyu":"",
@@ -14097,13 +14097,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"각성한 자의 각오 - 아슈타르테",
 		"set":"",
 		"goyu":"",
@@ -14116,13 +14116,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"각성한 자의 각오 - 지니위즈",
 		"set":"",
 		"goyu":"",
@@ -14135,13 +14135,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"각성한 자의 각오 - 이클립스",
 		"set":"",
 		"goyu":"",
@@ -14154,13 +14154,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"각성한 자의 각오 - 오블리비언",
 		"set":"",
 		"goyu":"",
@@ -14173,13 +14173,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"각성한 자의 각오 - 이터널",
 		"set":"",
 		"goyu":"",
@@ -14192,13 +14192,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"각성한 자의 각오 - 저스티스",
 		"set":"",
 		"goyu":"",
@@ -14211,13 +14211,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"각성한 자의 각오 - 세인트",
 		"set":"",
 		"goyu":"",
@@ -14230,13 +14230,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"각성한 자의 각오 - 이모탈",
 		"set":"",
 		"goyu":"",
@@ -14249,13 +14249,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"각성한 자의 각오 - 태을선인",
 		"set":"",
 		"goyu":"",
@@ -14268,13 +14268,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"각성한 자의 각오 - 알키오네",
 		"set":"",
 		"goyu":"",
@@ -14287,13 +14287,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"각성한 자의 각오 - 타나토스",
 		"set":"",
 		"goyu":"",
@@ -14306,13 +14306,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"각성한 자의 각오 - 시라누이",
 		"set":"",
 		"goyu":"",
@@ -14325,13 +14325,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"각성한 자의 각오 - 그림리퍼",
 		"set":"",
 		"goyu":"",
@@ -14344,13 +14344,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"각성한 자의 각오 - 가이아",
 		"set":"",
 		"goyu":"",
@@ -14363,13 +14363,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"각성한 자의 각오 - 마신",
 		"set":"",
 		"goyu":"",
@@ -14382,13 +14382,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"각성한 자의 각오 - 듀란달",
 		"set":"",
 		"goyu":"",
@@ -14401,13 +14401,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"각성한 자의 각오 - 워로드",
 		"set":"",
 		"goyu":"",
@@ -14420,7 +14420,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14439,13 +14439,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"헬름의 살육 장갑",
 		"set":"",
 		"goyu":"",
@@ -14458,13 +14458,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"검마의 혼령 장갑",
 		"set":"",
 		"goyu":"",
@@ -14477,13 +14477,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"다크나이트(남)",
+		"class":"darkknight_m",
 		"name":"헬름의 학살 장갑",
 		"set":"",
 		"goyu":"",
@@ -14496,13 +14496,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"알베르트의 결투 장갑",
 		"set":"",
 		"goyu":"",
@@ -14515,13 +14515,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"풍진의 무도 장갑",
 		"set":"",
 		"goyu":"",
@@ -14534,13 +14534,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"란제루스의 지휘 장갑",
 		"set":"",
 		"goyu":"",
@@ -14553,13 +14553,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"뮤우의 전투 장갑",
 		"set":"",
 		"goyu":"",
@@ -14572,13 +14572,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"마이어의 마법 장갑",
 		"set":"",
 		"goyu":"",
@@ -14591,13 +14591,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"이키의 마법 장갑",
 		"set":"",
 		"goyu":"",
@@ -14610,13 +14610,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"크리에이터(여)",
+		"class":"creator_f",
 		"name":"피피의 소환 장갑",
 		"set":"",
 		"goyu":"",
@@ -14629,13 +14629,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"신풍의 수련 장갑",
 		"set":"",
 		"goyu":"",
@@ -14648,13 +14648,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"록시의 장갑",
 		"set":"",
 		"goyu":"",
@@ -14667,13 +14667,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아니스의 추적 장갑",
 		"set":"",
 		"goyu":"",
@@ -14686,13 +14686,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"보조장비",
 		"level":80,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"브리테인의 적색장갑",
 		"set":"",
 		"goyu":"",
@@ -14705,7 +14705,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14724,7 +14724,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14743,7 +14743,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14762,7 +14762,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14781,7 +14781,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14800,7 +14800,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14819,7 +14819,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14838,7 +14838,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14857,7 +14857,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14876,7 +14876,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14895,7 +14895,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14914,7 +14914,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14933,7 +14933,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14952,7 +14952,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -14971,13 +14971,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아이리스의 메멘토 - 웨펀마스터",
 		"set":"",
 		"goyu":"",
@@ -14990,13 +14990,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아이리스의 메멘토 - 소울브링어",
 		"set":"",
 		"goyu":"",
@@ -15009,13 +15009,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아이리스의 메멘토 - 버서커",
 		"set":"",
 		"goyu":"",
@@ -15028,13 +15028,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"아이리스의 메멘토 - 아수라",
 		"set":"",
 		"goyu":"",
@@ -15047,13 +15047,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아이리스의 메멘토 - 소드마스터",
 		"set":"",
 		"goyu":"",
@@ -15066,13 +15066,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아이리스의 메멘토 - 데몬슬레이어",
 		"set":"",
 		"goyu":"",
@@ -15085,13 +15085,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아이리스의 메멘토 - 베가본드",
 		"set":"",
 		"goyu":"",
@@ -15104,13 +15104,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"아이리스의 메멘토 - 다크템플러",
 		"set":"",
 		"goyu":"",
@@ -15123,13 +15123,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아이리스의 메멘토 - 넨마스터(여)",
 		"set":"",
 		"goyu":"",
@@ -15142,13 +15142,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아이리스의 메멘토 - 스트라이커(여)",
 		"set":"",
 		"goyu":"",
@@ -15161,13 +15161,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아이리스의 메멘토 - 스트리트파이터(여)",
 		"set":"",
 		"goyu":"",
@@ -15180,13 +15180,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"아이리스의 메멘토 - 그래플러(여)",
 		"set":"",
 		"goyu":"",
@@ -15199,13 +15199,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아이리스의 메멘토 - 넨마스터(남)",
 		"set":"",
 		"goyu":"",
@@ -15218,13 +15218,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아이리스의 메멘토 - 스트라이커(남)",
 		"set":"",
 		"goyu":"",
@@ -15237,13 +15237,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아이리스의 메멘토 - 스트리트파이터(남)",
 		"set":"",
 		"goyu":"",
@@ -15256,13 +15256,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"아이리스의 메멘토 - 그래플러(남)",
 		"set":"",
 		"goyu":"",
@@ -15275,13 +15275,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아이리스의 메멘토 - 레인저(남)",
 		"set":"",
 		"goyu":"",
@@ -15294,13 +15294,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아이리스의 메멘토 - 런처(남)",
 		"set":"",
 		"goyu":"",
@@ -15313,13 +15313,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아이리스의 메멘토 - 메카닉(남)",
 		"set":"",
 		"goyu":"",
@@ -15332,13 +15332,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"아이리스의 메멘토 - 스핏파이어(남)",
 		"set":"",
 		"goyu":"",
@@ -15351,13 +15351,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아이리스의 메멘토 - 레인저(여)",
 		"set":"",
 		"goyu":"",
@@ -15370,13 +15370,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아이리스의 메멘토 - 런처(여)",
 		"set":"",
 		"goyu":"",
@@ -15389,13 +15389,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아이리스의 메멘토 - 메카닉(여)",
 		"set":"",
 		"goyu":"",
@@ -15408,13 +15408,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"아이리스의 메멘토 - 스핏파이어(여)",
 		"set":"",
 		"goyu":"",
@@ -15427,13 +15427,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 엘레멘탈마스터",
 		"set":"",
 		"goyu":"",
@@ -15446,13 +15446,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 소환사(수)",
 		"set":"",
 		"goyu":"",
@@ -15465,13 +15465,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 소환사(화)",
 		"set":"",
 		"goyu":"",
@@ -15484,13 +15484,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 소환사(명)",
 		"set":"",
 		"goyu":"",
@@ -15503,13 +15503,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 소환사(암)",
 		"set":"",
 		"goyu":"",
@@ -15522,13 +15522,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 마도학자",
 		"set":"",
 		"goyu":"",
@@ -15541,13 +15541,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"아이리스의 메멘토 - 배틀메이지",
 		"set":"",
 		"goyu":"",
@@ -15560,13 +15560,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아이리스의 메멘토 - 엘레멘탈 마버",
 		"set":"",
 		"goyu":"",
@@ -15579,13 +15579,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"아이리스의 메멘토 - 빙결사",
 		"set":"",
 		"goyu":"",
@@ -15598,13 +15598,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아이리스의 메멘토 - 크루세이더",
 		"set":"",
 		"goyu":"",
@@ -15617,13 +15617,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아이리스의 메멘토 - 인파이터",
 		"set":"",
 		"goyu":"",
@@ -15636,13 +15636,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아이리스의 메멘토 - 퇴마사",
 		"set":"",
 		"goyu":"",
@@ -15655,13 +15655,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"아이리스의 메멘토 - 어벤저",
 		"set":"",
 		"goyu":"",
@@ -15674,13 +15674,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아이리스의 메멘토 - 로그",
 		"set":"",
 		"goyu":"",
@@ -15693,13 +15693,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아이리스의 메멘토 - 사령술사",
 		"set":"",
 		"goyu":"",
@@ -15712,13 +15712,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아이리스의 메멘토 - 쿠노이치",
 		"set":"",
 		"goyu":"",
@@ -15731,13 +15731,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"아이리스의 메멘토 - 섀도우 댄서",
 		"set":"",
 		"goyu":"",
@@ -15750,13 +15750,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아이리스의 메멘토 - 엘븐나이트",
 		"set":"",
 		"goyu":"",
@@ -15769,13 +15769,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"아이리스의 메멘토 - 카오스",
 		"set":"",
 		"goyu":"",
@@ -15788,13 +15788,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아이리스의 메멘토 - 듀얼리스트",
 		"set":"",
 		"goyu":"",
@@ -15807,13 +15807,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":65,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"아이리스의 메멘토 - 뱅가드",
 		"set":"",
 		"goyu":"",
@@ -15826,7 +15826,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15845,7 +15845,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15864,7 +15864,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15883,7 +15883,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15902,7 +15902,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15921,7 +15921,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -15940,13 +15940,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"증폭의 탈리스만 스톤 - 검성",
 		"set":"",
 		"goyu":"",
@@ -15959,13 +15959,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"증폭의 탈리스만 스톤 - 헬벤터",
 		"set":"",
 		"goyu":"",
@@ -15978,13 +15978,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"증폭의 탈리스만 스톤 - 소울테이커",
 		"set":"",
 		"goyu":"",
@@ -15997,13 +15997,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"증폭의 탈리스만 스톤 - 대암흑천",
 		"set":"",
 		"goyu":"",
@@ -16016,13 +16016,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"증폭의 탈리스만 스톤 - 노블레스",
 		"set":"",
 		"goyu":"",
@@ -16035,13 +16035,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"증폭의 탈리스만 스톤 - 검마",
 		"set":"",
 		"goyu":"",
@@ -16054,13 +16054,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"증폭의 탈리스만 스톤 - 검호",
 		"set":"",
 		"goyu":"",
@@ -16073,13 +16073,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"증폭의 탈리스만 스톤 - 암제",
 		"set":"",
 		"goyu":"",
@@ -16092,13 +16092,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"증폭의 탈리스만 스톤 - 백화요란",
 		"set":"",
 		"goyu":"",
@@ -16111,13 +16111,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"증폭의 탈리스만 스톤 - 챔피언",
 		"set":"",
 		"goyu":"",
@@ -16130,13 +16130,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"증폭의 탈리스만 스톤 - 독왕",
 		"set":"",
 		"goyu":"",
@@ -16149,13 +16149,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"증폭의 탈리스만 스톤 - 토네이도",
 		"set":"",
 		"goyu":"",
@@ -16168,13 +16168,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"증폭의 탈리스만 스톤 - 광호제",
 		"set":"",
 		"goyu":"",
@@ -16187,13 +16187,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"증폭의 탈리스만 스톤 - 무극",
 		"set":"",
 		"goyu":"",
@@ -16206,13 +16206,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"증폭의 탈리스만 스톤 - 천수나한",
 		"set":"",
 		"goyu":"",
@@ -16225,13 +16225,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"증폭의 탈리스만 스톤 - 자이언트",
 		"set":"",
 		"goyu":"",
@@ -16244,13 +16244,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"증폭의 탈리스만 스톤 - 데스페라도",
 		"set":"",
 		"goyu":"",
@@ -16263,13 +16263,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"증폭의 탈리스만 스톤 - 블래스터",
 		"set":"",
 		"goyu":"",
@@ -16282,13 +16282,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"증폭의 탈리스만 스톤 - 마이스터",
 		"set":"",
 		"goyu":"",
@@ -16301,13 +16301,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"증폭의 탈리스만 스톤 - 제너럴",
 		"set":"",
 		"goyu":"",
@@ -16320,13 +16320,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"증폭의 탈리스만 스톤 - 블러디아",
 		"set":"",
 		"goyu":"",
@@ -16339,13 +16339,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"증폭의 탈리스만 스톤 - 헤비배럴",
 		"set":"",
 		"goyu":"",
@@ -16358,13 +16358,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"증폭의 탈리스만 스톤 - 메탈하트",
 		"set":"",
 		"goyu":"",
@@ -16377,13 +16377,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"증폭의 탈리스만 스톤 - 발키리",
 		"set":"",
 		"goyu":"",
@@ -16396,13 +16396,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 아크메이지",
 		"set":"",
 		"goyu":"",
@@ -16415,13 +16415,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 문엠프레스 (화)",
 		"set":"",
 		"goyu":"",
@@ -16434,13 +16434,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 문엠프레스 (수)",
 		"set":"",
 		"goyu":"",
@@ -16453,13 +16453,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 문엠프레스 (명)",
 		"set":"",
 		"goyu":"",
@@ -16472,13 +16472,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 문엠프레스 (암)",
 		"set":"",
 		"goyu":"",
@@ -16491,13 +16491,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 벨라트릭스",
 		"set":"",
 		"goyu":"",
@@ -16510,13 +16510,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"증폭의 탈리스만 스톤 - 트릭스터",
 		"set":"",
 		"goyu":"",
@@ -16529,13 +16529,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"증폭의 탈리스만 스톤 - 워록",
 		"set":"",
 		"goyu":"",
@@ -16548,13 +16548,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"증폭의 탈리스만 스톤 - 프로즌하트",
 		"set":"",
 		"goyu":"",
@@ -16567,13 +16567,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"증폭의 탈리스만 스톤 - 홀리오더",
 		"set":"",
 		"goyu":"",
@@ -16586,13 +16586,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"증폭의 탈리스만 스톤 - 갓핸드",
 		"set":"",
 		"goyu":"",
@@ -16605,13 +16605,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"증폭의 탈리스만 스톤 - 용투사",
 		"set":"",
 		"goyu":"",
@@ -16624,13 +16624,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"증폭의 탈리스만 스톤 - 둠스가디언",
 		"set":"",
 		"goyu":"",
@@ -16643,13 +16643,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"증폭의 탈리스만 스톤 - 실버문",
 		"set":"",
 		"goyu":"",
@@ -16662,13 +16662,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"증폭의 탈리스만 스톤 - 데스브링어",
 		"set":"",
 		"goyu":"",
@@ -16681,13 +16681,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"증폭의 탈리스만 스톤 - 이즈나비",
 		"set":"",
 		"goyu":"",
@@ -16700,13 +16700,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"증폭의 탈리스만 스톤 - 나이트메어",
 		"set":"",
 		"goyu":"",
@@ -16719,13 +16719,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"증폭의 탈리스만 스톤 - 피스메이커",
 		"set":"",
 		"goyu":"",
@@ -16738,13 +16738,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"증폭의 탈리스만 스톤 - 마왕",
 		"set":"",
 		"goyu":"",
@@ -16757,13 +16757,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"증폭의 탈리스만 스톤 - 하이랜더",
 		"set":"",
 		"goyu":"",
@@ -16776,13 +16776,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"증폭의 탈리스만 스톤 - 레버넌트",
 		"set":"",
 		"goyu":"",
@@ -16795,13 +16795,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"파멸의 탈리스만 스톤 - 검신",
 		"set":"",
 		"goyu":"",
@@ -16814,13 +16814,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"파멸의 탈리스만 스톤 - 블러드이블",
 		"set":"",
 		"goyu":"",
@@ -16833,13 +16833,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"파멸의 탈리스만 스톤 - 다크로드",
 		"set":"",
 		"goyu":"",
@@ -16852,13 +16852,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(남)",
+		"class":"swordman_m",
 		"name":"파멸의 탈리스만 스톤 - 인다라천",
 		"set":"",
 		"goyu":"",
@@ -16871,13 +16871,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"파멸의 탈리스만 스톤 - 마제스티",
 		"set":"",
 		"goyu":"",
@@ -16890,13 +16890,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"파멸의 탈리스만 스톤 - 디어사이드",
 		"set":"",
 		"goyu":"",
@@ -16909,13 +16909,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"파멸의 탈리스만 스톤 - 네메시스",
 		"set":"",
 		"goyu":"",
@@ -16928,13 +16928,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"귀검사(여)",
+		"class":"swordman_f",
 		"name":"파멸의 탈리스만 스톤 - 검제",
 		"set":"",
 		"goyu":"",
@@ -16947,13 +16947,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"파멸의 탈리스만 스톤 - 염제 폐월수화",
 		"set":"",
 		"goyu":"",
@@ -16966,13 +16966,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"파멸의 탈리스만 스톤 - 카이저",
 		"set":"",
 		"goyu":"",
@@ -16985,13 +16985,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"파멸의 탈리스만 스톤 - 용독문주",
 		"set":"",
 		"goyu":"",
@@ -17004,13 +17004,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(여)",
+		"class":"fighter_f",
 		"name":"파멸의 탈리스만 스톤 - 얼티밋 디바",
 		"set":"",
 		"goyu":"",
@@ -17023,13 +17023,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"파멸의 탈리스만 스톤 - 염황 광풍제월",
 		"set":"",
 		"goyu":"",
@@ -17042,13 +17042,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"파멸의 탈리스만 스톤 - 패황",
 		"set":"",
 		"goyu":"",
@@ -17061,13 +17061,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"파멸의 탈리스만 스톤 - 명왕",
 		"set":"",
 		"goyu":"",
@@ -17080,13 +17080,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"격투가(남)",
+		"class":"fighter_m",
 		"name":"파멸의 탈리스만 스톤 - 그랜드 마스터",
 		"set":"",
 		"goyu":"",
@@ -17099,13 +17099,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"파멸의 탈리스만 스톤 - 레이븐",
 		"set":"",
 		"goyu":"",
@@ -17118,13 +17118,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"파멸의 탈리스만 스톤 - 디스트로이어",
 		"set":"",
 		"goyu":"",
@@ -17137,13 +17137,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"파멸의 탈리스만 스톤 - 프라임",
 		"set":"",
 		"goyu":"",
@@ -17156,13 +17156,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(남)",
+		"class":"gunner_m",
 		"name":"파멸의 탈리스만 스톤 - 커맨더",
 		"set":"",
 		"goyu":"",
@@ -17175,13 +17175,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"파멸의 탈리스만 스톤 - 크림슨 로제",
 		"set":"",
 		"goyu":"",
@@ -17194,13 +17194,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"파멸의 탈리스만 스톤 - 스톰트루퍼",
 		"set":"",
 		"goyu":"",
@@ -17213,13 +17213,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"파멸의 탈리스만 스톤 - 옵티머스",
 		"set":"",
 		"goyu":"",
@@ -17232,13 +17232,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"거너(여)",
+		"class":"gunner_f",
 		"name":"파멸의 탈리스만 스톤 - 프레이야",
 		"set":"",
 		"goyu":"",
@@ -17251,13 +17251,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"파멸의 탈리스만 스톤 - 오버마인드",
 		"set":"",
 		"goyu":"",
@@ -17270,13 +17270,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"파멸의 탈리스만 스톤 - 아슈타르테",
 		"set":"",
 		"goyu":"",
@@ -17289,13 +17289,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"파멸의 탈리스만 스톤 - 지니위즈",
 		"set":"",
 		"goyu":"",
@@ -17308,13 +17308,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(여)",
+		"class":"mage_f",
 		"name":"파멸의 탈리스만 스톤 - 이클립스",
 		"set":"",
 		"goyu":"",
@@ -17327,13 +17327,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"파멸의 탈리스만 스톤 - 오블리비언",
 		"set":"",
 		"goyu":"",
@@ -17346,13 +17346,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마법사(남)",
+		"class":"mage_m",
 		"name":"파멸의 탈리스만 스톤 - 이터널",
 		"set":"",
 		"goyu":"",
@@ -17365,13 +17365,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"파멸의 탈리스만 스톤 - 저스티스",
 		"set":"",
 		"goyu":"",
@@ -17384,13 +17384,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"파멸의 탈리스만 스톤 - 세인트",
 		"set":"",
 		"goyu":"",
@@ -17403,13 +17403,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"파멸의 탈리스만 스톤 - 이모탈",
 		"set":"",
 		"goyu":"",
@@ -17422,13 +17422,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"프리스트(남)",
+		"class":"priest_m",
 		"name":"파멸의 탈리스만 스톤 - 태을선인",
 		"set":"",
 		"goyu":"",
@@ -17441,13 +17441,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"파멸의 탈리스만 스톤 - 알키오네",
 		"set":"",
 		"goyu":"",
@@ -17460,13 +17460,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"파멸의 탈리스만 스톤 - 타나토스",
 		"set":"",
 		"goyu":"",
@@ -17479,13 +17479,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"파멸의 탈리스만 스톤 - 시라누이",
 		"set":"",
 		"goyu":"",
@@ -17498,13 +17498,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"도적(여)",
+		"class":"thief_f",
 		"name":"파멸의 탈리스만 스톤 - 그림리퍼",
 		"set":"",
 		"goyu":"",
@@ -17517,13 +17517,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"파멸의 탈리스만 스톤 - 가이아",
 		"set":"",
 		"goyu":"",
@@ -17536,13 +17536,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"나이트(여)",
+		"class":"knight_f",
 		"name":"파멸의 탈리스만 스톤 - 마신",
 		"set":"",
 		"goyu":"",
@@ -17555,13 +17555,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"파멸의 탈리스만 스톤 - 듀란달",
 		"set":"",
 		"goyu":"",
@@ -17574,13 +17574,13 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
 		"sort3":"마법석",
 		"level":75,
-		"class":"마창사(남)",
+		"class":"lancer_m",
 		"name":"파멸의 탈리스만 스톤 - 워로드",
 		"set":"",
 		"goyu":"",
@@ -17593,7 +17593,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -17612,7 +17612,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -17631,7 +17631,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",
@@ -17650,7 +17650,7 @@ var itemList = [
 		"jogak":0,
 		"init":0,
 		"enchant":0
-	},
+	}, 
 	{
 		"sort1":"악세서리／특수장비",
 		"sort2":"특수장비",

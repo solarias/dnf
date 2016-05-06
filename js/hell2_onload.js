@@ -3,79 +3,272 @@
 //※ 첫 화면
 //=================================================================================================================
 window.onload = function() {
+	//데이터 초기화
+	initData();
+		//(저장된 데이터 있으면) 데이터 불러오기
+		if (localStorage["hell2_init"] === "true") {
+			//1. 불러온 데이터 작성
+			var tempObj = localGet("hell2");
+			switch (tempObj["playMode"]) {
+				case "normal":
+					$("#continue_mode").innerHTML = "일반";
+					break;
+				case "rpg":
+					$("#continue_mode").innerHTML = "RPG";
+					break;
+				case "beckey":
+					$("#continue_mode").innerHTML = "베키";
+					break;
+			}
+			$("#continue_count").innerHTML = tempObj["count"];
+			$("#continue_dayCount").innerHTML = tempObj["dateState"]["date"];
+			if (tempObj["myCharacter"] === "") $("#continue_character").innerHTML = "없음";
+				else $("#continue_character").innerHTML = characterList[tempObj["myCharacter"]]["name"];
+			$("#continue_power").innerHTML = thousand(parseInt(tempObj["power"]));
+			//2. 데이터 현황 출력
+			$("#continue_no").style.display = "none";
+			$("#continue_yes").style.display = "block";
+		//(불러올 데이터가 없으면)
+		} else {
+			//1. 데이터 현황 출력
+			$("#continue_no").style.display = "block";
+			$("#continue_yes").style.display = "none";
+		}
 	//모드 설명
 	$("#titleScreen_continue").onmouseover = function() {
 		$("#titleScreen_description_nothing").style.display = "none";
 		$("#titleScreen_description_continue").style.display = "block";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_beckey").style.display = "none";
+		$("#titleScreen_description_password").style.display = "none";
 	};
 	$("#titleScreen_normal").onmouseover = function() {
 		$("#titleScreen_description_nothing").style.display = "none";
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "block";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_beckey").style.display = "none";
+		$("#titleScreen_description_password").style.display = "none";
 	};
 	$("#titleScreen_rpg").onmouseover = function() {
 		$("#titleScreen_description_nothing").style.display = "none";
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "block";
+		$("#titleScreen_description_beckey").style.display = "none";
+		$("#titleScreen_description_password").style.display = "none";
+	};
+	$("#titleScreen_beckey").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "none";
+		$("#titleScreen_description_normal").style.display = "none";
+		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_beckey").style.display = "block";
+		$("#titleScreen_description_password").style.display = "none";
+	};
+	$("#titleScreen_password").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "none";
+		$("#titleScreen_description_normal").style.display = "none";
+		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_beckey").style.display = "none";
+		$("#titleScreen_description_password").style.display = "block";
 	};
 
 	//버튼 활성화
 	$("#titleScreen_continue").innerHTML = "이어서 하기";
 		$("#titleScreen_continue").disabled = false;
-		$("#titleScreen_continue").style.color = "gray";
+		//불러올 수 없으면 -> 색상 표시
+		if (localStorage["hell2_init"] !== "true") {
+			$("#titleScreen_continue").style.color = "gray";
+		}
 	$("#titleScreen_normal").innerHTML = "일반 모드 시작";
 		$("#titleScreen_normal").disabled = false;
 	$("#titleScreen_rpg").innerHTML = "RPG 모드 시작";
 		$("#titleScreen_rpg").disabled = false;
+	$("#titleScreen_beckey").innerHTML = "베키";
+		$("#titleScreen_beckey").disabled = false;
+	$("#titleScreen_password").innerHTML = "P/W";
+		$("#titleScreen_password").disabled = false;
+		//아직은 미활성화
+		$("#titleScreen_password").style.color = "gray";
 
 	//버튼 클릭
-	$("#titleScreen_normal").onclick = function() {
-		playMode = "normal";
-		//일반모드 : 표시만 해줌
-			$("#mode").innerHTML = "일반";
-		$("#titleScreen_main").style.display = "none";
-		$("#titleScreen_loading").style.display = "block";
-		main();
+	$("#titleScreen_continue").onclick = function() {
+		if (localStorage["hell2_init"] === "true") {
+			//데이터 적용
+			loadData();
+			//화면 전환
+			$("#titleScreen_main").style.display = "none";
+			$("#titleScreen_loading").style.display = "block";
+			main("continue");
+		}
 	};
-	$("#titleScreen_rpg").onclick = function() {
-		playMode = "rpg";
-		//RPG모드 : 일부 기능 표시
-			//모드 표시
-			$("#mode").innerHTML = "RPG";
-			//전투력 표시
-			$("#power_area").style.display = "block";
-		//RPG모드 : 일부 기능 막음
-			//던전 난이도
-			$("#difficulty").selectedIndex = 4;
-			$("#difficulty").disabled = "disabled";
-			//피로도 변경
-			$("#date_config").disabled = "disabled";
-			//교환가능 항아리
-			$("#pot_tradable").disabled = "disabled";
-			//기본 장비 획득
-			$("#func_basicItem").disabled = "disabled";
-			$("#option_basicItem").disabled = "disabled";
-			//드랍 확률 조절
-			$("#shift_chance").disabled = "disabled";
-			//도전장 가격 = 20,000 Gold
-			$("#cost_set_gold").disabled = "disabled";
-			$("#cost_set_gold").value = "도전장 = 20,000 Gold";
-				gold = 20000;
-		$("#titleScreen_main").style.display = "none";
-		$("#titleScreen_loading").style.display = "block";
-		main();
-	};
+		//RPG모드
+		$("#titleScreen_rpg").onclick = function() {
+			$("#titleScreen_main").style.display = "none";
+			$("#titleScreen_startOption").style.display = "block";
+		};
+
+		var tempArr = deepCopy(Object.keys(characterList));
+		for (var i=tempArr.length-1;i>=0;i--) {
+			if (tempArr[i] === "beckey") {
+				tempArr.splice(i,1);
+				break;
+			}
+		}
+		for (var i=0;i<tempArr.length;i++) {
+			(function(i) {
+				//마우스 올리기
+				$("#startPption_select_" + tempArr[i]).onmouseover = function() {
+					if (tempArr[i] !== myCharacter) {
+						//캐릭터 선택버튼 변경
+						$("#startPption_select_" + tempArr[i]).classList.remove("off");
+						$("#startPption_select_" + tempArr[i]).classList.add("on");
+					}
+				};
+			})(i);
+		}
+		for (var i=0;i<tempArr.length;i++) {
+			(function(i) {
+				//마우스 치우기
+				$("#startPption_select_" + tempArr[i]).onmouseout = function() {
+					if (tempArr[i] !== myCharacter) {
+						//캐릭터 선택버튼 변경
+						$("#startPption_select_" + tempArr[i]).classList.remove("on");
+						$("#startPption_select_" + tempArr[i]).classList.add("off");
+					}
+				};
+			})(i);
+		}
+		for (var i=0;i<tempArr.length;i++) {
+			(function(i) {
+				//마우스 클릭
+				$("#startPption_select_" + tempArr[i]).onclick = function() {
+					if (tempArr[i] !== myCharacter) {
+						//캐릭터 선택버튼 변경
+						for (var j=0;j<tempArr.length;j++) {
+							$("#startPption_select_" + tempArr[j]).classList.remove("on");
+							$("#startPption_select_" + tempArr[j]).classList.add("off");
+						}
+						$("#startPption_select_" + tempArr[i]).classList.remove("off");
+						$("#startPption_select_" + tempArr[i]).classList.add("on");
+						//캐릭터 선택했다고 표시
+						myCharacter = tempArr[i];
+						$("#startOption_description_sprite").className = tempArr[i];
+						$("#startPption_selected_text").innerHTML = characterList[tempArr[i]]["name"];
+						//시작버튼 활성화
+						$("#startOption_start").classList.add("able");
+						$("#startOption_start").disabled = false;
+					}
+				};
+			})(i);
+		}
+
+		$("#startOption_cancel").onclick = function() {
+			$("#titleScreen_startOption").style.display = "none";
+			$("#titleScreen_main").style.display = "block";
+		};
+		$("#startOption_start").onclick = function() {
+			playMode = "rpg";
+			//RPG모드 : 직업 표시
+				setCharacter(myCharacter);
+			//RPG모드 : 일부 기능 표시
+				//모드 표시
+				$("#mode").innerHTML = "RPG";
+				//전투력 표시
+				$("#power_area").style.display = "block";
+			//RPG모드 : 일부 기능 막음
+				//던전 난이도
+				$("#difficulty").selectedIndex = 4;
+				$("#difficulty").disabled = "disabled";
+				//피로도 변경
+				$("#date_config").disabled = "disabled";
+				//교환가능 항아리
+				$("#pot_tradable").disabled = "disabled";
+				//기본 장비 획득
+				$("#func_basicItem").disabled = "disabled";
+				$("#option_basicItem").disabled = "disabled";
+				//드랍 확률 조절
+				$("#shift_chance").disabled = "disabled";
+				//도전장 가격 = 20,000 Gold
+				$("#cost_set_gold").disabled = "disabled";
+				$("#cost_set_gold").value = "도전장 = 20,000 Gold";
+					gold = 20000;
+			//화면 전환
+			$("#titleScreen_startOption").style.display = "none";
+			$("#titleScreen_loading").style.display = "block";
+			main();
+		};
+		//일반 모드
+		$("#titleScreen_normal").onclick = function() {
+			playMode = "normal";
+			//일반 모드 : 무작위 직업 설정
+				setRandomCharacter();
+			//일반모드 : 표시만 해줌
+				$("#mode").innerHTML = "일반";
+			//일반모드 : 안톤 심장부 봉인
+				$("#final_area").style.display = "none";
+			$("#titleScreen_main").style.display = "none";
+			$("#titleScreen_loading").style.display = "block";
+			//화면 전환
+			main();
+		};
+		//베키모드
+		$("#titleScreen_beckey").onclick = function() {
+			playMode = "beckey";
+			//베키모드 : 직업 표시
+				myCharacter = "beckey";
+				setCharacter(myCharacter);
+				//베키 전용 브금
+				$("#bgm_type").selectedIndex = indexSelectByValue($("#bgm_type"), "beckey");
+				//베키 전용 장비 준비
+				for (var i=0;i<partList.length;i++) {
+					clearSelect($("#list_" + partList[i] + "_select"));
+					var option = document.createElement("option");
+						option.value = "";
+						if (myCharacter !== "beckey") {
+							option.innerHTML = "Lv.60 | 마법으로 봉인된 모험가 " + partList[i];
+						} else {
+							option.innerHTML = "Lv.60 | 베키의 망가진 " + partList[i];
+						}
+					$("#list_" + partList[i] + "_select").add(option);
+				}
+			//베키모드 : 일부 기능 표시
+				//모드 표시
+				$("#mode").innerHTML = "베키";
+				//전투력 표시
+				$("#power_area").style.display = "block";
+			//베키모드 : 일부 기능 막음
+				//던전 난이도
+				$("#difficulty").selectedIndex = 4;
+				$("#difficulty").disabled = "disabled";
+				//피로도 변경
+				$("#date_config").disabled = "disabled";
+				//교환가능 항아리
+				$("#pot_tradable").disabled = "disabled";
+				//기본 장비 획득
+				$("#func_basicItem").disabled = "disabled";
+				$("#option_basicItem").disabled = "disabled";
+				//드랍 확률 조절
+				$("#shift_chance").disabled = "disabled";
+				//도전장 가격 = 20,000 Gold
+				$("#cost_set_gold").disabled = "disabled";
+				$("#cost_set_gold").value = "도전장 = 20,000 Gold";
+					gold = 20000;
+			//화면 전환
+			$("#titleScreen_main").style.display = "none";
+			$("#titleScreen_loading").style.display = "block";
+			main();
+		};
 };
 
 
 //=================================================================================================================
 //※ 본격적인 실행
 //=================================================================================================================
-function main() {
+function main(cmd) {
 	//======================
 	//※ 데이터 정리
 	//======================
@@ -93,18 +286,11 @@ function main() {
 		tempList3.push("");//"비 고유에픽"
 		for (i=0;i<tempList.length;i++) {
 			//레벨
-				//노멀 모드
-				for (j=0;j<levelList["normal"][tempList[i]].length;j++) {
-					if (tempList2.indexOf(levelList["normal"][tempList[i]][j]) === -1) {
-						tempList2.push(levelList["normal"][tempList[i]][j]);
-					}
+			for (j=0;j<levelList[playMode][tempList[i]].length;j++) {
+				if (tempList2.indexOf(levelList[playMode][tempList[i]][j]) === -1) {
+					tempList2.push(levelList[playMode][tempList[i]][j]);
 				}
-				//RPG 모드
-				for (j=0;j<levelList["rpg"][tempList[i]].length;j++) {
-					if (tempList2.indexOf(levelList["rpg"][tempList[i]][j]) === -1) {
-						tempList2.push(levelList["rpg"][tempList[i]][j]);
-					}
-				}
+			}
 			//지역
 			if (tempList3.indexOf(areaList[tempList[i]]) === -1) {
 				tempList3.push(areaList[tempList[i]]);
@@ -199,8 +385,11 @@ function main() {
 		coordinate.push([0,0]);
 	}
 
-	//확률 수치 default에 맞추기
-	chanceList_num = deepCopy(chanceList_num_default);
+	//(불러오는 게 아니면)
+	if (cmd != "continue") {
+		//확률 수치 default에 맞추기
+		chanceList_num = deepCopy(chanceList_num_default);
+	}
 
 	//날짜 최초 계산
 	setDate();
@@ -215,9 +404,9 @@ function main() {
 	try {
 		//음악파일 업로드 위치 : 다음 블로그
 		sound_appear = new Audio;
-			sound_appear.volume = 0.3;
+			sound_appear.volume = 0.2;
 		sound_land = new Audio;
-			sound_land.volume = 0.3;
+			sound_land.volume = 0.2;
 
 		if (sound_appear.canPlayType("audio/mpeg") !== "") {
 			//mp3 출력 가능
@@ -249,23 +438,31 @@ function main() {
 			"15":new Audio("./sound/bgm_15.mp3"),
 			"16":new Audio("./sound/bgm_16.mp3"),
 			"17":new Audio("./sound/bgm_17.mp3"),
-			"hell":new Audio("./sound/bgm_hell.mp3")
+			"18":new Audio("./sound/bgm_18.mp3"),
+			"hell":new Audio("./sound/bgm_hell.mp3"),
+			"beckey":new Audio("./sound/beckey_bgm.mp3"),
+			"rpg_clear":new Audio("./sound/hell_rpg_clear.mp3")
 		};
-			//BGM 반복여부 & 볼륨 조절
+			//BGM 공통 설정
 			for (var key in bgmList) {
 				if (bgmList.hasOwnProperty(key)) {
-					bgmList[key].loop = true;
 					bgmList[key].volume = 0.2;
+					bgmList[key].loop = true;
 				}
 			}
-			//특정 브금 볼륨 조절 (너무 시끄러움)
-			bgmList["hell"].volume = 0.1;
+			//특정 BGM 설정
+			bgmList["hell"].volume = 0.1;//너무 시끄러움
+			bgmList["rpg_clear"].loop = false;//일회성 브금
 
 		//각종 효과음 준비
 		sfxList = {
 			"open":new Audio("./sound/win_open.mp3"),
 			"close":new Audio("./sound/win_close.mp3"),
-			"hit":new Audio("./sound/hell_hit2.mp3"),
+			"hit_hit":new Audio("./sound/hell_hit_hit.mp3"),
+			"hit_slash":new Audio("./sound/hell_hit_slash.mp3"),
+			"hit_gun":new Audio("./sound/hell_hit_gun.mp3"),
+			"hit_magic":new Audio("./sound/hell_hit_magic.mp3"),
+			"hit_beckey":new Audio("./sound/hell_hit_beckey.mp3"),
 			"item_drop":new Audio("./sound/hell_item_drop.mp3"),
 			"hell_gabriel_yes":new Audio("./sound/hell_gabriel_yes.mp3"),
 			"hell_gabriel_no":new Audio("./sound/hell_gabriel_no.mp3"),
@@ -275,27 +472,33 @@ function main() {
 			"enchant_fail":new Audio("./sound/enchant_fail.mp3"),
 			"enchant_zero":new Audio("./sound/enchant_zero.mp3"),
 			"pot_opening":new Audio("./sound/pot_opening.mp3"),
+			"anton_scream":new Audio("./sound/hell_anton_scream.mp3"),
+			"beckey_start":new Audio("./sound/beckey_start.mp3"),
+			"beckey_epic":new Audio("./sound/beckey_get.mp3")
 		};
-			//각종 효과음 설정
-			sfxList["open"].volume = 0.4;
-			sfxList["close"].volume = 0.4;
-			sfxList["hit"].volume = 0.1;
-			sfxList["item_drop"].volume = 0.4;
-			sfxList["hell_gabriel_yes"].volume = 0.4;
-			sfxList["hell_gabriel_no"].volume = 0.4;
-			sfxList["wearing"].volume = 0.4;
-			sfxList["enchant_progress"].volume = 0.4;
-			sfxList["enchant_success"].volume = 0.4;
-			sfxList["enchant_fail"].volume = 0.4;
-			sfxList["enchant_zero"].volume = 0.4;
-			sfxList["pot_opening"].volume = 0.4;
+
+			//효과음 공통 설정
+			for (var key in sfxList) {
+				if (sfxList.hasOwnProperty(key)) {
+					sfxList[key].volume = 0.4;
+				}
+			}
+			//특정 효과음 설정
+			sfxList["hit_hit"].volume = 0.1;
+			sfxList["hit_slash"].volume = 0.1;
+			sfxList["hit_gun"].volume = 0.3;
+			sfxList["hit_magic"].volume = 0.4;
+			sfxList["hit_beckey"].volume = 0.2;
 	} catch(e) {
 		//audio 태그를 지원하지 않을 시
 		$("#option_sound").disabled = "disabled";
-		$("#label_sound").innerHTML = "사운드 미지원"
+		$("#label_sound").innerHTML = "사운드 미지원";
+		$("#option_hitsound").style.display = "none";
+			$("#label_hitsound").style.display = "none";
 		$("#option_bgm").disabled = "disabled";
-		$("#label_bgm").innerHTML = "BGM 미지원"
-		$("#bgm_type").disabled = "disabled";
+			$("#label_bgm").innerHTML = "BGM 미지원";
+			$("#bgm_type").style.display = "none";
+			$("#bgm_type").disabled = "disabled";
 		$("#bgm_type").style.width = "40px";
 	}
 
@@ -305,29 +508,62 @@ function main() {
 	imageList.push("./sprite/images/sprite_item.png");
 	//2. 뒷배경 - 1
 	for (var i=0;i<=17;i++) {
-		imageList.push("./images/epic/background_" + i.toString() + ".jpg");
+		imageList.push("./images/epic/background/background_" + i.toString() + ".jpg");
 	}
+	imageList.push("./images/epic/background/background_ending.png");
 	//3. 뒷배경 - 2
 	imageList.push("./images/epic/menu_background.png");
 	imageList.push("./images/epic/wrap_title.png");
-	//4. 획득창 아이콘, 초대장
-	imageList.push("./images/epic/soul.png");
-	imageList.push("./images/epic/beed.png");
-	imageList.push("./images/epic/cost.png");
-	imageList.push("./images/epic/heroPot.png");
+	imageList.push("./images/epic/pot_opening.gif");
+	imageList.push("./images/epic/gabriel.png");
+	//4. 각종 아이콘, 아이템 아이콘
+		//창 아이콘
+		imageList.push("./images/epic/popup_record.png");
+		imageList.push("./images/epic/popup_inventory.png");
+		imageList.push("./images/epic/popup_set.png");
+		imageList.push("./images/epic/popup_craft.png");
+		imageList.push("./images/epic/popup_equip.png");
+		imageList.push("./images/epic/icon_option.png");
+		//아이템 아이콘
+		imageList.push("./images/epic/soul.png");
+		imageList.push("./images/epic/beed.png");
+		imageList.push("./images/epic/cost.png");
+		imageList.push("./images/epic/heroPot.png");
 	//5. 에픽 이펙트
 	imageList.push("./images/epic/epic_appear.png");
 	imageList.push("./images/epic/epic_land.png");
 	imageList.push("./images/epic/epic_wait.png");
-	//5. 기타
-	imageList.push("./images/epic/popup_record.png");
-	imageList.push("./images/epic/popup_inventory.png");
-	imageList.push("./images/epic/popup_set.png");
-	imageList.push("./images/epic/popup_craft.png");
-	imageList.push("./images/epic/popup_equip.png");
-	imageList.push("./images/epic/pot_opening.gif");
-	imageList.push("./images/epic/icon_option.png");
-	imageList.push("./images/epic/gabriel.png");
+	//6. 캐릭터 스프라이트
+	imageList.push("./images/epic/character_sprite/character_swordman_m.png");
+	imageList.push("./images/epic/character_sprite/character_swordman_f.png");
+	imageList.push("./images/epic/character_sprite/character_darkknight_m.png");
+	imageList.push("./images/epic/character_sprite/character_fighter_m.png");
+	imageList.push("./images/epic/character_sprite/character_fighter_f.png");
+	imageList.push("./images/epic/character_sprite/character_gunner_m.png");
+	imageList.push("./images/epic/character_sprite/character_gunner_f.png");
+	imageList.push("./images/epic/character_sprite/character_mage_m.png");
+	imageList.push("./images/epic/character_sprite/character_mage_f.png");
+	imageList.push("./images/epic/character_sprite/character_creator_f.png");
+	imageList.push("./images/epic/character_sprite/character_priest_m.png");
+	imageList.push("./images/epic/character_sprite/character_thief_f.png");
+	imageList.push("./images/epic/character_sprite/character_knight_f.png");
+	imageList.push("./images/epic/character_sprite/character_lancer_m.png");
+		//번외 캐릭터 스프라이트
+		imageList.push("./images/epic/character_sprite/character_beckey.png");
+	//7. 베키 엔딩
+	imageList.push("./images/epic/beckey_ending/beckey_ending_0.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_1.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_2.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_3.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_4.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_5.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_6.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_7.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_8.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_9.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_10.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_11.jpg");
+	imageList.push("./images/epic/beckey_ending/beckey_ending_12.jpg");
 
 	//5단게 : 이미지 선로딩 실시
 	loadImages(imageList,function(){
@@ -341,14 +577,24 @@ function main() {
 		$("#wrapper").style.display = "block";
 
 		//2. 일부 값 미리 입력
-		dungeon_select();//2-1. 던전 선택
+		if (cmd === "continue") {
+			dungeon_select(dataObj["dungeon"]);//2-1. 던전 선택
+			$("#difficulty").selectedIndex = indexSelectByValue($("#difficulty"), dataObj["difficulty"]);//2-2. 난이도 적용
+			$("#channel").selectedIndex = dataObj["channel"];//2-3. 채널 적용
+		} else {
+			dungeon_select();//2-1. 던전 선택
 
-		//3-1. 인벤토리 구성 (만들어둔 첫 줄 아래로 생성)
-		generateInventory();
-		//3-2. 세트 아이템 구성 (만들어둔 첫 줄 아래로 생성)
-		generateSet();
-		//3-3. 에픽 도감 구성 (만들어둔 첫 줄 아래로 생성)
-		generateCraft();
+		}
+
+		//3. 팝업창 구성 : 로드하지 않았을 경우에만
+		if (cmd !== "continue") {
+			//3-1. 인벤토리 구성 (만들어둔 첫 줄 아래로 생성)
+			generateInventory();
+			//3-2. 세트 아이템 구성 (만들어둔 첫 줄 아래로 생성)
+			generateSet();
+			//3-3. 에픽 도감 구성 (만들어둔 첫 줄 아래로 생성)
+			generateCraft();
+		}
 
 		//4. 조건부 실행 - 아이템 탐색 구성
 		var tempArr = [];//[0] : 일반 1차 분류,
@@ -1259,15 +1505,19 @@ function main() {
 			//1-1-2-5. equip관련 기능
 			$("#character_type").onchange = function() {
 				if (confirm("＊경고 : 한번 정한 캐릭터 직업은 초기화하기 전엔 바꿀 수 없습니다.\
-\n\n\"" + $("#character_type").value + "\"\n\n이걸로 캐릭터 직업을 정하시겠습니까?")) {
+\n\n\"" + characterList[$("#character_type").value]["name"] + "\"\n\n이걸로 캐릭터 직업을 정하시겠습니까?")) {
 					//캐릭터 변경 못하게 설정
 					$("#character_type").disabled = "disabled";
-					//내 캐릭터 저장
+					//내 캐릭터 저장, 이미지 수정
 					myCharacter = $("#character_type").value;
+						clearCharacterClass();
+						$("#character_sprite").classList.add($("#character_type").value);
 					//내 장비 설정
 					setEquip();
 					//창 열기
 					shift("equip");
+					//게임 저장
+					saveData();
 				} else {
 					$("#character_type").selectedIndex = 0;
 				}
@@ -1306,6 +1556,10 @@ function main() {
 					}
 					$("#list_" + partList[i] + "_enchant_run").onclick = function() {
 						//기본 장비 - 강화 불가
+						if (wearingList[partList[i]]["enchant"] === 20) {
+							alert("※ 경고 : 이미 최대치(+20)까지 강화하였습니다.");
+							return;
+						}
 						if (wearingList[partList[i]] === null) {
 							alert("※ 경고 : 기본 장비는 강화할 수 없습니다.");
 							return;
@@ -1548,14 +1802,22 @@ function main() {
 		//1-2. 실행
 		$("#start1").onclick = function() {
 			if (runningState === "") {//0 : 정지상태
-				runningState = "trigger";//'자동 실행 변수' ON
+				//베키모드 : 효과음 실행
+				if ($("#option_sound").checked && myCharacter === "beckey") {
+					if (!sfxList["beckey_start"].paused) {
+						sfxList["beckey_start"].paused();
+						sfxList["beckey_start"].currentTime = 0;
+					}
+					sfxList["beckey_start"].play();
+				}
+				//'자동 실행 변수' ON
+				runningState = "trigger";
 					$("#character_sprite").classList.remove("wait");
 					$("#character_sprite").classList.add("attack");
 				onoff(1);
 				getEpicList();//에픽 리스트 구축
-				trigger(1,0);
+				trigger(1, 0);
 			} else {
-				clearTimeout(autoRunning);//자동실행 해제
 				runningState = "";
 					//=================================
 					//* 캐릭터 스프라이트 정지
@@ -1565,8 +1827,8 @@ function main() {
 					//=================================
 					//* 기둥 체력 회복
 					//=================================
-					if (playMode === "rpg") {
-						hellgate = lifeList[input[0]];
+					if (playMode !== "normal") {
+						hellgate = lifeList[input["dungeon"]];
 						$("#hellgate_life").innerHTML = thousand(hellgate);
 					} else {
 						hellgate = 1;
@@ -1577,6 +1839,14 @@ function main() {
 		}
 		$("#start2").onclick = function() {
 			if (runningState === "") {//0 : 정지상태
+				//베키모드 : 효과음 실행
+				if ($("#option_sound").checked && myCharacter === "beckey") {
+					if (!sfxList["beckey_start"].paused) {
+						sfxList["beckey_start"].paused();
+						sfxList["beckey_start"].currentTime = 0;
+					}
+					sfxList["beckey_start"].play();
+				}
 				//목표 입력
 				if (setObjective("run") === true) {
 					runningState = "trigger";//'자동 실행 변수' ON
@@ -1584,7 +1854,7 @@ function main() {
 						$("#character_sprite").classList.add("attack");
 					onoff(2);//버튼 잠그기
 					getEpicList();//에픽 리스트 구축
-					trigger(2,0);
+					trigger(2, 0);
 				}
 			} else {
 				//메세지 출력
@@ -1598,7 +1868,6 @@ function main() {
 					$("#record").scrollTop = $("#record").scrollHeight;
 				}
 			//뒷처리
-			clearTimeout(autoRunning);//자동실행 해제
 				//=================================
 				//* 캐릭터 스프라이트 정지
 				//=================================
@@ -1607,8 +1876,8 @@ function main() {
 				//=================================
 				//* 기둥 체력 회복
 				//=================================
-				if (playMode === "rpg") {
-					hellgate = lifeList[input[0]];
+				if (playMode !== "normal") {
+					hellgate = lifeList[input["dungeon"]];
 					$("#hellgate_life").innerHTML = thousand(hellgate);
 				} else {
 					hellgate = 1;
@@ -1634,19 +1903,19 @@ function main() {
 		}
 
 		$("#result_button_soulDisassemble").onclick = function() {
-			var input = prompt("해체하실 코스모소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get[3]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 코스모소울을 해체합니다.");
+			var input = prompt("해체하실 코스모소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get["soul_have"]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 코스모소울을 해체합니다.");
 			if (! isNumber(input)) {
 				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
 			} else {
-				var amount = Math.min(input,get[3]);
-				get[3] -= amount;
-				$("#result_soul_have").innerHTML = thousand(get[3]);
+				var amount = Math.min(input,get["soul_have"]);
+				get["soul_have"] -= amount;
+				$("#result_soul_have").innerHTML = thousand(get["soul_have"]);
 				//실질 초대장 감소
-				cost[1] -= cutList[0]*amount;
-				$("#cost_real").innerHTML = thousand(cost[1]);
-				$("#cost_gold_real").innerHTML = setWon(cost[1]*gold + cost[3]);
+				cost["invite_real"] -= cutList[0]*amount;
+				$("#cost_real").innerHTML = thousand(cost["invite_real"]);
+				$("#cost_gold_real").innerHTML = setWon(cost["invite_real"]*gold + cost["gold_real"]);
 				//보유량이 0 이하가 되면 - 해체 버튼 비활성화
-				if (get[3] <= 0) {
+				if (get["soul_have"] <= 0) {
 					$("#result_button_soulDisassemble").disabled = "disabled";
 					$("#result_button_soulDisassemble").value = "없음";
 				}
@@ -1689,8 +1958,8 @@ function main() {
 				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
 			} else {
 				gold = challenge;
-				$("#cost_gold").innerHTML = setWon(cost[0]*gold + cost[2]);
-				$("#cost_gold_real").innerHTML = setWon(cost[1]*gold + cost[3]);
+				$("#cost_gold").innerHTML = setWon(cost["invite"]*gold + cost["gold"]);
+				$("#cost_gold_real").innerHTML = setWon(cost["invite_real"]*gold + cost["gold_real"]);
 			}
 		}
 		$("#cost_compare").onclick = function() {
@@ -1703,8 +1972,8 @@ function main() {
 			if (! isNumber(market)) {
 				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
 			} else {
-				alert("현재 쓴 돈으로 총 " + Math.floor(cost[0] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
-(현금 환산 : " + setWon(Math.floor(cost[0] * gold / 10000000 * market)) + "원)\n\
+				alert("현재 쓴 돈으로 총 " + Math.floor(cost["invite"] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
+(현금 환산 : " + setWon(Math.floor(cost["invite"] * gold / 10000000 * market)) + "원)\n\
 (치킨 1마리 당 15,000원 기준)");
 			}
 		}
@@ -1771,7 +2040,14 @@ function main() {
 				$("#inventory_check_collect").innerHTML = "0";
 
 				//5. 좌측 하단 - 획득 정보 초기화
-				get = [0,0,0,0,0,0];
+				get = {
+					"epic_get":0,//획득 에픽
+					"epic_have":0,//보유 에픽
+					"soul_get":0,//획득 코소
+					"soul_have":0,//보유 코소
+					"invite_get":0,//획득 초대장
+					"beed_get":0//획득 지옥구슬
+				};
 				$("#result_epic_get").innerHTML = "0";
 				$("#result_epic_have").innerHTML = "0";
 				$("#result_soul_get").innerHTML = "0";
@@ -1780,7 +2056,12 @@ function main() {
 				$("#result_beed_get").innerHTML = "0";
 
 				//6. 우측 하단 - 비용 초기화
-				cost = [0,0,0,0];
+				cost = {
+					"invite":0,//초대정 전체
+					"invite_real":0,//초대장 실질
+					"gold":0,//골드 전체
+					"gold_real":0//골드 실질
+				};
 				$("#cost_invitation").innerHTML = "0";
 				$("#cost_real").innerHTML = "0";
 				$("#cost_gold").innerHTML = "0";
@@ -1866,87 +2147,95 @@ function main() {
 						}
 					}
 				alert("모든 기록이 초기화되었습니다." + text2);
+				//게임 저장
+				saveData();
 			}
 		}
 
 		//========================================================
 		// ※ 각종 옵션 설정
 		//========================================================
+		//불러온 데이터가 있다면 적용
+		if (cmd === "continue") {
+		    opt_name_normal("on");
+		    opt_name_jogak("on");
+		    opt_character("on");
+		    opt_bgm_type("on");
+		}
 
 		//2-2. 아이템 명칭 출력 여부
 		$("#option_name_normal").onclick = function() {
-			var sheet = $("#style_name_normal");
-			try {
-				//필터링 적용
-				if ($("#option_name_normal").checked) {
-					sheet.innerHTML = "\
-					.description.normal {\
-						display:inline-block;\
-					}";
-					//필드 아이템 이름 재배치
-					for (var i=0;i<maxQuantity;i++) {
-						//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
-						$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-						$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-						$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-					}
-				} else {
-					//필터링 해제
-					sheet.innerHTML = "";
-				}
-			} catch(e) {
-				alert("＊경고 : \"아이템 명칭\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
-				$("#option_name_normal").checked = true;
-			}
-		}
+			//게임 저장
+			saveData();
+			optionList["name_normal"] = $("#option_name_normal").checked;
+
+			opt_name_normal();
+		};
 
 		//2-3. 에픽 조각 명칭 출력 여부
 		$("#option_name_jogak").onclick = function() {
-			var sheet = $("#style_name_jogak");
-			try {
-				//필터링 적용
-				if ($("#option_name_jogak").checked) {
-					sheet.innerHTML = "\
-					.description.jogak {\
-						display:inline-block;\
-					}";
-					//필드 아이템 이름 재배치
-					for (var i=0;i<maxQuantity;i++) {
-						//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
-						$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-						$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-						$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-					}
-				} else {
-					//필터링 해제
-					sheet.innerHTML = "";
-				}
+			//게임 저장
+			saveData();
 
-			} catch(e) {
-				alert("＊경고 : \"에픽 조각 명칭\" 필터링을 사용할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
-				$("#option_name_jogak").checked = false;
-			}
-		}
+			optionList["name_jogak"] = $("#option_name_jogak").checked;
+			opt_name_jogak();
+		};
 
 		//2. 캐릭터 이미지 출력
 		$("#option_character").onclick = function() {
-			if ($("#option_character").checked) {
-				$("#character_sprite").style.display = "block";
-			} else {
-				$("#character_sprite").style.display = "none";
-			}
-		}
+			//게임 저장
+			saveData();
+
+			optionList["character"] = $("#option_character").checked;
+			opt_character();
+		};
 
 		//2-4. BGM 출력
 			//2-4-1. BGM 체크박스
 			$("#option_bgm").onclick = function() {
-				play($("#bgm_type").value);
+				optionList["bgm"] = $("#option_bgm").checked;
+				opt_bgm_type();
+
+				//게임 저장
+				saveData();
 			}
 			//2-4-2. BGM 타입 드롭다운 메뉴
 			$("#bgm_type").onchange = function() {
-				play($("#bgm_type").value);
+				optionList["bgm_type"] = $("#bgm_type").value;
+				opt_bgm_type();
+
+				//게임 저장
+				saveData();
 			}
-		//2-5. 옵션 버튼
+
+		//2-5. 기타 옵션(체크)
+		$("#option_sound").onclick = function() {
+			optionList["sound"] = $("#option_sound").checked;
+			//게임 저장
+			saveData();
+		}
+		$("#option_hitsound").onclick = function() {
+			optionList["hitsound"] = $("#option_hitsound").checked;
+			//게임 저장
+			saveData();
+		}
+		$("#option_gabriel").onclick = function() {
+			optionList["gabriel"] = $("#option_gabriel").checked;
+			//게임 저장
+			saveData();
+		}
+		$("#gabriel_type").onchange = function() {
+			optionList["gabriel_type"] = $("#gabriel_type").value;
+			//게임 저장
+			saveData();
+		}
+		$("#option_soul").onclick = function() {
+			optionList["soul"] = $("#option_soul").checked;
+			//게임 저장
+			saveData();
+		}
+
+		//2-6. 옵션 버튼
 		$("#option_button").onclick = function() {
 			if ($("#option").style.display !== "none") {
 				$("#option").style.display = "none";
@@ -2066,6 +2355,8 @@ function main() {
 
 				//메세지 출력
 				alert("※ 해당 장비를 인벤토리에 등록하였습니다.\n\n\"" + input + "\"\n\n현재 등록된 기본장비 리스트 : \n" + tempText);
+				//게임 저장
+				saveData();
 
 				return;
 			}
@@ -2192,6 +2483,8 @@ function main() {
 				$("#date_config").className = "";
 				$("#date_config").value = "피로도 설정";
 				$("#date_setting").style.display = "none";
+				//게임 저장
+				saveData();
 			}
 			//날짜환산 - 취소
 			$("#date_cancel").onclick = function() {
