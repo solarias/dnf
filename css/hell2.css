@@ -3524,6 +3524,7 @@ body {
 			}
 	#hellgate_level, #hellgate_item, #hellgate_life {
 		position:absolute;
+		z-index:950;
 
 		width:250px;
 
