@@ -3941,21 +3941,21 @@ function play(type) {
 	if (bgm !== "none") {
 		switch (bgm) {
 			case "beckey":
-				if (type !== "beckey") {
+				if ($("#option_bgm").checked === false || type !== "beckey") {
 					bgmList["beckey"].currentTime = 0;
 					bgmList["beckey"].pause();
 				}
 
 				break;
 			case "hell":
-				if (type !== "hell") {
+				if ($("#option_bgm").checked === false || type !== "hell") {
 					bgmList["hell"].currentTime = 0;
 					bgmList["hell"].pause();
 				}
 
 				break;
 			case "rpg_clear":
-				if (type !== "rpg_clear") {
+				if ($("#option_bgm").checked === false || type !== "rpg_clear") {
 					bgmList["rpg_clear"].currentTime = 0;
 					bgmList["rpg_clear"].pause();
 				}
