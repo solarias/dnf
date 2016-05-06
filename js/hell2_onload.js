@@ -20,8 +20,8 @@ window.onload = function() {
 					$("#continue_mode").innerHTML = "베키";
 					break;
 			}
-			$("#continue_count").innerHTML = tempObj["count"];
-			$("#continue_dayCount").innerHTML = tempObj["dateState"]["date"];
+			$("#continue_count").innerHTML = thousand(tempObj["count"]);
+			$("#continue_dayCount").innerHTML = thousand(tempObj["dateState"]["date"]);
 			if (tempObj["myCharacter"] === "") $("#continue_character").innerHTML = "없음";
 				else $("#continue_character").innerHTML = characterList[tempObj["myCharacter"]]["name"];
 			$("#continue_power").innerHTML = thousand(parseInt(tempObj["power"]));
