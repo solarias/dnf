@@ -513,6 +513,7 @@ function main(cmd) {
 	imageList.push("./images/epic/background/background_ending.png");
 	//3. 뒷배경 - 2
 	imageList.push("./images/epic/menu_background.png");
+	imageList.push("./images/epic/ending_info_background.png");
 	imageList.push("./images/epic/wrap_title.png");
 	imageList.push("./images/epic/pot_opening.gif");
 	imageList.push("./images/epic/gabriel.png");
