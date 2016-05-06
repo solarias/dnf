@@ -3566,7 +3566,13 @@ function setPotOpen(type) {
 		case "tradable":
 			//세팅 가능
 			$("#pot_type").disabled = "";
-			$("#pot_tradable").disabled = "";
+			//일반 버전 외엔 변경 불가
+			if (playMode === "normal") {
+				$("#pot_tradable").disabled = "";
+			} else {
+				$("#pot_tradable").disabled = "disabled";
+			}
+
 
 			$("#pot_open").className = "";
 			$("#pot_open").value = "개봉 (∞)"
@@ -3578,7 +3584,12 @@ function setPotOpen(type) {
 		case "notTradable":
 			//세팅 가능
 			$("#pot_type").disabled = "";
-			$("#pot_tradable").disabled = "";
+			//일반 버전 외엔 변경 불가
+			if (playMode === "normal") {
+				$("#pot_tradable").disabled = "";
+			} else {
+				$("#pot_tradable").disabled = "disabled";
+			}
 
 			$("#pot_open").className = "";
 			$("#pot_open").value = "개봉 (" + tower.toString() + ")"
