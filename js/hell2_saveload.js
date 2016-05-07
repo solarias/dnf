@@ -96,6 +96,8 @@ function loadData() {
     $("#inventory").innerHTML = content_text[1];
     $("#set").innerHTML = content_text[2];
     $("#craft").innerHTML = content_text[3];
+    	//필요 조각수 표시
+    	$("#craft_check_max").innerHTML = thousand(maxJogak);
     generateGabriel();
     //옵션 반영
     $("#option_sound").checked = optionList["sound"];
