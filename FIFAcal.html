@@ -1,22 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
-		
+
 		<title>이적 시장 수수료 계산기</title>
-		
+
 		<style type="text/css">
 			* {
 				padding:0px;
 				margin:0px;
 				border:0px;
-				
+
 				font-family:Arial;
 				font-size:16px;
 				text-decoration:none;
 			}
-			
+
 			.orange {
 				color:orange;
 			}
@@ -26,20 +26,33 @@
 			.blue {
 				color:skyblue;
 			}
-			
+
 			body {
-				padding:10px;
-				
-				background-color:#FFFFCC;
+				background-color:#707070;
 			}
-			
+				#saw {
+					margin-top:10px;
+					width:280px;
+
+					color:yellow;
+					text-decoration:underline;
+					text-align:center;
+
+					display:inline-block;
+				}
+
+			#wrapper {
+				margin:0px auto;
+				width:300px;
+			}
+
 			.title {
 				padding:3px 0px 3px 10px;
 				width:280px;
-				
+
 				background-image:url(./images/FIFAcal/titleBack.png);
 				border:3px #4E4E4E solid;
-				
+
 				color:white;
 				font-size:23px;
 				font-weight:bold;
@@ -48,10 +61,10 @@
 			.wrap {
 				padding:10px 0px 10px 10px;
 				width:280px;
-				
+
 				background:#232323;
 				border:3px #4E4E4E solid;
-				
+
 				color:white;
 				font-weight:bold;
 				line-height:150%;
@@ -60,7 +73,7 @@
 					padding-right:5px;
 					background:white;
 					border:1px gray solid;
-					
+
 					color:black;
 					text-align:right;
 				}
@@ -70,7 +83,7 @@
 				input#text2 {
 					background:#4E4E4E;
 					width:145px;
-					
+
 					color:white;
 				}
 				input#text3 {
@@ -78,9 +91,9 @@
 				}
 				input#text4, input#text5 {
 					width:135px;
-					
+
 					background:#4E4E4E;
-					
+
 					color:white;
 				}
 				input[type="submit"] {
@@ -89,12 +102,12 @@
 					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
 					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
 					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#A0A0A0')"; /* IE8 */
-					
+
 					width:40px;
 					height:20px;
-					
+
 					border:1px #A4A4A4 solid;
-					
+
 					font-weight:bold;
 				}
 						input[type="submit"]:active {
@@ -102,59 +115,68 @@
 						}
 		</style>
 	</head>
-	<div class="title">
-		이적 시장 수수료 계산기
-	</div>
-	<div class="wrap">
-		<form id="saleform">
-		판매금액 : <input id="text1" class="text" type="text" placeholder="입력 후 Enter 클릭"  maxlength="100">
-		<input type="submit" value="입력">
-		</form>
-	</div>
-	<div class="wrap">
-		수 수 료 : <input id="text2" class="text" type="text" placeholder="자동으로 계산됨" readonly>
-	</div>
-	<div class="wrap">
-		&lt;할인율&gt;
-		<br/>
-		<form id="discountform" onsubmit="return false;">
-		<input name="discount" type="radio" value="0"> <span class="blue">0%</span> <span class="yellow">(미적용)</span>
-		<br/>
-		<input name="discount" type="radio" value="0.3"> <span class="blue">30%</span> <span class="yellow">(TOP CLASS 할인)</span>
-		<br/>
-		<input name="discount" type="radio" value="0.4"> <span class="blue">40%</span> <span class="yellow">(PC방 할인)</span> 
-		<br/>
-		<input name="discount" type="radio" value="0.5"> <span class="blue">50%</span> <span class="yellow">(PC방 + TOP 할인)</span>
-		<br/>
-		<input name="discount" type="radio" value="0.6"> <span class="blue">60%</span> <span class="yellow">(PC방 할인 <span class="orange">+ 이벤트</span>)</span>
-		<br/>
-		<input name="discount" type="radio" value="0.7"> <span class="blue">70%</span> <span class="yellow">(PC방 + TOP 할인 <span class="orange">+ 이벤트</span>)</span>
-		<br/>
-		<input name="discount" type="radio" value="custom"> <span class="yellow">직접 입력 (%)</span>
-		<input id="text3" class="text" type="text" value="" placeholder="입력 후 Enter 클릭"> <input type="submit" value="입력">
-		</form>
-	</div>
-	<div class="wrap">
-		<p>할인 금액 : <input id="text4" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
-		<p>받을 금액 : <input id="text5" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
-	</div>
-	
-	
-	
+	<body>
+		<div id="frame_ad" class="etc_fifacal"></div>
+			<link rel="stylesheet" type="text/css" href="../function/frame_ad/frame_ad.css" />
+			<script type="text/javascript" src="../function/frame_ad/frame_ad.js"></script>
+
+		<div id="wrapper">
+
+			<div class="title">
+				이적 시장 수수료 계산기
+			</div>
+			<div class="wrap">
+				<form id="saleform">
+				판매금액 : <input id="text1" class="text" type="text" placeholder="입력 후 Enter 클릭"  maxlength="100">
+				<input type="submit" value="입력">
+				</form>
+			</div>
+			<div class="wrap">
+				수 수 료 : <input id="text2" class="text" type="text" placeholder="자동으로 계산됨" readonly>
+			</div>
+			<div class="wrap">
+				&lt;할인율&gt;
+				<br/>
+				<form id="discountform" onsubmit="return false;">
+				<input name="discount" type="radio" value="0"> <span class="blue">0%</span> <span class="yellow">(미적용)</span>
+				<br/>
+				<input name="discount" type="radio" value="0.3"> <span class="blue">30%</span> <span class="yellow">(TOP CLASS 할인)</span>
+				<br/>
+				<input name="discount" type="radio" value="0.4"> <span class="blue">40%</span> <span class="yellow">(PC방 할인)</span>
+				<br/>
+				<input name="discount" type="radio" value="0.5"> <span class="blue">50%</span> <span class="yellow">(PC방 + TOP 할인)</span>
+				<br/>
+				<input name="discount" type="radio" value="0.6"> <span class="blue">60%</span> <span class="yellow">(PC방 할인 <span class="orange">+ 이벤트</span>)</span>
+				<br/>
+				<input name="discount" type="radio" value="0.7"> <span class="blue">70%</span> <span class="yellow">(PC방 + TOP 할인 <span class="orange">+ 이벤트</span>)</span>
+				<br/>
+				<input name="discount" type="radio" value="custom"> <span class="yellow">직접 입력 (%)</span>
+				<input id="text3" class="text" type="text" value="" placeholder="입력 후 Enter 클릭"> <input type="submit" value="입력">
+				</form>
+			</div>
+			<div class="wrap">
+				<p>할인 금액 : <input id="text4" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
+				<p>받을 금액 : <input id="text5" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
+			</div>
+			<a id="saw" href="http://fifa3.inven.co.kr/" target="_blank">이 사이트를 보고 따라만들었습니다.</a>
+
+		</div>
+	</body>
+
 	<script type="text/javascript" src="./js/placeholders.min.js"></script>
 	<script type="text/javascript">
 		//=================================================================================================================
 		//※ 변수 지정
 		//=================================================================================================================
 		var i;
-		
+
 		var value = [0,0,0,0];//[0] : 입력값, [1] : 수수료, [2] : 할인금액, [3] : 받을금액
-		
+
 		var $discount = document.getElementsByName("discount");
-		
+
 		//=================================================================================================================
 		//※ 함수
-		//=================================================================================================================				
+		//=================================================================================================================
 		//숫자인지 판단 (출처 : http://mwultong.blogspot.com/2007/01/isnum-isnumeric-isnumber-javascript.html)
 		function isNumber(s) {
 			s += ''; // 문자열로 변환
@@ -162,7 +184,7 @@
 			if (s == '' || isNaN(s)) return false;
 			return true;
 		}
-		
+
 		//천단위 콤마 표시 (출처 : http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript)
 		function thousand(num) {
 			if (isNaN(num)) {
@@ -173,12 +195,12 @@
 			}
 		}
 
-		
+
 		//=================================================================================================================
 		//※ 실행
-		//=================================================================================================================		
+		//=================================================================================================================
 		window.onload = function() {
-			
+
 			document.getElementById("text1").onfocus = function() {
 				this.value = '';
 			}
@@ -190,7 +212,7 @@
 			document.getElementById("text1").onkeyup = function() {
 				this.value = thousand(this.value);
 			}
-			
+
 			document.getElementById("saleform").onsubmit = function() {
 				//포커스 해제 (값 초기화 방지)
 				document.getElementById("text1").blur();
@@ -233,7 +255,7 @@
 				document.getElementById("text5").value = thousand(value[3]);
 				return false;
 			}
-			
+
 			for (i=0;i<$discount.length;i++) (function(i){
 				$discount[i].onclick = function() {
 					//판매금액이 입력되었으면 실행
@@ -261,7 +283,7 @@
 				}
 			})(i);
 
-		
+
 			document.getElementById("discountform").onsubmit = function() {
 				//판매금액이 입력되었으면 실행
 				if (! isNumber(parseInt(document.getElementById("text3").value))) {
@@ -289,10 +311,10 @@
 				}
 				return false;
 			}
-			
+
 		}
 	</script>
-	
-	
+
+
 	</body>
 </body>
