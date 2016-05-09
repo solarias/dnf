@@ -48,6 +48,13 @@
 			for (var key in arrBgm) {
 				if (arrBgm.hasOwnProperty(key)) {
 					try {
+						arrBgm[key].load();
+						setLoad("배경음");
+					} catch(e) {
+						setLoad("배경음");
+					}
+					/*
+					try {
 						arrBgm[key].oncanplaythrough = function() {
 							setLoad("배경음");
 							this.oncanplaythrough = "";
@@ -58,6 +65,7 @@
 					} catch(e) {
 						setLoad("배경음");
 					}
+					*/
 				}
 			}
 		}
@@ -66,6 +74,13 @@
 		if (Object.keys(arrSfx).length > 0) {
 			for (var key in arrSfx) {
 				if (arrSfx.hasOwnProperty(key)) {
+					try {
+						arrSfx[key].load();
+						setLoad("효과음");
+					} catch(e) {
+						setLoad("효과음");
+					}
+					/*
 					try {
 						arrSfx[key].oncanplaythrough = function() {
 							setLoad("효과음");
@@ -78,6 +93,7 @@
 					} catch(e) {
 						setLoad("효과음");
 					}
+					*/
 				}
 			}
 		}
