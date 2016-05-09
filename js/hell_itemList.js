@@ -10608,7 +10608,7 @@ var itemList = [
 		"sort3":"보조장비",
 		"level":70,
 		"class":"priest_m",
-		"name":"아레스의 토시 - 퇴마나(물리)",
+		"name":"아레스의 토시 - 퇴마사(물리)",
 		"set":"",
 		"goyu":"",
 		"icon":"아레스의 토시",
