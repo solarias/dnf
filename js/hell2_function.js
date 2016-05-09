@@ -2,45 +2,81 @@
 	//=================================================================================================================
 	//※ 함수 - 선로딩, 내부작업용
 	//=================================================================================================================
-	// 이미지 선로딩 (출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
-	function loadImages(arr,callBack){
-		var imagesArray = [];
-		var img;
-		var remaining = arr.length;
+	// 컨텐츠 선로딩 (원본 출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
+	function loadContents(callBack) {
+		//환경 세팅
+		var arrImage = imageList;
+			var imagesArray = [];
+			var img;
+		var arrBgm = bgmList;
+		var arrSfx = sfxList;
+		var initial = arrImage.length + Object.keys(arrBgm).length + Object.keys(arrSfx).length;
+			var remaining = initial;
 		var percent = "0%";
-		for (var i = 0; i < arr.length; i++) {
+
+		//로딩 함수
+		function setLoad(text) {
+			//퍼센트 계산
+			percent = Math.round((((initial - remaining + 1)/initial)*100),0).toString() + "%";
+			//외부 처리
+			$("#loading_notice").innerHTML = "" +
+				text + " 로딩 중 (" + percent + " 완료)";
+			$("#loading_progress_bar").style.width = percent;
+			//내부 처리
+			--remaining;
+			if (remaining <= 0) {
+				callBack();
+			}
+		}
+
+		//이미지 로딩
+		for (var i = 0; i < arrImage.length; i++) {
 			img = new Image();
 			img.onload = function() {
-				//퍼센트 계산
-				percent = Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString() + "%";
-				//외부 처리
-				$("#loading_notice").innerHTML = "" +
-					"로딩 " + percent + " 완료";
-				$("#loading_progress_bar").style.width = percent;
-				//내부 처리
-				--remaining;
-				if (remaining <= 0) {
-					callBack();
-				}
+				setLoad("이미지");
 			};
 			img.onerror = function() {
-				//퍼센트 계산
-				percent = Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString() + "%";
-				//외부 처리
-				$("#loading_notice").innerHTML = "" +
-					"로딩 " + percent + " 완료";
-				$("#loading_progress_bar").style.width = percent;
-				--remaining;
-				//내부 처리W
-				if (remaining <= 0) {
-					callBack();
-				}
+				setLoad("이미지");
 			};
-			img.src = arr[i];
-			document.getElementById("imagePreloader").innerHTML += "<img src='" + arr[i] + "' />";
+			img.src = arrImage[i];
+			$("#imagePreloader").innerHTML += "<img src='" + arrImage[i] + "' />";
 			imagesArray.push(img);
 		}
+
+		//배경음 로드
+		if (Object.keys(arrBgm).length > 0) {
+			for (var key in arrBgm) {
+				if (arrBgm.hasOwnProperty(key)) {
+					arrBgm[key].oncanplaythrough = function() {
+						setLoad("배경음");
+						this.oncanplaythrough = "";
+					};
+					arrBgm[key].onerror = function() {
+						setLoad("배경음");
+						this.oncanplaythrough = "";
+					};
+				}
+			}
+		}
+
+		//효과음 로드
+		if (Object.keys(arrSfx).length > 0) {
+			for (var key in arrSfx) {
+				if (arrSfx.hasOwnProperty(key)) {
+					arrSfx[key].oncanplaythrough = function() {
+						setLoad("효과음");
+						this.oncanplaythrough = "";
+					};
+					arrSfx[key].onerror = function() {
+						setLoad("효과음");
+						this.oncanplaythrough = "";
+					};
+				}
+			}
+		}
 	}
+
+
 
 	//코스모소울 비용 계산
 	function soulCount(level) {
@@ -1277,9 +1313,9 @@ function simulate(num){
 			//8-1. 출현 사운드 출력
 			try {
 				if ($("#option_sound").checked) {
-					sound_appear.pause();
-					sound_appear.currentTime = 0;
-					sound_appear.play();
+					sfxList["epic_appear"].pause();
+					sfxList["epic_appear"].currentTime = 0;
+					sfxList["epic_appear"].play();
 				}
 			} catch(e) {
 			}
@@ -1695,10 +1731,10 @@ function setGabriel(cmd) {
 		//사운드 출력
 		if ($("#option_sound").checked === true) {
 			try {
-				sound_appear.pause();
-				sound_appear.currentTime = 0;
+				sfxList["epic_appear"].pause();
+				sfxList["epic_appear"].currentTime = 0;
 			} catch(e) {};
-			sound_appear.play();
+			sfxList["epic_appear"].play();
 		}
 	//1. 자동일 때 (아이템 선정 안해놨다면) 일부 "부랴부랴" 실행
 	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null && cmd !== "settingOnly") {
@@ -1707,10 +1743,10 @@ function setGabriel(cmd) {
 		//사운드 출력
 		if ($("#option_sound").checked === true) {
 			try {
-				sound_appear.pause();
-				sound_appear.currentTime = 0;
+				sfxList["epic_appear"].pause();
+				sfxList["epic_appear"].currentTime = 0;
 			} catch(e) {};
-			sound_appear.play();
+			sfxList["epic_appear"].play();
 		}
 	}
 
@@ -2313,9 +2349,9 @@ function sortItem(type, zone, zoneArr) {
 					//8-1. 출현 사운드 출력
 					try {
 						if ($("#option_sound").checked) {
-							sound_appear.pause();
-							sound_appear.currentTime = 0;
-							sound_appear.play();
+							sfxList["epic_appear"].pause();
+							sfxList["epic_appear"].currentTime = 0;
+							sfxList["epic_appear"].play();
 						}
 					} catch(e) {
 					}
@@ -2421,9 +2457,9 @@ function sortItem(type, zone, zoneArr) {
 					//8-1. 출현 사운드 출력
 					try {
 						if ($("#option_sound").checked) {
-							sound_appear.pause();
-							sound_appear.currentTime = 0;
-							sound_appear.play();
+							sfxList["epic_appear"].pause();
+							sfxList["epic_appear"].currentTime = 0;
+							sfxList["epic_appear"].play();
 						}
 					} catch(e) {
 					}
@@ -3098,9 +3134,9 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		if (sound === 1) {
 			try {
 				if ($("#option_sound").checked) {
-					sound_land.pause();
-					sound_land.currentTime = 0;
-					sound_land.play();
+					sfxList["epic_land"].pause();
+					sfxList["epic_land"].currentTime = 0;
+					sfxList["epic_land"].play();
 				}
 			} catch(e) {
 			}

@@ -402,21 +402,6 @@ function main(cmd) {
 	//======================
 	//audio 파일 선로딩
 	try {
-		//음악파일 업로드 위치 : 다음 블로그
-		sound_appear = new Audio;
-			sound_appear.volume = 0.2;
-		sound_land = new Audio;
-			sound_land.volume = 0.2;
-
-		if (sound_appear.canPlayType("audio/mpeg") !== "") {
-			//mp3 출력 가능
-			sound_appear.src = "./sound/epic_appear.mp3";
-			sound_land.src = "./sound/epic_land.mp3";
-		} else {
-			//mp3 출력 불가 - ogg로 대체
-			sound_appear.src = "./sound/epic_appear.ogg";
-			sound_land.src = "./sound/epic_land.pgg";
-		}
 
 		//BGM 준비
 		bgmList = {
@@ -458,20 +443,27 @@ function main(cmd) {
 		sfxList = {
 			"open":new Audio("./sound/win_open.mp3"),
 			"close":new Audio("./sound/win_close.mp3"),
+
 			"hit_hit":new Audio("./sound/hell_hit_hit.mp3"),
 			"hit_slash":new Audio("./sound/hell_hit_slash.mp3"),
 			"hit_gun":new Audio("./sound/hell_hit_gun.mp3"),
 			"hit_magic":new Audio("./sound/hell_hit_magic.mp3"),
 			"hit_beckey":new Audio("./sound/hell_hit_beckey.mp3"),
+
 			"item_drop":new Audio("./sound/hell_item_drop.mp3"),
+			"epic_appear":new Audio("./sound/epic_appear.mp3"),
+			"epic_land":new Audio("./sound/epic_land.mp3"),
+
 			"hell_gabriel_yes":new Audio("./sound/hell_gabriel_yes.mp3"),
 			"hell_gabriel_no":new Audio("./sound/hell_gabriel_no.mp3"),
+
 			"wearing":new Audio("./sound/hell_wearing.mp3"),
 			"enchant_progress":new Audio("./sound/enchant_progress.mp3"),
 			"enchant_success":new Audio("./sound/enchant_success.mp3"),
 			"enchant_fail":new Audio("./sound/enchant_fail.mp3"),
 			"enchant_zero":new Audio("./sound/enchant_zero.mp3"),
 			"pot_opening":new Audio("./sound/pot_opening.mp3"),
+
 			"anton_scream":new Audio("./sound/hell_anton_scream.mp3"),
 			"beckey_start":new Audio("./sound/beckey_start.mp3"),
 			"beckey_epic":new Audio("./sound/beckey_get.mp3")
@@ -489,6 +481,10 @@ function main(cmd) {
 			sfxList["hit_gun"].volume = 0.3;
 			sfxList["hit_magic"].volume = 0.4;
 			sfxList["hit_beckey"].volume = 0.2;
+
+			sfxList["epic_appear"].volume = 0.2;
+			sfxList["epic_land"].volume = 0.2;
+
 	} catch(e) {
 		//audio 태그를 지원하지 않을 시
 		$("#option_sound").disabled = "disabled";
@@ -566,8 +562,8 @@ function main(cmd) {
 	imageList.push("./images/epic/beckey_ending/beckey_ending_11.jpg");
 	imageList.push("./images/epic/beckey_ending/beckey_ending_12.jpg");
 
-	//5단게 : 이미지 선로딩 실시
-	loadImages(imageList,function(){
+	//5단게 : 컨텐츠 선로딩 실시
+	loadContents(function(){
 		//=================================================================================================================
 		//※ 선로딩 끝, 본격적 실행 시작
 		//=================================================================================================================
