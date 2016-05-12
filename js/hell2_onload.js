@@ -208,8 +208,8 @@ window.onload = function() {
 				setRandomCharacter();
 			//일반모드 : 표시만 해줌
 				$("#mode").innerHTML = "일반";
-			//일반모드 : 안톤 심장부 봉인
-				$("#final_area").style.display = "none";
+			//일반모드 : 안톤 던전 봉인
+				$("#final_area").parentNode.removeChild($("#final_area"));
 			$("#titleScreen_main").style.display = "none";
 			$("#titleScreen_loading").style.display = "block";
 			//화면 전환

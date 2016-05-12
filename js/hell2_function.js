@@ -47,24 +47,25 @@
 		if (Object.keys(arrBgm).length > 0) {
 			for (var key in arrBgm) {
 				if (arrBgm.hasOwnProperty(key)) {
-					try {
-						setLoad("배경음");
-					} catch(e) {
-						setLoad("배경음");
-					}
 					/*
 					try {
-						arrBgm[key].oncanplaythrough = function() {
-							setLoad("배경음");
-							this.oncanplaythrough = "";
-						};
-						arrBgm[key].onerror = function() {
-							setLoad("배경음");
-						};
+						setLoad("배경음");
 					} catch(e) {
 						setLoad("배경음");
 					}
 					*/
+					try {
+						arrBgm[key].onloadstart = function() {
+							setLoad("배경음");
+							this.onloadstart = "";
+						};
+						arrBgm[key].onerror = function() {
+							setLoad("배경음");
+							this.onloadstart = "";
+						};
+					} catch(e) {
+						setLoad("배경음");
+					}
 				}
 			}
 		}
@@ -73,25 +74,25 @@
 		if (Object.keys(arrSfx).length > 0) {
 			for (var key in arrSfx) {
 				if (arrSfx.hasOwnProperty(key)) {
-					try {
-						setLoad("효과음");
-					} catch(e) {
-						setLoad("효과음");
-					}
 					/*
 					try {
-						arrSfx[key].oncanplaythrough = function() {
-							setLoad("효과음");
-							this.oncanplaythrough = "";
-						};
-						arrSfx[key].onerror = function() {
-							setLoad("효과음");
-							this.oncanplaythrough = "";
-						};
+						setLoad("효과음");
 					} catch(e) {
 						setLoad("효과음");
 					}
 					*/
+					try {
+						arrSfx[key].onloadstart = function() {
+							setLoad("효과음");
+							this.onloadstart = "";
+						};
+						arrSfx[key].onerror = function() {
+							setLoad("효과음");
+							this.onloadstart = "";
+						};
+					} catch(e) {
+						setLoad("효과음");
+					}
 				}
 			}
 		}
@@ -858,10 +859,10 @@ function checkObjective(cmd) {
 				}
 
 				//수집현황 표시
-				$("#objective_state_item_name").innerHTML = target["epic_get"]["sort3"];
-				$("#objective_state_item_quantity").innerHTML = target["epic_get"]["have"];
-				$("#objective_state_item_jogak").innerHTML = target["epic_get"]["jogak"];
-				if (target["epic_get"]["have"] === 0 && target["epic_get"]["jogak"] < maxJogak) {
+				$("#objective_state_item_name").innerHTML = target[0]["sort3"];
+				$("#objective_state_item_quantity").innerHTML = target[0]["have"];
+				$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
+				if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
 					$("#objective_state_item_complete").classList.remove("true");
 					$("#objective_state_item_complete").classList.add("false");
 				} else {

@@ -44,11 +44,12 @@ function initData() {
 //=================================================================================================================
 //※ 데이터 불러오기
 //=================================================================================================================
-function loadData() {
+function loadData(cmd) {
     //========================
-    //※ 불러오기
+    //※ (cmd가 "password"가 아니면)불러오기
     //========================
-    dataObj = localGet("hell2");
+    if (cmd !== "password")
+        dataObj = localGet("hell2");
     //========================
     //※ 대입
     //========================
@@ -129,8 +130,8 @@ function loadData() {
     if (playMode === 'normal') {
         //모드 표시
         $("#mode").innerHTML = "일반";
-        //일반모드 : 안톤 심장부 봉인
-        $("#final_dungeon").style.display = "none";
+        //일반모드 : 안톤 던전 봉인
+        $("#final_area").parentNode.removeChild($("#final_area"));
     } else if (playMode === 'rpg') {
         //모드 표시
         $("#mode").innerHTML = "RPG";
