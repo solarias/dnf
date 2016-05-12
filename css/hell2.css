@@ -237,6 +237,9 @@ body {
 			#titleScreen_description_rpg {
 				display:none;
 			}
+			#titleScreen_description_blog {
+				display:none;
+			}
 			#titleScreen_description_beckey {
 				display:none;
 			}
@@ -307,9 +310,24 @@ body {
 				right:20px;
 				bottom:20px;
 			}
+			#titleScreen_blog {
+				left:20px;
+				bottom:275px;
+
+				width:150px;
+
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bce2d8+0,00e8b1+100 */
+				background: #bce2d8; /* Old browsers */
+				background: -moz-linear-gradient(top, #bce2d8 0%, #00e8b1 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #bce2d8 0%,#00e8b1 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, #bce2d8 0%,#00e8b1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			}
+				#titleScreen_blog:active {
+					background: #00e8b1; /* Old browsers */
+				}
 			#titleScreen_beckey {
 				left:20px;
-				bottom:140px;
+				bottom:145px;
 
 				width:150px;
 			}

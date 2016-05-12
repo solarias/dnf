@@ -40,6 +40,7 @@ window.onload = function() {
 		$("#titleScreen_description_continue").style.display = "block";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_blog").style.display = "none";
 		$("#titleScreen_description_beckey").style.display = "none";
 		$("#titleScreen_description_password").style.display = "none";
 	};
@@ -48,6 +49,7 @@ window.onload = function() {
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "block";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_blog").style.display = "none";
 		$("#titleScreen_description_beckey").style.display = "none";
 		$("#titleScreen_description_password").style.display = "none";
 	};
@@ -56,6 +58,16 @@ window.onload = function() {
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "block";
+		$("#titleScreen_description_blog").style.display = "none";
+		$("#titleScreen_description_beckey").style.display = "none";
+		$("#titleScreen_description_password").style.display = "none";
+	};
+	$("#titleScreen_blog").onmouseover = function() {
+		$("#titleScreen_description_nothing").style.display = "none";
+		$("#titleScreen_description_continue").style.display = "none";
+		$("#titleScreen_description_normal").style.display = "none";
+		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_blog").style.display = "block";
 		$("#titleScreen_description_beckey").style.display = "none";
 		$("#titleScreen_description_password").style.display = "none";
 	};
@@ -64,6 +76,7 @@ window.onload = function() {
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_blog").style.display = "none";
 		$("#titleScreen_description_beckey").style.display = "block";
 		$("#titleScreen_description_password").style.display = "none";
 	};
@@ -72,6 +85,7 @@ window.onload = function() {
 		$("#titleScreen_description_continue").style.display = "none";
 		$("#titleScreen_description_normal").style.display = "none";
 		$("#titleScreen_description_rpg").style.display = "none";
+		$("#titleScreen_description_blog").style.display = "none";
 		$("#titleScreen_description_beckey").style.display = "none";
 		$("#titleScreen_description_password").style.display = "block";
 	};
@@ -87,6 +101,8 @@ window.onload = function() {
 		$("#titleScreen_normal").disabled = false;
 	$("#titleScreen_rpg").innerHTML = "RPG 모드 시작";
 		$("#titleScreen_rpg").disabled = false;
+	$("#titleScreen_blog").innerHTML = "Blog";
+		$("#titleScreen_blog").disabled = false;
 	$("#titleScreen_beckey").innerHTML = "베키";
 		$("#titleScreen_beckey").disabled = false;
 	$("#titleScreen_password").innerHTML = "P/W";
@@ -262,6 +278,16 @@ window.onload = function() {
 			$("#titleScreen_loading").style.display = "block";
 			main();
 		};
+		//블로그 방문
+		$("#titleScreen_blog").onclick = function() {
+			var move = window.open("http://blog.naver.com/ansewo/220622642452");
+			if (!move || move.closed || typeof move.closed === 'undefined') {
+				if (confirm("현재 브라우저에서 새 창 열기를 차단하였습니다.\n현재 페이지에서 링크를 여시겠습니까?")) {
+					window.location.href = "http://blog.naver.com/ansewo/220622642452";
+				}
+			}
+		};
+		//패스워드
 };
 
 
