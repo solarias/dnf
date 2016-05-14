@@ -47,13 +47,12 @@
 		if (Object.keys(arrBgm).length > 0) {
 			for (var key in arrBgm) {
 				if (arrBgm.hasOwnProperty(key)) {
-					/*
 					try {
 						setLoad("배경음");
 					} catch(e) {
 						setLoad("배경음");
 					}
-					*/
+					/*
 					try {
 						arrBgm[key].onloadstart = function() {
 							setLoad("배경음");
@@ -66,6 +65,7 @@
 					} catch(e) {
 						setLoad("배경음");
 					}
+					*/
 				}
 			}
 		}
@@ -74,13 +74,12 @@
 		if (Object.keys(arrSfx).length > 0) {
 			for (var key in arrSfx) {
 				if (arrSfx.hasOwnProperty(key)) {
-					/*
 					try {
 						setLoad("효과음");
 					} catch(e) {
 						setLoad("효과음");
 					}
-					*/
+					/*
 					try {
 						arrSfx[key].onloadstart = function() {
 							setLoad("효과음");
@@ -93,6 +92,7 @@
 					} catch(e) {
 						setLoad("효과음");
 					}
+					*/
 				}
 			}
 		}
@@ -252,7 +252,7 @@
 			$("#bgm_type").selectedIndex = indexSelectByValue($("#bgm_type"), optionList["bgm_type"]);
 		}
 
-		play($("#bgm_type").value);
+		playBGM($("#bgm_type").value);
 	}
 //=================================================================================================================
 //※ 함수 - 창 생성용
@@ -714,7 +714,7 @@ function dungeon_select(cmd) {
 
 	//8. 브금 실행
 	if ($("#option_bgm").checked === true) {
-		play($("#bgm_type").value);
+		playBGM($("#bgm_type").value);
 	}
 }
 
@@ -1108,12 +1108,12 @@ function trigger(num, step, hitsound) {
 				var tempArr = Object.keys(characterList);
 				for (var i=0;i<tempArr.length;i++) {
 					if ($("#character_sprite").classList.contains(tempArr[i])) {
-						hitsound = sfxList["hit_" + characterList[tempArr[i]]["hittype"]];
+						hitsound = "hit_" + characterList[tempArr[i]]["hittype"];
 						break;
 					}
 				}
 			} else {
-				hitsound = sfxList["hit_" + characterList[myCharacter]["hittype"]];
+				hitsound = "hit_" + characterList[myCharacter]["hittype"];
 			}
 			//=================================
 			//* 체력 감소 개시
@@ -1127,15 +1127,7 @@ function trigger(num, step, hitsound) {
 			//=================================
 			//* 타격음 재생
 			//=================================
-			if ($("#option_hitsound").checked) {
-				if (hitsound.paused) {
-					hitsound.play();
-				} else {
-					try {
-						hitsound.currentTime = 0;
-					} catch(e) {}
-				}
-			}
+			playSfx(hitsound);
 			//=================================
 			//* 체력 감소
 			//=================================
@@ -1333,14 +1325,7 @@ function simulate(num){
 		//IF 방금 에픽이 있었으면
 		if (thisEpic.length > 0 || thisJogak.length > 0) {
 			//8-1. 출현 사운드 출력
-			try {
-				if ($("#option_sound").checked) {
-					sfxList["epic_appear"].pause();
-					sfxList["epic_appear"].currentTime = 0;
-					sfxList["epic_appear"].play();
-				}
-			} catch(e) {
-			}
+			playSfx("epic_appear");
 
 			//8-3. (에픽 한정) record - 일괄 업데이트
 			if (thisEpic.length > 0) {
@@ -1424,13 +1409,7 @@ function checkDrop(num) {
 	if (num === 1) {
 		//1. 아이템 드롭
 			//아이템 드롭 사운드
-			if ($("#option_sound").checked) {
-				try {
-					sfxList["item_drop"].pause();
-					sfxList["item_drop"].currentTime = 0;
-				} catch(e) {}
-				sfxList["item_drop"].play();
-			}
+			playSfx("item_drop");
 		for (var i=0;i<thisTime.length;i++) {
 			dropItem(thisTime[i]);
 		}
@@ -1488,13 +1467,7 @@ function checkDrop(num) {
 				objective = [];
 			//d-1. 아이템 드롭
 				//아이템 드롭 사운드
-				if ($("#option_sound").checked) {
-					try {
-						sfxList["item_drop"].pause();
-						sfxList["item_drop"].currentTime = 0;
-					} catch(e) {}
-					sfxList["item_drop"].play();
-				}
+				playSfx("item_drop");
 			for (var i=0;i<thisTime.length;i++) {
 				dropItem(thisTime[i]);
 			}
@@ -1518,13 +1491,7 @@ function checkDrop(num) {
 				//a. 가브리엘 출현 시
 				if (tempGabriel === true) {
 					//아이템 드롭 사운드
-					if ($("#option_sound").checked) {
-						try {
-							sfxList["item_drop"].pause();
-							sfxList["item_drop"].currentTime = 0;
-						} catch(e) {}
-						sfxList["item_drop"].play();
-					}
+					playSfx("item_drop");
 					//아이템 드롭
 					for (var i=0;i<thisTime.length;i++) {
 						dropItem(thisTime[i]);
@@ -1539,13 +1506,7 @@ function checkDrop(num) {
 					//(RPG 모드일 때만 && 헬 기둥 원킬 안낼 때만)아이템 드롭
 					if (playMode !== "normal" && power < lifeList[input["dungeon"]] + defList[input["dungeon"]]) {
 						//아이템 드롭 사운드
-						if ($("#option_sound").checked) {
-							try {
-								sfxList["item_drop"].pause();
-								sfxList["item_drop"].currentTime = 0;
-							} catch(e) {}
-							sfxList["item_drop"].play();
-						}
+						playSfx("item_drop");
 						for (var i=0;i<thisTime.length;i++) {
 							dropItem(thisTime[i]);
 						}
@@ -1555,13 +1516,7 @@ function checkDrop(num) {
 				}
 			} else {
 				//아이템 드롭 사운드
-				if ($("#option_sound").checked) {
-					try {
-						sfxList["item_drop"].pause();
-						sfxList["item_drop"].currentTime = 0;
-					} catch(e) {}
-					sfxList["item_drop"].play();
-				}
+				playSfx("item_drop");
 				//아이템 드롭
 				for (var i=0;i<thisTime.length;i++) {
 					dropItem(thisTime[i]);
@@ -1601,13 +1556,7 @@ function nextStep(num, cmd) {
 			runningState !== "" &&
 			power >= lifeList[input["dungeon"]] + defList[input["dungeon"]]) {
 			//아이템 드롭 사운드
-			if ($("#option_sound").checked) {
-				try {
-					sfxList["item_drop"].pause();
-					sfxList["item_drop"].currentTime = 0;
-				} catch(e) {}
-				sfxList["item_drop"].play();
-			}
+			playSfx("item_drop");
 			for (var i=0;i<thisTime.length;i++) {
 				dropItem(thisTime[i]);
 			}
@@ -1751,25 +1700,13 @@ function setGabriel(cmd) {
 	//0. 수동일 때 일부 실행
 	if ($("#gabriel_type").value === "manual" && cmd != "settingOnly") {
 		//사운드 출력
-		if ($("#option_sound").checked === true) {
-			try {
-				sfxList["epic_appear"].pause();
-				sfxList["epic_appear"].currentTime = 0;
-			} catch(e) {};
-			sfxList["epic_appear"].play();
-		}
+		playSfx("epic_appear");
 	//1. 자동일 때 (아이템 선정 안해놨다면) 일부 "부랴부랴" 실행
 	} else if ($("#gabriel_type").value === "auto" && gabrielSetting["get"] === null && cmd !== "settingOnly") {
 		//창 오픈
 		onoff("gabriel_autoFirst");
 		//사운드 출력
-		if ($("#option_sound").checked === true) {
-			try {
-				sfxList["epic_appear"].pause();
-				sfxList["epic_appear"].currentTime = 0;
-			} catch(e) {};
-			sfxList["epic_appear"].play();
-		}
+		playSfx("epic_appear");
 	}
 
 	//1-5. ("settingOnly"가 아니라면)상태 변경
@@ -1945,13 +1882,7 @@ function doGabriel(cmd) {
 	//취소
 	function no() {
 		//취소 사운드 출력
-		if ($("#option_sound").checked === true) {
-			try {
-				sfxList["hell_gabriel_no"].pause();
-				sfxList["hell_gabriel_no"].currentTime = 0;
-			} catch(e) {}
-			sfxList["hell_gabriel_no"].play();
-		}
+		playSfx("hell_gabriel_no");
 		//재실행 여부 체크
 			//재실행 시
 			if (gabrielSetting["replay"] === true) {
@@ -1977,13 +1908,7 @@ function doGabriel(cmd) {
 	//교환
 	function yes() {
 		//교환 사운드 출력
-		if ($("#option_sound").checked === true) {
-			try {
-				sfxList["hell_gabriel_yes"].pause();
-				sfxList["hell_gabriel_yes"].currentTime = 0;
-			} catch(e) {}
-			sfxList["hell_gabriel_yes"].play();
-		}
+		playSfx("hell_gabriel_yes");
 		//조각 감소
 		for (var i=0;i<gabrielSetting["give"].length;i++) {
 			update("조각", gabrielSetting["give"][i], -10)
@@ -2369,14 +2294,7 @@ function sortItem(type, zone, zoneArr) {
 					dropCount = quantity - 1;//한 개 드롭되면 바로 버튼 활성화되도록
 
 					//8-1. 출현 사운드 출력
-					try {
-						if ($("#option_sound").checked) {
-							sfxList["epic_appear"].pause();
-							sfxList["epic_appear"].currentTime = 0;
-							sfxList["epic_appear"].play();
-						}
-					} catch(e) {
-					}
+					playSfx("epic_appear");
 
 					//아이템 업데이트 (inventory, set, craft)
 					update("완성", temp);
@@ -2463,13 +2381,7 @@ function sortItem(type, zone, zoneArr) {
 				//* 완성템 개별 드랍 & 업데이트 - 시작
 				//=================================
 					//아이템 드롭 사운드
-					if ($("#option_sound").checked) {
-						try {
-							sfxList["item_drop"].pause();
-							sfxList["item_drop"].currentTime = 0;
-						} catch(e) {}
-						sfxList["item_drop"].play();
-					}
+					playSfx("item_drop");
 					//아이템 드랍 실시
 					dropItem([zone,zoneArr,"에픽",temp]);
 					//버튼 활성화 대기
@@ -2477,14 +2389,7 @@ function sortItem(type, zone, zoneArr) {
 					dropCount = quantity - 1;//한 개 드롭되면 바로 버튼 활성화되도록
 
 					//8-1. 출현 사운드 출력
-					try {
-						if ($("#option_sound").checked) {
-							sfxList["epic_appear"].pause();
-							sfxList["epic_appear"].currentTime = 0;
-							sfxList["epic_appear"].play();
-						}
-					} catch(e) {
-					}
+					playSfx("epic_appear");
 
 					//아이템 업데이트 (inventory, set, craft)
 					update("항아리", temp);
@@ -3154,14 +3059,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 	} else {
 		//사운드 출력
 		if (sound === 1) {
-			try {
-				if ($("#option_sound").checked) {
-					sfxList["epic_land"].pause();
-					sfxList["epic_land"].currentTime = 0;
-					sfxList["epic_land"].play();
-				}
-			} catch(e) {
-			}
+			playSfx("epic_land");
 		}
 
 		//이미지 회전 중단
@@ -3180,12 +3078,8 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		//애니메이션 지속
 		if (animating === 1) {
 			//베키모드 : 효과음 실행
-			if ($("#option_sound").checked && myCharacter === "beckey") {
-				if (!sfxList["beckey_epic"].paused) {
-					sfxList["beckey_epic"].paused();
-					sfxList["beckey_epic"].currentTime = 0;
-				}
-				sfxList["beckey_epic"].play();
+			if (myCharacter === "beckey") {
+				playSfx("beckey_epic");
 			}
 
 			//착지 이펙트 가시화
@@ -3308,9 +3202,7 @@ function setEquip(cmd, toWearName, noSound) {
 			$("#state_" + cmd + "_enchant").innerHTML = "+0";
 		//4. 사운드 출력
 		if (!noSound) {
-			if ($("#option_sound").checked === true) {
-				sfxList["wearing"].play();
-			}
+			playSfx("wearing");
 		}
 		//5. 전투력 계산
 		setPower();
@@ -3341,9 +3233,7 @@ function setEquip(cmd, toWearName, noSound) {
 			$("#state_" + cmd + "_enchant").innerHTML = "+" + wearingList[cmd]["enchant"];
 		//4. 사운드 출력
 		if (!noSound) {//함수 작동 시 사운드를 원치 않으면 noSound 값이 정해져있음
-			if ($("#option_sound").checked === true) {
-				sfxList["wearing"].play();
-			}
+			playSfx("wearing");
 		}
 		//5. 전투력 계산
 		setPower();
@@ -3485,17 +3375,11 @@ function doEnchant(target, part, step) {
 			$("#enchant_text").innerHTML = "강화 중...";
 			$("#enchant_text").className = "enchanting";
 			//사운드 출력
-			if ($("#option_sound").checked === true) {
-				try {
-					sfxList["enchant_success"].pause();
-					sfxList["enchant_success"].currentTime = 0;
-					sfxList["enchant_fail"].pause();
-					sfxList["enchant_fail"].currentTime = 0;
-					sfxList["enchant_zero"].pause();
-					sfxList["enchant_zero"].currentTime = 0;
-				} catch(e) {}
-				sfxList["enchant_progress"].play();
-			}
+			playSfx("enchant_progress", [
+				"enchant_success",
+				"enchant_fail",
+				"enchant_zero"
+			]);
 			//강화 진행
 			$("#enchant_progress_bar").style.width = ($("#enchant_progress_bar").offsetWidth + 5).toString() + "px";
 			setTimeout(function() {
@@ -3546,13 +3430,9 @@ function doEnchant(target, part, step) {
 		//강화 성공
 		case 1:
 			//사운드 출력
-			if ($("#option_sound").checked === true) {
-				try {
-					sfxList["enchant_progress"].pause();
-					sfxList["enchant_progress"].currentTime = 0;
-				} catch(e) {}
-				sfxList["enchant_success"].play();
-			}
+			playSfx("enchant_success", [
+				"enchant_progress"
+			]);
 			//강화 인터페이스 출력
 			$("#enchant_text").className = "";
 			$("#enchant_text").innerHTML = "+" + (target["enchant"]+1).toString() +
@@ -3569,19 +3449,15 @@ function doEnchant(target, part, step) {
 		//강화 실패
 		case 0:
 			//사운드 출력
-			if ($("#option_sound").checked === true) {
-				try {
-					sfxList["enchant_progress"].pause();
-					sfxList["enchant_progress"].currentTime = 0;
-				} catch(e) {}
-				//0~9
-				if (target["enchant"] < 10) {
-					sfxList["enchant_fail"].play();
-				//10 이상
-				} else {
-					sfxList["enchant_zero"].play();
-				}
-
+			if (target["enchant"] < 10) {
+				playSfx("enchant_fail", [
+					"enchant_progress"
+				]);
+			//10 이상
+			} else {
+				playSfx("enchant_zero", [
+					"enchant_progress"
+				]);
 			}
 			//강화 인터페이스 출력
 			$("#enchant_text").className = "";
@@ -3689,9 +3565,7 @@ function openPot(type, tradable, step) {
 			$("#popup_pot_message").innerHTML = "영웅의 " + type +
 				" 항아리 (" + tempText + ") : " + setWon(potList["cost"][tradable]) + " Gold";
 			//사운드 출력
-			if ($("#option_sound").checked) {
-				sfxList["pot_opening"].play();
-			}
+			playSfx("pot_opening");
 
 			//게이지 증가
 			$("#popup_pot_progress_bar").style.width = ($("#popup_pot_progress_bar").offsetWidth + 3).toString() + "px";
@@ -3712,10 +3586,10 @@ function openPot(type, tradable, step) {
 				//개봉 창 닫기
 				$("#popup_pot").style.display = "none";
 				//사운드 중단
-				try {
+				if (!sfxList["pot_opening"].paused) {
 					sfxList["pot_opening"].pause();
 					sfxList["pot_opening"].currentTime = 0;
-				} catch(e) {}
+				}
 				//버튼 세팅
 				setPotOpen($("#pot_tradable").value);
 				//끝
@@ -3802,10 +3676,10 @@ function openPot(type, tradable, step) {
 				//개봉 창 닫기
 				$("#popup_pot").style.display = "none";
 				//사운드 중단
-				try {
+				if (!sfxList["pot_opening"].paused) {
 					sfxList["pot_opening"].pause();
 					sfxList["pot_opening"].currentTime = 0;
-				} catch(e) {}
+				}
 				//버튼 세팅
 				setPotOpen($("#pot_tradable").value);
 
@@ -3858,9 +3732,7 @@ function ending(step) {
 	switch (step) {
 		case 0:
 			//베히모스 활성화
-			if ($("#option_sound").checked) {
-				sfxList["anton_scream"].play();
-			}
+			playSfx("anton_scream");
 
 			//가림막 준비
 			$("#frame_cover").style.opacity = "0.1";
@@ -3892,7 +3764,7 @@ function ending(step) {
 				//베키엔딩창 실행
 				$("#wrapper").style.display = "none";
 				$("#beckey_ending").style.display = "block";
-				play("beckey");
+				playBGM("beckey");
 				//베키엔딩창 설정
 				beckeyEnding(0);
 			//RPG 모드
@@ -3900,7 +3772,7 @@ function ending(step) {
 				//엔딩창 실행
 				$("#wrapper").style.display = "none";
 				$("#ending").style.display = "block";
-				play("rpg_clear");
+				playBGM("rpg_clear");
 					setTimeout(function() {
 						//잠시 후 엔딩 창 닫을 수 있게
 						$("#ending_confirm").className = "able";
@@ -3912,7 +3784,7 @@ function ending(step) {
 							$("#ending").style.display = "none";
 							$("#wrapper").style.display = "block";
 							//브금 실행
-							play($("#bgm_type").value);
+							playBGM($("#bgm_type").value);
 						}
 					}, 2000);
 			}
@@ -3954,7 +3826,7 @@ function beckeyEnding(step) {
 			//엔딩창 실행
 			$("#beckey_ending").style.display = "none";
 			$("#ending").style.display = "block";
-			play("rpg_clear");
+			playBGM("rpg_clear");
 				setTimeout(function() {
 					//잠시 후 엔딩 창 닫을 수 있게
 					$("#ending_confirm").className = "able";
@@ -3966,7 +3838,7 @@ function beckeyEnding(step) {
 						$("#ending").style.display = "none";
 						$("#wrapper").style.display = "block";
 						//브금 실행
-						play($("#bgm_type").value);
+						playBGM($("#bgm_type").value);
 					}
 				}, 2000);
 		}
@@ -4010,8 +3882,33 @@ function stopBGM() {
 	}
 }
 
+//효과음 실행
+function playSfx(toPlay, notToPlayList) {
+	//재생할 음악
+	if (toPlay) {
+		if ($("#option_sound").checked) {
+			if (sfxList[toPlay].paused){
+				sfxList[toPlay].play();
+			} else {
+				sfxList[toPlay].currentTime = 0;
+			}
+		}
+	}
+	//정지할 음악들
+	if (notToPlayList) {
+		if (!$("#option_sound").disabled && $("#option_sound").checked) {
+			for (var i=0;i<notToPlayList.length;i++) {
+				if (!sfxList[notToPlayList[i]].paused) {
+					sfxList[notToPlayList[i]].pause();
+					sfxList[notToPlayList[i]].currentTime = 0;
+				}
+			}
+		}
+	}
+	//끝
+}
 //브금 실행
-function play(type) {
+function playBGM(type) {
 	//IF(기존 브금 실행중) 해당 브금 종료
 	if (bgm !== "none") {
 		switch (bgm) {
@@ -4440,13 +4337,11 @@ function shift(target) {
 	}
 
 	//열었음 : 열기 효과음
-	if ($("#option_sound").checked === true) {
-		if (temp > 0) {
-			sfxList["open"].play();
-		//닫았음 : 닫기 효과음
-		} else {
-			sfxList["close"].play();
-		}
+	if (temp > 0) {
+		playSfx("open");
+	//닫았음 : 닫기 효과음
+	} else {
+		playSfx("close");
 	}
 }
 

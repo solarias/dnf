@@ -1826,12 +1826,8 @@ function main(cmd) {
 		$("#start1").onclick = function() {
 			if (runningState === "") {//0 : 정지상태
 				//베키모드 : 효과음 실행
-				if ($("#option_sound").checked && myCharacter === "beckey") {
-					if (!sfxList["beckey_start"].paused) {
-						sfxList["beckey_start"].paused();
-						sfxList["beckey_start"].currentTime = 0;
-					}
-					sfxList["beckey_start"].play();
+				if (myCharacter === "beckey") {
+					playSfx("beckey_start");
 				}
 				//'자동 실행 변수' ON
 				runningState = "trigger";
@@ -1863,12 +1859,8 @@ function main(cmd) {
 		$("#start2").onclick = function() {
 			if (runningState === "") {//0 : 정지상태
 				//베키모드 : 효과음 실행
-				if ($("#option_sound").checked && myCharacter === "beckey") {
-					if (!sfxList["beckey_start"].paused) {
-						sfxList["beckey_start"].paused();
-						sfxList["beckey_start"].currentTime = 0;
-					}
-					sfxList["beckey_start"].play();
+				if (myCharacter === "beckey") {
+					playSfx("beckey_start");
 				}
 				//목표 입력
 				if (setObjective("run") === true) {
@@ -2264,16 +2256,12 @@ function main(cmd) {
 				$("#option").style.display = "none";
 				$("#option_button").className = "";
 				//닫기 효과음
-				if ($("#option_sound").checked === true) {
-					sfxList["close"].play();
-				}
+				playSfx("close");
 			} else {
 				$("#option").style.display = "block";
 				$("#option_button").className = "selected";
 				//열기 효과음
-				if ($("#option_sound").checked === true) {
-					sfxList["open"].play();
-				}
+				playSfx("open");
 			}
 		}
 			//옵션 바깥 클릭 시 알아서 숨기기
@@ -2287,9 +2275,7 @@ function main(cmd) {
 						$("#option").style.display = "none";
 						$("#option_button").className = "";
 						//닫기 효과음
-						if ($("#option_sound").checked === true) {
-							sfxList["close"].play();
-						}
+						playSfx("close");
 					}
 				}
 			});
@@ -2360,14 +2346,7 @@ function main(cmd) {
 				//장비 업데이트
 				update("에픽",found);
 				//출현 사운드 출력
-				try {
-					if ($("#option_sound").checked) {
-						sound_appear.pause();
-						sound_appear.currentTime = 0;
-						sound_appear.play();
-					}
-				} catch(e) {
-				}
+				playSfx("epic_appear");
 				//기본장비 수집
 				var tempText = "";
 				for (var i=0;i<itemList.length;i++) {
