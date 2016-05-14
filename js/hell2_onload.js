@@ -2495,20 +2495,6 @@ function main(cmd) {
 				$("#date_config").value = "피로도 설정";
 				$("#date_setting").style.display = "none";
 			}
-				//옵션 외각 클릭 시 - (열려있다면)취소
-				$("html").addEventListener("click",function(event) {
-					if (event.target !== $("#date_setting") &&
-					event.target.parentNode !== $("#date_setting") &&
-					event.target.parentNode.parentNode !== $("#date_setting") &&
-					event.target !== $("#date_config")) {
-						if ($("#date_config").className === "cancel") {
-							//b. 설정창 닫기
-							$("#date_config").className = "";
-							$("#date_config").value = "피로도 설정";
-							$("#date_setting").style.display = "none";
-						}
-					}
-				});
 
 
 
