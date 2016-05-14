@@ -34,61 +34,26 @@ window.onload = function() {
 			$("#continue_no").style.display = "block";
 			$("#continue_yes").style.display = "none";
 		}
-	//모드 설명
-	$("#titleScreen_continue").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "block";
-		$("#titleScreen_description_normal").style.display = "none";
-		$("#titleScreen_description_rpg").style.display = "none";
-		$("#titleScreen_description_blog").style.display = "none";
-		$("#titleScreen_description_beckey").style.display = "none";
-		$("#titleScreen_description_password").style.display = "none";
-	};
-	$("#titleScreen_normal").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "none";
-		$("#titleScreen_description_normal").style.display = "block";
-		$("#titleScreen_description_rpg").style.display = "none";
-		$("#titleScreen_description_blog").style.display = "none";
-		$("#titleScreen_description_beckey").style.display = "none";
-		$("#titleScreen_description_password").style.display = "none";
-	};
-	$("#titleScreen_rpg").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "none";
-		$("#titleScreen_description_normal").style.display = "none";
-		$("#titleScreen_description_rpg").style.display = "block";
-		$("#titleScreen_description_blog").style.display = "none";
-		$("#titleScreen_description_beckey").style.display = "none";
-		$("#titleScreen_description_password").style.display = "none";
-	};
-	$("#titleScreen_blog").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "none";
-		$("#titleScreen_description_normal").style.display = "none";
-		$("#titleScreen_description_rpg").style.display = "none";
-		$("#titleScreen_description_blog").style.display = "block";
-		$("#titleScreen_description_beckey").style.display = "none";
-		$("#titleScreen_description_password").style.display = "none";
-	};
-	$("#titleScreen_beckey").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "none";
-		$("#titleScreen_description_normal").style.display = "none";
-		$("#titleScreen_description_rpg").style.display = "none";
-		$("#titleScreen_description_blog").style.display = "none";
-		$("#titleScreen_description_beckey").style.display = "block";
-		$("#titleScreen_description_password").style.display = "none";
-	};
-	$("#titleScreen_password").onmouseover = function() {
-		$("#titleScreen_description_nothing").style.display = "none";
-		$("#titleScreen_description_continue").style.display = "none";
-		$("#titleScreen_description_normal").style.display = "none";
-		$("#titleScreen_description_rpg").style.display = "none";
-		$("#titleScreen_description_blog").style.display = "none";
-		$("#titleScreen_description_beckey").style.display = "none";
-		$("#titleScreen_description_password").style.display = "block";
-	};
+	//버튼에 마우스 올리면 모드 설명
+	seriesOnOff(
+		//base
+		$("#titleScreen_description_notice"),//base
+		//option
+		{
+			"trigger":"mouseover",//event trigger
+			"event":"display",//visibility or display or checked
+			"after":0,
+		},
+		//series
+		[
+			[$("#titleScreen_continue"), $("#titleScreen_description_continue")],
+			[$("#titleScreen_normal"), $("#titleScreen_description_normal")],
+			[$("#titleScreen_rpg"), $("#titleScreen_description_rpg")],
+			[$("#titleScreen_blog"), $("#titleScreen_description_blog")],
+			[$("#titleScreen_beckey"), $("#titleScreen_description_beckey")],
+			[$("#titleScreen_password"), $("#titleScreen_description_password")]
+		]
+	);
 
 	//버튼 활성화
 	$("#titleScreen_continue").innerHTML = "이어서 하기";
@@ -199,8 +164,6 @@ window.onload = function() {
 				//던전 난이도
 				$("#difficulty").selectedIndex = 4;
 				$("#difficulty").disabled = "disabled";
-				//피로도 변경
-				$("#date_config").disabled = "disabled";
 				//교환가능 항아리
 				$("#pot_tradable").disabled = "disabled";
 				//기본 장비 획득
@@ -260,8 +223,6 @@ window.onload = function() {
 				//던전 난이도
 				$("#difficulty").selectedIndex = 4;
 				$("#difficulty").disabled = "disabled";
-				//피로도 변경
-				$("#date_config").disabled = "disabled";
 				//교환가능 항아리
 				$("#pot_tradable").disabled = "disabled";
 				//기본 장비 획득
@@ -2419,6 +2380,11 @@ function main(cmd) {
 			}
 			//3-2. 날짜환산 - 설정창 클릭
 			$("#date_config").onclick = function() {
+				//일반 모드에서만 설정 가능 (이유 : 공정한 플레이)
+				if (playMode !== "normal") {
+					alert("※ 경고 : RPG 모드, 베키 모드에서는 피로도 설정을 할 수 없습니다.");
+					return;
+				}
 				//첫 실행 이전에만 설정 가능 (이유 : 영웅의 항아리)
 				if (count > 0) {
 					alert("※ 경고 : 피로도 설정은 첫 실행 이전에만 가능합니다.\

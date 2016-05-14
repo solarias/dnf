@@ -199,31 +199,32 @@ body {
 		}
 		.titleScreen_description {
 			position:absolute;
-			top:220px;
-			left:200px;
+			top:215px;
+			left:195px;
 
 			padding:10px;
-			width:355px;
-			height:360px;
+			width:365px;
+			height:370px;
 
 			background-color:rgba(30,30,30,0.8);
-			border-radius:20px;
+			border:5px black solid;
+			border-radius:10px;
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
 			box-sizing:border-box;
 
 			color:white;
-			font-size:20px;
+			font-size:19px;
+
+			display:none;
+			overflow-y:auto;
 		}
 			.titleScreen_description p {
 				margin-bottom:10px;
 			}
-			#titleScreen_description_nothing {
-				display:block;
-			}
-			#titleScreen_description_continue {
-				display:none;
-			}
+				#titleScreen_description_notice {
+					display:block;
+				}
 				#continue_yes {
 					display:none;
 				}
@@ -231,21 +232,6 @@ body {
 					color:yellow;
 					text-indent:20px;
 				}
-			#titleScreen_description_normal {
-				display:none;
-			}
-			#titleScreen_description_rpg {
-				display:none;
-			}
-			#titleScreen_description_blog {
-				display:none;
-			}
-			#titleScreen_description_beckey {
-				display:none;
-			}
-			#titleScreen_description_password {
-				display:none;
-			}
 		.titleScreen_button {
 			position:absolute;
 
@@ -1251,7 +1237,7 @@ body {
 				position:absolute;
 				top:62px;
 				left:145px;
-				z-index:100;
+				z-index:1050;
 
 				padding:5px;
 				width:153px;
@@ -1432,10 +1418,10 @@ body {
 
 		position:absolute;
 		top:80px;
-		left:175px;
+		left:215px;
 		z-index:1100;
 
-		width:400px;
+		width:320px;
 		height:355px;
 
 		background-color:rgba(30,30,30,0.9);
@@ -1544,12 +1530,10 @@ body {
 					font-size:12px;
 				}
 		#option_notice {
-			overflow-y:scroll;
-
 			float:left;
 
 			padding:5px;
-			width:240px;
+			width:160px;
 			height:305px;
 
 			-webkit-box-sizing:border-box;

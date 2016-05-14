@@ -141,8 +141,6 @@ function loadData(cmd) {
             //던전 난이도
             $("#difficulty").selectedIndex = 4;
             $("#difficulty").disabled = "disabled";
-            //피로도 변경
-            $("#date_config").disabled = "disabled";
             //교환가능 항아리
             $("#pot_tradable").disabled = "disabled";
             //기본 장비 획득
@@ -168,8 +166,6 @@ function loadData(cmd) {
             //던전 난이도
             $("#difficulty").selectedIndex = 4;
             $("#difficulty").disabled = "disabled";
-            //피로도 변경
-            $("#date_config").disabled = "disabled";
             //교환가능 항아리
             $("#pot_tradable").disabled = "disabled";
             //기본 장비 획득
