@@ -1127,7 +1127,13 @@ function trigger(num, step, hitsound) {
 			//=================================
 			//* 타격음 재생
 			//=================================
-			playSfx(hitsound);
+			if ($("#option_hitsound").checked) {
+				if (sfxList[hitsound].paused) {
+					sfxList[hitsound].play();
+				} else {
+					sfxList[hitsound].currentTime = 0;
+				}
+			}
 			//=================================
 			//* 체력 감소
 			//=================================

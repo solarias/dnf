@@ -2064,22 +2064,26 @@ function main(cmd) {
 					//7-1. 습득현황 갱신
 					checkObjective("setting");
 					//7-2. 상단 - 장비 장착 초기화
-						//캐릭터 초기화
-						myCharacter = "";
-							$("#character_type").selectedIndex = 0;
-							$("#character_type").disabled = "";
-							setPower();
-							//항아리
-							tower = 0;
-								//"교환 불가" 항아리 지정해놨으면
-								setPotOpen($("#pot_tradable").value);
+						//캐릭터 초기화 (일반 모드 한정)
+						if (playMode === "normal") {
+							myCharacter = "";
+								$("#character_type").selectedIndex = 0;
+								$("#character_type").disabled = "";
+						}
+						//잔투력 재계산 (보유장비가 달라졌으니)
+						setPower();
+						//항아리
+						tower = 0;
+							//"교환 불가" 항아리 지정해놨으면
+							setPotOpen($("#pot_tradable").value);
 						//장착 장비 초기화
 						for (var k in wearingList) {
 							if (wearingList.hasOwnProperty(k)) {
 								wearingList[k] = null;
 							}
-						} 0;
+						};
 						//장착 창 초기화
+						setEquip();
 						for (var i=0;i<partList.length;i++) {
 							setEquip(partList[i],"")
 						}
