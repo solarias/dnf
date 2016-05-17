@@ -3931,7 +3931,7 @@ function playBGM(type) {
 				if ($("#option_bgm").checked === false || type !== "hell") {
 					if (!bgmList["hell"].paused) {
 						bgmList["hell"].currentTime = 0;
-						bgmList["hell"].pause();\
+						bgmList["hell"].pause();
 					}
 				}
 
@@ -3940,7 +3940,7 @@ function playBGM(type) {
 				if ($("#option_bgm").checked === false || type !== "rpg_clear") {
 					if (!bgmList["rpg_clear"].paused) {
 						bgmList["rpg_clear"].currentTime = 0;
-						bgmList["rpg_clear"].pause();\
+						bgmList["rpg_clear"].pause();
 					}
 				}
 
