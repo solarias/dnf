@@ -10,7 +10,9 @@
 	text-decoration:none;
 }
 /*뼈대*/
-body {
+html, body {
+	height:100%;
+
 	background-color:#606060;
 }
 	p, span, tr, td {
