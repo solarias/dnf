@@ -3920,28 +3920,38 @@ function playBGM(type) {
 		switch (bgm) {
 			case "beckey":
 				if ($("#option_bgm").checked === false || type !== "beckey") {
-					bgmList["beckey"].currentTime = 0;
-					bgmList["beckey"].pause();
+					if (!bgmList["beckey"].paused) {
+						bgmList["beckey"].currentTime = 0;
+						bgmList["beckey"].pause();
+					}
 				}
 
 				break;
 			case "hell":
 				if ($("#option_bgm").checked === false || type !== "hell") {
-					bgmList["hell"].currentTime = 0;
-					bgmList["hell"].pause();
+					if (!bgmList["hell"].paused) {
+						bgmList["hell"].currentTime = 0;
+						bgmList["hell"].pause();\
+					}
 				}
 
 				break;
 			case "rpg_clear":
 				if ($("#option_bgm").checked === false || type !== "rpg_clear") {
-					bgmList["rpg_clear"].currentTime = 0;
-					bgmList["rpg_clear"].pause();
+					if (!bgmList["rpg_clear"].paused) {
+						bgmList["rpg_clear"].currentTime = 0;
+						bgmList["rpg_clear"].pause();\
+					}
 				}
 
 				break;
 			default:
-				bgmList[bgm.toString()].currentTime = 0;
-				bgmList[bgm.toString()].pause();
+				if ($("#option_bgm").checked === false || type === "beckey" || type === "hell") {
+					if (!bgmList[bgm.toString()].paused) {
+						bgmList[bgm.toString()].currentTime = 0;
+						bgmList[bgm.toString()].pause();
+					}
+				}
 				break;
 		}
 	}
