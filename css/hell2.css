@@ -3430,21 +3430,11 @@ html, body {
 				-o-transition: all 0.5s linear;
 				transition: all 0.5s linear;
 			}
-			.item_img.shadow {
-				/*성능 문제로 사용하지 않음
-				filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
-				filter: url(#drop-shadow);
-				-webkit-filter: drop-shadow(2px 2px 7px rgba(0,0,0,0.8));
-				filter: drop-shadow(2px 2px 7px rgba(0,0,0,0.8));
-				*/
-			}
 
 		.effect_appear {
 			position:absolute;
 			top:0px;
 			left:-144px;
-
-			height:0px;
 			z-index:4;
 
 			width:340px;

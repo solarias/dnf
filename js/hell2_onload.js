@@ -356,15 +356,15 @@ function main(cmd) {
 		var slot = document.createElement("div");
 		slot.id = "item" + i.toString();
 		slot.className = "item";
-		slot.innerHTML = "\
-				<div id='description" + i.toString() + "' class='description'>\
-					<p id='item_name" + i.toString() + "' class='item_name'></p>\
-				</div>\
-				<div id='item_img" + i.toString() + "' class='item_img'></div>\
-				\
-				<div id='effect_appear" + i.toString() + "' class='effect_appear'></div>\
-				<div id='effect_land" + i.toString() + "' class='effect_land'></div>\
-				<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>";
+		slot.innerHTML = "" + 
+				"<div id='description" + i.toString() + "' class='description'>" +
+				"	<p id='item_name" + i.toString() + "' class='item_name'></p>" +
+				"</div>" +
+				"<div id='item_img" + i.toString() + "' class='item_img'></div>" +
+				"" +
+				"<div id='effect_appear" + i.toString() + "' class='effect_appear'></div>" +
+				"<div id='effect_land" + i.toString() + "' class='effect_land'></div>" +
+				"<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>";
 		$("#frame_top").appendChild(slot);
 	}
 	//최대 드랍 가능 아이템 수량만큼 좌표 정보 생성
