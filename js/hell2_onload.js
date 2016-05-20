@@ -356,7 +356,7 @@ function main(cmd) {
 		var slot = document.createElement("div");
 		slot.id = "item" + i.toString();
 		slot.className = "item";
-		slot.innerHTML = "" + 
+		slot.innerHTML = "" +
 				"<div id='description" + i.toString() + "' class='description'>" +
 				"	<p id='item_name" + i.toString() + "' class='item_name'></p>" +
 				"</div>" +

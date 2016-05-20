@@ -12,6 +12,8 @@
 		var arrSfx = sfxList;
 		var initial = arrImage.length + Object.keys(arrBgm).length + Object.keys(arrSfx).length;
 			var remaining = initial;
+			var imageState = arrImage.length;
+			var soundState = Object.keys(arrBgm).length + Object.keys(arrSfx).length;
 		var percent = "0%";
 
 		//로딩 함수
@@ -24,7 +26,38 @@
 			$("#loading_progress_bar").style.width = percent;
 			//내부 처리
 			--remaining;
+			switch (text) {
+				case "이미지":
+					--imageState;
+
+					break;
+				default:
+					--soundState;
+
+					break;
+			}
+			//로딩 완료 -> 실행 개시
 			if (remaining <= 0) {
+				callBack();
+			}
+			//이미지"만" 로딩 완료, 사운드 로딩 0 -> 실행 개시
+			if (imageState <= 0 && soundState === Object.keys(arrBgm).length + Object.keys(arrSfx).length) {
+				//사운드 oncanplaythrough 무시
+				if (Object.keys(arrBgm).length > 0) {
+					for (var key in arrBgm) {
+						if (arrBgm.hasOwnProperty(key)) {
+							arrBgm[key].oncanplaythrough = "";
+						}
+					}
+				}
+				if (Object.keys(arrSfx).length > 0) {
+					for (var key in arrSfx) {
+						if (arrSfx.hasOwnProperty(key)) {
+							arrSfx[key].oncanplaythrough = "";
+						}
+					}
+				}
+
 				callBack();
 			}
 		}
@@ -48,24 +81,17 @@
 			for (var key in arrBgm) {
 				if (arrBgm.hasOwnProperty(key)) {
 					try {
-						setLoad("배경음");
-					} catch(e) {
-						setLoad("배경음");
-					}
-					/*
-					try {
-						arrBgm[key].onloadstart = function() {
+						arrBgm[key].oncanplaythrough = function() {
 							setLoad("배경음");
-							this.onloadstart = "";
+							this.oncanplaythrough = "";
 						};
 						arrBgm[key].onerror = function() {
 							setLoad("배경음");
-							this.onloadstart = "";
+							this.oncanplaythrough = "";
 						};
 					} catch(e) {
 						setLoad("배경음");
 					}
-					*/
 				}
 			}
 		}
@@ -75,24 +101,17 @@
 			for (var key in arrSfx) {
 				if (arrSfx.hasOwnProperty(key)) {
 					try {
-						setLoad("효과음");
-					} catch(e) {
-						setLoad("효과음");
-					}
-					/*
-					try {
-						arrSfx[key].onloadstart = function() {
+						arrSfx[key].oncanplaythrough = function() {
 							setLoad("효과음");
-							this.onloadstart = "";
+							this.oncanplaythrough = "";
 						};
 						arrSfx[key].onerror = function() {
 							setLoad("효과음");
-							this.onloadstart = "";
+							this.oncanplaythrough = "";
 						};
 					} catch(e) {
 						setLoad("효과음");
 					}
-					*/
 				}
 			}
 		}
