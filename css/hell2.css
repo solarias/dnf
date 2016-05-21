@@ -3376,25 +3376,20 @@ html, body {
 	/*======================================================================================================*/
 	.item {
 		position:absolute;
-		top:180px;
-		left:462px;
+
+		width:800px;
+		height:200px;
+
+		text-align:center;
 	}
-		.description {
-			position:absolute;
-			top:0px;
-			left:0px;
-			z-index:5;
-		}
-			.description.normal {
-				display:none;
-			}
-			.description.jogak {
-				display:none;
-			}
 		.item_name {
+			margin:-22px auto 0px auto;
+				left:0;
+				right:0;
 			padding:3px 5px;
-			width:auto;
-			z-index:5;
+
+			width:1px;
+			white-space: nowrap;
 
 			background:rgba(0,0,0,0.6);
 			border:1px #B89F7C solid;
@@ -3404,19 +3399,29 @@ html, body {
 			font-weight:bold;
 			white-space:nowrap;
 
-			display:inline-block;
 			visibility:hidden;
 		}
+			.item_name.type_normal {
+				display:none;
+			}
+			.item_name.type_jogak {
+				display:none;
+			}
 		.item_img {
-			position:absolute;
-			top:25px;
-			z-index:5;
+			position:fixed;
 
+			margin:0px auto;
+				left:0;
+				right:0;
 			width:1px;
 			height:1px;
 
 			background-image:url('../sprite/images/sprite_item.png');
 			background-position:0px 0px;
+
+			-ms-transition: none;
+			-webkit-transition: none;
+			transition: none;
 
 			visibility:hidden;
 		}
@@ -3425,18 +3430,23 @@ html, body {
 				-webkit-transform:rotate(360deg);
 				transform:rotate(360deg);
 
-				-webkit-transition: all 0.5s linear;
-				-moz-transition: all 0.5s linear;
-				-o-transition: all 0.5s linear;
-				transition: all 0.5s linear;
+				-ms-transition: -ms-transform 0.5s linear;
+				-webkit-transition: -webkit-transform 0.5s linear;
+				transition: transform 0.5s linear;
 			}
 
 		.effect_appear {
+			position:fixed;
+			/*
 			position:absolute;
 			top:0px;
 			left:-144px;
 			z-index:4;
+			*/
 
+			margin:0px auto 0px auto;
+				left:50px;
+				right:0;
 			width:340px;
 			height:396px;
 
@@ -3445,11 +3455,17 @@ html, body {
 			visibility:hidden;
 		}
 		.effect_land {
+			position:fixed;
+			/*
 			position:absolute;
 			top:0px;
 			left:-302px;
 			z-index:4;
+			*/
 
+			margin:0px auto;
+				left:0;
+				right:0;
 			width:603px;
 			height:316px;
 
@@ -3458,11 +3474,17 @@ html, body {
 			visibility:hidden;
 		}
 		.effect_wait {
+			position:fixed;
+			/*
 			position:absolute;
 			top:0px;
 			left:-99px;
 			z-index:4;
+			*/
 
+			margin:0px auto;
+				left:-12px;
+				right:0;
 			width:187px;
 			height:186px;
 

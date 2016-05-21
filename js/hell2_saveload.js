@@ -125,7 +125,7 @@ function loadData(cmd) {
     } else {
         setRandomCharacter();
     }
-    setEquip();
+    setEquip("nosave");
     //모드 반영
     if (playMode === 'normal') {
         //모드 표시

@@ -203,16 +203,9 @@
 			//필터링 적용
 			if ($("#option_name_normal").checked) {
 				sheet.innerHTML = "" +
-				".description.normal {" +
-				"	display:inline-block;" +
+				".item_name.type_normal {" +
+				"	display:table;" +
 				"}";
-				//필드 아이템 이름 재배치
-				for (var i=0;i<maxQuantity;i++) {
-					//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-					$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-				}
 			} else {
 				//필터링 해제
 				sheet.innerHTML = "";
@@ -232,16 +225,9 @@
 			//필터링 적용
 			if ($("#option_name_jogak").checked) {
 				sheet.innerHTML = "" +
-				".description.jogak {" +
-				"	display:inline-block;" +
+				".item_name.type_jogak {" +
+				"	display:table;" +
 				"}";
-				//필드 아이템 이름 재배치
-				for (var i=0;i<maxQuantity;i++) {
-					//$("#description" + i.toString()).style.left = (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + i.toString()).style.msTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + i.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + i.toString()).style.transform = "translate(" + (-$("#item_name" + i.toString()).offsetWidth/2).toString() + "px,0px)";
-				}
 			} else {
 				//필터링 해제
 				sheet.innerHTML = "";
@@ -631,15 +617,11 @@ function dungeon_select(cmd) {
 	//3. 아이템 정리
 	for (var i=0;i<maxQuantity;i++) {
 		//item - left, top 수치는 여기서만 다룸 (나머지는 translate() 활용)
-		$("#item" + i.toString()).style.left = startList[input["dungeon"]][0].toString() + "px";
-		$("#item" + i.toString()).style.top = startList[input["dungeon"]][1].toString() + "px";
+		$("#item" + i.toString()).style.left = (startList[input["dungeon"]][0] - 400).toString() + "px";
+		$("#item" + i.toString()).style.top = (startList[input["dungeon"]][1] + 32).toString() + "px";
 
-		$("#item_name" + i.toString()).className = "item_name";
+		$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			//$("#description" + i.toString()).style.left = "0px";
-			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
-			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
-			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		$("#effect_appear" + i.toString()).style.visibility = "hidden";
@@ -651,7 +633,7 @@ function dungeon_select(cmd) {
 		clearTimeout(autoEffect["appear"][i-1]);
 		clearTimeout(autoEffect["land"][i-1]);
 		clearTimeout(autoEffect["wait"][i-1]);
-		$("#item_img"+ i.toString()).className = "item_img";
+		$("#item_img"+ i.toString()).classList.remove("rotate");
 	}
 	//4. 에픽 조각 드랍 가능 zone 설정 (에픽 조각이 일반 장비 아이콘을 덮지 않도록)
 	zoneList = [];
@@ -1216,13 +1198,9 @@ function simulate(num){
 		$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 		//아이템 이름 숨기기&이동, 이미지 숨기기
-		$("#description" + i.toString()).className = "description";
-		$("#item_name" + i.toString()).className = "item_name";
+		$("#item_name" + i.toString()).classList.remove("type_normal","type_jogak");
+		$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			//$("#description" + i.toString()).style.left = "0px";
-			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
-			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
-			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		//에픽 이펙트 숨기기
@@ -1236,7 +1214,7 @@ function simulate(num){
 			clearTimeout(autoEffect["appear"][i-1]);
 			clearTimeout(autoEffect["land"][i-1]);
 			clearTimeout(autoEffect["wait"][i-1]);
-			$("#item_img"+ i.toString()).className = "item_img";
+			$("#item_img"+ i.toString()).classList.remove("rotate");
 		}
 	}
 
@@ -2117,18 +2095,13 @@ function sortItem(type, zone, zoneArr) {
 						}
 
 						//아이템 이름 변경
-						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-						$("#item_name" + zone.toString()).className += " rare";
+						$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+						$("#item_name" + zone.toString()).classList.add("rare");
 						$("#item_name" + zone.toString()).innerHTML = "마법으로 봉인된 " + name2;
-							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
 
 						//아이템 이름, 필드 이미지 가시화
@@ -2146,18 +2119,13 @@ function sortItem(type, zone, zoneArr) {
 						var name2 = "코스모 소울";
 
 						//아이템 이름 변경
-						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-						$("#item_name" + zone.toString()).className += " epic";
+						$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+						$("#item_name" + zone.toString()).classList.add("epic");
 						$("#item_name" + zone.toString()).innerHTML = name2;
-							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
 
 						//아이템 이름, 필드 이미지 가시화
@@ -2173,18 +2141,13 @@ function sortItem(type, zone, zoneArr) {
 						var name2 =  areaList[input["dungeon"]] + " 지옥구슬";
 
 						//아이템 이름 변경
-						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-						$("#item_name" + zone.toString()).className += " unique";
+						$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+						$("#item_name" + zone.toString()).classList.add("unique");
 						$("#item_name" + zone.toString()).innerHTML = name2;
-							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
-							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px) rotateY(0deg)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
 
 						//아이템 이름, 필드 이미지 가시화
@@ -2214,19 +2177,14 @@ function sortItem(type, zone, zoneArr) {
 						}
 
 						//아이템 이름 변경, 이후 미리 측정한 길이 부여
-						$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-						$("#item_name" + zone.toString()).className += " epic";
+						$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+						$("#item_name" + zone.toString()).classList.add("epic");
 						$("#item_name" + zone.toString()).innerHTML = temp["name"];
-							//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-							$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-							$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 						//아이템 필드 이미지 변경, 크기 조절
 						var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
 						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 						$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-							$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 						$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
 
 						//아이템 이름, 필드 이미지 가시화
@@ -2234,7 +2192,7 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_img" + zone.toString()).style.visibility = "visible";
 
 						//출현 이펙트 가시화 (에픽 전용)
-						$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+						$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 						//아이템 등록
@@ -2258,19 +2216,14 @@ function sortItem(type, zone, zoneArr) {
 				temp = tempArr[Math.floor(Math.random() * tempArr.length)];
 
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
-				$("#description" + zone.toString()).className += " jogak";//이름 숨기기 옵션용
-				$("#item_name" + zone.toString()).className += " jogak";
+				$("#item_name" + zone.toString()).classList.add("type_jogak");//이름 숨기기 옵션용
+				$("#item_name" + zone.toString()).classList.add("jogak");
 				$("#item_name" + zone.toString()).innerHTML = temp["name"] + " 조각";
-					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_에픽조각";
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
 
 				//아이템 이름, 필드 이미지 가시화
@@ -2286,19 +2239,14 @@ function sortItem(type, zone, zoneArr) {
 				temp = item;
 
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
-				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-				$("#item_name" + zone.toString()).className += " epic";
+				$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+				$("#item_name" + zone.toString()).classList.add("epic");
 				$("#item_name" + zone.toString()).innerHTML = "(조각 완성) " + temp["name"];
-					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
 
 				//아이템 이름, 필드 이미지 가시화
@@ -2306,7 +2254,7 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+				$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 				//=================================
@@ -2379,19 +2327,14 @@ function sortItem(type, zone, zoneArr) {
 				temp = item;
 
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
-				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-				$("#item_name" + zone.toString()).className += " epic";
+				$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+				$("#item_name" + zone.toString()).classList.add("epic");
 				$("#item_name" + zone.toString()).innerHTML = "(항아리) " + temp["name"];
-					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
 
 				//아이템 이름, 필드 이미지 가시화
@@ -2399,7 +2342,7 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.top = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+				$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 				//=================================
@@ -2471,19 +2414,14 @@ function sortItem(type, zone, zoneArr) {
 				break;
 			case "초대장" :
 				//아이템 이름 변경, 이후 미리 측정한 길이 부여
-				$("#description" + zone.toString()).className += " normal";//이름 숨기기 옵션용
-				$("#item_name" + zone.toString()).className += " rare";
+				$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
+				$("#item_name" + zone.toString()).classList.add("rare");
 				$("#item_name" + zone.toString()).innerHTML = "지옥파티 초대장";
-					//$("#description" + zone.toString()).style.left = (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px";
-					$("#description" + zone.toString()).style.msTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.webkitTransform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
-					$("#description" + zone.toString()).style.transform = "translate(" + (-$("#item_name" + zone.toString()).offsetWidth/2).toString() + "px,0px)";
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_초대장";
 				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
 				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-					$("#item_img" + zone.toString()).style.left = (-$("#item_img" + zone.toString()).offsetWidth/2).toString() + "px";
 				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
 
 				//아이템 이름, 필드 이미지 가시화
@@ -2501,7 +2439,7 @@ function sortItem(type, zone, zoneArr) {
 	//아이템 드롭
 	function dropItem(info) {
 		//아이템 회전 시작
-		$("#item_img" + info[0].toString()).className += " rotate";
+		$("#item_img" + info[0].toString()).classList.add("rotate");
 
 		switch (info[2]) {
 			case "에픽":
@@ -3024,13 +2962,9 @@ function make(num,amount) {
 		$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 		//아이템 이름 숨기기&이동, 이미지 숨기기
-		$("#description" + i.toString()).className = "description";
-		$("#item_name" + i.toString()).className = "item_name";
+		$("#item_name" + i.toString()).classList.remove("type_normal","type_jogak");
+		$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
 		$("#item_name" + i.toString()).style.visibility = "hidden";
-			//$("#description" + i.toString()).style.left = "0px";
-			$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
-			$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
-			$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 		$("#item_img" + i.toString()).style.visibility = "hidden";
 
 		//에픽 이펙트 숨기기
@@ -3043,7 +2977,7 @@ function make(num,amount) {
 		clearTimeout(autoEffect["appear"][i-1]);
 		clearTimeout(autoEffect["land"][i-1]);
 		clearTimeout(autoEffect["wait"][i-1]);
-		$("#item_img"+ i.toString()).className = "item_img";
+		$("#item_img"+ i.toString()).classList.remove("rotate");
 	}
 	//7. 아이템 드롭
 	var point = Math.floor(Math.random() * coopList[input["dungeon"]].length);
@@ -3088,7 +3022,7 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		}
 
 		//이미지 회전 중단
-		$("#item_img"+ zone.toString()).className = "item_img";
+		$("#item_img"+ zone.toString()).classList.remove("rotate");
 
 		//아이템 드랍 대기
 		dropCount += 1;
@@ -3108,12 +3042,12 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			}
 
 			//착지 이펙트 가시화
-			$("#effect_land" + zone.toString()).style.top = (-161+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+			$("#effect_land" + zone.toString()).style.marginTop = (-181+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_land" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
 
 			//대기 이펙트 가시화
-			$("#effect_wait" + zone.toString()).style.top = (-98+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+			$("#effect_wait" + zone.toString()).style.marginTop = (-118+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_wait" + zone.toString()),"wait",zone,188,0,-2255,100,1);
 		}
@@ -3158,9 +3092,9 @@ function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 //※ 함수 - 장비 장착, 강화, 영웅의 항아리
 //=================================================================================================================
 //장비 장착하기
-function setEquip(cmd, toWearName, noSound) {
+function setEquip(cmd, toWearName, noSound, dontsave) {
 	//cmd 없음 : 착용 가능한 모든 장비 검색 후 등록
-	if (!cmd) {
+	if (!cmd || cmd === "nosave") {
 		//장비창 비우기
 		for (var i=0;i<partList.length;i++) {
 			clearSelect($("#list_" + partList[i] + "_select"));
@@ -3198,7 +3132,11 @@ function setEquip(cmd, toWearName, noSound) {
 					for (var j=0;j<$("#list_" + partList[i] + "_select").options.length;j++) {
 						if ($("#list_" + partList[i] + "_select").options[j].value === wearingList[partList[i]]["name"]) {
 							$("#list_" + partList[i] + "_select").selectedIndex = j;
-							setEquip(partList[i], $("#list_" + partList[i] + "_select").value, "noSound");
+							if (cmd === "nosave") {
+								setEquip(partList[i], $("#list_" + partList[i] + "_select").value, "noSound", "dontsave");
+							} else {
+								setEquip(partList[i], $("#list_" + partList[i] + "_select").value, "noSound");
+							}
 							break;
 						}
 					}
@@ -3232,7 +3170,10 @@ function setEquip(cmd, toWearName, noSound) {
 		//5. 전투력 계산
 		setPower();
 		//게임 저장
-		saveData();
+		if (cmd !== "nosave" && (!dontsave || dontsave !== "dontsave")) {
+			console.log(dontsave);
+			saveData();
+		}
 
 	//특정 부위 징칙
 	} else {
@@ -3263,7 +3204,10 @@ function setEquip(cmd, toWearName, noSound) {
 		//5. 전투력 계산
 		setPower();
 		//게임 저장
-		saveData();
+		if (cmd !== "nosave" && (!dontsave || dontsave !== "dontsave")) {
+			console.log(dontsave);
+			saveData();
+		}
 	}
 
 }
@@ -3718,13 +3662,9 @@ function openPot(type, tradable, step) {
 					$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
 					//아이템 이름 숨기기&이동, 이미지 숨기기
-					$("#description" + i.toString()).className = "description";
-					$("#item_name" + i.toString()).className = "item_name";
+					$("#item_name" + i.toString()).classList.remove("type_normal","type_jogak");
+					$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
 					$("#item_name" + i.toString()).style.visibility = "hidden";
-						//$("#description" + i.toString()).style.left = "0px";
-						$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
-						$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px) rotateY(0deg)";
-						$("#description" + i.toString()).style.transform = "translate(0px,0px) rotateY(0deg)";
 					$("#item_img" + i.toString()).style.visibility = "hidden";
 
 					//에픽 이펙트 숨기기
@@ -3737,7 +3677,7 @@ function openPot(type, tradable, step) {
 					clearTimeout(autoEffect["appear"][i-1]);
 					clearTimeout(autoEffect["land"][i-1]);
 					clearTimeout(autoEffect["wait"][i-1]);
-					$("#item_img"+ i.toString()).className = "item_img";
+					$("#item_img"+ i.toString()).classList.remove("rotate");
 				}
 				//B. 아이템 드롭
 				var point = Math.floor(Math.random() * coopList[input["dungeon"]].length);

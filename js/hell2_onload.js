@@ -357,14 +357,12 @@ function main(cmd) {
 		slot.id = "item" + i.toString();
 		slot.className = "item";
 		slot.innerHTML = "" +
-				"<div id='description" + i.toString() + "' class='description'>" +
-				"	<p id='item_name" + i.toString() + "' class='item_name'></p>" +
-				"</div>" +
-				"<div id='item_img" + i.toString() + "' class='item_img'></div>" +
-				"" +
 				"<div id='effect_appear" + i.toString() + "' class='effect_appear'></div>" +
 				"<div id='effect_land" + i.toString() + "' class='effect_land'></div>" +
-				"<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>";
+				"<div id='effect_wait" + i.toString() + "' class='effect_wait'></div>" +
+				"" +
+				"<div id='item_name" + i.toString() + "' class='item_name'></div>" +
+				"<div id='item_img" + i.toString() + "' class='item_img'></div>";
 		$("#frame_top").appendChild(slot);
 	}
 	//최대 드랍 가능 아이템 수량만큼 좌표 정보 생성
@@ -1969,12 +1967,8 @@ function main(cmd) {
 					$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
 					$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
-					$("#item_name" + i.toString()).className = "item_name";
+					$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
 					$("#item_name" + i.toString()).style.visibility = "hidden";
-						//$("#description" + i.toString()).style.left = "0px";
-						$("#description" + i.toString()).style.msTransform = "translate(0px,0px)";
-						$("#description" + i.toString()).style.webkitTransform = "translate(0px,0px)";
-						$("#description" + i.toString()).style.transform = "translate(0px,0px)";
 					$("#item_img" + i.toString()).style.visibility = "hidden";
 
 					$("#effect_appear" + i.toString()).style.visibility = "hidden";
@@ -1984,7 +1978,7 @@ function main(cmd) {
 					//애니메이션 정지
 					clearTimeout(autoLooting[i-1]);
 					clearTimeout(autoEffect[i-1]);
-					$("#item_img"+ i.toString()).className = "item_img";
+					$("#item_img"+ i.toString()).classList.remove("rotate");
 				}
 				//2. 회차 & 난이도 초기화
 				count = 0;
