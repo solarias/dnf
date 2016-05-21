@@ -2192,7 +2192,7 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_img" + zone.toString()).style.visibility = "visible";
 
 						//출현 이펙트 가시화 (에픽 전용)
-						$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+						$("#effect_appear" + zone.toString()).style.top = (-260+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 						$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 						//아이템 등록
@@ -2254,7 +2254,7 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+				$("#effect_appear" + zone.toString()).style.top = (-260+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 				//=================================
@@ -2342,7 +2342,7 @@ function sortItem(type, zone, zoneArr) {
 				$("#item_img" + zone.toString()).style.visibility = "visible";
 
 				//출현 이펙트 가시화 (에픽 전용)
-				$("#effect_appear" + zone.toString()).style.marginTop = (-235+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+				$("#effect_appear" + zone.toString()).style.top = (-260+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 				$("#effect_appear" + zone.toString()).style.visibility = "visible";
 
 				//=================================
@@ -3042,12 +3042,12 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			}
 
 			//착지 이펙트 가시화
-			$("#effect_land" + zone.toString()).style.marginTop = (-181+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+			$("#effect_land" + zone.toString()).style.top = (-181+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_land" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
 
 			//대기 이펙트 가시화
-			$("#effect_wait" + zone.toString()).style.marginTop = (-118+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
+			$("#effect_wait" + zone.toString()).style.top = (-118+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.visibility = "visible";
 			animation($("#effect_wait" + zone.toString()),"wait",zone,188,0,-2255,100,1);
 		}

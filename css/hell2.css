@@ -3408,11 +3408,9 @@ html, body {
 				display:none;
 			}
 		.item_img {
-			position:fixed;
+			position:relative;
 
 			margin:0px auto;
-				left:0;
-				right:0;
 			width:1px;
 			height:1px;
 
@@ -3436,7 +3434,9 @@ html, body {
 			}
 
 		.effect_appear {
-			position:fixed;
+			position:absolute;
+			left:255px;
+			top:0px;
 			/*
 			position:absolute;
 			top:0px;
@@ -3444,9 +3444,6 @@ html, body {
 			z-index:4;
 			*/
 
-			margin:0px auto 0px auto;
-				left:50px;
-				right:0;
 			width:340px;
 			height:396px;
 
@@ -3455,7 +3452,8 @@ html, body {
 			visibility:hidden;
 		}
 		.effect_land {
-			position:fixed;
+			position:absolute;
+			left:98px;
 			/*
 			position:absolute;
 			top:0px;
@@ -3474,7 +3472,8 @@ html, body {
 			visibility:hidden;
 		}
 		.effect_wait {
-			position:fixed;
+			position:absolute;
+			left:249px;
 			/*
 			position:absolute;
 			top:0px;

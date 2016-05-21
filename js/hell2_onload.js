@@ -3,37 +3,40 @@
 //※ 첫 화면
 //=================================================================================================================
 window.onload = function() {
-	//데이터 초기화
-	initData();
-		//(저장된 데이터 있으면) 데이터 불러오기
-		if (localStorage["hell2_init"] === "true") {
-			//1. 불러온 데이터 작성
-			var tempObj = localGet("hell2");
-			switch (tempObj["playMode"]) {
-				case "normal":
-					$("#continue_mode").innerHTML = "일반";
-					break;
-				case "rpg":
-					$("#continue_mode").innerHTML = "RPG";
-					break;
-				case "beckey":
-					$("#continue_mode").innerHTML = "베키";
-					break;
+	//IE 로컬에서는 로컬스토리지 실행 금지
+	if (localStorage !== undefined) {
+		//데이터 초기화
+		initData();
+			//(저장된 데이터 있으면) 데이터 불러오기
+			if (localStorage["hell2_init"] === "true") {
+				//1. 불러온 데이터 작성
+				var tempObj = localGet("hell2");
+				switch (tempObj["playMode"]) {
+					case "normal":
+						$("#continue_mode").innerHTML = "일반";
+						break;
+					case "rpg":
+						$("#continue_mode").innerHTML = "RPG";
+						break;
+					case "beckey":
+						$("#continue_mode").innerHTML = "베키";
+						break;
+				}
+				$("#continue_count").innerHTML = thousand(tempObj["count"]);
+				$("#continue_dayCount").innerHTML = thousand(tempObj["dateState"]["date"]);
+				if (tempObj["myCharacter"] === "") $("#continue_character").innerHTML = "없음";
+					else $("#continue_character").innerHTML = characterList[tempObj["myCharacter"]]["name"];
+				$("#continue_power").innerHTML = thousand(parseInt(tempObj["power"]));
+				//2. 데이터 현황 출력
+				$("#continue_no").style.display = "none";
+				$("#continue_yes").style.display = "block";
+			//(불러올 데이터가 없으면)
+			} else {
+				//1. 데이터 현황 출력
+				$("#continue_no").style.display = "block";
+				$("#continue_yes").style.display = "none";
 			}
-			$("#continue_count").innerHTML = thousand(tempObj["count"]);
-			$("#continue_dayCount").innerHTML = thousand(tempObj["dateState"]["date"]);
-			if (tempObj["myCharacter"] === "") $("#continue_character").innerHTML = "없음";
-				else $("#continue_character").innerHTML = characterList[tempObj["myCharacter"]]["name"];
-			$("#continue_power").innerHTML = thousand(parseInt(tempObj["power"]));
-			//2. 데이터 현황 출력
-			$("#continue_no").style.display = "none";
-			$("#continue_yes").style.display = "block";
-		//(불러올 데이터가 없으면)
-		} else {
-			//1. 데이터 현황 출력
-			$("#continue_no").style.display = "block";
-			$("#continue_yes").style.display = "none";
-		}
+	}
 	//버튼에 마우스 올리면 모드 설명
 	seriesOnOff(
 		//base
@@ -59,7 +62,7 @@ window.onload = function() {
 	$("#titleScreen_continue").innerHTML = "이어서 하기";
 		$("#titleScreen_continue").disabled = false;
 		//불러올 수 없으면 -> 색상 표시
-		if (localStorage["hell2_init"] !== "true") {
+		if (localStorage === undefined || localStorage["hell2_init"] !== "true") {
 			$("#titleScreen_continue").style.color = "gray";
 		}
 	$("#titleScreen_normal").innerHTML = "일반 모드 시작";
