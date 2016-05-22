@@ -68,6 +68,7 @@ var optionList = {
 	"bgm_type":"dungeon",
 	"gabriel":false,
 	"gabriel_type":"manual",
+	"freepass":false,
 	"soul":true,
 	"basicItem":false
 };

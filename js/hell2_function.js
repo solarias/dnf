@@ -629,10 +629,10 @@ function dungeon_select(cmd) {
 		$("#effect_wait" + i.toString()).style.visibility = "hidden";
 
 		//애니메이션 정지
-		clearTimeout(autoLooting[i-1]);
-		clearTimeout(autoEffect["appear"][i-1]);
-		clearTimeout(autoEffect["land"][i-1]);
-		clearTimeout(autoEffect["wait"][i-1]);
+		clearRequestTimeout(autoLooting[i-1]);
+		clearRequestTimeout(autoEffect["appear"][i-1]);
+		clearRequestTimeout(autoEffect["land"][i-1]);
+		clearRequestTimeout(autoEffect["wait"][i-1]);
 		$("#item_img"+ i.toString()).classList.remove("rotate");
 	}
 	//4. 에픽 조각 드랍 가능 zone 설정 (에픽 조각이 일반 장비 아이콘을 덮지 않도록)
@@ -708,6 +708,10 @@ function dungeon_select(cmd) {
 		}
 		hellgate = lifeList[input["dungeon"]];
 		$("#hellgate_life").innerHTML = thousand(lifeList[input["dungeon"]]);
+
+		$("#hellgate_level").style.display = "block";
+		$("#hellgate_item").style.display = "block";
+		$("#hellgate_life").style.display = "block";
 	} else {
 		hellgate = 1;
 	}
@@ -1094,9 +1098,15 @@ function trigger(num, step, hitsound) {
 			//=================================
 			//* 입장료 지불
 			//=================================
-			//0-1. 소모한 초대장 수 증가
-			cost["invite"] += costList[input["dungeon"]];//총 소모
-			cost["invite_real"] += costList[input["dungeon"]];//실질 소모
+			//0-1-1. 지옥파티 프리패스 : 고정된 수치만큼 소모
+			if ($("#option_freepass").checked) {
+				cost["invite"] += costList_freepass;//총 소모
+				cost["invite_real"] += costList_freepass;//실질 소모
+			//0-1-2. 나머지 : 특정 던전에 대해 소모한 초대장 수 증가
+			} else {
+				cost["invite"] += costList[input["dungeon"]];//총 소모
+				cost["invite_real"] += costList[input["dungeon"]];//실질 소모
+			}
 			//0-2. 소모한 초대장 수 반영
 			$("#cost_invitation").innerHTML = thousand(cost["invite"]);
 			$("#cost_real").innerHTML = thousand(cost["invite_real"]);
@@ -1119,7 +1129,7 @@ function trigger(num, step, hitsound) {
 			//=================================
 			//* 체력 감소 개시
 			//=================================
-			setTimeout(function() {
+			requestTimeout(function() {
 				trigger(num, 1, hitsound);
 			},playSpeed[playMode]);
 
@@ -1154,7 +1164,7 @@ function trigger(num, step, hitsound) {
 				//회차에 따른 날짜 표시
 				setDate();
 			if (hellgate > 0 && runningState !== "") {
-				setTimeout(function() {
+				requestTimeout(function() {
 					trigger(num, 1, hitsound);
 				},playSpeed[playMode]);
 			} else if (hellgate <= 0) {
@@ -1210,10 +1220,10 @@ function simulate(num){
 
 	//애니메이션 정지 (탐색 시 2번째 실행부터 : 무시)
 		if (num !== 3) {
-			clearTimeout(autoLooting[i-1]);
-			clearTimeout(autoEffect["appear"][i-1]);
-			clearTimeout(autoEffect["land"][i-1]);
-			clearTimeout(autoEffect["wait"][i-1]);
+			clearRequestTimeout(autoLooting[i-1]);
+			clearRequestTimeout(autoEffect["appear"][i-1]);
+			clearRequestTimeout(autoEffect["land"][i-1]);
+			clearRequestTimeout(autoEffect["wait"][i-1]);
 			$("#item_img"+ i.toString()).classList.remove("rotate");
 		}
 	}
@@ -1224,7 +1234,13 @@ function simulate(num){
 	//1. 던전 난이도 입력
 	input["dun_diff"] = $("#difficulty").value;
 	//2. 지옥파티 난이도 결정
-	input["hell_diff"] = rand(chanceList_num[0]);
+		//지옥파티 프리패스 - 매우 어려움으로 고정
+		if ($("#option_freepass").checked) {
+			input["hell_diff"] = 1;//0 : 어려움, 1 : 매우 어려움
+		//일반 - 무작위로 결정
+		} else {
+			input["hell_diff"] = rand(chanceList_num[0]);
+		}
 	$("#round_difficulty").innerHTML =  chanceList_name[0][input["hell_diff"]];//난이도 출력
 
 	//3. zone 딥카피
@@ -2100,9 +2116,7 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_name" + zone.toString()).innerHTML = "마법으로 봉인된 " + name2;
 
 						//아이템 필드 이미지 변경, 크기 조절
-						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
-						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
+						$("#item_img" + zone.toString()).className = "item_img " + name1;
 
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2124,9 +2138,7 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_name" + zone.toString()).innerHTML = name2;
 
 						//아이템 필드 이미지 변경, 크기 조절
-						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
-						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
+						$("#item_img" + zone.toString()).className = "item_img " + name1;
 
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2146,9 +2158,7 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_name" + zone.toString()).innerHTML = name2;
 
 						//아이템 필드 이미지 변경, 크기 조절
-						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(name1,1);
-						$("#item_img" + zone.toString()).style.width = spriteSize(name1,"width",1);
-						$("#item_img" + zone.toString()).style.height = spriteSize(name1,"height",1);
+						$("#item_img" + zone.toString()).className = "item_img " + name1;
 
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2183,9 +2193,7 @@ function sortItem(type, zone, zoneArr) {
 
 						//아이템 필드 이미지 변경, 크기 조절
 						var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
-						$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
-						$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-						$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
+						$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
 						//아이템 이름, 필드 이미지 가시화
 						$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2222,9 +2230,7 @@ function sortItem(type, zone, zoneArr) {
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_에픽조각";
-				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
-				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
+				$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2245,9 +2251,7 @@ function sortItem(type, zone, zoneArr) {
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
-				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
-				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
+				$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2333,9 +2337,7 @@ function sortItem(type, zone, zoneArr) {
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
-				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
-				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
+				$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2420,9 +2422,7 @@ function sortItem(type, zone, zoneArr) {
 
 				//아이템 필드 이미지 변경, 크기 조절
 				var field_name = "field_초대장";
-				$("#item_img" + zone.toString()).style.backgroundPosition = spritePosition(field_name,1);
-				$("#item_img" + zone.toString()).style.width = spriteSize(field_name,"width",1);
-				$("#item_img" + zone.toString()).style.height = spriteSize(field_name,"height",1);
+				$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
 				//아이템 이름, 필드 이미지 가시화
 				$("#item_name" + zone.toString()).style.visibility = "visible";
@@ -2554,7 +2554,7 @@ function update(type, info, quantity) {
 				//깜박임
 				$("#shift4").classList.add("ready");
 				//기본 애니메이션 종료
-				clearTimeout(autoEffect["jogak"]);
+				clearRequestTimeout(autoEffect["jogak"]);
 				//애니메이션 실행
 				animation($("#shift4_effect"),"appear","jogak",682,0,-8182,80,0);
 		}
@@ -2973,10 +2973,10 @@ function make(num,amount) {
 		$("#effect_wait" + i.toString()).style.visibility = "hidden";
 
 		//애니메이션 정지
-		clearTimeout(autoLooting[i-1]);
-		clearTimeout(autoEffect["appear"][i-1]);
-		clearTimeout(autoEffect["land"][i-1]);
-		clearTimeout(autoEffect["wait"][i-1]);
+		clearRequestTimeout(autoLooting[i-1]);
+		clearRequestTimeout(autoEffect["appear"][i-1]);
+		clearRequestTimeout(autoEffect["land"][i-1]);
+		clearRequestTimeout(autoEffect["wait"][i-1]);
 		$("#item_img"+ i.toString()).classList.remove("rotate");
 	}
 	//7. 아이템 드롭
@@ -3011,9 +3011,9 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 		step += 1;
 		topMove -= topMoveModify;
 
-		autoLooting[zone-1] = setTimeout(function() {
+		autoLooting[zone-1] = requestTimeout(function() {
 			looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove, topMoveModify);
-		},50);
+		},40);
 
 	} else {
 		//사운드 출력
@@ -3044,12 +3044,12 @@ function looting(type, zone, zoneArr, step, sound, animating, leftMove, topMove,
 			//착지 이펙트 가시화
 			$("#effect_land" + zone.toString()).style.top = (-181+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_land" + zone.toString()).style.visibility = "visible";
-			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,150,0);
+			animation($("#effect_land" + zone.toString()),"land",zone,604,0,-4227,120,0);
 
 			//대기 이펙트 가시화
 			$("#effect_wait" + zone.toString()).style.top = (-118+25+($("#item_img" + zone.toString()).offsetHeight/2)).toString() + "px";
 			$("#effect_wait" + zone.toString()).style.visibility = "visible";
-			animation($("#effect_wait" + zone.toString()),"wait",zone,188,0,-2255,100,1);
+			animation($("#effect_wait" + zone.toString()),"wait",zone,188,0,-2255,70,1);
 		}
 	}
 }
@@ -3062,7 +3062,7 @@ function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 			if (now - frameWidth >= limit) {
 				target.style.display = "block";
 				target.style.backgroundPosition = (now - frameWidth).toString() + "px 0px";
-				autoEffect["jogak"] = setTimeout(function() {
+				autoEffect["jogak"] = requestTimeout(function() {
 					animation(target,type,zone,frameWidth,now - frameWidth,limit,speed,repeat);
 				}, speed);
 			} else {
@@ -3074,12 +3074,12 @@ function animation(target,type,zone,frameWidth,now,limit,speed,repeat) {
 			//에픽 아이템
 			if (now - frameWidth >= limit) {
 				target.style.backgroundPosition = (now - frameWidth).toString() + "px 0px";
-				autoEffect[type][zone-1] = setTimeout(function() {
+				autoEffect[type][zone-1] = requestTimeout(function() {
 					animation(target,type,zone,frameWidth,now - frameWidth,limit,speed,repeat);
 				}, speed);
 			} else if (repeat === 1){
 				target.style.backgroundPosition = "0px 0px";
-				autoEffect[type][zone-1] = setTimeout(function() {
+				autoEffect[type][zone-1] = requestTimeout(function() {
 					animation(target,type,zone,frameWidth,0,limit,speed,repeat);
 				}, speed);
 			} else {
@@ -3171,7 +3171,6 @@ function setEquip(cmd, toWearName, noSound, dontsave) {
 		setPower();
 		//게임 저장
 		if (cmd !== "nosave" && (!dontsave || dontsave !== "dontsave")) {
-			console.log(dontsave);
 			saveData();
 		}
 
@@ -3205,7 +3204,6 @@ function setEquip(cmd, toWearName, noSound, dontsave) {
 		setPower();
 		//게임 저장
 		if (cmd !== "nosave" && (!dontsave || dontsave !== "dontsave")) {
-			console.log(dontsave);
 			saveData();
 		}
 	}
@@ -3351,7 +3349,7 @@ function doEnchant(target, part, step) {
 			]);
 			//강화 진행
 			$("#enchant_progress_bar").style.width = ($("#enchant_progress_bar").offsetWidth + 5).toString() + "px";
-			setTimeout(function() {
+			requestTimeout(function() {
 				doEnchant(target, part, 1);
 			}, 16);
 
@@ -3360,7 +3358,7 @@ function doEnchant(target, part, step) {
 		case 1:
 			if ($("#enchant_progress_bar").offsetWidth + 5 < $("#enchant_progress").offsetWidth) {
 				$("#enchant_progress_bar").style.width = ($("#enchant_progress_bar").offsetWidth + 5).toString() + "px"
-				setTimeout(function() {
+				requestTimeout(function() {
 					doEnchant(target, part, 1);
 				}, 16);
 			} else {
@@ -3540,7 +3538,7 @@ function openPot(type, tradable, step) {
 			$("#popup_pot_progress_bar").style.width = ($("#popup_pot_progress_bar").offsetWidth + 3).toString() + "px";
 
 			//다음 단계로
-			setTimeout(function() {
+			requestTimeout(function() {
 				openPot(type, tradable, 1);
 			}, 16);
 			break;
@@ -3567,7 +3565,7 @@ function openPot(type, tradable, step) {
 			//게이지 길이 측정
 			if ($("#popup_pot_progress_bar").offsetWidth + 3 < $("#popup_pot_progress").offsetWidth) {
 				$("#popup_pot_progress_bar").style.width = ($("#popup_pot_progress_bar").offsetWidth + 3).toString() + "px"
-				setTimeout(function() {
+				requestTimeout(function() {
 					openPot(type, tradable, 1);
 				}, 16);
 			} else {
@@ -3673,10 +3671,10 @@ function openPot(type, tradable, step) {
 					$("#effect_wait" + i.toString()).style.visibility = "hidden";
 
 					//애니메이션 정지
-					clearTimeout(autoLooting[i-1]);
-					clearTimeout(autoEffect["appear"][i-1]);
-					clearTimeout(autoEffect["land"][i-1]);
-					clearTimeout(autoEffect["wait"][i-1]);
+					clearRequestTimeout(autoLooting[i-1]);
+					clearRequestTimeout(autoEffect["appear"][i-1]);
+					clearRequestTimeout(autoEffect["land"][i-1]);
+					clearRequestTimeout(autoEffect["wait"][i-1]);
 					$("#item_img"+ i.toString()).classList.remove("rotate");
 				}
 				//B. 아이템 드롭
@@ -3703,7 +3701,7 @@ function ending(step) {
 			$("#frame_cover").style.opacity = "0.1";
 			$("#frame_cover").style.display = "block";
 
-			setTimeout(function() {
+			requestTimeout(function() {
 				ending(step+1);
 			}, 250);
 
@@ -3738,7 +3736,7 @@ function ending(step) {
 				$("#wrapper").style.display = "none";
 				$("#ending").style.display = "block";
 				playBGM("rpg_clear");
-					setTimeout(function() {
+					requestTimeout(function() {
 						//잠시 후 엔딩 창 닫을 수 있게
 						$("#ending_confirm").className = "able";
 						$("#ending_confirm").disabled = "";
@@ -3758,7 +3756,7 @@ function ending(step) {
 		default:
 			$("#frame_cover").style.opacity = ((step+1)/10).toString();
 
-			setTimeout(function() {
+			requestTimeout(function() {
 				ending(step+1);
 			}, 250);
 
@@ -3792,7 +3790,7 @@ function beckeyEnding(step) {
 			$("#beckey_ending").style.display = "none";
 			$("#ending").style.display = "block";
 			playBGM("rpg_clear");
-				setTimeout(function() {
+				requestTimeout(function() {
 					//잠시 후 엔딩 창 닫을 수 있게
 					$("#ending_confirm").className = "able";
 					$("#ending_confirm").disabled = "";

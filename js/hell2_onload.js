@@ -246,9 +246,15 @@ window.onload = function() {
 		$("#titleScreen_blog").onclick = function() {
 			var move = window.open("http://blog.naver.com/ansewo/220622642452");
 			if (!move || move.closed || typeof move.closed === 'undefined') {
-				if (confirm("현재 브라우저에서 새 창 열기를 차단하였습니다.\n현재 페이지에서 링크를 여시겠습니까?")) {
-					window.location.href = "http://blog.naver.com/ansewo/220622642452";
-				}
+				swal({
+					text:"현재 브라우저에서 새 창 열기를 차단하였습니다.\n현재 페이지에서 링크를 여시겠습니까?",
+					type:"warning",
+					showCancelButton:true
+				}).then(function(isConfirm) {
+					if (isConfimr) {
+						window.location.href = "http://blog.naver.com/ansewo/220622642452";
+					}
+				});
 			}
 		};
 		//패스워드
@@ -509,6 +515,8 @@ function main(cmd) {
 		imageList.push("./images/epic/popup_craft.png");
 		imageList.push("./images/epic/popup_equip.png");
 		imageList.push("./images/epic/icon_option.png");
+		imageList.push("./images/epic/icon_gabriel.png");
+		imageList.push("./images/epic/icon_freepass.png");
 		//아이템 아이콘
 		imageList.push("./images/epic/soul.png");
 		imageList.push("./images/epic/beed.png");
@@ -1488,23 +1496,29 @@ function main(cmd) {
 
 			//1-1-2-5. equip관련 기능
 			$("#character_type").onchange = function() {
-				if (confirm("＊경고 : 한번 정한 캐릭터 직업은 초기화하기 전엔 바꿀 수 없습니다.\
-\n\n\"" + characterList[$("#character_type").value]["name"] + "\"\n\n이걸로 캐릭터 직업을 정하시겠습니까?")) {
-					//캐릭터 변경 못하게 설정
-					$("#character_type").disabled = "disabled";
-					//내 캐릭터 저장, 이미지 수정
-					myCharacter = $("#character_type").value;
-						clearCharacterClass();
-						$("#character_sprite").classList.add($("#character_type").value);
-					//내 장비 설정
-					setEquip();
-					//창 열기
-					shift("equip");
-					//게임 저장
-					saveData();
-				} else {
-					$("#character_type").selectedIndex = 0;
-				}
+				swal({
+					text:"한번 정한 캐릭터 직업은 초기화하기 전엔 바꿀 수 없습니다.\
+	\n\n<strong>\"" + characterList[$("#character_type").value]["name"] + "\"</strong>\n\n이걸로 캐릭터 직업을 정하시겠습니까?",
+					type:"warning",
+					showCancelButton:true
+				}).then(function(isConfirm) {
+					if(isConfirm) {
+						//캐릭터 변경 못하게 설정
+						$("#character_type").disabled = "disabled";
+						//내 캐릭터 저장, 이미지 수정
+						myCharacter = $("#character_type").value;
+							clearCharacterClass();
+							$("#character_sprite").classList.add($("#character_type").value);
+						//내 장비 설정
+						setEquip();
+						//창 열기
+						shift("equip");
+						//게임 저장
+						saveData();
+					} else {
+						$("#character_type").selectedIndex = 0;
+					}
+				})
 			}
 			for (var i=0;i<partList.length;i++) {
 				(function(i) {
@@ -1541,17 +1555,26 @@ function main(cmd) {
 					$("#list_" + partList[i] + "_enchant_run").onclick = function() {
 						//기본 장비 - 강화 불가
 						if (!wearingList[partList[i]]) {
-							alert("※ 경고 : 기본 장비는 강화할 수 없습니다.");
+							swal({
+								text:"기본 장비는 강화할 수 없습니다.",
+								type:'error'
+							})
 							return;
 						}
 						//현재 20강 : 강화 불가
 						if (wearingList[partList[i]]["enchant"] === 20) {
-							alert("※ 경고 : 이미 최대치(+20)까지 강화하였습니다.");
+							swal({
+								text:"이미 최대치(+20)까지 강화하였습니다",
+								type:'error'
+							})
 							return;
 						}
 						//실행 중 - 강화 불가
 						if (runningState !== "") {
-							alert("※ 시뮬레이터 실행 중에는 강화할 수 없습니다.");
+							swal({
+								text:"시뮬레이터 실행 중에는 강화할 수 없습니다.",
+								type:'error'
+							})
 							return;
 						}
 						//강화 변수 확인
@@ -1565,13 +1588,19 @@ function main(cmd) {
 							var enChance = enchantList["chance"][enLevel];
 						//의사 물어보리
 						if ($("#equip_check_enchant").checked === false) {
-							if (!confirm("+" + enLevel + " " +
-							enName + "을(를) 강화하시겠습니까?")) {
-								return;
-							}
+							swal({
+								text:"+" + enLevel + " " + enName + "을(를) 강화하시겠습니까?",
+								type:"warning",
+								showCancelButton:true
+							}).then(function(isConfirm){
+								if (isConfirm) {
+									//강화 실시
+									doEnchant(wearingList[partList[i]], partList[i], 0);
+								} else {
+									return;
+								}
+							});
 						}
-						//강화 실시
-						doEnchant(wearingList[partList[i]], partList[i], 0);
 					}
 				})(i)
 			}
@@ -1579,12 +1608,18 @@ function main(cmd) {
 
 			//번외-1. 획득 기록 초기화 버튼
 			$("#record_check_reset").onclick = function() {
-				if (confirm("\n획득 기록을 초기화하시겠습니까?\
-					\n˙(각종 아이템 획득 및 소모 도전장 수치, 인벤토리, 세트 아이템 창은 초기화되지 않습니다)")) {
-					$("#record").innerHTML = "";
-						//번외-1-1. 획득 기록 내부정보 초기화
-						content_text[0] = "";
-				}
+				swal({
+					text:"획득 기록을 초기화하시겠습니까?\
+						\n˙(각종 아이템 획득 및 소모 도전장 수치, 인벤토리, 세트 아이템 창은 초기화되지 않습니다)",
+					type:"warning",
+					showCancelButton:true
+				}).then(function(isConfirm) {
+					if (isConfirm) {
+						$("#record").innerHTML = "";
+							//번외-1-1. 획득 기록 내부정보 초기화
+							content_text[0] = "";
+					}
+				});
 			}
 			//번외-2. 해체 경고창 관련 체크박스
 			$("#inventory_check_confirm").onclick = function() {
@@ -1610,57 +1645,72 @@ function main(cmd) {
 					}
 				}
 				if (temp === 0) {
-					alert("※ 경고 : 현재 중복 에픽 아이템이 없습니다.");
+					swal({
+						text:"현재 중복 에픽 아이템이 없습니다",
+						type:'error'
+					})
 					return;
 				} else {
-					if (confirm("\n중복 에픽 아이템을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
-\n(총 " + temp.toString() + "개의 에픽 아이템이 해체됩니다.)\
-\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
-\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-\n　- 자동 해체 OFF : 코스모소울 보유량 증가")) {
-						var not_checked = 0;
-						if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
-							not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
-							$("#set_check_confirm").checked = true;
-							$("#inventory_check_confirm").checked = true;
-						}
-						//해체 실시 & 결과물 수량 체크
-						var output = 0;
-						for (i=0;i<itemList.length;i++) {
-							if (itemList[i]["have"] > 1) {//2개 이상 보유 시
-								var target_amount = itemList[i]["have"] - 1;//1개만 남기고 모조리 해체
-								recycle(i,target_amount);
-								if ($("#option_soul").checked) {
-									//체크 ON - 결과물 : 초대장
-									output += disCount("초대장",itemList[i]["level"]) * target_amount;
-								} else {
-									//체크 OFF - 결과물 : 코스모소울
-									output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+					swal({
+						text:"중복 에픽 아이템을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
+	\n(총 " + temp.toString() + "개의 에픽 아이템이 해체됩니다.)\
+	\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+	\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
+	\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+						type:"warning",
+						showCancelButton:true
+					}).then(function(isConfirm) {
+						if (isConfirm) {
+							var not_checked = 0;
+							if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
+								not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
+								$("#set_check_confirm").checked = true;
+								$("#inventory_check_confirm").checked = true;
+							}
+							//해체 실시 & 결과물 수량 체크
+							var output = 0;
+							for (i=0;i<itemList.length;i++) {
+								if (itemList[i]["have"] > 1) {//2개 이상 보유 시
+									var target_amount = itemList[i]["have"] - 1;//1개만 남기고 모조리 해체
+									recycle(i,target_amount);
+									if ($("#option_soul").checked) {
+										//체크 ON - 결과물 : 초대장
+										output += disCount("초대장",itemList[i]["level"]) * target_amount;
+									} else {
+										//체크 OFF - 결과물 : 코스모소울
+										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+									}
 								}
 							}
+							//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
+							if (not_checked === 1) {
+								$("#set_check_confirm").checked = false;
+								$("#inventory_check_confirm").checked = false;
+							}
+							//최종 결과 메세지 출력
+							if ($("#option_soul").checked) {
+								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+	\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
+	\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
+							} else {
+								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+	\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+							}
+							swal({
+								text:text,
+								type:'success'
+							});
 						}
-						//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
-						if (not_checked === 1) {
-							$("#set_check_confirm").checked = false;
-							$("#inventory_check_confirm").checked = false;
-						}
-						//최종 결과 메세지 출력
-						if ($("#option_soul").checked) {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
-\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
-						} else {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
-						}
-						alert(text);
-					}
+					})
 				}
 			}
 			$("#disassemble_other").onclick = function() {
 				//내 캐릭터가 지정되었을 때만 이용 가능
 				if (myCharacter === "") {
-					alert("※ 경고 : 내 캐릭터 직업이 지정되지 않았습니다.\n'장착' 메뉴에서 캐릭터 직업을 먼저 지정해주세요.");
+					swal({
+						text:"내 캐릭터 직업이 지정되지 않았습니다.\n'장착' 메뉴에서 캐릭터 직업을 먼저 지정해주세요.",
+						type:'error'
+					});
 					return;
 				}
 				var temp = [];
@@ -1673,52 +1723,64 @@ function main(cmd) {
 					}
 				}
 				if (temp.length === 0) {
-					alert("※ 경고 : 현재 타직업 장비가 없습니다.");
+					swal({
+						text:"현재 타직업 장비가 없습니다",
+						type:'error'
+					});
 					return;
 				} else {
-					if (confirm("\n타직업 장비를 모두 해체하시겠습니까?\
-\n(총 " + (temp.length).toString() + "개의 에픽 아이템이 해체됩니다.)\
-\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
-\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-\n　- 자동 해체 OFF : 코스모소울 보유량 증가")) {
-						var not_checked = 0;
-						if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
-							not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
-							$("#set_check_confirm").checked = true;
-							$("#inventory_check_confirm").checked = true;
-						}
-						//해체 실시 & 결과물 수량 체크
-						var output = 0;
-						for (i=0;i<itemList.length;i++) {
-							if (temp.indexOf(itemList[i]["name"]) >= 0) {
-								//몽땅 해체
-								var target_amount = itemList[i]["have"];
-								recycle(i,target_amount);
-								if ($("#option_soul").checked) {
-									//체크 ON - 결과물 : 초대장
-									output += disCount("초대장",itemList[i]["level"]) * target_amount;
-								} else {
-									//체크 OFF - 결과물 : 코스모소울
-									output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+					swal({
+						text:"타직업 장비를 모두 해체하시겠습니까?\
+							\n(총 " + (temp.length).toString() + "개의 에픽 아이템이 해체됩니다.)\
+							\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+							\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
+							\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+						type:"warning",
+						showCancelButton:true
+					}).then(function(isConfirm) {
+						if (isConfirm) {
+							var not_checked = 0;
+							if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
+								not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
+								$("#set_check_confirm").checked = true;
+								$("#inventory_check_confirm").checked = true;
+							}
+							//해체 실시 & 결과물 수량 체크
+							var output = 0;
+							for (i=0;i<itemList.length;i++) {
+								if (temp.indexOf(itemList[i]["name"]) >= 0) {
+									//몽땅 해체
+									var target_amount = itemList[i]["have"];
+									recycle(i,target_amount);
+									if ($("#option_soul").checked) {
+										//체크 ON - 결과물 : 초대장
+										output += disCount("초대장",itemList[i]["level"]) * target_amount;
+									} else {
+										//체크 OFF - 결과물 : 코스모소울
+										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+									}
 								}
 							}
+							//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
+							if (not_checked === 1) {
+								$("#set_check_confirm").checked = false;
+								$("#inventory_check_confirm").checked = false;
+							}
+							//최종 결과 메세지 출력
+							if ($("#option_soul").checked) {
+								var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
+									\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
+									\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
+							} else {
+								var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
+									\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+							}
+							swal({
+								text:text,
+								type:'success'
+							});
 						}
-						//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
-						if (not_checked === 1) {
-							$("#set_check_confirm").checked = false;
-							$("#inventory_check_confirm").checked = false;
-						}
-						//최종 결과 메세지 출력
-						if ($("#option_soul").checked) {
-							var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
-\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
-\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
-						} else {
-							var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
-\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
-						}
-						alert(text);
-					}
+					});
 				}
 			}
 			$("#disassemble_2").onclick = function() {
@@ -1729,51 +1791,63 @@ function main(cmd) {
 					}
 				}
 				if (temp === 0) {
-					alert("※ 경고 : 현재 중복 세트 아이템이 없습니다.");
+					swal({
+						text:"현재 중복 세트 아이템이 없습니다",
+						type:'error'
+					});
 					return;
 				} else {
-					if (confirm("\n중복 세트 아이템들을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
-\n(총 " + temp.toString() + "개의 세트 아이템이 해체됩니다.)\
-\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
-\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-\n　- 자동 해체 OFF : 코스모소울 보유량 증가")) {
-						var not_checked = 0;
-						if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
-							not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
-							$("#set_check_confirm").checked = true;
-							$("#inventory_check_confirm").checked = true;
-						}
-						//해체 실시 & 결과물 수량 체크
-						var output = 0;
-						for (i=0;i<itemList.length;i++) {
-							if (itemList[i]["set"] !== "" && itemList[i]["have"] > 1) {//2개 이상 보유 시
-								var target_amount = itemList[i]["have"] - 1;//1개만 남기고 모조리 해체
-								recycle(i,target_amount);
-								if ($("#option_soul").checked) {
-									//체크 ON - 결과물 : 초대장
-									output += disCount("초대장",itemList[i]["level"]) * target_amount;
-								} else {
-									//체크 OFF - 결과물 : 코스모소울
-									output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+					swal({
+						text:"중복 세트 아이템들을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
+						\n(총 " + temp.toString() + "개의 세트 아이템이 해체됩니다.)\
+						\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+						\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
+						\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+						type:"warning",
+						showCancelButton:true
+					}).then(function(isConfirm) {
+						if (isConfirm) {
+							var not_checked = 0;
+							if (! $("#inventory_check_confirm").checked || ! $("#set_check_confirm").checked) {
+								not_checked = 1;//"해체 경고창 출력여부 체크박스" 상태 저장(1 : 켜져있었음)
+								$("#set_check_confirm").checked = true;
+								$("#inventory_check_confirm").checked = true;
+							}
+							//해체 실시 & 결과물 수량 체크
+							var output = 0;
+							for (i=0;i<itemList.length;i++) {
+								if (itemList[i]["set"] !== "" && itemList[i]["have"] > 1) {//2개 이상 보유 시
+									var target_amount = itemList[i]["have"] - 1;//1개만 남기고 모조리 해체
+									recycle(i,target_amount);
+									if ($("#option_soul").checked) {
+										//체크 ON - 결과물 : 초대장
+										output += disCount("초대장",itemList[i]["level"]) * target_amount;
+									} else {
+										//체크 OFF - 결과물 : 코스모소울
+										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+									}
 								}
 							}
+							//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
+							if (not_checked === 1) {
+								$("#set_check_confirm").checked = false;
+								$("#inventory_check_confirm").checked = false;
+							}
+							//최종 결과 메세지 출력
+							if ($("#option_soul").checked) {
+								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+	\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
+	\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
+							} else {
+								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
+	\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+							}
+							swal({
+								text:text,
+								type:'success'
+							});
 						}
-						//꺼둔 "해체 경고창 출력여부 체크박스" 다시 켜기
-						if (not_checked === 1) {
-							$("#set_check_confirm").checked = false;
-							$("#inventory_check_confirm").checked = false;
-						}
-						//최종 결과 메세지 출력
-						if ($("#option_soul").checked) {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-\n(실질 소모 초대장 감소 : " + thousand(output) + "장)\
-\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
-						} else {
-							var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
-						}
-						alert(text);
-					}
+					});
 				}
 			}
 
@@ -1875,14 +1949,20 @@ function main(cmd) {
 		}
 
 		$("#result_button_epicDisassemble").onclick = function() {
-			alert("※ 에픽 해체는 인벤토리 항목에서 이용하실 수 있습니다.\n\n(각 아이템별마다 개별적으로 실시)");
+			swal({
+				text:"에픽 해체는 인벤토리 항목에서 이용하실 수 있습니다.\n(각 아이템별마다 개별적으로 실시)",
+				type:'info'
+			})
 			shift("inventory");
 		}
 
 		$("#result_button_soulDisassemble").onclick = function() {
 			var input = prompt("해체하실 코스모소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get["soul_have"]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 코스모소울을 해체합니다.");
 			if (! isNumber(input)) {
-				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
+				swal({
+					type:"숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.",
+					type:'error'
+				})
 			} else {
 				var amount = Math.min(input,get["soul_have"]);
 				get["soul_have"] -= amount;
@@ -1904,14 +1984,20 @@ function main(cmd) {
 		}
 		$("#pot_open").onclick = function() {
 			if (runningState !== "") {
-				alert("※ 시뮬레이터 실행 중에는 항아리를 개봉할 수 없습니다.");
+				swal({
+					text:"시뮬레이터 실행 중에는 항아리를 개봉할 수 없습니다.",
+					type:'error'
+				})
 				return;
 			}
 			if (potList["opening"] === 0) {
 				//()무기 항아리 & 캐릭터 미지정) 취소
 				if ($("#pot_type").value === "무기" && myCharacter === "") {
-					alert("※ 무기 항아리를 개봉하려면 캐릭터 직업을 지정해야 합니다." +
-						"캐릭터 직업은 \"장착\" 탭에서 지정할 수 있습니다.");
+					swal({
+						text:"무기 항아리를 개봉하려면 캐릭터 직업을 지정해야 합니다." +
+							"\n캐릭터 직업은 <strong>\"장착\"</strong> 탭에서 지정할 수 있습니다.",
+						type:'error'
+					})
 
 					return;
 				}
@@ -1932,7 +2018,10 @@ function main(cmd) {
 		$("#cost_set_gold").onclick = function() {
 			var challenge = prompt("도전장 골드 가격을 입력하세요.\n(현재 가격 : " + thousand(gold) + " Gold)");
 			if (! isNumber(challenge)) {
-				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
+				swal({
+					text:"숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.",
+					type:'error'
+				});
 			} else {
 				gold = challenge;
 				$("#cost_gold").innerHTML = setWon(cost["invite"]*gold + cost["gold"]);
@@ -1941,17 +2030,26 @@ function main(cmd) {
 		}
 		$("#cost_compare").onclick = function() {
 			if (gold <= 0) {
-				alert('※ 경고 : 도전장 골드 가격이 제대로 입력되지 않았습니다.\n(도전장 골드 가격이 입력되어야 현금 시세 계산이 가능함)');
+				swal({
+					text:"도전장 골드 가격이 제대로 입력되지 않았습니다.\n(도전장 골드 가격이 입력되어야 현금 시세 계산이 가능함)'",
+					type:'error'
+				});
 
 				return;
 			}
 			var market = prompt("던파 골드당 현금 시세를 입력해주세요.\n(1,000만골드 기준, 현재 도전장 골드 가격 : " + thousand(gold) + " Gold)");
 			if (! isNumber(market)) {
-				alert("※ 경고 : 숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.");
+				swal({
+					text:"숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.",
+					type:'error'
+				});
 			} else {
-				alert("현재 쓴 돈으로 총 " + Math.floor(cost["invite"] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
-(현금 환산 : " + setWon(Math.floor(cost["invite"] * gold / 10000000 * market)) + "원)\n\
-(치킨 1마리 당 15,000원 기준)");
+				swal({
+					text:"현재 쓴 돈으로 총 " + Math.floor(cost["invite"] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
+	(현금 환산 : " + setWon(Math.floor(cost["invite"] * gold / 10000000 * market)) + "원)\n\
+	(치킨 1마리 당 15,000원 기준)",
+					type:'info'
+				});
 			}
 		}
 
@@ -1962,171 +2060,180 @@ function main(cmd) {
 				temp += "\n\n(입력해둔 기본장비는 초기화되지 않습니다. - 옵션 참고)"
 			}
 
-			if (confirm("초기화를 하면 모든 기록이 사라집니다.\n'정말로' 초기화하시겠습니까?" + temp)) {
-				//1. 필드 - 아이템 정리
-				for (var i=0;i<maxQuantity;i++) {
-					coordinate[i-1] = [0,0];
-					$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
-					$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
-					$("#item" + i.toString()).style.transform = "translate(0px,0px)";
+			swal({
+				text:'초기화를 하면 모든 기록이 사라집니다.\n<strong>\'정말로\'</strong> 초기화하시겠습니까?' + temp,
+				type:'warning',
+				showCancelButton:true
+			}).then(function(isConfirm) {
+				if (isConfirm) {
+					//1. 필드 - 아이템 정리
+					for (var i=0;i<maxQuantity;i++) {
+						coordinate[i-1] = [0,0];
+						$("#item" + i.toString()).style.msTransform = "translate(0px,0px)";
+						$("#item" + i.toString()).style.webkitTransform = "translate(0px,0px)";
+						$("#item" + i.toString()).style.transform = "translate(0px,0px)";
 
-					$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
-					$("#item_name" + i.toString()).style.visibility = "hidden";
-					$("#item_img" + i.toString()).style.visibility = "hidden";
+						$("#item_name" + i.toString()).classList.remove("rare","unique","epic","jogak");
+						$("#item_name" + i.toString()).style.visibility = "hidden";
+						$("#item_img" + i.toString()).style.visibility = "hidden";
 
-					$("#effect_appear" + i.toString()).style.visibility = "hidden";
-					$("#effect_land" + i.toString()).style.visibility = "hidden";
-					$("#effect_wait" + i.toString()).style.visibility = "hidden";
+						$("#effect_appear" + i.toString()).style.visibility = "hidden";
+						$("#effect_land" + i.toString()).style.visibility = "hidden";
+						$("#effect_wait" + i.toString()).style.visibility = "hidden";
 
-					//애니메이션 정지
-					clearTimeout(autoLooting[i-1]);
-					clearTimeout(autoEffect[i-1]);
-					$("#item_img"+ i.toString()).classList.remove("rotate");
-				}
-				//2. 회차 & 난이도 초기화
-				count = 0;
-				dateCount = 0;//일차도 초기화
-				$("#round_count").innerHTML = 0;
-				$("#round_difficulty").innerHTML = "";
-					//회차에 따른 날짜 재계산
-					dateState["changed"] = 1;
-					setDate();
-
-				//3. 메뉴 - 연속실행 관련 설정 초기화
-				objective = [];
-
-				//4-1. 상단 - 획득기록 초기화
-				$("#record").innerHTML = "";
-					//4-1-1. 획득기록 내부정보 초기화
-					content_text[0] = "";
-				//4-2. 상단 - 인벤토리 초기화
-				$("#inventory_table").innerHTML = "";
-				generateInventory();
-				//4-3. 상단 - 세트 아이템 초기화
-				$("#set_table").innerHTML = "";
-				generateSet();
-				//4-4. 상단 - 에픽 도감 초기화
-				$("#craft_table").innerHTML = "";
-				generateCraft();
-				//4-5. 상단 - 수집률 초기화
-				collect = 0;
-				$("#inventory_check_collect").innerHTML = "0";
-
-				//5. 좌측 하단 - 획득 정보 초기화
-				get = {
-					"epic_get":0,//획득 에픽
-					"epic_have":0,//보유 에픽
-					"soul_get":0,//획득 코소
-					"soul_have":0,//보유 코소
-					"invite_get":0,//획득 초대장
-					"beed_get":0//획득 지옥구슬
-				};
-				$("#result_epic_get").innerHTML = "0";
-				$("#result_epic_have").innerHTML = "0";
-				$("#result_soul_get").innerHTML = "0";
-				$("#result_soul_have").innerHTML = "0";
-				$("#result_cost_get").innerHTML = "0";
-				$("#result_beed_get").innerHTML = "0";
-
-				//6. 우측 하단 - 비용 초기화
-				cost = {
-					"invite":0,//초대정 전체
-					"invite_real":0,//초대장 실질
-					"gold":0,//골드 전체
-					"gold_real":0//골드 실질
-				};
-				$("#cost_invitation").innerHTML = "0";
-				$("#cost_real").innerHTML = "0";
-				$("#cost_gold").innerHTML = "0";
-				$("#cost_gold_real").innerHTML = "0";
-
-				//7. 내부 - itemList 초기화
-				for (i=0;i<itemList.length;i++) {
-					itemList[i]["get"] = 0;//획득 수
-					itemList[i]["have"] = 0;//보우 수
-					itemList[i]["firstCount"] = 0;//첫 : 회차
-					itemList[i]["firstInvite"] = 0;//첫 : 초대장
-					itemList[i]["firstReal"] = 0;//첫 : 실질
-					itemList[i]["jogak"] = 0;//조각 수
-					//'기본' 여부
-					if ($("#option_basicItem").checked === true && itemList[i]["init"] === 1) {
-						//기본장비 초기화
-						itemList[i]["init"] = 1;
-					} else  {
-						//일반 초기화
-						itemList[i]["init"] = 0;
+						//애니메이션 정지
+						clearRequestTimeout(autoLooting[i-1]);
+						clearRequestTimeout(autoEffect[i-1]);
+						$("#item_img"+ i.toString()).classList.remove("rotate");
 					}
-					itemList[i]["enchant"] = 0;//강화 단계
-				}
-					//7-1. 습득현황 갱신
-					checkObjective("setting");
-					//7-2. 상단 - 장비 장착 초기화
-						//캐릭터 초기화 (일반 모드 한정)
-						if (playMode === "normal") {
-							myCharacter = "";
-								$("#character_type").selectedIndex = 0;
-								$("#character_type").disabled = "";
+					//2. 회차 & 난이도 초기화
+					count = 0;
+					dateCount = 0;//일차도 초기화
+					$("#round_count").innerHTML = 0;
+					$("#round_difficulty").innerHTML = "";
+						//회차에 따른 날짜 재계산
+						dateState["changed"] = 1;
+						setDate();
+
+					//3. 메뉴 - 연속실행 관련 설정 초기화
+					objective = [];
+
+					//4-1. 상단 - 획득기록 초기화
+					$("#record").innerHTML = "";
+						//4-1-1. 획득기록 내부정보 초기화
+						content_text[0] = "";
+					//4-2. 상단 - 인벤토리 초기화
+					$("#inventory_table").innerHTML = "";
+					generateInventory();
+					//4-3. 상단 - 세트 아이템 초기화
+					$("#set_table").innerHTML = "";
+					generateSet();
+					//4-4. 상단 - 에픽 도감 초기화
+					$("#craft_table").innerHTML = "";
+					generateCraft();
+					//4-5. 상단 - 수집률 초기화
+					collect = 0;
+					$("#inventory_check_collect").innerHTML = "0";
+
+					//5. 좌측 하단 - 획득 정보 초기화
+					get = {
+						"epic_get":0,//획득 에픽
+						"epic_have":0,//보유 에픽
+						"soul_get":0,//획득 코소
+						"soul_have":0,//보유 코소
+						"invite_get":0,//획득 초대장
+						"beed_get":0//획득 지옥구슬
+					};
+					$("#result_epic_get").innerHTML = "0";
+					$("#result_epic_have").innerHTML = "0";
+					$("#result_soul_get").innerHTML = "0";
+					$("#result_soul_have").innerHTML = "0";
+					$("#result_cost_get").innerHTML = "0";
+					$("#result_beed_get").innerHTML = "0";
+
+					//6. 우측 하단 - 비용 초기화
+					cost = {
+						"invite":0,//초대정 전체
+						"invite_real":0,//초대장 실질
+						"gold":0,//골드 전체
+						"gold_real":0//골드 실질
+					};
+					$("#cost_invitation").innerHTML = "0";
+					$("#cost_real").innerHTML = "0";
+					$("#cost_gold").innerHTML = "0";
+					$("#cost_gold_real").innerHTML = "0";
+
+					//7. 내부 - itemList 초기화
+					for (i=0;i<itemList.length;i++) {
+						itemList[i]["get"] = 0;//획득 수
+						itemList[i]["have"] = 0;//보우 수
+						itemList[i]["firstCount"] = 0;//첫 : 회차
+						itemList[i]["firstInvite"] = 0;//첫 : 초대장
+						itemList[i]["firstReal"] = 0;//첫 : 실질
+						itemList[i]["jogak"] = 0;//조각 수
+						//'기본' 여부
+						if ($("#option_basicItem").checked === true && itemList[i]["init"] === 1) {
+							//기본장비 초기화
+							itemList[i]["init"] = 1;
+						} else  {
+							//일반 초기화
+							itemList[i]["init"] = 0;
 						}
-						//잔투력 재계산 (보유장비가 달라졌으니)
-						setPower();
-						//항아리
-						tower = 0;
-							//"교환 불가" 항아리 지정해놨으면
-							setPotOpen($("#pot_tradable").value);
-						//장착 장비 초기화
-						for (var k in wearingList) {
-							if (wearingList.hasOwnProperty(k)) {
-								wearingList[k] = null;
+						itemList[i]["enchant"] = 0;//강화 단계
+					}
+						//7-1. 습득현황 갱신
+						checkObjective("setting");
+						//7-2. 상단 - 장비 장착 초기화
+							//캐릭터 초기화 (일반 모드 한정)
+							if (playMode === "normal") {
+								myCharacter = "";
+									$("#character_type").selectedIndex = 0;
+									$("#character_type").disabled = "";
 							}
-						};
-						//장착 창 초기화
-						setEquip();
-						for (var i=0;i<partList.length;i++) {
-							setEquip(partList[i],"")
+							//잔투력 재계산 (보유장비가 달라졌으니)
+							setPower();
+							//항아리
+							tower = 0;
+								//"교환 불가" 항아리 지정해놨으면
+								setPotOpen($("#pot_tradable").value);
+							//장착 장비 초기화
+							for (var k in wearingList) {
+								if (wearingList.hasOwnProperty(k)) {
+									wearingList[k] = null;
+								}
+							};
+							//장착 창 초기화
+							setEquip();
+							for (var i=0;i<partList.length;i++) {
+								setEquip(partList[i],"")
+							}
+
+					//8. 필터링 초기화
+						//8-1. 초기화 대상 : record, inventory, set, craft
+						var tempClear = ["record", "inventory", "set", "craft"];
+						for (var i = 0;i<tempClear.length;i++) {
+							//필터링 해제
+							$("#style_" + tempClear[i] + "_filter_first").innerHTML = "";
+							$("#style_" + tempClear[i] + "_filter_second").innerHTML = "";
+							$("#style_" + tempClear[i] + "_filter_third").innerHTML = "";
+							$("#style_" + tempClear[i] + "_filter_level").innerHTML = "";
+							//필터링 선택지 복구
+							$("#" + tempClear[i] + "_filter_first").selectedIndex = 0;
+							$("#" + tempClear[i] + "_filter_second").selectedIndex = 0;
+							$("#" + tempClear[i] + "_filter_third").selectedIndex = 0;
+							$("#" + tempClear[i] + "_filter_level").selectedIndex = 0;
+							//select 배경색 복구
+							$("#" + tempClear[i] + "_filter_first").style.backgroundColor = "white";
+							$("#" + tempClear[i] + "_filter_second").style.backgroundColor = "white";
+							$("#" + tempClear[i] + "_filter_third").style.backgroundColor = "white";
+							$("#" + tempClear[i] + "_filter_level").style.backgroundColor = "white";
+							//첫번째, 레벨을 제외한 나머지 select 비활성화
+							$("#" + tempClear[i] + "_filter_second").disabled = "disabled";
+							$("#" + tempClear[i] + "_filter_third").disabled = "disabled";
 						}
+					//8. 버튼 정상화
+					onoff(0);
 
-				//8. 필터링 초기화
-					//8-1. 초기화 대상 : record, inventory, set, craft
-					var tempClear = ["record", "inventory", "set", "craft"];
-					for (var i = 0;i<tempClear.length;i++) {
-						//필터링 해제
-						$("#style_" + tempClear[i] + "_filter_first").innerHTML = "";
-						$("#style_" + tempClear[i] + "_filter_second").innerHTML = "";
-						$("#style_" + tempClear[i] + "_filter_third").innerHTML = "";
-						$("#style_" + tempClear[i] + "_filter_level").innerHTML = "";
-						//필터링 선택지 복구
-						$("#" + tempClear[i] + "_filter_first").selectedIndex = 0;
-						$("#" + tempClear[i] + "_filter_second").selectedIndex = 0;
-						$("#" + tempClear[i] + "_filter_third").selectedIndex = 0;
-						$("#" + tempClear[i] + "_filter_level").selectedIndex = 0;
-						//select 배경색 복구
-						$("#" + tempClear[i] + "_filter_first").style.backgroundColor = "white";
-						$("#" + tempClear[i] + "_filter_second").style.backgroundColor = "white";
-						$("#" + tempClear[i] + "_filter_third").style.backgroundColor = "white";
-						$("#" + tempClear[i] + "_filter_level").style.backgroundColor = "white";
-						//첫번째, 레벨을 제외한 나머지 select 비활성화
-						$("#" + tempClear[i] + "_filter_second").disabled = "disabled";
-						$("#" + tempClear[i] + "_filter_third").disabled = "disabled";
-					}
-				//8. 버튼 정상화
-				onoff(0);
-
-				//9. 알람
-					//9-1. 기본장비 초기화 방지
-					var text2 = "";
-					if ($("#option_basicItem").checked === true) {
-						text2 += "\n\n(일부 장비들은 기본장비로서 수량이 1로 조정되었습니다)\n";
-						for (var i=0;i<itemList.length;i++) {
-							if (itemList[i]["init"] === 1) {
-								text2 += "　" + itemList[i]["name"] + "\n";
-								update("에픽",itemList[i])
+					//9. 알람
+						//9-1. 기본장비 초기화 방지
+						var text2 = "";
+						if ($("#option_basicItem").checked === true) {
+							text2 += "\n\n(일부 장비들은 기본장비로서 수량이 1로 조정되었습니다)\n";
+							for (var i=0;i<itemList.length;i++) {
+								if (itemList[i]["init"] === 1) {
+									text2 += "　" + itemList[i]["name"] + "\n";
+									update("에픽",itemList[i])
+								}
 							}
 						}
-					}
-				alert("모든 기록이 초기화되었습니다." + text2);
-				//게임 저장
-				saveData();
-			}
+					swal({
+						text:"모든 기록이 초기화되었습니다." + text2,
+						type:'success'
+					});
+					//게임 저장
+					saveData();
+				}
+			});
 		}
 
 		//========================================================
@@ -2198,6 +2305,31 @@ function main(cmd) {
 		}
 		$("#option_gabriel").onclick = function() {
 			optionList["gabriel"] = $("#option_gabriel").checked;
+			//아이콘 표시여부
+			if ($("#option_gabriel").checked) {
+				$("#status_gabriel_img").style.display = "block";
+				swal(
+					"'에픽 조각 교환' 기능 활성화","일정 확률로 가브리엘이 출현하여 에픽 조각을 교환합니다.",
+					"success"
+				);
+			} else {
+				$("#status_gabriel_img").style.display = "none";
+			}
+			//게임 저장
+			saveData();
+		}
+		$("#option_freepass").onclick = function() {
+			optionList["freepass"] = $("#option_freepass").checked;
+			//아이콘 표시여부
+			if ($("#option_freepass").checked) {
+				$("#status_freepass_img").style.display = "block";
+				swal(
+					"'지옥파티 프리패스' 기능 활성화","모든 던전에서 초대장 43장을 소모하며, '매우 어려움' 난이도만 등장합니다.",
+					"success"
+				);
+			} else {
+				$("#status_freepass_img").style.display = "none";
+			}
 			//게임 저장
 			saveData();
 		}
@@ -2229,11 +2361,19 @@ function main(cmd) {
 			//옵션 바깥 클릭 시 알아서 숨기기
 			$("html").addEventListener("click",function(event) {
 				if ($("#option").style.display !== "none") {
-					if (event.target !== $("#option") &&
+					if (
+						//창 기준
+						event.target !== $("#option") &&
 						event.target.parentNode !== $("#option") &&
 						event.target.parentNode.parentNode !== $("#option") &&
 						event.target.parentNode.parentNode.parentNode !== $("#option") &&
-						event.target !== $("#option_button")) {
+						event.target !== $("#option_button") &&
+						//sweetAlert 기준
+						event.target !== $$(".swal2-overlay")[0] &&
+						event.target !== $$(".swal2-modal")[0] &&
+						event.target.parentNode !== $$(".swal2-modal")[0] &&
+						event.target.parentNode.parentNode !== $$(".swal2-modal")[0]
+					) {
 						$("#option").style.display = "none";
 						$("#option_button").className = "";
 						//닫기 효과음
@@ -2300,7 +2440,10 @@ function main(cmd) {
 			}
 			//장비를 찾지 못했으면
 			if (!found) {
-				alert("※ 해당 장비를 찾지 못했습니다.\n\n\"" + input + "\"");
+				swal({
+					text:"※ 해당 장비를 찾지 못했습니다.\n\n\"" + input + "\"",
+					type:"error"
+				});
 
 				return;
 			//장비를 찾았으면
@@ -2318,7 +2461,10 @@ function main(cmd) {
 				}
 
 				//메세지 출력
-				alert("※ 해당 장비를 인벤토리에 등록하였습니다.\n\n\"" + input + "\"\n\n현재 등록된 기본장비 리스트 : \n" + tempText);
+				swal({
+					text:"<span class='bold'>해당 장비를 인벤토리에 등록하였습니다.</span>\n\"" + input + "\"\n\n<span class='bold'>현재 등록된 기본장비 리스트</span>\n" + tempText,
+					type:"success"
+				});
 				//게임 저장
 				saveData();
 
@@ -2383,13 +2529,19 @@ function main(cmd) {
 			$("#date_config").onclick = function() {
 				//일반 모드에서만 설정 가능 (이유 : 공정한 플레이)
 				if (playMode !== "normal") {
-					alert("※ 경고 : RPG 모드, 베키 모드에서는 피로도 설정을 할 수 없습니다.");
+					swal({
+						text:"RPG 모드, 베키 모드에서는 피로도 설정을 할 수 없습니다.",
+						type:"error"
+					});
 					return;
 				}
 				//첫 실행 이전에만 설정 가능 (이유 : 영웅의 항아리)
 				if (count > 0) {
-					alert("※ 경고 : 피로도 설정은 첫 실행 이전에만 가능합니다.\
-\n\"모두 초기화\"를 클릭하신 후 설정을 해주세요.");
+					swal({
+						text:"피로도 설정은 첫 실행 이전에만 가능합니다.\
+\n\"모두 초기화\"를 클릭하신 후 설정을 해주세요.",
+						type:'error'
+					});
 					return;
 				}
 				//창 여닫기
@@ -2428,13 +2580,19 @@ function main(cmd) {
 					for (var i = 1;i <= dateSettingList.length;i++) {
 						//a-1-1. 제대로 입력되지 않음 -> 중단
 						if (! isNumber($("#date_setting_" + i.toString()).value)) {
-							alert("※ 경고 : 날짜 환산 설정창 - \"" + dateSettingName[i-1] + "\" 값이 입력되었습니다.");
+							swal({
+								text:"날짜 환산 설정창 - \"" + dateSettingName[i-1] + "\" 값이 입력되었습니다.",
+								type:'error'
+							});
 							return;
 						}
 					}
 					//피로도 1회 소모량이 0인지 체크(0 나누기 오류 방지)
 					if (parseInt($("#date_setting_3").value) === 0) {
-						alert("※ 경고 : 1회 피로도 소모치는 \"0\"이 될 수 없습니다.");
+						swal({
+							text:"1회 피로도 소모치는 \"0\"이 될 수 없습니다.",
+							type:'error'
+						});
 						return;
 					}
 					//a-2. 제대로 입력됨 -> 적용
@@ -2447,7 +2605,10 @@ function main(cmd) {
 					dateState["changed"] = 1;//재계산 필요함을 알림
 					setDate();
 				//b. 안내 메세지
-				alert("※ 날짜 전환 설정이 정상적으로 변경되었습니다.");
+					swal({
+						text:"날짜 전환 설정이 정상적으로 변경되었습니다.",
+						type:'success'
+					});
 				//c. 설정창 닫기
 				$("#date_config").className = "";
 				$("#date_config").value = "피로도 설정";

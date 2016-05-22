@@ -74,6 +74,9 @@ html, body {
 	color:yellow;
 	font-size:inherit;
 }
+.green {
+	color:#59FF00;
+}
 .white {
 	color:white;
 	font-size:inherit;
@@ -1372,6 +1375,29 @@ html, body {
 						background: #DEDEDE;
 					}
 
+	#status_gabriel, #status_freepass {
+		position:absolute;
+		top:9px;
+
+		width:26px;
+		height:26px;
+
+		background-color:rgba(30,30,30,0.5);
+		border:1px yellow solid;
+		border-radius:1px;
+	}
+		#status_gabriel {
+			left:330px;
+		}
+		#status_freepass {
+			left:363px;
+		}
+			#status_gabriel_img, #status_freepass_img {
+				width:26px;
+				height:26px;
+
+				display:none;
+			}
 
 	#reset {
 		position:absolute;
@@ -1419,12 +1445,12 @@ html, body {
 		overflow:hidden;
 
 		position:absolute;
-		top:80px;
-		left:215px;
+		top:120px;
+		left:135px;
 		z-index:1100;
 
-		width:320px;
-		height:355px;
+		width:480px;
+		height:275px;
 
 		background-color:rgba(30,30,30,0.9);
 		border:1px white solid;
@@ -1453,47 +1479,65 @@ html, body {
 			text-align:center;
 			line-height:30px;
 		}
-		#option_left {
-			clear:both;
-			float:left;
-
+		.option_line {
 			padding:5px;
 			width:160px;
-			height:305px;
+			height:225px;
 
-			border-right:1px white solid;
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
 			box-sizing:border-box;
 		}
-			#option_left input[type="checkbox"] {
+				#option_line_1 {
+					clear:both;
+					float:left;
+
+					border-right:1px white solid;
+				}
+				#option_line_2 {
+					float:left;
+
+					border-right:1px white solid;
+				}
+				#option_line_3 {
+					float:left;
+				}
+			.option_subtitle {
+				margin-bottom:5px;
+				width:100%;
+
+				background-color:#505050;
+
+				text-align:center;
+			}
+			#option input[type="checkbox"] {
 				width:16px;
 				height:16px;
 
 				vertical-align:middle;
 			}
-			#option_left input[type="checkbox"]:hover {
+			#option input[type="checkbox"]:hover {
 				cursor:pointer;
 				cursor:hand;
 			}
-			#option_left label {
+			#option label {
 				font-size:12px;
 			}
 				#label_sound {
 					margin-right:10px;
 				}
-				#option_left label:hover {
+				#option label:hover {
 					cursor:pointer;
 					cursor:hand;
 
 					text-decoration:underline;
 				}
-			#option_left hr {
+			#option hr {
 				margin:4px 0px;
 
 				border:1px white dashed;
 			}
-			#option_left input[type="button"] {
+			#option input[type="button"] {
 				margin-bottom:2px;
 				width:100%;
 				height:22px;
@@ -1511,44 +1555,26 @@ html, body {
 				font-size:14px;
 				font-weight:bold;
 			}
-				#option_left input[type="button"]:hover {
+				#option input[type="button"]:hover {
 					border:1px white solid;
 				}
-				#option_left input[type="button"]:active {
+				#option input[type="button"]:active {
 					background:#dedede;
 				}
-			#option_left select {
+			#option select {
 				width:50px;
 
 				border:1px gray solid;
 
 				font-size:12px;
 			}
-					#option_left select.long {
+					#option select.long {
 						margin-left:20px;
 						width:100px;
 					}
-				#option_left select option {
+				#option select option {
 					font-size:12px;
 				}
-		#option_notice {
-			float:left;
-
-			padding:5px;
-			width:160px;
-			height:305px;
-
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;
-
-			font-size:12px;
-			line-height:160%;
-		}
-			#option_notice .date {
-				color:yellow;
-				font-size:16px;
-			}
 		#option_bottom {
 			clear:both;
 
@@ -3556,7 +3582,7 @@ html, body {
 			-1px 0px black,
 			-1px -1px black;
 
-		display:block;
+		display:none;
 	}
 		#hellgate_level {
 			color:yellow;

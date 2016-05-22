@@ -27,9 +27,16 @@
 			<div id="titleScreen_main">
 				<div id="titleScreen_description_notice" class="titleScreen_description">
 					<p>
+						<span class="yellow">2016-05-22</span><br/>
+						&nbsp;- 지옥파티 프래피스 기능 추가<br/>
+						<span class='green'>(43장 고정 소모, '매우 어려움'만 등장)</span><br/>
+						&nbsp;- 시뮬레이터 2차 최적화 진행
+					</p>
+					<br/>
+					<p>
 						<span class="yellow">2016-05-21</span><br/>
 						&nbsp;- 이어서 할 때 간혹 현재 던전이 저장되지 않던 현상 수정<br/>
-						&nbsp;- 시뮬레이터 1차 최적화 진행. (큰 효과는 없음)
+						&nbsp;- 시뮬레이터 1차 최적화 진행
 					</p>
 					<br/>
 					<p>
@@ -546,6 +553,12 @@
 							<input id="date_apply" type="button" value="설정 적용" />
 						</p>
 					</div>
+				<div id="status_gabriel">
+					<img id="status_gabriel_img" src="./images/epic/icon_gabriel.png">
+				</div>
+				<div id="status_freepass">
+					<img id="status_freepass_img" src="./images/epic/icon_freepass.png">
+				</div>
 
 				<input id="reset" class="min_gap" type="button" value="모두 초기화" />
 
@@ -561,7 +574,8 @@
 					<div id="option_title">
 						설정창
 					</div>
-					<div id="option_left">
+					<div id="option_line_1" class="option_line">
+						<div class="option_subtitle">출력 설정</div>
 						<input id="option_name_normal" type="checkbox" checked />
 						<label for="option_name_normal">
 							아이템 명칭 보기
@@ -596,6 +610,9 @@
 								<option value="beckey">베키</option>
 							</select>
 						<hr/>
+					</div>
+					<div id="option_line_2" class="option_line">
+						<div class="option_subtitle">추가 기능</div>
 						<input id="option_gabriel" type="checkbox" />
 						<label id="label_gabriel" for="option_gabriel" class="yellow">
 							에픽 조각 교환
@@ -604,6 +621,11 @@
 								<option value="manual" selected>수동</option>
 								<option value="auto">자동</option>
 							</select>
+						<br/>
+						<input id="option_freepass" type="checkbox" />
+						<label id="label_freepass" for="option_freepass" class="yellow">
+							지옥파티 프리패스
+						</label>
 						<br/>
 						<input id="option_soul" type="checkbox" checked />
 						<label id="label_soul" for="option_soul">
@@ -622,7 +644,9 @@
 						<input id="achievement" type="button" value="업적 보기 (RPG)" disabled autocomplete="off" />
 						-->
 					</div>
-					<div id="option_notice">
+					<div id="option_line_3" class="option_line">
+						<div class="option_subtitle">기타</div>
+						<input id="func_password" type="button" value="패스워드 확인" autocomplete="off" disabled />
 					</div>
 					<div id="option_bottom">
 						창 바깥을 클릭하면 설정창이 닫힙니다.
@@ -1535,14 +1559,21 @@
 
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
 		<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
+		<!--외부 보조 라이브러리-->
+		<script src="../function/tool/sweetalert2/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="../function/tool/sweetalert2/dist/sweetalert2.css">
+			<!-- for IE support -->
+			<script src="../function/tool/sweetalert2/node_modules/es6-promise-polyfill/promise.min.js"></script>
+		<script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
 		<script type="text/javascript" src="./js/placeholders.min.js"></script>
 		<script type="text/javascript" src="./js/shortcut.js"></script>
+		<!--외부 보조 라이브러리-->
 
 		<script type="text/javascript" src="./js/hell_itemList.js"></script>
 
 		<script type="text/javascript" src="./sprite/spriteList.js"></script>
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		<link rel="stylesheet" type="text/css" href="./sprite/spriteCss.css" />
 
 		<!--암호화-->
 		<script type="text/javascript" src="./js/crypto_core-min.js"></script>
