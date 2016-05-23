@@ -1600,6 +1600,9 @@ function main(cmd) {
 									return;
 								}
 							});
+						//의사 묻지않고 강화
+						} else {
+							doEnchant(wearingList[partList[i]], partList[i], 0);
 						}
 					}
 				})(i)
