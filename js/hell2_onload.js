@@ -435,6 +435,7 @@ function main(cmd) {
 
 		//각종 효과음 준비
 		sfxList = {
+			"hell_selectdungeon":new Audio("./sound/hell_selectdungeon.mp3"),
 			"open":new Audio("./sound/win_open.mp3"),
 			"close":new Audio("./sound/win_close.mp3"),
 
@@ -462,7 +463,6 @@ function main(cmd) {
 			"beckey_start":new Audio("./sound/beckey_start.mp3"),
 			"beckey_epic":new Audio("./sound/beckey_get.mp3")
 		};
-
 			//효과음 공통 설정
 			for (var key in sfxList) {
 				if (sfxList.hasOwnProperty(key)) {
@@ -1859,8 +1859,13 @@ function main(cmd) {
 		//1. frame_left
 		//1-1. 던전 선택
 		$("#dungeon").onchange = function() {
+			playSfx("hell_selectdungeon");
 			dungeon_select();
 		};
+		$("#channel_random").onclick = function() {
+			var _arr = $("#channel").options;
+			$("#channel").selectedIndex = Math.floor(Math.random() * _arr.length);
+		}
 		//1-2. 실행
 		$("#start1").onclick = function() {
 			if (runningState === "") {//0 : 정지상태

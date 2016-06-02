@@ -3951,6 +3951,7 @@ function onoff(cmd) {
 			if (playMode === "normal") {
 				$("#difficulty").disabled = "";
 			}
+			$("#channel_random").disabled = "";
 			$("#channel").disabled = "";
 
 			$("#objective_list").disabled = "";
@@ -3990,6 +3991,7 @@ function onoff(cmd) {
 			$("#start2").value = "탐색 실시";
 
 			$("#dungeon").disabled = "disabled";
+			$("#channel_random").disabled = "disabled";
 			$("#difficulty").disabled = "disabled";
 			$("#channel").disabled = "disabled";
 
@@ -4021,6 +4023,7 @@ function onoff(cmd) {
 			$("#start2").value = "탐색 중지";
 
 			$("#dungeon").disabled = "disabled";
+			$("#channel_random").disabled = "disabled";
 			$("#difficulty").disabled = "disabled";
 			$("#channel").disabled = "disabled";
 

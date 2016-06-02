@@ -913,6 +913,39 @@ html, body {
 	#difficulty {
 		background:#F4FA58;
 	}
+	#diffcha {
+		margin-left:25px;
+	}
+	#channel_random {
+		float:right;
+
+		width:30px;
+		height:17px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:1px gray outset;
+		border-radius:3px;
+
+		font-size:12px;
+		font-weight:bold;
+
+		display:block;
+	}
+		#channel_random:hover {
+			cursor:pointer;
+			cursor:hand;
+
+			border:1px white solid;
+		}
+		#channel_random:active {
+			background:#DEDEDE;
+		}
 
 	#start1, #start2 {
 		width:100%;
