@@ -209,7 +209,7 @@
 			document.getElementById("text1").onfocus = function() {
 				this.value = '';
 			}
-			document.getElementById("text1").onkeypress = function(e) {
+			document.getElementById("text1").onkeypress = function(event) {
 				if (event.keyCode != 13) {
 					this.value = this.value.toString().replace(/,/g,'');
 				}
