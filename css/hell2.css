@@ -153,6 +153,7 @@ html, body {
 	height:600px;
 
 	background-image:url('../images/epic/background/background_title.jpg');
+		-webkit-animation:background_move 30s linear infinite;
 		animation:background_move 30s linear infinite;
 	background-size:925px 600px;
 	background-position:0px 0px;
@@ -371,6 +372,7 @@ html, body {
 					width:500px;
 					height:400px;
 
+					-webkit-animation: sprite_wait 2s steps(12) infinite;
 					animation: sprite_wait 2s steps(12) infinite;
 				}
 			.startPption_select {
@@ -2782,11 +2784,8 @@ html, body {
 						background: linear-gradient(to bottom, #ffffff, #FF6A00);
 						-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
 
-					    animation-name: ready;
-					    animation-duration: 1s;
-					    animation-timing-function: linear;
-					    animation-iteration-count: infinite;
-					    animation-play-state: running;
+						-webkit-animation:ready 1s linear infinite running;
+						animation:ready 1s linear infinite running;
 					}
 					@-webkit-keyframes ready {
 					    0% {
@@ -3574,6 +3573,7 @@ html, body {
 		}
 		/*대기모션은 자체적인 애니메이셔으로 소화*/
 		#character_sprite.wait {
+			-webkit-animation: sprite_wait 2s steps(12) infinite;
 			animation: sprite_wait 2s steps(12) infinite;
 			background-position:0px 0px;
 			opacity:0.5;
@@ -3585,6 +3585,7 @@ html, body {
 				100% {background-position:-6000px 0px;}
 			}
 		#character_sprite.attack {
+			-webkit-animation: sprite_attack 0.24s steps(12) infinite;
 			animation: sprite_attack 0.24s steps(12) infinite;
 			background-position:0px -400px;
 			opacity:1;
