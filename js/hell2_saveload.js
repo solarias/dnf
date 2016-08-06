@@ -114,10 +114,15 @@ function loadData(cmd) {
         //아이콘 표시여부
         if ($("#option_gabriel").checked) $("#status_gabriel_img").style.display = "block";
             else $("#status_gabriel_img").style.display = "none";
+
+    //단일난이도 패치 -> 지옥파티 프리패스 무효화
+    /*
     if (optionList["freepass"]) $("#option_freepass").checked = optionList["freepass"];//신규 옵션 - 있는지 체크
         //아이콘 표시여부
         if ($("#option_freepass").checked) $("#status_freepass_img").style.display = "block";
             else $("#status_freepass_img").style.display = "none";
+    */
+
     $("#option_soul").checked = optionList["soul"];
     $("#option_basicItem").checked = optionList["basicItem"];
     //캐릭터 반영

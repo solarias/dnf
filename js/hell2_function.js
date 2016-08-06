@@ -119,7 +119,7 @@
 
 
 
-	//코스모소울 비용 계산
+	//에픽 소울 비용 계산
 	function soulCount(level) {
 		for (var i=0;i<soulCostList.length;i++) {
 			if (soulCostList[i][0] === level) {
@@ -139,7 +139,7 @@
 				}
 
 				break;
-			case "코스모소울":
+			case "에픽 소울":
 				for (var i=0;i<cutList[3].length;i++) {
 					if (cutList[3][i][0] === level) {
 						return cutList[3][i][1];
@@ -1098,15 +1098,8 @@ function trigger(num, step, hitsound) {
 			//=================================
 			//* 입장료 지불
 			//=================================
-			//0-1-1. 지옥파티 프리패스 : 고정된 수치만큼 소모
-			if ($("#option_freepass").checked) {
-				cost["invite"] += costList_freepass;//총 소모
-				cost["invite_real"] += costList_freepass;//실질 소모
-			//0-1-2. 나머지 : 특정 던전에 대해 소모한 초대장 수 증가
-			} else {
-				cost["invite"] += costList[input["dungeon"]];//총 소모
-				cost["invite_real"] += costList[input["dungeon"]];//실질 소모
-			}
+			cost["invite"] += costList[input["dungeon"]];//총 소모
+			cost["invite_real"] += costList[input["dungeon"]];//실질 소모
 			//0-2. 소모한 초대장 수 반영
 			$("#cost_invitation").innerHTML = thousand(cost["invite"]);
 			$("#cost_real").innerHTML = thousand(cost["invite_real"]);
@@ -1234,14 +1227,8 @@ function simulate(num){
 	//1. 던전 난이도 입력
 	input["dun_diff"] = $("#difficulty").value;
 	//2. 지옥파티 난이도 결정
-		//지옥파티 프리패스 - 매우 어려움으로 고정
-		if ($("#option_freepass").checked) {
-			input["hell_diff"] = 1;//0 : 어려움, 1 : 매우 어려움
-		//일반 - 무작위로 결정
-		} else {
-			input["hell_diff"] = rand(chanceList_num[0]);
-		}
-	$("#round_difficulty").innerHTML =  chanceList_name[0][input["hell_diff"]];//난이도 출력
+		//단일 난이도 패치 - 매우 어려움으로 고정
+		input["hell_diff"] = 1;//0 : 어려움, 1 : 매우 어려움
 
 	//3. zone 딥카피
 	var zoneArr = [];
@@ -1316,7 +1303,7 @@ function simulate(num){
 						//아무것도 실시하지 않음
 
 						break;
-					case "코스모소울" :
+					case "에픽 소울" :
 					case "지옥구슬" :
 					case "초대장" :
 						update(thisTime[i][2]);
@@ -2002,7 +1989,7 @@ function sortItem(type, zone, zoneArr) {
 	//1. 등급 결정 (장비 한정, 조각은 "에픽" Only)
 	switch (type) {
 		case "장비":
-			//일반 장비 : 마봉, 에픽, 코스모소울, 지옥구슬
+			//일반 장비 : 마봉, 에픽, 에픽 소울, 지옥구슬
 			input["rarity"] = chanceList_name[1][input["hell_diff"]][input["dun_diff"]][rand(chanceList_num[1][input["hell_diff"]][input["dun_diff"]])];
 				//IF : 에픽이 아니면 : 드롭
 				if (input["rarity"] !== "에픽") {
@@ -2118,19 +2105,19 @@ function sortItem(type, zone, zoneArr) {
 						//아이템 필드 이미지 변경, 크기 조절
 						$("#item_img" + zone.toString()).className = "item_img " + name1;
 
-						//아이템 이름, 필드 이미지 가시화
-						$("#item_name" + zone.toString()).style.visibility = "visible";
-						$("#item_img" + zone.toString()).style.visibility = "visible";
+						//아이템 이름, 필드 이미지 비가시화 (마봉은 보이지 않음)
+						$("#item_name" + zone.toString()).style.visibility = "hidden";
+						$("#item_img" + zone.toString()).style.visibility = "hidden";
 
 						//아이템 등록
 						thisTime.push([zone, zoneArr, item]);
 
 						break;
 
-					case "코스모소울":
+					case "에픽 소울":
 						//아이템 필드 이미지 & 이름 결정
 						var name1 = "field_기타";
-						var name2 = "코스모 소울";
+						var name2 = "에픽 소울";
 
 						//아이템 이름 변경
 						$("#item_name" + zone.toString()).classList.add("type_normal");//이름 숨기기 옵션용
@@ -2464,7 +2451,7 @@ function sortItem(type, zone, zoneArr) {
 //popup에 업데이트
 function update(type, info, quantity) {
 	//1. 획득/소비 수치 변경
-	if (type === "코스모소울") {
+	if (type === "에픽 소울") {
 		//획득량 증가
 		get["soul_get"] += 1;
 		$("#result_soul_get").innerHTML = thousand(get["soul_get"]);//출력
@@ -2789,10 +2776,10 @@ function recycle(num,amount,cmd) {
 			tr2.getElementsByTagName("td")[4].innerHTML = itemList[num]["have"].toString();
 		}
 	//2. 결과물 처리
-		//코소 자동 해체 OFF - 코스모 소울 보유량 증가
+		//코소 자동 해체 OFF - 에픽 소울 보유량 증가
 		if (!$("#option_soul").checked) {
 			//보유량 증가량 확인
-			var increase = disCount("코스모소울",itemList[num]["level"]);
+			var increase = disCount("에픽 소울",itemList[num]["level"]);
 			//(보유량이 0 이하에서 양수가 되면 - 해체 버튼 활성화)
 			if (get["soul_have"] <= 0 && get["soul_have"] + increase > 0) {
 				$("#result_soul_have").classList.remove("red");
@@ -2899,24 +2886,24 @@ function make(num,amount) {
 		return;
 	}
 
-			//0-1. 코스모 소울 수량 체크 (부족하면 취소)  - "무조건" 차감 : 부족할 일은 없음
+			//0-1. 에픽 소울 수량 체크 (부족하면 취소)  - "무조건" 차감 : 부족할 일은 없음
 			/*
 			if (get["soul_have"] < soulCount(itemList[num]["level"])) {
-				alert("※경고 : 코스모 소울이 부족합니다.\n(필요량 : " + thousand(soulCount(itemList[num]["level"])) + "개, 보유량 : " + thousand(get["soul_have"]) + "개)");
+				alert("※경고 : 에픽 소울이 부족합니다.\n(필요량 : " + thousand(soulCount(itemList[num]["level"])) + "개, 보유량 : " + thousand(get["soul_have"]) + "개)");
 				return;
 			}
 			*/
 
 	//0-2. 정말로 제작할지 질문
 	if (!confirm("'" + itemList[num]["name"] + "' 을(를) " + amount.toString() + "개 제작하시겠습니까?\
-\n(코스모소울 " + soulCount(itemList[num]["level"]) + "개가 무조건 소모됩니다.)\
-\n(코스모소울 수량이 음수가 되면, 0이 될 떄 까지 실질 초대장 소모량이 감소하지 않습니다.)")) {
+\n(에픽 소울 " + soulCount(itemList[num]["level"]) + "개가 무조건 소모됩니다.)\
+\n(에픽 소울 수량이 음수가 되면, 0이 될 떄 까지 실질 초대장 소모량이 감소하지 않습니다.)")) {
 		return;
 	}
 	//0-3. 에픽 도감 - 해당 아이템 찾아두기
 	var tr_craft = $("#craft_row_" + num);
 
-	//코스모소울 소모
+	//에픽 소울 소모
 	get["soul_have"] -= soulCount(itemList[num]["level"]);
 	$("#result_soul_have").innerHTML = thousand(get["soul_have"]);
 		//보유량이 0 이하가 되면 - 해체 버튼 비활성화
@@ -4320,7 +4307,7 @@ function setChance(cmd) {
 	var chanceList = [
 		["어려움","매우어려움"],
 		["노멀","익스퍼트","마스터","킹","슬레이어"],
-		["에픽 아이템","코스모 소울","지옥 구슬"]
+		["에픽 아이템","에픽 소울","지옥 구슬"]
 	];
 	//apply 전용 (100%가 넘는지 체크)
 	var num = 0;
@@ -4356,6 +4343,7 @@ function setChance(cmd) {
 			num = 0;
 
 			for (var k=1;k<=chanceList[2].length;k++) {
+				//각 난이도별 확률
 				switch (cmd) {
 					case "show":
 						$("#chance_text_" + i.toString() + j.toString() + k.toString()).value = fixed(chanceList_num[1][i-1][j-1][k],100).toString();
@@ -4416,13 +4404,19 @@ function setChance(cmd) {
 					chanceList_num[1][i-1][j-1][0] = 1 - num;
 					//에픽 아이템
 					chanceList_num[1][i-1][j-1][1] = fixed(parseFloat($("#chance_text_" + i.toString() + j.toString() + "1").value),0.01);
-					//코스모 소울
+					//에픽 소울
 					chanceList_num[1][i-1][j-1][2] = fixed(parseFloat($("#chance_text_" + i.toString() + j.toString() + "2").value),0.01);
 					//지옥 구슬
 					chanceList_num[1][i-1][j-1][3] = fixed(parseFloat($("#chance_text_" + i.toString() + j.toString() + "3").value),0.01);
 
 					break;
 			}
+		}
+	}
+	//합산 확률 표시
+	for (var j=1;j<=chanceList[1].length;j++) {
+		for (var k=1;k<=chanceList[2].length;k++) {
+			$("#chance_text_3" + j.toString() + k.toString()).value = ((1 - Math.pow(1 - chanceList_num[1][1][j-1][k],6))*100).toFixed(2).toString();
 		}
 	}
 

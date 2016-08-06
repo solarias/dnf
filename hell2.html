@@ -27,6 +27,19 @@
 			<div id="titleScreen_main">
 				<div id="titleScreen_description_notice" class="titleScreen_description">
 					<p>
+						<span class="yellow">2016-08-06</span><br/>
+						&nbsp;- 지옥파티 단일난이도 적용<br/>
+						&nbsp;- 에픽 조각 드랍량 1개 증가<br/>
+						&nbsp;- 마봉 아이템이 더이상 드랍되지 않음<br/>
+						&nbsp;- 코스모소울 -> 에픽 소울로 변경<br/>
+						&nbsp;- 에픽 소울 해체시 초대장 100장 획득<br/>
+						<span class='green'>(차후에 도전장 획득기능 추가 예정)</span><br/>
+						&nbsp;- 드랍률 변경 시 합산 드랍률 표시<br/>
+						&nbsp;- 죽은 자의 성 85레벨 드랍률 증가<br/>
+						&nbsp;- 전체적인 드랍률 변경<br/>
+					</p>
+					<br/>
+					<p>
 						<span class="yellow">2016-06-13</span><br/>
 						&nbsp;- 일부 브라우저에서 배경 및 스프라이트 애니메이션 효과가 나타나지 않던 현상 수정
 					</p>
@@ -503,7 +516,7 @@
 				<div id="notice_difficulty" class="notice">
 					<span class="bold text_center">※ 던전 난이도에 따라 다음 아이템들의 드랍률이 달라집니다.</span>
 					<br/>
-					　- 코스모소울
+					　- 에픽 소울
 					<br/>
 					　- 지옥구슬
 					<br/>
@@ -524,8 +537,7 @@
 
 				<div id="round">
 					<span id="round_count">0</span>
-					회차 :
-					<span id="round_difficulty" class="orange"></span>
+					회차
 				</div>
 					<div id="date">
 						<div id="date_fatigue">
@@ -567,9 +579,6 @@
 					</div>
 				<div id="status_gabriel">
 					<img id="status_gabriel_img" src="./images/epic/icon_gabriel.png">
-				</div>
-				<div id="status_freepass">
-					<img id="status_freepass_img" src="./images/epic/icon_freepass.png">
 				</div>
 
 				<input id="reset" class="min_gap" type="button" value="모두 초기화" />
@@ -634,14 +643,9 @@
 								<option value="auto">자동</option>
 							</select>
 						<br/>
-						<input id="option_freepass" type="checkbox" />
-						<label id="label_freepass" for="option_freepass" class="yellow">
-							지옥파티 프리패스
-						</label>
-						<br/>
 						<input id="option_soul" type="checkbox" checked />
 						<label id="label_soul" for="option_soul">
-							코스모소울 자동 해체
+							에픽 소울 자동 해체
 						</label>
 						<hr/>
 						<input id="func_basicItem" type="button" value="기본 장비 설정" autocomplete="" />
@@ -1113,7 +1117,7 @@
 							(필요 에픽 조각 수 : <span id="craft_check_max">0</span>개)
 						</p>
 						<p class="text_center multi">
-							(제작 시 코스모 소울 소모량만큼
+							(제작 시 에픽 소울 소모량만큼
 							<br/>
 							실질 초대장 소모량 증가)
 						</p>
@@ -1167,84 +1171,111 @@
 					<input id="popup_chance_perfect" type="button" value="에픽 100%" />
 					<input id="popup_chance_reset" type="button" value="확률 초기화" />
 					<div id="popup_chance_info">
-						아이템 <span class="u">하나</span>당 드랍 확률을 설정할 수 있습니다
+						아이템 <span class="u">개별</span> 드랍 확률을 설정할 수 있습니다
 					</div>
 					<div id="popup_chance_main">
 						<table>
 							<tr>
 								<td class="col_1"></td>
-								<td class="col_2 head hard">어려움 (아이템 4개)</td>
-								<td class="col_3 head very">매우 어려움 (아이템 6개)</td>
+								<td class="col_2 head hard"></td>
+								<td class="col_3 head very">아이템 개별 드랍률</td>
+								<td class="col_4 head total">합산 드랍률 (자동계산)</td>
 							</tr>
 							<tr>
 								<td class="col_1">노멀</td>
 								<td class="col_2">
 									<p>에픽 아이템 : <input id="chance_text_111" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_112" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_112" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_113" type="text" /> %</p>
 								</td>
 								<td class="col_3">
 									<p>에픽 아이템 : <input id="chance_text_211" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_212" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_212" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_213" type="text" /> %</p>
+								</td>
+								<td class="col_4">
+									<p>에픽 아이템 : <input id="chance_text_311" type="text" disabled /> %</p>
+									<p>에픽 소울 : <input id="chance_text_312" type="text" disabled /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_313" type="text" disabled /> %</p>
 								</td>
 							</tr>
 							<tr>
 								<td class="col_1">익스퍼트</td>
 								<td class="col_2">
 									<p>에픽 아이템 : <input id="chance_text_121" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_122" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_122" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_123" type="text" /> %</p>
 								</td>
 								<td class="col_3">
 									<p>에픽 아이템 : <input id="chance_text_221" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_222" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_222" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_223" type="text" /> %</p>
+								</td>
+								<td class="col_4">
+									<p>에픽 아이템 : <input id="chance_text_321" type="text" disabled /> %</p>
+									<p>에픽 소울 : <input id="chance_text_322" type="text" disabled /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_323" type="text" disabled /> %</p>
 								</td>
 							</tr>
 							<tr>
 								<td class="col_1">마스터</td>
 								<td class="col_2">
 									<p>에픽 아이템 : <input id="chance_text_131" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_132" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_132" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_133" type="text" /> %</p>
 								</td>
 								<td class="col_3">
 									<p>에픽 아이템 : <input id="chance_text_231" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_232" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_232" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_233" type="text" /> %</p>
+								</td>
+								<td class="col_4">
+									<p>에픽 아이템 : <input id="chance_text_331" type="text" disabled /> %</p>
+									<p>에픽 소울 : <input id="chance_text_332" type="text" disabled /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_333" type="text" disabled /> %</p>
 								</td>
 							</tr>
 							<tr>
 								<td class="col_1">킹</td>
 								<td class="col_2">
 									<p>에픽 아이템 : <input id="chance_text_141" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_142" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_142" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_143" type="text" /> %</p>
 								</td>
 								<td class="col_3">
 									<p>에픽 아이템 : <input id="chance_text_241" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_242" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_242" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_243" type="text" /> %</p>
+								</td>
+								<td class="col_4">
+									<p>에픽 아이템 : <input id="chance_text_341" type="text" disabled /> %</p>
+									<p>에픽 소울 : <input id="chance_text_342" type="text" disabled /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_343" type="text" disabled /> %</p>
 								</td>
 							</tr>
 							<tr>
 								<td class="col_1">슬레이어</td>
 								<td class="col_2">
 									<p>에픽 아이템 : <input id="chance_text_151" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_152" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_152" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_153" type="text" /> %</p>
 								</td>
 								<td class="col_3">
 									<p>에픽 아이템 : <input id="chance_text_251" type="text" /> %</p>
-									<p>코스모 소울 : <input id="chance_text_252" type="text" /> %</p>
+									<p>에픽 소울 : <input id="chance_text_252" type="text" /> %</p>
 									<p>지옥 　구슬 : <input id="chance_text_253" type="text" /> %</p>
+								</td>
+								<td class="col_4">
+									<p>에픽 아이템 : <input id="chance_text_351" type="text" disabled /> %</p>
+									<p>에픽 소울 : <input id="chance_text_352" type="text" disabled /> %</p>
+									<p>지옥 　구슬 : <input id="chance_text_353" type="text" disabled /> %</p>
 								</td>
 							</tr>
 						</table>
 					</div>
 
 					<input id="popup_chance_apply" class="input" type="button" value="적용" />
+					<input id="popup_chance_help" class="input" type="button" value="도움말" />
 					<input id="popup_chance_cancel" class="input" type="button" value="닫기" />
 				</div>
 		<!---확률 팝업---->

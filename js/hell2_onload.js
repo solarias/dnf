@@ -1657,9 +1657,9 @@ function main(cmd) {
 					swal({
 						text:"중복 에픽 아이템을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
 	\n(총 " + temp.toString() + "개의 에픽 아이템이 해체됩니다.)\
-	\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+	\n\n※ 설정창에서 \"에픽 소울 자동 해체\" 여부\
 	\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-	\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+	\n　- 자동 해체 OFF : 에픽 소울 보유량 증가",
 						type:"warning",
 						showCancelButton:true
 					}).then(function(isConfirm) {
@@ -1680,8 +1680,8 @@ function main(cmd) {
 										//체크 ON - 결과물 : 초대장
 										output += disCount("초대장",itemList[i]["level"]) * target_amount;
 									} else {
-										//체크 OFF - 결과물 : 코스모소울
-										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+										//체크 OFF - 결과물 : 에픽 소울
+										output += disCount("에픽 소울",itemList[i]["level"]) * target_amount;
 									}
 								}
 							}
@@ -1697,7 +1697,7 @@ function main(cmd) {
 	\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
 							} else {
 								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-	\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+	\n(에픽 소울 보유량 증가 : " + thousand(output) + "개)";
 							}
 							swal({
 								text:text,
@@ -1735,9 +1735,9 @@ function main(cmd) {
 					swal({
 						text:"타직업 장비를 모두 해체하시겠습니까?\
 							\n(총 " + (temp.length).toString() + "개의 에픽 아이템이 해체됩니다.)\
-							\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+							\n\n※ 설정창에서 \"에픽 소울 자동 해체\" 여부\
 							\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-							\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+							\n　- 자동 해체 OFF : 에픽 소울 보유량 증가",
 						type:"warning",
 						showCancelButton:true
 					}).then(function(isConfirm) {
@@ -1759,8 +1759,8 @@ function main(cmd) {
 										//체크 ON - 결과물 : 초대장
 										output += disCount("초대장",itemList[i]["level"]) * target_amount;
 									} else {
-										//체크 OFF - 결과물 : 코스모소울
-										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+										//체크 OFF - 결과물 : 에픽 소울
+										output += disCount("에픽 소울",itemList[i]["level"]) * target_amount;
 									}
 								}
 							}
@@ -1776,7 +1776,7 @@ function main(cmd) {
 									\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
 							} else {
 								var text = "\"타직업 장비 일괄 해체\"가 완료되었습니다.\
-									\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+									\n(에픽 소울 보유량 증가 : " + thousand(output) + "개)";
 							}
 							swal({
 								text:text,
@@ -1803,9 +1803,9 @@ function main(cmd) {
 					swal({
 						text:"중복 세트 아이템들을 각각 하나씩만 남기고 모두 해체하시겠습니까?\
 						\n(총 " + temp.toString() + "개의 세트 아이템이 해체됩니다.)\
-						\n\n※ 설정창에서 \"코스모소울 자동 해체\" 여부\
+						\n\n※ 설정창에서 \"에픽 소울 자동 해체\" 여부\
 						\n　- 자동 해체 ON : 실질 초대장 소모량 감소\
-						\n　- 자동 해체 OFF : 코스모소울 보유량 증가",
+						\n　- 자동 해체 OFF : 에픽 소울 보유량 증가",
 						type:"warning",
 						showCancelButton:true
 					}).then(function(isConfirm) {
@@ -1826,8 +1826,8 @@ function main(cmd) {
 										//체크 ON - 결과물 : 초대장
 										output += disCount("초대장",itemList[i]["level"]) * target_amount;
 									} else {
-										//체크 OFF - 결과물 : 코스모소울
-										output += disCount("코스모소울",itemList[i]["level"]) * target_amount;
+										//체크 OFF - 결과물 : 에픽 소울
+										output += disCount("에픽 소울",itemList[i]["level"]) * target_amount;
 									}
 								}
 							}
@@ -1843,7 +1843,7 @@ function main(cmd) {
 	\n(실질 골드 환산 감소 : " + setWon(output*gold) + " Gold)";
 							} else {
 								var text = "\"중복 에픽 아이템 일괄 해체\"가 완료되었습니다.\
-	\n(코스모소울 보유량 증가 : " + thousand(output) + "개)";
+	\n(에픽 소울 보유량 증가 : " + thousand(output) + "개)";
 							}
 							swal({
 								text:text,
@@ -1965,7 +1965,7 @@ function main(cmd) {
 		}
 
 		$("#result_button_soulDisassemble").onclick = function() {
-			var input = prompt("해체하실 코스모소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get["soul_have"]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 코스모소울을 해체합니다.");
+			var input = prompt("해체하실 에픽 소울 개수를 입력하세요.\n(현재 보유량 : " + thousand(get["soul_have"]) + " 개)\n\n※ 보유량 이상의 수치를 입력하면, 모든 에픽 소울을 해체합니다.");
 			if (! isNumber(input)) {
 				swal({
 					type:"숫자를 입력하지 않았거나, 취소를 누르셨습니다.\n다시 시도해주세요.",
@@ -2326,6 +2326,7 @@ function main(cmd) {
 			//게임 저장
 			saveData();
 		}
+		/*  (※ 프리패스 기능 무효화)
 		$("#option_freepass").onclick = function() {
 			optionList["freepass"] = $("#option_freepass").checked;
 			//아이콘 표시여부
@@ -2341,6 +2342,7 @@ function main(cmd) {
 			//게임 저장
 			saveData();
 		}
+		*/
 		$("#gabriel_type").onchange = function() {
 			optionList["gabriel_type"] = $("#gabriel_type").value;
 			//게임 저장
@@ -2510,6 +2512,17 @@ function main(cmd) {
 			//2. 적용
 			$("#popup_chance_apply").onclick = function() {
 				setChance("apply");
+			}
+			$("#popup_chance_help").onclick = function() {
+				swal({
+					title:"아이템 개별 드랍률?",
+					html:"지옥파티에서는 최대 아이템 드랍 수량이 정해져있고, 각 아이템마다 드랍률이 따로따로 계산됩니다.\
+						일반적으로 알려진 드랍률은 <b>\"지옥파티 1회 실행 시 드랍률\"</b>이기 때문에, 아이템 개별 드랍률은 알려진 확률보다 더 낮습니다.\
+						<br/><br/>\
+						아이템 개별 드랍률을 설정하면 이를 합산하여 전체 드랍률을 자동으로 계산해줍니다. \
+						합산 드랍률은 <b>(100% - \"해당 아이템이 단 하나도 나오지 않을 확률\")</b>로 계산합니다.",
+					type:'info'
+				})
 			}
 			//3. 취소
 			$("#popup_chance_cancel").onclick = function() {

@@ -3028,23 +3028,31 @@ html, body {
 
 				text-align:center;
 			}
-				#popup_chance_main .col_2, #popup_chance_main .col_3 {
+				#popup_chance_main .col_2, #popup_chance_main .col_3, #popup_chance_main .col_4 {
 					padding:2px;
 					width:190px;
 
 					line-height:160%;
 				}
+					#popup_chance_main .col_2 {
+						display:none;
+					}
 				#popup_chance_main table tr td.head.hard {
 					background-color:yellow;
 
 					color:black;
 				}
 				#popup_chance_main table tr td.head.very {
-					background-color:orange;
+					background-color:yellow;
 
 					color:black;
 				}
-				#popup_chance_main .col_2:not(.head), #popup_chance_main .col_3:not(.head) {
+				#popup_chance_main table tr td.head.total {
+					background-color:blue;
+
+					color:white;
+				}
+				#popup_chance_main .col_2:not(.head), #popup_chance_main .col_3:not(.head), #popup_chance_main .col_4:not(.head) {
 					text-align:right;
 				}
 				#popup_chance_main table tr td input[type="text"]{
@@ -3055,6 +3063,11 @@ html, body {
 
 					text-align:right;
 				}
+					#popup_chance_main table tr td.col_4:not(.head) input[type="text"]{
+						background-color:gray;
+
+						color:white;
+					}
 		#popup_chance .input {
 			margin-top:5px;
 			height:30px;
@@ -3066,8 +3079,8 @@ html, body {
 			font-weight:bold;
 		}
 				#popup_chance .input#popup_chance_apply {
-
-					width:300px;
+					float:left;
+					width:250px;
 
 					background: #FFFFFF; /* default */
 					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
@@ -3075,6 +3088,18 @@ html, body {
 					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
 					background: linear-gradient(to bottom, #ffffff, #A0A0A0);
 					-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				}
+				#popup_chance .input#popup_chance_help {
+					float:left;
+
+					margin-left:40px;
+					width:80px;
+
+					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bce2d8+0,00e8b1+100 */
+					background: #bce2d8; /* Old browsers */
+					background: -moz-linear-gradient(top, #bce2d8 0%, #00e8b1 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top, #bce2d8 0%,#00e8b1 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom, #bce2d8 0%,#00e8b1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				}
 				#popup_chance .input#popup_chance_cancel {
 					float:right;
@@ -3092,6 +3117,9 @@ html, body {
 			}
 				#popup_chance .input#popup_chance_apply:active {
 					background:#DEDEDE;
+				}
+				#popup_chance .input#popup_chance_help:active {
+					background: #00e8b1; /* Old browsers */
 				}
 				#popup_chance .input#popup_chance_cancel:active {
 					background:#FFAA00;
