@@ -2098,7 +2098,6 @@ function main(cmd) {
 					count = 0;
 					dateCount = 0;//일차도 초기화
 					$("#round_count").innerHTML = 0;
-					$("#round_difficulty").innerHTML = "";
 						//회차에 따른 날짜 재계산
 						dateState["changed"] = 1;
 						setDate();
