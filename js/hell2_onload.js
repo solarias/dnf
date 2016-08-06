@@ -1341,22 +1341,6 @@ function main(cmd) {
 					$("#record_check_cost").checked = false;
 				}
 			}
-			$("#record_check_difficulty").setAttribute('checked', 'checked');//수동 체크 설정 : IE8용
-			$("#record_check_difficulty").onclick = function() {
-				var sheet = $("#style_record_check_difficulty");
-				try {
-					if ($("#record_check_difficulty").checked) {
-						sheet.innerHTML = "#record span.difficulty_0, #record span.difficulty_1 {\
-							display:inline;\
-						}";
-					} else {
-						sheet.innerHTML = "";
-					}
-				} catch(e) {
-					alert("＊경고 : \"획득 난이도\" 설정을 변경할 수 없습니다.\n(브라우저가 특정 기능을 지원하지 않습니다.)");
-					$("#record_check_difficulty").checked = false;
-				}
-			}
 			$("#record_check_quantity").setAttribute('checked', 'checked');//수동 체크 설정 : IE8용
 			$("#record_check_quantity").onclick = function() {
 

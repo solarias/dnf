@@ -1346,7 +1346,6 @@ function simulate(num){
 				}
 					text += "'>" + thousand(count.toString()) + "회차 \
 								<span class='cost'>(초대장 : " + thousand(cost["invite"]) + " / 실질 : " + thousand(cost["invite_real"]) + ")</span>\
-								<span class='difficulty_" + input["hell_diff"].toString() + "'> &lt;" + chanceList_name[0][input["hell_diff"]].toString() + "&gt;</span>\
 							</span><br />";
 				//8-3-2. 아이템 정보
 				for (var i=0;i<thisEpic.length;i++) {

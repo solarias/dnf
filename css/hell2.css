@@ -1851,6 +1851,8 @@ html, body {
 				color:#C1C1C1;
 			}
 			#record span.cost{
+				color:yellow;
+
 				display:none;
 			}
 			#record span.difficulty_0{
