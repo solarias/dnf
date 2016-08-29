@@ -64,6 +64,8 @@ function getLocation() {
     if (navigator.geolocation) {
         //위치 분석
         navigator.geolocation.getCurrentPosition(showPosition);
+        $("#title").innerHTML = player.lat1;
+        $("#speed").innerHTML = player.long1;
         //속도 출력
         speed();
     } else {
@@ -110,7 +112,9 @@ function speed() {
     // Distance in Metres
     var distance = r * theta;
     var spd = (distance * 36).toFixed(2);
+    $("#inventory").innerHTML = spd;
 
+/*
     //속도 출력
     switch (spd) {
         case 0:
@@ -121,6 +125,7 @@ function speed() {
             $("#speed_num").innerHTML = thousand(spd);
             break;
     }
+*/
 }
 
 window.onload = function() {
@@ -130,5 +135,5 @@ window.onload = function() {
 
     auto = requestInterval(function() {
         getLocation();
-    }, 300);
+    }, 1000);
 };
