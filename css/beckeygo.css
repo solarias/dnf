@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+
+	font-family:"Nanum Gothic", sans-serif;
+	font-size:100%;
+	text-decoration:none;
+}
+/*뼈대*/
+html, body {
+	height:100%;
+
+	background-color:#606060;
+}
+
+#wrapper {
+    margin:0px auto;
+    width:100%;
+    max-width:400px;
+    height:100%;
+
+    background-color:brown;
+    border:1px black solid;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.banner {
+    margin:5px auto;
+    width:90%;
+    height:calc(1em + 10px);
+
+    background-color:black;
+    border:2px gray solid;
+    border-radius:5px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+
+    font-size:200%;
+    font-weight:bold;
+    text-align:center;
+}
+#title {
+    background-color:#000099;
+
+    color:white;
+}
+#image {
+    margin:2px auto;
+    padding:2px;
+    width:90%;
+    height:116px;
+
+    background-color:white;
+    border:2px gray solid;
+    border-radius:5px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+
+    text-align:center;
+}
+    #image img {
+        width:auto;
+        height:110px;
+    }
+
+#speed {
+    color:skyblue;
+}
+#inventory {
+    color:yellow;
+}
+    #inventory img {
+        height:1em;
+        vertical-align:bottom;
+    }
+
+#open {
+    display:block;
+
+    margin:20px auto 0px auto;
+    width:90%;
+    height:2em;
+
+    background: #FFFFFF; /* default */
+    background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+    background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+    background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+    border-radius:10px;
+
+    font-size:2em;
+    font-weight:700;
+    text-align:center;
+}
+    #open:hover {
+        box-shadow:
+            -2px 0px 10px skyblue,
+            -2px 2px 10px skyblue,
+            0px 2px 10px skyblue,
+            2px 2px 10px skyblue,
+            2px 0px 10px skyblue,
+            2px -2px 10px skyblue,
+            0px -2px 10px skyblue,
+            -2px -2px 10px skyblue;
+        cursor:pointer;
+        cursor:hand;
+    }
+    #open:active {
+        background:#dedede;
+    }
