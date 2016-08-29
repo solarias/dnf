@@ -64,7 +64,6 @@ function getLocation() {
     if (navigator.geolocation) {
         //위치 분석
         navigator.geolocation.getCurrentPosition(showPosition);
-        alert(player.lat1.toString() + ", " + player.long1.toString());
         //속도 출력
         speed();
     } else {
@@ -110,7 +109,7 @@ function speed() {
 
     // Distance in Metres
     var distance = r * theta;
-    var spd = (distance * 3600).toFixed(3);
+    var spd = (distance * 36).toFixed(2);
 
     //속도 출력
     switch (spd) {
@@ -131,5 +130,5 @@ window.onload = function() {
 
     auto = requestInterval(function() {
         getLocation();
-    }, 1000);
+    }, 300);
 };
