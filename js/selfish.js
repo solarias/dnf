@@ -50,7 +50,7 @@ var sound_get;
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								//내부 처리
@@ -60,7 +60,7 @@ var sound_get;
 								};
 							};
 							img.onerror = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								--remaining;
@@ -73,7 +73,7 @@ var sound_get;
 							<img src='" + img.src + "'>";
 							imagesArray.push(img);
 						};
-						
+
 					};
 
 
@@ -83,7 +83,7 @@ function generate(num) {
 	if (sound == 1) {
 		sound_open.play();
 	}
-	
+
 	show_text.style.color = "black";
 	show_text.innerHTML = "항아리 개봉 중...";
 	show_img.src = images + "hang1.gif";
@@ -119,20 +119,20 @@ function generate(num) {
 			show_bar.style.width = "0px";
 			show_right.style.backgroundColor = "black";
 			show_text.style.color = "#E5B64A";
-			
+
 			//사운드 출력
 			if (sound == 1) {
 				sound_open.pause();
 				sound_open.currentTime = 0;
 				sound_get.play();
 			}
-			
+
 			//대상 선정
 			temp = Math.floor(Math.random() * list_selfish.length);
-			
+
 			//누적 배열에 저장
 			count_selfish[temp][1] += 1;
-			
+
 			//상단에 표시
 			show_img.src = images + list_selfish[temp][1] + ".png";
 			show_text.innerHTML = "<span class='epic'>" + list_selfish[temp][0] + "</span>";
@@ -141,12 +141,12 @@ function generate(num) {
 			} else {
 				show_text.innerHTML += " <span class='red'>(x" + count_selfish[temp][1].toString() + ")</span>";
 			}
-			
+
 			//하단에 표시
 			record.innerHTML += "<img src='" + images + list_selfish[temp][1] + ".png' />";
 			record.innerHTML += "<div>" + count + "회차 : " + show_text.innerHTML + "</div><br/>";
 			record.scrollTop = record.scrollHeight;
-			
+
 			count += 1;
 		}
 
@@ -158,31 +158,31 @@ function onoff(num) {
 				sound_open.pause();
 				sound_open.currentTime = 0;
 			}
-			
+
 			open1.value="1회 개봉";
 			open2.value="연속 개봉";
 			open1.disabled="";
 			open2.disabled="";
-			
+
 			open1.className = "off";
 			open2.className = "off";
-			
+
 			break;
 		case 1:
 			open1.value="정지";
 			open2.disabled="disabled";
-			
+
 			open1.className = "on";
 			open2.className = "off";
-			
+
 			break;
 		case 2:
 			open1.disabled="disabled";
 			open2.value="정지";
-			
+
 			open1.className = "off";
 			open2.className = "on";
-			
+
 			break;
 	}
 }
@@ -191,9 +191,9 @@ function reset(num) {
 	show_img.src = images + "hang0.png";
 	show_bar.style.width = "0px";
 	show_text.innerHTML = "";
-	
+
 	if (num == 1) {
-		
+
 		count = 1;
 		record.innerHTML = "";
 		//누적용 배열 "재"준비
@@ -213,7 +213,7 @@ window.onload = function() {
 	//사운드 선로딩
 	try {
 		sound = 1;
-		
+
 		sound_open = new Audio("./sound/open.mp3");
 		sound_open.volume = 0.5;
 		sound_get = new Audio("./sound/get.mp3");
@@ -224,24 +224,24 @@ window.onload = function() {
 	}
 	imageList.push(images + "hang0.png");
 	imageList.push(images + "hang1.gif");
-	
+
 	loadImages(imageList,function(){
-	
+
 		document.getElementsByTagName('body')[0].style.backgroundColor="#FFFFCC";
 		cover.style.display = "none";
-		
+
 		//누적용 배열 준비
 		for (i=0;i<list_selfish.length;i++) {
 			count_selfish[i] = [];
 			count_selfish[i][0] = list_selfish[i][0];
 			count_selfish[i][1] = 0;
 		};
-		
+
 		//실행
 		open1.onclick = function() {
 			if (open1.className == "off") {
 				onoff(1);
-				
+
 				generate(1);
 			} else {
 				clearTimeout(auto);
@@ -249,11 +249,11 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		open2.onclick = function() {
 			if (open2.className == "off") {
 				onoff(2);
-				
+
 				generate(2);
 			} else {
 				clearTimeout(auto);
@@ -261,12 +261,12 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		clear.onclick = function() {
 			clearTimeout(auto);
 			onoff(0);
 			reset(1);
 		};
 	});
-	
+
 }

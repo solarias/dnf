@@ -11,19 +11,24 @@
 
 		<link rel="stylesheet" type="text/css" href="./css/beckeygo.css" />
 
-		<title>베키고</title>
+		<title>베키 GO</title>
 
 	</head>
 	<body>
 		<div id="wrapper">
-			<p id="title" class="banner">베키 <span id="status">GO</span></p>
+			<p id="title" class="banner">
+				베키 <span id="status">GO</span>
+				<button id="reset">
+					리셋
+				</button>
+			</p>
 			<div id="image">
 				<img id="beckey" src="./images/beckeygo/beckey_stop.gif" />
 			</div>
 			<p id="speed" class="banner">속도 : 0km/h</p>
 			<p id="inventory" class="banner">
-				<img id="antonium" src="./images/beckeygo/antonium.png" /> : 0개,
-				<img id="soul" src="./images/beckeygo/soul.png" /> : 0개
+				<img id="antonium" src="./images/beckeygo/antonium.png" /> : <span id="antonium_num">0</span>개,
+				<img id="soul" src="./images/beckeygo/soul.png" /> : <span id="soul_num">0</span>개
 			</p>
 
 			<select id="result">
@@ -49,6 +54,7 @@
 		<script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
 		<!--외부 보조 라이브러리-->
 
+		<script type="text/javascript" src="./js/selfish.js"></script>
 		<script type="text/javascript" src="./js/beckeygo.js"></script>
 
 
