@@ -17,6 +17,8 @@ html, body {
 }
 
 #wrapper {
+    position:relative;
+
     margin:0px auto;
     width:100%;
     max-width:400px;
@@ -81,10 +83,20 @@ html, body {
         vertical-align:bottom;
     }
 
+
+
+
+
 #open {
+    position:absolute;
+    bottom:5px;
     display:block;
 
-    margin:20px auto 0px auto;
+    margin-top:5px;
+    margin-left:auto;
+    margin-right:auto;
+        left:0;
+        right:0;
     width:90%;
     height:2em;
 
@@ -119,9 +131,15 @@ html, body {
     }
 
 #progress {
-    margin:4px auto 0px auto;
+    position:absolute;
+    bottom:calc(20px + 4.5em);
+
+    margin-left:auto;
+    margin-right:auto;
+        left:0;
+        right:0;
     width:90%;
-    height:10px;
+    height:15px;
 
     background-color:black;
     border:1px gray solid;
@@ -132,9 +150,15 @@ html, body {
 }
 
 #result {
+    position:absolute;
+    bottom:calc(40px + 4.5em);
     display:block;
 
-    margin:4px auto 0px auto;
+    margin-left:auto;
+    margin-right:auto;
+        left:0;
+        right:0;
+    margin:20px auto 0px auto;
     width:90%;
     height:2em;
 
