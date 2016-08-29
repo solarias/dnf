@@ -58,7 +58,7 @@ html, body {
         position:absolute;
         top:5px;
         right:5px;
-        width:17%;
+        width:2.5em;
         height:calc(0.8em + 10px);
 
 		background: #FF6A00; /* default */
@@ -113,7 +113,7 @@ html, body {
 #speed {
     color:skyblue;
 }
-#inventory, #inventory_2 {
+#inventory {
     color:yellow;
 }
     #inventory img {
