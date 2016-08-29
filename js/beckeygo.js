@@ -109,7 +109,7 @@ function speed() {
 
     // Distance in Metres
     var distance = r * theta;
-    var spd = distance * 3.6;
+    var spd = Math.round(distance * 3.6,3);
 
     //속도 출력
     switch (spd) {
