@@ -97,7 +97,7 @@ html, body {
 
     border-radius:10px;
 
-    font-size:2em;
+    font-size:2.5em;
     font-weight:700;
     text-align:center;
 }
@@ -117,3 +117,28 @@ html, body {
     #open:active {
         background:#dedede;
     }
+
+#progress {
+    margin:4px auto 0px auto;
+    width:90%;
+    height:10px;
+
+    background-color:black;
+    border:1px gray solid;
+    border-radius:5px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+#result {
+    display:block;
+
+    margin:4px auto 0px auto;
+    width:90%;
+    height:2em;
+
+    background-color:gray;
+
+    color:white;
+}
