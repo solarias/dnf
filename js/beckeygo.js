@@ -133,7 +133,7 @@ window.onload = function() {
     alert("베키와 함께 움직이며 안토니움과 영혼조각을 모으시고, 그걸로 항아리를 개봉하시면 됩니다.");
     alert("베키GO는 GPS 기반으로 작동합니다. 지금 GPS가 꺼져있다면 활성화시킨 후 다시 시작해주세요.");
 
-    auto = requestInterval(function() {
+    auto = setInterval(function() {
         getLocation();
     }, 1000);
 };
