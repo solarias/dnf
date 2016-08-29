@@ -112,7 +112,7 @@ function speed() {
     // Distance in Metres
     var distance = r * theta;
     var spd = (distance * 36).toFixed(2);
-    $("#inventory").innerHTML = spd;
+    $("#inventory").innerHTML = distance;
 
 /*
     //속도 출력
