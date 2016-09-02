@@ -2272,7 +2272,7 @@ html, body {
 						}
 
 		#equip_state {
-			padding:4px 0px 4px 11px;
+			padding:4px 0px 4px 4px;
 			width:100%;
 			height:70px;
 
@@ -2285,7 +2285,7 @@ html, body {
 				float:left;
 				position:relative;
 
-				margin-right:3px;
+				margin-right:1px;
 				width:38px;
 				height:60px;
 
@@ -2294,7 +2294,7 @@ html, body {
 				border-radius:2px;
 			}
 					.state_box.end {
-						margin-right:8px;
+						margin-right:4px;
 					}
 					.state_box:last-of-type {
 						margin:0px;

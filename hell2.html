@@ -21,11 +21,19 @@
 
 
 		<div id="titleScreen">
-			<p id="titleScreen_title">지옥파티 시뮬레이터</p>
+			<p id="titleScreen_title">지옥파티 시뮬레이터 2</p>
 			<p id="titleScreen_person">Made By : 루리웹 솔라리어스</p>
 
 			<div id="titleScreen_main">
 				<div id="titleScreen_description_notice" class="titleScreen_description">
+					<p>
+						<span class="yellow">2016-09-02</span><br/>
+						&nbsp;- 90레벨 에픽아이템 추가<br/>
+						&nbsp;- 마계 메트로센터 던전 추가<br/>
+						<span class='green'>(현재 마계 던전 이미지가 없습니다)</span><br/>
+						<span class='green'>(블로그에서 던전 이미지 제보받습니다)</span>
+					</p>
+					<br/>
 					<p>
 						<span class="yellow">2016-09-01</span><br/>
 						&nbsp;- 메트로센터 채널 추가
@@ -244,6 +252,13 @@
 							<option value = "14">강철의 브라키움</option><!--5-->
 							<option value = "15">샐러맨더의 화로</option><!--5-->
 							<option value = "16">빛의 연회장</option><!--5-->
+						</optgroup>
+						<optgroup label="메트로센터">
+							<option value = "19">시간의 광장</option><!--5-->
+							<option value = "20">수인의 협곡</option><!--5-->
+							<option value = "21">공포의 은신처</option><!--5-->
+							<option value = "22">돌풍지대</option><!--5-->
+							<option value = "23">붉은 마녀의 숲</option><!--5-->
 						</optgroup>
 						<optgroup id="final_area" label="안톤 레이드">
 							<option value = "17">검은 화산</option><!--6-->
@@ -884,6 +899,11 @@
 							<div id="state_마법석_icon" class="state_box_icon"></div>
 							<div id="state_마법석_enchant" class="state_box_enchant">+0</div>
 						</div>
+						<div id="state_귀걸이" class="state_box">
+							<div id="state_귀걸이_type" class="state_box_type">귀걸이</div>
+							<div id="state_귀걸이_icon" class="state_box_icon"></div>
+							<div id="state_귀걸이_enchant" class="state_box_enchant">+0</div>
+						</div>
 					</div>
 					<div id="equip_notice">
 						<p>
@@ -1033,6 +1053,18 @@
 							<input id="list_마법석_enchant_run" class="list_enchant_run" type="button" value="강화" />
 							<div id="list_마법석_power" class="list_power"></div>
 							<div id="list_마법석_set" class="list_set"></div>
+						</div>
+						<div id="list_귀걸이" class="list_box">
+							<div id="list_귀걸이_type" class="list_type">귀걸이</div>
+							<select id="list_귀걸이_select" class="list_select">
+								<option value="">Lv.60 | 마법으로 봉인된 모험가 귀걸이</option>
+							</select>
+							<div id="list_귀걸이_enchant" class="list_enchant">+0</div>
+							<div id="list_귀걸이_icon" class="list_icon"></div>
+
+							<input id="list_귀걸이_enchant_run" class="list_enchant_run" type="button" value="강화" />
+							<div id="list_귀걸이_power" class="list_power"></div>
+							<div id="list_귀걸이_set" class="list_set"></div>
 						</div>
 					</div>
 					<div id="equip_enchant">

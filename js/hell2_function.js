@@ -612,6 +612,7 @@ function dungeon_select(cmd) {
 	} else {
 		input["dungeon"] = parseInt($("#dungeon").value);
 	}
+
 	//2. 배경 변경
 	$("#frame_top").style.background = "url('./images/epic/background/background_" + input["dungeon"].toString() + ".jpg')";
 	//3. 아이템 정리
@@ -3205,7 +3206,7 @@ function calcPower(item) {
 		var toPower = 0;
 		if (cmd === "무기")
 			toPower = pplList["lv0"] * 3;
-		else if (cmd === "보조장비" || cmd === "마법석")
+		else if (cmd === "보조장비" || cmd === "귀걸이")
 			toPower = pplList["lv0"] * 2;
 		else
 			toPower = pplList["lv0"];
@@ -3232,6 +3233,9 @@ function calcPower(item) {
 			tempPower += pplList[level] * 2;
 			break;
 		case "마법석":
+			tempPower += pplList[level] * 2;
+			break;
+		case "귀걸이":
 			tempPower += pplList[level] * 2;
 			break;
 		default:

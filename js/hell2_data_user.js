@@ -95,7 +95,8 @@ var wearingList = {
 	"팔찌":null,
 	"반지":null,
 	"보조장비":null,
-	"마법석":null
+	"마법석":null,
+	"귀걸이":null
 };
 
 //확률_수치

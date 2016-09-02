@@ -418,6 +418,11 @@ function main(cmd) {
 			"16":new Audio("./sound/bgm_16.mp3"),
 			"17":new Audio("./sound/bgm_17.mp3"),
 			"18":new Audio("./sound/bgm_18.mp3"),
+			"19":new Audio("./sound/bgm_19.mp3"),
+			"20":new Audio("./sound/bgm_20.mp3"),
+			"21":new Audio("./sound/bgm_21.mp3"),
+			"22":new Audio("./sound/bgm_22.mp3"),
+			"23":new Audio("./sound/bgm_23.mp3"),
 			"hell":new Audio("./sound/bgm_hell.mp3"),
 			"beckey":new Audio("./sound/beckey_bgm.mp3"),
 			"rpg_clear":new Audio("./sound/hell_rpg_clear.mp3")
@@ -497,7 +502,7 @@ function main(cmd) {
 	imageList.push("./sprite/images/sprite_hell.png");
 	imageList.push("./sprite/images/sprite_item.png");
 	//2. 뒷배경 - 1
-	for (var i=0;i<=18;i++) {
+	for (var i=0;i<=23;i++) {
 		imageList.push("./images/epic/background/background_" + i.toString() + ".jpg");
 	}
 	imageList.push("./images/epic/background/background_ending.png");
