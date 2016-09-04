@@ -55,4 +55,5 @@ function start() {
 
 setTimeout(function() {
     start();
+    window.navigator.vibrate(200);
 },1000);

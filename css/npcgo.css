@@ -26,7 +26,7 @@ video {
 img {
     position:absolute;
     z-index:10;
-    top:40px;
+    top:60px;
 
     margin-left:auto;
     margin-right:auto;
@@ -37,7 +37,7 @@ img {
 p {
     position:absolute;
     z-index:10;
-    top:290px;
+    top:310px;
 
     margin-left:auto;
     margin-right:auto;
