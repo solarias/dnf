@@ -6,6 +6,8 @@ $("#camera").style.height = window.innerHeight + "px";
 
 var cameraElement =  $("#camera");
 var cameraList = [];
+var wi = window.innerWidth;
+var wh = window.innerHeight;
 
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -45,9 +47,11 @@ function start() {
   var videoSource = cameraList[cameraList.length - 1].deviceId;
   var constraints = {
     video: {
-      optional: [{
-        sourceId: videoSource
-      }]
+        optional: [{
+            sourceId: videoSource
+        }],
+        width: { min: wi, ideal: wi, max: wi },
+        height: { min: wh, ideal: wh, max: wh }
     }
   };
   navigator.getUserMedia(constraints, successCallback, errorCallback);
