@@ -2179,6 +2179,8 @@ function sortItem(type, zone, zoneArr) {
 						$("#item_name" + zone.toString()).innerHTML = temp["name"];
 
 						//아이템 필드 이미지 변경, 크기 조절
+							// ★ 아이템 필드 이미지 자료 : sprite 폴더 내 spriteCss.css 파일 참고
+							//	(엑셀 파일 영향받지 않음, 개별 편집 필요)
 						var field_name = "field_" + temp["sort1"] + "_" + temp["sort2"] + "_" + temp["sort3"];
 						$("#item_img" + zone.toString()).className = "item_img " + field_name;
 
