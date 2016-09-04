@@ -8,6 +8,17 @@ var errBack = function(e) {
 	console.log('An error has occurred!', e);
 };
 
+navigator.mediaDevices.enumerateDevices()
+.then(function(devices) {
+  devices.forEach(function(device) {
+    console.log(device.kind + ": " + device.label +
+                " id = " + device.deviceId);
+  });
+})
+.catch(function(err) {
+ console.log(err.name + ": " + err.message);
+});
+
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
