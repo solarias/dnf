@@ -58,6 +58,7 @@ function start() {
 }
 
 setTimeout(function() {
+    alert("테스트 개시");
     start();
     window.navigator.vibrate(200);
 },1000);
