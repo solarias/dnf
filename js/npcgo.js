@@ -34,7 +34,7 @@ else if(navigator.getUserMedia) { // Standard
 	}, errBack);
 } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
 	navigator.webkitGetUserMedia(mediaConfig, function(stream){
-		video.src = window.webkitURL.createObjectURL(stream);
+		video.src = window.URL.createObjectURL(stream);
 		video.play();
 	}, errBack);
 } else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
