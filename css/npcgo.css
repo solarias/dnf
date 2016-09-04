@@ -18,7 +18,9 @@ html {
 video {
     display:block;
 
-    background-color:red;
+    background-image:url("../images/m_jum/back_erze.png");
+    background-position:center top;
+    background-size:cover;
 }
 
 img {
@@ -46,6 +48,16 @@ p {
     font-size:30px;
     font-weight:bold;
     text-align:center;
+
+    text-shadow:
+        0px -2px black,
+        2px -2px black,
+        2px 0px black,
+        2px 2px black,
+        0px 2px black,
+        -2px 2px black,
+        -2px 0px black,
+        -2px -2px black;
 }
 
 #open {
