@@ -7,19 +7,6 @@ var mediaConfig =  { video: true };
 var errBack = function(e) {
 	console.log('An error has occurred!', e);
 };
-var text = "";
-
-navigator.mediaDevices.enumerateDevices()
-.then(function(devices) {
-  devices.forEach(function(device) {
-    console.log(device.kind + ": " + device.label +
-                " id = " + device.deviceId);
-  });
-})
-.catch(function(err) {
- console.log(err.name + ": " + err.message);
-});
-alert(text);
 
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
