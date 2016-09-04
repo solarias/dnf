@@ -2,44 +2,58 @@
 $("#camera").style.width = "100%";
 $("#camera").style.height = "100%";
 
-var video = $("#camera");
-var mediaConfig =  { video: true };
-var errBack = function(e) {
-	console.log('An error has occurred!', e);
-};
+var cameraElement =  $("#camera");
+var cameraList = [];
 
-navigator.mediaDevices.enumerateDevices()
-.then(function(devices) {
-  devices.forEach(function(device) {
-    console.log(device.kind + ": " + device.label +
-                " id = " + device.deviceId);
-  });
-})
-.catch(function(err) {
- console.log(err.name + ": " + err.message);
-});
+navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        video.src = window.URL.createObjectURL(stream);
-        video.play();
+
+
+if (typeof navigator.mediaDevices === 'undefined' ||
+    typeof navigator.mediaDevices.enumerateDevices === 'undefined') {
+    alert('This browser does not support MediaDevices.\n\nTry Chrome.');
+} else {
+    var tempList = [];
+    navigator.mediaDevices.enumerateDevices().then(function(MediaDeviceInfo) {
+        for (var i=0;i<MediaDeviceInfo.length;i++) {
+            if (MediaDeviceInfo[i].kind == "videoinput") {
+                cameraList.push(MediaDeviceInfo[i]);
+            }
+        }
     });
 }
-/* Legacy code below! */
-else if(navigator.getUserMedia) { // Standard
-	navigator.getUserMedia(mediaConfig, function(stream) {
-		video.src = stream;
-		video.play();
-	}, errBack);
-} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-	navigator.webkitGetUserMedia(mediaConfig, function(stream){
-		video.src = window.URL.createObjectURL(stream);
-		video.play();
-	}, errBack);
-} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
-	navigator.mozGetUserMedia(mediaConfig, function(stream){
-		video.src = window.URL.createObjectURL(stream);
-		video.play();
-	}, errBack);
+
+
+function successCallback(stream) {
+    window.stream = stream; // make stream available to console
+    cameraElement.src = window.URL.createObjectURL(stream);
+    cameraElement.play();
 }
+
+function errorCallback(error) {
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+function start() {
+  if (window.stream) {
+    videoElement.src = null;
+    window.stream.stop();
+  }
+  var videoSource = cameraList[0].deviceId;
+  var constraints = {
+    video: {
+      optional: [{
+        sourceId: videoSource
+      }]
+    }
+  };
+  navigator.getUserMedia(constraints, successCallback, errorCallback);
+}
+
+setTimeout(function() {
+    cameraList.forEach(function(device) {
+        alert(device.deviceId);
+    });
+    start();
+},1000);
