@@ -1,6 +1,8 @@
 
-$("#camera").style.width = "100%";
-$("#camera").style.height = "100%";
+$("#wrapper").style.width = window.innerWidth + "px";
+$("#wrapper").style.height = window.innerHeight + "px";
+$("#camera").style.width = window.innerWidth + "px";
+$("#camera").style.height = window.innerHeight + "px";
 
 var cameraElement =  $("#camera");
 var cameraList = [];
@@ -40,7 +42,7 @@ function start() {
     videoElement.src = null;
     window.stream.stop();
   }
-  var videoSource = cameraList[0].deviceId;
+  var videoSource = cameraList[cameraList.length - 1].deviceId;
   var constraints = {
     video: {
       optional: [{
@@ -52,8 +54,5 @@ function start() {
 }
 
 setTimeout(function() {
-    cameraList.forEach(function(device) {
-        alert(device.deviceId);
-    });
     start();
 },1000);
