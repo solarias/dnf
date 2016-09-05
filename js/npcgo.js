@@ -78,7 +78,7 @@ function shoot() {
         return;
     } else {
         $("#ball").style.top = (window.innerHeight * 0.8).toString() + "px";
-        if (Math.random() < 0.98) {
+        if (Math.random() < 0.95) {
             miss.pause();
             miss.currentTime = 0;
             miss.play();
@@ -118,6 +118,6 @@ window.onload = function() {
             $("#open").disbled = false;
             $("#open").innerHTML = "포획하기";
             alert("야생의 황녀 에르제이(가) 나타났다!");
-        },15000);
+        },20000);
     },100);
 };
