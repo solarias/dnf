@@ -88,6 +88,7 @@ function shoot() {
             $("#npc").style.visibility = "hidden";
             $("#miss").style.visibility = "hidden";
             out.play();
+            window.navigator.vibrate(500);
             $("#open").innerHTML = "포획 완료!";
         }
     }
