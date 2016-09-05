@@ -50,8 +50,10 @@ function start() {
         optional: [{
             sourceId: videoSource
         }],
-        width: { min: wi, ideal: wi, max: wi },
-        height: { min: wh, ideal: wh, max: wh }
+        mandatory:{
+            maxWidth:wi,
+            maxHeight:wh
+        }
     }
   };
   navigator.getUserMedia(constraints, successCallback, errorCallback);
