@@ -77,8 +77,8 @@ function shoot() {
         },16);
         return;
     } else {
-        $("#ball").style.top = (window.innerHeight * 0.8).toString() + "px";
         if (Math.random() < 0.95) {
+            $("#ball").style.top = (window.innerHeight * 0.8).toString() + "px";
             miss.pause();
             miss.currentTime = 0;
             miss.play();
