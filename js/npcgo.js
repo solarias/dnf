@@ -95,30 +95,34 @@ function shoot() {
 }
 
 window.onload = function() {
-    setTimeout(function() {
-        alert("길거리를 돌아다니는 NPC를 탐색합니다.");
-        music.play();
-        start();
+    try {
         setTimeout(function() {
-            $("#open").disabled = false;
-            music.pause();
-            music2.play();
-            $("#npc").style.visibility = "visible";
-            $("#miss").style.visibility = "visible";
-            window.navigator.vibrate(500);
-            $("#open").onclick = function() {
-                if (sw === 0) {
-                    sw = 1;
-                    $("#open").disabled = true;
-                    shot.pause();
-                    shot.currentTime = 0;
-                    shot.play();
-                    shoot();
-                }
-            };
-            $("#open").disbled = false;
-            $("#open").innerHTML = "포획하기";
-            alert("야생의 황녀 에르제이(가) 나타났다!");
-        },20000);
-    },100);
+            alert("길거리를 돌아다니는 NPC를 탐색합니다.");
+            music.play();
+            start();
+            setTimeout(function() {
+                $("#open").disabled = false;
+                music.pause();
+                music2.play();
+                $("#npc").style.visibility = "visible";
+                $("#miss").style.visibility = "visible";
+                window.navigator.vibrate(500);
+                $("#open").onclick = function() {
+                    if (sw === 0) {
+                        sw = 1;
+                        $("#open").disabled = true;
+                        shot.pause();
+                        shot.currentTime = 0;
+                        shot.play();
+                        shoot();
+                    }
+                };
+                $("#open").disbled = false;
+                $("#open").innerHTML = "포획하기";
+                alert("야생의 황녀 에르제이(가) 나타났다!");
+            },20000);
+        },100);
+    } catch(err) {
+        alert("Error : " + err);
+    }
 };
