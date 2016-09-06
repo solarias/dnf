@@ -10,8 +10,8 @@ var wi = window.innerWidth;
 var wh = window.innerHeight;
 var sw = 0;
 var music = new Audio("./sound/underfoot.mp3");
-    music.volume = 0.3;
-    music.loop = true;
+    //music.volume = 0.3;
+    //music.loop = true;
 /*
 var music2 = new Audio("./sound/beckey_bgm.mp3");
     music2.volume = 0.3;
