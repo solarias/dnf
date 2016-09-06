@@ -12,12 +12,14 @@ var sw = 0;
 var music = new Audio("./sound/underfoot.mp3");
     music.volume = 0.3;
     music.loop = true;
+/*
 var music2 = new Audio("./sound/beckey_bgm.mp3");
     music2.volume = 0.3;
     music2.loop = true;
 var shot = new Audio("./sound/shot.mp3");
 var miss = new Audio("./sound/miss.mp3");
 var out = new Audio("./sound/beckey_fail.mp3");
+*/
 
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -79,15 +81,15 @@ function shoot() {
     } else {
         if (Math.random() < 0.95) {
             $("#ball").style.top = (window.innerHeight * 0.8).toString() + "px";
-            miss.pause();
-            miss.currentTime = 0;
-            miss.play();
+            //miss.pause();
+            //miss.currentTime = 0;
+            //miss.play();
             sw = 0;
             $("#open").disabled = false;
         } else {
             $("#npc").style.visibility = "hidden";
             $("#miss").style.visibility = "hidden";
-            out.play();
+            //out.play();
             window.navigator.vibrate(500);
             $("#open").innerHTML = "포획 완료!";
         }
@@ -102,8 +104,8 @@ window.onload = function() {
             start();
             setTimeout(function() {
                 $("#open").disabled = false;
-                music.pause();
-                music2.play();
+                //music.pause();
+                //music2.play();
                 $("#npc").style.visibility = "visible";
                 $("#miss").style.visibility = "visible";
                 window.navigator.vibrate(500);
@@ -111,9 +113,9 @@ window.onload = function() {
                     if (sw === 0) {
                         sw = 1;
                         $("#open").disabled = true;
-                        shot.pause();
-                        shot.currentTime = 0;
-                        shot.play();
+                        //shot.pause();
+                        //shot.currentTime = 0;
+                        //shot.play();
                         shoot();
                     }
                 };
