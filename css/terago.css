@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/*전체 전보*/
+* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+
+	font-family:"Nanum Gothic", sans-serif;
+	text-decoration:none;
+}
+
+html, body {
+    width:100%;
+    height:100%;
+
+    background-color:gray;
+}
+
+#wrapper {
+    position:relative
+}
+
+/*스타일 정보*/
+
+
+/*frame_init*/
+#frame_init {
+    position:relative;
+
+    width:100%;
+    height:100%;
+}
+    #init_start {
+        position:absolute;
+            z-index:30;
+        bottom:20px;
+        display:block;
+
+        margin-top:5px;
+        margin-left:auto;
+        margin-right:auto;
+            left:0;
+            right:0;
+        width:90%;
+        height:2em;
+
+        background: #FFFFFF; /* default */
+        background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+        background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+        background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+        border-radius:10px;
+
+        font-size:2.5em;
+        font-weight:700;
+        text-align:center;
+    }
+        #init_start:hover {
+            box-shadow:
+                -2px 0px 10px skyblue,
+                -2px 2px 10px skyblue,
+                0px 2px 10px skyblue,
+                2px 2px 10px skyblue,
+                2px 0px 10px skyblue,
+                2px -2px 10px skyblue,
+                0px -2px 10px skyblue,
+                -2px -2px 10px skyblue;
+            cursor:pointer;
+            cursor:hand;
+        }
+        #init_start:active {
+            background:#dedede;
+        }
+
+
+
+/*frame_trip*/
+#frame_trip {
+    position:relative;
+    display:none;
+
+    width:100%;
+    height:100%;
+}
+    #trip_map {
+        position:absolute;
+            z-index:2;
+
+        width:100%;
+        height:100%;
+
+        pointer-events: none;
+    }
+    #trip_loading {
+        position:absolute;
+        top:calc(50% - 0.5em);
+
+        width:100%;
+        height:1em;
+
+        color:white;
+        font-size:1.5em;
+        font-weight:bold;
+        text-align:center;
+    }
+
+
+/*frame_battle*/
+#frame_battle {
+    position:relative;
+    display:none;
+
+    width:100%;
+    height:100%;
+}
+
+
+
+/*frame_inventory*/
+#frame_inventory {
+    position:relative;
+    display:none;
+
+    width:100%;
+    height:100%;
+}

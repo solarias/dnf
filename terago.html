@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+        <!--모바일 화면구성 - 필요하지 않으면 제거-->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+        <link rel="manifest" href="../function/tool/manifest_portrait.json">
+        <!--모바일 화면구성-->
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (끝)-->
+
+
+		<link rel="stylesheet" type="text/css" href="./css/terago.css" />
+
+		<title></title>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="frame_init">
+				<button id="init_start">게임 시작</button>
+			</div>
+			<div id="frame_trip">
+				<div id="trip_map"></div>
+				<div id="trip_loading">지도 불러오는 중...</div>
+			</div>
+			<div id="frame_battle">
+	            <video id="battle_camera" muted autoplay></video>
+			</div>
+			<div id="frame_inventory"></div>
+		</div>
+
+
+
+
+		<!--외부 보조 라이브러리-->
+		<script src="../function/tool/sweetalert2/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="../function/tool/sweetalert2/dist/sweetalert2.css">
+			<!-- for IE support -->
+			<script src="../function/tool/sweetalert2/node_modules/es6-promise-polyfill/promise.min.js"></script>
+		<script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
+
+		<!--외부 보조 라이브러리-->
+
+		<!--에픽아이템 정보-->
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+		<!--에픽아이템 정보-->
+
+		<!--
+		<script type="text/javascript" src="./js/terago_data_game.js"></script>
+		<script type="text/javascript" src="./js/terago_data_user.js"></script>
+		<script type="text/javascript" src="./js/terago_onload.js"></script>
+		<script type="text/javascript" src="./js/terago_function.js"></script>
+		-->
+		<script type="text/javascript" src="./js/terago.js"></script>
+
+		<script async defer
+		  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtSMGZFWcO--Ifzs-kwR5SeK_R4jZ5Wzw">
+		</script>
+
+	</body>
+</html>
