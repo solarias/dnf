@@ -12,6 +12,9 @@ var game = {
 };
 //변수-기타
 var autoMap;//탐색 requestInterval 관리
+var underfoot = new Audio('./sound/underfoot.mp3');
+    underfoot.volume = 0.3;
+    underfoot.loop = true;
 
 //일반
 var wi = window.innerWidth;
@@ -24,6 +27,7 @@ var mapCenter = {lat:0,lng:0};//지도 중심
 var mapOption = {//지도 속성
     center:mapCenter,
     zoom: 16,
+    draggable: false,
     zoomControl: false,
     mapTypeControl: false,
     scaleControl: false,
@@ -78,12 +82,6 @@ function initMap() {
         $("#trip_map"),
         mapOption
     );
-    //마커 입력;
-    mapMarker = new google.maps.Marker({
-        position: mapCenter,
-        map: map,
-        title: '플레이어'
-    });
     //맵 활성화 알림
     game.mapOn = true;
 }
@@ -94,8 +92,6 @@ function moveMap() {
         getGPS();
         //지도 이동
         map.panTo(mapCenter);
-        //마커 이동
-        mapMarker.setPosition(mapCenter);
     }
 }
 
@@ -155,6 +151,7 @@ function start() {
 function main() {
 
 $("#init_start").onclick = function() {
+    underfoot.play();
     $("#frame_init").style.display = "none";
     $("#frame_trip").style.display = "block";
     initMap();

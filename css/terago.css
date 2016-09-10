@@ -92,8 +92,22 @@ html, body {
         width:100%;
         height:100%;
 
-        pointer-events: none;
+        -webkit-filter:invert(1) contrast(1.1);
     }
+        #trip_marker {
+            position:absolute;
+                z-index:5;
+            bottom:50%;
+
+            margin-left:auto;
+            margin-right:auto;
+                left:0;
+                right:0;
+            width:22px;
+            height:40px;
+
+            background-image:url("../images/terago/marker.png");
+        }
     #trip_loading {
         position:absolute;
         top:calc(50% - 0.5em);
