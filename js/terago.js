@@ -62,8 +62,8 @@ function getGPS() {
             navigator.geolocation.getCurrentPosition(inputGPS);
             //위치 기억
                 mapCenter = {
-                    lat:37.5226067,
-                    lng:126.9397311
+                    lat:player.lat[0],
+                    lng:player.lng[0]
                 };
             //위치 반영 - 지도
             mapOption.center = mapCenter;
