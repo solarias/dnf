@@ -24,9 +24,20 @@
 				<button id="init_start">게임 시작</button>
 			</div>
 			<div id="frame_trip">
+				<div id="trip_loading">지도 불러오는 중...</div>
+				<!--지도-->
 				<div id="trip_map"></div>
 					<div id="trip_marker"></div>
-				<div id="trip_loading">지도 불러오는 중...</div>
+				<!--지도 관련 정보-->
+				<div id="trip_fatigue">
+					<div id="trip_fatigue_bar" class="bargauge"></div>
+				</div>
+				<div id="trip_searchcool">
+					<div id="trip_searchcool_bar" class="bargauge"></div>
+				</div>
+				<div id="trip_address"><p>-</p></div>
+				<!--지도 인터페이스-->
+				<button id="trip_get"><img src="./images/terago/get.png" /></button>
 			</div>
 			<div id="frame_battle">
 	            <video id="battle_camera" muted autoplay></video>

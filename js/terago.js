@@ -3,7 +3,11 @@
 //변수-플레이어
 var player = {
     lat:[0,0],
-    lng:[0,0]
+    lng:[0,0],
+    fatigue:1000,
+        fatigue_init:1000,
+    searchCool:0,
+        searchCool_init:100
 };
 //변수-기본
 var game = {
@@ -11,9 +15,10 @@ var game = {
     mapOn:false
 };
 //변수-기타
-var autoMap;//탐색 requestInterval 관리
+var autoMap;//지도 이동 requestInterval 관리
+var autoSearch;//위치 탐색 requestInterval 관리
 var underfoot = new Audio('./sound/underfoot.mp3');
-    underfoot.volume = 0.3;
+    underfoot.volume = 0.2;
     underfoot.loop = true;
 
 //일반
@@ -34,6 +39,7 @@ var mapOption = {//지도 속성
     streetViewControl: false,
     rotateControl: false
 };
+var geocoder;//지오코딩
 
 //카메라
 var cameraElement =  $("#camera");
@@ -82,6 +88,8 @@ function initMap() {
         $("#trip_map"),
         mapOption
     );
+    //역지오코딩 준비
+    geocoder = new google.maps.Geocoder;
     //맵 활성화 알림
     game.mapOn = true;
 }
@@ -154,10 +162,42 @@ $("#init_start").onclick = function() {
     underfoot.play();
     $("#frame_init").style.display = "none";
     $("#frame_trip").style.display = "block";
+        $("#trip_loading").style.display = "none";
     initMap();
-    autoMap = requestInterval(function() {
+    //2초마다 지도 이동
+    autoMap = setInterval(function() {
         moveMap();
     },2000);
+    //10초마다 탐색
+    autoSearch = setInterval(function() {
+        player.searchCool += 0.1;
+        $("#trip_searchcool_bar").style.width = player.searchCool.toString() + "%";
+        if (player.searchCool >= player.searchCool_init) {
+            player.searchCool = 0;
+            $("#trip_searchcool_bar").style.width = player.searchCool.toString() + "%";
+            geocoder.geocode({'location': mapCenter}, function(results, status) {
+                var p = document.createElement('p');
+                var parent = $("#trip_address");
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+                if (status === google.maps.GeocoderStatus.OK) {
+                    if (results[1]) {
+                        p.value = results[1].formatted_address;
+                        parent.appendChild(p);
+                    } else {
+                        p.class = 'error';
+                        p.value = "위치 알 수 없음";
+                        parent.appendChild(p);
+                    }
+                } else {
+                    p.class = 'error';
+                    p.value = "에러 : " + status;
+                    parent.appendChild(p);
+                }
+            });
+        }
+    },10);
 };
 
 }
