@@ -41,6 +41,7 @@ var mapOption = {//지도 속성
     streetViewControl: false,
     rotateControl: false
 };
+var geocoder;//지오코딩
 
 //카메라
 var cameraElement =  $("#camera");
@@ -179,29 +180,27 @@ $("#init_start").onclick = function() {
             player.searchCool = 0;
             $("#trip_searchcool_bar").style.width = ((player.searchCool/player.searchCool_init)*100).toString() + "%";
             //주소 추적
-            var p = document.createElement('p');
-            var parent = $("#trip_address");
-            while (parent.firstChild) {
-                parent.removeChild(parent.firstChild);
-            }
-            loadJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + mapCenter.lat + "," + mapCenter.lng,
-                //성공
-                function(data) {
-                    if (data.results[0]) {
-                        p.innerHTML = data.results[0].formatted_address.replace("대한민국 ","");
+            geocoder.geocode({'location': mapCenter}, function(results, status) {
+                var p = document.createElement('p');
+                var parent = $("#trip_address");
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+                if (status === google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        p.innerHTML = results[0].formatted_address.replace("대한민국 ","");
                         parent.appendChild(p);
                     } else {
                         p.className = 'text_error';
-                        p.innerHTML = "위치 알 수 없음 (GPS 상태를 확인하세요)";
+                        p.innerHTML = "위치 알 수 없음";
                         parent.appendChild(p);
                     }
-                },
-                //실패
-                function() {
+                } else {
                     p.className = 'text_error';
-                    p.innerHTML = "에러 : " + xhr;
+                    p.innerHTML = "에러 : " + status;
                     parent.appendChild(p);
-                });
+                }
+            });
             //피로도 증가
             player.fatigue -= 1;
             $("#trip_fatigue_bar").style.width = ((player.fatigue/player.fatigue_init)*100).toString() + "%";
