@@ -7,7 +7,8 @@ var player = {
     fatigue:1000,
         fatigue_init:1000,
     searchCool:0,
-        searchCool_init:100
+        searchCool_init:100,
+        searchCool_time:5
 };
 //변수-기본
 var game = {
@@ -32,6 +33,7 @@ var mapCenter = {lat:0,lng:0};//지도 중심
 var mapOption = {//지도 속성
     center:mapCenter,
     zoom: 16,
+    disableDoubleClickZoom: false,
     draggable: false,
     zoomControl: false,
     mapTypeControl: false,
@@ -60,8 +62,8 @@ function getGPS() {
             navigator.geolocation.getCurrentPosition(inputGPS);
             //위치 기억
                 mapCenter = {
-                    lat:player.lat[1],
-                    lng:player.lng[0]
+                    lat:37.5226067,
+                    lng:126.9397311
                 };
             //위치 반영 - 지도
             mapOption.center = mapCenter;
@@ -110,7 +112,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
 
 if (typeof navigator.mediaDevices === 'undefined' ||
     typeof navigator.mediaDevices.enumerateDevices === 'undefined') {
-    alert('This browser does not support MediaDevices.\n\nTry Chrome.');
+    alert('이 브라우저는 MediaDevices 기능을 지원하지 않습니다.\n\n크롬 브라우저를 이용해보세요.');
 } else {
     var tempList = [];
     navigator.mediaDevices.enumerateDevices().then(function(MediaDeviceInfo) {
@@ -170,11 +172,14 @@ $("#init_start").onclick = function() {
     },2000);
     //10초마다 탐색
     autoSearch = setInterval(function() {
+        //쿨타임 감소
         player.searchCool += 0.1;
         $("#trip_searchcool_bar").style.width = player.searchCool.toString() + "%";
         if (player.searchCool >= player.searchCool_init) {
+            //쿨타임 초기화
             player.searchCool = 0;
-            $("#trip_searchcool_bar").style.width = player.searchCool.toString() + "%";
+            $("#trip_searchcool_bar").style.width = ((player.searchCool/player.searchCool_init)*100).toString() + "%";
+            //주소 추적
             geocoder.geocode({'location': mapCenter}, function(results, status) {
                 var p = document.createElement('p');
                 var parent = $("#trip_address");
@@ -182,22 +187,25 @@ $("#init_start").onclick = function() {
                     parent.removeChild(parent.firstChild);
                 }
                 if (status === google.maps.GeocoderStatus.OK) {
-                    if (results[1]) {
-                        p.value = results[1].formatted_address;
+                    if (results[0]) {
+                        p.innerHTML = results[0].formatted_address.replace("대한민국 ","");
                         parent.appendChild(p);
                     } else {
-                        p.class = 'error';
-                        p.value = "위치 알 수 없음";
+                        p.className = 'text_error';
+                        p.innerHTML = "위치 알 수 없음";
                         parent.appendChild(p);
                     }
                 } else {
-                    p.class = 'error';
-                    p.value = "에러 : " + status;
+                    p.className = 'text_error';
+                    p.innerHTML = "에러 : " + status;
                     parent.appendChild(p);
                 }
             });
+            //피로도 증가
+            player.fatigue -= 1;
+            $("#trip_fatigue_bar").style.width = ((player.fatigue/player.fatigue_init)*100).toString() + "%";
         }
-    },10);
+    },player.searchCool_time);
 };
 
 }
