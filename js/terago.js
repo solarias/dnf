@@ -8,7 +8,8 @@ var player = {
         fatigue_init:1000,
     searchCool:0,
         searchCool_init:100,
-        searchCool_time:5
+        searchCool_time:5,
+    address:[]
 };
 //변수-기본
 var game = {
@@ -42,6 +43,7 @@ var mapOption = {//지도 속성
     rotateControl: false
 };
 var geocoder;//지오코딩
+var mapPoly;//현위치 영역
 
 //카메라
 var cameraElement =  $("#camera");
@@ -188,6 +190,17 @@ $("#init_start").onclick = function() {
                 }
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
+                        //사각형 그리기
+                        var dir = [],
+                        mapPoly = new google.maps.Rectangle({
+                            map: map,
+                            bounds: {
+                                north:results[0].geometry.viewport.northest.lat,
+                                south:results[0].geometry.viewport.southest.lat,
+                                east:results[0].geometry.viewport.southest.lng,
+                                west:results[0].geometry.viewport.northest.lng
+                            }
+                        });
                         p.innerHTML = results[0].formatted_address.replace("대한민국 ","");
                         parent.appendChild(p);
                     } else {
