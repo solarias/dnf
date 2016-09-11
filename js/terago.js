@@ -205,7 +205,6 @@ $("#init_start").onclick = function() {
                 }
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
-                        alert(results[0].formatted_address.replace("대한민국 ",""));
                         //사각형 이동
                         var NE = new google.maps.LatLng(
                             results[0].geometry.viewport.northest.lat,
