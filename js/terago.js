@@ -206,6 +206,7 @@ $("#init_start").onclick = function() {
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
                         //사각형 이동
+                        /*
                         var NE = new google.maps.LatLng(
                             results[0].geometry.viewport.northest.lat,
                             results[0].geometry.viewport.southest.lng);
@@ -215,6 +216,7 @@ $("#init_start").onclick = function() {
                         var newRect = new google.maps.LatLngBounds(SW,NE);
                         mapPoly.setBounds(newRect);
                         map.fitBounds(newRect);
+                        */
                         //주소 표시
                         p.innerHTML = results[0].formatted_address.replace("대한민국 ","");
                         parent.appendChild(p);
