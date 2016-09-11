@@ -190,6 +190,7 @@ $("#init_start").onclick = function() {
                 }
                 if (status === google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
+                        alert(results[0].formatted_address.replace("대한민국 ",""));
                         //사각형 그리기
                         try {
                             mapPoly = new google.maps.Rectangle({
