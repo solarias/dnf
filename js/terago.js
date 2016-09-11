@@ -193,6 +193,11 @@ $("#init_start").onclick = function() {
                         //사각형 그리기
                         try {
                             mapPoly = new google.maps.Rectangle({
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#FF0000',
+                                fillOpacity: 0.35,
                                 map: map,
                                 bounds: {
                                     north:results[0].geometry.viewport.northest.lat,
