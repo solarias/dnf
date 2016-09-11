@@ -92,6 +92,21 @@ function initMap() {
         $("#trip_map"),
         mapOption
     );
+    //사각형 준비
+    mapPoly = new google.maps.Rectangle({
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        map: map,
+        bounds: {
+            north:0,
+            south:0,
+            east:0,
+            west:0
+        }
+    });
     //역지오코딩 준비
     geocoder = new google.maps.Geocoder;
     //맵 활성화 알림
@@ -192,24 +207,8 @@ $("#init_start").onclick = function() {
                     if (results[0]) {
                         alert(results[0].formatted_address.replace("대한민국 ",""));
                         //사각형 그리기
-                        try {
-                            mapPoly = new google.maps.Rectangle({
-                                strokeColor: '#FF0000',
-                                strokeOpacity: 0.8,
-                                strokeWeight: 2,
-                                fillColor: '#FF0000',
-                                fillOpacity: 0.35,
-                                map: map,
-                                bounds: {
-                                    north:results[0].geometry.viewport.northest.lat,
-                                    south:results[0].geometry.viewport.southest.lat,
-                                    east:results[0].geometry.viewport.southest.lng,
-                                    west:results[0].geometry.viewport.northest.lng
-                                }
-                            });
-                        } catch (err) {
-                            alert("error : " + e);
-                        }
+
+                        //주소 표시
                         p.innerHTML = results[0].formatted_address.replace("대한민국 ","");
                         parent.appendChild(p);
                     } else {
