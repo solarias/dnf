@@ -296,7 +296,6 @@ function getItem(address) {
     Math.seedrandom(key);
     var temp_type = rate_type_name[rand(rate_type_num)];
     var temp_level = rate_level_name[rand(rate_level_num)];
-    console.log(temp_type + ", " + temp_level);
 
     var tmpArr = [];
     var itm;
