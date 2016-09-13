@@ -90,8 +90,8 @@ $("#wrapper").style.height = window.innerHeight + "px";
 function loadData() {
     if(!localStorage["terago_save"]) {
         localStorage["terago_save"] = "0";
-        localStorage["terago_player"] = "";
-        localStorage["terago_itemList"] = "";
+        localStore("terago_player",player);
+        localStore("terago_itemList",itemList);
     } else {
         player = deepCopy(localGet("terago_player"));
         itemList = deepCopy(localGet("terago_itemList"));
@@ -100,7 +100,7 @@ function loadData() {
 function saveData() {
     //플레이어 데이터 불러오기(없으면 '0'으로)
     terago_save = 1;
-    localStorage["terago_save"] = 1;
+    localStorage["terago_save"] = "1";
     localStore("terago_player",player);
     localStore("terago_itemList",itemList);
 }
@@ -342,7 +342,7 @@ function looking(cmd) {
             searching("on");
 
             $("#trip_inventory_window").innerHTML = "";
-            
+
             break;
     }
 }
