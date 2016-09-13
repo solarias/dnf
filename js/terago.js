@@ -300,7 +300,7 @@ function getItem(address) {
     var tmpArr = [];
     var itm;
     for (var i=0;i<itemList.length;i++) {
-        if (temp_type === itemList[i]["sort1"] && temp_level.indexOf(itemList[i]["level"]) >= 0) {
+        if ((temp_type === itemList[i]["sort1"] || temp_type === itemList[i]["sort2"]) && temp_level.indexOf(itemList[i]["level"]) >= 0) {
             tmpArr.push(itemList[i]);
         }
     }
