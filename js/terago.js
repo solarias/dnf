@@ -352,6 +352,10 @@ function looking(cmd) {
 
 /*함수 - 실행*/
 function main() {
+//화면꺼짐 방지
+if (navigator.wakeLock) navigator.wakeLock.request("display");
+
+//데이터 불러오기
 loadData();
 
 //피로도 회복 확인
