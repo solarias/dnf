@@ -296,6 +296,7 @@ function getItem(address) {
     Math.seedrandom(key);
     var temp_type = rate_type_name[rand(rate_type_num)];
     var temp_level = rate_level_name[rand(rate_level_num)];
+    console.log(temp_type + ", " + temp_level);
 
     var tmpArr = [];
     var itm;
@@ -324,9 +325,9 @@ function looking(cmd) {
                 var tmp = itemList[i];
                 if (tmp["have"] > 0) {
                     if (tmp["set"] !== "")
-                        text += "<span class='set'>Lv." + tmp.level.toString() + " | " + tmp.name + "</span>\n";
+                        text += "<span class='set'>Lv." + tmp.level.toString() + " | " + tmp.name + "</span><br/>";
                     else
-                        text += "Lv." + tmp.level.toString() + " | " + tmp.name + "\n";
+                        text += "Lv." + tmp.level.toString() + " | " + tmp.name + "<br/>";
                 }
             }
             if (text === "") {
