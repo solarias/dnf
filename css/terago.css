@@ -28,6 +28,13 @@ html, body {
 
 
 /*스타일 정보*/
+.epic {
+	color:#E5B64A;
+}
+.set {
+	color:#59FF00;
+}
+
 .text_error {
     color:orange
 }
@@ -53,7 +60,7 @@ html, body {
 }
 	#init_title {
 		position:absolute;
-			top:10%;
+			top:5%;
 
 		width:100%;
 
@@ -71,6 +78,29 @@ html, body {
 			-1px 0px black,
 			-1px -1px black;
 	}
+	#init_note {
+		position:absolute;
+			top:calc(8% + 80px);
+
+		padding:5%;
+		width:90%;
+
+		background-color:rgba(0,0,0,0.3);
+
+		color:white;
+		font-size:1em;
+
+		text-shadow:
+			0px -1px black,
+			1px -1px black,
+			1px 0px black,
+			1px 1px black,
+			0px 1px black,
+			-1px 1px black,
+			-1px 0px black,
+			-1px -1px black;
+	}
+
     #init_start {
         position:absolute;
             z-index:30;
@@ -177,7 +207,7 @@ html, body {
         width:95vw;
         height:0.5em;
 
-        background-color:rgba(0,0,0,0.6);
+        background-color:rgba(0,0,0,0.5);
         border:2px black solid;
         border-radius:0.5em;
 		-webkit-box-sizing:border-box;
@@ -201,7 +231,7 @@ html, body {
         width:95vw;
         height:0.5em;
 
-        background-color:rgba(0,0,0,0.6);
+        background-color:rgba(0,0,0,0.5);
         border:2px black solid;
         border-radius:0.5em;
 		-webkit-box-sizing:border-box;
@@ -225,7 +255,7 @@ html, body {
         width:95vw;
         height:0.8em;
 
-        background-color:rgba(0,0,0,0.6);
+        background-color:rgba(0,0,0,0.5);
         border:2px black solid;
         border-radius:0.5em;
 		-webkit-box-sizing:border-box;
@@ -239,6 +269,47 @@ html, body {
             text-align:center;
             vertical-align:middle;
         }
+	#trip_item_icon {
+        position:absolute;
+            z-index:5;
+        top:calc(1.5vw + 2em);
+		left:2.5vw;
+        overflow:hidden;
+
+        width:56px;
+        height:56px;
+
+        background-color:rgba(0,0,0,0.5);
+		background-image:url('../sprite/images/sprite_hell.png');
+		background-size:1260px auto;
+        border-radius:0.5em;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+
+        color:white;
+	}
+	#trip_item_name {
+		position:absolute;
+			z-index:5;
+		top:calc(2vw + 2.5em);
+		right:2.5vw;
+		overflow:hidden;
+
+		width:calc(95vw - 60px);
+		height:1.6em;
+
+		background-color:rgba(0,0,0,0.5);
+		background-size:1260px auto;
+		border:2px black solid;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+
+		color:white;
+		font-size:0.8em;
+	}
+
 
     #trip_inventory {
         position:absolute;
@@ -248,7 +319,7 @@ html, body {
         display:block;
 
         padding-top:1vw;
-        width:16vw;
+        width:25vw;
         height:20vw;
 
         background: #FFFFFF; /* default */
@@ -257,7 +328,7 @@ html, body {
         background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
         background: linear-gradient(to bottom, #ffffff, #A0A0A0);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-        opacity:0.5;
+        opacity:0.7;
 
         border-radius:10px;
 		-webkit-box-sizing:border-box;
@@ -291,7 +362,7 @@ html, body {
         background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
         background: linear-gradient(to bottom, #ffffff, #A0A0A0);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-        opacity:0.5;
+        opacity:0.7;
 
         border-radius:10px;
 		-webkit-box-sizing:border-box;
@@ -311,7 +382,7 @@ html, body {
         display:block;
 
         padding-top:1vw;
-        width:16vw;
+        width:50vw;
         height:20vw;
 
         background: #FFFFFF; /* default */
@@ -320,7 +391,7 @@ html, body {
         background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
         background: linear-gradient(to bottom, #ffffff, #A0A0A0);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-        opacity:0.5;
+        opacity:0.7;
 
         border-radius:10px;
 		-webkit-box-sizing:border-box;
@@ -336,6 +407,35 @@ html, body {
             height:15vw;
         }
 
+	#trip_inventory_window {
+        position:absolute;
+            z-index:10;
+        top:4vw;
+        overflow-y:scroll;
+
+        margin-left:auto;
+        margin-right:auto;
+            left:0;
+            right:0;
+		padding:2vw;
+        width:95vw;
+        height:calc(100% - 30vw);
+
+        background-color:rgba(0,0,0,0.8);
+        border:2px black solid;
+        border-radius:0.5em;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+
+        color:#E5B64A;
+		font-size:0.7em;
+
+		display:none;
+	}
+		#trip_inventory_windo .set {
+			color:#59FF00;
+		}
 
 /*frame_battle*/
 #frame_battle {
@@ -355,4 +455,28 @@ html, body {
 
     width:100%;
     height:100%;
+}
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
 }

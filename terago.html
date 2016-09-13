@@ -22,6 +22,16 @@
 		<div id="wrapper">
 			<div id="frame_init">
 				<p id="init_title">테라GO</p>
+				<p id="init_note">
+					&nbsp;&nbsp;우리가 사는 이 세계 테라가 어느 순간 황폐해졌습니다. 하지만, 그 부작용으로 강력한 아이템들이 테라에 나타났습니다.
+					<br/>
+					&nbsp;&nbsp;테라를 돌아다니며 여러가지 아이템을 수집하여 이 세계에서 살아남으세요.
+					<br/>
+					<br/>
+					&nbsp;&nbsp;하나의 "주소"에는 단 "하나의" 아이템이 나타납니다. 누군가 강력한 아이템을 찾았다면 그 장소를 찾아가보세요.
+					<br/>
+					(단, 아이템 종류는 매일 달라집니다.)
+				</p>
 				<button id="init_start">게임 시작</button>
 			</div>
 			<div id="frame_trip">
@@ -36,11 +46,17 @@
 				<div id="trip_searchcool">
 					<div id="trip_searchcool_bar" class="bargauge"></div>
 				</div>
-				<div id="trip_address"><p>-</p></div>
+				<div id="trip_address"><p>(위치 확인 중...)</p></div>
+				<div id="trip_item_icon"></div>
+				<div id="trip_item_name"></div>
 				<!--지도 버튼-->
-				<button id="trip_inventory" class="trip_button"><img src="./images/terago/trip_inventory.png" /></button>
+				<button id="trip_inventory" class="trip_button"><img id="trip_inventory_img" src="./images/terago/trip_inventory.png" /></button>
+				<!--
 				<button id="trip_get" class="trip_button"><img src="./images/terago/trip_get.png" /></button>
-				<button id="trip_search" class="trip_button"><img src="./images/terago/trip_search.png" /></button>
+				-->
+				<button id="trip_search" class="trip_button"><img id="trip_search_img" src="./images/terago/trip_search_stop.png" /></button>
+				<!--인벤토리 창-->
+				<div id="trip_inventory_window"></div>
 			</div>
 			<div id="frame_battle">
 	            <video id="battle_camera" muted autoplay></video>
@@ -58,6 +74,7 @@
 			<script src="../function/tool/sweetalert2/node_modules/es6-promise-polyfill/promise.min.js"></script>
 		<script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
 
+		<script type="text/javascript" src="./js/seedrandom.js"></script>
 		<!--외부 보조 라이브러리-->
 
 		<!--에픽아이템 정보-->
