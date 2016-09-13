@@ -370,6 +370,9 @@ if (player.date < today2) {
     player.date = today2;
     player.fatigue = player.fatigue_init;
 }
+$("#trip_fatigue_bar").style.width = ((player.fatigue/player.fatigue_init)*100).toString() + "%";
+
+
 
 $("#init_start").onclick = function() {
     underfoot.play();
