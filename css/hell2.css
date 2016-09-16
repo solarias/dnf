@@ -15,7 +15,7 @@ html, body {
 
 	background-color:#606060;
 }
-	p, span, tr, td {
+	p, span, tr, td, b {
 		font-size:inherit;
 	}
 	table {
@@ -257,6 +257,9 @@ html, body {
 			font-weight:700;
 			text-align:center;
 		}
+			.titleScreen_button.small {
+				font-size:35px;
+			}
 				.titleScreen_button img {
 					width:auto;
 					height:90px;
@@ -323,12 +326,16 @@ html, body {
 
 				width:150px;
 			}
-			#titleScreen_password {
+			#titleScreen_file {
 				left:20px;
 				bottom:20px;
 
 				width:150px;
 			}
+
+		#titleScreen_input_file {
+			display:none;
+		}
 
 	#titleScreen_startOption {
 		display:none;
@@ -1610,6 +1617,10 @@ html, body {
 				#option select option {
 					font-size:12px;
 				}
+			#option p {
+				font-size:12px;
+				line-height:130%;
+			}
 		#option_bottom {
 			clear:both;
 

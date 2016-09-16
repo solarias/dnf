@@ -27,6 +27,12 @@
 			<div id="titleScreen_main">
 				<div id="titleScreen_description_notice" class="titleScreen_description">
 					<p>
+						<span class="yellow">2016-09-16</span><br/>
+						&nbsp;- 세이브 파일 저장 기능 추가<br/>
+						<span class='green'>('.sav' 형식, 다운로드 폴더에 저장됨)</span><br/>
+					</p>
+					<br/>
+					<p>
 						<span class="yellow">2016-09-04</span><br/>
 						&nbsp;- 메트로센터 던전 임시 이미지 보강<br/>
 						&nbsp;- RPG 모드 메트로센터 진행문제 수정<br/>
@@ -37,8 +43,7 @@
 						<span class="yellow">2016-09-02</span><br/>
 						&nbsp;- 90레벨 에픽아이템 추가<br/>
 						&nbsp;- 마계 메트로센터 던전 추가<br/>
-						<span class='green'>(현재 마계 던전 이미지가 없습니다)</span><br/>
-						<span class='green'>(블로그에서 던전 이미지 제보받습니다)</span>
+						<span class='green'>(마계 던전 : 임시 이미지 활용)</span><br/>
 					</p>
 					<br/>
 					<p>
@@ -164,10 +169,10 @@
 					<br/>
 					<p>베키로 안톤을 쓰러뜨리면 <span class="yellow">베키 전용 엔딩컷</span>을 볼 수 있습니다.</p>
 				</div>
-				<div id="titleScreen_description_password" class="titleScreen_description">
-					<p>패스워드를 입력하여 게임을 이어할 수 있습니다.</p>
+				<div id="titleScreen_description_file" class="titleScreen_description">
+					<p>세이브 파일을 불러와 게임을 이어할 수 있습니다.</p>
 					<br/>
-					<p>차후에 구현될 예정입니다.</p>
+					<p class="yellow">* '불러오기' 버튼 클릭 후 이전에 생성한 세이브 파일을 선택해주세요.</p>
 				</div>
 
 				<button id="titleScreen_continue" class="titleScreen_button" disabled="true" autocomplete="off">준비 중</button>
@@ -175,7 +180,9 @@
 				<button id="titleScreen_rpg" class="titleScreen_button" disabled="true" autocomplete="off">준비 중</button>
 				<button id="titleScreen_blog" class="titleScreen_button" disabled="true" autocomplete="off">준비 중</button>
 				<button id="titleScreen_beckey" class="titleScreen_button" disabled="true" autocomplete="off">준비 중</button>
-				<button id="titleScreen_password" class="titleScreen_button" disabled="true" autocomplete="off">준비 중</button>
+				<button id="titleScreen_file" class="titleScreen_button small" disabled="true" autocomplete="off">준비 중</button>
+
+				<input id="titleScreen_input_file" type="file" />
 			</div>
 
 			<div id="titleScreen_startOption">
@@ -700,7 +707,8 @@
 					</div>
 					<div id="option_line_3" class="option_line">
 						<div class="option_subtitle">기타</div>
-						<input id="func_password" type="button" value="패스워드 확인" autocomplete="off" disabled />
+						<input id="func_save" type="button" value="세이브 파일 저장" autocomplete="off" />
+						<p>(진행사항은 자동으로 저장됩니다. 수동저장이 필요할 때만 '세이브 파일 저장'을 하세요.)</p>
 					</div>
 					<div id="option_bottom">
 						창 바깥을 클릭하면 설정창이 닫힙니다.
@@ -1670,10 +1678,13 @@
 		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
 		<link rel="stylesheet" type="text/css" href="./sprite/spriteCss.css" />
 
-		<!--암호화-->
+		<!--암호화, zip, FileSaver-->
 		<script type="text/javascript" src="./js/crypto_core-min.js"></script>
 		<script type="text/javascript" src="./js/crypto_aes.js"></script>
-		<!--암호화-->
+
+		<script type="text/javascript" src="../function/tool/jszip.min.js"></script>
+		<script type="text/javascript" src="../function/tool/FileSaver.min.js"></script>
+		<!--암호화, zip, fileFileSaverSaver-->
 
 		<script type="text/javascript" src="./js/hell2_data_game.js"></script>
 		<script type="text/javascript" src="./js/hell2_data_user.js"></script>
@@ -1685,8 +1696,9 @@
 	</body>
 
 <!-- Histats.com  START (hidden counter)-->
-<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
-<a href="http://www.histats.com" target="_blank" title="stats online" ><script  type="text/javascript" >
+<script async type="text/javascript">document.write(unescape("%3Cscript async src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="stats online" >
+<script async type="text/javascript" >
 try {Histats.start(1,3097971,4,0,0,0,"");
 Histats.track_hits();} catch(err){};
 </script></a>

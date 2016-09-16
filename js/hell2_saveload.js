@@ -48,8 +48,8 @@ function loadData(cmd) {
     //========================
     //※ (cmd가 "password"가 아니면)불러오기
     //========================
-    if (cmd !== "password")
-        dataObj = localGet("hell2");
+    if (cmd !== "file") dataObj = localGet("hell2");
+
     //========================
     //※ 대입
     //========================

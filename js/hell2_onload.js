@@ -54,7 +54,7 @@ window.onload = function() {
 			[$("#titleScreen_rpg"), $("#titleScreen_description_rpg")],
 			[$("#titleScreen_blog"), $("#titleScreen_description_blog")],
 			[$("#titleScreen_beckey"), $("#titleScreen_description_beckey")],
-			[$("#titleScreen_password"), $("#titleScreen_description_password")]
+			[$("#titleScreen_file"), $("#titleScreen_description_file")]
 		]
 	);
 
@@ -73,10 +73,8 @@ window.onload = function() {
 		$("#titleScreen_blog").disabled = false;
 	$("#titleScreen_beckey").innerHTML = "베키";
 		$("#titleScreen_beckey").disabled = false;
-	$("#titleScreen_password").innerHTML = "P/W";
-		$("#titleScreen_password").disabled = false;
-		//아직은 미활성화
-		$("#titleScreen_password").style.color = "gray";
+	$("#titleScreen_file").innerHTML = "파일<br/>불러오기";
+		$("#titleScreen_file").disabled = false;
 
 	//버튼 클릭
 	$("#titleScreen_continue").onclick = function() {
@@ -251,13 +249,81 @@ window.onload = function() {
 					type:"warning",
 					showCancelButton:true
 				}).then(function(isConfirm) {
-					if (isConfimr) {
+					if (isConfirm) {
 						window.location.href = "http://blog.naver.com/ansewo/220622642452";
 					}
 				});
 			}
 		};
-		//패스워드
+		//세이브 파일 불러오기
+		$("#titleScreen_file").onclick = function() {$("#titleScreen_input_file").click();};
+		//불러온 파일 확인
+		$("#titleScreen_input_file").onchange = function() {
+			if (!window.FileReader || !window.ArrayBuffer) {
+				swal({
+					text:"현재 브라우저는 파일 불러오기를 지원하지 않습니다.",
+					type:"warning"
+				});
+				return;
+			}
+			var file = $("#titleScreen_input_file").files[0];
+			var reader = new FileReader();
+			reader.onload = function() {
+				//압축파일 분석
+				JSZip.loadAsync(file)
+				.then(function(zip) {
+					try {
+						var tempTime = "";
+						zip.file("hell2_date").async("string").then(function(dataTime) {
+							tempTime = dataTime;
+						});
+						zip.file("hell2_init").async("string").then(function(data) {
+							if (data === "true") {
+								swal({
+									html:"<b>세이브 파일 확인!</b><br/>(저장 날짜 : " + tempTime + ")<br/><br/>불러오기를 실시합니다.",
+									type:"info"
+								}).then(function() {
+									try {
+										zip.file("hell2").async("string").then(function(data2) {
+											//암호화 파일 분석
+											var loader  = CryptoJS.AES.decrypt(data2, passwordKey).toString(CryptoJS.enc.Utf8);
+
+											//데이터 적용
+											dataObj= JSON.parse(loader);
+											loadData("file");
+											//화면 전환
+											$("#titleScreen_main").style.display = "none";
+											$("#titleScreen_loading").style.display = "block";
+											main("continue");
+										});
+									} catch(err) {
+										//압축파일 분석 중 문제 발생
+										swal({
+											html:"<b>오류 발생!</b><br/>세이브파일을 잘못 불러왔거나, 손상된 파일입니다.",
+											type:"warning"
+										});
+									}
+								});
+							} else {
+								//압축파일 분석 중 문제 발생
+								swal({
+									html:"<b>오류 발생!</b><br/>세이브파일을 잘못 불러왔거나, 손상된 파일입니다.",
+									type:"warning"
+								});
+							}
+						});
+					} catch(err) {
+						//압축파일 분석 중 문제 발생
+						swal({
+							html:"<b>오류 발생!</b><br/>세이브파일을 잘못 불러왔거나, 손상된 파일입니다.",
+							type:"warning"
+						});
+					}
+				});
+			};
+			reader.readAsDataURL(file);
+		};
+
 };
 
 
@@ -2525,6 +2591,43 @@ function main(cmd) {
 			$("#popup_chance_perfect").onclick = function() {
 				setChance("perfect");
 			}
+		//2-8. 세이브 파일 저장
+		$("#func_save").onclick = function() {
+			swal({
+				html:"<b>현재 상태를 파일로 저장하시겠습니까?</b><br/>* 다운로드 폴더에 저장됩니다(~.sav 형식)<br/>* 저장된 파일을 이메일 등을 통해 보관하세요",
+				type:"info",
+				showCancelButton:true
+			}).then(function(isConfirm) {
+				if (isConfirm) {
+					//날짜 기록
+					var today = new Date();
+					var dd = today.getDate();
+					var mm = today.getMonth()+1;
+					var yyyy = today.getFullYear();
+					if(dd<10)dd='0'+dd;
+					if(mm<10)mm='0'+mm;
+					today = yyyy + mm + dd;
+					today2 = yyyy + "/" + mm + "/" + dd;
+					//게임 저장 (혹시나 해서)
+					saveData();
+					var plainContext = JSON.stringify(dataObj);
+					//파일 암호화
+					var saveContext = CryptoJS.AES.encrypt(plainContext, passwordKey).toString();
+
+					//파일 압축
+					var tempZip = new JSZip();
+					tempZip.file("hell2_date", today2);
+					tempZip.file("hell2_init", "true");
+					tempZip.file("hell2", saveContext);
+					//파일 저장
+					tempZip.generateAsync({type:"blob"})
+					.then(function(content) {
+					    // see FileSaver.js
+					    saveAs(content, "HellSimulatorSaved_" + today + ".sav");
+					});
+				}
+			});
+		}
 
 		//3. 날짜 환산
 			//3-0. 날짜 계산 함수

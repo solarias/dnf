@@ -9,6 +9,7 @@ var currentList_level = [];//해당 지역의 '특정 레벨' 아이템 수량
 var currentList_goyu = [];//현재 지역 고유에픽 리스트
 var zoneList = [];//일반 장비&초대장 드랍 위치
 var coordinate = [];//아이템 좌표 정보
+var passwordKey = "solarias";//세이브 암호 해제용
 
 //기타 변수
 var right_display = "";//우측 팝업 정보 (초기엔 우측에 아무런 창도 열지 않음)
