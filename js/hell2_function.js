@@ -867,7 +867,7 @@ function checkObjective(cmd) {
 				//수집현황 표시
 				$("#objective_state_item_name").innerHTML = target[0]["sort3"];
 				$("#objective_state_item_quantity").innerHTML = target[0]["have"];
-				$("#objective_state_item_jogak").innerHTML = target[0]["jogak"];
+				$("#objective_state_item_jogak").innerHTML = thousand(target[0]["jogak"]);
 				if (target[0]["have"] === 0 && target[0]["jogak"] < maxJogak) {
 					$("#objective_state_item_complete").classList.remove("true");
 					$("#objective_state_item_complete").classList.add("false");
@@ -900,7 +900,7 @@ function checkObjective(cmd) {
 				for (var i=0;i<target.length;i++) {
 					$("#objective_state_set_" + (i+1).toString() + "_name").innerHTML = target[i]["sort3"];
 					$("#objective_state_set_" + (i+1).toString() + "_quantity").innerHTML = target[i]["have"];
-					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = target[i]["jogak"];
+					$("#objective_state_set_" + (i+1).toString() + "_jogak").innerHTML = thousand(target[i]["jogak"]);
 					if (target[i]["have"] === 0 && target[i]["jogak"] < maxJogak) {
 						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.remove("true");
 						$("#objective_state_set_" + (i+1).toString() + "_complete").classList.add("false");

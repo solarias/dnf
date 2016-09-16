@@ -2108,7 +2108,7 @@ function main(cmd) {
 				});
 			} else {
 				swal({
-					text:"현재 쓴 돈으로 총 " + Math.floor(cost["invite"] * gold / 10000000 * market / 15000).toString() + "마리의 치킨을 사먹을 수 있습니다.\n\
+					text:"현재 쓴 돈으로 총 " + thousand(Math.floor(cost["invite"] * gold / 10000000 * market / 15000)) + "마리의 치킨을 사먹을 수 있습니다.\n\
 	(현금 환산 : " + setWon(Math.floor(cost["invite"] * gold / 10000000 * market)) + "원)\n\
 	(치킨 1마리 당 15,000원 기준)",
 					type:'info'
