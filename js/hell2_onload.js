@@ -2594,7 +2594,7 @@ function main(cmd) {
 		//2-8. 세이브 파일 저장
 		$("#func_save").onclick = function() {
 			swal({
-				html:"<b>현재 상태를 파일로 저장하시겠습니까?</b><br/>* 다운로드 폴더에 저장됩니다(~.sav 형식)<br/>* 저장된 파일을 이메일 등을 통해 보관하세요",
+				html:"<b>현재 상태를 파일로 저장하시겠습니까?</b><br/>* 다운로드 폴더에 저장됩니다('.sav' 형식)<br/>* 저장된 파일을 이메일 등을 통해 보관하세요",
 				type:"info",
 				showCancelButton:true
 			}).then(function(isConfirm) {
