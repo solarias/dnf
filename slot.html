@@ -5,14 +5,12 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
         <link rel="manifest" href="../function/tool/manifest_portrait.json">
-		<script type="text/javascript" src="../function/tool/subtool.js"></script>
-		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
 
 		<!--
 		<link rel="stylesheet" type="text/css" href="./css/.css" />
 		-->
 
-		<title>헬 슬롯머신</title>
+		<title>지옥 복권</title>
 
 		<style type="text/css">
 			@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -37,47 +35,27 @@
 			}
 
 			#wrapper {
-				position:relative;
-
-				padding:2.5vw;
 				width:100%;
 				height:100%;
 
 				background:brown;
-				box-sizing:border-box;
-				-moz-box-sizing:border-box;
-				-webkit-box-sizing:border-box;
 			}
 
-			#frame {
-				overflow-x:hidden;
-				overflow-y: hidden;
-				white-space:nowrap;
+			ul {
+				position:relative;
+			    overflow: hidden; /* to hide the magic */
+			    display: block;
 
-				padding:4px;
-				width:95vw;
-				height:66px;
-
-				background:black;
-				border:1px gray solid;
-				box-sizing:border-box;
-				-moz-box-sizing:border-box;
-				-webkit-box-sizing:border-box;
+				width:90vw;
+			    height:16px; /* whatever the height of your list items are */
 			}
-				#frame div {
-					display:inline-block;
-					
-					width:56px;
-					height:56px;
-
-					background:white;
-				}
 
 			#count {
-				display:block;
+				clear:both;
 				float:left;
 
 				margin-top:10px;
+				padding-right:5px;
 				width:110px;
 				height:40px;
 
@@ -95,8 +73,6 @@
 			}
 
 			#click {
-				position:relative;
-				display:block;
 				float:right;
 
 				margin-top:10px;
@@ -132,14 +108,7 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="frame">
-				<div></div>
-					<div></div>
-						<div></div>
-							<div></div>
-								<div></div>
-									<div></div>
-			</div>
+			<div id="frame"></div>
 
 			<div id="count">0 회</div>
 			<input id="click" type="button" value="돌리기" />
@@ -152,7 +121,23 @@
 		<script type="text/javascript" src="./js/hell_itemList.js"></script>
 
 		<script type="text/javascript">
+			$.jSlots.defaultOptions = {
+			    number : 3,          // Number: number of slots
+			    winnerNumber : 1,    // Number: list item number upon which to trigger a win, 1-based index, NOT ZERO-BASED
+			    spinner : '',        // CSS Selector: element to bind the start event to
+			    spinEvent : 'click', // String: event to start slots on this event
+			    onStart : $.noop,    // Function: runs on spin start,
+			    onEnd : $.noop,      // Function: run on spin end. It is passed (finalNumbers:Array). finalNumbers gives the index of the li each slot stopped on in order.
+			    onWin : $.noop,      // Function: run on winning number. It is passed (winCount:Number, winners:Array, finalNumbers:Array)
+			    easing : 'swing',    // String: easing type for final spin. I recommend the easing plugin and easeOutSine, or an easeOut of your choice.
+			    time : 7000,         // Number: total time of spin animation
+			    loops : 6            // Number: times it will spin during the animation
+			};
 
+			$('#run1').jSlots({
+				spinner : '#click',
+				winnerNumber : 7
+			});
 		</script>
 
 	</body>
