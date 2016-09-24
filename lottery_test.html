@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+        <link rel="manifest" href="../function/tool/manifest_portrait.json">
+		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+
+		<!--
+		<link rel="stylesheet" type="text/css" href="./css/.css" />
+		-->
+
+		<title>메트로이드 복권</title>
+
+		<style type="text/css">
+			@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+			* {
+				margin:0px;
+				padding:0px;
+				border:0px;
+
+				font-family:"Nanum Gothic", sans-serif;
+				text-decoration:none;
+				line-height:120%;
+			}
+
+            .none{color:black;}
+            .rare{color:#B36BFF;}
+            .unique{color:#FF00FF;}
+            .epic{color:#E5B64A;}
+            .epicEquip{color:#E5B64A;}
+            .set{color:#59FF00;}
+
+			html, body {
+				width:100%;
+				height:100%;
+			}
+
+			body {
+				background:#303030;
+			}
+
+			#wrapper {
+			    position:relative;
+                overflow:hidden;
+
+			    margin:0px auto;
+				width:100%;
+                max-width:600px;
+				height:100%;
+
+				background-image:url('./images/etc/table.jpg');
+                background-position:center bottom;
+                background-size:cover;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+
+            #inventory {
+                display:none;
+
+                position:absolute;
+                    z-index:10;
+                left:2.5vw;
+                top:calc(2.5vw + 2em);
+
+                padding:2vw;
+                width:95vw;
+                height:calc(100% - 2.5vw - 2em - 10px);
+
+                background:rgba(0,0,0,0.8);
+                border:1vw gray solid;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+
+                color:#E5B64A;
+            }
+
+            #cost {
+                position:absolute;
+                    z-index:5;
+                left:1vw;
+                top:1vw;
+
+                padding-right:0.5em;
+                width:45%;
+                height:2em;
+
+                background-color:rgba(0,0,0,0.6);
+                background-image:url('./images/etc/cost.png');
+                background-size:1.5em 1.5em;
+                background-position:0.25em 0.25em;
+                background-repeat:no-repeat;
+
+                color:white;
+                font-weight:bold;
+                text-align:right;
+                line-height:2em;
+            }
+
+            #list {
+                position:absolute;
+                    z-index:5;
+                right:1vw;
+                top:1vw;
+
+                padding-right:0.5em;
+                width:45%;
+                height:2.3em;
+
+				background: #516BFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #516BFF);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #516BFF));
+				background: -ms-linear-gradient(top center, #FFFFFF, #516BFF);
+				background: linear-gradient(to bottom, #ffffff, #516BFF);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#516BFF)";
+
+                border-radius:0.5em;
+
+                font-weight:bold;
+                text-align:center;
+                line-height:2em;
+            }
+				#list:hover {
+                    box-shadow:
+                        -2px 0px 10px skyblue,
+                        -2px 2px 10px skyblue,
+                        0px 2px 10px skyblue,
+                        2px 2px 10px skyblue,
+                        2px 0px 10px skyblue,
+                        2px -2px 10px skyblue,
+                        0px -2px 10px skyblue,
+                        -2px -2px 10px skyblue;
+                    cursor:pointer;
+                    cursor:hand;
+				}
+				#list:active {
+					background: #3855FF;
+				}
+
+			#lottery {
+			    position:absolute;
+                left:-100%;
+                top:8%;
+
+			    width:80%;
+                height:70vh;
+
+                background:#FFF6D5;
+                border-right:1vw black solid;
+                border-bottom:1vw black solid;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+
+    			opacity:0;
+			}
+                #lottery p {
+                    text-align:center;
+                }
+                #title {
+                    text-decoration:underline;
+                }
+                #count {
+                }
+                #cover {
+                    position:absolute;
+                    left:15%;
+                    z-index:2;
+
+                    width:70%;
+                    height:50%;
+
+                    background:green;
+                    border-radius:10%;
+
+                    color:white;
+                    text-align:center;
+                }
+                    #cover.normal {
+                        cursor:normal;
+                    }
+                    #cover.over {
+                        cursor:url('./images/etc/coin_1.gif'), pointer;
+                    }
+                    #cover.click {
+                        cursor:url('./images/etc/coin_2.gif'), pointer;
+                    }
+                #item {
+                    margin:8vh auto;
+
+                    width:56px;
+                    height:56px;
+
+                    background-color:black;
+                    background-image:url('./sprite/images/sprite_hell.png');
+            		background-size:1260px auto;
+
+                    -webkit-transform-origin:50% 0%;
+                    transform-origin:50% 0%;
+                }
+                #name {
+                    position:absolute;
+                    left:5%;
+                    bottom:2vh;
+
+                    width:90%;
+                    height:1em;
+
+                    background:black;
+
+                    font-weight:bold;
+                }
+
+			#shift {
+                position:absolute;
+                    z-index:5;
+                bottom:20px;
+                display:block;
+
+                margin-top:5px;
+                margin-left:auto;
+                margin-right:auto;
+                    left:0;
+                    right:0;
+                width:90%;
+                height:2em;
+
+                background: #FFFFFF; /* default */
+                background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+                background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+                border-radius:10px;
+
+                font-size:2.5em;
+                font-weight:700;
+                text-align:center;
+			}
+				#shift:hover {
+                    box-shadow:
+                        -2px 0px 10px skyblue,
+                        -2px 2px 10px skyblue,
+                        0px 2px 10px skyblue,
+                        2px 2px 10px skyblue,
+                        2px 0px 10px skyblue,
+                        2px -2px 10px skyblue,
+                        0px -2px 10px skyblue,
+                        -2px -2px 10px skyblue;
+                    cursor:pointer;
+                    cursor:hand;
+				}
+				#shift:active {
+					background: #DEDEDE;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+            <div id="inventory"></div>
+
+            <div id="cost"><span id="cost_num">0</span>장 소모</div>
+            <button id="list">보유 에픽 ON/OFF</button>
+
+			<div id="lottery">
+                <p id="title">메트로센터 복권</p>
+                <p id="count"><span id="count_num">1</span>회</p>
+
+                <div id="cover"><p>긁으시오</p></div>
+                <div id="item"></div>
+                <p id="name"></p>
+			</div>
+
+			<button id="shift" class="shift">복권구매</button>
+		</div>
+
+
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+
+		<script type="text/javascript" src="./js/hell_itemList.js"></script>
+
+		<script type="text/javascript" src="./js/shortcut.js"></script>
+
+		<script type="text/javascript">
+            //변수
+            var data = {
+                ready:-1,
+                count:0,
+                cost:28,
+                invite:0,
+                result:{
+                    "name":0,
+                    "rarity":"",
+                    "get":0
+                }
+            }
+            //아이템
+            var chance = {
+                type1:{
+                    num:[50,29,10,1,4,6],
+                    name:["지옥파티 초대장 2장","지옥파티 초대장 10장","지옥파티 초대장 20장","지옥구슬","에픽 소울","에픽"],
+                    get:[2,10,20,500,100,0]
+                },
+                type2:{
+                    num:[45,36,6,13],
+                    name:["무기","방어구","악세서리","특수장비"]
+                },
+                level:{
+                    num:[2,1],
+                    name:[85, 90]
+                },
+                level_real:{
+                    num:[0,0],
+                    name:[85, 90]
+                }
+            };
+            //음악
+            var sound_click = new Audio("./sound/clickoncover.mp3");
+                sound_click.volume = 0.4;
+            var sound_normal = new Audio("./sound/slot_result.mp3");
+                sound_normal.volume = 0.2;
+            var sound_epic = new Audio("./sound/snack_month.mp3");
+                sound_epic.volume = 0.2;
+            var sound_next = new Audio("./sound/win_open.mp3");
+                sound_next.volume = 0.4;
+
+            //함수
+            function newLottery(state) {
+                var l = $("#wrapper").offsetWidth * 0.01;
+
+                switch(state) {
+                    case -1:
+                        sound_next.play();
+                        newLottery(2);
+                        break;
+                    case 0:
+                        sound_next.play();
+                        newLottery(1);
+                        break;
+                    case 1:
+                        //우측으로 치우기
+                        if ($("#lottery").offsetLeft < $("#wrapper").offsetWidth * 1.1) {
+                            $("#lottery").style.left = ($("#lottery").offsetLeft + l * 10).toString() + "px";
+                            setTimeout(function() {
+                                newLottery(1);
+                            },16);
+                        } else {
+                            setTimeout(function() {
+                                newLottery(2);
+                            },16);
+                        }
+                        break;
+                    case 2:
+                        //회차 증가
+                        data.count += 1;
+                        $("#count_num").innerHTML = thousand(data.count);
+                        //아이템 가리기
+                        $("#cover").style.opacity = 1;
+                        $("#cover").style.display = "block";
+                        //새로운 아이템 생성
+                        getItem();
+                        //좌측으로 이동
+                        $("#lottery").style.left = -($("#wrapper").offsetWidth) * 1.1 + "px";
+                        newLottery(3);
+                        break;
+                    case 3:
+                        //다시 등장
+                        if ($("#lottery").offsetLeft < $("#wrapper").offsetWidth * 0.1) {
+                            $("#lottery").style.left = ($("#lottery").offsetLeft + l * 10).toString() + "px";
+                            setTimeout(function() {
+                                newLottery(3);
+                            },16);
+                        }
+                        break;
+                }
+            }
+            function getItem() {
+                //아이템 1차분류
+                var type1_num = rand(chance.type1.num);
+                switch (type1_num) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        //아이템 정보 입력
+                        data.result.name = chance.type1.name[type1_num];
+                        data.result.rarity = "rare";
+                        data.result.get = chance.type1.get[type1_num];
+                        //아이템 이미지 표시, 이름 제거
+                        $("#item").style.backgroundPosition = spritePosition(data.result.name);
+                        $("#name").className = "normal";
+                        //중단
+                        return;
+
+                        break;
+                    case 3:
+                        //아이템 정보 입력
+                        data.result.name = "메트로센터 " + chance.type1.name[type1_num];
+                        data.result.rarity = "unique";
+                        data.result.get = chance.type1.get[type1_num];
+                        //아이템 이미지 표시, 이름 제거
+                        $("#item").style.backgroundPosition = spritePosition(chance.type1.name[type1_num]);
+                        $("#name").className = "normal";
+                        //중단
+                        return;
+
+                        break;
+                    case 4:
+                        //아이템 정보 입력
+                        data.result.name = chance.type1.name[type1_num];
+                        data.result.rarity = "epic";
+                        data.result.get = chance.type1.get[type1_num];
+                        //아이템 이미지 표시, 이름 제거
+                        $("#item").style.backgroundPosition = spritePosition(data.result.name);
+                        $("#name").className = "normal";
+                        //중단
+                        return;
+
+                        break;
+                    case 5:
+                        //계속 진행
+
+                        break;
+                }
+                //아이템 2차분류
+                var type2_num = rand(chance.type2.num);
+                var type2_name = chance.type2.name[type2_num];
+                //레벨분류
+                chance.level_real.num = [0,0];
+                for (var i=0;i<itemList.length;i++) {
+                    if ((itemList[i].sort1 === type2_name || itemList[i].sort2 === type2_name) && chance.level.name.indexOf(itemList[i].level) >= 0) {
+                        chance.level_real.num[chance.level.name.indexOf(itemList[i].level)] += chance.level.num[chance.level.name.indexOf(itemList[i].level)];
+                    }
+                }
+                var level_num = rand(chance.level_real.num);
+                var level_name = chance.level.name[level_num];
+                var tempList = [];
+                for (var i=0;i<itemList.length;i++) {
+                    if ((itemList[i].sort1 === type2_name || itemList[i].sort2 === type2_name) && itemList[i].level === level_name) {
+                        tempList.push(itemList[i]);
+                    }
+                }
+                //아이템 최종결정
+                var selected = tempList[Math.floor(Math.random() * tempList.length)];
+                //아이템 정보 입력
+                data.result.name = selected.name + " (" + selected.level.toString() + "제)";
+                data.result.rarity = "epicEquip";
+                data.result.get = chance.type1.get[type1_num];
+                //아이템 수량 증가
+                for (var i=0;i<itemList.length;i++) {
+                    if (itemList[i].id === selected.id) {
+                        itemList[i].have += 1;
+                    }
+                }
+                //아이템 이미지 표시
+                $("#item").style.backgroundPosition = spritePosition(selected.icon);
+                $("#name").className = "normal";
+            }
+
+            //시작함수
+            function main() {
+                //시작 전 아이템 크기 맞추고 로또 공개
+                var ll = $("#lottery").offsetWidth;
+                var l = $("#lottery").offsetWidth * 0.01;
+                //로또 높이
+                $("#lottery").style.height = l * 120 + "px";
+                //로또 글씨 크기
+                $("#title").style.marginTop = l * 2 + "px";
+                $("#title").style.fontSize = l * 12 + "px";
+                $("#count").style.marginTop = l * 2 + "px";
+                $("#count").style.fontSize = l * 8 + "px";
+                //로또 긁기
+                $("#cover").style.top = l * 32 + "px";
+                $("#cover").style.width = l * 70 + "px";
+                $("#cover").style.height = l * 70 + "px";
+                    $("#cover p").style.fontSize = l * 15 + "px";
+                    $("#cover p").style.lineHeight = l * 65 + "px";
+                //로또 아이템
+                $("#item").style.marginTop = l * 10 + "px";
+                $("#item").style.webkitTransform = "scale(" + ((ll*0.6)/56).toString() + ")";
+                $("#item").style.transform = "scale(" + ((ll*0.6)/56).toString() + ")";
+                $("#lottery").style.opacity = "1";
+                //로또 아이템 이름
+                $("#name").style.bottom =  l * 4 + "px";
+                $("#name").style.height =  l * 8 + "px";
+                $("#name").style.lineHeight =  l * 8 + "px";
+
+                //동전으로 긁기
+                $("#cover").onmouseover = function() {$("#cover").className = "over";}
+                $("#cover").onmousedown = function() {
+                    try {
+                        sound_click.pause();
+                        sound_click.currentTime = 0;
+                    } catch(e) {};
+                    sound_click.play();
+                    $("#cover").className = "click";
+                    return false;
+                }
+                $("#cover").onmouseup = function() {$("#cover").className = "over";}
+                $("#cover").onmouseout = function() {$("#cover").className = "normal";}
+            }
+
+            //시작
+            window.onload = function() {
+                main();
+
+                $("#shift").onclick = function() {
+                    if (data.ready <= 0) {
+                        //비용 차감
+                        data.invite += data.cost;
+                        $("#cost_num").innerHTML = thousand(data.invite);
+
+                        //새로운 로또
+                        newLottery(data.ready);
+
+                        //클릭 준비, 버튼 비활성화
+                        data.ready = 3;
+                        $("#shift").disabled = true;
+                    }
+                }
+
+                $("#cover").onclick = function() {
+                    data.ready -= 1;
+                    if (data.ready > 0) {
+                        $("#cover").style.opacity = (0.75 + data.ready*0.05).toString();
+                    } else {
+                        //가림막 제거
+                        $("#cover").style.opacity = 0;
+                        $("#cover").style.display = "none";
+                        //아이템 이름 표시
+                        $("#name").innerHTML = data.result.name;
+                        $("#name").className = data.result.rarity;
+                        //초대장 획득
+                        data.invite -= data.result.get;
+                        $("#cost_num").innerHTML = thousand(data.invite);
+                        //획득 사운드
+                        if (data.result.rarity === "epicEquip") {
+                            try {
+                                sound_normal.pause();
+                                sound_normal.currentTime = 0;
+                                sound_epic.pause();
+                                sound_epic.currentTime = 0;
+                            } catch(e) {}
+                            sound_epic.play();
+                        } else {
+                            try {
+                                sound_normal.pause();
+                                sound_normal.currentTime = 0;
+                                sound_epic.pause();
+                                sound_epic.currentTime = 0;
+                            } catch(e) {}
+                            sound_normal.play();
+                        }
+
+                        //버튼 활성화
+                        $("#shift").disabled = false;
+                    }
+                }
+        		shortcut.add("space",function() {
+        			$("#shift").click();
+        		});
+
+                $("#list").onclick = function() {
+                    switch ($("#inventory").style.display) {
+                        case "block" :
+                            $("#inventory").innerHTML = "";
+                            $("#inventory").style.display = "none";
+
+                            break;
+                        default:
+                            $("#inventory").style.display = "block";
+                            $("#inventory").innerHTML = "";
+
+                            var text = "";
+                            for (var i=0;i<itemList.length;i++) {
+                                var tmp = itemList[i];
+                                if (tmp["have"] > 0) {
+                                    if (tmp["set"] !== "")
+                                        text += "<span class='set'>Lv." + tmp.level.toString() + " | " + tmp.name + "</span><br/>";
+                                    else
+                                        text += "Lv." + tmp.level.toString() + " | " + tmp.name + "<br/>";
+                                }
+                            }
+                            $("#inventory").innerHTML = text;
+
+                            break;
+                    }
+                }
+            }
+		</script>
+
+	</body>
+</html>

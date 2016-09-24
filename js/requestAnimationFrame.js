@@ -1,4 +1,5 @@
-﻿//=================================================================================================================
+
+//=================================================================================================================
 //※ requestAnimationFrame (약간 수정 - timeout 이전에 clear 할 시 멈추는 문제 수정)
 //=================================================================================================================
 /*
@@ -14,11 +15,11 @@ http://www.opensource.org/licenses/mit-license.php
 // requestAnimationFrame() shim by Paul Irish
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 window.requestAnimFrame = (function() {
-	return  window.requestAnimationFrame       || 
-			window.webkitRequestAnimationFrame || 
-			window.mozRequestAnimationFrame    || 
-			window.oRequestAnimationFrame      || 
-			window.msRequestAnimationFrame     || 
+	return  window.requestAnimationFrame       ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame    ||
+			window.oRequestAnimationFrame      ||
+			window.msRequestAnimationFrame     ||
 			function(/* function */ callback, /* DOMElement */ element){
 				window.setTimeout(callback, 1000 / 60);
 			};
@@ -34,20 +35,20 @@ window.requestAnimFrame = (function() {
  * @param {int} delay The delay in milliseconds
  */
 window.requestInterval = function(fn, delay) {
-	if( !window.requestAnimationFrame       && 
-		!window.webkitRequestAnimationFrame && 
+	if( !window.requestAnimationFrame       &&
+		!window.webkitRequestAnimationFrame &&
 		!(window.mozRequestAnimationFrame && window.mozCancelRequestAnimationFrame) && // Firefox 5 ships without cancel support
-		!window.oRequestAnimationFrame      && 
+		!window.oRequestAnimationFrame      &&
 		!window.msRequestAnimationFrame)
 			return window.setInterval(fn, delay);
-			
+
 	var start = new Date().getTime(),
 		handle = new Object();
-		
+
 	function loop() {
 		var current = new Date().getTime(),
 			delta = current - start;
-			
+
 		if(delta >= delay) {
 			fn.call();
 			start = new Date().getTime();
@@ -55,7 +56,7 @@ window.requestInterval = function(fn, delay) {
 
 		handle.value = requestAnimFrame(loop);
 	};
-	
+
 	handle.value = requestAnimFrame(loop);
 	return handle;
 }
@@ -76,7 +77,7 @@ window.clearRequestInterval = function(handle) {
 			clearInterval(handle);
 		//2. handle 에 null 부여 (작동/중지여부 기억)
 			handle = null;
-		
+
 	}
 };
 
@@ -91,27 +92,27 @@ window.clearRequestInterval = function(handle) {
  */
 
 window.requestTimeout = function(fn, delay) {
-	if( !window.requestAnimationFrame      	&& 
-		!window.webkitRequestAnimationFrame && 
+	if( !window.requestAnimationFrame      	&&
+		!window.webkitRequestAnimationFrame &&
 		!(window.mozRequestAnimationFrame && window.mozCancelRequestAnimationFrame) && // Firefox 5 ships without cancel support
-		!window.oRequestAnimationFrame      && 
+		!window.oRequestAnimationFrame      &&
 		!window.msRequestAnimationFrame)
 			return window.setTimeout(fn, delay);
-			
+
 	var start = new Date().getTime(),
 		handle = new Object();
-		
+
 	function loop(){
 		var current = new Date().getTime(),
 			delta = current - start;
-			
+
 		if (delta >= delay) {
 			fn.call();
 		} else {
 			handle.value = requestAnimFrame(loop);
 		}
 	};
-	
+
 	handle.value = requestAnimFrame(loop);
 	return handle;
 };
