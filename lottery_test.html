@@ -35,6 +35,8 @@
             .set{color:#59FF00;}
 
 			html, body {
+				overflow:hidden;
+
 				width:100%;
 				height:100%;
 			}
@@ -364,6 +366,20 @@
 
                 switch(state) {
                     case -1:
+						//풀스크린
+						// Find the right method, call on correct element
+						function launchIntoFullscreen(element) {
+							if(element.requestFullscreen) {
+								element.requestFullscreen();
+							} else if(element.mozRequestFullScreen) {
+								element.mozRequestFullScreen();
+							} else if(element.webkitRequestFullscreen) {
+								element.webkitRequestFullscreen();
+							} else if(element.msRequestFullscreen) {
+								element.msRequestFullscreen();
+							}
+						}
+						launchIntoFullscreen(document.documentElement); // the whole page
                         sound_next.play();
                         newLottery(2);
                         break;
@@ -492,6 +508,9 @@
 
             //시작함수
             function main() {
+
+				// Launch fullscreen for browsers that support it!
+
                 //시작 전 아이템 크기 맞추고 로또 공개
                 var ll = $("#lottery").offsetWidth;
                 var l = $("#lottery").offsetWidth * 0.01;
@@ -536,7 +555,7 @@
             //시작
             window.onload = function() {
                 main();
-                alert("* 아직 세이브기능 지원않함\n* PC버전 : 스페이스바를 누르면 복권을 바로 살 수 있음");
+                alert("* 아직 세이브기능 지원않함\n* PC버전 : 스페이스바를 누르면 복권을 바로 살 수 있음\n* 첫 복권 구매 시 전체화면이 됨");
 
                 $("#shift").onclick = function() {
                     if (data.ready <= 0) {
