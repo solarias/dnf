@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+		<!--모바일 화면 맞추기 : 필요하면 사용
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+
+		* 세로로 화면 고정
+        <link rel="manifest" href="../function/tool/manifest_portrait.json">
+
+		* 가로로 화면 고정
+        <link rel="manifest" href="../function/tool/manifest_landscape.json">
+		-->
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (시작)-->
+		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+		<!--모바일 최적화 : 화면 자동확대, 터치 딜레이 제거 (끝)-->
+
+		<title>랜덤 장비 생성기</title>
+
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+				border:0px;
+
+				font-family:"Nanum Gothic", sans-serif;
+				text-decoration:none;
+				line-height:120%;
+			}
+
+            .none{color:black;}
+            .common{color:white;}
+            .uncommon{color:skyblue;}
+            .rare{color:#B36BFF;}
+            .unique{color:#FF00FF;}
+            .epic{color:#E5B64A;}
+            .set{color:#59FF00;}
+
+			html, body {
+				overflow:hidden;
+
+				width:100%;
+				height:100%;
+			}
+
+			body {
+				background:#303030;
+			}
+
+			#wrapper {
+			    position:relative;
+                overflow:hidden;
+
+			    margin:0px auto;
+                padding:20px;
+                max-width:850px;
+				height:100%;
+
+				background:brown;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+
+/*===========================================================================*/
+/*===========================================================================*/
+
+        #frame_left {
+            float:left;
+
+            width:370px;
+            height:100%;
+
+            border-right:1px white solid;
+        }
+
+            #icon {
+                float:left;
+
+                width:56px;
+                height:56px;
+
+                background-color:black;
+                background-image:url('./sprite/images/sprite_hell.png');
+                background-size:1260px auto;
+            }
+
+            #input {
+                float:left;
+
+                margin-left:10px;
+                width:200px;
+                height:56px;
+
+                background: #FFFFFF; /* default */
+                background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+                background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+                border-radius:10px;
+
+                font-size:25px;
+                font-weight:bold;
+                text-align:center;
+			}
+				#input:hover {
+                    box-shadow:
+                        -2px 0px 10px skyblue,
+                        -2px 2px 10px skyblue,
+                        0px 2px 10px skyblue,
+                        2px 2px 10px skyblue,
+                        2px 0px 10px skyblue,
+                        2px -2px 10px skyblue,
+                        0px -2px 10px skyblue,
+                        -2px -2px 10px skyblue;
+                    cursor:pointer;
+                    cursor:hand;
+				}
+				#input:active {
+					background: #DEDEDE;
+				}
+
+            #get {
+                float:left;
+
+                margin-left:10px;
+                width:80px;
+                height:56px;
+
+                background: #FFFFFF; /* default */
+                background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+                background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+                border-radius:10px;
+
+                font-size:25px;
+                font-weight:bold;
+                text-align:center;
+			}
+				#get:hover {
+                    box-shadow:
+                        -2px 0px 10px skyblue,
+                        -2px 2px 10px skyblue,
+                        0px 2px 10px skyblue,
+                        2px 2px 10px skyblue,
+                        2px 0px 10px skyblue,
+                        2px -2px 10px skyblue,
+                        0px -2px 10px skyblue,
+                        -2px -2px 10px skyblue;
+                    cursor:pointer;
+                    cursor:hand;
+				}
+				#get:active {
+					background: #DEDEDE;
+				}
+
+            #result {
+                clear:both;
+                float:left;
+
+                overflow-y:scroll;
+
+                margin-top:10px;
+                padding:5px;
+                width:356px;
+                height:calc(100% - 132px);
+
+                background:rgba(0,0,0,0.7);
+                border-radius:10px;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+
+                color:white;
+            }
+        #result_all {
+            display:none;
+
+            clear:both;
+            float:left;
+
+            overflow-y:scroll;
+
+            margin-top:10px;
+            padding:5px;
+            width:356px;
+            height:calc(100% - 132px);
+
+            background:rgba(0,23,155,0.7);
+            border-radius:10px;
+            box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+
+            color:white;
+        }
+                #result_title {
+                    font-size:1.3em;
+                }
+                #result_rarity, #result_level {
+                    display:inline-block;
+                    width:100%;
+
+                    text-align:right;
+                }
+                #result hr, #result_all hr {
+                    border-top:1px gray solid;
+                }
+                #result_all p {
+                    text-align:center;
+                }
+                #result .option {
+                    color:skyblue;
+                    line-height:160%;
+                }
+                #result_all .option {
+                    color:#59FF00;
+                    line-height:160%;
+                }
+                    #result .option.minus, #result_all .option.minus {
+                        color:gray;
+                    }
+
+
+                #all {
+                    clear:both;
+                    float:left;
+
+                    margin-top:10px;
+                    width:356px;
+                    height:56px;
+
+                    background: #FFFFFF; /* default */
+                    background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+                    background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                    background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+                    border-radius:10px;
+
+                    font-size:25px;
+                    font-weight:bold;
+                    text-align:center;
+                }
+                    #all:hover {
+                        box-shadow:
+                            -2px 0px 10px skyblue,
+                            -2px 2px 10px skyblue,
+                            0px 2px 10px skyblue,
+                            2px 2px 10px skyblue,
+                            2px 0px 10px skyblue,
+                            2px -2px 10px skyblue,
+                            0px -2px 10px skyblue,
+                            -2px -2px 10px skyblue;
+                        cursor:pointer;
+                        cursor:hand;
+                    }
+                    #all:active {
+                        background: #DEDEDE;
+                    }
+/*===========================================================================*/
+/*===========================================================================*/
+        #frame_right {
+            float:right;
+            overflow-y:scroll;
+
+            padding:10px;
+            width:430px;
+            height:100%;
+
+            background:rgba(0,0,0,0.7);
+            box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+        }
+
+            .stat {
+                margin:0px auto 5px auto;
+                padding:3px;
+                width:390px;
+                height:64px;
+
+                background:black;
+                border:1px gray outset;
+                border-radius:5px;
+                box-sizing:border-box;
+                -moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+            }
+                .stat:hover {
+                    box-shadow:
+                        -2px 0px 10px yellow,
+                        -2px 2px 10px yellow,
+                        0px 2px 10px yellow,
+                        2px 2px 10px yellow,
+                        2px 0px 10px yellow,
+                        2px -2px 10px yellow,
+                        0px -2px 10px yellow,
+                        -2px -2px 10px yellow;
+                    cursor:pointer;
+                    cursor:hand;
+                }
+            .stat_icon {
+                float:left;
+
+                width:56px;
+                height:56px;
+
+                background-image:url('./sprite/images/sprite_hell.png');
+                background-size:1260px auto;
+            }
+            .stat_name {
+                float:left;
+                display:table;
+
+                margin-left:5px;
+                width:250px;
+                height:56px;
+
+                color:white;
+            }
+                .stat_name p {
+                    display:table-cell;
+
+                    width:100%;
+
+                    font-size:1.3em;
+                    text-align:center;
+                    vertical-align:middle;
+                }
+            .stat_clear {
+                float:right;
+
+                width:56px;
+                height:56px;
+
+                background: #FFFFFF; /* default */
+                background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+                background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+                background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+                border-radius:10px;
+
+                font-size:25px;
+                font-weight:bold;
+                text-align:center;
+			}
+				.stat_clear:hover {
+                    box-shadow:
+                        -2px 0px 10px skyblue,
+                        -2px 2px 10px skyblue,
+                        0px 2px 10px skyblue,
+                        2px 2px 10px skyblue,
+                        2px 0px 10px skyblue,
+                        2px -2px 10px skyblue,
+                        0px -2px 10px skyblue,
+                        -2px -2px 10px skyblue;
+                    cursor:pointer;
+                    cursor:hand;
+				}
+				.stat_clear:active {
+					background: #DEDEDE;
+				}
+/*===========================================================================*/
+/*===========================================================================*/
+
+
+            /*모바일 스크롤바 가시화*/
+            ::-webkit-scrollbar {
+                -webkit-appearance: none;
+            }
+
+            ::-webkit-scrollbar:vertical {
+                width: 12px;
+            }
+
+            ::-webkit-scrollbar:horizontal {
+                height: 12px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, .5);
+                border-radius: 10px;
+                border: 2px solid #ffffff;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color: #ffffff;
+            }
+        </style>
+
+	</head>
+	<body>
+        <div id="wrapper">
+            <div id="frame_left">
+                <div id="icon"></div>
+                <button id="input">장비 불러오기</button>
+                <button id="get" disabled>장착</button>
+                <div id="result"></div>
+                <div id="result_all"></div>
+                <button id="all">장착장비 합산 옵션</button>
+            </div>
+
+
+            <div id="frame_right">
+                <div id="stat_무기" class="stat">
+                    <div id="stat_icon_무기" class="stat_icon"></div>
+                    <div id="stat_name_무기" class="stat_name"></div>
+                    <button id="stat_clear_무기" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_상의" class="stat">
+                    <div id="stat_icon_상의" class="stat_icon"></div>
+                    <div id="stat_name_상의" class="stat_name"></div>
+                    <button id="stat_clear_상의" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_하의" class="stat">
+                    <div id="stat_icon_하의" class="stat_icon"></div>
+                    <div id="stat_name_하의" class="stat_name"></div>
+                    <button id="stat_clear_하의" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_머리어깨" class="stat">
+                    <div id="stat_icon_머리어깨" class="stat_icon"></div>
+                    <div id="stat_name_머리어깨" class="stat_name"></div>
+                    <button id="stat_clear_머리어깨" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_벨트" class="stat">
+                    <div id="stat_icon_벨트" class="stat_icon"></div>
+                    <div id="stat_name_벨트" class="stat_name"></div>
+                    <button id="stat_clear_벨트" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_신발" class="stat">
+                    <div id="stat_icon_신발" class="stat_icon"></div>
+                    <div id="stat_name_신발" class="stat_name"></div>
+                    <button id="stat_clear_신발" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_목걸이" class="stat">
+                    <div id="stat_icon_목걸이" class="stat_icon"></div>
+                    <div id="stat_name_목걸이" class="stat_name"></div>
+                    <button id="stat_clear_목걸이" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_팔찌" class="stat">
+                    <div id="stat_icon_팔찌" class="stat_icon"></div>
+                    <div id="stat_name_팔찌" class="stat_name"></div>
+                    <button id="stat_clear_팔찌" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_반지" class="stat">
+                    <div id="stat_icon_반지" class="stat_icon"></div>
+                    <div id="stat_name_반지" class="stat_name"></div>
+                    <button id="stat_clear_반지" class="stat_clear "disabled>제거</button>
+                </div>
+                <div id="stat_보조장비" class="stat">
+                    <div id="stat_icon_보조장비" class="stat_icon"></div>
+                    <div id="stat_name_보조장비" class="stat_name"></div>
+                    <button id="stat_clear_보조장비" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_마법석" class="stat">
+                    <div id="stat_icon_마법석" class="stat_icon"></div>
+                    <div id="stat_name_마법석" class="stat_name"></div>
+                    <button id="stat_clear_마법석" class="stat_clear" disabled>제거</button>
+                </div>
+                <div id="stat_귀걸이" class="stat">
+                    <div id="stat_icon_귀걸이" class="stat_icon"></div>
+                    <div id="stat_name_귀걸이" class="stat_name"></div>
+                    <button id="stat_clear_귀걸이" class="stat_clear" disabled>제거</button>
+                </div>
+            </div>
+        </div>
+
+
+		<!--외부 보조 라이브러리-->
+		<script src="../function/tool/sweetalert2/dist/sweetalert2.min.js"></script>
+		<link rel="stylesheet" href="../function/tool/sweetalert2/dist/sweetalert2.css">
+			<!-- for IE support -->
+			<script src="../function/tool/sweetalert2/node_modules/es6-promise-polyfill/promise.min.js"></script>
+		<script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
+		<!--외부 보조 라이브러리-->
+        <script type="text/javascript" src="./js/optionList.js"></script>
+        <script type="text/javascript" src="./js/seedrandom.js"></script>
+
+
+		<script type="text/javascript" src="./sprite/spriteList.js"></script>
+		<script type="text/javascript" src="./sprite/sprite_function.js"></script>
+        <script type="text/javascript" src="./js/hell_itemList.js"></script>
+
+		<script type="text/javascript">
+        var minus = 0.1;//10% 확률로 차감
+
+        var chance = {
+            rarity:{
+                num:[30,25,20,15,10],
+                name:["커먼","언커먼","레어","유니크","에픽"],
+                class:["common","uncommon","rare","unique","epic"],
+                title:["낡은 ","","마법의 ","고대의 ","전설의 "],
+                point:[5,10,20,30,50]
+            },
+            part:{
+                num:[30,30,20,20],
+                name:["무기","방어구","악세서리","특수장비"]
+            }
+        };
+        var selected = {
+            info:{
+                name:"",
+                    realName:"",
+                rarity:"",
+                sort1:"",
+                sort2:"",
+                sort3:"",
+                level:90,
+                icon:""
+
+            },
+            option:{}
+        };
+        var have = {
+            "무기":{},
+            "상의":{},
+            "하의":{},
+            "머리어깨":{},
+            "벨트":{},
+            "신발":{},
+            "목걸이":{},
+            "팔찌":{},
+            "반지":{},
+            "보조장비":{},
+            "마법석":{},
+            "귀걸이":{}
+        };
+        var total = {};
+
+
+        //함수 - 아이템 생성
+        function generateOption(input) {
+            Math.seedrandom(input);
+
+            rarity_num = rand(chance.rarity.num);
+            selected.info.name = chance.rarity.title[rarity_num] + input;
+                selected.info.realName = input;
+            selected.info.rarity = chance.rarity.name[rarity_num];
+            selected.info.class = chance.rarity.class[rarity_num];
+            //무작위 아이콘 추출
+            part_num = rand(chance.part.num);
+            var tempArr = [];
+            for (var i=0;i<itemList.length;i++) {
+                if (itemList[i].sort1 === chance.part.name[part_num] || itemList[i].sort2 === chance.part.name[part_num]) {
+                    tempArr.push(itemList[i])
+                }
+            }
+            rnditem = tempArr[Math.floor(Math.random() * tempArr.length)];
+            selected.info.sort1 = rnditem.sort1;
+            selected.info.sort2 = rnditem.sort2;
+            selected.info.sort3 = rnditem.sort3;
+            selected.info.icon = rnditem.icon;
+
+            temppoint = chance.rarity.point[rarity_num];
+
+            //포인트 자리 생성
+            for (var i=0;i<optionList.length;i++) {
+                selected.option[optionList[i].id] = 0;
+            }
+
+            //포인트 분배 개시
+            while (1) {
+                //투자값 결정
+                var invest = Math.floor(Math.random() * (temppoint - 1)) + 1;
+
+                //포인트 투자가능 옵션 모으기
+                var ableArr1 = [];
+                var ableArr2 = [];
+                for (var i=0;i<optionList.length;i++) {
+                    if (optionList[i].point <= invest) {
+                        ableArr1.push(optionList[i]);
+                    }
+                    if (optionList[i].point <= temppoint) {
+                        ableArr2.push(optionList[i]);
+                    }
+                }
+                //분배가능 옵션 없으면 종료
+                if (ableArr1.length <= 0) {
+                    if (ableArr2.length > 0) {
+                        continue;
+                    } else {
+                        break;
+                    }
+                }
+                var opt = ableArr1[Math.floor(Math.random() * ableArr1.length)];
+                var times = Math.floor(invest/opt.point);
+                if (Math.random() > minus) {
+                    selected.option[opt.id] += (opt.x)*times;
+                    temppoint -= (opt.point)*times;
+                } else {
+                    selected.option[opt.id] -= (opt.x)*2*times;
+                    temppoint -= (opt.point)*times;
+                }
+            }
+        }
+
+        //함수 - 아이템 출력
+        function showOption(obj) {
+            //아이템 아이콘 출력
+            $("#icon").style.backgroundPosition = spritePosition(obj.info.icon);
+
+            //아이템 옵션 출력
+            var text = "";
+                //이름
+                text += "<span id='result_title' class='" + selected.info.class + "'>" + selected.info.name + "</span><br/>";
+                //부위
+                text += "<span id='result_sort3'>" + selected.info.sort3 + "</span><br/>";
+                //희귀도
+                text += "<span id='result_rarity' class='" + selected.info.class + "'>" + selected.info.rarity + "</span><br/>";
+                //레벨
+                text += "<span id='result_level'>레벨제한 " + selected.info.level + "</span><br/>";
+
+                //구분선
+                text += "<hr/>";
+
+                //옵션 출력
+                for (key in selected.option) {
+                    if (selected.option.hasOwnProperty(key) && selected.option[key] != 0) {
+                        var tmpClass = "";
+                        if (selected.option[key] < 0) tmpClass = "minus"
+                        text += "<span class='option " + tmpClass + "'>" + indexArrKey(optionList, "id", key)["name"].replace("$x",selected.option[key].toString()) + "</span><br/>";
+                    }
+                }
+            $("#result").innerHTML = text;
+            $("#result").style.display ="block";
+            $("#result_all").style.display ="none";
+
+            //장착 활성화
+            $("#get").disabled = false;
+        }
+
+        //함수 - 합산 옵션
+        function calcTotal() {
+            //total 비우기
+            for (key in total) {
+                if (total.hasOwnProperty(key)) {
+                    total[key] = 0
+                }
+            }
+            //total 다시 계산
+            for (key in have) {
+                if (have.hasOwnProperty(key)) {
+                    for (key2 in have[key]) {
+                        if (have[key].hasOwnProperty(key2)) {
+                            total[key2] += have[key][key2];
+                        }
+                    }
+                }
+            }
+            //합산 옵션 기록
+            $("#icon").style.backgroundPosition = "0px 0px";
+
+            var text = "";
+            for (key in total) {
+                if (total.hasOwnProperty(key) && total[key] != 0) {
+                    var tmpClass = "";
+                    if (total[key] < 0) tmpClass = "minus"
+                    text += "<span class='option " + tmpClass + "'>" + indexArrKey(optionList, "id", key)["name"].replace("$x",total[key].toString()) + "</span><br/>";
+                }
+            }
+            $("#result_all").innerHTML = "<p><장착장비 합산 옵션></p>";
+            $("#result_all").innerHTML += text;
+
+            //합산 옵션 출력
+            $("#result").style.display = "none";
+            $("#result_all").style.display = "block";
+        }
+
+        //실행
+        window.onload = function() {
+            //레어리티별 포인트 부풀리기
+            //1 : (10-1)배, 2 : (5-1)배, 5 : (2-1)배, 10 : (1-1)배
+            var tempArr = [];
+            for (var i=0;i<optionList.length;i++) {
+                var dupli = (10/optionList.point) - 1;
+                while (dupli > 0) {
+                    tempArr.push(optionList[i]);
+                    dupli -= 1;
+                }
+            }
+            for (var i=0;i<tempArr.length;i++) {
+                optionList.push[tempArr];
+            }
+
+            //포인트 자리 생성
+            for (var i=0;i<optionList.length;i++) {
+                selected.option[optionList[i].id] = 0;
+                for (var key in have) {
+                    if (have.hasOwnProperty(key)) {
+                        have[key][optionList[i].id] = 0;
+                    }
+                }
+                total[optionList[i].id] = 0;
+            }
+
+            //옵션 생성하기
+            $("#input").onclick = function() {
+                swal({
+                    title: '장비 이름을 입력해주세요',
+                    input: 'text',
+                    showCancelButton: true,
+                    inputValidator: function(value) {
+                        return new Promise(function(resolve, reject) {
+                            if (value) {
+                                resolve();
+                            } else {
+                                reject('아무것도 입력하지 않았습니다.');
+                            }
+                        });
+                    }
+                }).then(function(result) {
+                    if (result != null && result != undefined && result != false) {
+                        //옵션 생성
+                        generateOption(result);
+
+                        //옵션 출력
+                        showOption(selected);
+                    }
+                })
+            }
+
+            //장비 장착
+            $("#get").onclick = function() {
+                //장착 버튼 비활성화
+                $("#get").disabled = true;
+                //기존 정보 제거
+                $("#icon").style.backgroundPosition = "0px 0px";
+                $("#result").innerHTML = "";
+
+                //부위 판단
+                var part = ""
+                for (key in have) {
+                    if (selected.info.sort1 === key) {
+                        part = key;
+                        break;
+                    }
+                    if (selected.info.sort2 === key) {
+                        part = key;
+                        break;
+                    }
+                    if (selected.info.sort3 === key) {
+                        part = key;
+                        break;
+                    }
+                }
+
+                //장비 장착
+                $("#stat_icon_" + part).style.backgroundPosition = spritePosition(selected.info.icon);
+                $("#stat_name_" + part).innerHTML = "<p id='" + selected.info.realName + "' class='" + selected.info.class + "'>" + selected.info.name + "</p>";
+                //제거버튼 활성화
+                $("#stat_clear_" + part).disabled = false;
+
+                //장착 장비 정보 입수
+                have[part] = deepCopy(selected.option);
+
+                //합산 정보 계산
+                calcTotal();
+            }
+
+
+            for (key in have) {
+                (function(key) {
+                    //장비 해체
+                    $("#stat_clear_" + key).onclick = function() {
+                        //장비 제거
+                        $("#stat_icon_" + key).style.backgroundPosition = "0px 0px";
+                        $("#stat_name_" + key).innerHTML = "";
+                        //제거버튼 비활성화
+                        $("#stat_clear_" + key).disabled = true;
+
+                        //장착정보 제거
+                        have[key] = {};
+
+                        //합선 정보 계산
+                        calcTotal();
+                    }
+
+                    //장착된 장비 옵션 보기
+                    $("#stat_" + key).onclick = function() {
+                        try {
+                            generateOption($$("#stat_name_" + key + " p")[0].id);
+                            showOption(selected);
+                        } catch(e) {}
+                    }
+                })(key)
+            }
+
+
+            //장착장비 합산 옵션 보기
+            $("#all").onclick = function() {
+                calcTotal();
+            }
+
+
+        }
+
+		</script>
+
+	</body>
+</html>
