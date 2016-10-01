@@ -54,7 +54,7 @@
                 overflow:hidden;
 
 			    margin:0px auto;
-                padding:20px;
+                padding:0px 20px 20px 20px;
                 max-width:850px;
 				height:100%;
 
@@ -67,11 +67,45 @@
 /*===========================================================================*/
 /*===========================================================================*/
 
-        #frame_left {
+        #frame_head {
             float:left;
 
+            width:100%;
+            height:60px;
+
+			border-bottom:1px white solid;
+        }
+			#title {
+				color:white;
+				font-size:50px;
+				font-weight:bold;
+				text-align:center;
+
+				text-shadow:
+					0px -1px black,
+					1px -1px black,
+					1px 0px black,
+					1px 1px black,
+					0px 1px black,
+					-1px 1px black,
+					-1px 0px black,
+					-1px -1px black;
+			}
+				#title .small {
+					font-size:25px;
+				}
+
+
+/*===========================================================================*/
+/*===========================================================================*/
+
+        #frame_left {
+        	clear:left;
+            float:left;
+
+			padding-top:10px;
             width:370px;
-            height:100%;
+            height:calc(100% - 70px);
 
             border-right:1px white solid;
         }
@@ -272,11 +306,13 @@
             float:right;
             overflow-y:scroll;
 
+			margin-top:10px;
             padding:10px;
             width:430px;
-            height:100%;
+            height:calc(100% - 70px);
 
             background:rgba(0,0,0,0.7);
+			border-radius:5px;
             box-sizing:border-box;
             -moz-box-sizing:border-box;
             -webkit-box-sizing:border-box;
@@ -402,6 +438,9 @@
 	</head>
 	<body>
         <div id="wrapper">
+            <div id="frame_head">
+				<p id="title">랜덤 장비 생성기 <span class="small">Ver. 1.1</span></p>
+			</div>
             <div id="frame_left">
                 <div id="icon"></div>
                 <button id="input">장비 불러오기</button>
@@ -599,8 +638,8 @@
                     selected.option[opt.id] += (opt.x)*times;
                     temppoint -= (opt.point)*times;
                 } else {
-                    selected.option[opt.id] -= (opt.x)*2*times;
-                    temppoint += (opt.point)*2*times;
+                    selected.option[opt.id] -= (opt.x)*times;
+                    temppoint += (opt.point)*times;
                 }
             }
         }
@@ -628,8 +667,14 @@
                 for (key in selected.option) {
                     if (selected.option.hasOwnProperty(key) && selected.option[key] != 0) {
                         var tmpClass = "";
-                        if (selected.option[key] < 0) tmpClass = "minus"
-                        text += "<span class='option " + tmpClass + "'>" + indexArrKey(optionList, "id", key)["name"].replace("$x",selected.option[key].toString()) + "</span><br/>";
+						var tmpOption = indexArrKey(optionList, "id", key).name.replaceAll("$x",Math.abs(selected.option[key].toString()));
+                        if (selected.option[key] >= 0) {
+							tmpOption = tmpOption.replaceAll("$pn",indexArrKey(optionList, "id", key).positive);
+						} else {
+							tmpClass = "minus";
+							tmpOption = tmpOption.replaceAll("$pn",indexArrKey(optionList, "id", key).negative);
+						}
+                        text += "<span class='option " + tmpClass + "'>" + tmpOption + "</span><br/>";
                     }
                 }
             $("#result").innerHTML = text;
