@@ -1,0 +1,551 @@
+* {
+    margin:0px;
+    padding:0px;
+    border:0px;
+
+	font-family:"Nanum Gothic", sans-serif;
+	text-decoration:none;
+}
+
+/*스타일*/
+    /*폰트 - 나눔고딕*/
+    @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.color_orange {
+	color:orange;
+}
+.color_green {
+	color:#59FF00;
+}
+
+button:hover, select:hover {
+    box-shadow:
+        -2px 0px 2px silver,
+        -2px 2px 2px silver,
+        0px 2px 2px silver,
+        2px 2px 2px silver,
+        2px 0px 2px silver,
+        2px -2px 2px silver,
+        0px -2px 2px silver,
+        -2px -2px 2px silver;
+    cursor:pointer;
+}
+button:active, select:active {
+    box-shadow:
+        -2px 0px 2px white,
+        -2px 2px 2px white,
+        0px 2px 2px white,
+        2px 2px 2px white,
+        2px 0px 2px white,
+        2px -2px 2px white,
+        0px -2px 2px white,
+        -2px -2px 2px white;
+}
+
+
+
+/*뼈대*/
+html, body {
+    overflow:hidden;
+	height:100%;
+
+	background-color:#606060;
+}
+
+#wrapper {
+    position:relative;
+    overflow:hidden;
+
+    margin:0px auto;
+    width:100vmin;
+    height:100%;
+
+    background:brown;
+}
+
+#frame_top {
+    position:relative;
+
+    width:100%;
+    height:80vmin;
+
+    background-color:black;
+
+        background-position:50% 50%;
+        background-size:cover;
+}
+/*main*/
+    .main_door {
+        position:absolute;
+            z-index:10;
+
+        width:50%;
+        height:100%;
+
+        background-color:black;
+        background-image:url('../images/fortune/door.jpg');
+            background-size:cover;
+            background-position:100% 50%;
+    }
+        #main_door_l {
+            left:0;
+            top:0;
+        }
+        #main_door_r {
+            left:50%;
+            top:0;
+
+            -webkit-transform:rotateY(180deg);
+                    transform:rotateY(180deg);
+        }
+
+    #main_title {
+        position:absolute;
+            z-index:15;
+        right:1.5vmin;
+        top:1vmin;
+
+        width:100%;
+
+        color:white;
+        text-shadow:
+            0px -1px black,
+            1px -1px black,
+            1px 0px black,
+            1px 1px black,
+            0px 1px black,
+            -1px 1px black,
+            -1px 0px black,
+            -1px -1px black;
+        font-size:8vmin;
+        font-weight:bold;
+        text-align:right;
+    }
+        #main_title span {
+            color:#a0a0a0;
+            font-size:3vmin;
+        }
+
+    #main_content {
+        position:absolute;
+            z-index:15;
+        left:5vmin;
+        top:12vmin;
+
+        padding:0vmin 2vmin;
+        width:90vmin;
+        height:65vmin;
+
+        background:rgba(255,255,255,0.6);
+        border-radius:5vmin;
+        box-sizing: border-box;
+
+        font-size:6vmin;
+        font-weight:bold;
+    }
+        .list_dot {
+            margin-right:1vmin;
+            width:4vmin;
+            height:4vmin;
+
+            background-color:red;
+            border:0.5vmin black solid;
+            border-radius:50%;
+
+            display:inline-block;
+        }
+            .list_dot.checked {
+                background-color:#59FF00;
+            }
+        #main_content p {
+            clear:both;
+            float:left;
+
+            margin-top:2.5vmin;
+
+            display:block;
+        }
+        #main_content select {
+            float:right;
+
+            margin-bottom:1vmin;
+            width:65vmin;
+            height:7vmin;
+
+            background-color:#fcfcfc;
+            border:1px gray solid;
+            border-radius:2vmin;
+
+            font-size:4vmin;
+
+            display:block;
+        }
+            .clearFloat {
+                clear:both;
+            }
+        #content_random {
+            clear:both;
+            float:left;
+
+            margin:0.5vmin 2vmin;
+            width:15vmin;
+            height:14vmin;
+
+            background:-webkit-linear-gradient(#ffffff, #A0A0A0);
+            background:-o-linear-gradient(#ffffff, #A0A0A0);
+            background:linear-gradient(#ffffff, #A0A0A0);
+
+            border:0.2vmin gray solid;
+            border-radius:2vmin;
+
+            font-size:6vmin;
+            font-weight:bold;
+
+            display:block;
+        }
+
+/*show*/
+    #show_contributor {
+        position:absolute;
+            z-index:2;
+
+        padding:1vmin;
+        width:100%;
+
+        box-sizing:border-box;
+
+        color:white;
+        text-shadow:
+            0px -1px black,
+            1px -1px black,
+            1px 0px black,
+            1px 1px black,
+            0px 1px black,
+            -1px 1px black,
+            -1px 0px black,
+            -1px -1px black;
+        font-size:3vmin;
+        text-align:right;
+    }
+
+    #show_loading {
+        position:absolute;
+            z-index:3;
+        left:20vmin;
+        top:10vmin;
+        overflow:hidden;
+
+        width:60vmin;
+        height:3vmin;
+
+        background:rgba(0,0,0,0.6);
+        border:0.2vmin gray solid;
+        border-radius:1.5vmin;
+
+        visibility:hidden;
+    }
+        #show_loading_bar {
+            position:absolute;
+            left:0;
+            top:0;
+
+            width:0%;
+            height:100%;
+
+            background: -webkit-linear-gradient(top, #18C5F3 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #18C5F3 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            border-radius:1.5vmin;
+        }
+    #show_result {
+        position:absolute;
+            z-index:3;
+        left:50%;
+        top:6vmin;
+        overflow:hidden;
+
+        width:0%;
+        height:10vmin;
+
+        background:url('../images/fortune/result.png');
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:50% 50%;
+
+        color:yellow;
+        text-shadow:
+            0px -1px black,
+            1px -1px black,
+            1px 0px black,
+            1px 1px black,
+            0px 1px black,
+            -1px 1px black,
+            -1px 0px black,
+            -1px -1px black;
+        font-weight:bold;
+        font-size:4vmin;
+            line-height:10vmin;
+        text-align:center;
+    }
+
+    #show_character_1 {
+        position:absolute;
+            z-index:2;
+
+        width:100%;
+        height:100%;
+
+        background-repeat:no-repeat;
+        background-position:50% bottom;
+        background-size:auto 80%;
+    }
+    #show_dialog_name {
+        position:absolute;
+            z-index:4;
+        left:0;
+        bottom:21vmin;
+
+        padding:1vmin;
+        width:50vmin;
+        height:7vmin;
+
+        background-color:rgba(41,46,111,0.7);
+        border:0.5vmin gray solid;
+            border-bottom:0;
+        border-top-right-radius:3vmin;
+        box-sizing:border-box;
+
+        color:white;
+        font-size:3vmin;
+        font-weight:bold;
+
+        visibility:hidden;
+    }
+    #show_dialog_content {
+        position:absolute;
+            z-index:3;
+        left:0;
+        bottom:0;
+
+        padding:0.5vmin 2vmin;
+        width:100vmin;
+        height:21vmin;
+
+        background-color:rgba(0,0,0,0.7);
+        border:0.5vmin gray solid;
+        box-sizing:border-box;
+
+        color:white;
+        font-size:4vmin;
+
+        visibility:hidden;
+    }
+        #show_dialog_content.next {
+            background-image:url('../images/fortune/content_next.gif');
+                background-repeat:no-repeat;
+                background-position:calc(100% - 1vmin) 100%;
+        }
+
+
+#frame_middle {
+    position:relative;
+    overflow:hidden;
+
+    margin:0px auto;
+    padding:0.3vmin 0;
+    width:100%;
+    height:2vmin;
+
+    background:#dcdcdc;
+    border-top:0.3vmin #fcfcfc solid;
+    border-bottom:0.3vmin #acacac solid;
+    box-sizing:border-box;
+}
+    #middle_loading {
+        position:absolute;
+        left:0;
+        top:0;
+
+        width:0%;
+        height:100%;
+
+        background:#2989d8;
+
+    }
+
+#frame_bottom {
+    position:relative;
+    overflow:hidden;
+
+    margin:0px auto;
+    width:100%;
+    height:calc(100% - 81vmin);
+
+    background-color:black;
+    background-image:url('../images/fortune/background/bottom.jpg');
+        background-repeat:no-repeat;
+        background-position:50% 50%;
+        background-size:cover;
+}
+    #bottom_back {
+        position:absolute;
+            z-index:3;
+        left:0px;
+        top:0px;
+        display:block;
+
+        width:25vmin;
+        height:10vmin;
+
+		background: -webkit-linear-gradient(top, #ffffff, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+        border-right:1px gray outset;
+        border-bottom:1px gray outset;
+        border-bottom-right-radius:5vmin;
+
+        font-size:6vmin;
+        font-weight:bold;
+
+        visibility:hidden;
+    }
+        #bottom_back:active {
+            background:#FFAA00;
+        }
+    #bottom_option {
+        position:absolute;
+            z-index:3;
+        right:0px;
+        top:0px;
+        display:block;
+
+        width:25vmin;
+        height:10vmin;
+
+		background: -webkit-linear-gradient(top, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
+        background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
+        border-left:1px gray outset;
+        border-bottom:1px gray outset;
+        border-bottom-left-radius:5vmin;
+
+        color:white;
+        text-shadow:
+			0px -1px #202020,
+			1px -1px #202020,
+			1px 0px #202020,
+			1px 1px #202020,
+			0px 1px #202020,
+			-1px 1px #202020,
+			-1px 0px #202020,
+			-1px -1px #202020;
+        font-size:6vmin;
+        font-weight:bold;
+    }
+        #bottom_option:active {
+            background:#008a00;
+        }
+    #bottom_progress {
+        position:absolute;
+            z-index:2;
+        left:10vmin;
+        top:calc(100% * 0.2);
+        display:block;
+
+        width:80vmin;
+        height:calc(100% * 0.6);
+
+        background: -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+        background: linear-gradient(top, #ffffff, #A0A0A0);
+        border:1px gray outset;
+        border-radius:5vmin;
+        opacity:0.9;
+    }
+        #bottom_progress.loading {
+            background: url('../images/fortune/progress_loading.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_loading.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.start {
+            background: url('../images/fortune/progress_start.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_start.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.ok {
+            background: url('../images/fortune/progress_ok.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_ok.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.skip {
+            background: url('../images/fortune/progress_skip.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_skip.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.next {
+            background: url('../images/fortune/progress_next.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_next.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.pause {
+            background: url('../images/fortune/progress_pause.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_pause.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.wait {
+            background: url('../images/fortune/progress_wait.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_wait.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #bottom_progress.end {
+            background: url('../images/fortune/progress_end.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_end.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+
+
+
+/*======================================================================================================*/
+/* ※ 4. 기타 */
+/*======================================================================================================*/
+#imagePreloader {
+	width:1px;
+	height:1px;
+
+	display:none;
+}
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
