@@ -548,11 +548,11 @@ function setMain() {
         $("#list_dot_wish").classList.add("checked");
         //소망 안내문
         switch (game.wish) {
-            //마법의 소라고동
+            //마법의 소라고둥
             case "sora":
                 swal({
                     type:"info",
-                    title:"마법의 소라고동",
+                    title:"마법의 소라고둥",
                     text:"자신이 하고싶은 것을 미리 생각해두세요. 선택한 캐릭터가 그것을 해도 되는지 답변해줄 겁니다."
                 });
 
