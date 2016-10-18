@@ -47,16 +47,16 @@
 					<select id="select_character">
 						<option value="" selected disabled>캐릭터를 선택하세요</option>
 					</select>
-					<p><span id="list_dot_wish" class="list_dot"></span>의뢰 선택</p>
+					<p><span id="list_dot_wish" class="list_dot"></span>소망 선택</p>
 					<select id="select_wish" class="clearFloat">
-						<option value="" selected disabled>의뢰를 선택하세요</option>
+						<option value="" selected disabled>소망을 선택하세요</option>
 						<option value="channel">일반 채널 추천</option>
 						<option value="anton">안톤 레이드 채널 추천</option>
 						<option value="luke">루크 레이드 채널 추천</option>
 						<option value="powerstation">지옥파티(파워스테이션) 추천</option>
 						<option value="castleofdeath">지옥파티(죽은자의 성) 추천</option>
 						<option value="metrocenter">지옥파티(메트로센터) 추천</option>
-						<option value="goodbad">길흉점</option>
+						<option value="goodbad">오늘의 길흉점</option>
 						<option value="sora">마법의 소라고둥</option>
 					</select>
 				</div>
@@ -69,6 +69,7 @@
                 </div>
                 <div id="show_result">
                 </div>
+                <img id="show_flash" src="./images/fortune/flash.gif" />
 
                 <div id="show_character_1"></div>
                 <div id="show_dialog_name"></div>
@@ -82,9 +83,9 @@
             </div>
             <div id="frame_bottom">
 				<div id="bottom_area">
-					<button id="bottom_option">설정</button>
+					<button id="bottom_option">옵션</button>
 	                <button id="bottom_back">나가기</button>
-	                <button id="bottom_progress" class="start"></button>
+	                <button id="bottom_progress" class="loading" disabled></button>
 				</div>
             </div>
         </div>

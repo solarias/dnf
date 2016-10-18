@@ -31,10 +31,15 @@ var autoResult;//결과 출력 관리
 //사운드
 var sfx = {
     typing:new Audio("./sound/text_typing.mp3"),
-    reading:new Audio("./sound/text_reading.mp3")
+    reading:new Audio("./sound/text_reading.mp3"),
+    voice_erze:new Audio("./sound/voice_erze.mp3"),
+    gent_city:new Audio("./sound/gent_city_low.mp3"),
+    suprise:new Audio("./sound/suprise.mp3")
 };
     sfx.typing.volume = 0.5;
     sfx.reading.volume = 0.5;
+    sfx.voice_erze.volume = 0.3;
+    sfx.suprise.volume = 0.2;
 
 //기타 변수
 var textSpeed = {//텍스트 출력속도
@@ -239,6 +244,9 @@ function setDialog(state) {
             //캐릭터 명 표시
             $("#show_dialog_name").innerHTML = game.character.name;
             $("#show_dialog_name").style.visibility = "visible";
+            //음악 출력 (분위기 테스트용)
+            sfx.gent_city.play();
+            sfx.voice_erze.play();
 
             break;
         case "casting":
@@ -424,6 +432,11 @@ function setResult(step) {
     } else {
         //결과 출력
         $("#show_result").innerHTML = game.result;
+        //플래시 출력
+        $("#show_flash").src = "./images/fortune/flash.gif";
+        $("#show_flash").style.display = "block";
+        //음악 출력 (분위기 테스트용)
+        sfx.suprise.play();
 
         //1초 뒤 다음 단계
         autoResult = setTimeout(function() {
@@ -460,9 +473,11 @@ function finishShow(step) {
         clearTimeout(autoText);
         clearTimeout(autoCast);
         clearTimeout(autoResult);
-        //필요없는 창 닫기
-            //뒤로 창
+        //필요없는 창 닫기, 필요한 창 표시
+            //뒤로 버튼 : OFF
             $("#bottom_back").style.visibility = "hidden";
+            //설정 버튼 : ON
+            $("#bottom_option").style.visibility = "visible";
             //결과창
             $("#show_result").style.width = "0%";
             $("#show_result").style.left = "50%";
@@ -476,6 +491,9 @@ function finishShow(step) {
             $("#show_dialog_content").style.visibility = "hidden";
                 $("#show_dialog_content").innerHTML = "";
                 $("#show_dialog_content").className = "";
+        //음악 종료(테스트용)
+        sfx.gent_city.pause();
+        sfx.gent_city.currentTime = 0;
         //메인 창 표시
         $("#main_title").style.visibility = "visible";
         $("#main_content").style.visibility = "visible";
@@ -531,6 +549,26 @@ function setMain() {
     $("#select_wish").onchange = function() {
         game.wish = $("#select_wish").value;
         $("#list_dot_wish").classList.add("checked");
+        //소망 안내문
+        switch (game.wish) {
+            //마법의 소라고동
+            case "sora":
+                swal({
+                    type:"info",
+                    title:"마법의 소라고동",
+                    text:"자신이 하고싶은 것을 미리 생각해두세요. 선택한 캐릭터가 그것을 해도 되는지 답변해줄 겁니다."
+                });
+
+                break;
+        }
+    };
+
+    //설정 버튼 : 미구현
+    $("#bottom_option").onclick = function() {
+        swal({
+            type:"warning",
+            title:"미구현 기능!"
+        });
     };
 
     //시작 버튼
@@ -541,7 +579,7 @@ function setMain() {
         } else if (game.character === null) {
             swal({type:"warning",title:"캐릭터를 선택해주세요."});
         } else if (game.wish === null) {
-            swal({type:"warning",title:"의뢰를 선택해주세요."});
+            swal({type:"warning",title:"소망을 선택해주세요."});
         } else {
             //결과물 준비
                 //랜덤 시드 설정
@@ -601,7 +639,9 @@ function setMain() {
                 //1. 버튼 폐쇄
                 $("#bottom_progress").className = "loading";
                 $("#bottom_progress").disabled = true;
-                //2. 로딩 이미지 수집
+                //2. 설정 버튼 폐쇄
+                $("#bottom_option").style.visibility = "hidden";
+                //3. 로딩 이미지 수집
                 imageList = [];
                 if (imageStorage.indexOf(game.character.img) < 0)
                     imageList.push("./images/fortune/character/" + game.character.img);
@@ -621,6 +661,32 @@ function setMain() {
 //※ 실행 관리
 //================================================================================================
 window.onload = function() {
-    //메인 창 관리
-    setMain();
+    //버튼 해제
+    $("#bottom_progress").className = "start";
+    $("#bottom_progress").disabled = false;
+    $("#bottom_progress").onclick = function() {
+        //이미지 선 로딩
+        imageList = [];
+        //메인창
+        imageList.push("./images/fortune/door.jpg");
+        imageList.push("./images/fortune/content_next.gif");
+        imageList.push("./images/fortune/result.png");
+        imageList.push("./images/fortune/flash.gif");
+
+        //하단 창
+        imageList.push("./images/fortune/door.jpg");
+
+        imageList.push("./images/fortune/progress_loading.png");
+        imageList.push("./images/fortune/progress_start.png");
+        imageList.push("./images/fortune/progress_ok.png");
+        imageList.push("./images/fortune/progress_skip.png");
+        imageList.push("./images/fortune/progress_next.png");
+        imageList.push("./images/fortune/progress_pause.png");
+        imageList.push("./images/fortune/progress_wait.png");
+        imageList.push("./images/fortune/progress_end.png");
+        loadImages(imageList,function() {
+            //문 닫기(후 메인 설치)
+            finishShow(0);
+        });
+    };
 };

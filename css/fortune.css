@@ -91,11 +91,11 @@ html, body {
             background-position:100% 50%;
     }
         #main_door_l {
-            left:0;
+            left:-50%;
             top:0;
         }
         #main_door_r {
-            left:50%;
+            left:100%;
             top:0;
 
             -webkit-transform:rotateY(180deg);
@@ -145,6 +145,8 @@ html, body {
 
         font-size:6vmin;
         font-weight:bold;
+
+        visibility:hidden;
     }
         .list_dot {
             margin-right:1vmin;
@@ -229,6 +231,8 @@ html, body {
             -1px -1px black;
         font-size:3vmin;
         text-align:right;
+
+        visibility:hidden;
     }
 
     #show_loading {
@@ -289,6 +293,17 @@ html, body {
             line-height:10vmin;
         text-align:center;
     }
+    #show_flash {
+        position:absolute;
+            z-index:4;
+        left:20%;
+        top:-10vmin;
+
+        width:70%;
+        height:auto;
+
+        display:none;
+    }
 
     #show_character_1 {
         position:absolute;
@@ -345,8 +360,8 @@ html, body {
         #show_dialog_content.next {
             background-image:url('../images/fortune/content_next.gif');
                 background-repeat:no-repeat;
-                background-position:right 1vmin bottom;
-                background-size:3.5vmin auto;
+                background-position:-1vmin 0;
+                background-size:100vmin 21vmin;
         }
 
 
@@ -454,6 +469,8 @@ html, body {
 			-1px -1px #202020;
         font-size:6vmin;
         font-weight:bold;
+
+        visibility:hidden;
     }
         #bottom_option:active {
             background:#008a00;
