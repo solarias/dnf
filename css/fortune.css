@@ -400,8 +400,6 @@ html, body {
     background-image:url('../images/fortune/background/bottom.jpg');
         background-repeat:no-repeat;
         background-position:50% 0%;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
         background-size:cover;
 }
     #bottom_back {
