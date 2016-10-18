@@ -30,11 +30,11 @@ var autoResult;//결과 출력 관리
 
 //사운드
 var sfx = {
-    typing:new Audio("./sound/text_typing.mp3"),
-    reading:new Audio("./sound/text_reading.mp3"),
-    voice_erze:new Audio("./sound/voice_erze.mp3"),
-    gent_city:new Audio("./sound/gent_city_low.mp3"),
-    suprise:new Audio("./sound/suprise.mp3")
+    typing:new Howl({src:["./sound/text_typing.mp3"],volume:0.5}),
+    reading:new Howl({src:["./sound/text_reading.mp3"],volume:0.5}),
+    voice_erze:new Howl({src:["./sound/voice_erze.mp3"],volume:0.3}),
+    gent_city:new Howl({src:["./sound/gent_city_low.mp3"],loop:true}),
+    suprise:new Howl({src:["./sound/suprise.mp3"],volume:0.2})
 };
     sfx.typing.volume = 0.5;
     sfx.reading.volume = 0.5;
@@ -310,14 +310,12 @@ function showDialog(state, text, num) {
         if (text.substr(0, num).slice(-1) !== " " && text.substr(0, num).slice(-1) !== ">") {
             switch (state) {
                 case "address":
-                    sfx.typing.pause();
-                    sfx.typing.currentTime = 0;
+                    sfx.typing.stop();
                     sfx.typing.play();
 
                     break;
                 default:
-                    sfx.reading.pause();
-                    sfx.reading.currentTime = 0;
+                    sfx.reading.stop();
                     sfx.reading.play();
 
                     break;
@@ -492,8 +490,7 @@ function finishShow(step) {
                 $("#show_dialog_content").innerHTML = "";
                 $("#show_dialog_content").className = "";
         //음악 종료(테스트용)
-        sfx.gent_city.pause();
-        sfx.gent_city.currentTime = 0;
+        sfx.gent_city.stop();
         //메인 창 표시
         $("#main_title").style.visibility = "visible";
         $("#main_content").style.visibility = "visible";
