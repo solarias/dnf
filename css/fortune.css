@@ -345,7 +345,7 @@ html, body {
         #show_dialog_content.next {
             background-image:url('../images/fortune/content_next.gif');
                 background-repeat:no-repeat;
-                background-position:calc(100% - 1vmin) 100%;
+                background-position:right 1vmin bottom;
                 background-size:3.5vmin auto;
         }
 
