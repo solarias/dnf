@@ -15,6 +15,7 @@ var game = {
     area:null,//이름 기억
     character:null,//관련 데이터(행렬) 기억
     wish:null,//
+    wish_name:"",
     //출력 결과물
     date:"",
     result:"",
@@ -176,10 +177,13 @@ function setShow(step) {
             //캐릭터, 배경, 도와주신분 조성
             $("#show_character_1").style.backgroundImage = "url('./images/fortune/character/" + game.character.img + "')";
             $("#frame_top").style.backgroundImage = "url('./images/fortune/background/" + game.character.back + "')";
+            //소망 표시
+            $("#show_wish_name").innerHTML = game.wish_name;
+            $("#show_wish").style.visibility = "visible";
+            //기여자 표시
             if (game.character.contributor !== "") {
                 $("#show_contributor_name").innerHTML = game.character.contributor;
-            } else {
-                $("#show_contributor_name").innerHTML = "없음";
+                $("#show_contributor").style.visibility = "visible";
             }
 
             //문 열기 개시
@@ -476,6 +480,10 @@ function finishShow(step) {
             $("#bottom_back").style.visibility = "hidden";
             //설정 버튼 : ON
             $("#bottom_option").style.visibility = "visible";
+            //소망
+            $("#show_wish").style.visibility = "hidden";
+            //기여자
+            $("#show_contributor").style.visibility = "hidden";
             //결과창
             $("#show_result").style.width = "0%";
             $("#show_result").style.left = "50%";
@@ -545,6 +553,7 @@ function setMain() {
         };
     $("#select_wish").onchange = function() {
         game.wish = $("#select_wish").value;
+        game.wish_name = $("#select_wish").options[$("#select_wish").selectedIndex].innerHTML;
         $("#list_dot_wish").classList.add("checked");
         //소망 안내문
         switch (game.wish) {

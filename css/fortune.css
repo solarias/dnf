@@ -210,6 +210,35 @@ html, body {
         }
 
 /*show*/
+    #show_wish {
+        position:absolute;
+            z-index:2;
+
+        padding:1vmin;
+        width:100%;
+
+        box-sizing:border-box;
+
+        color:white;
+        text-shadow:
+            0px -1px black,
+            1px -1px black,
+            1px 0px black,
+            1px 1px black,
+            0px 1px black,
+            -1px 1px black,
+            -1px 0px black,
+            -1px -1px black;
+        font-size:3vmin;
+        font-weight:bold;
+        text-align:left;
+
+        visibility:hidden;
+    }
+        #show_wish_name {
+            color:yellow;
+            font-weight:bold;
+        }
     #show_contributor {
         position:absolute;
             z-index:2;
