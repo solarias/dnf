@@ -182,9 +182,9 @@ function setShow(step) {
             break;
         default:
             //좌측문 이동
-            $("#main_door_r").style.left = (- step).toString() + "%";
+            $("#main_door_l").style.left = (- step).toString() + "%";
             //우측문 이동
-            $("#main_door_l").style.left = (50 + step).toString() + "%";
+            $("#main_door_r").style.left = (50 + step).toString() + "%";
             //이동 안 끝났으면 반복
             if (step < 50) {
                 setTimeout(function() {
@@ -397,7 +397,7 @@ function setCasting(step) {
     //캐스팅 더 필요
     if (step < 100) {
         autoCast = setTimeout(function() {
-            setCasting(step + 0.6);
+            setCasting(step + 0.7);
         },1000/60);
     //캐스팅 완료
     } else {
@@ -446,9 +446,9 @@ function finishShow(step) {
         return;
     }
     //좌측문 이동
-    $("#main_door_r").style.left = (-50 + step).toString() + "%";
+    $("#main_door_l").style.left = (-50 + step).toString() + "%";
     //우측문 이동
-    $("#main_door_l").style.left = (100 - step).toString() + "%";
+    $("#main_door_r").style.left = (100 - step).toString() + "%";
     //이동 안 끝났으면 반복
     if (step < 50) {
         setTimeout(function() {
@@ -494,8 +494,9 @@ function setMain() {
     $("#bottom_progress").className = "start";
     $("#bottom_progress").disabled = false;
 
-    //초기 : 지역 완성
-    setSelect();
+    //초기 : 지역 완성 (지역이나 캐릭터가 없다면)
+    if (!game.area || !game.character)
+        setSelect();
 
     //각 항목 선택 -> 항목 입력
     $("#select_server").onchange = function() {

@@ -64,27 +64,30 @@ html, body {
 }
 
 #frame_top {
-    position:relative;
+    position:absolute;
+        z-index:1;
+    left:0;
+    top:0;
 
     width:100%;
     height:80vmin;
 
     background-color:black;
-
         background-position:50% 50%;
         background-size:cover;
+    box-sizing:border-box;
 }
 /*main*/
     .main_door {
         position:absolute;
             z-index:10;
 
-        width:50%;
-        height:100%;
+        width:50vmin;
+        height:80vmin;
 
         background-color:black;
         background-image:url('../images/fortune/door.jpg');
-            background-size:cover;
+            background-size:auto 80vmin;
             background-position:100% 50%;
     }
         #main_door_l {
@@ -161,14 +164,14 @@ html, body {
             clear:both;
             float:left;
 
-            margin-top:2.5vmin;
+            margin-top:2vmin;
 
             display:block;
         }
         #main_content select {
             float:right;
 
-            margin-bottom:1vmin;
+            margin-bottom:1.5vmin;
             width:65vmin;
             height:7vmin;
 
@@ -231,11 +234,11 @@ html, body {
     #show_loading {
         position:absolute;
             z-index:3;
-        left:20vmin;
+        left:25vmin;
         top:10vmin;
         overflow:hidden;
 
-        width:60vmin;
+        width:50vmin;
         height:3vmin;
 
         background:rgba(0,0,0,0.6);
@@ -343,11 +346,15 @@ html, body {
             background-image:url('../images/fortune/content_next.gif');
                 background-repeat:no-repeat;
                 background-position:calc(100% - 1vmin) 100%;
+                background-size:3.5vmin auto;
         }
 
 
 #frame_middle {
-    position:relative;
+    position:absolute;
+        z-index:1;
+    left:0;
+    top:80vmin;
     overflow:hidden;
 
     margin:0px auto;
@@ -377,19 +384,30 @@ html, body {
     overflow:hidden;
 
     margin:0px auto;
+    padding-top:82vmin;
     width:100%;
-    height:calc(100% - 81vmin);
+    height:100%;
+
+    box-sizing:border-box;
+}
+#bottom_area {
+    position:relative;
+
+    width:100%;
+    height:100%;
 
     background-color:black;
     background-image:url('../images/fortune/background/bottom.jpg');
         background-repeat:no-repeat;
-        background-position:50% 50%;
+        background-position:50% 0%;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
         background-size:cover;
 }
     #bottom_back {
         position:absolute;
             z-index:3;
-        left:0px;
+        right:0px;
         top:0px;
         display:block;
 
@@ -398,9 +416,9 @@ html, body {
 
 		background: -webkit-linear-gradient(top, #ffffff, #FF6A00);
 		background: linear-gradient(to bottom, #ffffff, #FF6A00);
-        border-right:1px gray outset;
+        border-left:1px gray outset;
         border-bottom:1px gray outset;
-        border-bottom-right-radius:5vmin;
+        border-bottom-left-radius:5vmin;
 
         font-size:6vmin;
         font-weight:bold;
@@ -413,7 +431,7 @@ html, body {
     #bottom_option {
         position:absolute;
             z-index:3;
-        right:0px;
+        left:0px;
         top:0px;
         display:block;
 
@@ -422,9 +440,9 @@ html, body {
 
 		background: -webkit-linear-gradient(top, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
         background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
-        border-left:1px gray outset;
+        border-right:1px gray outset;
         border-bottom:1px gray outset;
-        border-bottom-left-radius:5vmin;
+        border-bottom-right-radius:5vmin;
 
         color:white;
         text-shadow:
@@ -446,11 +464,11 @@ html, body {
         position:absolute;
             z-index:2;
         left:10vmin;
-        top:calc(100% * 0.2);
+        top:20%;
         display:block;
 
         width:80vmin;
-        height:calc(100% * 0.6);
+        height:60%;
 
         background: -webkit-linear-gradient(top, #ffffff, #A0A0A0);
         background: linear-gradient(top, #ffffff, #A0A0A0);
