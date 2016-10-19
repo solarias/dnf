@@ -20,6 +20,9 @@
 	<body>
         <div id="wrapper">
             <div id="frame_top">
+				<div id="top_notice" class="font_shadow_black">
+					여기에 사용되는 모든 이미지와 일부 사운드 저작권은 (주)네오플에게 있습니다.
+				</div>
 				<!-- main -->
 				<div id="main_door_l" class="main_door"></div>
 				<div id="main_door_r" class="main_door"></div>
@@ -62,6 +65,31 @@
 					</select>
 				</div>
 
+				<!-- option -->
+				<div id="option_main">
+					<div id="option_title">운세 옵션</div>
+					<input id="option_fullscreen" class="option_checkbox" type="checkbox"/>
+					<label for="option_fullscreen" class="option_label">
+						전체 화면 모드
+					</label>
+					<br/>
+					<input id="option_bgm" class="option_checkbox" type="checkbox" checked disabled />
+					<label for="option_bgm" class="option_label">
+						배경음악 출력
+					</label>
+					<br/>
+					<input id="option_sfx" class="option_checkbox" type="checkbox" checked disabled />
+					<label for="option_sfx" class="option_label">
+						효과음 출력
+					</label>
+					<br/>
+					<input id="option_skipAll" class="option_checkbox" type="checkbox"/>
+					<label for="option_skipAll" class="option_label">
+						운세 결과 바로 보기
+					</label>
+
+				</div>
+
 				<!-- show -->
 				<div id="show_wish">소망 : <span id="show_wish_name"></span></div>
                 <div id="show_contributor">Contributor : <span id="show_contributor_name"></span></div>
@@ -84,10 +112,12 @@
                 <div id="middle_loading"></div>
             </div>
             <div id="frame_bottom">
-				<div id="bottom_area">
-					<button id="bottom_option">옵션</button>
-	                <button id="bottom_back">나가기</button>
-	                <button id="bottom_progress" class="loading" disabled></button>
+				<div id="button_area">
+					<button id="button_blog">Blog</button>
+
+					<button id="button_option">옵션</button>
+	                <button id="button_back">나가기</button>
+	                <button id="button_progress" class="loading" disabled></button>
 				</div>
             </div>
         </div>
@@ -115,7 +145,7 @@
 
 	</body>
 
-<!-- Histats.com  START  (aync)-->
+<!-- Histats.com  START  (aync) -->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,3617759,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);

@@ -7,9 +7,10 @@ var i,j,k,l,m,n;
 //저장용 데이터
 var game = {
     //옵션
-    fullScreen:0,
-    music:0,
-    sound:0,
+    fullscreen:0,
+    bgm:0,
+    sfx:0,
+    skipAll:0,
     //선택 사항
     server:null,//이름 기억
     area:null,//이름 기억
@@ -25,6 +26,7 @@ var game = {
 };
 
 //setTimeout 관리
+var autoSetting;//화면 전환 관리
 var autoText;//텍스트 출력 관리
 var autoCast;//캐스팅 관리
 var autoResult;//결과 출력 관리
@@ -166,6 +168,66 @@ function setSelect(cmd) {
     }
 }
 
+//옵션 세팅
+function setOption(action, step) {
+    //타겟 : $("#option_main")
+    target = $("#option_main");
+    //step이 없으면 2로 사용
+    step = (!step) ? 20 : step;
+    //action에 따른 기능
+    switch (action) {
+        case "visible":
+            target.style.bottom = (-100+Math.min(100, step)).toString() + "%";
+
+            break;
+        case "hidden":
+            target.style.bottom = (-Math.min(100, step)).toString() + "%";
+
+            break;
+    }
+    //모자라면 계속 시행
+    if (step < 100) {
+        autoSetting = setTimeout(function() {
+            setOption(action, step+20);
+        },1000/60);
+    //종료 : after 상태로 변경
+    }
+}
+
+//버튼 세팅
+function setButton(target, action, after, step) {
+    //after 없으면 true로 사용
+    if (after === "disabled")
+        after = true;
+    else
+        after = false;
+
+    //step이 없으면 2로 사용
+    step = (!step) ? 10 : step;
+    if (step < 100)
+        target.disabled = true;
+    //action에 따른 기능
+    switch (action) {
+        case "visible":
+            target.style.top = -(target.offsetHeight - target.offsetHeight * Math.min(1, step/100)) + "px";
+
+            break;
+        case "hidden":
+            target.style.top = -(target.offsetHeight * Math.min(1, step/100)) + "px";
+
+            break;
+    }
+    //모자라면 계속 시행
+    if (step < 100) {
+        setTimeout(function() {
+            setButton(target, action, after, step+10);
+        },1000/60);
+    //종료 : after 상태로 변경
+    } else {
+        target.disabled = after;
+    }
+}
+
 //쇼 설치
 function setShow(step) {
     //단계별 실행
@@ -199,9 +261,27 @@ function setShow(step) {
                 setTimeout(function() {
                     setShow(step + 1);
                 },1000/60);
+            //이동 종료 시
             } else {
-                //이동 종료 시 : 대화 출력 준비
-                setDialog("address");
+                //취소 버튼 표시
+                setButton($("#button_back"),"visible","disabled");
+                //취소 버튼 설정
+                $("#button_back").onclick = function() {
+                    //취소 버튼 가리기
+                    setButton($("#button_back"),"hidden");
+                    //쇼 종료
+                    finishShow(0);
+                };
+                //대화 출력 준비
+                if (game.skipAll === 0) {
+                    //전체 스킵 X : 소개
+                    setDialog("address");
+                } else {
+                    //음악 출력 (분위기 테스트용)
+                    sfx.gent_city.play();
+                    //전체 스킵 o : 결과
+                    setDialog("result");
+                }
             }
             break;
     }
@@ -211,6 +291,8 @@ function setShow(step) {
 function setDialog(state) {
     //대화창 표시
     $("#show_dialog_content").style.visibility = "visible";
+    //캐릭터 명 표시
+    $("#show_dialog_name").innerHTML = game.character.name;
 
     //텍스트 준비
     var tmpText = "";
@@ -230,23 +312,12 @@ function setDialog(state) {
         case "address":
             //텍스트 다듬기 : 시간 표시, 색상 변경
             tmpText = "<span class='color_green'>" + game.date + "<br>" + tmpText + "</span>";
-            //취소 버튼 표시
-            $("#bottom_back").style.visibility = "visible";
-            $("#bottom_back").disabled = false;
-            //취소 버튼 설정
-            $("#bottom_back").onclick = function() {
-                //취소 버튼 비활성화
-                $("#bottom_back").disabled = true;
-                //쇼 종료
-                finishShow(0);
-            };
 
             break;
         case "intro":
             //텍스트 다듬기 : 소망 입력
             tmpText = tmpText.replaceAll("%x","<span class='color_orange'>" + wishList[game.wish] + "</span>");
             //캐릭터 명 표시
-            $("#show_dialog_name").innerHTML = game.character.name;
             $("#show_dialog_name").style.visibility = "visible";
             //음악 출력 (분위기 테스트용)
             sfx.gent_city.play();
@@ -261,6 +332,9 @@ function setDialog(state) {
 
             break;
         case "result":
+            //대화창 잠시 가리기
+            $("#show_dialog_name").style.visibility = "hidden";
+            $("#show_dialog_content").style.visibility = "hidden";
             //결과 출력 실시
             setResult(0);
 
@@ -285,16 +359,16 @@ function showDialog(state, text, num) {
             //캐스팅 : 대화 스킵 불가
             case "casting":
                 //버튼 : Skip 기능
-                $("#bottom_progress").className = "wait";
-                $("#bottom_progress").disabled = true;
+                $("#button_progress").className = "wait";
+                $("#button_progress").disabled = true;
 
                 break;
             //나머지 : 대화 스킵 가능
             default:
                 //버튼 : Skip 기능
-                $("#bottom_progress").className = "skip";
-                $("#bottom_progress").disabled = false;
-                $("#bottom_progress").onclick = function() {
+                $("#button_progress").className = "skip";
+                $("#button_progress").disabled = false;
+                $("#button_progress").onclick = function() {
                     clearTimeout(autoText);
                     showDialog(state, text, game.dialog[0].length);
                 };
@@ -351,12 +425,12 @@ function finishDialog(state) {
     //그 뒤에 출력할 텍스트가 있다면
     if (game.dialog.length > 0) {
         //버튼 변경
-        $("#bottom_progress").className = "next";
-        $("#bottom_progress").disabled = false;
+        $("#button_progress").className = "next";
+        $("#button_progress").disabled = false;
             //다음 대화 출력 유도
             $("#show_dialog_content").className = "next";
         //버튼 클릭
-        $("#bottom_progress").onclick = function() {
+        $("#button_progress").onclick = function() {
             //화살표 표시 제거
             $("#show_dialog_content").className = "";
             //다음 대화 출력
@@ -370,19 +444,19 @@ function finishDialog(state) {
                 //캐스팅 : 자동으로 넘어갈 때까지 대기
                 case "casting":
                     //버튼 : Skip 기능
-                    $("#bottom_progress").className = "wait";
-                    $("#bottom_progress").disabled = true;
+                    $("#button_progress").className = "wait";
+                    $("#button_progress").disabled = true;
 
                     break;
                 //나머지 : 다음으로 넘기기 가능
                 default:
                     //버튼 변경
-                    $("#bottom_progress").className = "next";
-                    $("#bottom_progress").disabled = false;
+                    $("#button_progress").className = "next";
+                    $("#button_progress").disabled = false;
                         //다음 대화 출력 유도
                         $("#show_dialog_content").className = "next";
                     //버튼 클릭
-                    $("#bottom_progress").onclick = function() {
+                    $("#button_progress").onclick = function() {
                         //화살표 표시 제거
                         $("#show_dialog_content").className = "";
                         //다음 단계로
@@ -394,8 +468,8 @@ function finishDialog(state) {
         //(마지막이라면) 대화 종료
         } else {
             //버튼 봉쇄
-            $("#bottom_progress").className = "end";
-            $("#bottom_progress").disabled = true;
+            $("#button_progress").className = "end";
+            $("#button_progress").disabled = true;
         }
     }
 }
@@ -442,6 +516,11 @@ function setResult(step) {
 
         //1초 뒤 다음 단계
         autoResult = setTimeout(function() {
+            //잠시 가렸던 대화창 표시
+            $("#show_dialog_name").style.visibility = "visible";
+            $("#show_dialog_content").style.visibility = "visible";
+                $("#show_dialog_content").innerHTML = "";
+            //대화 진행
             showDialog("result", game.dialog[0], 0);
         }, 1000);
     }
@@ -452,8 +531,8 @@ function finishShow(step) {
     //0단계 : 버튼 봉쇄만 할 것
     if (step === 0) {
         //버튼 봉쇄
-        $("#bottom_progress").className = "end";
-        $("#bottom_progress").disabled = true;
+        $("#button_progress").className = "end";
+        $("#button_progress").disabled = true;
 
         //다음 단계
         finishShow(step + 2);
@@ -476,10 +555,9 @@ function finishShow(step) {
         clearTimeout(autoCast);
         clearTimeout(autoResult);
         //필요없는 창 닫기, 필요한 창 표시
-            //뒤로 버튼 : OFF
-            $("#bottom_back").style.visibility = "hidden";
+            //뒤로 버튼 : OFF (이미 닫힘)
             //설정 버튼 : ON
-            $("#bottom_option").style.visibility = "visible";
+            setButton($("#button_option"),"visible");
             //소망
             $("#show_wish").style.visibility = "hidden";
             //기여자
@@ -514,8 +592,8 @@ function setMain() {
     Math.seedrandom();
 
     //버튼 설정
-    $("#bottom_progress").className = "start";
-    $("#bottom_progress").disabled = false;
+    $("#button_progress").className = "start";
+    $("#button_progress").disabled = false;
 
     //초기 : 지역 완성 (지역이나 캐릭터가 없다면)
     if (!game.area || !game.character)
@@ -569,108 +647,166 @@ function setMain() {
         }
     };
 
-    //설정 버튼 : 미구현
-    $("#bottom_option").onclick = function() {
+    //설정 버튼
+    $("#button_option").onclick = function() {
+        //옵션 표시
+        setOption("visible");
+        //옵션 버튼 가리기
+        setButton($("#button_option"),"hidden");
+        //중앙 버튼 변경
+        $("#button_progress").className = "ok";
+        $("#button_progress").onclick = function() {
+            //옵션 올라가는 도중이었으면 중단
+            clearTimeout(autoSetting);
+            //옵션 내리기
+            setOption("hidden");
+            //옵션 버튼 표시
+            setButton($("#button_option"),"visible");
+            //중앙버튼 복권
+            $("#button_progress").className = "start";
+            $("#button_progress").onclick = function() {
+                prepareShow();
+            };
+        };
+        //각종 옵션
+            //전체 화면 모드
+            $("#option_fullscreen").onclick = function() {
+                if ($("#option_fullscreen").checked) {
+                    game.fullscreen = 1;
+                    launchIntoFullscreen(document.documentElement);
+                } else {
+                    game.fullscreen = 0;
+                    exitFullscreen();
+                }
+            };
+            //배경음악
+            $("#option_bgm").onclick = function() {
+                game.bgm = ($("#option_fullscreen").checked) ? 1 : 0;
+            };
+            //효과음
+            $("#option_sfx").onclick = function() {
+                game.sfx = ($("#option_sfx").checked) ? 1 : 0;
+            };
+            //운세 결과 바로 보기
+            $("#option_skipAll").onclick = function() {
+                game.skipAll = ($("#option_skipAll").checked) ? 1 : 0;
+            };
+    };
+
+    //시작 버튼
+    $("#button_progress").onclick = function() {
+        //쇼 준비하기
+        prepareShow();
+    };
+}
+
+//쇼 준비
+function prepareShow() {
+    //설정 체크여부 확인
+    if (game.server === null) {
+        swal({type:"warning",title:"서버를 선택해주세요."});
+    } else if (game.character === null) {
+        swal({type:"warning",title:"캐릭터를 선택해주세요."});
+    } else if (game.wish === null) {
+        swal({type:"warning",title:"소망을 선택해주세요."});
+    } else {
+        //결과물 준비
+            //랜덤 시드 설정
+            Math.seedrandom(game.server + game.area + game.character + (new Date().getTime()));
+
+            //현재 시간
+            var today = new Date();
+            var dd = today.getDate().toString();
+            var mm = (today.getMonth()+1).toString();
+            var yyyy = (today.getFullYear()).toString();
+            today = "아라드력 " + yyyy + "년 " + mm + "월 " + dd + "일";
+            game.date = today;
+
+            //소망 결과물
+            switch (game.wish) {
+                case "channel":
+                    game.result = resultList.channel[Math.floor(Math.random() * resultList.channel.length)];
+
+                    break;
+                case "anton":
+                    game.result = resultList.anton[Math.floor(Math.random() * resultList.anton.length)];
+
+                    break;
+                case "luke":
+                    game.result = resultList.luke[Math.floor(Math.random() * resultList.luke.length)];
+
+                    break;
+                case "powerstation":
+                    var dun = resultList.powerstation[Math.floor(Math.random() * resultList.powerstation.length)];
+                    var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
+                    game.result = "던전 : " + dun + " / 난이도 : " + diff;
+
+                    break;
+                case "castleofdeath":
+                    var dun = resultList.castleofdeath[Math.floor(Math.random() * resultList.castleofdeath.length)];
+                    var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
+                    game.result = "던전 : " + dun + " / 난이도 : " + diff;
+
+                    break;
+                case "metrocenter":
+                    var dun = resultList.metrocenter[Math.floor(Math.random() * resultList.metrocenter.length)];
+                    var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
+                    game.result = "던전 : " + dun + " / 난이도 : " + diff;
+
+                    break;
+                case "goodbad":
+                    game.result = resultList.goodbad_name[rand(resultList.goodbad_num)];
+
+                    break;
+                case "sora":
+                    game.result = resultList.sora[Math.floor(Math.random() * resultList.sora.length)];
+
+                    break;
+            }
+
+        //로딩 개시
+            //1. 버튼 폐쇄
+            $("#button_progress").className = "loading";
+            $("#button_progress").disabled = true;
+            //2. 설정 버튼 폐쇄(action)
+            setButton($("#button_option"),"hidden");
+            //3. 로딩 이미지 수집
+            imageList = [];
+            if (imageStorage.indexOf(game.character.img) < 0)
+                imageList.push("./images/fortune/character/" + game.character.img);
+                imageStorage.push("./images/fortune/character/" + game.character.img);
+            if (imageStorage.indexOf(game.character.back) < 0)
+                imageList.push("./images/fortune/background/" + game.character.back);
+                imageStorage.push("./images/fortune/background/" + game.character.back);
+            //3. 로딩 개시
+            loadImages(imageList,function() {
+                //쇼 설치
+                setShow("prepare");
+            });
+    }
+}
+//================================================================================================
+//※ 실행 관리
+//================================================================================================
+window.onload = function() {
+    //버튼 잠금 해제
+    $("#button_blog").disabled = false;
+    $("#button_blog").onclick = function() {
+        //차후 블로그 글 개설 시 추가
         swal({
             type:"warning",
             title:"미구현 기능!"
         });
     };
 
-    //시작 버튼
-    $("#bottom_progress").onclick = function() {
-        //설정 체크여부 확인
-        if (game.server === null) {
-            swal({type:"warning",title:"서버를 선택해주세요."});
-        } else if (game.character === null) {
-            swal({type:"warning",title:"캐릭터를 선택해주세요."});
-        } else if (game.wish === null) {
-            swal({type:"warning",title:"소망을 선택해주세요."});
-        } else {
-            //결과물 준비
-                //랜덤 시드 설정
-                Math.seedrandom(game.server + game.area + game.character + (new Date().getTime()));
+    $("#button_progress").className = "start";
+    $("#button_progress").disabled = false;
+    $("#button_progress").onclick = function() {
+        //공지 지우기
+        $("#top_notice").style.visibility = "hidden";
+        //일부 버튼 치우기
+        setButton($("#button_blog"),"hidden");
 
-                //현재 시간
-                var today = new Date();
-                var dd = today.getDate().toString();
-                var mm = (today.getMonth()+1).toString();
-                var yyyy = (today.getFullYear()).toString();
-                today = "아라드력 " + yyyy + "년 " + mm + "월 " + dd + "일";
-                game.date = today;
-
-                //소망 결과물
-                switch (game.wish) {
-                    case "channel":
-                        game.result = resultList.channel[Math.floor(Math.random() * resultList.channel.length)];
-
-                        break;
-                    case "anton":
-                        game.result = resultList.anton[Math.floor(Math.random() * resultList.anton.length)];
-
-                        break;
-                    case "luke":
-                        game.result = resultList.luke[Math.floor(Math.random() * resultList.luke.length)];
-
-                        break;
-                    case "powerstation":
-                        var dun = resultList.powerstation[Math.floor(Math.random() * resultList.powerstation.length)];
-                        var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
-                        game.result = "던전 : " + dun + " / 난이도 : " + diff;
-
-                        break;
-                    case "castleofdeath":
-                        var dun = resultList.castleofdeath[Math.floor(Math.random() * resultList.castleofdeath.length)];
-                        var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
-                        game.result = "던전 : " + dun + " / 난이도 : " + diff;
-
-                        break;
-                    case "metrocenter":
-                        var dun = resultList.metrocenter[Math.floor(Math.random() * resultList.metrocenter.length)];
-                        var diff = resultList.difficulty[Math.floor(Math.random() * resultList.difficulty.length)];
-                        game.result = "던전 : " + dun + " / 난이도 : " + diff;
-
-                        break;
-                    case "goodbad":
-                        game.result = resultList.goodbad_name[rand(resultList.goodbad_num)];
-
-                        break;
-                    case "sora":
-                        game.result = resultList.sora[Math.floor(Math.random() * resultList.sora.length)];
-
-                        break;
-                }
-
-            //로딩 개시
-                //1. 버튼 폐쇄
-                $("#bottom_progress").className = "loading";
-                $("#bottom_progress").disabled = true;
-                //2. 설정 버튼 폐쇄
-                $("#bottom_option").style.visibility = "hidden";
-                //3. 로딩 이미지 수집
-                imageList = [];
-                if (imageStorage.indexOf(game.character.img) < 0)
-                    imageList.push("./images/fortune/character/" + game.character.img);
-                    imageStorage.push("./images/fortune/character/" + game.character.img);
-                if (imageStorage.indexOf(game.character.back) < 0)
-                    imageList.push("./images/fortune/background/" + game.character.back);
-                    imageStorage.push("./images/fortune/background/" + game.character.back);
-                //3. 로딩 개시
-                loadImages(imageList,function() {
-                    //쇼 설치
-                    setShow("prepare");
-                });
-        }
-    };
-}
-//================================================================================================
-//※ 실행 관리
-//================================================================================================
-window.onload = function() {
-    //버튼 해제
-    $("#bottom_progress").className = "start";
-    $("#bottom_progress").disabled = false;
-    $("#bottom_progress").onclick = function() {
         //이미지 선 로딩
         imageList = [];
         //메인창
