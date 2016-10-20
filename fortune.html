@@ -68,24 +68,28 @@
 				<!-- option -->
 				<div id="option_main">
 					<div id="option_title">운세 옵션</div>
-					<input id="option_fullscreen" class="option_checkbox" type="checkbox"/>
-					<label for="option_fullscreen" class="option_label">
-						전체 화면 모드
+					<button id="option_fullscreen" class="option_button">
+						전체 화면 모드 ON/OFF
+					</button>
+					<br/>
+					<input id="option_startFull" class="option_checkbox" type="checkbox"/>
+					<label for="option_startFull" class="option_label">
+						시작 시 전체 화면 적용
 					</label>
 					<br/>
-					<input id="option_bgm" class="option_checkbox" type="checkbox" checked disabled />
+					<input id="option_bgm" class="option_checkbox" type="checkbox" />
 					<label for="option_bgm" class="option_label">
 						배경음악 출력
 					</label>
 					<br/>
-					<input id="option_sfx" class="option_checkbox" type="checkbox" checked disabled />
+					<input id="option_sfx" class="option_checkbox" type="checkbox" />
 					<label for="option_sfx" class="option_label">
-						효과음 출력
+						효과음 + 목소리 출력
 					</label>
 					<br/>
-					<input id="option_skipAll" class="option_checkbox" type="checkbox"/>
-					<label for="option_skipAll" class="option_label">
-						운세 결과 바로 보기
+					<input id="option_img" class="option_checkbox" type="checkbox" checked />
+					<label for="option_img" class="option_label">
+						배경화면 + 캐릭터 이미지 출력
 					</label>
 
 				</div>
@@ -113,7 +117,7 @@
             </div>
             <div id="frame_bottom">
 				<div id="button_area">
-					<button id="button_blog">Blog</button>
+					<button id="button_blog" disabled>Blog</button>
 
 					<button id="button_option">옵션</button>
 	                <button id="button_back">나가기</button>
@@ -145,7 +149,7 @@
 
 	</body>
 
-<!-- Histats.com  START  (aync) -->
+<!-- Histats.com  START  (aync)
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,3617759,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -156,5 +160,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?3617759&101" alt="counter free hit invisible" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+ Histats.com  END  -->
 </html>

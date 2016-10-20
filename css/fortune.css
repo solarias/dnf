@@ -29,7 +29,7 @@
         -1px -1px black;
 }
 
-button:hover, select:hover {
+button:hover, select:hover, label:hover {
     box-shadow:
         -2px 0px 2px silver,
         -2px 2px 2px silver,
@@ -41,16 +41,16 @@ button:hover, select:hover {
         -2px -2px 2px silver;
     cursor:pointer;
 }
-button:active, select:active {
+button:active, select:active, label:active {
     box-shadow:
-        -2px 0px 2px white,
-        -2px 2px 2px white,
-        0px 2px 2px white,
-        2px 2px 2px white,
-        2px 0px 2px white,
-        2px -2px 2px white,
-        0px -2px 2px white,
-        -2px -2px 2px white;
+        -3px 0px 3px white,
+        -3px 3px 3px white,
+        0px 3px 3px white,
+        3px 3px 3px white,
+        3px 0px 3px white,
+        3px -3px 3px white,
+        0px -3px 3px white,
+        -3px -3px 3px white;
 }
 
 
@@ -258,7 +258,7 @@ html, body {
         #option_title {
             position:relative;
 
-            margin-bottom:5vmin;
+            margin-bottom:3vmin;
             width:100%;
 
             color:white;
@@ -275,20 +275,11 @@ html, body {
             font-weight:bold;
             text-align:center;
         }
-        .option_checkbox {
-            width:10vmin;
-            height:10vmin;
-
-            vertical-align:top;
-        }
-            .option_checkbox:hover {
-                cursor:pointer;
-            }
-        .option_label {
+        .option_button {
             margin-bottom:5vmin;
             padding:0 2vmin;
-            width:80vmin;
-            height:10vmin;
+            width:92vmin;
+            height:12vmin;
 
             background:black;
             border:0.3vmin skyblue outset;
@@ -296,25 +287,39 @@ html, body {
             box-sizing: border-box;
 
             color:white;
-            font-size:5vmin;
+            font-size:6vmin;
             font-weight:bold;
-            line-height:10vmin;
+            line-height:12vmin;
 
             display:inline-block;
         }
-            .option_label:hover {
-                box-shadow:
-                    -2px 0px 2px skyblue,
-                    -2px 2px 2px skyblue,
-                    0px 2px 2px skyblue,
-                    2px 2px 2px skyblue,
-                    2px 0px 2px skyblue,
-                    2px -2px 2px skyblue,
-                    0px -2px 2px skyblue,
-                    -2px -2px 2px skyblue;
+        .option_checkbox {
+            width:8vmin;
+            height:8vmin;
 
+            vertical-align:top;
+        }
+            .option_checkbox:hover {
                 cursor:pointer;
             }
+        .option_label {
+            margin-bottom:3vmin;
+            padding:0 2vmin;
+            width:82vmin;
+            height:8vmin;
+
+            background:black;
+            border:0.3vmin skyblue outset;
+            border-radius:2vmin;
+            box-sizing: border-box;
+
+            color:white;
+            font-size:4vmin;
+            font-weight:bold;
+            line-height:8vmin;
+
+            display:inline-block;
+        }
 
 /*show*/
     #show_wish {

@@ -7,9 +7,10 @@ var i,j,k,l,m,n;
 //저장용 데이터
 var game = {
     //옵션
-    fullscreen:0,
+    startFull:0,
     bgm:0,
     sfx:0,
+    img:1,
     skipAll:0,
     //선택 사항
     server:null,//이름 기억
@@ -20,10 +21,12 @@ var game = {
     //출력 결과물
     date:"",
     result:"",
-    //진행 상태
-    state:"",
+    //대화정보
     dialog:[]
 };
+
+//진행 상태
+var started = 0;//초기 로딩 끝나면 1이 됨
 
 //setTimeout 관리
 var autoSetting;//화면 전환 관리
@@ -31,18 +34,30 @@ var autoText;//텍스트 출력 관리
 var autoCast;//캐스팅 관리
 var autoResult;//결과 출력 관리
 
-//사운드
-var sfx = {
-    typing:new Howl({src:["./sound/text_typing.mp3"],volume:0.5}),
-    reading:new Howl({src:["./sound/text_reading.mp3"],volume:0.5}),
-    voice_erze:new Howl({src:["./sound/voice_erze.mp3"],volume:0.3}),
-    gent_city:new Howl({src:["./sound/gent_city_low.mp3"],loop:true}),
-    suprise:new Howl({src:["./sound/suprise.mp3"],volume:0.2})
-};
-    sfx.typing.volume = 0.5;
-    sfx.reading.volume = 0.5;
-    sfx.voice_erze.volume = 0.3;
-    sfx.suprise.volume = 0.2;
+//컨텐츠 관리
+    //텍스트 순서 리스트
+    var stateList = ["address","intro","casting","result"];
+    //소망 설명
+    var wishList = {
+        channel:"운이 좋은 채널",
+        anton:"운이 좋은 안톤 레이드 채널",
+        luke:"운이 좋은 루크 레이드 채널",
+        powerstation:"운이 좋은 파워스테이션 지옥파티 던전 & 난이도",
+        castleofdeath:"운이 좋은 죽은자의 성 지옥파티 던전 & 난이도",
+        metrocenter:"운이 좋은 메트로센터 지옥파티 던전 & 난이도",
+        goodbad:"오늘의 길흉점",
+        sora:"마법의 소라고둥 조언"
+    };
+
+//미디어 관련
+    //이미지
+    var imageStorage = [];
+    var imageList = [];
+    //기본 효과음 종류 (차후에 필요하면 링크 자동 생성)
+    var sfx = ["typing","talking","suprise"];
+    //사운드 스토리지
+    var bgmList = {};//브금이 필요하면 저장해서 사용
+    var sfxList = {};//효과음이 필요하면 저장해서 사용
 
 //기타 변수
 var textSpeed = {//텍스트 출력속도
@@ -51,24 +66,24 @@ var textSpeed = {//텍스트 출력속도
     casting:(1000/60) * 3,
     result:(1000/60) * 3
 };
-var stateList = ["address","intro","casting","result"];//텍스트 순서 리스트
-var wishList = {
-    channel:"운이 좋은 채널",
-    anton:"운이 좋은 안톤 레이드 채널",
-    luke:"운이 좋은 루크 레이드 채널",
-    powerstation:"운이 좋은 파워스테이션 지옥파티 던전 & 난이도",
-    castleofdeath:"운이 좋은 죽은자의 성 지옥파티 던전 & 난이도",
-    metrocenter:"운이 좋은 메트로센터 지옥파티 던전 & 난이도",
-    goodbad:"오늘의 길흉점",
-    sora:"마법의 소라고둥 조언"
-};
-var imageStorage = [];
-var imageList = [];
 
 
 //================================================================================================
 //※ 함수 관리
 //================================================================================================
+//세이브 로드
+function loadData() {
+    if(!localStorage["fortune_game"]) {
+        //없으면 초기치 만들기
+        saveData();
+    } else {
+        game = deepCopy(localGet("fortune_game"));
+    }
+}
+function saveData() {
+    localStore("fortune_game",game);
+}
+
 //이미지 선로딩
 function loadImages(arr,callBack){ // 이미지 불러오기
     //출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310
@@ -116,7 +131,7 @@ function setSelect(cmd) {
         case undefined:
             //수집
             for (i=0;i<characterList.length;i++) {
-                if (characterList[i]["area"] !== "" && arr.indexOf(characterList[i]["area"] < 0)) {
+                if (characterList[i]["area"] !== "" && arr.indexOf(characterList[i]["area"]) < 0) {
                     arr.push(characterList[i]["area"]);
                 }
             }
@@ -236,9 +251,14 @@ function setShow(step) {
             //메인창 닫기
             $("#main_title").style.visibility = "hidden";
             $("#main_content").style.visibility = "hidden";
-            //캐릭터, 배경, 도와주신분 조성
-            $("#show_character_1").style.backgroundImage = "url('./images/fortune/character/" + game.character.img + "')";
-            $("#frame_top").style.backgroundImage = "url('./images/fortune/background/" + game.character.back + "')";
+            //※ 옵션 적용 - 캐릭터, 배경 조성
+            if (game.img === 1) {
+                $("#show_character_1").style.backgroundImage = "url('./images/fortune/character/" + game.character.img + ".png')";
+                $("#frame_top").style.backgroundImage = "url('./images/fortune/background/" + game.character.back + ".jpg')";
+            } else {
+                $("#show_character_1").style.backgroundImage = "";
+                $("#frame_top").style.backgroundImage = "";
+            }
             //소망 표시
             $("#show_wish_name").innerHTML = game.wish_name;
             $("#show_wish").style.visibility = "visible";
@@ -277,8 +297,10 @@ function setShow(step) {
                     //전체 스킵 X : 소개
                     setDialog("address");
                 } else {
-                    //음악 출력 (분위기 테스트용)
-                    sfx.gent_city.play();
+                    //※ 옵션 적용 - (배경음악 = 1 && 고유 배경음악 존재) 배경음악 출력
+                    if (game.bgm === 1)
+                        if (game.character.bgm !== "")
+                            sfxList[game.character.bgm].play();
                     //전체 스킵 o : 결과
                     setDialog("result");
                 }
@@ -319,9 +341,14 @@ function setDialog(state) {
             tmpText = tmpText.replaceAll("%x","<span class='color_orange'>" + wishList[game.wish] + "</span>");
             //캐릭터 명 표시
             $("#show_dialog_name").style.visibility = "visible";
-            //음악 출력 (분위기 테스트용)
-            sfx.gent_city.play();
-            sfx.voice_erze.play();
+            //※ 옵션 적용 - (배경음악 = 1 && 고유 배경음악 존재) 배경음악 출력
+            if (game.bgm === 1)
+                if (game.character.bgm !== "")
+                    bgmList[game.character.bgm].play();
+            //※ 옵션 적용 - (효과음 = 1 && 고유 보이스 존재) 보이스 출력
+            if (game.sfx === 1)
+                if (game.character.voice !== "")
+                    sfxList[game.character.voice].play();
 
             break;
         case "casting":
@@ -388,13 +415,17 @@ function showDialog(state, text, num) {
         if (text.substr(0, num).slice(-1) !== " " && text.substr(0, num).slice(-1) !== ">") {
             switch (state) {
                 case "address":
-                    sfx.typing.stop();
-                    sfx.typing.play();
+                    if (game.sfx === 1) {
+                        sfxList.typing.stop();
+                        sfxList.typing.play();
+                    }
 
                     break;
                 default:
-                    sfx.reading.stop();
-                    sfx.reading.play();
+                    if (game.sfx === 1) {
+                        sfxList.talking.stop();
+                        sfxList.talking.play();
+                    }
 
                     break;
             }
@@ -512,7 +543,8 @@ function setResult(step) {
         $("#show_flash").src = "./images/fortune/flash.gif";
         $("#show_flash").style.display = "block";
         //음악 출력 (분위기 테스트용)
-        sfx.suprise.play();
+        if (game.sfx === 1)
+            sfxList.suprise.play();
 
         //1초 뒤 다음 단계
         autoResult = setTimeout(function() {
@@ -575,8 +607,10 @@ function finishShow(step) {
             $("#show_dialog_content").style.visibility = "hidden";
                 $("#show_dialog_content").innerHTML = "";
                 $("#show_dialog_content").className = "";
-        //음악 종료(테스트용)
-        sfx.gent_city.stop();
+        //※ 옵션 적용 - (배경음악 = 1 && 고유 배경음악 존재) 배경음악 종료
+        if (game.bgm === 1)
+            if (started === 1 && game.character && game.character.bgm !== "")
+                bgmList[game.character.bgm].stop();
         //메인 창 표시
         $("#main_title").style.visibility = "visible";
         $("#main_content").style.visibility = "visible";
@@ -588,6 +622,9 @@ function finishShow(step) {
 
 //메인 창 관리
 function setMain() {
+    //시작 선언
+    started = 1;
+
     //랜덤 시드 초기화
     Math.seedrandom();
 
@@ -595,9 +632,27 @@ function setMain() {
     $("#button_progress").className = "start";
     $("#button_progress").disabled = false;
 
-    //초기 : 지역 완성 (지역이나 캐릭터가 없다면)
-    if (!game.area || !game.character)
+    //초기 : 지역 완성 (초기에 선택할 지역이 없다면)
+    if ($("#select_area").options.length === 1)
         setSelect();
+
+    //※ 옵션 적용
+    if (game.server) {
+        $("#select_server").options.selectedIndex = indexSelectByValue($("#select_server"), game.server);
+        $("#list_dot_server").classList.add("checked");
+    }
+    if (game.area) {
+        $("#select_area").options.selectedIndex = indexSelectByValue($("#select_area"), game.area);
+        setSelect($("#select_area").value);
+    }
+    if (game.character) {
+        $("#select_character").options.selectedIndex = indexSelectByValue($("#select_character"), game.character.name);
+        $("#list_dot_character").classList.add("checked");
+    }
+    if (game.wish) {
+        $("#select_wish").options.selectedIndex = indexSelectByValue($("#select_wish"), game.wish);
+        $("#list_dot_wish").classList.add("checked");
+    }
 
     //각 항목 선택 -> 항목 입력
     $("#select_server").onchange = function() {
@@ -649,6 +704,11 @@ function setMain() {
 
     //설정 버튼
     $("#button_option").onclick = function() {
+        //설정대로 옵션 표시
+        $("#option_startFull").checked = (game.startFull === 1) ? true : false;
+        $("#option_bgm").checked = (game.bgm === 1) ? true : false;
+        $("#option_sfx").checked = (game.sfx === 1) ? true : false;
+        $("#option_img").checked = (game.img === 1) ? true : false;
         //옵션 표시
         setOption("visible");
         //옵션 버튼 가리기
@@ -656,6 +716,8 @@ function setMain() {
         //중앙 버튼 변경
         $("#button_progress").className = "ok";
         $("#button_progress").onclick = function() {
+            //설정 저장
+            saveData();
             //옵션 올라가는 도중이었으면 중단
             clearTimeout(autoSetting);
             //옵션 내리기
@@ -671,25 +733,23 @@ function setMain() {
         //각종 옵션
             //전체 화면 모드
             $("#option_fullscreen").onclick = function() {
-                if ($("#option_fullscreen").checked) {
-                    game.fullscreen = 1;
-                    launchIntoFullscreen(document.documentElement);
-                } else {
-                    game.fullscreen = 0;
-                    exitFullscreen();
-                }
+                toggleFullScreen();
+            };
+            //운세 결과 바로 보기
+            $("#option_startFull").onclick = function() {
+                game.startFull = ($("#option_startFull").checked) ? 1 : 0;
             };
             //배경음악
             $("#option_bgm").onclick = function() {
-                game.bgm = ($("#option_fullscreen").checked) ? 1 : 0;
+                game.bgm = ($("#option_bgm").checked) ? 1 : 0;
             };
             //효과음
             $("#option_sfx").onclick = function() {
                 game.sfx = ($("#option_sfx").checked) ? 1 : 0;
             };
-            //운세 결과 바로 보기
-            $("#option_skipAll").onclick = function() {
-                game.skipAll = ($("#option_skipAll").checked) ? 1 : 0;
+            //이미지
+            $("#option_img").onclick = function() {
+                game.img = ($("#option_img").checked) ? 1 : 0;
             };
     };
 
@@ -711,6 +771,9 @@ function prepareShow() {
         swal({type:"warning",title:"소망을 선택해주세요."});
     } else {
         //결과물 준비
+            //현 설정 저장
+            saveData();
+
             //랜덤 시드 설정
             Math.seedrandom(game.server + game.area + game.character + (new Date().getTime()));
 
@@ -770,32 +833,74 @@ function prepareShow() {
             $("#button_progress").disabled = true;
             //2. 설정 버튼 폐쇄(action)
             setButton($("#button_option"),"hidden");
-            //3. 로딩 이미지 수집
-            imageList = [];
-            if (imageStorage.indexOf(game.character.img) < 0)
-                imageList.push("./images/fortune/character/" + game.character.img);
-                imageStorage.push("./images/fortune/character/" + game.character.img);
-            if (imageStorage.indexOf(game.character.back) < 0)
-                imageList.push("./images/fortune/background/" + game.character.back);
-                imageStorage.push("./images/fortune/background/" + game.character.back);
-            //3. 로딩 개시
-            loadImages(imageList,function() {
-                //쇼 설치
+
+            //※ 옵션 적용 - (베경음악 = 1이면) 배경음악 저장
+            if (game.bgm === 1)
+                //전용 BGM 있으면 그거 사용
+                if (game.character.bgm !== "")
+                    if (Object.keys(bgmList).indexOf(game.character.bgm) < 0)
+                        bgmList[game.character.bgm] = new Howl({
+                            src:["./sound/fortune/bgm/" + game.character.bgm + ".mp3"],
+                            volume:0.5,
+                            loop:true,
+                            preload:true
+                        });
+                //공용 BGM : 차후에 생각해보기
+
+            //※ 옵션 적용 - (효과음 = 1이면) 효과음 저장
+            if (game.sfx === 1)
+                //기본 효과음
+                for (i = 0; i < sfx.length ; i++) {
+                    if (Object.keys(sfxList).indexOf(sfx[i]) < 0)
+                        sfxList[sfx[i]] = new Howl({
+                            src:["./sound/fortune/sfx/" + sfx[i] + ".mp3"],
+                            volume:0.3,
+                            preload:true
+                        });
+                }
+                //전용 효과음 - 보이스 (있으면 사용)
+                if (game.character.voice !== "")
+                    if (Object.keys(sfxList).indexOf(game.character.voice) < 0)
+                        sfxList[game.character.voice] = new Howl({
+                            src:["./sound/fortune/voice/" + game.character.voice + ".mp3"],
+                            volume:0.3,
+                            preload:true
+                        });
+
+            //3. 로딩 이미지 수집 (이미지 출력 허용 시에만)
+            if (game.img === 1) {
+                imageList = [];
+                if (imageStorage.indexOf(game.character.img) < 0)
+                    imageList.push("./images/fortune/character/" + game.character.img + ".png");
+                    imageStorage.push("./images/fortune/character/" + game.character.img + ".png");
+                if (imageStorage.indexOf(game.character.back) < 0)
+                    imageList.push("./images/fortune/background/" + game.character.back + ".jpg");
+                    imageStorage.push("./images/fortune/background/" + game.character.back + ".jpg");
+                //3. 로딩 개시
+                loadImages(imageList,function() {
+                    //쇼 설치
+                    setShow("prepare");
+                });
+            } else {
+                //이미지 로딩 없으면 - 쇼 설치
                 setShow("prepare");
-            });
+            }
     }
 }
 //================================================================================================
 //※ 실행 관리
 //================================================================================================
 window.onload = function() {
+    //지난 설정 불러오기
+    loadData();
+
     //버튼 잠금 해제
     $("#button_blog").disabled = false;
     $("#button_blog").onclick = function() {
         //차후 블로그 글 개설 시 추가
         swal({
             type:"warning",
-            title:"미구현 기능!"
+            title:"블로그에 아직 올리지 않았습니다."
         });
     };
 
@@ -806,6 +911,8 @@ window.onload = function() {
         $("#top_notice").style.visibility = "hidden";
         //일부 버튼 치우기
         setButton($("#button_blog"),"hidden");
+        //※ 옵션 적용 - (startFull이 있으면) 풀스크린 적용
+        if (game.startFull === 1) launchIntoFullscreen();
 
         //이미지 선 로딩
         imageList = [];
