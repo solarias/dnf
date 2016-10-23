@@ -157,7 +157,6 @@ function setSelect(cmd) {
                 //첫 칸 선택
                 $("#select_area").options.selectedIndex = 0;
             //적용
-            //적용
             for (i=0;i<arr.length;i++) {
                 option = document.createElement("option");
                 option.value = arr[i];
@@ -188,6 +187,11 @@ function setSelect(cmd) {
                 option = document.createElement("option");
                 option.value = arr[i]["name"];
                 option.innerHTML = arr[i]["name"];
+                if (arr[i].intro.length + arr[i].casting.length + arr[i].result.length > 0) {
+                    option.className = "green";
+                } else {
+                    option.className = "";
+                }
                 $("#select_character").add(option);
             }
             break;
@@ -199,7 +203,7 @@ function setOption(action, step) {
     //타겟 : $("#option_main")
     target = $("#option_main");
     //step이 없으면 2로 사용
-    step = (!step) ? 20 : step;
+    step = (!step) ? 10 : step;
     //action에 따른 기능
     switch (action) {
         case "visible":
@@ -214,7 +218,7 @@ function setOption(action, step) {
     //모자라면 계속 시행
     if (step < 100) {
         autoSetting = setTimeout(function() {
-            setOption(action, step+20);
+            setOption(action, step+10);
         },1000/60);
     //종료 : after 상태로 변경
     }
@@ -646,11 +650,9 @@ function setMain() {
         setSelect();
 
     //※ 옵션 적용
-    if (game.area) {
+    if (game.character) {
         $("#select_area").options.selectedIndex = indexSelectByValue($("#select_area"), game.area);
         setSelect($("#select_area").value);
-    }
-    if (game.character) {
         $("#select_character").options.selectedIndex = indexSelectByValue($("#select_character"), game.character.name);
         $("#list_dot_character").classList.add("checked");
     }
@@ -665,6 +667,8 @@ function setMain() {
         $("#list_dot_character").classList.remove("checked");
         //캐릭터 완성
         setSelect($("#select_area").value);
+        //기존 캐릭터 선택했던 거 초기화
+        game.character = null;
     };
     $("#select_character").onchange = function() {
         game.character = indexArrKey(characterList,"name",$("#select_character").value);
@@ -840,7 +844,7 @@ function prepareShow() {
                     if (Object.keys(bgmList).indexOf(game.character.bgm) < 0)
                         bgmList[game.character.bgm] = new Howl({
                             src:["./sound/fortune/bgm/" + game.character.bgm + ".mp3"],
-                            volume:0.5,
+                            volume:0.4,
                             loop:true,
                             preload:true
                         });

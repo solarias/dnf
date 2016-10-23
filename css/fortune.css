@@ -215,8 +215,11 @@ html, body {
 
             display:block;
         }
-            .clearFloat {
-                clear:both;
+                .clearFloat {
+                    clear:both;
+                }
+            #main_content select option.green {
+                color:#00BC51;
             }
         #content_random {
             clear:both;
@@ -464,7 +467,7 @@ html, body {
         bottom:21vmin;
 
         padding:1vmin;
-        width:50vmin;
+        width:40vmin;
         height:7vmin;
 
         background-color:rgba(41,46,111,0.7);
