@@ -910,6 +910,7 @@ window.onload = function() {
     $("#button_progress").disabled = false;
     $("#button_progress").onclick = function() {
         //공지 지우기
+        $("#top_message").style.visibility = "hidden";
         $("#top_notice").style.visibility = "hidden";
         //일부 버튼 치우기
         setButton($("#button_blog"),"hidden");

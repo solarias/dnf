@@ -90,6 +90,29 @@ html, body {
     box-sizing:border-box;
 }
     /*공지사항*/
+    #top_message {
+        position:absolute;
+        left:5vmin;
+        bottom:22vmin;
+
+        padding:2vmin;
+        width:90vmin;
+        height:20vmin;
+
+        background:rgba(255,255,255,0.6);
+        border-radius:5vmin;
+        box-sizing:border-box;
+
+        color:white;
+        font-size:3.5vmin;
+
+        display:table;
+    }
+        #top_message p {
+            vertical-align:middle;
+
+            display:table-cell;
+        }
     #top_notice {
         position:absolute;
         left:5vmin;
