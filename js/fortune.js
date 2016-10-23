@@ -5,7 +5,7 @@
 var i,j,k,l,m,n;
 
 //저장용 데이터
-var version = 0.2;//버전이 올라가면 기존 옵션 정보 초기화
+var version = 0.3;//버전이 올라가면 기존 옵션 정보 초기화
 var game = {
     //옵션
     startFull:0,
