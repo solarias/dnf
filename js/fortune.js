@@ -847,6 +847,7 @@ function finishDialog(state) {
             //(result일 경우에만)선물 버튼 표시
             if (state === "result") {
                 $("#button_gift").innerHTML = "선물";
+                setButton($("#button_gift"),"visible");
                 //일일 선물 제한 : 차후에 구현
                 $("#button_gift").onclick = function() {
                     giveGift();
