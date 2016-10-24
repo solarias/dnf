@@ -176,7 +176,7 @@ function saveData(cmd) {
                 var yyyy = (today.getFullYear()).toString();
                 var mm = (today.getMonth()+1).toString();
                 var dd = today.getDate().toString();
-                savedDate = parseInt(yyyy + mm + dd);
+                savedDate = parseInt(yyyy + mm + dd) - 1;
                 localStore("fortune_savedDate",savedDate);
 
                 break;
