@@ -450,10 +450,10 @@ function showFavorInfo(area, target) {
                 $("#taste_" + i.toString()).classList.remove("like", "dislike");
             }
             //취향 표시
-            if (favorList[target.id].like) {
+            if (favorList[target.id].like !== null) {
                 $("#taste_" + favorList[target.id].like.toString()).classList.add("like");
             }
-            if (favorList[target.id].dislike) {
+            if (favorList[target.id].dislike !== null) {
                 $("#taste_" + favorList[target.id].dislike.toString()).classList.add("dislike");
             }
             break;
@@ -846,12 +846,8 @@ function finishDialog(state) {
 
             //(result일 경우에만)선물 버튼 표시
             if (state === "result") {
-                $("#button_gift").innerHTML = "선물(" + favorList[game.character.id].giveLeft.toString() + ")";
-                if (favorList[game.character.id].giveLeft > 0) {
-                    setButton($("#button_gift"),"visible");
-                } else {
-                    setButton($("#button_gift"),"visible","disabled");
-                }
+                $("#button_gift").innerHTML = "선물";
+                //일일 선물 제한 : 차후에 구현
                 $("#button_gift").onclick = function() {
                     giveGift();
                 };
@@ -1475,7 +1471,7 @@ window.onload = function() {
             var mm = (today.getMonth()+1).toString();
             var dd = today.getDate().toString();
             var tempToday = parseInt(yyyy + mm + dd);
-            if (tempToday > savedDate || tempToday === 20161025) {
+            if (tempToday > savedDate) {
                 //교환횟수 리필
                 refillfavorLeft();
                 //일일퀘스트 (한다고 했으면) 체크
