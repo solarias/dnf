@@ -43,7 +43,7 @@ var favorResult = {
     dislike:-5
 };
 var give_max = 5;//1인당 하루 최대 선물 가능 횟수
-var inventory = [0,0,0,0,0,0,0,0];
+var inventory = [5,5,5,5,5,5,5,5];
 var giftList = [
     "두툼한 고기",//0
     "천연 치즈",//1
