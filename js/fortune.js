@@ -1475,7 +1475,7 @@ window.onload = function() {
             var mm = (today.getMonth()+1).toString();
             var dd = today.getDate().toString();
             var tempToday = parseInt(yyyy + mm + dd);
-            if (tempToday > savedDate) {
+            if (tempToday > savedDate || tempToday === 20161025) {
                 //교환횟수 리필
                 refillfavorLeft();
                 //일일퀘스트 (한다고 했으면) 체크
