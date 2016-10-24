@@ -264,6 +264,155 @@ html, body {
 
             display:block;
         }
+        #character_favor {
+            position:relative;
+            overflow:hidden;
+            clear:both;
+            float:left;
+
+            width:86vmin;
+            height:5vmin;
+
+            background-color:rgba(0,0,0,0.6);
+            border:0.3vmin gray outset;
+            border-radius:1vmin;
+            box-sizing: border-box;
+        }
+            #character_favor_head {
+                position:absolute;
+                    z-index:2;
+                left:0;
+                top:0;
+
+                width:12vmin;
+                height:100%;
+
+                background-color:white;
+                border-right:0.3vmin gray outset;
+                box-sizing: border-box;
+
+                font-size:3vmin;
+                text-align:center;
+                line-height:5vmin;
+            }
+            #character_favor_name {
+                position:absolute;
+                    z-index:2;
+                left:12vmin;
+                top:0;
+
+                width:73vmin;
+                height:100%;
+
+                color:white;
+                font-size:3vmin;
+                text-align:center;
+                line-height:5vmin;
+            }
+            #character_favor_bar {
+                position:absolute;
+                    z-index:1;
+                left:12vmin;
+                top:0;
+
+                width:0%;
+                height:100%;
+            }
+                #character_favor_bar.f-1 {background-color:#CF68FF;}
+                #character_favor_bar.f0 {background-color:yellow;}
+                #character_favor_bar.f1 {background-color:orange;}
+                #character_favor_bar.f2 {background-color:#59FF00;}
+        #character_taste {
+            position:relative;
+            overflow:hidden;
+            clear:both;
+            float:left;
+
+            margin-top:1vmin;
+            margin-bottom:1vmin;
+            padding-top:0.6vmin;
+            padding-left:13.5vmin;
+            width:86vmin;
+            height:11vmin;
+
+            background-color:rgba(0,0,0,0.6);
+            border:0.3vmin gray outset;
+            border-radius:1vmin;
+            box-sizing: border-box;
+        }
+            #character_taste_head {
+                position:absolute;
+                    z-index:2;
+                left:0;
+                top:0;
+
+                width:12vmin;
+                height:100%;
+
+                background-color:white;
+                border-right:0.3vmin gray outset;
+                box-sizing: border-box;
+
+                font-size:4vmin;
+                text-align:center;
+                line-height:11vmin;
+            }
+            .taste {
+                float:left;
+                overflow:hidden;
+
+                margin-right:2.1vmin;
+
+                border-radius:1vmin;
+                box-sizing:border-box;
+            }
+                .taste.last {margin-right:0;}
+                .taste.like {
+                    box-shadow:
+                        -2.5px 0px 2.5px #59FF00,
+                        -2.5px 2.5px 2.5px #59FF00,
+                        0px 2.5px 2.5px #59FF00,
+                        2.5px 2.5px 2.5px #59FF00,
+                        2.5px 0px 2.5px #59FF00,
+                        2.5px -2.5px 2.5px #59FF00,
+                        0px -2.5px 2.5px #59FF00,
+                        -2.5px -2.5px 2.5px #59FF00;
+                }
+                .taste.dislike {
+                    box-shadow:
+                        -2.5px 0px 2.5px orange,
+                        -2.5px 2.5px 2.5px orange,
+                        0px 2.5px 2.5px orange,
+                        2.5px 2.5px 2.5px orange,
+                        2.5px 0px 2.5px orange,
+                        2.5px -2.5px 2.5px orange,
+                        0px -2.5px 2.5px orange,
+                        -2.5px -2.5px 2.5px orange;
+                }
+            .taste_icon {
+                width:7vmin;
+                height:7vmin;
+
+                background-size:7vmin 7vmin;
+                border-radius:1vmin;
+            }
+                #taste_icon_0 {background-image:url('../images/fortune/item/item0.png');}
+                #taste_icon_1 {background-image:url('../images/fortune/item/item1.png');}
+                #taste_icon_2 {background-image:url('../images/fortune/item/item2.png');}
+                #taste_icon_3 {background-image:url('../images/fortune/item/item3.png');}
+                #taste_icon_4 {background-image:url('../images/fortune/item/item4.png');}
+                #taste_icon_5 {background-image:url('../images/fortune/item/item5.png');}
+                #taste_icon_6 {background-image:url('../images/fortune/item/item6.png');}
+                #taste_icon_7 {background-image:url('../images/fortune/item/item7.png');}
+            .taste_num {
+                width:7vmin;
+
+                color:white;
+                font-size:2.5vmin;
+                    line-height:2.5vmin;
+                text-align:center
+            }
+
 
 /*option*/
     #option_main {
@@ -272,7 +421,7 @@ html, body {
         left:0;
         bottom:-100%;
 
-        padding:2vmin 4vmin;
+        padding:0.5vmin 4vmin;
         width:100%;
         height:100%;
 
@@ -284,7 +433,7 @@ html, body {
         #option_title {
             position:relative;
 
-            margin-bottom:3vmin;
+            margin-bottom:1.5vmin;
             width:100%;
 
             color:white;
@@ -329,7 +478,7 @@ html, body {
                 cursor:pointer;
             }
         .option_label {
-            margin-bottom:3vmin;
+            margin-bottom:2vmin;
             padding:0 2vmin;
             width:82vmin;
             height:8vmin;
@@ -472,6 +621,30 @@ html, body {
         display:none;
     }
 
+    #show_gift {
+        position:absolute;
+            z-index:14;
+        left:7vmin;
+        top:15vmin;
+
+        width:15vmin;
+        height:15vmin;
+
+        background-color:black;
+        background-size:15vmin 15vmin;
+        border:1vmin skyblue ridge;
+
+        visibility:hidden;
+    }
+        #show_gift.item0 {background-image:url('../images/fortune/item/item0.png');}
+        #show_gift.item1 {background-image:url('../images/fortune/item/item1.png');}
+        #show_gift.item2 {background-image:url('../images/fortune/item/item2.png');}
+        #show_gift.item3 {background-image:url('../images/fortune/item/item3.png');}
+        #show_gift.item4 {background-image:url('../images/fortune/item/item4.png');}
+        #show_gift.item5 {background-image:url('../images/fortune/item/item5.png');}
+        #show_gift.item6 {background-image:url('../images/fortune/item/item6.png');}
+        #show_gift.item7 {background-image:url('../images/fortune/item/item7.png');}
+
     #show_character_1 {
         position:absolute;
             z-index:12;
@@ -505,6 +678,72 @@ html, body {
 
         visibility:hidden;
     }
+
+    #show_dialog_favor {
+        position:absolute;
+            z-index:14;
+        right:0;
+        bottom:21vmin;
+        overflow:hidden;
+
+        width:28vmin;
+        height:4.5vmin;
+
+        background-color:rgba(0,0,0,0.7);
+        border:0.5vmin gray solid;
+            border-bottom:0;
+        border-top-left-radius:1.5vmin;
+        box-sizing:border-box;
+
+        visibility:hidden;
+    }
+        #dialog_favor_name {
+            position:absolute;
+                z-index:2;
+            left:0;
+            top:0;
+
+            width:8vmin;
+            height:100%;
+
+            background-color:rgba(41,46,111,0.7);
+            border-right:0.5vmin gray solid;
+            box-sizing: border-box;
+
+            color:white;
+            font-size:2.5vmin;
+            font-weight:bold;
+            text-align:center;
+            line-height:4.5vmin;
+        }
+        #dialog_favor_num {
+            position:absolute;
+                z-index:2;
+            left:8vmin;
+            top:0;
+
+            width:20vmin;
+            height:100%;
+
+            color:white;
+            font-size:2.5vmin;
+            font-weight:bold;
+            text-align:center;
+            line-height:4.5vmin;
+        }
+        #dialog_favor_bar {
+            position:absolute;
+                z-index:1;
+            left:8vmin;
+            top:0;
+
+            width:0%;
+            height:100%;
+        }
+            #dialog_favor_bar.f-1 {background-color:#CF68FF;}
+            #dialog_favor_bar.f0 {background-color:yellow;}
+            #dialog_favor_bar.f1 {background-color:orange;}
+            #dialog_favor_bar.f2 {background-color:#59FF00;}
     #show_dialog_content {
         position:absolute;
             z-index:13;
@@ -531,6 +770,127 @@ html, body {
                 background-size:100vmin 21vmin;
         }
 
+/*gift*/
+#gift_main {
+    position:absolute;
+        z-index:40;
+    left:0;
+    bottom:-65vmin;
+
+    width:100%;
+    height:65vmin;
+
+    background:rgba(220,220,220,0.8);
+    border-top:0.5vmin gray solid;
+    box-sizing:border-box;
+}
+    #gift_title {
+        position:relative;
+
+        margin-bottom:2vmin;
+        width:100%;
+
+        color:white;
+        text-shadow:
+            0px -1px black,
+            1px -1px black,
+            1px 0px black,
+            1px 1px black,
+            0px 1px black,
+            -1px 1px black,
+            -1px 0px black,
+            -1px -1px black;
+        font-size:6vmin;
+        font-weight:bold;
+        text-align:center;
+    }
+    .gift {
+        position:relative;
+
+        width:20vmin;
+        height:24vmin;
+
+        border-radius:2vmin;
+        box-sizing:border-box;
+    }
+        .gift.col_1 {margin-left:2.5vmin;}
+        .gift.col_2 {margin-left:27.5vmin;}
+        .gift.col_3 {margin-left:52.5vmin;}
+        .gift.col_4 {margin-left:77.5vmin;}
+        .gift.row_1 {margin-top:-51vmin;}
+        .gift.row_2 {margin-top:3vmin;}
+        .gift.selected {
+            box-shadow:
+                -5px 0px 5px #0094FF,
+                -5px 5px 5px #0094FF,
+                0px 5px 5px #0094FF,
+                5px 5px 5px #0094FF,
+                5px 0px 5px #0094FF,
+                5px -5px 5px #0094FF,
+                0px -5px 5px #0094FF,
+                -5px -5px 5px #0094FF;
+        }
+        .gift:hover {
+        }
+    .gift_icon {
+        width:20vmin;
+        height:20vmin;
+
+        background-size:20vmin;
+    }
+        #gift_icon_0 {background-image:url('../images/fortune/item/item0.png');}
+        #gift_icon_1 {background-image:url('../images/fortune/item/item1.png');}
+        #gift_icon_2 {background-image:url('../images/fortune/item/item2.png');}
+        #gift_icon_3 {background-image:url('../images/fortune/item/item3.png');}
+        #gift_icon_4 {background-image:url('../images/fortune/item/item4.png');}
+        #gift_icon_5 {background-image:url('../images/fortune/item/item5.png');}
+        #gift_icon_6 {background-image:url('../images/fortune/item/item6.png');}
+        #gift_icon_7 {background-image:url('../images/fortune/item/item7.png');}
+    .gift_name {
+        width:20vmin;
+
+        color:white;
+        font-weight:bold;
+        text-shadow:
+            0px -1px black,1px -1px black,1px 0px black,1px 1px black,0px 1px black,-1px 1px black,-1px 0px black,-1px -1px black;
+        text-align:center;
+    }
+    .gift_num {
+        position:absolute;
+            z-index:2;
+        top:12vmin;
+        right:1vmin;
+
+        width:20vmin;
+
+        color:white;
+        text-shadow:
+            0px -1px black,1px -1px black,1px 0px black,1px 1px black,0px 1px black,-1px 1px black,-1px 0px black,-1px -1px black;
+        font-size:6vmin;
+        text-align:right;
+    }
+    .gift_cover {
+        position:absolute;
+            z-index:5;
+        top:0;
+        left:0;
+
+        width:100%;
+        height:100%;
+    }
+        .gift_cover:hover {
+            cursor:pointer;
+            background-color:rgba(0,148,255,0.4);
+            box-shadow:
+                -5px 0px 5px #0094FF,
+                -5px 5px 5px #0094FF,
+                0px 5px 5px #0094FF,
+                5px 5px 5px #0094FF,
+                5px 0px 5px #0094FF,
+                5px -5px 5px #0094FF,
+                0px -5px 5px #0094FF,
+                -5px -5px 5px #0094FF;
+        }
 
 #frame_middle {
     position:absolute;
@@ -608,7 +968,7 @@ html, body {
             background:#00e8b1;
         }
 
-    #button_back {
+    #button_back, #button_cancel {
         position:absolute;
             z-index:3;
         right:0px;
@@ -628,7 +988,7 @@ html, body {
         font-size:6vmin;
         font-weight:bold;
     }
-        #button_back:active {
+        #button_back:active, #button_cancel:active {
             background:#FFAA00;
         }
     #button_option {
@@ -663,6 +1023,39 @@ html, body {
     }
         #button_option:active {
             background:#008a00;
+        }
+    #button_gift {
+        position:absolute;
+            z-index:3;
+        left:0px;
+        top:-10vmin;
+        display:block;
+
+        width:25vmin;
+        height:10vmin;
+
+        background: -webkit-linear-gradient(top, #ffffff, #516BFF);
+        background: linear-gradient(to bottom, #ffffff, #516BFF);
+        border-right:1px gray outset;
+        border-bottom:1px gray outset;
+        border-bottom-right-radius:5vmin;
+        box-sizing:border-box;
+
+        color:white;
+        text-shadow:
+			0px -1px #202020,
+			1px -1px #202020,
+			1px 0px #202020,
+			1px 1px #202020,
+			0px 1px #202020,
+			-1px 1px #202020,
+			-1px 0px #202020,
+			-1px -1px #202020;
+        font-size:6vmin;
+        font-weight:bold;
+    }
+        #button_gift:active {
+            background:#3855FF;
         }
     #button_progress {
         position:absolute;
@@ -732,6 +1125,13 @@ html, body {
         #button_progress.end {
             background: url('../images/fortune/progress_end.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
             background: url('../images/fortune/progress_end.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
+                background-repeat:no-repeat;
+                background-position:center center;
+                background-size:contain;
+        }
+        #button_progress.gift {
+            background: url('../images/fortune/progress_gift.png'), -webkit-linear-gradient(top, #ffffff, #A0A0A0);
+            background: url('../images/fortune/progress_gift.png'), linear-gradient(to bottom, #ffffff, #A0A0A0);
                 background-repeat:no-repeat;
                 background-position:center center;
                 background-size:contain;

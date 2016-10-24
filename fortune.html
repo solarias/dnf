@@ -41,6 +41,47 @@
 					<select id="select_character">
 						<option value="" selected disabled>캐릭터를 선택하세요</option>
 					</select>
+					<div id="character_favor">
+						<div id="character_favor_head">호감도</div>
+						<div id="character_favor_name" class="font_shadow_black"></div>
+						<div id="character_favor_bar"></div>
+					</div>
+					<div id="character_taste">
+						<div id="character_taste_head">취향</div>
+						<div id="taste_0" class="taste">
+							<div id="taste_icon_0" class="taste_icon"></div>
+							<div id="taste_num_0" class="taste_num"></div>
+						</div>
+						<div id="taste_1" class="taste">
+							<div id="taste_icon_1" class="taste_icon"></div>
+							<div id="taste_num_1" class="taste_num"></div>
+						</div>
+						<div id="taste_2" class="taste">
+							<div id="taste_icon_2" class="taste_icon"></div>
+							<div id="taste_num_2" class="taste_num"></div>
+						</div>
+						<div id="taste_3" class="taste">
+							<div id="taste_icon_3" class="taste_icon"></div>
+							<div id="taste_num_3" class="taste_num"></div>
+						</div>
+						<div id="taste_4" class="taste">
+							<div id="taste_icon_4" class="taste_icon"></div>
+							<div id="taste_num_4" class="taste_num"></div>
+						</div>
+						<div id="taste_5" class="taste">
+							<div id="taste_icon_5" class="taste_icon"></div>
+							<div id="taste_num_5" class="taste_num"></div>
+						</div>
+						<div id="taste_6" class="taste">
+							<div id="taste_icon_6" class="taste_icon"></div>
+							<div id="taste_num_6" class="taste_num"></div>
+						</div>
+						<div id="taste_7" class="taste last">
+							<div id="taste_icon_7" class="taste_icon"></div>
+							<div id="taste_num_7" class="taste_num"></div>
+						</div>
+					</div>
+
 					<p><span id="list_dot_wish" class="list_dot"></span>소망 선택</p>
 					<select id="select_wish" class="clearFloat">
 						<option value="" selected disabled>소망을 선택하세요</option>
@@ -69,17 +110,21 @@
 					<br/>
 					<input id="option_bgm" class="option_checkbox" type="checkbox" />
 					<label for="option_bgm" class="option_label">
-						배경음악 출력 (데이터 주의)
+						배경음악 출력 (데이터, 로딩 주의)
 					</label>
 					<br/>
 					<input id="option_sfx" class="option_checkbox" type="checkbox" />
 					<label for="option_sfx" class="option_label">
-						효과음 + 목소리 출력 (데이터 주의)
+						효과음 출력 (데이터, 로딩 주의)
 					</label>
 					<br/>
 					<input id="option_high" class="option_checkbox" type="checkbox" />
 					<label for="option_high" class="option_label">
-						고화질 이미지 사용하기 (데이터 주의)
+						고화질 이미지 사용 (데이터, 로딩 주의)
+					</label>
+					<input id="option_quest" class="option_checkbox" type="checkbox" checked />
+					<label for="option_quest" class="option_label">
+						매일 처음 실행 시 호감도 선물 받기
 					</label>
 
 				</div>
@@ -95,22 +140,91 @@
                 </div>
                 <img id="show_flash" src="./images/fortune/flash.gif" />
 
+				<div id="show_gift">
+				</div>
+                <div id="show_card">
+                </div>
+
                 <div id="show_character_1"></div>
                 <div id="show_dialog_name"></div>
+				<div id="show_dialog_favor">"
+					<div id="dialog_favor_name"></div>
+					<div id="dialog_favor_num" class="font_shadow_black"></div>
+					<div id="dialog_favor_bar"></div>
+				</div>
                 <div id="show_dialog_content">
                 </div>
 
-				<!-- option -->
+				<!-- gift -->
+				<div id="gift_main">
+					<p id="gift_title">선물을 선택하세요</p>
+					<div id="gift_0" class="gift col_1">
+						<div id="gift_icon_0" class="gift_icon"></div>
+						<div id="gift_name_0" class="gift_name">두툼한 고기</div>
+						<div id="gift_num_0" class="gift_num"></div>
+						<div id="gift_cover_0" class="gift_cover"></div>
+					</div>
+					<div id="gift_1" class="gift col_1 row_2">
+						<div id="gift_icon_1" class="gift_icon"></div>
+						<div id="gift_name_1" class="gift_name">천연 치즈</div>
+						<div id="gift_num_1" class="gift_num"></div>
+						<div id="gift_cover_1" class="gift_cover"></div>
+					</div>
+					<div id="gift_2" class="gift col_2 row_1">
+						<div id="gift_icon_2" class="gift_icon"></div>
+						<div id="gift_name_2" class="gift_name">향기로운 메론</div>
+						<div id="gift_num_2" class="gift_num"></div>
+						<div id="gift_cover_2" class="gift_cover"></div>
+					</div>
+					<div id="gift_3" class="gift col_2 row_2">
+						<div id="gift_icon_3" class="gift_icon"></div>
+						<div id="gift_name_3" class="gift_name">100년근 산삼</div>
+						<div id="gift_num_3" class="gift_num"></div>
+						<div id="gift_cover_3" class="gift_cover"></div>
+					</div>
+					<div id="gift_4" class="gift col_3 row_1">
+						<div id="gift_icon_4" class="gift_icon"></div>
+						<div id="gift_name_4" class="gift_name">황금가루</div>
+						<div id="gift_num_4" class="gift_num"></div>
+						<div id="gift_cover_4" class="gift_cover"></div>
+					</div>
+					<div id="gift_5" class="gift col_3 row_2">
+						<div id="gift_icon_5" class="gift_icon"></div>
+						<div id="gift_name_5" class="gift_name">오색산호 조각</div>
+						<div id="gift_num_5" class="gift_num"></div>
+						<div id="gift_cover_5" class="gift_cover"></div>
+					</div>
+					<div id="gift_6" class="gift col_4 row_1">
+						<div id="gift_icon_6" class="gift_icon"></div>
+						<div id="gift_name_6" class="gift_name">청명한 튤립</div>
+						<div id="gift_num_6" class="gift_num"></div>
+						<div id="gift_cover_6" class="gift_cover"></div>
+					</div>
+					<div id="gift_7" class="gift col_4 row_2">
+						<div id="gift_icon_7" class="gift_icon"></div>
+						<div id="gift_name_7" class="gift_name">마력깃든 진주</div>
+						<div id="gift_num_7" class="gift_num"></div>
+						<div id="gift_cover_7" class="gift_cover"></div>
+					</div>
+				</div>
             </div>
             <div id="frame_middle">
                 <div id="middle_loading"></div>
             </div>
             <div id="frame_bottom">
 				<div id="button_area">
+					<!--첫 화면-->
 					<button id="button_blog" disabled>Blog</button>
 
+					<!--쇼 진행 중-->
 					<button id="button_option">옵션</button>
 	                <button id="button_back">나가기</button>
+
+					<!--쇼 종료 후-->
+					<button id="button_gift">선물</button>
+	                <button id="button_cancel">취소</button>
+
+					<!--늘 있는 거 -->
 	                <button id="button_progress" class="loading" disabled></button>
 				</div>
             </div>
@@ -139,7 +253,7 @@
 
 	</body>
 
-<!-- Histats.com  START  (aync) -->
+<!-- Histats.com  START  (aync)
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,3617759,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -150,5 +264,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?3617759&101" alt="counter free hit invisible" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+ Histats.com  END  -->
 </html>
