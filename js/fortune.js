@@ -38,9 +38,9 @@ var favor_init = 10;//호감도 초기치 (이보다 낮으면 비호감)
 var favor_1 = 40;//호감도 친밀 기준
 var favor_2 = 80;//호감도 호감 기준
 var favorResult = {
-    like:4,
+    like:5,
     normal:1,
-    dislike:-5
+    dislike:-10
 };
 var give_max = 5;//1인당 하루 최대 선물 가능 횟수
 var inventory = [5,5,5,5,5,5,5,5];
@@ -85,7 +85,8 @@ var autoResult;//결과 출력 관리
     var imageStorage = [];
     var imageList = [];
     //기본 효과음 종류 (차후에 필요하면 링크 자동 생성)
-    var sfx = ["typing","talking","suprise","giveitem","gift_like","gift_dislike"];
+    var sfx = ["typing","talking","suprise","giveitem","gift_like","gift_dislike",
+                "throw_1","throw_2","throw_3","throw_4","throw_5","throw_6","throw_7"];
     //사운드 스토리지
     var bgmList = {};//브금이 필요하면 저장해서 사용
     var sfxList = {};//효과음이 필요하면 저장해서 사용
@@ -1024,6 +1025,9 @@ function giveGift(step) {
                             $("#show_gift").style.visibility = "visible";
                             //선물 사운드
                             if (game.sfx) sfxList.giveitem.play();
+                            var tempArr = [1,2,3,4,5,6,7];
+                            var throwSound = tempArr[Math.floor(Math.random() * tempArr.length)];
+                            if (game.sfx) sfxList["throw_" + throwSound.toString()].play();
                             //또 잠시후 반응이 나옴
                             setTimeout(function() {
                                 //좋아함 : 좋아하는 대화
@@ -1394,6 +1398,13 @@ function prepareShow() {
             if (imageStorage.indexOf(game.character.img) < 0)
                 imageList.push("./images/fortune/character" + tempHigh +"/" + game.character.img + ".png");
                 imageStorage.push("./images/fortune/character" + tempHigh +"/" + game.character.img + ".png");
+                //호감도 일러도 있다면 그거도 기억
+                if (game.character.favorImg === "yes") {
+                    imageList.push("./images/fortune/character" + tempHigh +"/" + game.character.img + "_1.png");
+                    imageStorage.push("./images/fortune/character" + tempHigh +"/" + game.character.img + "_1.png");
+                    imageList.push("./images/fortune/character" + tempHigh +"/" + game.character.img + "_2.png");
+                    imageStorage.push("./images/fortune/character" + tempHigh +"/" + game.character.img + "_2.png");
+                }
             if (imageStorage.indexOf(game.character.back) < 0)
                 imageList.push("./images/fortune/background" + tempHigh +"/" + game.character.back + ".jpg");
                 imageStorage.push("./images/fortune/background" + tempHigh +"/" + game.character.back + ".jpg");
@@ -1478,14 +1489,14 @@ window.onload = function() {
                 //일일퀘스트 (한다고 했으면) 체크
                 if (game.quest) {
                     for (var k = 0; k < inventory.length; k++) {
-                        //재고 추가 (개당 5개)
-                        showInventory(k, "+5");
+                        //재고 추가 (개당 4개)
+                        showInventory(k, "+4");
                     }
                     //재고 추가 알림
                     swal({
                         type:"info",
                         title:"일일퀘스트 - 접속",
-                        text:"매일 접속할 때마다 호감도 선물을 각각 5개씩 받습니다.\n(받고 싶지 않다면 옵션에서 설정해주세요.)"
+                        text:"매일 접속할 때마다 호감도 선물을 각각 4개씩 받습니다.\n(받고 싶지 않다면 옵션에서 설정해주세요.)"
                     });
                 }
             }
