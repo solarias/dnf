@@ -1430,6 +1430,29 @@ window.onload = function() {
     loadData();
     //호감 비어있는 정보 구축
     setFavorList();
+    //일일 갱신사항 확인
+    var today = new Date();
+    var yyyy = (today.getFullYear()).toString();
+    var mm = (today.getMonth()+1).toString();
+    var dd = today.getDate().toString();
+    var tempToday = parseInt(yyyy + mm + dd);
+    if (tempToday > savedDate) {
+        //교환횟수 리필
+        refillfavorLeft();
+        //일일퀘스트 (한다고 했으면) 체크
+        if (game.quest) {
+            for (var k = 0; k < inventory.length; k++) {
+                //재고 추가 (개당 4개)
+                showInventory(k, "+4");
+            }
+            //재고 추가 알림
+            swal({
+                type:"info",
+                title:"일일퀘스트 - 접속",
+                text:"매일 접속할 때마다 호감도 선물을 각각 4개씩 받습니다.\n(받고 싶지 않다면 옵션에서 설정해주세요.)"
+            });
+        }
+    }
     //아이템 정보 확인
     showInventory();
 
@@ -1473,29 +1496,6 @@ window.onload = function() {
         loadImages(imageList,function() {
             //문 닫기(후 메인 설치)
             finishShow(0);
-            //일일 갱신사항 확인
-            var today = new Date();
-            var yyyy = (today.getFullYear()).toString();
-            var mm = (today.getMonth()+1).toString();
-            var dd = today.getDate().toString();
-            var tempToday = parseInt(yyyy + mm + dd);
-            if (tempToday > savedDate) {
-                //교환횟수 리필
-                refillfavorLeft();
-                //일일퀘스트 (한다고 했으면) 체크
-                if (game.quest) {
-                    for (var k = 0; k < inventory.length; k++) {
-                        //재고 추가 (개당 4개)
-                        showInventory(k, "+4");
-                    }
-                    //재고 추가 알림
-                    swal({
-                        type:"info",
-                        title:"일일퀘스트 - 접속",
-                        text:"매일 접속할 때마다 호감도 선물을 각각 4개씩 받습니다.\n(받고 싶지 않다면 옵션에서 설정해주세요.)"
-                    });
-                }
-            }
         });
     };
 
