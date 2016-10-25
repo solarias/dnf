@@ -1436,11 +1436,7 @@ window.onload = function() {
     //버튼 잠금 해제
     $("#button_blog").disabled = false;
     $("#button_blog").onclick = function() {
-        //차후 블로그 글 개설 시 추가
-        swal({
-            type:"warning",
-            title:"블로그에 아직 올리지 않았습니다."
-        });
+        window.open("http://blog.naver.com/ansewo/220845496109");
     };
 
     $("#button_progress").className = "start";
@@ -1502,4 +1498,10 @@ window.onload = function() {
             }
         });
     };
+
+};
+
+//뒤로 버튼 경고음
+window.onbeforeunload = function() {
+    return '정말로 아라드 운세를 종료하시겠습니까?';
 };
