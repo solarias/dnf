@@ -1794,26 +1794,10 @@ function setGabriel(cmd) {
 				//세트템 지정 시, 동일 세트면 20번 집어넣기
 				if (set !== "" && itemList[i]["set"] === set) {
 					//아이템 선정용
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
+					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
 					//아이템 선정 종류 수 파악용
 					tempArr1_real.push(itemList[i]);
 				//아니면 1번만 집어넣기
@@ -2039,7 +2023,27 @@ function sortItem(type, zone, zoneArr) {
 				arr_num.splice(i,1);
 			}
 		}
-	input["type"] = arr_name[rand(arr_num)];
+		//a-1. 장비 종류만큼 칸 설정
+		var arr_num2 = [];
+		for (var i=0;i<arr_name.length;i++) {
+			arr_num2.push(0);
+		}
+		//a-2. 해당 칸은 특정 장비의 개수만큼 숫자가 증가
+		for (var i=0;i<currentList.length;i++) {
+			for (var j=0;j<arr_num2.length;j++) {
+				//계산 중인 장비라면, 해당 레벨 칸 +1
+				if ((currentList[i]["sort1"] === arr_name[j] //무기, 방어구 전용 : 대분류
+				|| currentList[i]["sort2"] === arr_name[j])) {//악세사리, 특수장비 : 1차 소분류
+					arr_num2[j] += 1;
+				}
+			}
+		}
+		//a-3. 아이템 수량 & 기본 가중치 합산
+		var arr_num3 = [];
+		for (var i=0;i<arr_num2.length;i++) {
+			arr_num3[i] = arr_num[i] * arr_num2[i];
+		}
+	input["type"] = arr_name[rand(arr_num3)];
 	//4. 레벨 결정 (가중치 = 각 종류&레벨별 아이템 개수)
 	switch (playMode) {
 		case "normal":
