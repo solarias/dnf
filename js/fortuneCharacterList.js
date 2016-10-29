@@ -8231,5 +8231,26 @@ var characterList = [
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
+	}, 
+	{
+		"id":"cex1",
+		"name":"아야사토 마요이",
+		"contributor":"",
+		"area":"미분류",
+		"img":"cex1",
+		"back":"mayoi",
+		"bgm":"mayoi",
+		"voice":"",
+		"address":"나루호도 법률사무소",
+		"intro":"",
+		"casting":"",
+		"result":"",
+		"favorImg":"",
+		"like":"",
+		"dislike":"",
+		"take":"",
+		"gift_like":"",
+		"gift_normal":"",
+		"gift_dislike":""
 	}
 ];

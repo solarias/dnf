@@ -142,6 +142,9 @@ html, body {
         background-image:url('../images/fortune/door.jpg');
             background-size:auto 80vmin;
             background-position:100% 50%;
+
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
         #main_door_l {
             left:-50%;
@@ -427,6 +430,9 @@ html, body {
 
         background:#404040;
         box-sizing:border-box;
+
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
 
         color:white;
     }
@@ -783,6 +789,9 @@ html, body {
     background:rgba(220,220,220,0.8);
     border-top:0.5vmin gray solid;
     box-sizing:border-box;
+
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
     #gift_title {
         position:relative;
