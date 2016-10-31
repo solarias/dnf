@@ -16,7 +16,7 @@ var characterList = [
 		"favorImg":"",
 		"like":"",
 		"dislike":"",
-		"take":"잠깐, %character이(가) 당신에게 줄 선물이 있다고 하네요.",
+		"buff":"%character이(가) 답례로 당신에게 버프를 걸어주겠다고 합니다.",
 		"gift_like":"%character이(가) 무척 기뻐합니다. 당신이 준 선물이 아주 마음에 드나 보네요.",
 		"gift_normal":"당신이 선물을 줘서 %character이(가) 감사를 표합니다.",
 		"gift_dislike":"이런, %character의 표정이 일그러졌네요. 다음번엔 조심해야겠어요."
@@ -37,7 +37,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -58,7 +58,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -79,7 +79,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -100,7 +100,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -121,7 +121,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -142,7 +142,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -163,7 +163,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -184,7 +184,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -205,7 +205,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -226,7 +226,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -247,7 +247,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -268,7 +268,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -289,7 +289,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -310,7 +310,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -331,7 +331,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -352,7 +352,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -373,7 +373,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -394,7 +394,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -415,7 +415,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -436,7 +436,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -457,7 +457,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -478,7 +478,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -499,7 +499,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -520,7 +520,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -541,7 +541,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -562,7 +562,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -583,7 +583,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -604,7 +604,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -625,7 +625,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -646,7 +646,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -667,7 +667,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -688,7 +688,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -709,7 +709,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -730,7 +730,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -751,7 +751,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -772,7 +772,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -793,7 +793,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -814,7 +814,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -835,7 +835,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -856,7 +856,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -877,7 +877,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -898,7 +898,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -919,7 +919,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -940,7 +940,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -961,7 +961,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -982,7 +982,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1003,7 +1003,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1024,7 +1024,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1045,7 +1045,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1066,7 +1066,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1087,7 +1087,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1108,7 +1108,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1129,7 +1129,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1150,7 +1150,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1171,7 +1171,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1192,7 +1192,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1213,7 +1213,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1234,7 +1234,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1255,7 +1255,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1276,7 +1276,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1297,7 +1297,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1318,7 +1318,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1339,7 +1339,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1360,7 +1360,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1381,7 +1381,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1402,7 +1402,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1423,7 +1423,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1444,7 +1444,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1465,7 +1465,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1486,7 +1486,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1507,7 +1507,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1528,7 +1528,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1549,7 +1549,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1570,7 +1570,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1591,7 +1591,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1612,7 +1612,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1633,7 +1633,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1654,7 +1654,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1675,7 +1675,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1696,7 +1696,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1717,7 +1717,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1738,7 +1738,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1759,7 +1759,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1780,7 +1780,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1801,7 +1801,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1822,7 +1822,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1843,7 +1843,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1864,7 +1864,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1885,7 +1885,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1906,7 +1906,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1927,7 +1927,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1948,7 +1948,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1969,7 +1969,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -1990,7 +1990,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2011,7 +2011,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2032,7 +2032,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2053,7 +2053,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2074,7 +2074,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2095,7 +2095,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2116,7 +2116,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2137,7 +2137,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2158,7 +2158,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2179,7 +2179,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2200,7 +2200,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2221,7 +2221,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2242,7 +2242,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2263,7 +2263,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2284,7 +2284,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2305,7 +2305,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2326,7 +2326,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2347,7 +2347,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2368,7 +2368,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2389,7 +2389,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2410,7 +2410,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2431,7 +2431,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2452,7 +2452,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2473,7 +2473,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2494,7 +2494,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2515,7 +2515,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2536,7 +2536,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2557,7 +2557,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2578,7 +2578,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2599,7 +2599,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2620,7 +2620,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2641,7 +2641,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2662,7 +2662,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2683,7 +2683,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2704,7 +2704,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2725,7 +2725,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2746,7 +2746,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2767,7 +2767,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2788,7 +2788,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2809,7 +2809,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2830,7 +2830,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2851,7 +2851,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2872,7 +2872,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2893,7 +2893,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2914,7 +2914,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2935,7 +2935,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2956,7 +2956,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2977,7 +2977,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -2998,7 +2998,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3019,7 +3019,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3040,7 +3040,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3061,7 +3061,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3082,7 +3082,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3103,7 +3103,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3124,7 +3124,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3145,7 +3145,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3166,7 +3166,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3187,7 +3187,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3208,7 +3208,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3229,7 +3229,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3250,7 +3250,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3271,7 +3271,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3292,7 +3292,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3313,7 +3313,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3334,7 +3334,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3355,7 +3355,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3376,7 +3376,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3397,7 +3397,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3418,7 +3418,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3439,7 +3439,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3460,7 +3460,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3481,7 +3481,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3502,7 +3502,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3523,7 +3523,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3544,7 +3544,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3565,7 +3565,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3586,7 +3586,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3607,7 +3607,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3628,7 +3628,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3649,7 +3649,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3670,7 +3670,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3691,7 +3691,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3712,7 +3712,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3733,7 +3733,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3754,7 +3754,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3775,7 +3775,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3796,7 +3796,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3817,7 +3817,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3838,7 +3838,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3859,7 +3859,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3880,7 +3880,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3901,7 +3901,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3922,7 +3922,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3943,7 +3943,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3964,7 +3964,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -3985,7 +3985,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4006,7 +4006,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4027,7 +4027,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4048,7 +4048,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4069,7 +4069,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4090,7 +4090,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4111,7 +4111,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4132,7 +4132,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4153,7 +4153,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4174,7 +4174,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4195,7 +4195,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4216,7 +4216,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4237,7 +4237,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4258,7 +4258,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4279,7 +4279,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4300,7 +4300,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4321,7 +4321,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4342,7 +4342,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4363,7 +4363,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4384,7 +4384,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4405,7 +4405,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4426,7 +4426,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4447,7 +4447,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4468,7 +4468,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4489,7 +4489,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4510,7 +4510,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4531,7 +4531,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4552,7 +4552,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4573,7 +4573,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4594,7 +4594,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4615,7 +4615,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4636,7 +4636,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4657,7 +4657,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4678,7 +4678,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4699,7 +4699,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4720,7 +4720,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4741,7 +4741,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4762,7 +4762,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4783,7 +4783,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4804,7 +4804,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4825,7 +4825,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4846,7 +4846,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4867,7 +4867,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4888,7 +4888,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4909,7 +4909,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4930,7 +4930,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4951,7 +4951,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4972,7 +4972,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -4993,7 +4993,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5014,7 +5014,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5035,7 +5035,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5056,7 +5056,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5077,7 +5077,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5098,7 +5098,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5119,7 +5119,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5140,7 +5140,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5161,7 +5161,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5182,7 +5182,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5203,7 +5203,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5224,7 +5224,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5245,7 +5245,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5266,7 +5266,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5287,7 +5287,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5308,7 +5308,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5329,7 +5329,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5350,7 +5350,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5371,7 +5371,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5392,7 +5392,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5413,7 +5413,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5434,7 +5434,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5455,7 +5455,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5476,7 +5476,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5497,7 +5497,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5518,7 +5518,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5539,7 +5539,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5560,7 +5560,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5581,7 +5581,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5602,7 +5602,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5623,7 +5623,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5644,7 +5644,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5665,7 +5665,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5686,7 +5686,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5707,7 +5707,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5728,7 +5728,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5749,7 +5749,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5770,7 +5770,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5791,7 +5791,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5812,7 +5812,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5833,7 +5833,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5854,7 +5854,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5875,7 +5875,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5896,7 +5896,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5917,7 +5917,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5938,7 +5938,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5959,7 +5959,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -5980,7 +5980,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6001,7 +6001,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6022,7 +6022,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6043,7 +6043,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6064,7 +6064,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6085,7 +6085,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6106,7 +6106,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6127,7 +6127,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6148,7 +6148,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6169,7 +6169,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6190,7 +6190,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6211,7 +6211,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6232,7 +6232,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6253,7 +6253,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6274,7 +6274,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6295,7 +6295,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6316,7 +6316,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6337,7 +6337,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6358,7 +6358,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6379,7 +6379,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6400,7 +6400,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6421,7 +6421,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6442,7 +6442,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6463,7 +6463,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6484,7 +6484,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6505,7 +6505,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6526,7 +6526,7 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6547,7 +6547,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6568,7 +6568,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6589,7 +6589,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6610,7 +6610,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6631,7 +6631,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6652,7 +6652,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6673,7 +6673,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6694,7 +6694,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6715,7 +6715,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6736,7 +6736,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6757,7 +6757,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6778,7 +6778,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6799,7 +6799,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6820,7 +6820,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6841,7 +6841,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6862,7 +6862,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6883,7 +6883,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6904,7 +6904,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6925,7 +6925,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6946,7 +6946,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6967,7 +6967,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -6988,7 +6988,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7009,7 +7009,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7030,7 +7030,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7051,7 +7051,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7072,7 +7072,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7093,7 +7093,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7114,7 +7114,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7135,7 +7135,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7156,7 +7156,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7177,7 +7177,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7198,7 +7198,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7219,7 +7219,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7240,7 +7240,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7261,7 +7261,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7282,7 +7282,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7303,7 +7303,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7324,7 +7324,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7345,7 +7345,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7366,7 +7366,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7387,7 +7387,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7408,7 +7408,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7429,7 +7429,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7450,7 +7450,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7471,7 +7471,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7492,7 +7492,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7513,7 +7513,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7534,7 +7534,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7555,7 +7555,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7576,7 +7576,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7597,7 +7597,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7618,7 +7618,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7639,7 +7639,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7660,7 +7660,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7681,7 +7681,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7702,7 +7702,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7723,7 +7723,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7744,7 +7744,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7765,7 +7765,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7786,7 +7786,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7807,7 +7807,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7828,7 +7828,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7849,7 +7849,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7870,7 +7870,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7891,7 +7891,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7912,7 +7912,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7933,7 +7933,7 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7954,7 +7954,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7975,7 +7975,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -7996,7 +7996,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8017,7 +8017,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8038,7 +8038,7 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8059,7 +8059,7 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8080,7 +8080,7 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8101,7 +8101,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8122,7 +8122,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8143,7 +8143,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8164,7 +8164,7 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8185,7 +8185,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8206,7 +8206,7 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8227,7 +8227,7 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""
@@ -8248,7 +8248,7 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"take":"",
+		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
 		"gift_dislike":""

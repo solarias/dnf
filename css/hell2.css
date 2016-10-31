@@ -919,6 +919,11 @@ html, body {
 		font-size:20px;
 		font-weight:bold;
 	}
+	#frame_left select#channel {
+		height:21px;
+
+		font-size:11px;
+	}
 	#difficulty {
 		background:#F4FA58;
 	}

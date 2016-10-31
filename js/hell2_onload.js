@@ -640,6 +640,13 @@ function main(cmd) {
 		//wrapper 개봉
 		$("#wrapper").style.display = "block";
 
+		//2-0. 채널 생성
+		for (var i = 0; i < resultList.channel.length; i++) {
+			var option = document.createElement("option");
+			option.text = resultList.channel[i];
+			$("#channel").add(option);
+		}
+
 		//2. 일부 값 미리 입력
 		if (cmd === "continue") {
 			dungeon_select(dataObj["dungeon"]);//2-1. 던전 선택
