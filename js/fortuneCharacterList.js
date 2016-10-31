@@ -16,10 +16,11 @@ var characterList = [
 		"favorImg":"",
 		"like":"",
 		"dislike":"",
-		"buff":"%character이(가) 답례로 당신에게 버프를 걸어주겠다고 합니다.",
 		"gift_like":"%character이(가) 무척 기뻐합니다. 당신이 준 선물이 아주 마음에 드나 보네요.",
 		"gift_normal":"당신이 선물을 줘서 %character이(가) 감사를 표합니다.",
-		"gift_dislike":"이런, %character의 표정이 일그러졌네요. 다음번엔 조심해야겠어요."
+		"gift_dislike":"이런, %character의 표정이 일그러졌네요. 다음번엔 조심해야겠어요.",
+		"buff_casting":"%character이(가) 답례로 당신에게 버프를 걸어주겠다고 합니다.",
+		"buff_result":"%character이(가) 그대의 성공을 기원합니다."
 	}, 
 	{
 		"id":"c0001",
@@ -29,7 +30,7 @@ var characterList = [
 		"img":"c1",
 		"back":"gate",
 		"bgm":"gate",
-		"voice":"",
+		"voice":"seria",
 		"address":"모험가전당",
 		"intro":"어서 오세요, 모험가님. 오늘도 즐거운 하루를... 네? %x을(를) 알고싶으시다고요?$$제가 누구에게 점을 배운 적은 없어요. 그런데 왠지 점을 잘 볼 수 있다는 확신이 드는 거 있죠?",
 		"casting":"제가 기도를 한 번 드려볼게요.",
@@ -37,10 +38,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":7,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"선물 속에서 느껴지는 모험가님의 마음이 정말 따스하군요…",
+		"gift_normal":"모험가님께 선물을 받게 되어 정말 기뻐요.",
+		"gift_dislike":"이건 대체… 죄송하지만 이건 받기 힘들겠어요.",
+		"buff_casting":"",
+		"buff_result":"언제나 모험가님께 축복이 따르기를 기원할게요."
 	}, 
 	{
 		"id":"c0002",
@@ -50,7 +52,7 @@ var characterList = [
 		"img":"c126",
 		"back":"gate",
 		"bgm":"gate",
-		"voice":"",
+		"voice":"seria",
 		"address":"모험가전당",
 		"intro":"어서 오세요, 모험가님. 오늘도 즐거운 하루를... 네? %x을(를) 알고싶으시다고요?$$제가 누구에게 점을 배운 적은 없어요. 그런데 왠지 점을 잘 볼 수 있다는 확신이 드는 거 있죠?",
 		"casting":"제가 기도를 한 번 드려볼게요.",
@@ -58,10 +60,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":6,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"선물 속에서 느껴지는 모험가님의 마음이 정말 따스하군요…",
+		"gift_normal":"모험가님께 선물을 받게 되어 정말 기뻐요.",
+		"gift_dislike":"이건 대체… 죄송하지만 이건 받기 힘들겠어요.",
+		"buff_casting":"",
+		"buff_result":"언제나 모험가님께 축복이 따르기를 기원할게요."
 	}, 
 	{
 		"id":"c0003",
@@ -71,7 +74,7 @@ var characterList = [
 		"img":"c203",
 		"back":"gate",
 		"bgm":"gate",
-		"voice":"",
+		"voice":"seria",
 		"address":"모험가전당",
 		"intro":"어서 오세요, 모험가님. 오늘도 즐거운 하루를... 네? %x을(를) 알고싶으시다고요?$$제가 누구에게 점을 배운 적은 없어요. 그런데 왠지 점을 잘 볼 수 있다는 확신이 드는 거 있죠?",
 		"casting":"제가 기도를 한 번 드려볼게요.",
@@ -79,10 +82,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"선물 속에서 느껴지는 모험가님의 마음이 정말 따스하군요…",
+		"gift_normal":"모험가님께 선물을 받게 되어 정말 기뻐요.",
+		"gift_dislike":"이건 대체… 죄송하지만 이건 받기 힘들겠어요.",
+		"buff_casting":"",
+		"buff_result":"언제나 모험가님께 축복이 따르기를 기원할게요."
 	}, 
 	{
 		"id":"c0004",
@@ -92,7 +96,7 @@ var characterList = [
 		"img":"c225",
 		"back":"gate",
 		"bgm":"gate",
-		"voice":"",
+		"voice":"seria",
 		"address":"모험가전당",
 		"intro":"어서 오세요, 모험가님. 오늘도 즐거운 하루를... 네? %x을(를) 알고싶으시다고요?$$제가 누구에게 점을 배운 적은 없어요. 그런데 왠지 점을 잘 볼 수 있다는 확신이 드는 거 있죠?",
 		"casting":"제가 기도를 한 번 드려볼게요.",
@@ -100,10 +104,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0005",
@@ -121,10 +126,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0006",
@@ -134,7 +140,7 @@ var characterList = [
 		"img":"c128",
 		"back":"silvercrown",
 		"bgm":"silvercrown",
-		"voice":"",
+		"voice":"vitala",
 		"address":"실버크라운",
 		"intro":"어서 오세요. 마침 정령들과 점을 보려고 했는데 때마침 오셨네요.$$정령들은 하늘의 기운을 살펴서 점을 친답니다. $$오늘은 %x에 대해 알아볼까요?",
 		"casting":"정령들의 속삭임에 귀를 기울이세요.",
@@ -142,10 +148,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":1,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"이런 굉장한 선물을 저에게 주신다니… 감사합니다.",
+		"gift_normal":"모험의 선물인가요? 귀한 물건이로군요.",
+		"gift_dislike":"이, 이건…… 가, 감사합니다…….",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0007",
@@ -155,18 +162,19 @@ var characterList = [
 		"img":"c127",
 		"back":"silvercrown",
 		"bgm":"silvercrown",
-		"voice":"",
+		"voice":"morgan",
 		"address":"실버크라운",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"어서오세요, 모험가님. 잘 찾아오셨습니다.$$안그래도 모험가님이 오시면 몸에 좋은 차를 끓여드릴까 싶어서 재료를 찾고 있던 참입니다.$$어디보자, 1년 동안 건조한 팔색 거미를 우려낸 후에 양파와 뿔사마귀의 진액과 회색쥐의 종기를…$$자, 차가 끓는 동안 조금 기다릴까요? 그동안 %x 어떠신지요?",
+		"casting":"실망하지 않으실 겁니다.",
+		"result":"자, 차가 준비되었습니다. 사양하지 말고 어서 드시지요.",
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"앗, 감사합니다! 이거 아주 좋은 물건이로군요.",
+		"gift_normal":"흥미로운 물건이군요. 감사합니다.",
+		"gift_dislike":"연금 실험을 할 가치가 전혀 없는 물건이로군요. 아쉽습니다.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0008",
@@ -184,10 +192,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0009",
@@ -205,10 +214,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0010",
@@ -226,10 +236,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0011",
@@ -247,10 +258,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0012",
@@ -263,15 +275,16 @@ var characterList = [
 		"voice":"",
 		"address":"전이된 아브노바",
 		"intro":"%x을(를) 알고 싶다고 했느냐? 그렇다면 천년 전부터 이어온 '암흑의 점술'을 알려주도록 하지.$$이 점술을 받은 필멸자는 불멸자와 파멸의 대왕의 가호를 받아 운이 극도로 높아진다고 하지.$$그러고보니 네놈은 꼭 2천년 전에 쓰러뜨린 대마왕의 조무래기를 닮았군, 크크큭.",
-		"casting":"잠깐 기다려봐라.",
-		"result":"자, 좋은거 알려줬으니... 날 비탈라에게 데려간다고 협박하지마! 제발!",
+		"casting":"잠깐만 기다려봐라.",
+		"result":"자, 이제 이 다크렉스님의 위대함을 알겠느냐?",
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"우하하하! 좋아, 좋아! 역시 넌 내 부하로서 부족함이 없구나!",
+		"gift_normal":"조금 부족하지만, 필멸자로선 제법이군 그래.",
+		"gift_dislike":"너, 이걸로 날 협박해서 날 비탈라에게 데려갈 셈이냐? 후회하게 될 것이다.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0013",
@@ -289,10 +302,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0014",
@@ -302,18 +316,19 @@ var characterList = [
 		"img":"c133",
 		"back":"sewer",
 		"bgm":"sewer",
-		"voice":"",
+		"voice":"peris",
 		"address":"시궁창",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"%x을(를) 알고 싶다고 했느냐? 니가 보기에 내가 그런 거 잘 할 거 처럼 보여?$$그래, 예전에 실버크라운 다녀왔을 때 그 수호자한테 뭔가 들은 게 있다마는…$$알았어, 들려줄테니까 그만 좀 보채라.",
+		"casting":"잠깐 기다려봐.",
+		"result":"됐냐? 그럼 이제 그만 가라~",
 		"favorImg":"yes",
 		"like":3,
 		"dislike":0,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"너 내가 좋아? 어떻게 내가 좋아하는 것만 골라서 주냐?",
+		"gift_normal":"선물은 무슨... 암튼 뭐 잘 받았다.",
+		"gift_dislike":"이런 걸 어따 쓰라는 거야? 다음엔 좀 제대로 된 거 갖고 와.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0015",
@@ -323,18 +338,19 @@ var characterList = [
 		"img":"c132",
 		"back":"sewer",
 		"bgm":"sewer",
-		"voice":"",
+		"voice":"albert",
 		"address":"시궁창",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"아, 귀찮아. 누가 언더풋에 갈 때마다 내가 가야 한단 말이야. 거기 녀석들은 기본적으로 흑요정이 아니면 신용을 안 하니까…$$로엘을 보내면 되지 않냐고? 야, 네가 봐도 저 녀석한테 뭘 맡기는 건 불안하지 않냐?$$그래도 저번에 다녀왔을 땐 %x을(를) 알게 되었는데, 어때 들려줄까?",
+		"casting":"기억을 떠올리는 동안 잠시 기다려봐.",
+		"result":"아, 이런 거도 다 기억하고 난 왜이렇게 머리가 좋을까.",
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"오오… 이거 멋진걸? 고마워~",
+		"gift_normal":"생각한 거랑 살짝 다르지만 아무튼 고마워.",
+		"gift_dislike":"아무리 날 질투한다고 해도 이런 걸 주는건 예의가 아니지~ 도로 가져가.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0016",
@@ -344,18 +360,19 @@ var characterList = [
 		"img":"c117",
 		"back":"sewer",
 		"bgm":"sewer",
-		"voice":"",
+		"voice":"lowell",
 		"address":"시궁창",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"어깨가 축 처졌군! 무슨 일이라도 있었어?$$아무리 그래도 그래서야 어떻게 모험을 계속 하겠나?$$어깨 쭉 펴! 허리도 꼿꼿이! 시선은 정면으로!$$그래도 기운이 나지 않는다고? 좋아, 내가 특별히 %x을(를) 가르쳐주지. 그럼 기운이 날 거야.",
+		"casting":"잠깐만 기다려봐라.",
+		"result":"어때, 이제 기운이 나냐?",
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"하하하! 이렇게 좋은 선물을 알아서 바치는 건가! 이제야 내 시대인가!",
+		"gift_normal":"누가 보답을 바라고 그런 거 알려줄 알아? 그래도 받아는 주마.",
+		"gift_dislike":"저리 치워! 다시는 도와주나 봐라.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0017",
@@ -365,18 +382,19 @@ var characterList = [
 		"img":"c8",
 		"back":"sewer",
 		"bgm":"sewer",
-		"voice":"",
+		"voice":"shalok",
 		"address":"시궁창",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"어이쿠 손님…이 아니라 모험가님이셨군요.$$어서 옵쇼, 어서 옵쇼! 자자, 안으로 드시지요. 오늘은 무슨 물건을 보러 오셨습니까?$$허허, 그냥 제 얼굴을 보러 오신 거라구요? 그래도 이유가 있어서 여길 오신 게 아닌가요?$$자, 찬찬히 둘러보십쇼. 그동안 전 분위기있게 %x을(를) 읊어드리겠습니다.",
+		"casting":"나쁘지 않을 겁니다.",
+		"result":"마음에 드시는지요?",
 		"favorImg":"yes",
 		"like":0,
 		"dislike":7,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"아, 이 늙은 고블린을 이렇게나 생각해 주시는 분은 모험가님밖에 업습니다, 그려.",
+		"gift_normal":"이런, 깜짝 선물이라니. 고맙습니다요.",
+		"gift_dislike":"아무리 제가 못난 고블린이라지만 이런걸 주시다니 너무하십니다.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0018",
@@ -386,7 +404,7 @@ var characterList = [
 		"img":"c4",
 		"back":"sewer",
 		"bgm":"sewer",
-		"voice":"",
+		"voice":"shusia",
 		"address":"시궁창",
 		"intro":"어서와요. 아, 점을 보러 오셨군요$$하긴, 제가 이 아라드 대륙에 남은 유일한 요정이다 보니 제가 치는 점은 다른 누구도 칠 수 없는 것이긴 하죠.$$요정이 '둘' 남은게 아니냐고요? 무슨 소리를 하시는 건가요? 적어도 제가 알기로는, 현재 살아남은 요정은 저 하나랍니다.$$자자, 그 이야기는 거기까지만 하도록 하죠. 제가 진지하게 %x을(를) 봐드릴게요.",
 		"casting":"느긋하게 기다리세요.",
@@ -394,10 +412,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":6,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"역시 모험가님이군요. 잘 받을게요. 덕분에 힘이 나네요.",
+		"gift_normal":"어머… 반가운 선물이군요. 고마워요.",
+		"gift_dislike":"좋은 말로 할 때 당장 달빛주점에서 나가세요!",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0019",
@@ -415,10 +434,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":4,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"이런 힘든 상황에서 모험가님이 저의 큰 버팀목이 되어주시는군요. 감사합니다.",
+		"gift_normal":"감사합니다.",
+		"gift_dislike":"설마 제국에 절 넘기시려는 건 아니겠지요? 주의해주세요.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0022",
@@ -436,10 +456,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0023",
@@ -457,10 +478,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0024",
@@ -478,10 +500,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0025",
@@ -499,10 +522,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0026",
@@ -512,18 +536,19 @@ var characterList = [
 		"img":"c6",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"gsd",
 		"address":"언더풋",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"오, 자네로군. 오늘은 무슨 일로 왔나?$$허허. 내가 보지도 않고 자네를 알아맞추었다고 해서 놀랄 것 없네. 자네의 기운을 내 눈치채지 못할 리 없으니까 말이야.$$세상 만물에는 저마다의 기운이 있어 이를 느낄수만 있다면 세상 만사를 알 수 있게 되지.$$그래, %x에도 기운이 있지. 궁금한가?",
+		"casting":"그럼 내가 그 기운을 읽어주겠네.",
+		"result":"어떤가, 마음에 드나?",
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"좋은 선물이군. 자네의 눈이 아주 높아.",
+		"gift_normal":"고맙네.",
+		"gift_dislike":"자네에게서 살기가 느껴지는군. 그만 가지고 돌아가게.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0027",
@@ -533,7 +558,7 @@ var characterList = [
 		"img":"c121",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"lobato",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -541,10 +566,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0028",
@@ -554,18 +580,19 @@ var characterList = [
 		"img":"c5",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"wind",
 		"address":"언더풋",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"이런, 어디 편찮으신 것 같군요. 괜찮으신지요?$$적의 공격에 굴한다는 것은 아직도 수련이 부족하다는 증거입니다. 이럴 때일수록 좌절하지 말고 더욱 더 수련에 정진하시길 바랍니다.$$제가 %x을(를) 알려드리지요. 마음을 가라앉히는 데 도움이 될 겁니다.",
+		"casting":"마음이 평온해질 겁니다.",
+		"result":"자, 이제 다시 힘을 낼 때입니다.",
 		"favorImg":"yes",
 		"like":2,
 		"dislike":5,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"이런 좋은 선물을 받을 줄은 몰랐군요. 고맙습니다.",
+		"gift_normal":"하하. 선물을 다 주시다니. 잘 받겠습니다.",
+		"gift_dislike":"과연 이 선물이 괜찮을 지 다시 한 번 생각해보십시오.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0029",
@@ -575,7 +602,7 @@ var characterList = [
 		"img":"c14",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"kiri",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -583,10 +610,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0030",
@@ -596,7 +624,7 @@ var characterList = [
 		"img":"c11",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"sharan",
 		"address":"언더풋",
 		"intro":"무슨 일이시죠, 모험가님? 지금은 마법 학교 일로 좀 바빠서...$$%x을(를) 알아보고 싶으시다고요? 그렇다면…$$여기 마법구슬을 하나 드릴게요. 거기에 모험가님의 '소망'을 최대한 채워서 가져오세요.$$어떻게 채우는지는... 자주 해보셔서 잘 아실거라 믿어요.",
 		"casting":"금방 채워오셨군요. 그럼…",
@@ -604,10 +632,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0031",
@@ -617,7 +646,7 @@ var characterList = [
 		"img":"c37",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"grandis",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -625,10 +654,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0032",
@@ -638,7 +668,7 @@ var characterList = [
 		"img":"c60",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"minet",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -646,10 +676,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0033",
@@ -659,7 +690,7 @@ var characterList = [
 		"img":"c145",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"anis",
 		"address":"언더풋",
 		"intro":"%x을(를) 알고 싶으시다고요? 그럼 정말 잘 찾아오셨어요.$$저만 할 수 있는, 정~말로 신통한 비법이 있거든요. 모험가님께만 특별히 알려드릴게요.",
 		"casting":"잠시 정신을 집중하고…",
@@ -667,10 +698,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0034",
@@ -680,7 +712,7 @@ var characterList = [
 		"img":"c226",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"leno",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -688,10 +720,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0035",
@@ -701,7 +734,7 @@ var characterList = [
 		"img":"c129",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"meia",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -709,10 +742,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0036",
@@ -722,7 +756,7 @@ var characterList = [
 		"img":"c130",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"shaphron",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -730,10 +764,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0037",
@@ -743,7 +778,7 @@ var characterList = [
 		"img":"c22",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"klonter",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -751,10 +786,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0038",
@@ -764,7 +800,7 @@ var characterList = [
 		"img":"c169",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"hartz",
 		"address":"언더풋",
 		"intro":"방금 %x을(를) 알려달라고 했느냐? 요즘 정말 할 짓이 없어진 모양이군.$$그래, 이런 것도 여흥거리겠지. 지금 제국 기사단에서 유행하는 점을 하나 알려줄테니 고마운 줄 알아라.",
 		"casting":"잠깐 기다려라.",
@@ -772,10 +808,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"네놈, 이게 필요한 줄 어떻게 알았지? 아무튼 고맙다.",
+		"gift_normal":"거기 두고 가라.",
+		"gift_dislike":"지금 당장 죽.여.줄.까?",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0039",
@@ -785,7 +822,7 @@ var characterList = [
 		"img":"c144",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"kagon",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -793,10 +830,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0040",
@@ -806,7 +844,7 @@ var characterList = [
 		"img":"c24",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"iris",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -814,10 +852,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0041",
@@ -827,7 +866,7 @@ var characterList = [
 		"img":"c131",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"kanna",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -835,10 +874,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0042",
@@ -848,7 +888,7 @@ var characterList = [
 		"img":"c123",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"choboong",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -856,20 +896,21 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0043",
-		"name":"아젤로",
+		"name":"아벨로",
 		"contributor":"",
 		"area":"언더풋, 표류동굴",
 		"img":"c139",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"avelo",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -877,10 +918,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0044",
@@ -898,10 +940,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0045",
@@ -911,7 +954,7 @@ var characterList = [
 		"img":"c25",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"roger",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -919,10 +962,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0046",
@@ -932,7 +976,7 @@ var characterList = [
 		"img":"c26",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"daphne",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -940,10 +984,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0047",
@@ -953,7 +998,7 @@ var characterList = [
 		"img":"c7",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"danjin",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -961,10 +1006,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0048",
@@ -974,18 +1020,19 @@ var characterList = [
 		"img":"c15",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"buken",
 		"address":"언더풋",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"여왕님이 실종된 이후로 오랜 시간이 지났지만 아직 소식이 없군요. 모험가님께서는 혹시 아시는 게 있으십니까?$$그렇습니까? 알겠습니다. 바로 수색대를 보내야겠군요.$$협조해주셔서 감사합니다. 부족하지만 답례를 해드리지요. %x에 대해 알려드리겠습니다.",
+		"casting":"잠시 기다려주십시오.",
+		"result":"어서 여왕님께서 돌아오셨으면 좋겠습니다.",
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"아, 찾던 물건이로군요. 잘 쓰도록 하겠습니다",
+		"gift_normal":"왜 저에게 이런 걸… 기왕 주시는 거니 사양하지는 않겠습니다.",
+		"gift_dislike":"주변에 보는 눈이 많으니 가만히 있겠습니다. 당장 돌아십시오\.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0049",
@@ -995,18 +1042,19 @@ var characterList = [
 		"img":"c30",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"oran",
 		"address":"언더풋",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"자넨 아직도 크리쳐가 없구만.$$아, 정말 멋진 크리쳐인걸.$$아, 이런다고 날 노망난 할머니로 보지 말게나. 모든 사람에 맞춰서 장사를 하는 건 정말 힘든 일이거든.$$이제 좀 쉬어야겠구만. 그래, %x이(가) 궁금해서 찾아왔다고 했나?",
+		"casting":"잠시만 기다리게.",
+		"result":"도움이 되면 좋겠구만.",
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"자네한테 선물 받는 재미에 요즘 힘든 줄도 모르겠구먼.",
+		"gift_normal":"이런 걸 다… 고마우이.",
+		"gift_dislike":"난 괜찮다만 우리집 애들이 불편해하는구만. 그 선물은 사양하지.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0050",
@@ -1016,18 +1064,19 @@ var characterList = [
 		"img":"c69",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"simona",
 		"address":"언더풋",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"여기서 아주 먼 곳에서 아젤리아란 분께서 돌아가셨다고 들었습니다. 아주 슬픈 일이로군요.$$뭔가 이상하다고요? 글쎄요. 이 노인네는 모험가님께서 무슨 말씀을 하시는지 잘 모르겠습니다.$$자, 그런 말씀 하시고 하던 이야기로 돌아갑시다. %x이(가) 궁금해서 찾아오셨다고 하셨지요?",
+		"casting":"모험가님의 미래를 봐드리지요.",
+		"result":"자, 이제 궁금증이 모두 풀리셨는지요?",
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"고맙습니다. 정말 제 마음에 드는 선물이군요.",
+		"gift_normal":"이 늙은이를 챙겨주시다니, 감사합니다.",
+		"gift_dislike":"괜찮습니다. 그럴 수도 있지요. 다음번에 조금만 조심해주세요.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0051",
@@ -1045,10 +1094,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0052",
@@ -1058,7 +1108,7 @@ var characterList = [
 		"img":"c204",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"defense1",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -1066,10 +1116,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0053",
@@ -1079,7 +1130,7 @@ var characterList = [
 		"img":"c205",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"defense2",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -1087,10 +1138,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0054",
@@ -1100,7 +1152,7 @@ var characterList = [
 		"img":"c208",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"highmoer",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -1108,10 +1160,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0055",
@@ -1121,7 +1174,7 @@ var characterList = [
 		"img":"c209",
 		"back":"underfoot",
 		"bgm":"underfoot",
-		"voice":"",
+		"voice":"alisha",
 		"address":"언더풋",
 		"intro":"",
 		"casting":"",
@@ -1129,10 +1182,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0056",
@@ -1150,10 +1204,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0057",
@@ -1171,10 +1226,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0058",
@@ -1192,10 +1248,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0059",
@@ -1213,10 +1270,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"buff":"",
-		"gift_like":"",
-		"gift_normal":"",
-		"gift_dislike":""
+		"gift_like":"오오. 정말 멋진 물건이군. 좋아, 기한을 딱 하루 연장해주지.",
+		"gift_normal":"나쁘지 않군. 그래도 이것과 5천만 골드는 별개다.",
+		"gift_dislike":"지금 당장 골드를 내놔도 모자랄 판국에 이런 거나 주다니. 죽고 싶은 모양이로군.",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0060",
@@ -1234,10 +1292,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0061",
@@ -1255,10 +1314,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0062",
@@ -1276,10 +1336,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0063",
@@ -1297,10 +1358,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0064",
@@ -1318,10 +1380,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0065",
@@ -1339,10 +1402,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0066",
@@ -1360,10 +1424,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0067",
@@ -1373,7 +1438,7 @@ var characterList = [
 		"img":"c136",
 		"back":"behemoth",
 		"bgm":"behemoth",
-		"voice":"",
+		"voice":"opilia",
 		"address":"베히모스",
 		"intro":"",
 		"casting":"",
@@ -1381,10 +1446,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0068",
@@ -1394,7 +1460,7 @@ var characterList = [
 		"img":"c137",
 		"back":"behemoth",
 		"bgm":"behemoth",
-		"voice":"",
+		"voice":"isadora",
 		"address":"베히모스",
 		"intro":"%x을(를) 알고 싶으시다고요? 물론 저희 GBL교 도서관엔 점술 관련 서적이 산더미만큼 있습니다만…$$엉터리로 점을 보는 책이 너무 많아서 말이죠. 별로 권하고 싶진 않아요.$$그래도 상관없으시다면 아무 책이나 뽑아서 보죠.$$마침 여기 미들오션 공어 점을 봐주는 책이 있네요.",
 		"casting":"잠시만 기다려주세요.",
@@ -1402,10 +1468,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0069",
@@ -1415,7 +1482,7 @@ var characterList = [
 		"img":"c138",
 		"back":"behemoth",
 		"bgm":"behemoth",
-		"voice":"",
+		"voice":"vanjelis",
 		"address":"베히모스",
 		"intro":"",
 		"casting":"",
@@ -1423,10 +1490,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0070",
@@ -1436,7 +1504,7 @@ var characterList = [
 		"img":"c0",
 		"back":"behemoth",
 		"bgm":"behemoth",
-		"voice":"",
+		"voice":"rinus",
 		"address":"베히모스",
 		"intro":"",
 		"casting":"",
@@ -1444,10 +1512,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0071",
@@ -1457,7 +1526,7 @@ var characterList = [
 		"img":"c3",
 		"back":"behemoth",
 		"bgm":"behemoth",
-		"voice":"",
+		"voice":"sinda",
 		"address":"베히모스",
 		"intro":"",
 		"casting":"",
@@ -1465,10 +1534,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0072",
@@ -1486,10 +1556,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0073",
@@ -1507,10 +1578,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0074",
@@ -1528,10 +1600,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0075",
@@ -1541,7 +1614,7 @@ var characterList = [
 		"img":"c34",
 		"back":"northshelter",
 		"bgm":"northshelter",
-		"voice":"",
+		"voice":"balena",
 		"address":"북의쉼터",
 		"intro":"",
 		"casting":"",
@@ -1549,10 +1622,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0076",
@@ -1562,7 +1636,7 @@ var characterList = [
 		"img":"c134",
 		"back":"northshelter",
 		"bgm":"northshelter",
-		"voice":"",
+		"voice":"michelle",
 		"address":"북의쉼터",
 		"intro":"",
 		"casting":"",
@@ -1570,10 +1644,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0077",
@@ -1583,7 +1658,7 @@ var characterList = [
 		"img":"c135",
 		"back":"northshelter",
 		"bgm":"northshelter",
-		"voice":"",
+		"voice":"mintai",
 		"address":"북의쉼터",
 		"intro":"",
 		"casting":"",
@@ -1591,10 +1666,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0078",
@@ -1604,7 +1680,7 @@ var characterList = [
 		"img":"c141",
 		"back":"northshelter",
 		"bgm":"northshelter",
-		"voice":"",
+		"voice":"bwanga",
 		"address":"북의쉼터",
 		"intro":"",
 		"casting":"",
@@ -1612,10 +1688,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0079",
@@ -1625,7 +1702,7 @@ var characterList = [
 		"img":"c142",
 		"back":"northshelter",
 		"bgm":"northshelter",
-		"voice":"",
+		"voice":"aganzo",
 		"address":"북의쉼터",
 		"intro":"",
 		"casting":"",
@@ -1633,10 +1710,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0080",
@@ -1654,10 +1732,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0081",
@@ -1675,10 +1754,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0082",
@@ -1696,10 +1776,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0083",
@@ -1717,10 +1798,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0084",
@@ -1738,10 +1820,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0085",
@@ -1759,10 +1842,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0086",
@@ -1780,10 +1864,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0087",
@@ -1801,10 +1886,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0088",
@@ -1814,7 +1900,7 @@ var characterList = [
 		"img":"c44",
 		"back":"gent",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"verict",
 		"address":"겐트",
 		"intro":"",
 		"casting":"",
@@ -1822,10 +1908,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0089",
@@ -1835,7 +1922,7 @@ var characterList = [
 		"img":"c45",
 		"back":"gent",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"melvin",
 		"address":"겐트",
 		"intro":"귀찮아. 방해하지 말고 저리 가. 나도 한가한 사람 아니라고.$$%x에 대해 알고싶다고? 그런건 내 여동생한테나 물어보면 돼잖아.$$어디 가고 안 보인다고? 그럼 분명히 충전…$$아, 그건 못 들은걸로 해줘. 알았어. 봐주면 되잖아, 봐주면! 아, 난 너무 친절하단 말이야.",
 		"casting":"금강랑이 점을 봐줄테니 기다려봐.",
@@ -1843,10 +1930,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0090",
@@ -1856,7 +1944,7 @@ var characterList = [
 		"img":"c46",
 		"back":"gent",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"marlene",
 		"address":"겐트",
 		"intro":"",
 		"casting":"",
@@ -1864,10 +1952,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0091",
@@ -1877,7 +1966,7 @@ var characterList = [
 		"img":"c47",
 		"back":"gent",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"zeldin",
 		"address":"겐트",
 		"intro":"",
 		"casting":"",
@@ -1885,10 +1974,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0092",
@@ -1898,7 +1988,7 @@ var characterList = [
 		"img":"c175",
 		"back":"gent",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"bahn",
 		"address":"겐트",
 		"intro":"",
 		"casting":"",
@@ -1906,10 +1996,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0093",
@@ -1927,10 +2018,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0094",
@@ -1948,10 +2040,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0095",
@@ -1969,10 +2062,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0096",
@@ -1990,10 +2084,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0097",
@@ -2011,10 +2106,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0098",
@@ -2032,10 +2128,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0099",
@@ -2053,10 +2150,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0100",
@@ -2074,10 +2172,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0101",
@@ -2095,10 +2194,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0102",
@@ -2116,10 +2216,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0103",
@@ -2137,10 +2238,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0104",
@@ -2150,7 +2252,7 @@ var characterList = [
 		"img":"c61",
 		"back":"lufthafen",
 		"bgm":"lufthafen",
-		"voice":"",
+		"voice":"vern",
 		"address":"루프트하펜",
 		"intro":"",
 		"casting":"",
@@ -2158,10 +2260,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0105",
@@ -2171,7 +2274,7 @@ var characterList = [
 		"img":"c62",
 		"back":"lufthafen",
 		"bgm":"lufthafen",
-		"voice":"",
+		"voice":"chorong",
 		"address":"루프트하펜",
 		"intro":"",
 		"casting":"",
@@ -2179,10 +2282,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0106",
@@ -2200,10 +2304,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0107",
@@ -2221,10 +2326,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0108",
@@ -2242,10 +2348,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0109",
@@ -2258,15 +2365,16 @@ var characterList = [
 		"voice":"",
 		"address":"해상열차",
 		"intro":"%x을(를) 알고싶다고? 콩콩이는 그런 거 잘 모르는데…$$이 상자에서 종이 하나를 뽑으면 된다고? 그정도야 뭐…$$정말 그것만으로 되는 거야? 뭐가 나와도 콩콩이는 책임 안 질거야~",
-		"casting":"<span class='color_green'>(주섬주섬…)</span>",
+		"casting":"<span class='color_green'>(뒤적뒤적…)</span>",
 		"result":"이제 가봐도 되는거지?",
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0110",
@@ -2284,10 +2392,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0111",
@@ -2305,10 +2414,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0112",
@@ -2326,10 +2436,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0113",
@@ -2347,10 +2458,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0114",
@@ -2368,10 +2480,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0115",
@@ -2389,10 +2502,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0116",
@@ -2410,10 +2524,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0117",
@@ -2431,10 +2546,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0118",
@@ -2444,7 +2560,7 @@ var characterList = [
 		"img":"c73",
 		"back":"shonan",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"siran",
 		"address":"쇼난",
 		"intro":"방금 %x을(를) 알고 싶다고 말했나?$$미래는 어찌 될지 모르니 마음껏 살아라 내가 말했나 안했나?$$아직 잘 모르겠나? 그럼 이거 다시 줄테니 함 까봐라. 아까 준 거랑 비슷한 거다.",
 		"casting":"<span class='color_green'>(짤그랑짤그랑)</span>",
@@ -2452,10 +2568,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0119",
@@ -2465,7 +2582,7 @@ var characterList = [
 		"img":"c74",
 		"back":"shonan",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"woo",
 		"address":"쇼난",
 		"intro":"",
 		"casting":"",
@@ -2473,10 +2590,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0120",
@@ -2486,7 +2604,7 @@ var characterList = [
 		"img":"c75",
 		"back":"shonan",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"jun",
 		"address":"쇼난",
 		"intro":"",
 		"casting":"",
@@ -2494,10 +2612,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0121",
@@ -2507,7 +2626,7 @@ var characterList = [
 		"img":"c76",
 		"back":"shonan",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"aska",
 		"address":"쇼난",
 		"intro":"",
 		"casting":"",
@@ -2515,10 +2634,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0122",
@@ -2536,10 +2656,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0123",
@@ -2557,10 +2678,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0124",
@@ -2578,10 +2700,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0125",
@@ -2599,10 +2722,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0126",
@@ -2620,10 +2744,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0127",
@@ -2641,10 +2766,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0128",
@@ -2662,10 +2788,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0129",
@@ -2683,10 +2810,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0130",
@@ -2704,10 +2832,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0131",
@@ -2725,10 +2854,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0132",
@@ -2746,10 +2876,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0133",
@@ -2767,10 +2898,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0134",
@@ -2788,10 +2920,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0135",
@@ -2809,10 +2942,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0136",
@@ -2830,10 +2964,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0137",
@@ -2851,10 +2986,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0138",
@@ -2872,10 +3008,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0139",
@@ -2885,7 +3022,7 @@ var characterList = [
 		"img":"c94",
 		"back":"timegate",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"girl",
 		"address":"시간의문",
 		"intro":"",
 		"casting":"",
@@ -2893,10 +3030,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0140",
@@ -2914,10 +3052,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0141",
@@ -2935,10 +3074,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0142",
@@ -2956,10 +3096,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0143",
@@ -2977,10 +3118,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0144",
@@ -2990,7 +3132,7 @@ var characterList = [
 		"img":"c119",
 		"back":"timegate",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"swarrior",
 		"address":"시간의 문",
 		"intro":"……$$.........$$............",
 		"casting":"…………..",
@@ -2998,10 +3140,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0145",
@@ -3019,10 +3162,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0146",
@@ -3032,7 +3176,7 @@ var characterList = [
 		"img":"c149",
 		"back":"kurunmoon",
 		"bgm":"kurun",
-		"voice":"",
+		"voice":"hundred",
 		"address":"쿠룬달",
 		"intro":"그대도 진로를 뚫으면서, 파수꾼과 싸워봐서 잘 아시겠지만,$$네이트람의 하수인들이, 보통 강한 게 아니오.$$준비라 한다면 강해지기 위한 수련도 있겠지만,$$운'이란 요소도 무시를 할 수 없다오. 결국 가장 결정적인 순간에,$$빛을 발하여 승리로 이끌어주는 게, 큰 힘이 되기 때문에,$$그대도 점을 한 번 쳐보는 게 어떻겠소? 이번에 그대를 위해,$$%x에 대해 점괘를 봐주도록 하겠소.",
 		"casting":"잠시만 기다리시오.",
@@ -3040,10 +3184,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0147",
@@ -3053,7 +3198,7 @@ var characterList = [
 		"img":"c150",
 		"back":"kurunmoon",
 		"bgm":"kurun",
-		"voice":"",
+		"voice":"nine",
 		"address":"쿠룬달",
 		"intro":"",
 		"casting":"",
@@ -3061,10 +3206,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0148",
@@ -3074,7 +3220,7 @@ var characterList = [
 		"img":"c104",
 		"back":"slough",
 		"bgm":"slough",
-		"voice":"",
+		"voice":"niber",
 		"address":"슬라우공업단지",
 		"intro":"어서오십시오. 그렇지 않아도 심심하던 차에 오늘의 운세나 보려고 했는데 잘 오셨습니다.$$이 운세 잡지가 비록 싸구려긴 해도, 이거 덕분에 대박이 터진 적이 많아 자주 이용합니다.$$모험가님도 해보시겠습니까? 아, %x에 대해 알고싶으시군요.",
 		"casting":"지금 바로 확인해보죠. 그럼 잠시…",
@@ -3082,10 +3228,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0149",
@@ -3095,7 +3242,7 @@ var characterList = [
 		"img":"c105",
 		"back":"slough",
 		"bgm":"slough",
-		"voice":"",
+		"voice":"pharrell",
 		"address":"슬라우공업단지",
 		"intro":"",
 		"casting":"",
@@ -3103,10 +3250,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0150",
@@ -3116,7 +3264,7 @@ var characterList = [
 		"img":"c106",
 		"back":"slough",
 		"bgm":"slough",
-		"voice":"",
+		"voice":"ria",
 		"address":"슬라우공업단지",
 		"intro":"%x 말씀이시옵니까? 그렇다면 정말 잘 찾아오셨사옵니다.$$소녀만이 특별하게 칠 수 있는 점이 있는데 한 번 받아보시겠사옵니까?$$원리가 궁금하시옵니까? 그건, 소녀의 두뇌로 수십억개의 변수를... $$아니, 이건 절대 이야기하지 말라는 멜빈 오빠의 당부가 있었사옵니다. 그저 믿어주시기만 한다면 소녀가 근사한 점을 쳐드리겠사옵니다.",
 		"casting":"모험가님의 운세를 알아보는 중이옵니다.",
@@ -3124,10 +3272,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0151",
@@ -3137,7 +3286,7 @@ var characterList = [
 		"img":"c107",
 		"back":"slough",
 		"bgm":"slough",
-		"voice":"",
+		"voice":"marhias",
 		"address":"슬라우공업단지",
 		"intro":"",
 		"casting":"",
@@ -3145,10 +3294,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0152",
@@ -3166,10 +3316,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0153",
@@ -3187,10 +3338,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0154",
@@ -3208,10 +3360,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0155",
@@ -3229,10 +3382,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0156",
@@ -3242,7 +3396,7 @@ var characterList = [
 		"img":"c151",
 		"back":"noblesky",
 		"bgm":"noblesky",
-		"voice":"",
+		"voice":"naen",
 		"address":"노블스카이",
 		"intro":"아, 안녕. 어? %x을(를) 봐 달라고? 저, 점 같은건 잘 모르, 모르는데…$$아, 하지만 비슷한 거라면 가능할지도…$$이, 이거... 이차원변이시간축 수치화관측기... 라고, 하는... 건데…$$설명은 필요없다고? 아, 미, 미안. 지금 바로 해... 해줄게.",
 		"casting":"여기에 잠시 손, 넣어줄래?",
@@ -3250,10 +3404,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0157",
@@ -3263,7 +3418,7 @@ var characterList = [
 		"img":"c152",
 		"back":"noblesky",
 		"bgm":"noblesky",
-		"voice":"",
+		"voice":"zactor",
 		"address":"노블스카이",
 		"intro":"",
 		"casting":"",
@@ -3271,10 +3426,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0158",
@@ -3284,7 +3440,7 @@ var characterList = [
 		"img":"c153",
 		"back":"noblesky",
 		"bgm":"noblesky",
-		"voice":"",
+		"voice":"wuun",
 		"address":"노블스카이",
 		"intro":"",
 		"casting":"",
@@ -3292,10 +3448,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0159",
@@ -3305,7 +3462,7 @@ var characterList = [
 		"img":"c157",
 		"back":"noblesky",
 		"bgm":"noblesky",
-		"voice":"",
+		"voice":"hiram",
 		"address":"노블스카이",
 		"intro":"",
 		"casting":"",
@@ -3313,10 +3470,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0160",
@@ -3326,7 +3484,7 @@ var characterList = [
 		"img":"c155",
 		"back":"anton",
 		"bgm":"anton",
-		"voice":"",
+		"voice":"agnes",
 		"address":"안톤",
 		"intro":"",
 		"casting":"",
@@ -3334,10 +3492,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0161",
@@ -3347,7 +3506,7 @@ var characterList = [
 		"img":"c159",
 		"back":"anton",
 		"bgm":"anton",
-		"voice":"",
+		"voice":"mateka",
 		"address":"안톤",
 		"intro":"이 전능한 마테카님께서 너희의 %x을(를) 감상해주지!$$하↗하↘하→$$하↗하↘하→$$하↗하↘하→$$하↘하↗하→$$하↗하↘하→",
 		"casting":"하↗하↘하→",
@@ -3355,10 +3514,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0162",
@@ -3368,7 +3528,7 @@ var characterList = [
 		"img":"c156",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"yulrgent",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3376,10 +3536,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0163",
@@ -3389,7 +3550,7 @@ var characterList = [
 		"img":"c172",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"isabella",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3397,10 +3558,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0164",
@@ -3410,7 +3572,7 @@ var characterList = [
 		"img":"c122",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"cyrus",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3418,10 +3580,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0165",
@@ -3431,7 +3594,7 @@ var characterList = [
 		"img":"c174",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"meril",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3439,10 +3602,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0166",
@@ -3452,7 +3616,7 @@ var characterList = [
 		"img":"c171",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"hunter",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3460,10 +3624,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0167",
@@ -3473,7 +3638,7 @@ var characterList = [
 		"img":"c158",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"dana",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3481,10 +3646,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0168",
@@ -3494,7 +3660,7 @@ var characterList = [
 		"img":"c70",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"azalea",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3502,10 +3668,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0169",
@@ -3515,7 +3682,7 @@ var characterList = [
 		"img":"c173",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"roi",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3523,10 +3690,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0170",
@@ -3536,7 +3704,7 @@ var characterList = [
 		"img":"c170",
 		"back":"zelba",
 		"bgm":"zelba",
-		"voice":"",
+		"voice":"erika",
 		"address":"젤바",
 		"intro":"",
 		"casting":"",
@@ -3544,10 +3712,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0171",
@@ -3557,7 +3726,7 @@ var characterList = [
 		"img":"c178",
 		"back":"castleofdead",
 		"bgm":"becky",
-		"voice":"",
+		"voice":"beckey",
 		"address":"죽은자의 성",
 		"intro":"루크 할아범이 어디 있냐고? 흥, 그런 곳도 모르고 여기에 들어왔니? 루크 할아범은 말이야...... 음......$$아니야! 루크 할아범 얼굴을 못 본지 이제 천 년이 다 되어가지만, 단 한 번도 잊은 적 없어!$$잠시 기다려봐. 어디에 있는지 점을 쳐보면 바로 알 수 있을거야.",
 		"casting":"비나이다... 비나이다…",
@@ -3565,10 +3734,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0172",
@@ -3586,10 +3756,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0173",
@@ -3607,10 +3778,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0174",
@@ -3620,7 +3792,7 @@ var characterList = [
 		"img":"c271",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"kate",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3628,10 +3800,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0175",
@@ -3641,7 +3814,7 @@ var characterList = [
 		"img":"c300",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"kate",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3649,10 +3822,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0176",
@@ -3662,7 +3836,7 @@ var characterList = [
 		"img":"c272",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"pie",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3670,10 +3844,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0177",
@@ -3691,10 +3866,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0178",
@@ -3704,7 +3880,7 @@ var characterList = [
 		"img":"c274",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"redwitch",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3712,10 +3888,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0179",
@@ -3725,7 +3902,7 @@ var characterList = [
 		"img":"c281",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"niu",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3733,10 +3910,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0180",
@@ -3746,7 +3924,7 @@ var characterList = [
 		"img":"c282",
 		"back":"centralpark",
 		"bgm":"centralpark",
-		"voice":"",
+		"voice":"fifi",
 		"address":"센트럴파크",
 		"intro":"",
 		"casting":"",
@@ -3754,10 +3932,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0181",
@@ -3775,10 +3954,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0182",
@@ -3796,10 +3976,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0183",
@@ -3817,10 +3998,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0184",
@@ -3838,10 +4020,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0185",
@@ -3859,10 +4042,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0186",
@@ -3880,10 +4064,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0187",
@@ -3901,10 +4086,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0188",
@@ -3922,10 +4108,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0189",
@@ -3943,10 +4130,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0190",
@@ -3964,10 +4152,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0191",
@@ -3985,10 +4174,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0192",
@@ -3998,7 +4188,7 @@ var characterList = [
 		"img":"c116",
 		"back":"sainthorn",
 		"bgm":"sainthorn",
-		"voice":"",
+		"voice":"luther",
 		"address":"세인트혼",
 		"intro":"%x을(를) 봐달라고? 요새 젊은이들한테는 점이 유행인가보구만.$$점을 보는 방법은 간단해. 일단 브레스를 거하게 뿜은 다음…..$$알았어, 루드밀라. 농담이야, 농담.$$아, 그건 나중에 안주거리 삼아 얘기해주지. 지금은 자네도 시간이 없어 보이니 약식으로…",
 		"casting":"어디보자……",
@@ -4006,10 +4196,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0193",
@@ -4019,7 +4210,7 @@ var characterList = [
 		"img":"c118",
 		"back":"sainthorn",
 		"bgm":"sainthorn",
-		"voice":"",
+		"voice":"ludmila",
 		"address":"세인트혼",
 		"intro":"",
 		"casting":"",
@@ -4027,10 +4218,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0194",
@@ -4040,7 +4232,7 @@ var characterList = [
 		"img":"c140",
 		"back":"sainthorn",
 		"bgm":"sainthorn",
-		"voice":"",
+		"voice":"natalia",
 		"address":"세인트혼",
 		"intro":"",
 		"casting":"",
@@ -4048,10 +4240,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0195",
@@ -4061,7 +4254,7 @@ var characterList = [
 		"img":"c80",
 		"back":"sainthorn",
 		"bgm":"sainthorn",
-		"voice":"",
+		"voice":"mehmet",
 		"address":"세인트혼",
 		"intro":"난 최후의 메멧. 역사의 최후에 있을 대참사를 목격한 타임로드...$$역사 최후를 보는 김에 그대의 최후도 보았지. 아주 볼만하더군. 그게 뭔지는 묻지 말고.$$그 대신 그대가 바라는 %x에 대해 알려주겠다.",
 		"casting":"……",
@@ -4069,10 +4262,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0196",
@@ -4090,10 +4284,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0197",
@@ -4111,10 +4306,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0198",
@@ -4132,10 +4328,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0199",
@@ -4153,10 +4350,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0200",
@@ -4174,10 +4372,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0201",
@@ -4195,10 +4394,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0202",
@@ -4207,7 +4407,7 @@ var characterList = [
 		"area":"이계, 고대던전",
 		"img":"c388",
 		"back":"seatrain",
-		"bgm":"gent",
+		"bgm":"ghosttrain",
 		"voice":"",
 		"address":"해상열차",
 		"intro":"",
@@ -4216,10 +4416,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0203",
@@ -4237,10 +4438,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0204",
@@ -4250,7 +4452,7 @@ var characterList = [
 		"img":"c376",
 		"back":"behemoth",
 		"bgm":"lotus",
-		"voice":"",
+		"voice":"lotus",
 		"address":"역천의폭포",
 		"intro":"",
 		"casting":"",
@@ -4258,10 +4460,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0205",
@@ -4279,10 +4482,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0206",
@@ -4300,10 +4504,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0207",
@@ -4312,7 +4517,7 @@ var characterList = [
 		"area":"사도",
 		"img":"c64",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -4321,10 +4526,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0208",
@@ -4333,7 +4539,7 @@ var characterList = [
 		"area":"사도",
 		"img":"c285",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -4342,10 +4548,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0209",
@@ -4357,16 +4564,17 @@ var characterList = [
 		"bgm":"gent",
 		"voice":"",
 		"address":"루크",
-		"intro":"",
-		"casting":"",
-		"result":"",
+		"intro":"……$$.........$$............",
+		"casting":"…………..",
+		"result":"……",
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0210",
@@ -4384,10 +4592,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0211",
@@ -4397,7 +4606,7 @@ var characterList = [
 		"img":"c43",
 		"back":"death",
 		"bgm":"deathtower",
-		"voice":"",
+		"voice":"drapyus",
 		"address":"사망의탑",
 		"intro":"흠, 잘했군. 올라가라.$$뭐냐? 왜 올라가지 않는거지? 장비가 파손되었나? 나에게 부탁하면 수리키트로 말끔히 고쳐주겠다.$$화장실이 급한가? 일시정지를 해두고 얼른 다녀오거라.$$왜 이렇게 친절하냐고 물었나? 내가 비록 죽음을 관장하는 사신이긴 하나, 이것도 엄밀히 따지면 서비스업이다.$$친절하게 대해줘야 모험가들이 거부감 없이 영혼을 바치러 오거든.$$%x도 알아봐 줄 수 있냐고 물었나?$$난 네가 죽는 때를 알고 있다. 미래를 보는 일 따위 간단하지.",
 		"casting":"너의 미래를 봐주겠다.",
@@ -4405,10 +4614,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0212",
@@ -4426,10 +4636,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0213",
@@ -4447,10 +4658,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0214",
@@ -4468,10 +4680,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0215",
@@ -4489,10 +4702,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0216",
@@ -4510,10 +4724,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0217",
@@ -4531,10 +4746,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0218",
@@ -4552,10 +4768,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0219",
@@ -4573,10 +4790,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0220",
@@ -4594,10 +4812,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0221",
@@ -4615,10 +4834,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0222",
@@ -4636,10 +4856,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0223",
@@ -4657,10 +4878,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0224",
@@ -4678,10 +4900,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0225",
@@ -4699,10 +4922,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0226",
@@ -4720,10 +4944,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0227",
@@ -4741,10 +4966,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0228",
@@ -4762,10 +4988,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0229",
@@ -4774,8 +5001,8 @@ var characterList = [
 		"area":"결투장",
 		"img":"c124",
 		"back":"pvp",
-		"bgm":"gent",
-		"voice":"",
+		"bgm":"pvp",
+		"voice":"haru",
 		"address":"결투장",
 		"intro":"",
 		"casting":"",
@@ -4783,20 +5010,21 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0230",
-		"name":"시즈카",
+		"name":"시즈키",
 		"contributor":"",
 		"area":"결투장",
 		"img":"c148",
 		"back":"pvp",
-		"bgm":"gent",
-		"voice":"",
+		"bgm":"pvp",
+		"voice":"sizuki",
 		"address":"결투장",
 		"intro":"",
 		"casting":"",
@@ -4804,10 +5032,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0231",
@@ -4817,7 +5046,7 @@ var characterList = [
 		"img":"c12",
 		"back":"hendonmyre",
 		"bgm":"hendonmyre",
-		"voice":"",
+		"voice":"loton",
 		"address":"헨돈마이어",
 		"intro":"",
 		"casting":"",
@@ -4825,10 +5054,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0232",
@@ -4846,10 +5076,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0233",
@@ -4867,10 +5098,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":6,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0234",
@@ -4880,7 +5112,7 @@ var characterList = [
 		"img":"c57",
 		"back":"hendonmyre",
 		"bgm":"hendonmyre",
-		"voice":"",
+		"voice":"glam",
 		"address":"헨돈마이어",
 		"intro":"",
 		"casting":"",
@@ -4888,10 +5120,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0235",
@@ -4901,7 +5134,7 @@ var characterList = [
 		"img":"c58",
 		"back":"hendonmyre",
 		"bgm":"hendonmyre",
-		"voice":"",
+		"voice":"veol",
 		"address":"헨돈마이어",
 		"intro":"",
 		"casting":"",
@@ -4909,10 +5142,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0236",
@@ -4930,10 +5164,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0237",
@@ -4943,7 +5178,7 @@ var characterList = [
 		"img":"c17",
 		"back":"hendonmyre",
 		"bgm":"hendonmyre",
-		"voice":"",
+		"voice":"danjin",
 		"address":"헨돈마이어",
 		"intro":"",
 		"casting":"",
@@ -4951,10 +5186,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0238",
@@ -4964,7 +5200,7 @@ var characterList = [
 		"img":"c9",
 		"back":"westcoast",
 		"bgm":"westcoast",
-		"voice":"",
+		"voice":"lorian",
 		"address":"웨스트코스트",
 		"intro":"어머, 넌 하늘성에서 만났던 모험가 맞지? 설마 여태 하늘성에 있다가 이제서야 내려온 건 아니겠지?$$구해줬는데 고맙다는 말을 못 들었었다고? 너, 생각보다 뒤끝이 있구나. 난 그 때 분명히…$$아, 알았어. 너한테 도움받은 것도 있으니, 이 로리안님이 특별히 %x에 대해 점을 쳐줄게.",
 		"casting":"잠시만 기다려봐.",
@@ -4972,10 +5208,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":0,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0239",
@@ -4985,7 +5222,7 @@ var characterList = [
 		"img":"c10",
 		"back":"westcoast",
 		"bgm":"westcoast",
-		"voice":"",
+		"voice":"kagon_old",
 		"address":"웨스트코스트",
 		"intro":"",
 		"casting":"",
@@ -4993,10 +5230,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0240",
@@ -5014,10 +5252,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0241",
@@ -5027,7 +5266,7 @@ var characterList = [
 		"img":"c18",
 		"back":"westcoast",
 		"bgm":"westcoast",
-		"voice":"",
+		"voice":"danjin",
 		"address":"웨스트코스트",
 		"intro":"",
 		"casting":"",
@@ -5035,10 +5274,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0242",
@@ -5048,7 +5288,7 @@ var characterList = [
 		"img":"c31",
 		"back":"westcoast",
 		"bgm":"westcoast",
-		"voice":"",
+		"voice":"danjin",
 		"address":"웨스트코스트",
 		"intro":"",
 		"casting":"",
@@ -5056,10 +5296,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0243",
@@ -5069,7 +5310,7 @@ var characterList = [
 		"img":"c19",
 		"back":"alf",
 		"bgm":"underfootdungeon",
-		"voice":"",
+		"voice":"buken_old",
 		"address":"알프라이라 임시주둔지",
 		"intro":"",
 		"casting":"",
@@ -5077,10 +5318,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0020",
@@ -5090,7 +5332,7 @@ var characterList = [
 		"img":"c20",
 		"back":"alf",
 		"bgm":"underfootdungeon",
-		"voice":"",
+		"voice":"breeze",
 		"address":"알프라이라 임시주둔지",
 		"intro":"",
 		"casting":"",
@@ -5098,10 +5340,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0021",
@@ -5111,7 +5354,7 @@ var characterList = [
 		"img":"c21",
 		"back":"alf",
 		"bgm":"underfootdungeon",
-		"voice":"",
+		"voice":"gale",
 		"address":"알프라이라 임시주둔지",
 		"intro":"",
 		"casting":"",
@@ -5119,10 +5362,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0244",
@@ -5132,7 +5376,7 @@ var characterList = [
 		"img":"c50",
 		"back":"alf",
 		"bgm":"underfootdungeon",
-		"voice":"",
+		"voice":"doroshi",
 		"address":"알프라이라 임시주둔지",
 		"intro":"",
 		"casting":"",
@@ -5140,10 +5384,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0245",
@@ -5153,7 +5398,7 @@ var characterList = [
 		"img":"c36",
 		"back":"alf",
 		"bgm":"underfootdungeon",
-		"voice":"",
+		"voice":"danjin",
 		"address":"알프라이라 임시주둔지",
 		"intro":"",
 		"casting":"",
@@ -5161,10 +5406,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0246",
@@ -5182,10 +5428,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0247",
@@ -5195,7 +5442,7 @@ var characterList = [
 		"img":"c32",
 		"back":"stormpass",
 		"bgm":"stormpass",
-		"voice":"",
+		"voice":"mintai_old",
 		"address":"스톰패스",
 		"intro":"",
 		"casting":"",
@@ -5203,10 +5450,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0248",
@@ -5216,7 +5464,7 @@ var characterList = [
 		"img":"c33",
 		"back":"stormpass",
 		"bgm":"stormpass",
-		"voice":"",
+		"voice":"orca",
 		"address":"스톰패스",
 		"intro":"",
 		"casting":"",
@@ -5224,10 +5472,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":5,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0249",
@@ -5237,7 +5486,7 @@ var characterList = [
 		"img":"c35",
 		"back":"stormpass",
 		"bgm":"stormpass",
-		"voice":"",
+		"voice":"rino",
 		"address":"스톰패스",
 		"intro":"",
 		"casting":"",
@@ -5245,10 +5494,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0250",
@@ -5258,7 +5508,7 @@ var characterList = [
 		"img":"c125",
 		"back":"shonan",
 		"bgm":"shonan",
-		"voice":"",
+		"voice":"sunbae",
 		"address":"쇼난",
 		"intro":"",
 		"casting":"",
@@ -5266,10 +5516,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0251",
@@ -5279,7 +5530,7 @@ var characterList = [
 		"img":"c27",
 		"back":"guilddungeon",
 		"bgm":"war",
-		"voice":"",
+		"voice":"bqm",
 		"address":"길드던전",
 		"intro":"",
 		"casting":"",
@@ -5287,10 +5538,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0252",
@@ -5308,10 +5560,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0253",
@@ -5329,10 +5582,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0254",
@@ -5350,10 +5604,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0255",
@@ -5371,10 +5626,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0256",
@@ -5392,10 +5648,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0257",
@@ -5413,10 +5670,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0258",
@@ -5434,10 +5692,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0259",
@@ -5455,10 +5714,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0260",
@@ -5476,10 +5736,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0261",
@@ -5497,10 +5758,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0262",
@@ -5518,10 +5780,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0263",
@@ -5539,10 +5802,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0264",
@@ -5560,10 +5824,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0265",
@@ -5581,10 +5846,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0266",
@@ -5602,10 +5868,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0267",
@@ -5623,10 +5890,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0268",
@@ -5644,10 +5912,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0269",
@@ -5665,10 +5934,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0270",
@@ -5686,10 +5956,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0271",
@@ -5707,10 +5978,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0272",
@@ -5728,10 +6000,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0273",
@@ -5749,10 +6022,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0274",
@@ -5770,10 +6044,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0275",
@@ -5791,10 +6066,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0276",
@@ -5812,10 +6088,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0277",
@@ -5833,10 +6110,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0278",
@@ -5854,10 +6132,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0279",
@@ -5875,10 +6154,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0280",
@@ -5896,10 +6176,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0281",
@@ -5917,10 +6198,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0282",
@@ -5938,10 +6220,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0283",
@@ -5959,10 +6242,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0284",
@@ -5980,10 +6264,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0285",
@@ -6001,10 +6286,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0286",
@@ -6022,10 +6308,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0287",
@@ -6043,10 +6330,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0288",
@@ -6064,10 +6352,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0289",
@@ -6085,10 +6374,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0290",
@@ -6106,10 +6396,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0291",
@@ -6127,10 +6418,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0292",
@@ -6148,10 +6440,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0293",
@@ -6169,10 +6462,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0294",
@@ -6190,10 +6484,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0295",
@@ -6211,10 +6506,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0296",
@@ -6232,10 +6528,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0297",
@@ -6253,10 +6550,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0298",
@@ -6274,10 +6572,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0299",
@@ -6295,10 +6594,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0300",
@@ -6316,10 +6616,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0301",
@@ -6337,10 +6638,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0302",
@@ -6358,10 +6660,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0303",
@@ -6379,10 +6682,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0304",
@@ -6400,10 +6704,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0305",
@@ -6421,10 +6726,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0306",
@@ -6442,10 +6748,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0307",
@@ -6463,10 +6770,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0308",
@@ -6484,10 +6792,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":4,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0309",
@@ -6505,10 +6814,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0310",
@@ -6526,10 +6836,11 @@ var characterList = [
 		"favorImg":"yes",
 		"like":7,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0311",
@@ -6547,10 +6858,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0312",
@@ -6568,10 +6880,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0313",
@@ -6589,10 +6902,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0314",
@@ -6610,10 +6924,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0315",
@@ -6631,10 +6946,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0316",
@@ -6652,10 +6968,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0317",
@@ -6673,10 +6990,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0318",
@@ -6694,10 +7012,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0319",
@@ -6715,10 +7034,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0320",
@@ -6736,10 +7056,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0321",
@@ -6757,10 +7078,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0322",
@@ -6778,10 +7100,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0323",
@@ -6799,10 +7122,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0324",
@@ -6820,10 +7144,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0325",
@@ -6841,10 +7166,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0326",
@@ -6862,10 +7188,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0327",
@@ -6883,10 +7210,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0328",
@@ -6904,10 +7232,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0329",
@@ -6925,10 +7254,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0330",
@@ -6946,10 +7276,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0331",
@@ -6967,10 +7298,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0332",
@@ -6988,10 +7320,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0333",
@@ -7009,10 +7342,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0334",
@@ -7030,10 +7364,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0335",
@@ -7051,10 +7386,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0336",
@@ -7072,10 +7408,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0337",
@@ -7093,10 +7430,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0338",
@@ -7114,10 +7452,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0339",
@@ -7135,10 +7474,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0340",
@@ -7156,10 +7496,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0341",
@@ -7177,10 +7518,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0342",
@@ -7198,10 +7540,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0343",
@@ -7219,10 +7562,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0344",
@@ -7240,10 +7584,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0345",
@@ -7261,10 +7606,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0346",
@@ -7282,10 +7628,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0347",
@@ -7303,10 +7650,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0348",
@@ -7324,10 +7672,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0349",
@@ -7345,10 +7694,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0350",
@@ -7366,10 +7716,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0351",
@@ -7387,10 +7738,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0352",
@@ -7408,10 +7760,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0353",
@@ -7429,10 +7782,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0354",
@@ -7450,10 +7804,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0355",
@@ -7471,10 +7826,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0356",
@@ -7492,10 +7848,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0357",
@@ -7513,10 +7870,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0358",
@@ -7534,10 +7892,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0359",
@@ -7546,7 +7905,7 @@ var characterList = [
 		"area":"기타",
 		"img":"c79",
 		"back":"icewall",
-		"bgm":"gent",
+		"bgm":"northshelter",
 		"voice":"",
 		"address":"체념의 빙벽",
 		"intro":"",
@@ -7555,10 +7914,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0360",
@@ -7567,7 +7927,7 @@ var characterList = [
 		"area":"기타",
 		"img":"c306",
 		"back":"stormpass",
-		"bgm":"gent",
+		"bgm":"stormpass",
 		"voice":"",
 		"address":"스톰패스",
 		"intro":"",
@@ -7576,10 +7936,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0361",
@@ -7597,10 +7958,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0362",
@@ -7610,7 +7972,7 @@ var characterList = [
 		"img":"c56",
 		"back":"granflois",
 		"bgm":"granflois",
-		"voice":"",
+		"voice":"derila",
 		"address":"그란플로리스",
 		"intro":"하하하! 반가워, 모험가 양반! 설마 자주 만나는 사이인데 날 모르진 않겠지?$$실은 나, 언더풋 주부교실에서 점을 배웠지 뭐니. 그래서 지나가던 모험가한테 한번 써먹어보고 싶은데, 괜찮겠지?$$모험가가 싫다고 해도 열심히 떠들거야. %x에 대해 알려주지!",
 		"casting":"어디보자……",
@@ -7618,10 +7980,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0363",
@@ -7639,10 +8002,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0364",
@@ -7651,7 +8015,7 @@ var characterList = [
 		"area":"기타",
 		"img":"c160",
 		"back":"granflois",
-		"bgm":"gent",
+		"bgm":"granflois",
 		"voice":"",
 		"address":"그란플로리스",
 		"intro":"",
@@ -7660,10 +8024,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0365",
@@ -7672,7 +8037,7 @@ var characterList = [
 		"area":"기타",
 		"img":"c161",
 		"back":"granflois",
-		"bgm":"gent",
+		"bgm":"granflois",
 		"voice":"",
 		"address":"그란플로리스",
 		"intro":"",
@@ -7681,10 +8046,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0366",
@@ -7702,20 +8068,21 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0367",
-		"name":"소류 A",
+		"name":"카이류",
 		"contributor":"",
 		"area":"기타",
 		"img":"c206",
 		"back":"erze",
 		"bgm":"gent",
-		"voice":"",
+		"voice":"kairyu",
 		"address":"미지의 지역",
 		"intro":"",
 		"casting":"",
@@ -7723,14 +8090,15 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0368",
-		"name":"소류 B",
+		"name":"소류",
 		"contributor":"",
 		"area":"기타",
 		"img":"c227",
@@ -7744,10 +8112,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0369",
@@ -7765,10 +8134,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0370",
@@ -7786,10 +8156,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0371",
@@ -7807,10 +8178,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0372",
@@ -7828,10 +8200,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0373",
@@ -7849,10 +8222,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0374",
@@ -7864,16 +8238,17 @@ var characterList = [
 		"bgm":"hendonmyre",
 		"voice":"",
 		"address":"헨돈마이어",
-		"intro":"순순히 다이아몬드를 넘긴다면 유혈사태는 일어나지 않을 겁니다.$$훌륭한 다이아몬드로군요. 값을 쳐드리겠습니다.$$그래, 제가 좋은 점괘를 알려드리면 되겠군요. %x 어떻습니까?",
+		"intro":"순순히 다이아몬드를 넘긴다면 유혈사태는 일어나지 않을 겁니다.$$훌륭한 다이아몬드로군요. 제가 값을 쳐드리겠습니다.$$그래, 제가 좋은 점괘를 알려드리면 되겠군요. %x 어떻습니까?",
 		"casting":"조금만 기다리면 됩니다.",
 		"result":"이정도면 아주 공정한 무역이지요. 그렇지 않습니까?",
 		"favorImg":"",
 		"like":2,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0375",
@@ -7891,10 +8266,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0376",
@@ -7912,10 +8288,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0377",
@@ -7933,10 +8310,11 @@ var characterList = [
 		"favorImg":"",
 		"like":7,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0378",
@@ -7954,10 +8332,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0379",
@@ -7975,10 +8354,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0380",
@@ -7996,10 +8376,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0381",
@@ -8017,10 +8398,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":4,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0382",
@@ -8038,10 +8420,11 @@ var characterList = [
 		"favorImg":"",
 		"like":4,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0383",
@@ -8059,10 +8442,11 @@ var characterList = [
 		"favorImg":"",
 		"like":1,
 		"dislike":2,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0384",
@@ -8080,10 +8464,11 @@ var characterList = [
 		"favorImg":"",
 		"like":2,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0385",
@@ -8101,10 +8486,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":3,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0386",
@@ -8113,7 +8499,7 @@ var characterList = [
 		"area":"미분류",
 		"img":"c278",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -8122,10 +8508,11 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":1,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0387",
@@ -8134,7 +8521,7 @@ var characterList = [
 		"area":"미분류",
 		"img":"c291",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -8143,10 +8530,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0388",
@@ -8155,7 +8543,7 @@ var characterList = [
 		"area":"미분류",
 		"img":"c292",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -8164,10 +8552,11 @@ var characterList = [
 		"favorImg":"",
 		"like":5,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0389",
@@ -8176,7 +8565,7 @@ var characterList = [
 		"area":"미분류",
 		"img":"c293",
 		"back":"evildom",
-		"bgm":"gent",
+		"bgm":"centralpark",
 		"voice":"",
 		"address":"마계",
 		"intro":"",
@@ -8185,10 +8574,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":6,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0390",
@@ -8206,10 +8596,11 @@ var characterList = [
 		"favorImg":"",
 		"like":0,
 		"dislike":5,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"c0391",
@@ -8227,10 +8618,11 @@ var characterList = [
 		"favorImg":"",
 		"like":6,
 		"dislike":0,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}, 
 	{
 		"id":"cex1",
@@ -8248,9 +8640,10 @@ var characterList = [
 		"favorImg":"",
 		"like":3,
 		"dislike":7,
-		"buff":"",
 		"gift_like":"",
 		"gift_normal":"",
-		"gift_dislike":""
+		"gift_dislike":"",
+		"buff_casting":"",
+		"buff_result":""
 	}
 ];

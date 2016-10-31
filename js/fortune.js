@@ -22,6 +22,7 @@ var game = {
     //출력 결과물
     date:"",
     result:"",
+    buff_result:"",
     //대화정보
     dialog:[]
 };
@@ -86,7 +87,7 @@ var autoResult;//결과 출력 관리
     var imageList = [];
     //기본 효과음 종류 (차후에 필요하면 링크 자동 생성)
     var sfx = ["typing","talking","suprise","giveitem","gift_like","gift_dislike",
-                "throw_1","throw_2","throw_3","throw_4","throw_5","throw_6","throw_7"];
+                "throw_1","throw_2","throw_3","throw_4","throw_5"];
     //사운드 스토리지
     var bgmList = {};//브금이 필요하면 저장해서 사용
     var sfxList = {};//효과음이 필요하면 저장해서 사용
@@ -101,7 +102,9 @@ var textSpeed = {//텍스트 출력속도
     result:(1000/60) * 3,
     gift_like:(1000/60) * 3,
     gift_normal:(1000/60) * 3,
-    gift_dislike:(1000/60) * 3
+    gift_dislike:(1000/60) * 3,
+    buff_casting:(1000/60) * 3,
+    buff_result:(1000/60) * 3
 };
 var buttonState = {
     "button_blog":"",
@@ -396,8 +399,13 @@ function setFavorList() {
 function refillfavorLeft() {
     for (var key in favorList) {
         if (favorList.hasOwnProperty(key)) {
+            //교환횟수 리필
             favorList[key].giveLeft = give_max;
             favorList[key].reciveLeft = 2;
+            //친밀 이상 : 호감도 1 감소
+            if (favorList[key].favor > favor_1) {
+                favorList[key].favor -= 1;
+            }
         }
     }
 }
@@ -694,10 +702,13 @@ function setDialog(state) {
 
             break;
         case "casting":
+        case "buff_casting":
+            //선물창 가리기 (버프 캐스팅 전용)
+            $("#show_gift").style.visibility = "hidden";
             //캐스팅바 출현
             $("#show_loading").style.visibility = "visible";
             //캐스팅 실시 (완료 후 자동으로 돌아옴)
-            setCasting(0);
+            setCasting(state, 0);
 
             break;
         case "result":
@@ -705,8 +716,26 @@ function setDialog(state) {
             $("#show_dialog_name").style.visibility = "hidden";
             $("#show_dialog_favor").style.visibility = "hidden";
             $("#show_dialog_content").style.visibility = "hidden";
+            //결과물 배경 준비
+            $("#show_result").className = "";
             //결과 출력 실시
-            setResult(0);
+            setResult(state, 0);
+
+            break;
+
+        case "buff_result":
+            //대화창 잠시 가리기
+            $("#show_dialog_name").style.visibility = "hidden";
+            $("#show_dialog_favor").style.visibility = "hidden";
+            $("#show_dialog_content").style.visibility = "hidden";
+            //버프 결과물 준비
+            var tmpf = favorList[game.character.id].favor;
+            game.buff_result = resultList.buff[Math.floor(Math.random() * resultList.buff.length)] +
+                " " + Math.round(tmpf * 1.5 - 50).toString() + "% 증가";
+            //버프 결과물 배경 준비
+            $("#show_result").className = "buff";
+            //결과 출력 실시
+            setResult(state, 0);
 
             break;
     }
@@ -716,8 +745,8 @@ function setDialog(state) {
     for (i = 0; i < tmpArr.length; i++) {
         game.dialog.push(deepCopy(tmpArr[i]));
     }
-    //대화집 읽기 (result 제외)
-    if (state !== "result")
+    //대화집 읽기 (result, buff_result 제외)
+    if (state !== "result" && state !== "buff_result")
         showDialog(state, game.dialog[0], 0);
 }
 
@@ -728,6 +757,7 @@ function showDialog(state, text, num) {
         switch (state) {
             //캐스팅 : 대화 스킵 불가
             case "casting":
+            case "buff_casting":
                 //버튼 : Skip 기능
                 $("#button_progress").className = "wait";
                 $("#button_progress").disabled = true;
@@ -839,7 +869,23 @@ function finishDialog(state) {
 
                     break;
             }
-        //(마지막이라면) 대화 종료
+        //(선물 받고 버프를 주고 싶다면)
+        }  else if (
+            (state === "gift_like" && favorList[game.character.id].favorState >= 1) ||
+            (state === "gift_normal" && favorList[game.character.id].favorState >= 2)) {
+                //버튼 변경
+                $("#button_progress").className = "next";
+                $("#button_progress").disabled = false;
+                    //다음 대화 출력 유도
+                    $("#show_dialog_content").className = "next";
+                //버튼 클릭
+                $("#button_progress").onclick = function() {
+                    //화살표 표시 제거
+                    $("#show_dialog_content").className = "";
+                    //다음 단계로
+                    setDialog("buff_casting");
+                };
+        //(그 외) 대화 종료
         } else {
             //버튼 봉쇄
             $("#button_progress").className = "end";
@@ -859,13 +905,16 @@ function finishDialog(state) {
 }
 
 //캐스팅
-function setCasting(step) {
+function setCasting(state, step) {
     //step만큼 캐스팅바 표시
     $("#show_loading_bar").style.width = Math.min(step, 100).toString() + "%";
     //캐스팅 더 필요
     if (step < 100) {
         autoCast = setTimeout(function() {
-            setCasting(step + 0.7);
+            if (state === "casting")
+                setCasting(state, step + 0.7);
+            else if (state === "buff_casting")
+                setCasting(state, step + 0.5);
         },1000/60);
     //캐스팅 완료
     } else {
@@ -874,24 +923,34 @@ function setCasting(step) {
         //캐스팅 바 감추기
         $("#show_loading").style.visibility = "hidden";
         //바로 다음 단계
-        setDialog("result");
+        switch (state) {
+            case "casting":
+                setDialog("result");
+                break;
+            case "buff_casting":
+                setDialog("buff_result");
+                break;
+        }
     }
 }
 
 //결과 출력
-function setResult(step) {
+function setResult(state, step) {
     //step만큼 결과창 표시
     $("#show_result").style.width = Math.min(step, 100).toString() + "%";
     $("#show_result").style.left = Math.max(50 - step/2, 0).toString() + "%";
     //캐스팅 더 필요
     if (step < 100) {
         autoResult = setTimeout(function() {
-            setResult(step + 2);
+            setResult(state, step + 2);
         },1000/60);
     //캐스팅 완료
     } else {
         //결과 출력
-        $("#show_result").innerHTML = game.result;
+        if (state === "result")
+            $("#show_result").innerHTML = game.result;
+        else if (state === "buff_result")
+            $("#show_result").innerHTML = game.buff_result;
         //플래시 출력
         $("#show_flash").src = "./images/fortune/flash.gif";
         $("#show_flash").style.display = "block";
@@ -907,7 +966,7 @@ function setResult(step) {
             $("#show_dialog_content").style.visibility = "visible";
                 $("#show_dialog_content").innerHTML = "";
             //대화 진행
-            showDialog("result", game.dialog[0], 0);
+            showDialog(state, game.dialog[0], 0);
         }, 1000);
     }
 }
@@ -1020,12 +1079,15 @@ function giveGift(step) {
                         $("#show_gift").style.visibility = "hidden";
                         //잠시 후
                         setTimeout(function() {
+                            //결과창 가리기 & 글자 제거
+                                $("#show_result").innerHTML = "";
+                                $("#show_result").style.width = "0%";
                             //쇼에 선물하는 아이템 표시
                             $("#show_gift").className = "item" + i.toString();
                             $("#show_gift").style.visibility = "visible";
                             //선물 사운드
                             if (game.sfx) sfxList.giveitem.play();
-                            var tempArr = [1,2,3,4,5,6,7];
+                            var tempArr = [1,2,3,4,5];
                             var throwSound = tempArr[Math.floor(Math.random() * tempArr.length)];
                             if (game.sfx) sfxList["throw_" + throwSound.toString()].play();
                             //또 잠시후 반응이 나옴
@@ -1125,6 +1187,9 @@ function finishShow(step) {
         if (game.bgm === 1)
             if (started === 1 && game.character && game.character.bgm !== "")
                 bgmList[game.character.bgm].stop();
+        if (game.sfx === 1)
+            if (started === 1 && game.character && game.character.voice !== "")
+                sfxList[game.character.voice].stop();
         //메인 창 표시
         $("#main_title").style.visibility = "visible";
         $("#main_content").style.visibility = "visible";
@@ -1293,16 +1358,18 @@ function prepareShow() {
             //현 설정 저장
             saveData();
 
-            //랜덤 시드 설정
-            Math.seedrandom(game.area + game.character.name + (new Date().getTime()));
-
             //현재 시간
             var today = new Date();
             var dd = today.getDate().toString();
             var mm = (today.getMonth()+1).toString();
             var yyyy = (today.getFullYear()).toString();
+            simpleToday = yyyy + mm + dd;
             today = "아라드력 " + yyyy + "년 " + mm + "월 " + dd + "일";
             game.date = today;
+            console.log(simpleToday);
+
+            //랜덤 시드 설정
+            Math.seedrandom(game.area + game.character.name + simpleToday.toString());
 
             //소망 결과물
             switch (game.wish) {
@@ -1360,7 +1427,7 @@ function prepareShow() {
                     if (Object.keys(bgmList).indexOf(game.character.bgm) < 0)
                         bgmList[game.character.bgm] = new Howl({
                             src:["./sound/fortune/bgm/" + game.character.bgm + ".mp3"],
-                            volume:0.4,
+                            volume:0.3,
                             loop:true,
                             preload:false
                         });
@@ -1479,6 +1546,7 @@ window.onload = function() {
         imageList.push("./images/fortune/door.jpg");
         imageList.push("./images/fortune/content_next.gif");
         imageList.push("./images/fortune/result.png");
+        imageList.push("./images/fortune/buff.png");
         imageList.push("./images/fortune/flash.gif");
 
         //하단 창
