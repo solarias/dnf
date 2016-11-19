@@ -592,9 +592,6 @@ function setShow(step) {
     //단계별 실행
     switch (step) {
         case "prepare":
-            //메인창 닫기
-            $("#main_title").style.visibility = "hidden";
-            $("#main_content").style.visibility = "hidden";
             //※ 옵션 적용 - 캐릭터, 배경 조성
             var tmpF = "";
             //호감 일러스트 (사용 가능하다면) 사용하기
@@ -1419,6 +1416,9 @@ function prepareShow() {
             $("#button_progress").disabled = true;
             //2. 설정 버튼 폐쇄(action)
             setButton($("#button_option"),"hidden");
+            //3. 메인창 닫기
+            $("#main_title").style.visibility = "hidden";
+            $("#main_content").style.visibility = "hidden";
 
             //※ 옵션 적용 - (베경음악 = 1이면) 배경음악 저장
             if (game.bgm === 1)
