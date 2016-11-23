@@ -1786,39 +1786,16 @@ function setGabriel(cmd) {
 		var level = gabrielSetting["get"]["level"];
 		var name = gabrielSetting["get"]["name"];
 		var set = gabrielSetting["get"]["set"];
-		//4-2. 이름이 다르고 레벨 & 제 1분류가 모두 동일하고 조각이 10개 이상인 아이템 3종
-		var tempArr1 = [];
-		var tempArr1_real = [];//실제로 선정된 템 개수 파악용
+		//4-2. 이름이 다르고 레벨이 동일하고 (그 외 조건 없음) 조각이 10개 이상인 아이템 5종
+		var tempArr = [];
 		for (var i=0;i<itemList.length;i++) {
-			if (itemList[i]["name"] != name && itemList[i]["sort1"] === type && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10) {
-				//세트템 지정 시, 동일 세트면 20번 집어넣기
-				if (set !== "" && itemList[i]["set"] === set) {
-					//아이템 선정용
-					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
-					tempArr1.push(itemList[i]);tempArr1.push(itemList[i]);
-					//아이템 선정 종류 수 파악용
-					tempArr1_real.push(itemList[i]);
-				//아니면 1번만 집어넣기
-				} else {
-					//아이템 선정용
-					tempArr1.push(itemList[i]);
-					//아이템 선정 종류 수 파악용
-					tempArr1_real.push(itemList[i]);
-				}
-			}
-		}
-		//4-3. 이름이 다르고 레벨이 동일하고 제 1분류가 다르고 조각이 10개 이상이고 4-2에서 선정 안된 아이템 2종
-		var tempArr2 = [];
-		for (var i=0;i<itemList.length;i++) {
-			if (itemList[i]["name"] != name && itemList[i]["sort1"] != type && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10 && tempArr1.indexOf(itemList[i]) < 0) {
+			if (itemList[i]["name"] != name && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10 && tempArr1.indexOf(itemList[i]) < 0) {
 				tempArr2.push(itemList[i]);
 			}
 		}
 
 	//5-1. 조각 제공 아이템 조각 부족
-	if (tempArr1_real.length < 3 || tempArr2.length < 2) {
+	if (tempArr.length < 5) {
 		//a. 메세지 준비
 		$("#gabriel_message").innerHTML = "동일 레벨의 에픽 조각이<br/>부족하여 교환할 수 없습니다.";
 		//b. 메세지 출력
@@ -1836,24 +1813,21 @@ function setGabriel(cmd) {
 	//5-2. 조각 제공 아이템 조각 충분
 	} else {
 		//a. 배열 섞기
-		tempArr1 = shuffle(tempArr1);
-		tempArr2 = shuffle(tempArr2);
+		tempArr = shuffle(tempArr);
 		//b. 1 배열에서 3개, 2 배열에서 2개 기억
-		var tempArr3 = [];
-			for (var i=0;i<tempArr1.length;i++) {
+		var tempArr2 = [];
+			for (var i=0;i<tempArr.length;i++) {
 				//지정되지 않은 템만 집어넣기 (세트 선정 시 동일 세트템은 중복해서 들어가므로)
-				if (tempArr3.indexOf(tempArr1[i]) < 0) {
-					tempArr3.push(tempArr1[i]);
+				if (tempArr2.indexOf(tempArr[i]) < 0) {
+					tempArr2.push(tempArr[i]);
 				}
-				if (tempArr3.length === 3) {
+				if (tempArr2.length === 5) {
 					break;
 				}
 			}
-			tempArr3.push(tempArr2[0]);
-			tempArr3.push(tempArr2[1]);
 			//b-1 합친 배열 섞어주기
-			tempArr3 = shuffle(tempArr3);
-		gabrielSetting["give"] = tempArr3;
+			tempArr2 = shuffle(tempArr2);
+		gabrielSetting["give"] = tempArr2;
 		//c. 기억된 아이템 출력
 		for (var i=0;i<5;i++) {
 			$("#gabriel_item_give_" + (i+1).toString() + "_type").innerHTML = "<p>" + gabrielSetting["give"][i]["sort1"] + "</p>";
