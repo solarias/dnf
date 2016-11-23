@@ -1789,7 +1789,7 @@ function setGabriel(cmd) {
 		//4-2. 이름이 다르고 레벨이 동일하고 (그 외 조건 없음) 조각이 10개 이상인 아이템 5종
 		var tempArr = [];
 		for (var i=0;i<itemList.length;i++) {
-			if (itemList[i]["name"] != name && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10 && tempArr1.indexOf(itemList[i]) < 0) {
+			if (itemList[i]["name"] != name && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10 && tempArr.indexOf(itemList[i]) < 0) {
 				tempArr2.push(itemList[i]);
 			}
 		}
