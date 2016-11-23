@@ -1790,7 +1790,7 @@ function setGabriel(cmd) {
 		var tempArr = [];
 		for (var i=0;i<itemList.length;i++) {
 			if (itemList[i]["name"] != name && itemList[i]["level"] === level && itemList[i]["jogak"] >= 10 && tempArr.indexOf(itemList[i]) < 0) {
-				tempArr2.push(itemList[i]);
+				tempArr.push(itemList[i]);
 			}
 		}
 
