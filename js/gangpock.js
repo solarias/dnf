@@ -62,7 +62,7 @@ var $store = document.getElementById('store');
 	var $enchant_count = document.getElementById('enchant_count');
 	var $enchant_price = document.getElementById('enchant_price');
 	var $enchant = document.getElementById('enchant');
-	
+
 var $record = document.getElementById('record');
 	var $record_head = document.getElementById('record_head');
 	var $record_display = document.getElementById('record_display');
@@ -92,11 +92,11 @@ var $result = document.getElementById('result');
 	var $result_protect_gold = document.getElementById('result_protect_gold');
 	var $result_protect_set = document.getElementById('result_protect_set');
 	var $result_gross = document.getElementById('result_gross');
-	
+
 	var $result_max_method = document.getElementById('result_max_method');
 	var $result_max_num = document.getElementById('result_max_num');
 	var $result_max_count = document.getElementById('result_max_count');
-	
+
 var $cover = document.getElementById('cover');
 
 //=================================================================================================================
@@ -117,17 +117,9 @@ var selfishList = [
 ];
 
 var chanceList = [//강화/증폭 성공 확률
-	1,//1
-	1,//2
-	1,//3
-	1,//4
-	0.9,//5
-	0.8,//6
-	0.75,//7
-	0.7,//8
-	0.6,//9
-	0.5,//10
-	0.4,//11
+	1,1,1,1,0.8,
+	0.7,0.6,0.5,0.4,0.3,
+	0.3,//11
 	0.25,//12
 	0.2,//13
 	0.1,//14
@@ -211,12 +203,12 @@ var dropList = [//해당 단계 도전 실패 시 결과
 		0,//2
 		0,//3
 		0,//4
-		-1,//5
-		-1,//6
-		-1,//7
-		-3,//8
-		-3,//9
-		-3,//10
+		0,//5
+		0,//6
+		0,//7
+		0,//8
+		0,//9
+		0,//10
 		-10,//11
 		-11,//12
 		-12,//13
@@ -227,7 +219,7 @@ var dropList = [//해당 단계 도전 실패 시 결과
 		-17,//18
 		-18,//19
 		-19//20
-	],[//실패
+	],[//증폭
 		0,//1
 		0,//2
 		0,//3
@@ -313,7 +305,7 @@ var scrollList_price = [//강폭권 가격
 						for (var i = 0; i < arr.length; i++) {
 							img = new Image();
 							img.onload = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								//내부 처리
@@ -323,7 +315,7 @@ var scrollList_price = [//강폭권 가격
 								};
 							};
 							img.onerror = function() {
-								//외부 처리 
+								//외부 처리
 								document.getElementById("cover").innerHTML = "\
 								로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 								--remaining;
@@ -336,7 +328,7 @@ var scrollList_price = [//강폭권 가격
 							<img src='" + img.src + "'>";
 							imagesArray.push(img);
 						};
-						
+
 					};
 
 
@@ -370,7 +362,7 @@ var scrollList_price = [//강폭권 가격
 						if (s == '' || isNaN(s)) return false;
 						return true;
 					}
-					
+
 //=================================================================================================================
 //※ 함수 - 작동용
 //=================================================================================================================
@@ -451,7 +443,7 @@ function selecting(target,how) {//무기&방법 변경
 		//하단(필터링) 변경
 		$record_scroll_method.innerHTML = methodList[method];
 		//바닥 변경
-		if (method == 0) {	
+		if (method == 0) {
 			$result_sera.style.display = "inline";
 			$result_mosun.style.display = "none";
 			$result_protect_img.src = images + "protect0.png";
@@ -463,7 +455,7 @@ function selecting(target,how) {//무기&방법 변경
 		$result_max_method.innerHTML = methodList[method];
 	//입력한 변수 출력 (이미지, 명칭)
 	$now_img.style.visibility = "visible";
-	$now_img.src = images + selfishList[selected][1] + ".png";	
+	$now_img.src = images + selfishList[selected][1] + ".png";
 	$now_text.innerHTML = "+0 " + selfishList[selected][0]
 	//강폭기 준비
 	ready();
@@ -478,10 +470,10 @@ function selecting(target,how) {//무기&방법 변경
 		$center_left_back.src = images + "back" + method.toString() + ".png";
 		//(고속 한정) 강폭기에 장비 장착
 		if (running == 1) {
-			$center_left_target.src = images + selfishList[selected][1] + ".png";	
+			$center_left_target.src = images + selfishList[selected][1] + ".png";
 			$center_left_target.style.visibility = "visible";
 		} else {
-			$center_left_target.src = "";	
+			$center_left_target.src = "";
 			$center_left_target.style.visibility = "hidden";
 		}
 		//안내 메세지
@@ -500,7 +492,7 @@ function selecting(target,how) {//무기&방법 변경
 
 function generate(num, goal) {
 	//강폭기에 이미지 출력
-	$center_left_target.src = images + selfishList[selected][1] + ".png";	
+	$center_left_target.src = images + selfishList[selected][1] + ".png";
 	$center_left_target.style.visibility = "visible";
 	//게이지 출력
 	$show_text.style.color = "black";
@@ -561,7 +553,7 @@ function generate(num, goal) {
 			$show_bar.style.width = "0px";
 			$show_right.style.backgroundColor = "black";
 			$show_text.style.color = "#D37CFF";
-			
+
 			//성공여부 결정
 			var temp = Math.random();
 			var result = 0;
@@ -581,7 +573,7 @@ function generate(num, goal) {
 					result = 1;
 				}
 			}
-			
+
 			//강폭 성공 시
 			if (result == 1) {
 				//아이템 명칭 변경
@@ -603,7 +595,7 @@ function generate(num, goal) {
 				$message_text.innerHTML = "<span class='orange'>" + tempGoal[0].toString() + "단계 " + methodList[method] + " 실패</span>\
 					( +" + grade.toString() + " &#8658; +" + tempGoal[1].toString() + " )";
 			}
-			
+
 			//하단에 표시
 			row = $record_table.insertRow(-1);
 			row.className = "";
@@ -664,7 +656,7 @@ function generate(num, goal) {
 				cell_6.innerHTML = "<span class='epic'>" + $now_text.innerHTML + "</span>";
 				cell_6.className = "col_7";
 			$record_display.scrollTop = $record_display.scrollHeight;
-			
+
 			//비용, 강폭권 이용횟수 계산
 			if (num >= 11) {
 				gold += scrollList_price[method][$enchant_chance.selectedIndex];
@@ -685,7 +677,7 @@ function generate(num, goal) {
 			$result_mosun_gold.innerHTML = setWon(mosun * mosun_gold);
 			//$result_protect_gold.innerHTML = setWon(protect * protect_gold); (보호권은 차후에 계산)
 			$result_gross.innerHTML = setWon(gold + (sera*1000) + (mosun*mosun_gold) + (protect*protect_gold));
-			
+
 			//단계, 최대치, 보호권, 회차 계산
 			if (result == 1) {//강폭 성공 시
 				grade = tempGoal[0]; //강폭 등급 변경
@@ -703,7 +695,7 @@ function generate(num, goal) {
 				grade = tempGoal[1]; //강폭 등급 변경
 			}
 			count += 1; //시도횟수
-			
+
 			//강폭기에서 이미지 제거
 			$center_left_target.src = "";
 			$center_left_target.style.visibility = "hidden";
@@ -722,15 +714,15 @@ function onoff(num) {
 			$open2.disabled="disabled";
 			$open3.disabled="disabled";
 			$enchant.disabled="disabled";
-			
+
 			$open1.className = "off";
 			$open2.className = "off";
 			$open3.className = "off";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "";
 			$enchant_chance.disabled = "";
-			
+
 			$show_text.innerHTML = methodList[method] + " 종료";
 			break;
 		case 0:
@@ -742,60 +734,60 @@ function onoff(num) {
 			$open2.disabled="";
 			$open3.disabled="";
 			$enchant.disabled="";
-			
+
 			$open1.className = "off";
 			$open2.className = "off";
 			$open3.className = "off";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "";
 			$enchant_chance.disabled = "";
-			
+
 			break;
 		case 1:
 			$open1.value="취소";
 			$open2.disabled="disabled";
 			$open3.disabled="disabled";
 			$enchant.disabled="disabled";
-			
+
 			$open1.className = "on";
 			$open2.className = "off";
 			$open3.className = "off";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "disabled";
 			$enchant_chance.disabled = "disabled";
-			
+
 			break;
 		case 2:
 			$open1.disabled="disabled";
 			$open2.value="취소";
 			$open3.disabled="disabled";
 			$enchant.disabled="disabled";
-			
+
 			$open1.className = "off";
 			$open2.className = "on";
 			$open3.className = "off";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "disabled";
 			$enchant_chance.disabled = "disabled";
-			
+
 			break;
 		case 3:
 			$open1.disabled="disabled";
 			$open2.disabled="disabled";
 			$open3.value="취소";
 			$enchant.disabled="disabled";
-			
+
 			$open1.className = "off";
 			$open2.className = "off";
 			$open3.className = "on";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "disabled";
 			$enchant_chance.disabled = "disabled";
-			
+
 			break;
 		case 11:
 			$open1.disabled="disabled";
@@ -803,22 +795,22 @@ function onoff(num) {
 			$open3.disabled="disabled";
 			$enchant.disabled="disabled";
 			$enchant.value="강화 중";
-			
+
 			$open1.className = "off";
 			$open2.className = "off";
 			$open3.className = "off";
 			$enchant.className = "off";
-			
+
 			$objective.disabled = "disabled";
 			$enchant_chance.disabled = "disabled";
-			
+
 			break;
 	}
 }
 
 function reset(num) {
 	ready();
-	
+
 	if (num == 1) {
 		//재생 중단
 		clearTimeout(auto);
@@ -885,11 +877,11 @@ window.onload = function() {
 	imageList.push(images + "protect0.png");
 	imageList.push(images + "protect1.png");
 	imageList.push(images + "mosun.png");
-	
+
 	loadImages(imageList,function(){
-	
+
 		cover.style.display = "none";
-		
+
 		//선택, 초기화
 		$weapon.onchange = function() {
 			$method.disabled = "";
@@ -906,12 +898,12 @@ window.onload = function() {
 				reset(1);
 			}
 		};
-		
+
 		//실행, 상점
 		$open1.onclick = function() {
 			if ($open1.className == "off") {
 				onoff(1);
-				
+
 				generate(1, grade+1);
 			} else {
 				clearTimeout(auto);
@@ -919,11 +911,11 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		$open2.onclick = function() {
 			if ($open2.className == "off") {
 				onoff(2);
-				
+
 				generate(2, parseInt($objective.value));
 			} else {
 				clearTimeout(auto);
@@ -931,11 +923,11 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		$open3.onclick = function() {
 			if ($open3.className == "off") {
 				onoff(3);
-				
+
 				running = 1;
 				generate(3, parseInt($objective.value));
 			} else {
@@ -945,16 +937,16 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		$enchant_chance.onchange = function() {
 			$enchant_count.innerHTML = scrollList_count[method][$enchant_chance.selectedIndex];
 			$enchant_price.innerHTML = setWon(scrollList_price[method][$enchant_chance.selectedIndex]) + " Gold";
 		};
-		
+
 		$enchant.onclick = function() {
 			if ($enchant.className == "off") {
 				onoff(11);
-				
+
 				generate(11, 12);
 			} else {
 				clearTimeout(auto);
@@ -963,7 +955,7 @@ window.onload = function() {
 				reset(0);
 			}
 		};
-		
+
 		//필터링
 		$record_high.onclick = function() {
 			var target = $record_high_select.value;
@@ -1007,7 +999,7 @@ window.onload = function() {
 					$record_high.checked = false;
 				}
 			}
-		
+
 		$record_result.onclick = function() {
 			var target = $record_result_select.value;
 			var sheet = document.getElementById("filter_result");
@@ -1038,7 +1030,7 @@ window.onload = function() {
 					$record_result.checked = false;
 				}
 			}
-		
+
 		$record_scroll.onclick = function() {
 			var sheet = document.getElementById("filter_scroll");
 			try {
@@ -1054,7 +1046,7 @@ window.onload = function() {
 				$record_scroll.checked = false;
 			}
 		}
-		
+
 		//바닥
 		$result_mosun_set.onclick = function() {
 			var challenge = prompt("모순의 결정체 가격을 입력하세요.\n(현재 가격 : " + thousand(mosun_gold) + " Gold)");
@@ -1076,13 +1068,13 @@ window.onload = function() {
 				$result_gross.innerHTML = setWon(gold + (sera*1000) + (mosun*mosun_gold) + (protect*protect_gold));
 			}
 		};
-		
-		
+
+
 		$record_clear.onclick = function() {
 			if (confirm("강화/증폭 기록을 초기화하시겠습니까? 장비, 소모 재료 등은 보존됩니다.")) {
 				$record_table.innerHTML = "";
 			}
 		};
 	});
-	
+
 }
