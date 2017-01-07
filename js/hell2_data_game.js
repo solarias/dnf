@@ -92,6 +92,10 @@ var characterList = {
 		"name":"프리스트(남)",
 		"hittype":"hit"
 	},
+	"priest_f":{
+		"name":"프리스트(여)",
+		"hittype":"hit"
+	},
 	"thief_f":{
 		"name":"도적(여)",
 		"hittype":"slash"

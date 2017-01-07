@@ -128,6 +128,9 @@ html, body {
 .priest_m {
 	background-image:url('../images/epic/character_sprite/character_priest_m.png');
 }
+.priest_f {
+	background-image:url('../images/epic/character_sprite/character_priest_f.png');
+}
 .thief_f {
 	background-image:url('../images/epic/character_sprite/character_thief_f.png');
 }
@@ -366,14 +369,14 @@ html, body {
 				float:left;
 
 				margin-top:20px;
-				width:300px;
+				width:260px;
 				height:200px;
 
 				border:1px white solid;
 			}
 				#startOption_description_sprite {
 					position:absolute;
-					left:-100px;
+					left:-120px;
 					top:-140px;
 
 					width:500px;
@@ -385,12 +388,15 @@ html, body {
 			.startPption_select {
 				float:right;
 
-				margin:20px 0px 0px 8px;
+				margin:20px 0px 0px 4px;
 				width:70px;
 				height:60px;
 
 				font-size:0px;
 			}
+				.startPption_select.last {
+					margin-right:72px;
+				}
 				.startPption_select:hover {
 					cursor:pointer;
 					cursor:hand;
@@ -441,6 +447,9 @@ html, body {
 			#startPption_select_swordman_f.on {
 				background-image:url('../images/epic/character_button/swordman_f_on.png');
 			}
+			#startPption_select_knight_f {
+				margin-left:0px;
+			}
 			#startPption_select_swordman_m.off {
 				background-image:url('../images/epic/character_button/swordman_m_off.png');
 			}
@@ -462,11 +471,20 @@ html, body {
 			#startPption_select_knight_f.on {
 				background-image:url('../images/epic/character_button/knight_f_on.png');
 			}
+			#startPption_select_knight_f {
+				margin:20px 74px 0px 4px;
+			}
 			#startPption_select_thief_f.off {
 				background-image:url('../images/epic/character_button/thief_f_off.png');
 			}
 			#startPption_select_thief_f.on {
 				background-image:url('../images/epic/character_button/thief_f_on.png');
+			}
+			#startPption_select_priest_f.off {
+				background-image:url('../images/epic/character_button/priest_f_off.png');
+			}
+			#startPption_select_priest_f.on {
+				background-image:url('../images/epic/character_button/priest_f_on.png');
 			}
 			#startPption_select_priest_m.off {
 				background-image:url('../images/epic/character_button/priest_m_off.png');
@@ -485,9 +503,6 @@ html, body {
 			}
 			#startPption_select_mage_f.on {
 				background-image:url('../images/epic/character_button/mage_f_on.png');
-			}
-			#startPption_select_mage_m {
-				margin-left:0px;
 			}
 			#startPption_select_mage_m.off {
 				background-image:url('../images/epic/character_button/mage_m_off.png');

@@ -609,6 +609,7 @@ function main(cmd) {
 	imageList.push("./images/epic/character_sprite/character_mage_f.png");
 	imageList.push("./images/epic/character_sprite/character_creator_f.png");
 	imageList.push("./images/epic/character_sprite/character_priest_m.png");
+	imageList.push("./images/epic/character_sprite/character_priest_f.png");
 	imageList.push("./images/epic/character_sprite/character_thief_f.png");
 	imageList.push("./images/epic/character_sprite/character_knight_f.png");
 	imageList.push("./images/epic/character_sprite/character_lancer_m.png");
