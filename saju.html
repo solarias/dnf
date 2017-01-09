@@ -256,14 +256,14 @@
 							<option value='vanguard'>뱅가드</option>
 						</optgroup>
 						<optgroup label="외전 캐릭터">
-							<option value='darkknight'>다트나이트</option>
+							<option value='darkknight'>다크나이트</option>
 							<option value='creator'>크리에이터</option>
 						</optgroup>
 					</select>
 				</p>
 				<p>
 					연　도 : 
-					<input id="input_year" type="text" value="2016" />
+					<input id="input_year" type="text" />
 					년
 				</p>
 			</div>
@@ -459,6 +459,9 @@
 				"result_61"
 			]
 			window.onload = function() {
+				//올해 연도 자동 입력
+				document.getElementById("input_year").value = (new Date()).getFullYear();
+				
 				$server.onchange = function() {
 					$server.style.backgroundColor = "#F4FA58";
 				}
