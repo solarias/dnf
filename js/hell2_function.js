@@ -1,6 +1,6 @@
 
 	//=================================================================================================================
-	//※ 함수 - 선로딩, 내부작업용
+	//※ 함수 - 선로딩, 내부작업용, 마우스 액션
 	//=================================================================================================================
 	// 컨텐츠 선로딩 (원본 출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
 	function loadContents(callBack) {
@@ -150,6 +150,146 @@
 		}
 	}
 
+	//마우스 올리면 다른 개체 감추기
+	function seriesOnOff(base, option, series) {
+	    //옵션 지정 1
+	    var _antiTrigger = "";
+	    switch (option["trigger"]) {
+	        case "mouseover":
+	            _antiTrigger = "mouseout";
+
+	            break;
+	    }
+
+	    //옵션 지정 2
+	    function  _setEvent(target) {
+	        switch (option["event"]) {
+	            //정해진 옵션
+	            case "display":
+	                target.style.display = "block";
+
+	                break;
+	            case "visibility":
+	                target.style.visibility = "visible";
+
+	                break;
+	            case "checked":
+	                target.checked = true;
+
+	                break;
+	        }
+	    }
+	    //옵션 지정 3
+	    function  _clearEvent(target) {
+	        switch (option["event"]) {
+	            case "display":
+	                target.style.display = "none";
+
+	                break;
+	            case "visibility":
+	                target.style.visibility = "hidden";
+
+	                break;
+	            case "checked":
+	                target.checked = false;
+
+	                break;
+	        }
+	    }
+	    //옵션 지정 4
+	        //after = -1 : onmouseout - 모든 걸 clearEvent
+	        //after = 0 : onmouseout - base 출현
+	        //after = 1 : onmouseout - 유지
+
+	    //base 깔아두기
+	        //(base가 "{공백}"이면) 아무것도 하지 않기
+	    function _setBase() {
+	        if (base !== "") {
+	            _setEvent(base);
+	        }
+	    }
+	    function _clearBase() {
+	        if (base !== "") {
+	            _clearEvent(base);
+	        }
+	    }
+	    _setBase();
+
+	    //액션 지정
+	    for (var i=0;i<series.length;i++) {
+	        (function(i) {
+	            __exe();
+	            function __exe() {
+	                //타겟 지정
+	                if (Array.isArray(series[i])) {
+	                    //대상 : 이벤트 지정
+	                    series[i][0].addEventListener(option["trigger"],function() {
+	                        _clearBase();
+	                        _setEvent(series[i][1]);
+	                        //나머지 : 이벤트 해제
+	                        for (var j=0;j<series.length;j++) {
+	                            (function(j) {
+	                                __exe2();
+	                                function __exe2() {
+	                                    if (j !== i) {
+	                                        _clearEvent(series[j][1]);
+	                                    }
+	                                }
+	                            })(j);
+	                        }
+	                    });
+	                    switch (option["after"]) {
+	                        //(after가 -1) : 해제
+	                        case -1:
+	                            series[i][0].addEventListener(_antiTrigger,function() {
+	                                _clearEvent(series[i][1]);
+	                            });
+	                            break;
+	                        //(after가 ) : 0
+	                        case 0:
+	                            series[i][0].addEventListener(_antiTrigger,function() {
+	                                _clearEvent(series[i][1]);
+	                                _setBase();
+	                            });
+	                            break;
+	                    }
+	                } else {
+	                    //대상 : 이벤트 지정
+	                    series[i].addEventListener(option["trigger"],function() {
+	                        _clearBase();
+	                        _setEvent(series[i]);
+	                        //나머지 : 이벤트 해제
+	                        for (var j=0;j<series.length;j++) {
+	                            (function(j) {
+	                                __exe2();
+	                                function __exe2() {
+	                                    if (j !== i) {
+	                                        _clearEvent(series[j]);
+	                                    }
+	                                }
+	                            })(j);
+	                        }
+	                    });
+	                    switch (option["after"]) {
+	                        //(after가 -1) : 해제
+	                        case -1:
+	                            series[i].addEventListener(_antiTrigger,function() {
+	                                _clearEvent(series[i]);
+	                            });
+	                            break;
+	                        //(after가 ) : 0
+	                        case 0:
+	                            series[i].addEventListener(_antiTrigger,function() {
+	                                _clearEvent(series[i]);
+	                                _setBase();
+	                            });
+	                            break;
+	                    }
+	                }
+	            }
+	        })(i);
+	    }
+	}
 //=================================================================================================================
 //※ 함수 - 캐릭터 관련
 //=================================================================================================================
