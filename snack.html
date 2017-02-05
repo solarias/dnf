@@ -1,54 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="./css/snack.css" />
-		
+
 		<title>칸나의 스낵 주머니</title>
 	</head>
 	<body>
 		<div id="frame_ad" class="dnf_snack"></div>
 			<link rel="stylesheet" type="text/css" href="http://solarias.github.io/function/frame_ad/frame_ad.css" />
 			<script type="text/javascript" src="http://solarias.github.io/function/frame_ad/frame_ad.js"></script>
-			
+
 		<img id="kanna" src="./images/snack/kanna.png">
-		
+
 		<div id="wrapper">
-		
+
 			<div id="frame_left">
-			
-			
+
+
 				<div id="head">
 					<p>
 						<strong>칸나의 스낵 주머니</strong>를 개봉합니다.
 						<br/>
 					</p>
 					<span>
-						<input id="audioCheck" type="checkbox" />
+						<input id="audioCheck" type="checkbox" checked />
 						<label for="audioCheck">사운드 출력</label>
 					</span>
 				</div>
 				<div id="gauge">
-					<img id="gauge_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302513.jpg" />
+					<img id="gauge_img" src="./images/snack/lock1.png" />
 					<div id="gauge_progress">
 						<div id="gauge_bar">
 						</div>
 					</div>
 					<div id="gauge_text">
-						주머니 개봉 대기중 <span class="white">(비용 : <img src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg"> × 3 = 750세라)</span>
+						주머니 개봉 대기중 <span class="white">(비용 : <img src="./images/snack/key.png"> × 3 = 750세라)</span>
 					</div>
 				</div>
-				
+
 				<div id="control">
 					<p class="top">
 						<span id="control_count">0</span>	회차
 					</p><p>
-						<input id="open1" class="off" type="button" value="1회 개봉" />
+						<input id="open1" class="off" type="button" value="1회개봉" />
 					</p><hr /><p>
-						<input id="open2" class="off" type="button" value="연속 개봉" />
+						<input id="open2" class="off" type="button" value="연속개봉" />
 					</p><p class="normal">
-						&lt;연속 개봉 목표&gt;
+						&lt;연속개봉 목표&gt;
 						<select id="objective">
 							<option value="" selected disabled>선택하세요</option>
 							<option value="">목표 없음</option>
@@ -62,31 +62,31 @@
 					</p>
 				</div>
 				<div id="show">
-				
+
 					<div id="show_title">
 					</div>
 					<div id="show_body">
-						<img id="show_item1_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg">
+						<img id="show_item1_img" src="./images/snack/initial.png">
 						<div id="show_item1_name">
 							<p>대기중</p>
 						</div>
-						
-						<img id="show_item2_img" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg">
+
+						<img id="show_item2_img" src="./images/snack/initial.png">
 						<div id="show_item2_name">
 							<p>대기중</p>
 						</div>
 					</div>
 					<div id="show_booster">
-						<img id="show_booster_body" src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030246.jpg">
+						<img id="show_booster_body" src="./images/snack/booster1.png">
 						<div id="show_booster_bar">
 						</div>
 					</div>
-				
+
 				</div>
-				
+
 				<div id="cost">
 					<p>
-						소모 <img src="http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg"> : <span id="cost_key">0</span> 개
+						소모 <img src="./images/snack/key.png"> : <span id="cost_key">0</span> 개
 						( = <span id="cost_sera">0</span> 세라)
 					</p>
 					<hr />
@@ -110,15 +110,15 @@
 						<input id="record_clear" type="button" value="획득 기록 지우기" />
 					</p>
 				</div>
-		
-			
+
+
 			</div>
 			<div id="frame_right">
 				<div id="inventory_title">
 					<p>인벤토리</p>
 				</div>
 				<input id="clear" type="button" value="초기화" />
-				
+
 				<div id="inventory_filter">
 					(획득한 모든 아이템을 정리하여 표시합니다.)
 				</div>
@@ -141,11 +141,11 @@
 					<input id="inventory_check_all" type="checkbox" /><label for="inventory_check_all"></label>
 					모든 아이템 표시
 				</div>
-			
+
 			</div>
-			
+
 		</div>
-			
+
 		<!--필터-->
 		<style id="style_record_check_twice" type="text/css">
 		</style>
@@ -153,21 +153,21 @@
 		</style>
 		<style id="style_inventory_check_all" type="text/css">
 		</style>
-		
+
 		<!--로딩할 동안 가림막 기능 수행-->
 		<div id="cover">
 			로딩 대기중...
 		</div>
-		
+
 		<div id="imagePreloader">
 		</div>
-		
-		
+
+
 		<script type="text/javascript" src="./js/snack_itemList.js"></script>
-		
+
 		<script type="text/javascript" src="./js/placeholders.min.js"></script>
 		<script type="text/javascript" src="./js/snack.js"></script>
-		
+
 <!-- Histats.com  START (hidden counter)-->
 <script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
 <a href="http://www.histats.com" target="_blank" title="counter" ><script  type="text/javascript" >

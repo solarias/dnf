@@ -62,7 +62,7 @@ var $record_check = document.getElementById("record_check");
 	var $record_check_twice = document.getElementById("record_check_twice");
 	var $record_check_month = document.getElementById("record_check_month");
 	var $record_clear = document.getElementById("record_clear");
-	
+
 var $clear = document.getElementById("clear");
 var $inventory_filter = document.getElementById("inventory_filter");
 var $inventory = document.getElementById("inventory");
@@ -73,7 +73,7 @@ var $inventory_check = document.getElementById("inventory_check");
 var $filter_inventory_check_all = document.getElementById("filter_inventory_check_all");
 
 var $cover = document.getElementById("cover");
-		
+
 //=================================================================================================================
 //※ 자료
 //=================================================================================================================
@@ -105,7 +105,7 @@ var $cover = document.getElementById("cover");
 			return -1;
 		  };
 		}
-		
+
 		//이미지 불러오기 (출처 : http://stackoverflow.com/questions/8264528/image-preloader-javascript-that-supports-eventNames/8265310#8265310)
 		function loadImages(arr,callBack){
 
@@ -115,7 +115,7 @@ var $cover = document.getElementById("cover");
 			for (var i = 0; i < arr.length; i++) {
 				img = new Image();
 				img.onload = function() {
-					//외부 처리 
+					//외부 처리
 					document.getElementById("cover").innerHTML = "\
 					로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 					//내부 처리
@@ -125,7 +125,7 @@ var $cover = document.getElementById("cover");
 					};
 				};
 				img.onerror = function() {
-					//외부 처리 
+					//외부 처리
 					document.getElementById("cover").innerHTML = "\
 					로딩 중 ("+Math.round((((arr.length - remaining + 1)/arr.length)*100),0).toString()+"%)";
 					--remaining;
@@ -138,9 +138,9 @@ var $cover = document.getElementById("cover");
 				<img src='" + img.src + "'>";
 				imagesArray.push(img);
 			};
-			
+
 		};
-		
+
 		//가중치 적용 랜덤
 		function rand(target) {//target : 숫자가 들어있는 배열
 			var number = 0;
@@ -148,7 +148,7 @@ var $cover = document.getElementById("cover");
 				number += target[i];
 			}
 			var tmp = Math.random() * number;
-			
+
 			number = 0;
 			for (i=0;i<target.length;i++) {
 				number += target[i];
@@ -167,12 +167,12 @@ var $cover = document.getElementById("cover");
 				return temp.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}
 		}
-		
+
 		//콤마 제거 후 숫자로 변환
 		function toNumber(string) {
 			return parseInt(string.replace(/,/g,''));
 		}
-		
+
 		//만단위 한글로 전환 (출처 : http://kin.naver.com/qna/detail.nhn?d1id=1&dirId=1040202&docId=159019083&qb=amF2YXNjcmlwdCDsiKvsnpAgNOuLqOychCDtlZzquIA=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0&pid=R6VWNc5Y7vKssb7f6YZsssssssd-312648&sid=UKssqHJvLDEAAC0QENA)
 		function setWon(pWon) {
 			var won  = pWon.toString();
@@ -198,7 +198,7 @@ var $cover = document.getElementById("cover");
 			if (s == '' || isNaN(s)) return false;
 			return true;
 		}
-		
+
 //=================================================================================================================
 //※ 함수 - 작동용
 //=================================================================================================================
@@ -208,11 +208,11 @@ function setInventory() {
 	for (i=0;i<itemList.length;i++) {
 		if (tempArr.indexOf(itemList[i][1]) == -1) {
 			tempArr.push(itemList[i][1]);
-			
+
 			var row = $inventory_table.insertRow(-1);
 				row.id = "row_" + i.toString();
 			var cell_1 = row.insertCell(0);
-				cell_1.innerHTML = "<img src='" + itemList[i][4] + "'>";//아이템 이미지
+				cell_1.innerHTML = "<img src='" + images + itemList[i][4] + ".png'>";//아이템 이미지
 				cell_1.className = "col_1";
 			var cell_2 = row.insertCell(1);
 				cell_2.innerHTML = "<span class='" + itemList[i][5] + "'>" + itemList[i][1] + "</span>";//아이템 명칭
@@ -241,52 +241,52 @@ function loading(num, speed) {
 			if (objective[0] == "month") {//종료조건 - 이달의 아이템
 				if (month == 1) {
 					onoff(0);
-					
+
 					var row = $record_table.insertRow(-1)
 					row.className = "not_twice not_month";
 					var cell = row.insertCell(0);
-					cell.innerHTML += "<span class='system'>=============<연속 실행 종료>=============<br/>\
+					cell.innerHTML += "<span class='system'>=============<연속개봉 종료>=============<br/>\
 					※ 종료 조건 : 이달의 아이템 획득\
 					<br/>========================================</span>";
 						//스크롤 이동
 						$record.scrollTop = $record.scrollHeight;
-						
+
 					return;
 				}
 			} else if (objective[0] == "key") {//종료조건 - 열쇠
 				objective[2] += 3;
 				if (objective[2] + 3 > objective[1]) {
 					onoff(0);
-					
+
 					var row = $record_table.insertRow(-1)
 					row.className = "not_twice not_month";
 					var cell = row.insertCell(0);
-					cell.innerHTML += "<span class='system'>=============<연속 실행 종료>=============<br/>\
+					cell.innerHTML += "<span class='system'>=============<연속개봉 종료>=============<br/>\
 					※ 종료 조건 : 열쇠 수량 제한\
 					<br/>(총 " + thousand(objective[1]) + "개의 열쇠 &#8658; " + Math.floor(objective[1] / 3).toString() + "회 실시)\
 					<br/>========================================</span>";
 						//스크롤 이동
 						$record.scrollTop = $record.scrollHeight;
-						
-					
+
+
 					return;
 				}
 			} else if (objective[0] == "sera") {//종료조건 - 세라
 				objective[2] += 750;
 				if (objective[2] + 750 > objective[1]) {
 					onoff(0);
-					
+
 					var row = $record_table.insertRow(-1)
 					row.className = "not_twice not_month";
 					var cell = row.insertCell(0);
-					cell.innerHTML += "<span class='system'>=============<연속 실행 종료>=============<br/>\
+					cell.innerHTML += "<span class='system'>=============<연속개봉 종료>=============<br/>\
 					※ 종료 조건 : 비용 제한 (세라)\
 					<br/>(총 " + thousand(objective[1]) + " 세라 &#8658; " + Math.floor(objective[1] / 750).toString() + "회 실시)\
 					<br/>========================================</span>";
 						//스크롤 이동
 						$record.scrollTop = $record.scrollHeight;
-						
-					
+
+
 					return;
 				}
 			}
@@ -337,48 +337,48 @@ function get(num) {
 	var back = "back" + month.toString() + twice.toString();
 	switch (back) {
 		case "back00":
-			$show_body.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030230.jpg')";
-			
+			$show_body.style.background = "url('./images/snack/back00.png')";
+
 			break;
 		case "back01":
-			$show_body.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030231.jpg')";
-			
+			$show_body.style.background = "url('./images/snack/back01.png')";
+
 			break;
 		case "back10":
-			$show_body.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030242.jpg')";
-			
+			$show_body.style.background = "url('./images/snack/back10.png')";
+
 			break;
 		case "back11":
-			$show_body.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030243.jpg')";
-			
+			$show_body.style.background = "url('./images/snack/back11.png')";
+
 			break;
 	}
-	
+
 	//상품 출력
-	$show_item1_img.src = prize[0][4];
+	$show_item1_img.src = images + prize[0][4] + ".png";
 	$show_item1_name.innerHTML = "<span class='" + prize[0][5] + "'>" + prize[0][0] + "</span>";
-	$show_item2_img.src = prize[1][4];
+	$show_item2_img.src = images + prize[1][4] + ".png";
 	$show_item2_name.innerHTML = "<span class='" + prize[1][5] + "'>" + prize[1][0] + "</span>";
-	
+
 	//상품 업데이트
 	update(prize,twice);
-	
+
 	//비용 증가
 	key += 3;
 	sera += 750;
 	gold += 750000;
-	
+
 	//증가된 비용 표기
 	$cost_key.innerHTML = thousand(key);
 	$cost_sera.innerHTML = setWon(sera);
 	$cost_gold.innerHTML = setWon(gold);
-	
+
 	//부스터 증가 및 표기
 	if (twice == 1) {//2배 상황
 		twice = 0;
-		$show_booster_bar.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030244.jpg') repeat-x"
+		$show_booster_bar.style.background = "url('./images/snack/bar1.gif') repeat-x"
 		$show_booster_bar.style.width = boost.toString() + "px";
-		$show_booster_body.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030246.jpg";
+		$show_booster_body.src = "./images/snack/booster1.png";
 	} else {//일반 상황
 		boost += 36;
 		$show_booster_bar.style.width = boost.toString() + "px";
@@ -386,12 +386,12 @@ function get(num) {
 			boost -= 200;
 			twice = 1;
 			$show_booster_bar.style.width = "0px";
-			$show_booster_body.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030247.jpg";
+			$show_booster_body.src = "./images/snack/booster2.gif";
 		} else if (boost >= 160) {//80% 이상
-			$show_booster_bar.style.background = "url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030245.jpg') repeat-x"
+			$show_booster_bar.style.background = "url('./images/snack/bar2.gif') repeat-x"
 		}
 	}
-	
+
 	//회차 증가
 	count += 1;
 }
@@ -418,16 +418,16 @@ function update(prize, doubled) {
 	if (temp == 0) {//체크박스 - 이달의 아이템
 		row.className += " " + "not_month";
 	}
-	
+
 	var cell = row.insertCell(0);
 	cell.innerHTML += thousand(count) + "회차 " + text + "<br/>\
-		　┗ <img src='" + prize[0][4] + "'> <span class='" + prize[0][5] + "'>" + prize[0][0] + "</span><br/>\
-		　┗ <img src='" + prize[1][4] + "'> <span class='" + prize[1][5] + "'>" + prize[1][0] + "</span>";
+		　┗ <img src='" + images + prize[0][4] + ".png'> <span class='" + prize[0][5] + "'>" + prize[0][0] + "</span><br/>\
+		　┗ <img src='" + images + prize[1][4] + ".png'> <span class='" + prize[1][5] + "'>" + prize[1][0] + "</span>";
 		//스크롤 이동
 		$record.scrollTop = $record.scrollHeight;
 	//업데이트 2 : 인벤토리
 	for (i=0;i<prize.length;i++) {
-		
+
 		var trList = $inventory_table.getElementsByTagName("tr");
 		for (j=0;j<trList.length;j++) {
 			var tdList = trList[j].getElementsByTagName("td");
@@ -438,7 +438,7 @@ function update(prize, doubled) {
 				tdList[2].innerHTML = thousand(toNumber(tdList[2].innerHTML) + (prize[i][2] * (doubled + 1)));
 			}
 		};
-		
+
 	}
 }
 
@@ -446,130 +446,129 @@ function update(prize, doubled) {
 function onoff(num) {
 	switch (num) {
 		case 0:
-			$open1.value = "1회 개봉";
-			$open2.value = "연속 개봉";
+			$open1.value = "1회개봉";
+			$open2.value = "연속개봉";
 			$open1.disabled = "";
 			$open2.disabled = "";
 			$open1.className = "off";
 			$open2.className = "off";
-			
+
 			$objective.disabled = "";
 			$objective_text.disabled = "";
-			
+
 			//순서 표기
 			$control_count.innerHTML = thousand(count-1);
 			//게이지 준비
 				//아이콘 변경
-				$gauge_img.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302513.jpg";
+				$gauge_img.src = "./images/snack/lock1.png";
 				//게이지 시각화
 				$gauge_bar.style.width = "0px";
 				$gauge_bar.style.display = "block";
 				//게이지 문구 색상, 글씨 변경
 				$gauge_text.style.color = "#D37CFF";
-				$gauge_text.innerHTML = "주머니 개봉 대기중 \
-					<span class='white'>\
-						(비용 : <img src='http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg'> × 3 = 750세라)\
-					</span>";
-				
+				$gauge_text.innerHTML = "주머니 개봉 대기중 " +
+					"<span class='white'>" +
+						"(비용 : <img src='./images/snack/key.png'> × 3 = 750세라)" +
+					"</span>";
+
 			break;
 		case 1:
 			$open1.value = "취소";
 			$open2.disabled = "disabled";
 			$open1.className = "on";
 			$open2.className = "off";
-			
+
 			$objective.disabled = "disabled";
 			$objective_text.disabled = "disabled";
-			
+
 			//순서 표기
 			$control_count.innerHTML = thousand(count);
 			//게이지 준비
 				//아이콘 변경
-				$gauge_img.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302514.jpg";
+				$gauge_img.src = "./images/snack/lock2.gif";
 				//게이지 시각화
 				$gauge_bar.style.width = "0px";
 				$gauge_bar.style.display = "block";
 				//게이지 문구 색상, 글씨 변경
 				$gauge_text.style.color = "black";
 				$gauge_text.innerHTML = "스낵 주머니 개봉 중";
-				
+
 			break;
 		case 2:
 			$open2.value = "취소";
 			$open1.disabled = "disabled";
 			$open1.className = "off";
 			$open2.className = "on";
-			
+
 			$objective.disabled = "disabled";
 			$objective_text.disabled = "disabled";
-			
+
 			//순서 표기
 			$control_count.innerHTML = thousand(count);
 			//게이지 준비
 				//아이콘 변경
-				$gauge_img.src = "http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302514.jpg";
+				$gauge_img.src = "./images/snack/lock2.gif";
 				//게이지 시각화
 				$gauge_bar.style.width = "0px";
 				$gauge_bar.style.display = "block";
 				//게이지 문구 색상, 글씨 변경
 				$gauge_text.style.color = "black";
 				$gauge_text.innerHTML = "스낵 주머니 개봉 중";
-				
+
 			break;
 	}
 }
 //=================================================================================================================
 //※ 실행
 //=================================================================================================================
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function(e) {
 	//사운드 선로딩
 	try{
 		track = {
-			normal:new Audio('http://cfile221.uf.daum.net/attach/212E0144560F2D3A25C95E'),
-			month:new Audio('http://cfile211.uf.daum.net/attach/271C1844560F2D3F2FE692')
+			normal:new Audio('./sound/snack_normal.mp3'),
+			month:new Audio('./sound/snack_month.mp3')
 		}
 	}catch(e){}
-	
+
 	//이미지 선로딩
 	for (i=0;i<itemList.length;i++) {
-		imageList.push(itemList[i][4]);
+		imageList.push(images + itemList[i][4] + ".png");
 	}
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302512.jpg");//key
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302513.jpg");//lock1
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302514.jpg");//lock2
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302516.jpg");//top
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030230.jpg");//back00
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030231.jpg");//back01
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030242.jpg");//back10
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030243.jpg");//back11
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030249.jpg");//initial
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030246.jpg");//booster1
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030247.jpg");//booster2
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030244.jpg");//bar1
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030245.jpg");//bar2
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302515.jpg");//pocket_back
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030248.jpg");//check_back
-	imageList.push("http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302510.jpg");//inventory
-	
+	imageList.push(images + "key.png");//key
+	imageList.push(images + "lock1.png");//lock1
+	imageList.push(images + "lock2.gif");//lock2
+	imageList.push(images + "top.png");//top
+	imageList.push(images + "back00.png");//back00
+	imageList.push(images + "back01.png");//back01
+	imageList.push(images + "back10.png");//back10
+	imageList.push(images + "back11.png");//back11
+	imageList.push(images + "initial.png");//initial
+	imageList.push(images + "booster1.png");//booster1
+	imageList.push(images + "booster2.gif");//booster2
+	imageList.push(images + "bar1.gif");//bar1
+	imageList.push(images + "bar2.gif");//bar2
+	imageList.push(images + "pocket_back.png");//pocket_back
+	imageList.push(images + "check_back.png");//check_back
+	imageList.push(images + "inventory.png");//inventory
+
 	//선로딩 실시
 	loadImages(imageList,function(){
-		
+
 		//표지 닫기
 		$cover.style.display = "none";
-		
+
 		//인벤토리 생성
 		setInventory();
-		
+
 		//확률 가중치 저장
 		for (i=0;i<itemList.length;i++) {
 			chanceList.push(itemList[i][3]);
 		};
-		
+
 		//버튼 클릭
 		$open1.onclick = function() {
 			if ($open1.className == "off") {
 				onoff(1);
-				
 				loading(1,2);
 			} else {
 				clearTimeout(auto);
@@ -584,7 +583,7 @@ window.onload = function() {
 				switch (objective[0]) {
 					case "month":
 						//추가 행위 없음
-						
+
 						break;
 					case "key":
 						if ($objective_text.value == "") {
@@ -599,7 +598,7 @@ window.onload = function() {
 						}
 						objective.push(toNumber($objective_text.value));//입력 2. 열쇠 수량
 						objective.push(0);//입력 3. 현재 소모한 열쇠
-						
+
 						break;
 					case "sera":
 						if ($objective_text.value == "") {
@@ -614,11 +613,11 @@ window.onload = function() {
 						}
 						objective.push(toNumber($objective_text.value));//입력 2. 세라 비용
 						objective.push(0);//입력 3. 현재 소모한 비용
-						
+
 						break;
 				}
 				onoff(2);
-				
+
 				loading(2,5);
 			} else {
 				clearTimeout(auto);
@@ -659,7 +658,7 @@ window.onload = function() {
 		$objective_text.onkeyup = function() {
 			$objective_text.value = thousand($objective_text.value);
 		}
-		
+
 		$clear.onclick = function() {
 			if (! confirm("초기화하시겠습니까? 모든 기록과 획득 정보가 사라집니다.")) {
 				return;
@@ -667,7 +666,7 @@ window.onload = function() {
 			//실행 중지
 			clearTimeout(auto);
 			onoff(0);
-			
+
 			//변수 초기화
 			count = 1;
 			boost = 0;
@@ -676,36 +675,36 @@ window.onload = function() {
 			key = 0;
 			sera = 0;
 			gold = 0;
-			
+
 			//출력 초기화
 			$control_count.innerHTML = "0";
-			
+
 			$show_item1_img.src = images + "initial.png";
 			$show_item1_name.innerHTML = "대기중";
 			$show_item2_img.src = images + "initial.png";
 			$show_item2_name.innerHTML = "대기중";
-			
+
 			$show_booster_body.src = images + "booster1.png";
 			$show_booster_bar.style.width = "0px";
 			$show_booster_bar.style.background = "url('" + images + "bar1.gif') repeat-x";
-			
+
 			$cost_key.innerHTML = "0";
 			$cost_sera.innerHTML = "0";
 			$cost_gold.innerHTML = "0";
-			
+
 			$record_table.innerHTML = "";
 			$inventory_table.innerHTML = "";
 			setInventory();
 		}
-		
+
 		$record_clear.onclick = function() {
 			if (confirm("획득 기록을 지우시겠습니까? 회차, 비용 및 인벤토리 정보는 보존됩니다.")) {
 				$record_table.innerHTML = "";
 			}
 		}
-		
+
 		//필터링
-		
+
 		//체크박스
 		$record_check_twice.onclick = function() {
 			var sheet = document.getElementById("style_record_check_twice");
@@ -752,7 +751,7 @@ window.onload = function() {
 				$inventory_check_all.checked = false;
 			}
 		}
-		
+
 	});
-	
-};
+
+});

@@ -3,12 +3,14 @@
 	margin:0px;
 	border:0px;
 
-	font-family:Arial;
+	font-family:"Nanum Gothic", sans-serif;
 	font-size:100%;
 	text-decoration:none;
 }
 
 
+/*폰트 - 나눔고딕*/
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /*컬러링*/
 .uncommon {
 	color:skyblue;
@@ -286,14 +288,14 @@ body {
 	width:234px;
 	height:204px;
 
-	background:url(http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302515.jpg);
+	background:url('../images/snack/pocket_back.png');
 	border:1px black solid;
 }
 	#show_title {
 		width:234px;
 		height:31px;
 
-		background-image:url(http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302516.jpg);
+		background-image:url('../images/snack/top.png');
 	}
 	#show_body {
 		position:relative;
@@ -302,7 +304,7 @@ body {
 		width:218px;
 		height:136px;
 
-		background-image:url(http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030230.jpg);
+		background-image:url('../images/snack/back00.png');
 	}
 		#show_item1_img {
 			position:absolute;
@@ -372,7 +374,7 @@ body {
 			width:0px;
 			height:11px;
 
-			background:url(http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030244.jpg) repeat-x;
+			background:url('../images/snack/bar1.gif') repeat-x;
 		}
 
 /*======================================================================================================*/
@@ -438,7 +440,7 @@ body {
 	width:397px;
 	height:47px;
 
-	background-image:url(http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/4881030248.jpg);
+	background-image:url('../images/snack/check_back.png');
 	border:1px black solid;
 	border-top:0px;
 
@@ -498,7 +500,7 @@ body {
 	margin-left:25px;
 	width:250px;
 
-	background:url('http://img2.ruliweb.daum.net/mypi/gup/a/125/5/o/48810302510.jpg') no-repeat left center;
+	background:url('../images/snack/inventory.png') no-repeat left center;
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
