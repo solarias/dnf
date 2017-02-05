@@ -6,7 +6,7 @@ function spritePosition(name, zoom) {
 				return spriteList[i][2].toString() + "px " + spriteList[i][3].toString() + "px";
 			} else if (zoom == undefined || zoom == 2) {
 				return (spriteList[i][2] * 2).toString() + "px " + (spriteList[i][3] * 2).toString() + "px";
-			} else if (zoom === "ren") {
+			} else if (zoom === "rem") {
 				return spriteList[i][6].toString() + "rem " + spriteList[i][7].toString() + "rem";
 			}
 		}
