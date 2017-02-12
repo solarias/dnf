@@ -30,11 +30,11 @@ html, body {
 	}
 	input[type="button"]:hover, button:hover {
 		cursor:pointer;
-		cursor:hand;
+
 	}
 	select:hover {
 		cursor:pointer;
-		cursor:hand;
+
 	}
 
 /*컬러링(등급)*/
@@ -399,7 +399,7 @@ html, body {
 				}
 				.startPption_select:hover {
 					cursor:pointer;
-					cursor:hand;
+
 
 					box-shadow:
 						-2px 0px 2px white,
@@ -670,7 +670,7 @@ html, body {
 	}
 		#beckey_ending_picture:hover {
 			cursor:pointer;
-			cursor:hand;
+
 		}
 	#beckey_ending_button_first, #beckey_ending_button_end {
 		position:absolute;
@@ -708,7 +708,7 @@ html, body {
 			}
 		.beckey_ending_button:hover {
 			cursor:pointer;
-			cursor:hand;
+
 
 			box-shadow:
 				-2px 0px 2px skyblue,
@@ -802,7 +802,7 @@ html, body {
 	}
 		#ending_confirm:hover {
 			cursor:pointer;
-			cursor:hand;
+
 
 			box-shadow:
 				-2px 0px 2px skyblue,
@@ -968,7 +968,7 @@ html, body {
 	}
 		#channel_random:hover {
 			cursor:pointer;
-			cursor:hand;
+
 
 			border:1px white solid;
 		}
@@ -1580,7 +1580,7 @@ html, body {
 			}
 			#option input[type="checkbox"]:hover {
 				cursor:pointer;
-				cursor:hand;
+
 			}
 			#option label {
 				font-size:12px;
@@ -1590,7 +1590,7 @@ html, body {
 				}
 				#option label:hover {
 					cursor:pointer;
-					cursor:hand;
+
 
 					text-decoration:underline;
 				}
@@ -2267,7 +2267,7 @@ html, body {
 						font-weight:bold;
 
 						cursor:pointer;
-						cursor:hand;
+
 					}
 					#craft table .col_6.button:hover {/*제작 버튼*/
 						background: #516BFF; /* default */
@@ -2299,7 +2299,7 @@ html, body {
 								0px -2px 2px white,
 								-2px -2px 2px white;
 							cursor:pointer;
-							cursor:hand;
+
 						}
 
 		#equip_state {
@@ -2552,7 +2552,7 @@ html, body {
 			}
 				.list_box .list_enchant_run:hover {
 					cursor:pointer;
-					cursor:hand;
+
 
 					box-shadow:
 						-2px 0px 2px skyblue,
@@ -2698,14 +2698,14 @@ html, body {
 			}
 				#checkbox input[type="checkbox"]:hover, #checkbox input[type="radio"]:hover {
 					cursor:pointer;
-					cursor:hand;
+
 				}
 				#checkbox label {
 					font-size:inherit;
 				}
 				#checkbox label:hover {
 					cursor:pointer;
-					cursor:hand;
+
 
 					text-decoration:underline;
 				}
@@ -2975,7 +2975,7 @@ html, body {
 				border:1px white solid;
 
 				cursor:pointer;
-				cursor:hand;
+
 			}
 			#popup_chance_perfect:active {
 				background:#FFD800;
@@ -3010,7 +3010,7 @@ html, body {
 				border:1px white solid;
 
 				cursor:pointer;
-				cursor:hand;
+
 			}
 			#popup_chance_reset:active {
 				background:#FFAA00;
@@ -3231,7 +3231,7 @@ html, body {
 						border:1px white solid;
 
 						cursor:pointer;
-						cursor:hand;
+
 					}
 				#gabriel_yes {
 					background: #516BFF; /* default */
@@ -3864,7 +3864,7 @@ html, body {
 					}
 						#pot_open:hover {
 							cursor:pointer;
-							cursor:hand;
+
 
 							box-shadow:
 								-2px 0px 2px skyblue,
@@ -3934,7 +3934,7 @@ html, body {
 				}
 			#result_text input[type="checkbox"] {
 				cursor:pointer;
-				cursor:hand;
+
 
 				width:14px;
 				height:14px;
@@ -3946,7 +3946,7 @@ html, body {
 			}
 				#result_text label:hover {
 					cursor:pointer;
-					cursor:hand;
+
 
 					text-decoration:underline;
 				}
