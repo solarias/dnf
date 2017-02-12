@@ -8,6 +8,13 @@
 		<![endif]-->
 		<!--라이브러리 패키지 : 함수모음, 화면 자동확대, 터치 딜레이 제거 (시작)-->
 		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/fastclick.js">
+		if ('addEventListener' in document) {
+		    document.addEventListener('DOMContentLoaded', function() {
+		        FastClick.attach(document.body);
+		    }, false);
+		}
+		</script>
 		<!--라이브러리 패키지 (끝)-->
 		<link rel="stylesheet" type="text/css" href="./css/hell2.css" />
 
