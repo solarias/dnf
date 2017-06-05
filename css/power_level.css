@@ -1,0 +1,220 @@
+
+    * {
+        padding:0px;
+        margin:0px;
+        border:0px;
+
+    	font-family:"Nanum Gothic", sans-serif;
+        font-size:16px;
+        text-decoration:none;
+    }
+
+    /*폰트 - 나눔고딕*/
+    @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+    /*화면 비율 조절*/
+    @media (max-width:600px) {
+        html{font-size:10vw;}
+    }
+    @media (min-width:600px) {
+        html{font-size:60px;}
+    }
+
+    html, body {
+        width:100%;
+        height:100%;
+    }
+
+    .yellow {
+        color:yellow;
+    }
+
+    body {
+        background-color:#808080;
+        overflow-y:scroll;
+    }
+        p, span {
+            font-size:inherit;
+        }
+
+    #wrapper {
+        position:absolute;
+        left:0px;
+        right:0px;
+
+        margin-left:auto;
+        margin-right:auto;
+        width:10rem;
+        height:auto;
+        min-height:100%;
+
+        background:#303030;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+
+        color:white;
+        font-weight:bold;
+
+        display:block;
+    }
+
+    #title {
+        font-size:0.8rem;
+        text-align:center;
+    }
+
+    #insertName {
+        position:relative;
+        float:left;
+
+        margin:0.08rem 0 0 0.2rem;
+        padding:0.1rem;
+        width:3.5rem;
+        height:1.45rem;
+
+        background:#505050;
+        border:0.01rem white solid;
+
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+
+        font-size:0.3rem;
+        text-align:center;
+    }
+    #nameSlot {
+        position:relative;
+
+        width:100%;
+        height:0.8rem;
+
+        background: -webkit-linear-gradient(#ffffff, #A0A0A0);
+        background: linear-gradient(#ffffff, #A0A0A0);
+        border:0.01rem gray outset;
+        border-radius:0.2rem;
+
+        font-size:0.5rem;
+        font-weight:bold;
+
+        display:block;
+    }
+        #nameSlot:hover {
+            cursor:pointer;
+            outline:0.05rem skyblue solid;
+        }
+
+    #insertImage {
+        position:relative;
+        float:right;
+
+        margin:0.08rem 0.2rem 0 0;
+        padding:0.1rem;
+        width:5.5rem;
+        height:1.45rem;
+
+        background:#505050;
+        border:0.01rem white solid;
+
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+
+        font-size:0.3rem;
+        text-align:center;
+    }
+        #imageSlot {
+            width:100%;
+        }
+            #imageSlot:hover {
+                cursor:pointer;
+                outline:0.05rem skyblue solid;
+            }
+
+
+    #image_cover {
+        overflow:hidden;
+        position:relative;
+        clear:both;
+
+        margin:1.7rem auto 0 auto;
+        width:7rem;
+        height:9.3rem;
+
+        background:black;
+        border:0.02rem gray solid;
+        border-radius:0.2rem;
+
+        display:block;
+    }
+        #image {
+            position:relative;
+            z-index:1;
+
+            width:100%;
+            height:100%;
+
+            display:none;
+        }
+        #imageFrame {
+            position:absolute;
+            left:0;top:0;
+            z-index:2;
+
+            width:100%;
+            height:100%;
+
+            background-image:url('../images/power_level/frame.png');
+            background-size:100% 100%;
+        }
+        #image_text {
+            position:relative;
+
+            width:100%;
+            height:100%;
+
+            font-size:0.3rem;
+            line-height:5rem;
+
+            text-align:center;
+
+            display:none;
+        }
+        #imageName {
+            position:absolute;
+            left:1.1rem;top:0.2rem;
+
+            color:black;
+            font-size:0.5rem;
+                line-height: 100%;
+            text-align:left;
+        }
+        #imageLevel {
+            position:absolute;
+            left:1rem;top:0.75rem;
+
+            color:orange;
+            text-align:left;
+        }
+            #imageLevel img {
+                margin-left:0.07rem;
+                width:0.4rem;
+                height:auto;
+            }
+            #imageLevel span.animated {
+                float:right;
+
+                display:block;
+            }
+        #imagePower {
+            position:absolute;
+            right:0.1rem;bottom:0.07rem;
+
+            color:yellow;
+            font-size:0.5rem;
+            text-align:left;
+        }
+
+#info {
+    margin:0.8rem 0 0.5rem 0.1rem;
+}
