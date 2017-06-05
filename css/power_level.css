@@ -218,3 +218,7 @@
 #info {
     margin:0.8rem 0 0.5rem 0.1rem;
 }
+    #info a {
+        color:skyblue;
+        text-decoration:underline;
+    }
