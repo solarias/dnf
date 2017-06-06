@@ -6,7 +6,7 @@ var rank = {
     count:1,
     level:[0,100,1000,10000,100000,
         1000000,10000000,50000000,100000000,250000000,
-        5000000000,1000000000]
+        500000000,1000000000]
 };
 
 
@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
         var name = prompt("카드의 이름을 입력하세요");
         if (name !== null) $("#imageName").innerHTML = name;
     };
+
+    var option = $("#detailBackground").value;
+    $("#image_cover").style.background = option;
     $("#detailBackground").onchange = function() {
         var option = $("#detailBackground").value;
         $("#image_cover").style.background = option;
     };
+    
     $("#imageSlot").onchange = function() {
         //버튼 비활성화
         $("#nameSlot").disabled = true;
