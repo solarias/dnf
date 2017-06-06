@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
                 var temp = 1;
                 for (var i=code.length-1;i>=0;i--) {
                     if (i % 4 === 0) {
-                        if (i !== 0) temp *= parseInt(code[i],16);
+                        if (i !== 0 || parseInt(code[i],16) !== 0) temp *= parseInt(code[i],16);
                     } else {
                         temp += parseInt(code[i],16);
                     }
