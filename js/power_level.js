@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
                         TweenMax.to(num,3,
                             {count:temp,ease: Power3.easeOut,
                             onUpdate:function() {
-                                $("#imagePower").innerHTML = (num.count >= 100000000) ? setWon2(Math.floor(num.count/10000)*10000) : setWon2(Math.floor(num.count));
+                                $("#imagePower").innerHTML = setWon(Math.min(9999999999,Math.floor(num.count)));
+                                //$("#imagePower").innerHTML = (num.count >= 100000000) ? setWon2(Math.floor(num.count/10000)*10000) : setWon2(Math.floor(num.count));
                                 if (num.count >= rank.level[rank.count]) {
                                     rank.count += 1;
                                 }
