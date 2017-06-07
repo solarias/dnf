@@ -37,74 +37,83 @@ document.addEventListener("DOMContentLoaded", function(e) {
         var file = $("#imageSlot").files[0];
         var imageType = /image.*/;
 
-        if (file.type.match(imageType)) {
-            var reader = new FileReader();
-            if (file.name !== undefined) reader.fileName = file.name;
+        if (file) {
+            if (file.type.match(imageType)) {
+                var reader = new FileReader();
+                if (file.name !== undefined) reader.fileName = file.name;
 
-            reader.onload = function(readerEvt) {
-                //이미지 교체
-                $("#image").src = reader.result;
+                reader.onload = function(readerEvt) {
+                    //이미지 교체
+                    $("#image").src = reader.result;
 
-                //이미지 출력
-                $("#image").style.display = "block";
-                $("#image_text").style.display = "none";
+                    //이미지 출력
+                    $("#image").style.display = "block";
+                    $("#image_text").style.display = "none";
 
-                //이미지 이름 교체
-                if (readerEvt.target.fileName !== undefined) {
-                    var title = readerEvt.target.fileName.split(".");
-                    title.pop();
-                    $("#imageName").innerHTML = title.join("");
-                }
-
-                //이미지 전투력 계산
-                var code = md5(reader.result.split(",")[1]);
-
-                var temp = 1;
-                for (var i=code.length-1;i>=0;i--) {
-                    if (i % 4 === 3) {
-                        temp *= parseInt(code[i],16);
-                    } else {
-                        temp += parseInt(code[i],16);
+                    //이미지 이름 교체
+                    if (readerEvt.target.fileName !== undefined) {
+                        var title = readerEvt.target.fileName.split(".");
+                        title.pop();
+                        $("#imageName").innerHTML = title.join("");
                     }
-                }
-                //이미지 전투력 출력
-                var num = {count:0,lv:1,star:0};
-                rank.count = 1;
-                $("#imageLevel").innerHTML = "";
-                setTimeout(function() {
-                    TweenMax.to(num,3,
-                        {count:temp,ease: Power3.easeOut,
-                        onUpdate:function() {
-                            $("#imagePower").innerHTML = (num.count >= 100000000) ? setWon2(Math.floor(num.count/10000)*10000) : setWon2(Math.floor(num.count));
-                            if (num.count >= rank.level[rank.count]) {
-                                rank.count += 1;
-                            }
-                        },
-                        onComplete:function() {
-                            TweenMax.to(num,rank.count*0.2,
-                                {lv:rank.count,ease: Power0.easeNone,
-                                onUpdate:function() {
-                                    if (Math.floor(num.lv) >= num.star) {
-                                        num.star += 1;
-                                        $("#imageLevel").innerHTML = "<img src='./images/power_level/star.png'>".repeat(Math.floor(num.lv)-1);
-                                        $("#imageLevel").innerHTML += "<span class='animated fadeIn'><img src='./images/power_level/star.png'></span>";
-                                    }
-                                },
-                                onComplete:function() {
-                                    //버튼 활성화
-                                    $("#nameSlot").disabled = false;
-                                    $("#imageSlot").disabled = "";
-                                }
-                                }
-                            );
-                        }
-                        });
-                },500);
-            };
 
-            reader.readAsDataURL(file);
+                    //이미지 전투력 계산
+                    var code = md5(reader.result.split(",")[1]);
+
+                    var temp = 1;
+                    for (var i=code.length-1;i>=0;i--) {
+                        if (i % 4 === 3) {
+                            temp *= parseInt(code[i],16);
+                        } else {
+                            temp += parseInt(code[i],16);
+                        }
+                    }
+                    //이미지 전투력 출력
+                    var num = {count:0,lv:1,star:0};
+                    rank.count = 1;
+                    $("#imageLevel").innerHTML = "";
+                    setTimeout(function() {
+                        TweenMax.to(num,3,
+                            {count:temp,ease: Power3.easeOut,
+                            onUpdate:function() {
+                                $("#imagePower").innerHTML = (num.count >= 100000000) ? setWon2(Math.floor(num.count/10000)*10000) : setWon2(Math.floor(num.count));
+                                if (num.count >= rank.level[rank.count]) {
+                                    rank.count += 1;
+                                }
+                            },
+                            onComplete:function() {
+                                TweenMax.to(num,rank.count*0.2,
+                                    {lv:rank.count,ease: Power0.easeNone,
+                                    onUpdate:function() {
+                                        if (Math.floor(num.lv) >= num.star) {
+                                            num.star += 1;
+                                            $("#imageLevel").innerHTML = "<img src='./images/power_level/star.png'>".repeat(Math.floor(num.lv)-1);
+                                            $("#imageLevel").innerHTML += "<span class='animated fadeIn'><img src='./images/power_level/star.png'></span>";
+                                        }
+                                    },
+                                    onComplete:function() {
+                                        //버튼 활성화
+                                        $("#nameSlot").disabled = false;
+                                        $("#imageSlot").disabled = "";
+                                    }
+                                    }
+                                );
+                            }
+                            });
+                    },500);
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                alert("※ 경고 : 지원되지 않는 파일입니다.");
+                //버튼 활성화
+                $("#nameSlot").disabled = false;
+                $("#imageSlot").disabled = "";
+            }
         } else {
-            alert("※ 경고 : 지원되지 않는 파일입니다.");
+            //버튼 활성화
+            $("#nameSlot").disabled = false;
+            $("#imageSlot").disabled = "";
         }
 
     };
