@@ -328,7 +328,6 @@ function battle_ready(counter){
 		$("#battle_img_left").style.opacity = Math.max(0,((counter-120)/520)).toString();
 		$("#battle_img_right").style.right = (-($("#battle_img_right").offsetWidth + $("#battle_img_right").offsetLeft - 900) + 10).toString() + "px";
 		$("#battle_img_right").style.opacity = Math.max(0,((counter-120)/520)).toString();
-		console.log(((counter)/520).toString());
 
 		//2. 다음 이동 대기
 		setTimeout(function() {
