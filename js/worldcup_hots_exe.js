@@ -516,7 +516,7 @@ function victory() {
 //※ 실행
 //=================================================================================================================
 window.onload = function() {
-	$("#loading_start").value = "시공 Online";
+	$("#loading_start").value = "시공 Online!";
 	$("#loading_start").disabled = "";
 
 	//이미지 선로딩 - 준비
