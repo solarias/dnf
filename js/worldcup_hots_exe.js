@@ -44,7 +44,7 @@ var imageList = [];//이미지 선로딩용
 					};
 				};
 				img.src = arr[i];
-				document.getElementById("imagePreloader").innerHTML += "<img src='" + arr[i] + ".jpg' />";
+				document.getElementById("imagePreloader").innerHTML += "<img src='" + arr[i] + " />";
 				imagesArray.push(img);
 			};
 		};
@@ -525,7 +525,7 @@ window.onload = function() {
 
 	for (var i=0;i<chaList.length;i++) {
 		if (chaList[i][0] != "") {
-			imageList.push(images + chaList[i][1] + ".png");
+			imageList.push(images + chaList[i][1] + ".jpg");
 		}
 	}
 
