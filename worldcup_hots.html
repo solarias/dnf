@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/worldcup_hots.css" />
+
+		<title>시공의 폭풍 이상형 월드컵</title>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<!--첫 화면-->
+			<div id="frame_loading">
+				<div id="loading_notice">데이터 로딩이 필요합니다</div>
+
+				<input id="loading_start" type="button" value="실행 준비중" disabled/>
+
+				<div id="loading_progress">
+					<div id="loading_bar">
+					</div>
+				</div>
+			</div>
+
+			<!--첫 화면-->
+			<div id="frame_intro">
+				<p>
+					시공의 폭풍
+					<br/>
+					이상형 월드컵
+				</p>
+
+				<img id="intro_logo" src="./images/worldcup_hots/icon.jpg" />
+
+				<input id="intro_start_1" class="intro_start" type="button" value="게임 시작" />
+
+			</div>
+			<!--N강 시작-->
+			<div id="frame_ready">
+				<p class="title">제 <span id="ready_round"></span>회전 : <span id="ready_people"></span>명 출전</p>
+
+				<input id="ready_reset" type="button" value="처음으로" />
+				<hr />
+				<p>출전 인물 : <div id="ready_image_go"></div></p>
+				<p>부전승 : <div id="ready_image_no">없음</div></p>
+
+				<input id="ready_start" type="button" value="시작하기" />
+			</div>
+
+			<!--진행 중-->
+			<div id="frame_battle">
+
+				<p class="left">제 <span id="battle_round"></span>회전 (<span id="battle_people"></span>명)</p>
+				<input id="battle_reset" type="button" value="처음으로" disabled />
+				<p class="right"><span id="battle_now"></span> / <span id="battle_all"></span></p>
+				<hr/>
+
+				<div id="battle_img_left" class="battle_img"></div>
+					<img id="battle_winner_left" class="battle_winner" src="./images/worldcup/frame/winner.png" />
+				<div id="battle_img_right" class="battle_img"></div>
+					<img id="battle_winner_right" class="battle_winner" src="./images/worldcup/frame/winner.png" />
+
+				<img id="battle_img_vs" src="./images/worldcup/frame/mark_vs.png" />
+				<input id="battle_random" type="button" value="랜덤" disabled />
+
+				<div id="battle_name_left" class="battle_name"></div>
+				<div id="battle_name_right" class="battle_name"></div>
+
+
+			</div>
+
+			<!--우승자-->
+			<div id="frame_victory">
+				<p>MVP</p>
+
+				<div id="victory_img"></div>
+					<img id="victory_winner" src="./images/worldcup/frame/winner.png" />
+
+				<div id="victory_name"></div>
+
+				<input id="victory_return" type="button" value="처음으로" />
+
+			</div>
+
+			<!--기타-->
+			<div id="imagePreloader"></div>
+
+		</div>
+
+
+
+
+		<script type="text/javascript" src="./js/worldcup_hots_list.js"></script>
+		<script type="text/javascript" src="./js/worldcup_hots_exe.js"></script>
+
+	</body>
+</html>

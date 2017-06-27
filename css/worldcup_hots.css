@@ -1,0 +1,657 @@
+﻿@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	padding:0px;
+	margin:0px;
+	border:0px;
+
+	font-family:Arial;
+	font-size:16px;
+	text-decoration:none;
+}
+
+/*폰트 설정*/
+.yellow {
+	color:yellow;
+}
+
+
+
+body {
+	overflow:hidden;
+	background-image:url('../images/worldcup_hots/background.jpg');
+	background-size:cover;
+	width:100%;
+}
+	p, span {
+		font-size:inherit;
+	}
+
+#wrapper {
+	position:relative;
+	overflow:visible;
+
+	margin:0px auto;
+	width:900px;
+	height:620px;
+
+	background:transparent;
+
+	color:white;
+}
+
+
+
+
+
+
+
+
+#frame_loading {
+	position:relative;
+
+	width:100%;
+	height:100%;
+
+	display:inline-block;
+}
+	#loading_notice {
+		position:static;
+
+		margin-top:105px;
+
+		width:100%;
+
+		font-size:60px;
+		font-weight:bold;
+		text-align:center;
+	}
+
+	#loading_start {
+		position:absolute;
+		top:300px;
+		left:285px;
+
+		width:440px;
+		height:90px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:2px skyblue outset;
+		border-radius:10px;
+
+		font-size:60px;
+		font-weight:bold;
+	}
+		#loading_start:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#loading_start:active {
+			background: #DEDEDE;
+		}
+
+	#loading_progress {
+		position:absolute;
+		left:12.5px;
+		bottom:69px;
+
+		width:870px;
+		height:75px;
+
+		background:black;
+		border:2px gray solid;
+	}
+		#loading_bar {
+			position:absolute;
+			top:0px;
+			left:0px;
+
+			width:0%;
+			height:100%;
+
+			background:yellow;
+		}
+
+
+
+
+
+
+
+#frame_intro {
+	position:relative;
+
+	width:100%;
+	height:100%;
+
+	display:none;
+}
+	#frame_intro p {
+		font-size:100px;
+		font-weight:bold;
+		text-align:right;
+	}
+
+	#intro_logo {
+		position:absolute;
+		left:20px;
+		bottom:20px;
+
+		width:250px;
+		height:auto;
+
+		border-radius:50%;
+	}
+
+	.intro_start {
+		position:absolute;
+
+		width:450px;
+		height:120px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:1px skyblue outset;
+		border-radius:10px;
+
+		font-size:75px;
+		font-weight:bold;
+	}
+			#intro_start_1 {
+				top:420px;
+				left:405px;
+			}
+			#intro_start_2 {
+				right:190px;
+				bottom:120px;
+			}
+			#intro_start_3 {
+				right:190px;
+				bottom:70px;
+			}
+			#intro_start_4 {
+				right:20px;
+				bottom:170px;
+			}
+			#intro_start_5 {
+				right:20px;
+				bottom:120px;
+			}
+			#intro_start_6 {
+				right:20px;
+				bottom:70px;
+			}
+			#intro_start_7 {
+				right:105px;
+				bottom:15px;
+			}
+		.intro_start:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		.intro_start input[type="button"]:active {
+			background: #DEDEDE;
+		}
+
+
+
+
+
+#frame_ready {
+	position:relative;
+
+	padding:10px;
+	width:100%;
+	height:100%;
+
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+
+	display:none;
+}
+	#frame_ready p {
+		font-size:45px;
+		font-weight:bold;
+	}
+		#frame_ready p.title {
+			margin-bottom:;
+		}
+	#frame_ready hr {
+		border-top:2px skyblue solid;
+	}
+
+	#ready_image_go {
+		overflow-y:scroll;
+
+		margin-left:45px;
+		width:825px;
+		height:225px;
+
+		border:2px skyblue solid;
+	}
+		#ready_image_go img {
+			float:left;
+
+			margin:-2px 0px 0px -2px;
+
+			border:2px gray solid;
+			box-sizing:border-box;
+
+			display:block;
+		}
+
+	#ready_image_no {
+		position:relative;
+		overflow:hidden;
+
+		margin-left:45px;
+		width:150px;
+		height:180px;
+
+		border:1px skyblue solid;
+
+		font-size:30px;
+		font-weight:bold;
+		text-align:center;
+		line-height:120px;
+	}
+		#ready_image_no img {
+			height:180px;
+
+			box-sizing:border-box;
+		}
+
+	#ready_reset {
+		position:absolute;
+		right:20px;
+		top:7.5px;
+
+		width:180px;
+		height:45px;
+
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+
+		border:2px gray outset;
+		border-radius:10px;
+
+		font-size:30px;
+		font-weight:bold;
+	}
+		#ready_reset:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#ready_reset:active {
+			background: #FFAA00;
+		}
+
+	#ready_start {
+		position:absolute;
+		right:15px;
+		bottom:15px;
+
+		width:375px;
+		height:120px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:2px gray outset;
+		border-radius:15px;
+
+		font-size:75px;
+		font-weight:bold;
+	}
+		#frame_ready input[type="button"]:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#frame_ready input[type="button"]:active {
+			background: #DEDEDE;
+		}
+
+
+
+
+
+#frame_battle {
+	position:relative;
+
+	padding:10px;
+	width:100%;
+	height:100%;
+
+	box-sizing:border-box;
+
+	display:none;
+}
+	#frame_battle p {
+		font-size:45px;
+		font-weight:bold;
+
+		display:block;
+	}
+		#frame_battle p.left {
+			float:left;
+		}
+		#frame_battle p.right {
+			float:right;
+		}
+	#frame_battle hr {
+		clear:both;
+		border-top:2px skyblue solid;
+	}
+
+	.battle_img {
+		position:absolute;
+		overflow:hidden;
+
+		width:254px;
+		height:450px;
+
+		background:black;
+		border:2px #C5F2F9 solid;
+			border-top:10px skyblue solid;
+			border-bottom:10px skyblue solid;
+		box-sizing:border-box;
+
+		text-align:center;
+		opacity: 0.8;
+	}
+			.battle_img img {
+				position: absolute;
+				top: -9999px;
+				bottom: -9999px;
+				left: -9999px;
+				right: -9999px;
+				margin: auto;
+			}
+		#battle_img_left {
+			top:75px;
+			left:75px;
+		}
+		#battle_img_right {
+			top:75px;
+			right:75px;
+		}
+		.battle_img.selectable:hover, .battle_img.winner {
+			outline:6px yellow solid;
+
+			cursor:pointer;
+			cursor:hand;
+			opacity: 1;
+		}
+
+	.battle_name {
+		position:absolute;
+
+		width:300px;
+		height:37px;
+
+		border-bottom:2px skyblue solid;
+
+		font-size:25px;
+		font-weight:bold;
+		text-align:center;
+		line-height:37px;
+	}
+		#battle_name_left {
+			bottom:22px;
+			left:52px;
+		}
+		#battle_name_right {
+			bottom:22px;
+			right:52px;
+		}
+
+
+	.battle_winner {
+		position:absolute;
+		z-index:5;
+
+		width:300px;
+		height:auto;
+
+		display:none;
+	}
+		#battle_winner_left {
+			top:420px;
+			left:52px;
+		}
+		#battle_winner_right {
+			top:420px;
+			right:52px;
+		}
+
+
+	#battle_img_vs {
+		position:absolute;
+		top:210px;
+		left:400px;
+
+		width:105px;
+	}
+	#battle_random {
+		position:absolute;
+		top:300px;
+		left:407px;
+
+		width:90px;
+		height:45px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:2px gray outset;
+		border-radius:6px;
+
+		font-size:30px;
+		font-weight:bold;
+		line-height:100%;
+	}
+		#battle_random:hover {
+			box-shadow:0 0 3pt 2pt skyblue;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#battle_random:active {
+			background:skyblue;
+		}
+
+
+	#battle_reset {
+		float:right;
+
+		margin-left:15px;
+		width:180px;
+		height:45px;
+
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+
+		border:2px gray outset;
+		border-radius:15px;
+
+		font-size:30px;
+		font-weight:bold;
+	}
+		#battle_reset:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#battle_reset:active {
+			background: #FFAA00;
+		}
+
+
+
+
+
+
+
+#frame_victory {
+	position:relative;
+
+	padding:5px;
+	width:100%;
+	height:100%;
+
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+
+	display:none;
+}
+	#frame_victory p {
+		font-size:80px;
+		font-weight:bold;
+	}
+
+	#victory_img {
+		position:absolute;
+		top:75px;
+		left:330px;
+
+		width:257px;
+		height:470px;
+
+		background:black;
+		border:2px skyblue solid;
+			border-top:10px skyblue solid;
+			border-bottom:10px skyblue solid;
+		box-sizing:border-box;
+
+		text-align:center;
+	}
+
+	#victory_winner {
+		position:absolute;
+		top:420px;
+		left:300px;
+		z-index:5;
+
+		width:300px;
+		height:auto;
+	}
+	#victory_name {
+		position:absolute;
+		bottom:22px;
+		left:300px;
+
+		width:300px;
+		height:37px;
+
+		border-bottom:2px skyblue solid;
+
+		color:yellow;
+		font-size:25px;
+		font-weight:bold;
+		text-align:center;
+		line-height:37px;
+	}
+
+	#victory_return {
+		position:absolute;
+		right:20px;
+		bottom:20px;
+
+		width:200px;
+		height:75px;
+
+		background: #FFFFFF; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+		border:2px skyblue outset;
+		border-radius:15px;
+
+		font-size:45px;
+		font-weight:bold;
+	}
+		#victory_return:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#victory_return:active {
+			background: #DEDEDE;
+		}
+
+
+/*=================================================================================================*/
+/*※ EX-1. 이미지 선로딩 저장소*/
+/*=================================================================================================*/
+#imagePreloader {
+	width:1px;
+	height:1px;
+
+	display:none;
+}
+
+/*=================================================================================================*/
+/*※ EX-2. 기타*/
+/*=================================================================================================*/
+
+
+
+
+
+/*모바일 스크롤바 가시화*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
