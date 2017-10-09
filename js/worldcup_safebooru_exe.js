@@ -13,6 +13,9 @@ var arr_go = [];//대기 - 출전 인원
 var arr_no = [];//대기 - 판정승
 var arr_win = [];//배틀 - 승리 인원
 
+var ready_h = 300;//대기중 이미지 세로 길이
+var card_w = 420;//카드 가로 길이
+var card_h = 560;//카드 세로 길이
 //=================================================================================================================
 //※ 출현 캐릭터 리스트
 //=================================================================================================================
@@ -82,15 +85,15 @@ var imageList2 = [];//이미지 선로딩용
 //=================================================================================================================
 //현 라운드 출전 인원 정리
 function ready(type) {
-	//1. 창 활성화
+	//1. 라운드 증가
+	round += 1;
+
+	//2. 창 활성화
 	$("#frame_intro").style.display = "none";
 	$("#frame_loading").style.display = "none";
 	$("#frame_ready").style.display = "block";
 	$("#frame_battle").style.display = "none";
 	$("#frame_victory").style.display = "none";
-
-	//2. 라운드 증가
-	round += 1;
 
 	//3. IF 첫 라운드 ? 인원 불러오기
 	if (round == 1) {
@@ -157,12 +160,12 @@ function ready(type) {
 			img.style.backgroundImage = "url('" + arr_go[i][2] + "')";
 			//b-2. 이미지 사이즈 조절
 			let w, h;
-			if ((img2.naturalWidth/img2.naturalHeight) * 250 >= 900) {
+			if ((img2.naturalWidth/img2.naturalHeight) * ready_h >= 900) {
 				w = 900;
 				h = (img2.naturalHeight/img2.naturalWidth) * 900;
 			} else {
-				w = (img2.naturalWidth/img2.naturalHeight) * 250;
-				h = 250;
+				w = (img2.naturalWidth/img2.naturalHeight) * ready_h;
+				h = ready_h;
 			}
 			img.style.width = w.toString() + "px";
 			img.style.height = h.toString() + "px";
@@ -236,12 +239,12 @@ function battle_ready() {
 				img2.src = arr_go[0][2];
 			img.style.backgroundImage = "url('" + arr_go[0][2] + "')";
 			//c. 이미지 사이즈 조절
-			if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
-				img.style.width = "450px";
-				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
+			if (img2.naturalWidth / card_w >= img2.naturalHeight / card_h) {
+				img.style.width = card_w.toString() + "px";
+				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * card_w).toString() + "px";
 			} else {
-				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
-				img.style.height = "600px";
+				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * card_h).toString() + "px";
+				img.style.height = card_h.toString() + "px";
 			}
 			img.style.backgroundSize = img.style.width + " " + img.style.height;
 				img2.src = "";
@@ -257,12 +260,12 @@ function battle_ready() {
 				img2.src = arr_go[1][2];
 			img.style.backgroundImage = "url('" + arr_go[1][2] + "')";
 			//c. 이미지 사이즈 조절
-			if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
-				img.style.width = "450px";
-				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
+			if (img2.naturalWidth / card_w >= img2.naturalHeight / card_h) {
+				img.style.width = card_w.toString() + "px";
+				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * card_w).toString() + "px";
 			} else {
-				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
-				img.style.height = "600px";
+				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * card_h).toString() + "px";
+				img.style.height = card_h.toString() + "px";
 			}
 			img.style.backgroundSize = img.style.width + " " + img.style.height;
 				img2.src = "";
@@ -415,12 +418,12 @@ function victory() {
 			var img2 = document.createElement("img");
 			img2.src = arr_win[0][2];
 		//c. 이미지 사이즈 조절
-		if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
-			img.style.width = "450px";
-			img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
+		if (img2.naturalWidth / card_w >= img2.naturalHeight / card_h) {
+			img.style.width = card_w.toString() + "px";
+			img.style.height = ((img2.naturalHeight/img2.naturalWidth) * card_w).toString() + "px";
 		} else {
-			img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
-			img.style.height = "600px";
+			img.style.width = ((img2.naturalWidth/img2.naturalHeight) * card_h).toString() + "px";
+			img.style.height = card_h.toString() + "px";
 		}
 		img.style.backgroundSize = img.style.width + " " + img.style.height;
 			img2.src = "";

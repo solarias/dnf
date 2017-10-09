@@ -18,7 +18,8 @@
 
 
 body {
-	overflow:hidden;
+	overflow-x:hidden;
+	overflow-y:auto;
 	background-color:#0F1E33;
 	background:url('../images/worldcup_hots/space.jpg')  no-repeat center center fixed;
 	background-size: cover;
@@ -35,14 +36,12 @@ body {
 
 	margin:0px auto;
 	width:1200px;
-	height:800px;
+	height:700px;
 
 	box-sizing: border-box;
 
 	color:white;
 }
-
-
 
 
 #frame_intro {
@@ -182,9 +181,6 @@ body {
 				-1px -1px black;
 		}
 
-
-
-
 #frame_ready {
 	position:relative;
 
@@ -212,7 +208,7 @@ body {
 
 		margin:5px auto 0 auto;
 		width:calc(100% - 50px);
-		height:600px;
+		height:500px;
 
 		background-color:rgba(0,0,0,0.3);
 		border:2px skyblue solid;
@@ -387,9 +383,10 @@ body {
 	.battle_img {
 		position:absolute;
 		overflow:hidden;
+		top:80px;
 
-		width:450px;
-		height:600px;
+		width:420px;
+		height:560px;
 
 		background:black;
 		border:2px #C5F2F9 solid;
@@ -414,7 +411,6 @@ body {
 				background-size:contain;
 			}
 		#battle_img_left {
-			top:90px;
 			left:-500px;
 		}
 			#battle_img_left.on {
@@ -422,7 +418,6 @@ body {
 				opacity:1;
 			}
 		#battle_img_right {
-			top:90px;
 			right:-500px;
 		}
 			#battle_img_right.on {
@@ -479,8 +474,9 @@ body {
 
 	.battle_name {
 		position:absolute;
+		bottom:5px;
 
-		width:450px;
+		width:420px;
 
 		border-bottom:5px skyblue solid;
 
@@ -490,11 +486,9 @@ body {
 		line-height:40px;
 	}
 		#battle_name_left {
-			bottom:22px;
 			left:52px;
 		}
 		#battle_name_right {
-			bottom:22px;
 			right:52px;
 		}
 		.battle_name a {
@@ -509,7 +503,7 @@ body {
 	.battle_winner {
 		position:absolute;
 			z-index:5;
-		top:550px;
+		top:500px;
 
 		width:400px;
 		height:auto;
@@ -549,12 +543,12 @@ body {
 	#victory_img {
 		position:absolute;
 		overflow:hidden;
-		top:90px;
+		top:80px;
 		left:0;right:0;
 
 		margin:0 auto;
-		width:450px;
-		height:600px;
+		width:420px;
+		height:560px;
 
 		background:black;
 		border:2px skyblue solid;
@@ -580,7 +574,7 @@ body {
 	#victory_winner {
 		position:absolute;
 			z-index:5;
-		top:550px;
+		top:500px;
 		left:0;right:0;
 
 		margin:0 auto;
@@ -589,11 +583,11 @@ body {
 	}
 	#victory_name {
 		position:absolute;
-		bottom:22px;
+		bottom:5px;
 		left:0;right:0;
 
 		margin:0 auto;
-		width:450px;
+		width:420px;
 
 		border-bottom:5px skyblue solid;
 
