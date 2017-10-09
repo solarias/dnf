@@ -460,6 +460,10 @@ function victory() {
 //=================================================================================================================
 
 document.addEventListener("DOMContentLoaded", function(e) {
+	//버튼 해제
+	$("#intro_start").disabled = "";
+	$("#intro_start").value = "게임 시작";
+
 	//이미지 선로딩 - 실시
 	$("#intro_start").onclick = function() {
 		if (chaList.length > 0) {
