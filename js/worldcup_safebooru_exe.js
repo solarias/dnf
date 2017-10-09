@@ -458,7 +458,8 @@ function victory() {
 //=================================================================================================================
 //※ 실행
 //=================================================================================================================
-window.onload = function() {
+
+document.addEventListener("DOMContentLoaded", function(e) {
 	//이미지 선로딩 - 실시
 	$("#intro_start").onclick = function() {
 		if (chaList.length > 0) {
@@ -520,7 +521,7 @@ window.onload = function() {
         xhttp.open("GET", yql, true);
         xhttp.send();
 	}
-};
+});
 
 
 }());
