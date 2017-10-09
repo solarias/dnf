@@ -487,7 +487,7 @@ window.onload = function() {
         var url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&limit=32&tags="+encodeURIComponent(query) +
 		"&pid=" + pg.toString();
         var q = encodeURIComponent('select * from xml where url="'+url+'"');
-        var yql = 'http://query.yahooapis.com/v1/public/yql?q='+q;
+        var yql = 'https://query.yahooapis.com/v1/public/yql?q='+q;
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
