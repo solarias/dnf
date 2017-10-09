@@ -19,6 +19,7 @@
 
 body {
 	overflow:hidden;
+	background-color:#0F1E33;
 	background:url('../images/worldcup_hots/space.jpg')  no-repeat center center fixed;
 	background-size: cover;
 	width:100%;
