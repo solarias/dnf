@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta charset="utf-8">
+		<script type="text/javascript" src="../function/tool/subtool.js"></script>
+		<script type="text/javascript" src="../function/tool/fastclick.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./css/worldcup_safebooru.css" />
+
+		<title>세이프부루 이상형 월드컵</title>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<!--첫 화면-->
+			<div id="frame_intro">
+				<p>
+					세이프부루
+					<br/>
+					이상형 월드컵
+				</p>
+
+				<img id="intro_logo" src="http://safebooru.org/includes/header.png" />
+
+				<input id="intro_start" class="intro_start" type="button" value="게임 시작" />
+
+			</div>
+			<!--첫 화면-->
+			<div id="frame_loading">
+				<div id="loading_notice"></div>
+
+				<div id="loading_progress">
+					<div id="loading_bar">
+					</div>
+					<p id="loading_num">
+					</p>
+				</div>
+			</div>
+
+			<!--N강 시작-->
+			<div id="frame_ready">
+				<p class="title">제 <span id="ready_round"></span>회전 : <span id="ready_people"></span>명 출전</p>
+				<input id="ready_reset" type="button" value="처음으로" />
+
+				<hr />
+
+				<div id="ready_image_go"></div>
+				<p id="ready_desc">고화질 이미지 로딩에 시간이 걸릴 수 있음</p>
+				<input id="ready_start" type="button" value="시작하기" />
+			</div>
+
+			<!--진행 중-->
+			<div id="frame_battle">
+
+				<p class="left">제 <span id="battle_round"></span>회전 (<span id="battle_people"></span>명)</p>
+				<input id="battle_reset" type="button" value="처음으로" disabled />
+				<p class="right"><span id="battle_now"></span> / <span id="battle_all"></span></p>
+				<hr/>
+
+				<div id="battle_img_left" class="battle_img"></div>
+					<img id="battle_winner_left" class="battle_winner" src="./images/worldcup/frame/winner.png" />
+				<div id="battle_img_right" class="battle_img"></div>
+					<img id="battle_winner_right" class="battle_winner" src="./images/worldcup/frame/winner.png" />
+
+				<img id="battle_img_vs" src="./images/worldcup/frame/mark_vs.png" />
+				<input id="battle_random" type="button" value="랜덤" disabled />
+
+				<div id="battle_name_left" class="battle_name"></div>
+				<div id="battle_name_right" class="battle_name"></div>
+
+
+			</div>
+
+			<!--우승자-->
+			<div id="frame_victory">
+				<p>우승자!</p>
+
+				<div id="victory_img"></div>
+					<img id="victory_winner" src="./images/worldcup/frame/winner.png" />
+
+				<div id="victory_name"></div>
+
+				<input id="victory_return" type="button" value="처음으로" />
+
+			</div>
+
+			<!--기타-->
+			<div id="imagePreloader" class="imagePreloader"></div>
+			<div id="imagePreloader2" class="imagePreloader"></div>
+
+		</div>
+
+
+
+		<script type="text/javascript" src="./js/worldcup_safebooru_exe.js"></script>
+
+	</body>
+</html>
