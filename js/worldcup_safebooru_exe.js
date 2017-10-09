@@ -46,6 +46,7 @@ var imageList2 = [];//이미지 선로딩용
 				img = new Image();
 				img.onload = function() {
 					//외부 처리
+					$("#loading_notice").innerHTML = "이미지 32종 수집 완료.<br>프리뷰 이미지 정리 중...";
 					var percent = Math.round((((arr[1].length - remaining2 + 1)/arr[1].length)*100),0).toString()+"%";
 					$("#loading_bar").style.width = percent;
 					$("#loading_num").innerHTML = (arr[1].length - remaining2 + 1).toString() + " / " + arr[1].length.toString();
@@ -59,6 +60,7 @@ var imageList2 = [];//이미지 선로딩용
 				};
 				img.onerror = function() {
 					//외부 처리
+					$("#loading_notice").innerHTML = "이미지 32종 수집 완료.<br>프리뷰 이미지 정리 중...";
 					var percent = Math.round((((arr[1].length - remaining2 + 1)/arr[1].length)*100),0).toString()+"%";
 					$("#loading_bar").style.width = percent;
 					$("#loading_num").innerHTML = (arr[1].length - remaining2 + 1).toString() + " / " + arr[1].length.toString();
@@ -83,7 +85,7 @@ function ready(type) {
 	//1. 창 활성화
 	$("#frame_intro").style.display = "none";
 	$("#frame_loading").style.display = "none";
-	$("#frame_ready").style.display = "inline-block";
+	$("#frame_ready").style.display = "block";
 	$("#frame_battle").style.display = "none";
 	$("#frame_victory").style.display = "none";
 
@@ -143,22 +145,36 @@ function ready(type) {
 		//a. 기존 출전자 지우기
 		$("#ready_image_go").innerHTML = "";
 		//b. 새 출전자 등록
-		for (var i=0;i<arr_go.length;i++) {
+		for (let i=0;i<arr_go.length;i++) {
 			//b-1 이미지 불러오기
 			var img = document.createElement("img");
+			img.id = "img_" + i.toString();
+			img.alt = "https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[i][0].toString()
+			img.title = "https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[i][0].toString();
 			img.src = arr_go[i][1];
 				var img2 = document.createElement("img");
 				img2.src = arr_go[i][2];
 			img.style.backgroundImage = "url('" + arr_go[i][2] + "')";
 			//b-2. 이미지 사이즈 조절
-			let w = (img2.naturalWidth/img2.naturalHeight) * 200;
-			let h = 200;
+			let w, h;
+			if ((img2.naturalWidth/img2.naturalHeight) * 250 >= 900) {
+				w = 900;
+				h = (img2.naturalHeight/img2.naturalWidth) * 900;
+			} else {
+				w = (img2.naturalWidth/img2.naturalHeight) * 250;
+				h = 250;
+			}
 			img.style.width = w.toString() + "px";
 			img.style.height = h.toString() + "px";
 			img.style.backgroundSize = img.style.width + " " + img.style.height;
 				img2.src = "";
 			//b-3. 이미지 배치
 			$("#ready_image_go").appendChild(img);
+
+			//b-4. 이미지 클릭 : 원출처 이동
+			$("#img_" + i.toString()).onclick = function() {
+				window.open("https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[i][0].toString(), "_blank");
+			}
 		}
 		//c. 스크롤 올리기
 		$("#ready_image_go").scrollTop = "0px";
@@ -170,13 +186,11 @@ function ready(type) {
 		//7-1. 이미지 숨겨두기
 		$("#battle_img_left").className = "battle_img";
 		$("#battle_img_right").className = "battle_img";
-		$("#battle_img_left").style.left = "-450px";
-		$("#battle_img_right").style.right = "-450px";
 		//7-2. 프레임 전환
 		$("#frame_ready").style.display = "none";
 		$("#frame_battle").style.display = "block";
 		//7-3. 이미지 배치 시작
-		battle_ready(0);
+		battle_ready();
 	}
 
 	//11. 처음으로 버튼
@@ -191,7 +205,7 @@ function ready(type) {
 			arr_win = [];//배틀 - 승리 인원
 
 			//2. 창 표시
-			$("#frame_intro").style.display = "inline-block";
+			$("#frame_intro").style.display = "block";
 			$("#frame_ready").style.display = "none";
 			$("#frame_battle").style.display = "none";
 			$("#frame_victory").style.display = "none";
@@ -200,90 +214,78 @@ function ready(type) {
 }
 
 //전투 준비 & 개시
-function battle_ready(counter){
-	if (counter == 0) {
-		//최초 : 배치
-		//1. 라운드 & 남은 회차
-		$("#battle_round").innerHTML = round.toString();
-		$("#battle_people").innerHTML = people.toString();
-		$("#battle_now").innerHTML = (arr_win.length + 1).toString();
-		$("#battle_all").innerHTML = Math.floor(people/2).toString();
-		//2. 이름 표시
-		$("#battle_name_left").innerHTML = "ID : " + arr_go[0][0] +
-			" <a href='https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[0][0] + "' target='_blank'>(원출처 보기)</a>";
-		$("#battle_name_right").innerHTML = "ID : " + arr_go[1][0] +
-			" <a href='https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[1][0] + "' target='_blank'>(원출처 보기)</a>";
-		//3. 이미지 표시
-			//3-1. 좌측 이미지
-				//a. 이미지 비우기
-				$("#battle_img_left").innerHTML = "";
-				//b. 이미지 불러오기
-				var img = document.createElement("img");
-				img.src = arr_go[0][1];
-					var img2 = document.createElement("img");
-					img2.src = arr_go[0][2];
-				img.style.backgroundImage = "url('" + arr_go[0][2] + "')";
-				//c. 이미지 사이즈 조절
-				if (img2.naturalWidth / 370 >= img2.naturalHeight / 480) {
-					img.style.width = "370px";
-					img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 370).toString() + "px";
-				} else {
-					img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 480).toString() + "px";
-					img.style.height = "480px";
-				}
-				img.style.backgroundSize = img.style.width + " " + img.style.height;
-					img2.src = "";
-				//d. 이미지 배치
-				$("#battle_img_left").appendChild(img);
-			//3-2. 우측 이미지
-				//a. 이미지 비우기
-				$("#battle_img_right").innerHTML = "";
-				//b. 이미지 불러오기
-				var img = document.createElement("img");
-				img.src = arr_go[1][1];
-					var img2 = document.createElement("img");
-					img2.src = arr_go[1][2];
-				img.style.backgroundImage = "url('" + arr_go[1][2] + "')";
-				//c. 이미지 사이즈 조절
-				if (img2.naturalWidth / 370 >= img2.naturalHeight / 480) {
-					img.style.width = "370px";
-					img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 370).toString() + "px";
-				} else {
-					img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 480).toString() + "px";
-					img.style.height = "480px";
-				}
-				img.style.backgroundSize = img.style.width + " " + img.style.height;
-					img2.src = "";
-				//d. 이미지 배치
-				$("#battle_img_right").appendChild(img);
-	}
-	if (counter < 470) {
-		//중간 : 캐릭터 이동
-		//1. 이미지 이동
-		$("#battle_img_left").style.left = ($("#battle_img_left").offsetLeft + 10).toString() + "px";
-		$("#battle_img_left").style.opacity = Math.max(0,(counter/470)).toString();
-		$("#battle_img_right").style.right = (-($("#battle_img_right").offsetWidth + $("#battle_img_right").offsetLeft - 900) + 10).toString() + "px";
-		$("#battle_img_right").style.opacity = Math.max(0,(counter/470)).toString();
+function battle_ready() {
+	//1. 라운드 & 남은 회차
+	$("#battle_round").innerHTML = round.toString();
+	$("#battle_people").innerHTML = people.toString();
+	$("#battle_now").innerHTML = (arr_win.length + 1).toString();
+	$("#battle_all").innerHTML = Math.floor(people/2).toString();
+	//2. 이름 표시
+	$("#battle_name_left").innerHTML = "ID : " + arr_go[0][0] +
+		" <a href='https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[0][0] + "' target='_blank'>(원출처 보기)</a>";
+	$("#battle_name_right").innerHTML = "ID : " + arr_go[1][0] +
+		" <a href='https://safebooru.org/index.php?page=post&s=view&id=" + arr_go[1][0] + "' target='_blank'>(원출처 보기)</a>";
+	//3. 이미지 표시
+		//3-1. 좌측 이미지
+			//a. 이미지 비우기
+			$("#battle_img_left").innerHTML = "";
+			//b. 이미지 불러오기
+			var img = document.createElement("img");
+			img.src = arr_go[0][1];
+				var img2 = document.createElement("img");
+				img2.src = arr_go[0][2];
+			img.style.backgroundImage = "url('" + arr_go[0][2] + "')";
+			//c. 이미지 사이즈 조절
+			if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
+				img.style.width = "450px";
+				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
+			} else {
+				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
+				img.style.height = "600px";
+			}
+			img.style.backgroundSize = img.style.width + " " + img.style.height;
+				img2.src = "";
+			//d. 이미지 배치
+			$("#battle_img_left").appendChild(img);
+		//3-2. 우측 이미지
+			//a. 이미지 비우기
+			$("#battle_img_right").innerHTML = "";
+			//b. 이미지 불러오기
+			var img = document.createElement("img");
+			img.src = arr_go[1][1];
+				var img2 = document.createElement("img");
+				img2.src = arr_go[1][2];
+			img.style.backgroundImage = "url('" + arr_go[1][2] + "')";
+			//c. 이미지 사이즈 조절
+			if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
+				img.style.width = "450px";
+				img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
+			} else {
+				img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
+				img.style.height = "600px";
+			}
+			img.style.backgroundSize = img.style.width + " " + img.style.height;
+				img2.src = "";
+			//d. 이미지 배치
+			$("#battle_img_right").appendChild(img);
 
-		//2. 다음 이동 대기
-		setTimeout(function() {
-			battle_ready(counter + 10);
-		},1000/(60*3));
+	//2. 다음 이동 대기
+	void $("#battle_img_left").offsetWidth;
+	$("#battle_img_left").classList.add("on");
+	void $("#battle_img_right").offsetWidth;
+	$("#battle_img_right").classList.add("on");
 
-	} else {
-		//나머지 : 전투 실시 (클릭 대기)
-		//1. 이미지 정지(자동)
-
-		//2. 이미지선택 효과 활성화
+	setTimeout(function() {
+		//1. 이미지선택 효과 활성화
 		$("#battle_img_left").classList.add("selectable");
 		$("#battle_img_right").classList.add("selectable");
-		//3. 랜덤 버튼 활성화
+		//2. 랜덤 버튼 활성화
 		$("#battle_random").disabled = "";
 		$("#battle_random").onclick = function() {
 			var random_num = Math.floor(Math.random() * 2);
 			battle_effect(random_num);
 		}
-		//4. 이미지 클릭(+리셋) 이벤트
+		//3. 이미지 클릭(+리셋) 이벤트
 		$("#battle_img_left").onclick = function() {
 			battle_effect(0);
 		}
@@ -302,13 +304,13 @@ function battle_ready(counter){
 				arr_win = [];//배틀 - 승리 인원
 
 				//2. 창 표시
-				$("#frame_intro").style.display = "inline-block";
+				$("#frame_intro").style.display = "block";
 				$("#frame_ready").style.display = "none";
 				$("#frame_battle").style.display = "none";
 				$("#frame_victory").style.display = "none";
 			}
 		}
-	}
+	},300);
 }
 
 //전투 효과
@@ -331,10 +333,10 @@ function battle_effect(win) {
 		//2. 이미지 방향 텍스트
 		var side = ["left","right"];
 		//3. 이미지 테두리 표시
-		$("#battle_img_" + side[win]).className = "battle_img winner";
-		$("#battle_img_" + side[loose]).className = "battle_img";
+		$("#battle_img_" + side[win]).classList.add("winner");
+		$("#battle_img_" + side[loose]).classList.remove("winner");
 		//4. 글자 색상 변경
-		$("#battle_name_" + side[win]).className = "battle_name yellow";
+		$("#battle_name_" + side[win]).classList.add("yellow");
 		//5. 승자 글자 표시
 		$("#battle_winner_" + side[win]).style.display = "block";
 
@@ -344,42 +346,34 @@ function battle_effect(win) {
 		//1. 승자 글자 비활성화
 		$("#battle_winner_" + side[win]).style.display = "none";
 		//2. 이미지 이동 개시
-		battle_finish(0);
-	},350);
+		battle_finish();
+	},500);
 }
 
 //전투 마무리
-function battle_finish(counter) {
+function battle_finish() {
 	$("#battle_img_left").blur();
 	$("#battle_img_right").blur();
 
-	if (counter > -470) {
-		//중간 : 캐릭터 이동
-		//1. 이미지 이동
-		$("#battle_img_left").style.left = ($("#battle_img_left").offsetLeft - 10).toString() + "px";
-		$("#battle_img_left").style.opacity = Math.max(0,((470+counter)/470)).toString();
-		$("#battle_img_right").style.right = (-($("#battle_img_right").offsetWidth + $("#battle_img_right").offsetLeft - 900) - 10).toString() + "px";
-		$("#battle_img_right").style.opacity = Math.max(0,((470+counter)/470)).toString();
+	//1. 이미지 이동
+	$("#battle_img_left").classList.remove("on");
+	$("#battle_img_right").classList.remove("on");
 
-		//2. 다음 이동 대기
-		setTimeout(function() {
-			battle_finish(counter - 10);
-		},1000/(60*3));
-
-	} else {
+	//2. 다음 이동 대기
+	setTimeout(function() {
 		//캐릭터 초기상태로 재배치
 			//1. 이름 지우기 (& 색상 초기화)
 			$("#battle_name_left").innerHTML = "";
 			$("#battle_name_right").innerHTML = "";
 
-			$("#battle_name_left").className = "battle_name";
-			$("#battle_name_right").className = "battle_name";
+			$("#battle_name_left").classList.remove("yellow");
+			$("#battle_name_right").classList.remove("yellow");
 			//2. 이미지 지우기 (& 테두리 초기화)
 			$("#battle_img_left").innerHTML = "";
 			$("#battle_img_right").innerHTML = "";
 
-			$("#battle_img_left").className = "battle_img";
-			$("#battle_img_right").className = "battle_img";
+			$("#battle_img_left").classList.remove("winner","selectable");
+			$("#battle_img_right").classList.remove("winner","selectable");
 
 		//캐릭터가 남음 - 다음 경기
 		if (arr_go.length > 0) {
@@ -400,7 +394,7 @@ function battle_finish(counter) {
 				ready();
 			}
 		}
-	}
+	},300);
 }
 
 //우승
@@ -421,12 +415,12 @@ function victory() {
 			var img2 = document.createElement("img");
 			img2.src = arr_win[0][2];
 		//c. 이미지 사이즈 조절
-		if (img2.naturalWidth / 370 >= img2.naturalHeight / 480) {
-			img.style.width = "370px";
-			img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 370).toString() + "px";
+		if (img2.naturalWidth / 450 >= img2.naturalHeight / 600) {
+			img.style.width = "450px";
+			img.style.height = ((img2.naturalHeight/img2.naturalWidth) * 450).toString() + "px";
 		} else {
-			img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 480).toString() + "px";
-			img.style.height = "480px";
+			img.style.width = ((img2.naturalWidth/img2.naturalHeight) * 600).toString() + "px";
+			img.style.height = "600px";
 		}
 		img.style.backgroundSize = img.style.width + " " + img.style.height;
 			img2.src = "";
@@ -488,40 +482,73 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		//이미지 수집 개시
 		var query = "-guro -gore -comic";
-		var pg = (Math.floor(Math.random() * 10000) + 1).toString();
-        var url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&limit=32&tags="+encodeURIComponent(query) +
+
+		var pg = (Math.floor(Math.random() * 5000) + 1).toString();
+        var url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&limit=100&tags="+encodeURIComponent(query) +
 		"&pid=" + pg.toString();
         var q = encodeURIComponent('select * from xml where url="'+url+'"');
         var yql = 'https://query.yahooapis.com/v1/public/yql?q='+q;
 
+		//첫 100개 이미지 검색
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(this.response,"text/xml");
                 var imgs = doc.querySelectorAll("posts post");
+				imgs = Array.prototype.slice.call(imgs);
+				//100개 이미지 중 무작위 16개 추출
+				imgs = shuffle(imgs).slice(0,-84);
 
-				$("#loading_notice").innerHTML = "이미지 32종 수집 완료.<br>프리뷰 이미지 정리 중...";
+				//다음 100개 이미지 검색
+				pg = (parseInt(pg) + 5000).toString();
+				url = "https://safebooru.org/index.php?page=dapi&s=post&q=index&limit=100&tags="+encodeURIComponent(query) +
+				"&pid=" + pg.toString();
+				q = encodeURIComponent('select * from xml where url="'+url+'"');
+				yql = 'https://query.yahooapis.com/v1/public/yql?q='+q;
 
-				for (let i=0;i<imgs.length;i++) {
-					var url = "https:" + imgs[i].getAttribute("sample_url");
-					var url2 = "https:" + imgs[i].getAttribute("preview_url");
-					imageList.push(url);
-					imageList2.push(url2);
-					chaList.push([imgs[i].getAttribute("id"),url,url2]);
-				}
+				var xhttp2 = new XMLHttpRequest();
+		        xhttp2.onreadystatechange = function() {
+		            if (this.readyState == 4 && this.status == 200) {
+		                doc = parser.parseFromString(this.response,"text/xml");
+						imgs2 = doc.querySelectorAll("posts post");
+						imgs2 = Array.prototype.slice.call(imgs2);
 
-				//로딩 실시
-				loadImages([imageList,imageList2],function() {
-					//시작
-					ready("all");
-				});
+						//100개 이미지 중 무작위 16개 추출
+						imgs2 = shuffle(imgs2).slice(0,-84);
+						//200개 검색결과 합치기
+		                imgs = imgs.concat(imgs2);
+
+						$("#loading_bar").style.width = "100%";
+						$("#loading_num").innerHTML = "32 / 32";
+
+						for (let i=0;i<imgs.length;i++) {
+							var url = "https:" + imgs[i].getAttribute("sample_url");
+							var url2 = "https:" + imgs[i].getAttribute("preview_url");
+							imageList.push(url);
+							imageList2.push(url2);
+							chaList.push([imgs[i].getAttribute("id"),url,url2]);
+						}
+
+						//로딩 실시
+						loadImages([imageList,imageList2],function() {
+							//시작
+							ready("all");
+						});
+		            }
+		        };
+				//이미지 수집 안내 문구
+				$("#loading_notice").innerHTML = "세이프부루 이미지 32종<br>무작위로 수집 중...";
+					$("#loading_bar").style.width = "50%";
+					$("#loading_num").innerHTML = "16 / 32";
+		        xhttp2.open("GET", yql, true);
+		        xhttp2.send();
             }
         };
 		//이미지 수집 안내 문구
 		$("#loading_notice").innerHTML = "세이프부루 이미지 32종<br>무작위로 수집 중...";
 			$("#loading_bar").style.width = "0%";
-			$("#loading_num").innerHTML = "";
+			$("#loading_num").innerHTML = "0 / 32";
         xhttp.open("GET", yql, true);
         xhttp.send();
 	}

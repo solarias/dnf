@@ -34,10 +34,10 @@ body {
 	overflow:hidden;
 
 	margin:0px auto;
-	width:900px;
-	height:620px;
+	width:1200px;
+	height:800px;
 
-	background:transparent;
+	box-sizing: border-box;
 
 	color:white;
 }
@@ -54,9 +54,22 @@ body {
 	display:block;
 }
 	#frame_intro p {
-		font-size:100px;
+		position:absolute;
+		right:0;top:0;
+		z-index:2;
+
+		font-size:120px;
 		font-weight:bold;
 		text-align:right;
+		text-shadow:
+			0px -1px black,
+			1px -1px black,
+			1px 0px black,
+			1px 1px black,
+			0px 1px black,
+			-1px 1px black,
+			-1px 0px black,
+			-1px -1px black;
 	}
 
 	#intro_logo {
@@ -64,7 +77,7 @@ body {
 		left:20px;
 		bottom:20px;
 
-		width:500px;
+		width:800px;
 		height:auto;
 
 		border-radius:50%;
@@ -72,8 +85,8 @@ body {
 
 	.intro_start {
 		position:absolute;
-		top:420px;
-		right:0px;
+		bottom:50px;
+		right:20px;
 
 		width:350px;
 		height:120px;
@@ -85,7 +98,7 @@ body {
 		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
 
-		border:1px skyblue outset;
+		border:5px skyblue outset;
 		border-radius:10px;
 
 		font-size:75px;
@@ -117,17 +130,18 @@ body {
 
 		width:100%;
 
-		font-size:60px;
+		font-size:80px;
 		font-weight:bold;
 		text-align:center;
 	}
 
 	#loading_progress {
 		position:absolute;
-		left:12.5px;
+		left:0;right:0;
 		bottom:69px;
 
-		width:870px;
+		margin:0 auto;
+		width:calc(100% - 50px);
 		height:100px;
 
 		background:black;
@@ -192,18 +206,13 @@ body {
 	#frame_ready hr {
 		border-top:2px skyblue solid;
 	}
-	#ready_desc {
-		font-size:32px;
-		font-weight:bold;
-		line-height:80px;
-	}
 
 	#ready_image_go {
 		overflow-y:scroll;
 
 		margin:5px auto 0 auto;
-		width:860px;
-		height:450px;
+		width:calc(100% - 50px);
+		height:600px;
 
 		background-color:rgba(0,0,0,0.3);
 		border:2px skyblue solid;
@@ -213,12 +222,16 @@ body {
 
 			margin:-2px 0px 0px -2px;
 
-			background-color:black;
+			background-color:white;
 			background-repeat:no-repeat;
 			border:2px gray solid;
 			box-sizing:border-box;
 
 			display:block;
+		}
+		#ready_image_go img:hover {
+			filter:brightness(0.5);
+			cursor:pointer;
 		}
 
 	#ready_image_no {
@@ -250,8 +263,8 @@ body {
 		right:20px;
 		top:7.5px;
 
-		width:180px;
-		height:45px;
+		width:200px;
+		height:60px;
 
 		background: #FF6A00; /* default */
 		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
@@ -263,7 +276,7 @@ body {
 		border:2px gray outset;
 		border-radius:10px;
 
-		font-size:30px;
+		font-size:40px;
 		font-weight:bold;
 	}
 		#ready_reset:hover {
@@ -275,13 +288,18 @@ body {
 			background: #FFAA00;
 		}
 
+	#ready_desc {
+		font-size:35px;
+		font-weight:bold;
+		line-height:80px;
+	}
 	#ready_start {
 		position:absolute;
 		right:15px;
 		bottom:15px;
 
-		width:250px;
-		height:70px;
+		width:270px;
+		height:80px;
 
 		background: #FFFFFF; /* default */
 		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
@@ -293,7 +311,7 @@ body {
 		border:2px gray outset;
 		border-radius:15px;
 
-		font-size:45px;
+		font-size:50px;
 		font-weight:bold;
 	}
 		#frame_ready input[type="button"]:hover {
@@ -337,21 +355,51 @@ body {
 		border-top:2px skyblue solid;
 	}
 
+	#battle_reset {
+		float:right;
+
+		margin-left:15px;
+		width:200px;
+		height:60px;
+
+		background: #FF6A00; /* default */
+		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
+		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
+		background: linear-gradient(to bottom, #ffffff, #FF6A00);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
+
+		border:2px gray outset;
+		border-radius:15px;
+
+		font-size:40px;
+		font-weight:bold;
+	}
+		#battle_reset:hover {
+			box-shadow:0 0 3pt 2pt white;
+			cursor:pointer;
+			cursor:hand;
+		}
+		#battle_reset:active {
+			background: #FFAA00;
+		}
+
 	.battle_img {
 		position:absolute;
 		overflow:hidden;
 
-		width:370px;
-		height:480px;
+		width:450px;
+		height:600px;
 
 		background:black;
 		border:2px #C5F2F9 solid;
 			border-top:10px skyblue solid;
 			border-bottom:10px skyblue solid;
 		box-sizing:border-box;
+		opacity: 0.01;
+		transition:left 0.3s linear, right 0.3s linear, opacity 0.3s linear;
 
 		text-align:center;
-		opacity: 0.8;
 	}
 			.battle_img img {
 				position: absolute;
@@ -361,18 +409,26 @@ body {
 				right: -9999px;
 				margin: auto;
 
-				background-color:black;
+				background-color:white;
 				background-repeat:no-repeat;
 				background-size:contain;
 			}
 		#battle_img_left {
-			top:75px;
-			left:75px;
+			top:90px;
+			left:-500px;
 		}
+			#battle_img_left.on {
+				left:50px;
+				opacity:1;
+			}
 		#battle_img_right {
-			top:75px;
-			right:75px;
+			top:90px;
+			right:-500px;
 		}
+			#battle_img_right.on {
+				right:50px;
+				opacity:1;
+			}
 		.battle_img.selectable:hover, .battle_img.winner {
 			outline:6px yellow solid;
 
@@ -381,18 +437,57 @@ body {
 			opacity: 1;
 		}
 
+		#battle_img_vs {
+			position:absolute;
+			top:250px;
+			left:0;right:0;
+
+			margin:0 auto;
+			width:150px;
+			height:auto;
+		}
+		#battle_random {
+			position:absolute;
+			top:400px;
+			left:0;right:0;
+
+			margin:0 auto;
+			width:150px;
+			height:75px;
+
+			background: #FFFFFF; /* default */
+			background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+			background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+			background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+
+			border:2px gray outset;
+			border-radius:6px;
+
+			font-size:50px;
+			font-weight:bold;
+		}
+			#battle_random:hover {
+				box-shadow:0 0 3pt 2pt skyblue;
+				cursor:pointer;
+				cursor:hand;
+			}
+			#battle_random:active {
+				background:skyblue;
+			}
+
 	.battle_name {
 		position:absolute;
 
-		width:300px;
-		height:37px;
+		width:450px;
 
-		border-bottom:2px skyblue solid;
+		border-bottom:5px skyblue solid;
 
-		font-size:20px;
+		font-size:30px;
 		font-weight:bold;
 		text-align:center;
-		line-height:37px;
+		line-height:40px;
 	}
 		#battle_name_left {
 			bottom:22px;
@@ -413,89 +508,19 @@ body {
 
 	.battle_winner {
 		position:absolute;
-		z-index:5;
+			z-index:5;
+		top:550px;
 
-		width:300px;
+		width:400px;
 		height:auto;
 
 		display:none;
 	}
 		#battle_winner_left {
-			top:420px;
 			left:52px;
 		}
 		#battle_winner_right {
-			top:420px;
 			right:52px;
-		}
-
-
-	#battle_img_vs {
-		position:absolute;
-		top:210px;
-		left:400px;
-
-		width:105px;
-	}
-	#battle_random {
-		position:absolute;
-		top:300px;
-		left:407px;
-
-		width:90px;
-		height:45px;
-
-		background: #FFFFFF; /* default */
-		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
-		background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
-		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
-
-		border:2px gray outset;
-		border-radius:6px;
-
-		font-size:30px;
-		font-weight:bold;
-		line-height:100%;
-	}
-		#battle_random:hover {
-			box-shadow:0 0 3pt 2pt skyblue;
-			cursor:pointer;
-			cursor:hand;
-		}
-		#battle_random:active {
-			background:skyblue;
-		}
-
-
-	#battle_reset {
-		float:right;
-
-		margin-left:15px;
-		width:180px;
-		height:45px;
-
-		background: #FF6A00; /* default */
-		background: -moz-linear-gradient(top center, #FFFFFF, #FF6A00);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #FF6A00));
-		background: -ms-linear-gradient(top center, #FFFFFF, #FF6A00);
-		background: linear-gradient(to bottom, #ffffff, #FF6A00);
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#FF6A00)";
-
-		border:2px gray outset;
-		border-radius:15px;
-
-		font-size:30px;
-		font-weight:bold;
-	}
-		#battle_reset:hover {
-			box-shadow:0 0 3pt 2pt white;
-			cursor:pointer;
-			cursor:hand;
-		}
-		#battle_reset:active {
-			background: #FFAA00;
 		}
 
 
@@ -524,11 +549,12 @@ body {
 	#victory_img {
 		position:absolute;
 		overflow:hidden;
-		top:75px;
-		left:270px;
+		top:90px;
+		left:0;right:0;
 
-		width:370px;
-		height:480px;
+		margin:0 auto;
+		width:450px;
+		height:600px;
 
 		background:black;
 		border:2px skyblue solid;
@@ -546,35 +572,36 @@ body {
 			right: -9999px;
 			margin: auto;
 
-			background-color:black;
+			background-color:white;
 			background-repeat:no-repeat;
 			background-size:contain;
 		}
 
 	#victory_winner {
 		position:absolute;
-		top:420px;
-		left:300px;
-		z-index:5;
+			z-index:5;
+		top:550px;
+		left:0;right:0;
 
-		width:300px;
+		margin:0 auto;
+		width:400px;
 		height:auto;
 	}
 	#victory_name {
 		position:absolute;
 		bottom:22px;
-		left:300px;
+		left:0;right:0;
 
-		width:300px;
-		height:37px;
+		margin:0 auto;
+		width:450px;
 
-		border-bottom:2px skyblue solid;
+		border-bottom:5px skyblue solid;
 
 		color:yellow;
-		font-size:20px;
+		font-size:30px;
 		font-weight:bold;
 		text-align:center;
-		line-height:37px;
+		line-height:40px;
 	}
 	#victory_name a {
 		color:skyblue;
@@ -589,8 +616,8 @@ body {
 		right:20px;
 		bottom:20px;
 
-		width:200px;
-		height:75px;
+		width:300px;
+		height:120px;
 
 		background: #FFFFFF; /* default */
 		background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
@@ -599,10 +626,10 @@ body {
 		background: linear-gradient(to bottom, #ffffff, #A0A0A0);
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
 
-		border:2px skyblue outset;
+		border:5px skyblue outset;
 		border-radius:15px;
 
-		font-size:45px;
+		font-size:60px;
 		font-weight:bold;
 	}
 		#victory_return:hover {
