@@ -3,6 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" />
 
 		<title>이적 시장 수수료 계산기</title>
 
@@ -13,10 +14,14 @@
 				border:0px;
 
 				font-family:Arial;
-				font-size:16px;
+				font-size:22px;
+				line-height:30px;
 				text-decoration:none;
 			}
 
+			.center {
+				text-align:center;
+			}
 			.orange {
 				color:orange;
 			}
@@ -27,12 +32,149 @@
 				color:skyblue;
 			}
 
-			body {
+			html, body {
+				position:relative;
+				width:100%;
+				height:100%;
 				background-color:#707070;
 			}
+
+			#wrapper {
+				position:relative;
+				margin:0px auto;
+				width:100%;
+				min-width:350px;
+				max-width:800px;
+
+				box-sizing: border-box;
+			}
+
+			.title {
+				position:relative;
+				padding:3px 0px 3px 10px;
+				width:100%;
+				height:50px;
+
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a3a3a3+0,000000+100 */
+				background: #a3a3a3; /* Old browsers */
+				background: -moz-linear-gradient(top, #a3a3a3 0%, #000000 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, #a3a3a3 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, #a3a3a3 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				border:3px #4E4E4E solid;
+				box-sizing: border-box;
+
+				color:white;
+				font-size:23px;
+				font-weight:bold;
+				line-height:38px;
+			}
+			.wrap {
+				position:relative;
+				padding:10px 0px 10px 10px;
+				width:100%;
+
+				background:#232323;
+				border:3px #4E4E4E solid;
+				box-sizing: border-box;
+
+				color:white;
+				font-weight:bold;
+				line-height:150%;
+			}
+				#wrap_input {
+					height:55px;
+				}
+				#wrap_fee {
+					height:55px;
+				}
+				#wrap_discount {
+					height:205px;
+				}
+				#wrap_output {
+					height:90px;
+				}
+					#wrap_output p:first-child {
+						margin-bottom:5px;
+					}
+			.saleform_text {
+				height:30px;
+				clear:left;
+				float:left;
+			}
+			input.text {
+				display:block;
+				float:left;
+				padding-right:5px;
+				margin-left:5px;
+				height:30px;
+
+				background:white;
+				border:1px gray solid;
+				box-sizing: border-box;
+
+				color:black;
+				text-align:right;
+			}
+				input#text1 {
+					float:left;
+					width:calc(100% - 204px);
+				}
+				input#text2 {
+					background:#4E4E4E;
+					width:calc(100% - 109px);
+
+					color:white;
+				}
+				input#text3 {
+					width:calc(100% - 262px);
+					max-width:150px;
+				}
+				input#text4, input#text5 {
+					width:calc(100% - 125px);
+
+					background:#4E4E4E;
+
+					color:white;
+				}
+				.discount_radio {
+					display:block;
+					float:left;
+					margin-top:5px;
+					margin-right:5px;
+					width:20px;
+					height:20px;
+				}
+					.discount_radio:hover {
+						cursor:pointer;
+					}
+				.label_discount {
+					display:block;
+					float:left;
+				}
+					.label_discount:hover {
+						cursor:pointer;
+						text-decoration: underline;
+					}
+				.submit {
+					display:block;
+					float:left;
+					margin-left:5px;
+					width:80px;
+					height:30px;
+
+					background: #FFFFFF; /* default */
+					border:1px #A4A4A4 solid;
+					box-sizing: border-box;
+
+					font-weight:bold;
+					line-height:30px;
+				}
+					.submit:active {
+						background: #DEDEDE;
+					}
 				#saw {
 					margin-top:10px;
-					width:330px;
+					width:100%;
 
 					color:yellow;
 					text-decoration:underline;
@@ -40,130 +182,45 @@
 
 					display:inline-block;
 				}
-
-			#wrapper {
-				margin:0px auto;
-				width:350px;
-			}
-
-			.title {
-				padding:3px 0px 3px 10px;
-				width:330px;
-
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a3a3a3+0,000000+100 */
-				background: #a3a3a3; /* Old browsers */
-				background: -moz-linear-gradient(top, #a3a3a3 0%, #000000 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(top, #a3a3a3 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to bottom, #a3a3a3 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-				border:3px #4E4E4E solid;
-
-				color:white;
-				font-size:23px;
-				font-weight:bold;
-				line-height:150%;
-			}
-			.wrap {
-				padding:10px 0px 10px 10px;
-				width:330px;
-
-				background:#232323;
-				border:3px #4E4E4E solid;
-
-				color:white;
-				font-weight:bold;
-				line-height:150%;
-			}
-				input.text {
-					padding-right:5px;
-					background:white;
-					border:1px gray solid;
-
-					color:black;
-					text-align:right;
-				}
-				input#text1 {
-					width:185px;
-				}
-				input#text2 {
-					background:#4E4E4E;
-					width:195px;
-
-					color:white;
-				}
-				input#text3 {
-					width:145px;
-				}
-				input#text4, input#text5 {
-					width:195px;
-
-					background:#4E4E4E;
-
-					color:white;
-				}
-				input[type="submit"] {
-					background: #FFFFFF; /* default */
-					background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
-					background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
-					background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
-					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#A0A0A0')"; /* IE8 */
-
-					width:40px;
-					height:20px;
-
-					border:1px #A4A4A4 solid;
-
-					font-weight:bold;
-				}
-						input[type="submit"]:active {
-							background: #DEDEDE;
-						}
 		</style>
 	</head>
 	<body>
-		<div id="frame_ad" class="etc_fifacal"></div>
-			<link rel="stylesheet" type="text/css" href="../function/frame_ad/frame_ad.css" />
-			<script type="text/javascript" src="../function/frame_ad/frame_ad.js"></script>
-
 		<div id="wrapper">
 
-			<div class="title">
+			<div class="title center">
 				이적 시장 수수료 계산기
 			</div>
-			<div class="wrap">
+			<div id="wrap_input" class="wrap">
 				<form id="saleform">
-				판매금액 : <input id="text1" class="text" type="text" placeholder="입력 후 Enter 클릭"  maxlength="100">
-				<input type="submit" value="입력">
+				<p class="saleform_text">판매금액 : <p>
+				<input id="text1" class="text" type="text" placeholder="입력 후 Enter"  maxlength="100">
+				<input id="saleform_submit" class="submit" type="submit" value="입력">
 				</form>
 			</div>
-			<div class="wrap">
-				수 수 료 : <input id="text2" class="text" type="text" placeholder="자동으로 계산됨" readonly>
+			<div id="wrap_fee" class="wrap">
+				<p class="saleform_text">수 수 료 : </p><input id="text2" class="text" type="text" placeholder="자동으로 계산됨" readonly>
 			</div>
-			<div class="wrap">
-				&lt;할인율&gt;
+			<div id="wrap_discount" class="wrap">
+				<p class="saleform_text">&lt;할인율&gt;</p>
 				<br/>
 				<form id="discountform" onsubmit="return false;">
-				<input name="discount" type="radio" value="0"> <span class="blue">0%</span> <span class="yellow">(미적용)</span>
+				<input id="discount1" class="discount_radio" name="discount" type="radio" value="0"> <label class="label_discount" for="discount1"><span class="blue">0%</span> <span class="yellow">(미적용)</span></label>
 				<br/>
-				<input name="discount" type="radio" value="0.3"> <span class="blue">30%</span> <span class="yellow">(TOP CLASS 할인)</span>
+				<input id="discount2" class="discount_radio" name="discount" type="radio" value="0.2"> <label class="label_discount" for="discount2"><span class="blue">20%</span> <span class="yellow">(TOP CLASS 할인)</span></label>
 				<br/>
-				<input name="discount" type="radio" value="0.4"> <span class="blue">40%</span> <span class="yellow">(PC방 할인)</span>
+				<input id="discount3" class="discount_radio" name="discount" type="radio" value="0.3"> <label class="label_discount" for="discount3"><span class="blue">30%</span> <span class="yellow">(PC방 할인)</span></label>
 				<br/>
-				<input name="discount" type="radio" value="0.5"> <span class="blue">50%</span> <span class="yellow">(PC방 + TOP 할인)</span>
+				<input id="discount4" class="discount_radio" name="discount" type="radio" value="0.5"> <label class="label_discount" for="discount4"><span class="blue">50%</span> <span class="yellow">(PC방 + TOP 할인)</span></label>
 				<br/>
-				<input name="discount" type="radio" value="0.6"> <span class="blue">60%</span> <span class="yellow">(PC방 할인 <span class="orange">+ 이벤트</span>)</span>
-				<br/>
-				<input name="discount" type="radio" value="0.7"> <span class="blue">70%</span> <span class="yellow">(PC방 + TOP 할인 <span class="orange">+ 이벤트</span>)</span>
-				<br/>
-				<input name="discount" type="radio" value="custom"> <span class="yellow">직접 입력 (%)</span>
-				<input id="text3" class="text" type="text" value="" placeholder="입력 후 Enter 클릭"> <input type="submit" value="입력">
+				<input id="discount5" class="discount_radio" name="discount" type="radio" value="custom"> <label class="label_discount" for="discount5"><span class="yellow">직접 입력 (%)</span></label>
+				<input id="text3" class="text" type="text" value="" placeholder="입력 후 Enter"> <input class="submit" type="submit" value="입력">
 				</form>
 			</div>
-			<div class="wrap">
-				<p>할인 금액 : <input id="text4" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
-				<p>받을 금액 : <input id="text5" class="text" type="text" placeholder="자동으로 계산됨"  readonly></p>
+			<div id="wrap_output" class="wrap">
+				<p class="saleform_text">할인 금액 : </p><input id="text4" class="text" type="text" placeholder="자동으로 계산됨" readonly>
+				<p class="saleform_text">받을 금액 : </p><input id="text5" class="text" type="text" placeholder="자동으로 계산됨" readonly>
 			</div>
-			<a id="saw" href="http://fifa3.inven.co.kr/" target="_blank">이 사이트를 보고 따라만들었습니다.</a>
+			<a id="saw" class="center" href="http://fifa3.inven.co.kr/" target="_blank">참고한 사이트 링크</a>
 
 		</div>
 	</body>
@@ -175,7 +232,12 @@
 		//=================================================================================================================
 		var i;
 
-		var value = [0,0,0,0];//[0] : 입력값, [1] : 수수료, [2] : 할인금액, [3] : 받을금액
+		var value = {
+			input:0,//입력값
+			fee:0,//수수료
+			discount:0,//할인금액
+			outcome:0//받을금액
+		};
 
 		var $discount = document.getElementsByName("discount");
 
@@ -221,19 +283,15 @@
 			document.getElementById("saleform").onsubmit = function() {
 				//포커스 해제 (값 초기화 방지)
 				document.getElementById("text1").blur();
-				value[0] = parseInt(document.getElementById("text1").value.replace(/,/g,''));
-				//100 이상 입력시에만
-				if (value[0] < 1000) {
+				value.input = parseInt(document.getElementById("text1").value.replace(/,/g,''));
+				//1000 이상 입력시에만
+				if (value.input < 1000) {
 					alert("1,000 이상의 수치를 입력해주세요.");
 					return;
-				//기본 수수료
+				//수수료 계산
 				} else {
-					if (value[0] <= 500000) {
-						value[1] = Math.floor(value[0] * 0.3);
-					} else {
-						 value[1] = 150000 + Math.floor((value[0]-500000)*0.4);
-					}
-					document.getElementById("text2").value = thousand(-value[1]);
+					value.fee = Math.floor(value.input * 0.4);
+					document.getElementById("text2").value = thousand(-value.fee);
 				}
 				//할인 수수료
 				var cut = "0";
@@ -249,22 +307,22 @@
 						}
 					}
 				}
-				value[2] = Math.floor(value[1] * parseFloat(cut))
-				value[3] = value[0] - value[1] + value[2];
+				value.discount = Math.floor(value.fee * parseFloat(cut))
+				value.outcome = value.input - value.fee + value.discount;
 				//최종 가격
-				if (value[2] > 0) {
-					document.getElementById("text4").value = "+" + thousand(value[2]);
+				if (value.discount > 0) {
+					document.getElementById("text4").value = "+" + thousand(value.discount);
 				} else {
-					document.getElementById("text4").value = thousand(value[2]);
+					document.getElementById("text4").value = thousand(value.discount);
 				}
-				document.getElementById("text5").value = thousand(value[3]);
+				document.getElementById("text5").value = thousand(value.outcome);
 				return false;
 			}
 
 			for (i=0;i<$discount.length;i++) (function(i){
 				$discount[i].onclick = function() {
 					//판매금액이 입력되었으면 실행
-					if (value[0] != 0) {
+					if (value.input != 0) {
 						var cut = "0";
 						if ($discount[i].value != "custom") {
 							cut = $discount[i].value;
@@ -275,15 +333,15 @@
 								cut = "0";
 							}
 						}
-						value[2] = Math.floor(value[1] * parseFloat(cut))
-						value[3] = value[0] - value[1] + value[2];
+						value.discount = Math.floor(value.fee * parseFloat(cut))
+						value.outcome = value.input - value.fee + value.discount;
 						//최종 가격
-						if (value[2] > 0) {
-							document.getElementById("text4").value = "+" + thousand(value[2]);
+						if (value.discount > 0) {
+							document.getElementById("text4").value = "+" + thousand(value.discount);
 						} else {
-							document.getElementById("text4").value = thousand(value[2]);
+							document.getElementById("text4").value = thousand(value.discount);
 						}
-						document.getElementById("text5").value = thousand(value[3]);
+						document.getElementById("text5").value = thousand(value.outcome);
 					}
 				}
 			})(i);
@@ -300,37 +358,24 @@
 					document.getElementById("text3").value = '';
 					return false;
 				}
-				if (value[0] != 0) {
+				if (value.input != 0) {
 					$discount[$discount.length-1].checked = true;
 					var cut = 0;
 					cut = parseInt(document.getElementById("text3").value) * 0.01;
-					value[2] = Math.floor(value[1] * parseFloat(cut))
-					value[3] = value[0] - value[1] + value[2];
+					value.discount = Math.floor(value.fee * parseFloat(cut))
+					value.outcome = value.input - value.fee + value.discount;
 					//최종 가격
-					if (value[2] > 0) {
-						document.getElementById("text4").value = "+" + thousand(value[2]);
+					if (value.discount > 0) {
+						document.getElementById("text4").value = "+" + thousand(value.discount);
 					} else {
-						document.getElementById("text4").value = thousand(value[2]);
+						document.getElementById("text4").value = thousand(value.discount);
 					}
-					document.getElementById("text5").value = thousand(value[3]);
+					document.getElementById("text5").value = thousand(value.outcome);
 				}
 				return false;
 			}
 
 		}
 	</script>
-
-	<!-- Histats.com  START  (aync)-->
-	<script type="text/javascript">var _Hasync= _Hasync|| [];
-	_Hasync.push(['Histats.start', '1,3447612,4,0,0,0,00010000']);
-	_Hasync.push(['Histats.fasi', '1']);
-	_Hasync.push(['Histats.track_hits', '']);
-	(function() {
-	var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-	hs.src = ('//s10.histats.com/js15_as.js');
-	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-	})();</script>
-	<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?3447612&101" alt="free hit counter" border="0"></a></noscript>
-	<!-- Histats.com  END  -->
 	</body>
 </body>
